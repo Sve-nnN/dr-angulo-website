@@ -6,10 +6,10 @@ De cero a un sitio de marketing médico publicado: primero la base técnica y la
 
 ## Phases
 
-- [ ] **Phase 1: Fundación técnica y de marca** - Scaffold Next.js, design tokens de marca real, layout global con WhatsApp flotante
-- [ ] **Phase 2: Páginas core y trayectoria** - Home, Servicios, Testimonios, FAQ, Sobre el doctor con CV extenso
-- [ ] **Phase 3: Conversión, tracking y SEO técnico** - Formulario+Resend, JSON-LD, sitemap/robots, eventos GA4/Meta Pixel
-- [ ] **Phase 4: Contenido SEO, legal y publicación** - Blog inicial, privacidad/cookies, QA visual/performance, deploy
+- [x] **Phase 1: Fundación técnica y de marca** - Scaffold Next.js, design tokens de marca real, layout global con WhatsApp flotante
+- [x] **Phase 2: Páginas core y trayectoria** - Home, Servicios, Testimonios, FAQ, Sobre el doctor con CV extenso
+- [x] **Phase 3: Conversión, tracking y SEO técnico** - Formulario+Resend, JSON-LD, sitemap/robots, eventos GA4/Meta Pixel
+- [x] **Phase 4: Contenido SEO, legal y publicación** - Blog inicial, privacidad/cookies, QA visual/performance, deploy
 
 ## Phase Details
 
@@ -24,8 +24,8 @@ De cero a un sitio de marketing médico publicado: primero la base técnica y la
 **Plans**: 2 plans
 
 Plans:
-- [ ] 01-01: Scaffold Next.js + Tailwind + estructura de carpetas + fuentes/colores de marca
-- [ ] 01-02: Layout global (header, nav, footer, WhatsAppCta flotante) + logo/favicon placeholder
+- [x] 01-01: Scaffold Next.js + Tailwind + estructura de carpetas + fuentes/colores de marca
+- [x] 01-02: Layout global (header, nav, footer, WhatsAppCta flotante) + logo/favicon placeholder
 
 ### Phase 2: Páginas core y trayectoria
 **Goal**: Todas las páginas de contenido principales existen con copy real (no lorem ipsum), incluida una página de trayectoria con CV extenso del doctor.
@@ -38,9 +38,9 @@ Plans:
 **Plans**: 3 plans
 
 Plans:
-- [ ] 02-01: Home (hero, especialidades, previews de testimonios/FAQ)
-- [ ] 02-02: Servicios/condiciones + Testimonios + FAQ
-- [ ] 02-03: Sobre el doctor / Trayectoria con sección de CV
+- [x] 02-01: Home (hero, especialidades, previews de testimonios/FAQ)
+- [x] 02-02: Servicios/condiciones + Testimonios + FAQ
+- [x] 02-03: Sobre el doctor / Trayectoria con sección de CV
 
 ### Phase 3: Conversión, tracking y SEO técnico
 **Goal**: Toda interacción de contacto (WhatsApp o formulario) funciona y queda medida; el sitio es técnicamente indexable con datos estructurados correctos.
@@ -54,9 +54,9 @@ Plans:
 **Plans**: 3 plans
 
 Plans:
-- [ ] 03-01: Página de Contacto + formulario (Server Action, Resend, fallback WhatsApp)
-- [ ] 03-02: Tracking GA4 + Meta Pixel + evento whatsapp_click en todos los CTAs
-- [ ] 03-03: JSON-LD Physician/FAQPage + sitemap.ts + robots.ts + metadata por página
+- [x] 03-01: Página de Contacto + formulario (Server Action, Resend, fallback WhatsApp)
+- [x] 03-02: Tracking GA4 + Meta Pixel + evento whatsapp_click en todos los CTAs
+- [x] 03-03: JSON-LD Physician/FAQPage + sitemap.ts + robots.ts + metadata por página
 
 ### Phase 4: Contenido SEO, legal y publicación
 **Goal**: El sitio tiene contenido de blog propio, cumple con el aviso de privacidad/cookies, pasa una revisión visual/performance, y queda publicado en Vercel.
@@ -70,8 +70,8 @@ Plans:
 **Plans**: 2 plans
 
 Plans:
-- [ ] 04-01: Blog (listado + artículos) + Política de Privacidad + banner de cookies
-- [ ] 04-02: QA visual/responsive/performance + deploy a Vercel
+- [x] 04-01: Blog (listado + artículos) + Política de Privacidad + banner de cookies
+- [x] 04-02: QA visual/responsive/performance + deploy a Vercel
 
 ## Progress
 
@@ -80,7 +80,7 @@ Fases ejecutan en orden numérico: 1 → 2 → 3 → 4
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Fundación técnica y de marca | 0/2 | Not started | - |
-| 2. Páginas core y trayectoria | 0/3 | Not started | - |
-| 3. Conversión, tracking y SEO técnico | 0/3 | Not started | - |
-| 4. Contenido SEO, legal y publicación | 0/2 | Not started | - |
+| 1. Fundación técnica y de marca | 2/2 | Complete | 2026-07-31 |
+| 2. Páginas core y trayectoria | 3/3 | Complete | 2026-07-31 |
+| 3. Conversión, tracking y SEO técnico | 3/3 | Complete | 2026-07-31 |
+| 4. Contenido SEO, legal y publicación | 2/2 | Complete (deploy pendiente) | 2026-07-31 |
