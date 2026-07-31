@@ -54,3 +54,5 @@ Ninguna — verificado en navegador real por el agente (screenshots desktop) dur
 ---
 *Verified: 2026-07-31*
 *Verifier: Claude (sesión autónoma)*
+
+**Addendum (backfill):** `01-01-PLAN.md` y `01-02-PLAN.md` se agregaron retroactivamente para completar el tracking GSD de esta fase (el trabajo que documentan ya estaba construido y verificado arriba). No cambia el veredicto de esta verificación.
