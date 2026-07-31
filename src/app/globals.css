@@ -1,0 +1,47 @@
+@import "tailwindcss";
+
+:root {
+  --background: #fafaf9;
+  --foreground: #1f2937;
+
+  --primary: #0e7c7e;
+  --primary-light: #3fbfc2;
+  --on-primary: #ffffff;
+
+  --accent: #e8971f;
+  --accent-dark: #c97d0f;
+
+  --whatsapp: #25d366;
+
+  --muted: #ecfafa;
+  --border: #d7efef;
+  --destructive: #dc2626;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+
+  --color-primary: var(--primary);
+  --color-primary-light: var(--primary-light);
+  --color-on-primary: var(--on-primary);
+
+  --color-accent: var(--accent);
+  --color-accent-dark: var(--accent-dark);
+
+  --color-whatsapp: var(--whatsapp);
+
+  --color-muted: var(--muted);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+
+  --font-heading: var(--font-poppins);
+  --font-sans: var(--font-inter);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+}
+
+/* Sitio de una sola marca — sin modo oscuro automático (decisión deliberada, ver design-system/dr-angulo/MASTER.md) */
