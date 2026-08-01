@@ -47,6 +47,14 @@ Ver tabla completa en PROJECT.md § Key Decisions.
 
 Ninguno bloqueante. El logo usado es un recorte de una captura de Instagram (buena calidad pero no el archivo vectorial original) — si el doctor tiene el PNG/SVG fuente, conviene reemplazarlo.
 
+## Deferred Verification
+
+| Phase | State | Resume |
+|-------|-------|--------|
+| 4 | verification_deferred_human — dominio público pendiente de decisión de Juan (deploy ya ejecutado y estable en Dokploy) | Cuando Juan tenga el dominio: asignarlo vía `domain.create` de la API de Dokploy (ver `04-VERIFICATION.md` § Human Verification Required), luego `/gsd-verify-work 4` |
+
+Milestone v1.0 lifecycle (audit → complete-milestone → cleanup) queda en espera de este único ítem antes de cerrarse formalmente.
+
 ## Session Continuity
 
 Last session: 2026-08-01
