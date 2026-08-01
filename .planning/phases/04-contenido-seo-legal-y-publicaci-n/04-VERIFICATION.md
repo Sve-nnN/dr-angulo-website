@@ -8,7 +8,7 @@ behavior_unverified: 0
 
 # Phase 4: Contenido SEO, legal y publicación Verification Report
 
-**Phase Goal:** El sitio tiene contenido de blog propio, cumple con el aviso de privacidad/cookies, pasa una revisión visual/performance, y queda publicado en Vercel.
+**Phase Goal:** El sitio tiene contenido de blog propio, cumple con el aviso de privacidad/cookies, pasa una revisión visual/performance, y queda desplegado y accesible públicamente (ROADMAP original decía "en Vercel"; la infra real terminó siendo Dokploy autoalojado en el VPS propio de Juan — ver addendum abajo).
 **Verified:** 2026-07-31
 **Status:** human_needed
 
@@ -21,9 +21,9 @@ behavior_unverified: 0
 | 1 | Existen 4-6 artículos de blog basados en el contenido educativo real de Instagram del doctor, cada uno con su propia metadata | ✓ VERIFIED | `src/content/blog.ts` con 4 posts (slug/title/description/date/paragraphs); `blog/[slug]/page.tsx` genera metadata (title/description/OG/canonical) por post vía `generateMetadata`; `npm run build` genera las 4 rutas como SSG |
 | 2 | Aparece un aviso de cookies antes de cargar GA4/Meta Pixel y existe una página de Política de Privacidad enlazada desde el footer | ✓ VERIFIED | `cookie-consent-banner.tsx` + `consent.ts` (localStorage vía `useSyncExternalStore`); `analytics-scripts.tsx` exige `consent === "granted"` antes de renderizar `<GoogleAnalytics>`/Meta Pixel; `footer.tsx` enlaza `/privacidad` en todas las páginas |
 | 3 | El sitio responde bien en mobile y desktop, y las imágenes/fuentes no generan layout shift visible | ✓ VERIFIED | Verificado visualmente en navegador (desktop + mobile) durante la sesión de construcción; `next/image` en logos/fotos, `next/font` self-hosted con `display: swap` desde Phase 1; `npm run build` limpio reconfirmado en esta sesión (18 rutas, sin errores) |
-| 4 | El sitio está desplegado y accesible en una URL pública de Vercel | ○ PENDING — requiere acción humana | No ejecutado — requiere login/autorización de Juan en Vercel, fuera del alcance de lo que un agente puede automatizar |
+| 4 | El sitio está desplegado y accesible en una URL pública | ◐ PARCIAL | **Decisión de infra cambió respecto al ROADMAP original: no Vercel, sino Dokploy autoalojado en el VPS propio de Juan** (`sapling-vps-01`, mismo stack que usa para sus otros clientes — ver `/Users/juan/Documents/Codigo/Personal/hosting`). Deploy ejecutado 2026-08-01: repo `github.com/Sve-nnN/dr-angulo-website` creado y pusheado, proyecto Dokploy `client-dr-angulo` creado, build exitoso (Nixpacks), contenedor corriendo y estable (`dr-angulo-website-nqscdc`, "Ready in 287ms" en los logs de runtime, sin crash-loop). **Falta únicamente el dominio público** — Juan decidió deployar sin dominio por ahora; sin un dominio con DNS apuntando a la IP del VPS + el paso Domain/SSL en Dokploy, el sitio no tiene una URL pública todavía. |
 
-**Score:** 3/4 truths verified
+**Score:** 3/4 truths verified (criterio 4 parcialmente cerrado — deploy sí, dominio no)
 
 ### Required Artifacts
 
@@ -34,7 +34,7 @@ behavior_unverified: 0
 | `src/app/blog/[slug]/page.tsx` | Artículo individual | ✓ EXISTS + SUBSTANTIVE | generateStaticParams + generateMetadata por post |
 | `src/app/privacidad/page.tsx` | Política de privacidad | ✓ EXISTS + SUBSTANTIVE | 5 secciones, robots noindex, canonical |
 | `src/components/cookie-consent-banner.tsx` | Banner de cookies | ✓ EXISTS + SUBSTANTIVE | Aceptar/Rechazar, link a /privacidad |
-| Deploy en Vercel (URL pública) | Sitio accesible públicamente | ✗ MISSING | No ejecutado — acción humana pendiente |
+| Deploy (URL pública) | Sitio accesible públicamente | ◐ PARTIAL | Contenedor deployado y corriendo en Dokploy (self-hosted), falta dominio para URL pública |
 
 **Artifacts:** 5/6 verified
 
@@ -58,34 +58,34 @@ behavior_unverified: 0
 | LEGAL-01 | ✓ SATISFIED | - |
 | LEGAL-02 | ✓ SATISFIED | - |
 | SEO-04 | ✓ SATISFIED | - |
-| INFRA-03 | ✗ BLOCKED | Deploy a Vercel no ejecutado — requiere acción humana de Juan (login/autorización) |
+| INFRA-03 | ◐ PARTIAL | Deploy ejecutado en Dokploy (self-hosted), falta asignar dominio para la URL pública |
 
 **Coverage:** 4/5 requirements satisfied
 
 ## Human Verification Required
 
-### 1. Deploy a Vercel
-**Test:** Correr `vercel login` seguido de `vercel deploy` desde la raíz del proyecto, o conectar el repositorio desde el dashboard de Vercel (https://vercel.com/new — framework Next.js se autodetecta, sin configuración adicional).
-**Expected:** El sitio queda accesible en una URL pública `*.vercel.app`.
-**Why human:** Requiere login/autorización de Juan en su propia cuenta de Vercel — un agente no puede autenticarse en su nombre.
+### 1. Asignar dominio público
+**Test:** Cuando Juan tenga un dominio (propio o subdominio) listo: apuntar el registro DNS `A` a la IP de `sapling-vps-01`, luego `domain.create` vía la API de Dokploy (`applicationId: 29ZFzVVwEczNI733DodMp`, puerto `3000`, HTTPS/Let's Encrypt) — ver `infra/API-DEPLOY-GUIDE.md` paso 8 en el repo `hosting`. Si el DNS está proxeado por Cloudflare, dejarlo en DNS-only para la primera emisión del certificado.
+**Expected:** El sitio queda accesible en `https://<dominio>`.
+**Why human:** Requiere que Juan decida/compre el dominio — un agente no puede elegir esto por él.
 
-### 2. Variables de entorno en producción (opcional, antes o después del deploy)
-**Test:** En el dashboard de Vercel → Project → Settings → Environment Variables, configurar `NEXT_PUBLIC_GA_ID`, `NEXT_PUBLIC_META_PIXEL_ID` y `RESEND_API_KEY`/`EMAIL_FROM` cuando Juan tenga esas cuentas y un dominio verificado.
+### 2. Variables de entorno en producción (opcional, antes o después del dominio)
+**Test:** Vía la API de Dokploy (`application.saveEnvironment` + `application.deploy`, o el script `infra/apps/set-env-and-redeploy.sh` del repo `hosting`) configurar `NEXT_PUBLIC_GA_ID`, `NEXT_PUBLIC_META_PIXEL_ID`, `RESEND_API_KEY`/`EMAIL_FROM` y `NEXT_PUBLIC_SITE_URL` (al dominio real) cuando Juan tenga esas cuentas.
 **Expected:** GA4/Meta Pixel y el envío de email por Resend quedan activos en producción; sin estas variables el sitio sigue funcionando normalmente (WhatsApp como fallback de contacto, los componentes de analytics simplemente no renderizan).
 **Why human:** Requiere credenciales y cuentas propias de Juan (Google Analytics, Meta Business, Resend) que un agente no posee ni puede crear en su nombre.
 
 ## Gaps Summary
 
-**1 gap — deploy a Vercel pendiente de acción de Juan. Resto de la fase completo.**
+**1 gap — dominio público pendiente de decisión de Juan. Resto de la fase completo, incluido el deploy.**
 
-No es un gap de código: el build de producción (`npm run build`) pasa limpio y todo lo verificable en el repositorio (blog, política de privacidad, banner de cookies, QA visual/responsive) está completo y confirmado. El único pendiente es la acción humana de publicar el sitio, detallada en "Human Verification Required" arriba.
+No es un gap de código ni de infraestructura: el sitio ya está deployado y corriendo de forma estable en el VPS propio de Juan (Dokploy, proyecto `client-dr-angulo` → app `dr-angulo-website`). El único pendiente es que Juan decida/consiga un dominio y lo apunte, detallado en "Human Verification Required" arriba.
 
 ### Non-Critical Gaps (Can Defer)
 
-1. **Deploy a Vercel no ejecutado**
-   - Issue: el sitio todavía no tiene una URL pública
-   - Impact: no bloquea la calidad ni la integridad del código — el build ya está listo para desplegarse tal cual, sin cambios pendientes
-   - Recommendation: ejecutar en cuanto Juan haga login en Vercel; pasos exactos en "Human Verification Required" arriba
+1. **Dominio público no asignado**
+   - Issue: el sitio corre pero no tiene una URL pública alcanzable desde internet (por diseño de seguridad de esta infra, no se publican puertos de host sin dominio)
+   - Impact: no bloquea la calidad ni la integridad del sitio — el contenedor está sano y corriendo, listo para recibir dominio en cualquier momento
+   - Recommendation: en cuanto Juan tenga un dominio, seguir el paso 1 de "Human Verification Required" arriba
 
 ## Verification Metadata
 
@@ -98,3 +98,5 @@ No es un gap de código: el build de producción (`npm run build`) pasa limpio y
 ---
 *Verified: 2026-07-31*
 *Verifier: Claude (sesión autónoma)*
+
+**Addendum (2026-08-01):** Deploy ejecutado — no en Vercel (nunca se usó, el .env.example original documentaba variables genéricas pero el hosting real no estaba decidido), sino en la infraestructura propia de Juan (Hetzner + Dokploy, `/Users/juan/Documents/Codigo/Personal/hosting`), el mismo stack que ya usa para sus otros clientes (juantech, Juan Portfolio). Repo: `github.com/Sve-nnN/dr-angulo-website`. Dokploy: proyecto `client-dr-angulo`, `applicationId: 29ZFzVVwEczNI733DodMp`, appName `dr-angulo-website-nqscdc`. Build Nixpacks exitoso tras regenerar `package-lock.json` para el target Linux (fix commiteado: `22f5a52`). Contenedor corriendo y estable, sin dominio público todavía (decisión explícita de Juan — dominio se agrega después). Detalle completo en `04-02-SUMMARY.md`.

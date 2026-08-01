@@ -9,7 +9,7 @@
 
 - [x] **INFRA-01**: Proyecto Next.js (App Router) + TypeScript + Tailwind CSS scaffolded y corriendo
 - [x] **INFRA-02**: Layout global (header/nav, footer, botón flotante de WhatsApp) presente en todas las páginas
-- [ ] **INFRA-03**: Sitio desplegado en Vercel accesible por URL pública (subdominio `.vercel.app`) — pendiente, requiere login/autorización de Juan
+- [ ] **INFRA-03**: Sitio desplegado y accesible por URL pública — deployado en Dokploy (infra propia de Juan, no Vercel), contenedor corriendo; falta solo que Juan asigne un dominio
 - [x] **INFRA-04**: Variables de entorno para WhatsApp, GA4, Meta Pixel, Resend documentadas (`.env.example`)
 
 ### BRAND — Identidad visual
@@ -88,7 +88,7 @@ Reconocidos pero fuera del roadmap actual.
 |-------------|-------|--------|
 | INFRA-01 | Phase 1 | Done |
 | INFRA-02 | Phase 1 | Done |
-| INFRA-03 | Phase 4 | Pending (deploy) |
+| INFRA-03 | Phase 4 | Pending (dominio) |
 | INFRA-04 | Phase 1 | Done |
 | BRAND-01 | Phase 1 | Done |
 | BRAND-02 | Phase 1 | Done |
