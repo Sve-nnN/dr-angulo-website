@@ -26,11 +26,13 @@
 - [x] **CONTENT-03**: Página de Testimonios
 - [x] **CONTENT-04**: Página de Preguntas Frecuentes (incluye objeciones: miedo a cirugía, recuperación)
 - [x] **CONTENT-05**: Página de Contacto con mapa/dirección de Clínica Montefiori
+- [x] **CONTENT-06**: Sección de abordajes quirúrgicos (convencional vs mínimamente invasivo) y patologías tratadas (deformidades, degenerativas, inflamatorias) en Servicios — agregado 2026-08-08
 
 ### CV — Trayectoria y credenciales
 
 - [x] **CV-01**: Página "Sobre el doctor" con biografía
 - [x] **CV-02**: Sección de formación académica, colegiatura (CMP/RNE), cursos y certificaciones — estructurada para ampliarse con el CV completo que el doctor comparta
+- [x] **CV-03**: Trayectoria confirmada por el doctor publicada (15 años de ejercicio, Universidad de Oriente, Instituto de Columna de Caracas, cursos nacionales e internacionales) — agregado 2026-08-08
 
 ### CONTACT — Conversión
 
@@ -61,6 +63,24 @@
 ### BLOG — Contenido SEO
 
 - [x] **BLOG-01**: Sección de blog/recursos con 4-6 artículos iniciales adaptados del propio contenido educativo de Instagram del doctor
+
+### MEDIA — Material real del doctor (agregado 2026-08-08)
+
+- [x] **MEDIA-01**: Fotos profesionales del doctor en Home, Sobre el doctor y Servicios, en AVIF optimizado
+- [x] **MEDIA-02**: Logo oficial del doctor en header, footer, favicon y apple icon, reemplazando el recorte de captura de Instagram
+- [x] **MEDIA-03**: Imagen social 1200x630 declarada en openGraph, twitter y `Physician.image`
+
+### SOCIAL — Feed de Instagram (agregado 2026-08-08)
+
+- [ ] **SOCIAL-01**: Carrusel con los últimos reels del Instagram del doctor en Home y Testimonios, autoactualizable vía API oficial y con degradación a tarjeta de perfil — código completo y verificado; falta vincular la cuenta
+- [ ] **SOCIAL-02**: Renovación automática del token de larga duración (endpoint protegido + cron) — endpoint listo; falta `CRON_SECRET`, volumen y cron programado
+
+### LOC — Sedes y agenda (agregado 2026-08-09)
+
+- [x] **LOC-01**: Las cuatro sedes donde atiende el doctor publicadas con días, horarios y direcciones
+- [x] **LOC-02**: Botón general de "Agendar cita" que lleva a una página donde el paciente elige sede y ve el canal de agenda de esa sede
+- [x] **LOC-03**: Alcance del WhatsApp explícito — solo agenda el consultorio privado; las clínicas tienen su propia central de citas
+- [x] **LOC-04**: NAP principal y JSON-LD en el consultorio privado, con las tres clínicas declaradas como `hospitalAffiliation`
 
 ## v2 Requirements
 
@@ -116,12 +136,23 @@ Reconocidos pero fuera del roadmap actual.
 | LEGAL-01 | Phase 4 | Done |
 | LEGAL-02 | Phase 4 | Done |
 | BLOG-01 | Phase 4 | Done |
+| CV-03 | Phase 5 | Done |
+| CONTENT-06 | Phase 5 | Done |
+| MEDIA-01 | Phase 5 | Done |
+| MEDIA-02 | Phase 5 | Done |
+| MEDIA-03 | Phase 5 | Done |
+| SOCIAL-01 | Phase 5 | Pending (vinculación de la cuenta) |
+| SOCIAL-02 | Phase 5 | Pending (CRON_SECRET, volumen y cron) |
+| LOC-01 | Phase 6 | Done |
+| LOC-02 | Phase 6 | Done |
+| LOC-03 | Phase 6 | Done |
+| LOC-04 | Phase 6 | Done |
 
 **Coverage:**
-- v1 requirements: 29 total
-- Mapped to phases: 29
+- v1 requirements: 40 total (29 originales + 7 en Phase 5 + 4 en Phase 6)
+- Mapped to phases: 40
 - Unmapped: 0 ✓
 
 ---
 *Requirements defined: 2026-07-31*
-*Last updated: 2026-07-31 after initial definition*
+*Last updated: 2026-08-09 tras Phase 6 (sedes, horarios y flujo de agenda)*
