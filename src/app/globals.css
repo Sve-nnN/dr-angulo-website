@@ -6,16 +6,25 @@
 
   --primary: #0e7c7e;
   --primary-light: #3fbfc2;
+  --primary-dark: #0a6265;
   --on-primary: #ffffff;
 
+  /* Dorado de marca. Superficie de CTA: lleva texto oscuro (--foreground),
+     no blanco — blanco sobre este dorado da 2.4:1 y no pasa WCAG AA. */
   --accent: #e8971f;
+  --accent-hover: #f2a83c;
   --accent-dark: #c97d0f;
+  /* Versión del dorado legible como texto e íconos sobre fondos claros (5.1:1). */
+  --accent-strong: #9a5c00;
 
-  --whatsapp: #25d366;
+  /* Verde WhatsApp, oscurecido lo justo para que el ícono blanco pase 3:1. */
+  --whatsapp: #1a9c4d;
 
   --muted: #ecfafa;
   --border: #d7efef;
   --destructive: #dc2626;
+
+  --ring: var(--primary);
 }
 
 @theme inline {
@@ -24,16 +33,20 @@
 
   --color-primary: var(--primary);
   --color-primary-light: var(--primary-light);
+  --color-primary-dark: var(--primary-dark);
   --color-on-primary: var(--on-primary);
 
   --color-accent: var(--accent);
+  --color-accent-hover: var(--accent-hover);
   --color-accent-dark: var(--accent-dark);
+  --color-accent-strong: var(--accent-strong);
 
   --color-whatsapp: var(--whatsapp);
 
   --color-muted: var(--muted);
   --color-border: var(--border);
   --color-destructive: var(--destructive);
+  --color-ring: var(--ring);
 
   --font-heading: var(--font-poppins);
   --font-sans: var(--font-inter);
@@ -42,6 +55,34 @@
 body {
   background: var(--background);
   color: var(--foreground);
+}
+
+/* El header es sticky (72px): los anclajes internos no deben quedar debajo. */
+html {
+  scroll-padding-top: 5.5rem;
+}
+
+/* Foco visible en todo control, sin repetir la clase en cada componente.
+   3px según el checklist del sistema (design-system/dr-angulo/MASTER.md). */
+:where(a, button, input, select, textarea, summary, [tabindex]):focus-visible {
+  outline: 3px solid var(--ring);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
 
 /* Sitio de una sola marca — sin modo oscuro automático (decisión deliberada, ver design-system/dr-angulo/MASTER.md) */

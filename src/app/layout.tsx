@@ -37,11 +37,20 @@ export const metadata: Metadata = {
     title: `${siteConfig.name} — ${siteConfig.title}`,
     description: siteConfig.description,
     url: siteConfig.url,
+    images: [
+      {
+        url: "/og-dr-angulo.jpg",
+        width: 1200,
+        height: 630,
+        alt: `${siteConfig.name}, traumatólogo y cirujano de columna en Lima`,
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: `${siteConfig.name} — ${siteConfig.title}`,
     description: siteConfig.description,
+    images: ["/og-dr-angulo.jpg"],
   },
   robots: { index: true, follow: true },
 };
@@ -59,8 +68,16 @@ export default function RootLayout({
     >
       <body className="flex min-h-full flex-col font-sans" suppressHydrationWarning>
         <PhysicianJsonLd />
+        <a
+          href="#contenido"
+          className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:rounded-lg focus:bg-primary focus:px-4 focus:py-3 focus:text-base focus:font-semibold focus:text-on-primary"
+        >
+          Saltar al contenido
+        </a>
         <Header />
-        <main className="flex-1">{children}</main>
+        <main id="contenido" tabIndex={-1} className="flex-1">
+          {children}
+        </main>
         <Footer />
         <WhatsAppFloatButton />
         <CookieConsentBanner />

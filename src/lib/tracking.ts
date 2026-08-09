@@ -18,6 +18,14 @@ export function trackWhatsAppClick(location: CtaLocation) {
   window.fbq?.("track", "Contact", { cta_location: location });
 }
 
+/** Dispara el evento de clic en un reel del carrusel de Instagram. */
+export function trackReelClick(reelId: string) {
+  window.gtag?.("event", "instagram_reel_click", {
+    event_category: "engagement",
+    reel_id: reelId,
+  });
+}
+
 /** Dispara el evento de envío de formulario de contacto/cita. */
 export function trackFormSubmit(outcome: "email" | "whatsapp_fallback") {
   window.gtag?.("event", "generate_lead", {

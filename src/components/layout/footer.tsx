@@ -14,8 +14,8 @@ export function Footer() {
         <div>
           <div className="flex items-center gap-3">
             <Image
-              src="/logo-icon-square.png"
-              alt="Logo Dr. Juan Angulo Totesaut"
+              src="/logo-icon-square.avif"
+              alt=""
               width={44}
               height={44}
               className="shrink-0 rounded-full"
@@ -31,34 +31,47 @@ export function Footer() {
             <Stethoscope className="size-4 shrink-0" aria-hidden="true" />
             {siteConfig.specialties.join(" · ")}
           </p>
-          <p className="mt-2 text-xs text-foreground/50">
+          <p className="mt-2 text-xs text-foreground/70">
             CMP {siteConfig.credentials.cmp} · RNE {siteConfig.credentials.rne}
           </p>
         </div>
 
         <div>
           <h2 className="font-heading text-sm font-bold uppercase tracking-wide text-primary">
-            Consultorio
+            Consultorio privado
           </h2>
           <p className="mt-3 flex items-start gap-2 text-sm text-foreground/70">
             <MapPin className="mt-0.5 size-4 shrink-0" aria-hidden="true" />
             <a
-              href={siteConfig.clinic.mapsUrl}
+              href={siteConfig.office.mapsUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:text-primary hover:underline"
+              className="transition-colors duration-150 hover:text-primary hover:underline"
             >
-              {siteConfig.clinic.name} — {siteConfig.clinic.streetAddress},{" "}
-              {siteConfig.clinic.addressLocality}, {siteConfig.clinic.addressRegion}
+              {siteConfig.office.streetAddress}, {siteConfig.office.addressLocality},{" "}
+              {siteConfig.office.addressRegion} ({siteConfig.office.building})
+              <span className="sr-only"> (abre Google Maps en una pestaña nueva)</span>
             </a>
           </p>
           <p className="mt-2 flex items-center gap-2 text-sm text-foreground/70">
             <Phone className="size-4 shrink-0" aria-hidden="true" />
-            {siteConfig.whatsapp.displayNumber}
+            <a
+              href={`tel:+${siteConfig.whatsapp.number}`}
+              className="transition-colors duration-150 hover:text-primary hover:underline"
+            >
+              {siteConfig.whatsapp.displayNumber}
+            </a>
           </p>
-          <p className="mt-1 text-xs text-foreground/50">
-            Atención con cita previa — coordina tu horario por WhatsApp
+          <p className="mt-3 text-xs text-foreground/70">
+            También atiende en Clínica Ricardo Palma, Sanna La Molina y Clínica
+            Tezza, con la agenda de cada clínica.
           </p>
+          <Link
+            href="/agendar"
+            className="mt-2 inline-block text-sm font-semibold text-primary transition-colors duration-150 hover:text-primary-dark hover:underline"
+          >
+            Ver sedes y horarios
+          </Link>
         </div>
 
         <div>
@@ -66,7 +79,7 @@ export function Footer() {
             Contacto rápido
           </h2>
           <div className="mt-3">
-            <WhatsAppCta location="footer" variant="whatsapp">
+            <WhatsAppCta location="footer" variant="outline">
               Escribir por WhatsApp
             </WhatsAppCta>
           </div>
@@ -74,16 +87,17 @@ export function Footer() {
             href={siteConfig.social.instagram}
             target="_blank"
             rel="noopener noreferrer"
-            className="mt-4 flex items-center gap-2 text-sm text-foreground/70 hover:text-primary"
+            className="mt-4 inline-flex items-center gap-2 text-sm text-foreground/70 transition-colors duration-150 hover:text-primary"
           >
             <InstagramIcon className="size-4 shrink-0" />
             @dr.juancarlosangulo
+            <span className="sr-only"> (se abre en una pestaña nueva)</span>
           </a>
         </div>
       </div>
 
       <div className="border-t border-border">
-        <div className="mx-auto flex max-w-6xl flex-col gap-2 px-4 py-5 text-xs text-foreground/60 sm:flex-row sm:items-center sm:justify-between sm:px-6">
+        <div className="mx-auto flex max-w-6xl flex-col gap-2 px-4 py-5 text-xs text-foreground/70 sm:flex-row sm:items-center sm:justify-between sm:px-6">
           <p>
             © {year} {siteConfig.name}. Todos los derechos reservados.
           </p>
