@@ -1,7 +1,7 @@
 import Link from "next/link";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { ArrowLeft, CalendarDays } from "lucide-react";
+import { ArrowLeft } from "lucide-react";
 import { WhatsAppCta } from "@/components/ui/whatsapp-cta";
 import { blogPosts } from "@/content/blog";
 
@@ -53,25 +53,26 @@ export default async function BlogPostPage({ params }: Props) {
         Volver al blog
       </Link>
 
-      <p className="mt-6 flex items-center gap-2 text-xs font-medium text-foreground/50">
-        <CalendarDays className="size-3.5" aria-hidden="true" />
-        {dateFormatter.format(new Date(post.date))}
+      <p className="mt-8 text-sm text-foreground/70">
+        <time dateTime={post.date}>
+          {dateFormatter.format(new Date(post.date))}
+        </time>
       </p>
       <h1 className="mt-2 font-heading text-2xl font-extrabold text-primary sm:text-3xl">
         {post.title}
       </h1>
 
-      <div className="prose-content mt-8 space-y-4 text-foreground/80">
+      <div className="prose-content mt-8 space-y-5 text-lg text-foreground/80">
         {post.paragraphs.map((p, i) => (
           <p key={i}>{p}</p>
         ))}
       </div>
 
-      <div className="mt-12 rounded-xl bg-muted p-6 text-center">
-        <p className="font-semibold text-foreground">
+      <div className="mt-14 border-t border-border pt-10">
+        <p className="font-heading text-lg font-bold text-foreground">
           ¿Reconoces alguno de estos síntomas?
         </p>
-        <div className="mt-4 flex justify-center">
+        <div className="mt-5">
           <WhatsAppCta location="services" variant="accent">
             Agendar una evaluación
           </WhatsAppCta>

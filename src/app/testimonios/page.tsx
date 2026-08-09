@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import { Quote } from "lucide-react";
+import { ArrowRight } from "lucide-react";
+import { InstagramReelsSection } from "@/components/instagram/instagram-reels-section";
 import { WhatsAppCta } from "@/components/ui/whatsapp-cta";
 import { testimonials, reviewLinks } from "@/content/testimonials";
 
@@ -10,24 +11,28 @@ export const metadata: Metadata = {
   alternates: { canonical: "/testimonios" },
 };
 
+/** ISR: la página se regenera cada hora para tomar los reels nuevos. */
+export const revalidate = 3600;
+
 export default function TestimoniosPage() {
   return (
     <div className="mx-auto max-w-3xl px-4 py-14 sm:px-6 sm:py-20">
-      <p className="text-sm font-semibold uppercase tracking-wide text-accent">
-        Testimonios
-      </p>
-      <h1 className="mt-2 font-heading text-3xl font-extrabold text-primary sm:text-4xl">
+      <h1 className="font-heading text-3xl font-extrabold text-primary sm:text-4xl">
         Lo que dicen sus pacientes
       </h1>
 
-      <div className="mt-10 space-y-6">
+      <p className="mt-5 max-w-2xl text-lg text-foreground/70">
+        Los pacientes operados cuentan su recuperación en video. Abajo están sus
+        testimonios y las reseñas publicadas en Doctoralia.
+      </p>
+
+      <div className="mt-12 divide-y divide-border border-y border-border">
         {testimonials.map((t, i) => (
-          <figure key={i} className="rounded-xl border border-border bg-white p-6 shadow-sm">
-            <Quote className="size-6 text-accent" aria-hidden="true" />
-            <blockquote className="mt-3 text-lg text-foreground/80">
+          <figure key={i} className="py-6">
+            <blockquote className="font-heading text-lg font-bold text-foreground">
               &ldquo;{t.quote}&rdquo;
             </blockquote>
-            <figcaption className="mt-4 text-sm font-semibold text-foreground/60">
+            <figcaption className="mt-2 text-sm text-foreground/70">
               {t.author} — vía {t.source}
               {t.date ? ` · ${t.date}` : ""}
             </figcaption>
@@ -35,22 +40,36 @@ export default function TestimoniosPage() {
         ))}
       </div>
 
-      <div className="mt-8 rounded-xl border-2 border-dashed border-border p-6 text-center">
-        <p className="text-foreground/70">
-          Esta página se actualiza con reseñas reales a medida que llegan. Puedes
-          ver el historial completo de opiniones verificadas en Doctoralia.
-        </p>
+      <div className="mt-10 flex flex-col gap-5 sm:flex-row sm:gap-10">
+        <a
+          href={reviewLinks.instagram}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-2 font-semibold text-primary transition-colors duration-150 hover:text-primary-dark hover:underline"
+        >
+          Testimonios en video, en Instagram
+          <ArrowRight className="size-4" aria-hidden="true" />
+          <span className="sr-only"> (se abre en una pestaña nueva)</span>
+        </a>
         <a
           href={reviewLinks.doctoralia}
           target="_blank"
           rel="noopener noreferrer"
-          className="mt-3 inline-block font-semibold text-primary hover:underline"
+          className="inline-flex items-center gap-2 font-semibold text-primary transition-colors duration-150 hover:text-primary-dark hover:underline"
         >
-          Ver reseñas en Doctoralia →
+          Reseñas en Doctoralia
+          <ArrowRight className="size-4" aria-hidden="true" />
+          <span className="sr-only"> (se abre en una pestaña nueva)</span>
         </a>
       </div>
 
-      <div className="mt-12 text-center">
+      <InstagramReelsSection
+        className="mt-20 border-t border-border pt-14"
+        title="Videos del consultorio"
+        intro="Testimonios, casos y explicaciones que el doctor publica en su Instagram. Se actualiza solo con cada nuevo reel."
+      />
+
+      <div className="mt-16 border-t border-border pt-12">
         <WhatsAppCta location="services" variant="accent">
           Agendar una cita
         </WhatsAppCta>

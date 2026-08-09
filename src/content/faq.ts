@@ -42,8 +42,13 @@ export const faqItems: FaqItem[] = [
       "Si ya tienes radiografías, resonancias magnéticas u otros estudios previos, llévalos o compártelos por WhatsApp antes de la cita — ayudan a que la evaluación sea más completa desde el primer momento. Si no tienes estudios previos, no es un impedimento para agendar tu primera consulta.",
   },
   {
+    question: "¿En qué consultorios atiende el Dr. Angulo?",
+    answer:
+      "En cuatro sedes de Lima: su consultorio privado en Av. El Derby 254, piso 24, oficina 2403, Surco (edificio Lima Central Tower), los viernes y sábados; Clínica Ricardo Palma, lunes y miércoles de 9:00 a. m. a 6:00 p. m.; Clínica Sanna sede La Molina, martes de 8:00 a. m. a 7:00 p. m. y jueves de 8:00 a. m. a 12:00 p. m.; y Clínica Padre Luis Tezza, jueves y viernes de 2:00 p. m. a 6:00 p. m.",
+  },
+  {
     question: "¿Cómo agendo una cita?",
     answer:
-      "El canal más rápido es WhatsApp al +51 964 305 682, o puedes escribir por el formulario de la sección de Contacto. La atención es en Clínica Montefiori (La Molina), con cita previa.",
+      "Depende de dónde quieras atenderte. En el consultorio privado se agenda por WhatsApp al +51 964 305 682, que es la agenda que maneja el propio doctor. En Ricardo Palma, Sanna y Tezza la cita se saca con cada clínica: por su central telefónica, su web o su app, según la sede. El doctor no puede reservar citas de las clínicas por ti porque esas agendas son de cada institución.",
   },
 ];

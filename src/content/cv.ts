@@ -1,19 +1,23 @@
 export type CvEntry = { title: string; place: string; period?: string };
 
 /**
- * Formación y trayectoria verificada públicamente (Doctoralia, LinkedIn) al
- * momento de construir el sitio. PENDIENTE: el doctor debe compartir su CV
- * completo (más cursos, certificaciones y congresos) para ampliar esta
- * sección — no se inventan credenciales no verificadas.
+ * Formación y trayectoria confirmadas por el propio doctor (ago. 2026) y
+ * verificadas públicamente en Doctoralia y LinkedIn. Se amplía a medida que el
+ * consultorio comparte más cursos y certificaciones — no se inventan
+ * credenciales no verificadas.
  */
 export const education: CvEntry[] = [
   {
-    title: "Residencia en Traumatología y Ortopedia",
+    title: "Especialista en Traumatología y Ortopedia",
     place: "Universidad de Oriente, Núcleo Bolívar",
   },
   {
-    title: "Cursos de especialización en cirugía de columna, ecografía y reanimación cardiopulmonar",
-    place: "Formación continua",
+    title: "Especialización en Cirugía de Columna",
+    place: "Instituto de Columna de Caracas, Hospital de Clínicas Caracas",
+  },
+  {
+    title: "Cursos y entrenamientos nacionales e internacionales en cirugía de columna",
+    place: "Formación continua, incluida técnica mínimamente invasiva",
   },
 ];
 
@@ -31,11 +35,19 @@ export const experience: CvEntry[] = [
   {
     title: "Traumatólogo y cirujano de columna",
     place: "Clínica Montefiori, La Molina, Lima",
-    period: "desde dic. 2018 — sede actual",
+    period: "desde dic. 2018",
+  },
+  {
+    title: "Traumatólogo y cirujano de columna",
+    place:
+      "Clínica Ricardo Palma, Clínica Sanna La Molina, Clínica Padre Luis Tezza y consultorio privado en Surco",
+    period: "sedes actuales",
   },
 ];
 
 export const credentialsInfo = {
   cmp: "83189",
   rne: "35310",
+  /** Años de ejercicio profesional confirmados por el doctor (ago. 2026). */
+  yearsOfExperience: 15,
 };
