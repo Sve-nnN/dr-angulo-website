@@ -21,4 +21,6 @@ export const testimonials: Testimonial[] = [
 
 export const reviewLinks = {
   doctoralia: "https://www.doctoralia.pe/perfil/juan-carlos-angulo-totesaut",
+  /** Publicación de Instagram con testimonios en video de pacientes. */
+  instagram: "https://www.instagram.com/p/CoE2FSWOJgR/",
 };

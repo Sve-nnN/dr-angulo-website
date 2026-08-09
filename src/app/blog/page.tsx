@@ -1,6 +1,5 @@
 import Link from "next/link";
 import type { Metadata } from "next";
-import { ArrowRight, CalendarDays } from "lucide-react";
 import { blogPosts } from "@/content/blog";
 
 export const metadata: Metadata = {
@@ -20,33 +19,31 @@ const dateFormatter = new Intl.DateTimeFormat("es-PE", {
 export default function BlogPage() {
   return (
     <div className="mx-auto max-w-3xl px-4 py-14 sm:px-6 sm:py-20">
-      <p className="text-sm font-semibold uppercase tracking-wide text-accent">Blog</p>
-      <h1 className="mt-2 font-heading text-3xl font-extrabold text-primary sm:text-4xl">
+      <h1 className="font-heading text-3xl font-extrabold text-primary sm:text-4xl">
         Artículos sobre columna y traumatología
       </h1>
-      <p className="mt-4 text-foreground/70">
-        Información clara para entender qué te pasa antes de tu consulta.
+      <p className="mt-5 text-lg text-foreground/70">
+        Para entender qué te pasa antes de llegar a la consulta.
       </p>
 
-      <div className="mt-10 space-y-6">
+      <div className="mt-12 divide-y divide-border border-y border-border">
         {blogPosts.map((post) => (
-          <Link
-            key={post.slug}
-            href={`/blog/${post.slug}`}
-            className="block rounded-xl border border-border bg-white p-6 shadow-sm transition-shadow duration-200 hover:shadow-md"
-          >
-            <p className="flex items-center gap-2 text-xs font-medium text-foreground/50">
-              <CalendarDays className="size-3.5" aria-hidden="true" />
-              {dateFormatter.format(new Date(post.date))}
+          <article key={post.slug} className="py-8">
+            <p className="text-sm text-foreground/70">
+              <time dateTime={post.date}>
+                {dateFormatter.format(new Date(post.date))}
+              </time>
             </p>
-            <h2 className="mt-2 font-heading text-lg font-bold text-primary">
-              {post.title}
+            <h2 className="mt-2 font-heading text-xl font-bold text-primary">
+              <Link
+                href={`/blog/${post.slug}`}
+                className="transition-colors duration-150 hover:text-primary-dark hover:underline"
+              >
+                {post.title}
+              </Link>
             </h2>
-            <p className="mt-2 text-sm text-foreground/70">{post.description}</p>
-            <span className="mt-3 inline-flex items-center gap-1 text-sm font-semibold text-primary">
-              Leer artículo <ArrowRight className="size-3.5" aria-hidden="true" />
-            </span>
-          </Link>
+            <p className="mt-3 text-foreground/80">{post.description}</p>
+          </article>
         ))}
       </div>
     </div>

@@ -1,90 +1,116 @@
 import type { Metadata } from "next";
-import { Clock, MapPin, Phone } from "lucide-react";
+import Link from "next/link";
 import { ContactForm } from "@/components/contact-form";
 import { WhatsAppCta } from "@/components/ui/whatsapp-cta";
+import { primaryLocation } from "@/content/locations";
 import { siteConfig } from "@/lib/site-config";
 
 export const metadata: Metadata = {
-  title: "Contacto y Citas en La Molina, Lima",
+  title: "Contacto y Citas en Lima",
   description:
-    "Agenda tu cita con el Dr. Juan Carlos Angulo en Clínica Montefiori, La Molina, Lima. Escribe por WhatsApp o completa el formulario.",
+    "Escribe tu caso al Dr. Juan Carlos Angulo o agenda en su consultorio privado de Surco por WhatsApp. También atiende en Clínica Ricardo Palma, Sanna La Molina y Clínica Tezza.",
   alternates: { canonical: "/contacto" },
 };
 
 export default function ContactoPage() {
   const mapQuery = encodeURIComponent(
-    `${siteConfig.clinic.name}, ${siteConfig.clinic.streetAddress}, ${siteConfig.clinic.addressLocality}, Lima, Perú`
+    `Lima Central Tower, ${siteConfig.office.streetAddress}, ${siteConfig.office.addressLocality}, Lima, Perú`
   );
 
   return (
     <div className="mx-auto max-w-5xl px-4 py-14 sm:px-6 sm:py-20">
-      <p className="text-sm font-semibold uppercase tracking-wide text-accent">
+      <h1 className="font-heading text-3xl font-extrabold text-primary sm:text-4xl">
         Contacto
-      </p>
-      <h1 className="mt-2 font-heading text-3xl font-extrabold text-primary sm:text-4xl">
-        Agenda tu cita
       </h1>
+      <p className="mt-5 max-w-2xl text-lg text-foreground/70">
+        Cuéntale tu caso al doctor por el formulario, o escribe por WhatsApp
+        para agendar en su consultorio privado.
+      </p>
       <p className="mt-4 max-w-2xl text-foreground/70">
-        El canal más rápido es WhatsApp. Si prefieres, completa el formulario y
-        te contactamos a la brevedad.
+        Si quieres atenderte en Ricardo Palma, Sanna o Tezza, la cita se saca
+        con cada clínica.{" "}
+        <Link
+          href="/agendar"
+          className="font-semibold text-primary transition-colors duration-150 hover:text-primary-dark hover:underline"
+        >
+          Ver las cuatro sedes y sus horarios
+        </Link>
+        .
       </p>
 
-      <div className="mt-10 grid gap-10 lg:grid-cols-2">
-        <div>
-          <ContactForm />
-        </div>
+      <div className="mt-12 grid gap-12 lg:grid-cols-2 lg:gap-16">
+        <div className="lg:order-2">
+          <h2 className="font-heading text-xl font-bold text-primary">
+            Dónde y cómo
+          </h2>
 
-        <div className="space-y-6">
-          <div className="rounded-xl border border-border bg-white p-6 shadow-sm">
-            <div className="flex items-start gap-3">
-              <MapPin className="mt-1 size-5 shrink-0 text-primary" aria-hidden="true" />
-              <div>
-                <p className="font-semibold text-foreground">{siteConfig.clinic.name}</p>
-                <p className="text-sm text-foreground/70">
-                  {siteConfig.clinic.streetAddress}, {siteConfig.clinic.addressLocality},{" "}
-                  {siteConfig.clinic.addressRegion}
+          <dl className="mt-5 divide-y divide-border border-y border-border">
+            <div className="grid gap-1 py-4 sm:grid-cols-[7rem_1fr] sm:gap-4">
+              <dt className="text-sm font-semibold text-foreground/70">
+                Consultorio
+              </dt>
+              <dd>
+                <p className="font-semibold text-foreground">
+                  {siteConfig.office.name}
+                </p>
+                <p className="mt-0.5 text-sm text-foreground/70">
+                  {siteConfig.office.streetAddress},{" "}
+                  {siteConfig.office.addressLocality},{" "}
+                  {siteConfig.office.addressRegion}
+                  <br />
+                  {siteConfig.office.building}
                 </p>
                 <a
-                  href={siteConfig.clinic.mapsUrl}
+                  href={siteConfig.office.mapsUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="mt-1 inline-block text-sm font-semibold text-primary hover:underline"
+                  className="mt-1.5 inline-block text-sm font-semibold text-primary transition-colors duration-150 hover:text-primary-dark hover:underline"
                 >
-                  Cómo llegar →
+                  Cómo llegar
+                  <span className="sr-only"> (abre Google Maps en una pestaña nueva)</span>
                 </a>
-              </div>
+              </dd>
             </div>
 
-            <div className="mt-4 flex items-start gap-3">
-              <Phone className="mt-1 size-5 shrink-0 text-primary" aria-hidden="true" />
-              <div>
-                <p className="font-semibold text-foreground">
+            <div className="grid gap-1 py-4 sm:grid-cols-[7rem_1fr] sm:gap-4">
+              <dt className="text-sm font-semibold text-foreground/70">
+                WhatsApp
+              </dt>
+              <dd>
+                <a
+                  href={`tel:+${siteConfig.whatsapp.number}`}
+                  className="font-semibold text-foreground transition-colors duration-150 hover:text-primary hover:underline"
+                >
                   {siteConfig.whatsapp.displayNumber}
-                </p>
-                <p className="text-sm text-foreground/70">WhatsApp preferido</p>
-              </div>
+                </a>
+              </dd>
             </div>
 
-            <div className="mt-4 flex items-start gap-3">
-              <Clock className="mt-1 size-5 shrink-0 text-primary" aria-hidden="true" />
-              <div>
-                <p className="font-semibold text-foreground">Atención con cita previa</p>
-                <p className="text-sm text-foreground/70">
-                  Coordina el horario disponible por WhatsApp
+            <div className="grid gap-1 py-4 sm:grid-cols-[7rem_1fr] sm:gap-4">
+              <dt className="text-sm font-semibold text-foreground/70">
+                Horarios
+              </dt>
+              <dd>
+                <p className="font-semibold text-foreground">
+                  {primaryLocation.schedule[0].days}
                 </p>
-              </div>
+                <p className="mt-0.5 text-sm text-foreground/70">
+                  El horario exacto se coordina por WhatsApp. Los otros días
+                  atiende en clínicas, con la agenda de cada una.
+                </p>
+              </dd>
             </div>
+          </dl>
 
-            <div className="mt-5">
-              <WhatsAppCta location="contact_page" variant="whatsapp" className="w-full">
-                Escribir por WhatsApp
-              </WhatsAppCta>
-            </div>
+          <div className="mt-6">
+            <WhatsAppCta location="contact_page" variant="accent" className="w-full sm:w-auto">
+              Escribir por WhatsApp
+            </WhatsAppCta>
           </div>
 
-          <div className="overflow-hidden rounded-xl border border-border shadow-sm">
+          <div className="mt-8 overflow-hidden rounded-2xl border border-border">
             <iframe
-              title={`Mapa de ${siteConfig.clinic.name}`}
+              title={`Mapa de ${siteConfig.office.name}`}
               src={`https://www.google.com/maps?q=${mapQuery}&output=embed`}
               width="100%"
               height="280"
@@ -92,6 +118,15 @@ export default function ContactoPage() {
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
             />
+          </div>
+        </div>
+
+        <div className="lg:order-1">
+          <h2 className="font-heading text-xl font-bold text-primary">
+            Escribe tu caso
+          </h2>
+          <div className="mt-5">
+            <ContactForm />
           </div>
         </div>
       </div>

@@ -11,16 +11,22 @@ export const siteConfig = {
     displayNumber: "+51 964 305 682",
   },
 
-  clinic: {
-    name: "Clínica Montefiori",
-    streetAddress: "Av. Separadora Industrial 1820",
-    addressLocality: "La Molina",
+  /**
+   * NAP principal del sitio: el consultorio propio del doctor, el único cuya
+   * agenda maneja él. Las otras tres sedes viven en `src/content/locations.ts`
+   * porque cada una se agenda con su propia clínica.
+   */
+  office: {
+    name: "Consultorio del Dr. Angulo",
+    streetAddress: "Av. El Derby 254, piso 24, oficina 2403",
+    building: "Edificio Lima Central Tower",
+    addressLocality: "Santiago de Surco",
     addressRegion: "Lima",
     postalCode: "15023",
     addressCountry: "PE",
-    geo: { latitude: -12.062068, longitude: -76.955711 },
+    geo: { latitude: -12.0977043, longitude: -76.9729404 },
     mapsUrl:
-      "https://www.google.com/maps/search/?api=1&query=Cl%C3%ADnica+Montefiori+Av.+Separadora+Industrial+1820+La+Molina+Lima",
+      "https://www.google.com/maps/search/?api=1&query=Lima%20Central%20Tower%2C%20Av.%20El%20Derby%20254%2C%20Santiago%20de%20Surco%2C%20Lima%2C%20Per%C3%BA",
   },
 
   credentials: {
@@ -48,12 +54,14 @@ export function whatsappUrl(message: string) {
 }
 
 export const whatsappMessages = {
-  header: "Hola Dr. Angulo, quisiera agendar una cita.",
+  header: "Hola Dr. Angulo, quisiera agendar una cita en su consultorio privado.",
   hero: "Hola Dr. Angulo, vi su página web y quisiera agendar una cita de evaluación.",
   floating_button: "Hola Dr. Angulo, quisiera hacerle una consulta.",
   services: "Hola Dr. Angulo, quisiera más información sobre sus servicios y agendar una cita.",
   footer: "Hola Dr. Angulo, quisiera más información sobre citas.",
   contact_page: "Hola Dr. Angulo, quisiera agendar una cita. Mis datos:",
+  booking_page:
+    "Hola Dr. Angulo, quisiera agendar una cita en su consultorio privado (Av. El Derby 254, Surco).",
 } as const;
 
 export type CtaLocation = keyof typeof whatsappMessages;

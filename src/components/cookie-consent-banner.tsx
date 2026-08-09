@@ -20,7 +20,7 @@ export function CookieConsentBanner() {
 
   return (
     <div
-      role="dialog"
+      role="region"
       aria-label="Aviso de cookies"
       className="fixed inset-x-0 bottom-0 z-50 border-t border-border bg-background px-4 py-4 shadow-xl sm:px-6"
     >
@@ -37,14 +37,14 @@ export function CookieConsentBanner() {
           <button
             type="button"
             onClick={() => setStoredConsent("denied")}
-            className="cursor-pointer rounded-lg border-2 border-primary px-4 py-2 text-sm font-semibold text-primary transition-colors duration-150 hover:bg-muted"
+            className="min-h-11 flex-1 cursor-pointer rounded-lg border-2 border-primary px-4 py-2 text-sm font-semibold text-primary transition-colors duration-150 hover:bg-muted sm:flex-none"
           >
             Rechazar
           </button>
           <button
             type="button"
             onClick={() => setStoredConsent("granted")}
-            className="cursor-pointer rounded-lg bg-primary px-4 py-2 text-sm font-semibold text-white transition-colors duration-150 hover:opacity-90"
+            className="min-h-11 flex-1 cursor-pointer rounded-lg bg-primary px-4 py-2 text-sm font-semibold text-on-primary transition-colors duration-150 hover:bg-primary-dark sm:flex-none"
           >
             Aceptar
           </button>

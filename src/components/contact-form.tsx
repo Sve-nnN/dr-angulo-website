@@ -2,7 +2,7 @@
 
 import { useActionState, useEffect, useRef } from "react";
 import { useFormStatus } from "react-dom";
-import { MessageCircle } from "lucide-react";
+import { Loader2, MessageCircle } from "lucide-react";
 import { submitContactForm, type ContactState } from "@/app/actions/contact";
 import { trackFormSubmit } from "@/lib/tracking";
 import { whatsappUrl } from "@/lib/site-config";
@@ -15,8 +15,14 @@ function SubmitButton() {
     <button
       type="submit"
       disabled={pending}
-      className="inline-flex w-full cursor-pointer items-center justify-center rounded-lg bg-primary px-6 py-3 text-base font-semibold text-white transition-opacity duration-150 hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-60 sm:w-auto"
+      className="inline-flex w-full cursor-pointer items-center justify-center gap-2 rounded-lg bg-primary px-6 py-3 text-base font-semibold text-on-primary transition-colors duration-150 hover:bg-primary-dark disabled:cursor-not-allowed disabled:bg-primary/60 sm:w-auto"
     >
+      {pending && (
+        <Loader2
+          className="size-5 animate-spin motion-reduce:animate-none"
+          aria-hidden="true"
+        />
+      )}
       {pending ? "Enviando…" : "Enviar mensaje"}
     </button>
   );
@@ -25,11 +31,14 @@ function SubmitButton() {
 export function ContactForm() {
   const [state, formAction] = useActionState(submitContactForm, initialState);
   const trackedRef = useRef(false);
+  const successRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     if (state.status === "success" && !trackedRef.current) {
       trackedRef.current = true;
       trackFormSubmit("email");
+      // El formulario desaparece: el foco tiene que aterrizar en la confirmación.
+      successRef.current?.focus();
     }
     if (state.status !== "success") {
       trackedRef.current = false;
@@ -38,7 +47,12 @@ export function ContactForm() {
 
   if (state.status === "success") {
     return (
-      <div className="rounded-xl border border-border bg-white p-6 text-center shadow-sm">
+      <div
+        ref={successRef}
+        role="status"
+        tabIndex={-1}
+        className="rounded-xl border border-border bg-white p-6 text-center shadow-sm"
+      >
         <p className="font-heading text-lg font-bold text-primary">
           ¡Mensaje recibido!
         </p>
@@ -50,10 +64,11 @@ export function ContactForm() {
           href={whatsappUrl(state.whatsappMessage || "Hola Dr. Angulo, quisiera agendar una cita.")}
           target="_blank"
           rel="noopener noreferrer"
-          className="mt-4 inline-flex cursor-pointer items-center justify-center gap-2 rounded-lg bg-whatsapp px-6 py-3 font-semibold text-white transition-transform duration-150 hover:scale-[1.02]"
+          className="mt-4 inline-flex cursor-pointer items-center justify-center gap-2 rounded-lg bg-accent px-6 py-3 font-semibold text-foreground shadow-sm transition-[background-color,transform,box-shadow] duration-200 ease-out hover:-translate-y-px hover:bg-accent-hover hover:shadow-md motion-reduce:hover:translate-y-0"
         >
           <MessageCircle className="size-5" aria-hidden="true" />
           Continuar por WhatsApp
+          <span className="sr-only"> (se abre en una pestaña nueva)</span>
         </a>
       </div>
     );
@@ -81,7 +96,7 @@ export function ContactForm() {
           type="text"
           required
           autoComplete="name"
-          className="w-full rounded-lg border border-border px-4 py-3 text-base transition-colors duration-150 focus:border-primary focus:outline-none focus:ring-3 focus:ring-primary/20"
+          className="w-full rounded-lg border border-border bg-white px-4 py-3 text-base placeholder:text-foreground/70 transition-colors duration-150 focus:border-primary focus:outline-none focus:ring-[3px] focus:ring-primary/45"
         />
       </div>
 
@@ -96,20 +111,20 @@ export function ContactForm() {
           required
           autoComplete="tel"
           placeholder="+51 9XX XXX XXX"
-          className="w-full rounded-lg border border-border px-4 py-3 text-base transition-colors duration-150 focus:border-primary focus:outline-none focus:ring-3 focus:ring-primary/20"
+          className="w-full rounded-lg border border-border bg-white px-4 py-3 text-base placeholder:text-foreground/70 transition-colors duration-150 focus:border-primary focus:outline-none focus:ring-[3px] focus:ring-primary/45"
         />
       </div>
 
       <div>
         <label htmlFor="email" className="mb-1 block text-sm font-medium text-foreground">
-          Correo electrónico <span className="text-foreground/50">(opcional)</span>
+          Correo electrónico <span className="text-foreground/70">(opcional)</span>
         </label>
         <input
           id="email"
           name="email"
           type="email"
           autoComplete="email"
-          className="w-full rounded-lg border border-border px-4 py-3 text-base transition-colors duration-150 focus:border-primary focus:outline-none focus:ring-3 focus:ring-primary/20"
+          className="w-full rounded-lg border border-border bg-white px-4 py-3 text-base placeholder:text-foreground/70 transition-colors duration-150 focus:border-primary focus:outline-none focus:ring-[3px] focus:ring-primary/45"
         />
       </div>
 
@@ -123,7 +138,7 @@ export function ContactForm() {
           required
           rows={4}
           placeholder="Cuéntame brevemente qué síntomas tienes o qué necesitas."
-          className="w-full rounded-lg border border-border px-4 py-3 text-base transition-colors duration-150 focus:border-primary focus:outline-none focus:ring-3 focus:ring-primary/20"
+          className="w-full rounded-lg border border-border bg-white px-4 py-3 text-base placeholder:text-foreground/70 transition-colors duration-150 focus:border-primary focus:outline-none focus:ring-[3px] focus:ring-primary/45"
         />
       </div>
 

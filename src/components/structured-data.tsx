@@ -1,4 +1,5 @@
 import { siteConfig } from "@/lib/site-config";
+import { clinicLocations } from "@/content/locations";
 
 function JsonLdScript({ data, id }: { data: unknown; id: string }) {
   return (
@@ -21,34 +22,57 @@ export function PhysicianJsonLd() {
     name: siteConfig.name,
     url: siteConfig.url,
     telephone: `+${siteConfig.whatsapp.number}`,
+    image: `${siteConfig.url}/og-dr-angulo.jpg`,
     medicalSpecialty: ["Musculoskeletal", "Surgical"],
+    alumniOf: [
+      {
+        "@type": "CollegeOrUniversity",
+        name: "Universidad de Oriente, Núcleo Bolívar",
+      },
+      {
+        "@type": "MedicalOrganization",
+        name: "Instituto de Columna de Caracas, Hospital de Clínicas Caracas",
+      },
+    ],
     knowsAbout: [
       "Traumatología",
       "Ortopedia infantil",
       "Cirugía de columna",
+      "Cirugía de columna mínimamente invasiva",
       "Hernia discal",
       "Escoliosis",
+      "Deformidades de columna",
+      "Enfermedad degenerativa de columna",
       "Estenosis espinal",
       "Lumbalgia",
       "Cervicalgia",
     ],
     address: {
       "@type": "PostalAddress",
-      streetAddress: siteConfig.clinic.streetAddress,
-      addressLocality: siteConfig.clinic.addressLocality,
-      addressRegion: siteConfig.clinic.addressRegion,
-      postalCode: siteConfig.clinic.postalCode,
-      addressCountry: siteConfig.clinic.addressCountry,
+      streetAddress: siteConfig.office.streetAddress,
+      addressLocality: siteConfig.office.addressLocality,
+      addressRegion: siteConfig.office.addressRegion,
+      postalCode: siteConfig.office.postalCode,
+      addressCountry: siteConfig.office.addressCountry,
     },
     geo: {
       "@type": "GeoCoordinates",
-      latitude: siteConfig.clinic.geo.latitude,
-      longitude: siteConfig.clinic.geo.longitude,
+      latitude: siteConfig.office.geo.latitude,
+      longitude: siteConfig.office.geo.longitude,
     },
-    hospitalAffiliation: {
+    // Las tres clínicas donde pasa consulta, cada una con su propia agenda.
+    hospitalAffiliation: clinicLocations.map((clinic) => ({
       "@type": "MedicalOrganization",
-      name: siteConfig.clinic.name,
-    },
+      name: clinic.name,
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: clinic.streetAddress,
+        addressLocality: clinic.addressLocality,
+        addressRegion: clinic.addressRegion,
+        postalCode: clinic.postalCode,
+        addressCountry: clinic.addressCountry,
+      },
+    })),
     areaServed: { "@type": "City", name: "Lima" },
     sameAs: [siteConfig.social.instagram, siteConfig.social.doctoralia],
   };

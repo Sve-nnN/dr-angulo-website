@@ -10,6 +10,8 @@ De cero a un sitio de marketing médico publicado: primero la base técnica y la
 - [x] **Phase 2: Páginas core y trayectoria** - Home, Servicios, Testimonios, FAQ, Sobre el doctor con CV extenso
 - [x] **Phase 3: Conversión, tracking y SEO técnico** - Formulario+Resend, JSON-LD, sitemap/robots, eventos GA4/Meta Pixel
 - [x] **Phase 4: Contenido SEO, legal y publicación** - Blog inicial, privacidad/cookies, QA visual/performance, deploy
+- [x] **Phase 5: Material real del doctor y feed de Instagram** - Fotos AVIF, logo oficial, trayectoria confirmada, carrusel de reels autoactualizable
+- [x] **Phase 6: Sedes, horarios y flujo de agenda** - Cuatro sedes con horarios, página /agendar, WhatsApp acotado al consultorio privado
 
 ## Phase Details
 
@@ -73,10 +75,42 @@ Plans:
 - [x] 04-01: Blog (listado + artículos) + Política de Privacidad + banner de cookies
 - [x] 04-02: QA visual/responsive/performance + deploy a Vercel
 
+### Phase 5: Material real del doctor y feed de Instagram
+**Goal**: El sitio muestra el material real que entregó el doctor (fotos de consultorio, logo oficial, trayectoria y procedimientos confirmados) y un carrusel con sus reels de Instagram que se actualiza solo.
+**Depends on**: Phase 4
+**Requirements**: MEDIA-01, MEDIA-02, MEDIA-03, CV-03, CONTENT-06, SOCIAL-01, SOCIAL-02
+**Success Criteria** (qué debe ser TRUE):
+  1. Las fotos profesionales del doctor y su logo oficial reemplazan al material placeholder, servidos en AVIF optimizado
+  2. La biografía, la formación y los procedimientos publicados corresponden a lo que el doctor confirmó por escrito
+  3. El sitio expone una imagen social 1200x630 en openGraph, twitter y el JSON-LD de Physician
+  4. Home y Testimonios muestran un carrusel accesible con los últimos reels del Instagram del doctor, que se actualiza sin intervención manual
+  5. Sin credenciales de Instagram el carrusel degrada a una tarjeta al perfil, sin romper la página
+**Plans**: 3 plans
+
+Plans:
+- [x] 05-01: Fotos AVIF + logo oficial + imagen social + trayectoria y procedimientos reales
+- [x] 05-02: Carrusel de reels de Instagram + endpoint de renovación de token + documentación
+- [x] 05-03: Fotos reales de quirófano en Home, Servicios y Sobre el doctor
+
+### Phase 6: Sedes, horarios y flujo de agenda
+**Goal**: El paciente ve dónde atiende el doctor y agenda por el canal que corresponde a cada sede, sin pedirle al doctor citas de clínicas cuya agenda no maneja.
+**Depends on**: Phase 5
+**Requirements**: LOC-01, LOC-02, LOC-03, LOC-04
+**Success Criteria** (qué debe ser TRUE):
+  1. El sitio publica las cuatro sedes con sus días, horarios y direcciones
+  2. Un botón general de "Agendar cita" lleva a una página donde el paciente elige sede y ve el canal de esa sede
+  3. Queda explícito que el WhatsApp del doctor agenda solo el consultorio privado
+  4. El NAP principal y el JSON-LD apuntan al consultorio privado, con las tres clínicas como afiliación
+  5. Los teléfonos y enlaces de agenda de las clínicas son los oficiales
+**Plans**: 1 plan
+
+Plans:
+- [x] 06-01: Fuente de verdad de sedes + página /agendar + reruteo de CTA, contenido y schema
+
 ## Progress
 
 **Execution Order:**
-Fases ejecutan en orden numérico: 1 → 2 → 3 → 4
+Fases ejecutan en orden numérico: 1 → 2 → 3 → 4 → 5 → 6
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
@@ -84,3 +118,5 @@ Fases ejecutan en orden numérico: 1 → 2 → 3 → 4
 | 2. Páginas core y trayectoria | 3/3 | Complete | 2026-07-31 |
 | 3. Conversión, tracking y SEO técnico | 3/3 | Complete | 2026-07-31 |
 | 4. Contenido SEO, legal y publicación | 2/2 | Complete (deploy pendiente) | 2026-07-31 |
+| 5. Material real del doctor y feed de Instagram | 3/3 | Complete (vinculación de Instagram pendiente) | 2026-08-09 |
+| 6. Sedes, horarios y flujo de agenda | 1/1 | Complete (falta confirmar estado de Montefiori) | 2026-08-09 |
