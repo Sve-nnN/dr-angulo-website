@@ -2,7 +2,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { ArrowLeft } from "lucide-react";
-import { WhatsAppCta } from "@/components/ui/whatsapp-cta";
+import { BookingCta } from "@/components/ui/booking-cta";
 import { blogPosts } from "@/content/blog";
 
 const dateFormatter = new Intl.DateTimeFormat("es-PE", {
@@ -73,9 +73,7 @@ export default async function BlogPostPage({ params }: Props) {
           ¿Reconoces alguno de estos síntomas?
         </p>
         <div className="mt-5">
-          <WhatsAppCta location="services" variant="accent">
-            Agendar una evaluación
-          </WhatsAppCta>
+          <BookingCta>Agendar una evaluación</BookingCta>
         </div>
       </div>
     </article>

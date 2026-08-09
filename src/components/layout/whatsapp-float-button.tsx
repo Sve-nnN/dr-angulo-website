@@ -29,7 +29,8 @@ export function WhatsAppFloatButton() {
       onClick={() => trackWhatsAppClick("floating_button")}
       aria-label="Escribir por WhatsApp (se abre en una pestaña nueva)"
       className={cn(
-        "fixed right-5 z-50 flex size-14 cursor-pointer items-center justify-center rounded-full bg-whatsapp text-white shadow-lg transition-[transform,bottom] duration-200 ease-out hover:scale-105 motion-reduce:hover:scale-100",
+        // Entra sin transform: el fill de la animación pisaría el hover:scale.
+        "animate-fade-in animate-delay-late fixed right-5 z-50 flex size-14 cursor-pointer items-center justify-center rounded-full bg-whatsapp text-white shadow-lg transition-[transform,bottom] duration-200 ease-out hover:scale-105 motion-reduce:hover:scale-100",
         bannerVisible ? "bottom-44 sm:bottom-28" : "bottom-5"
       )}
     >
