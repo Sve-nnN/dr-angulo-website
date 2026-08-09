@@ -8,7 +8,7 @@ import { whatsappUrl, whatsappMessages, type CtaLocation } from "@/lib/site-conf
 type WhatsAppCtaProps = {
   location: CtaLocation;
   children: React.ReactNode;
-  variant?: "accent" | "outline";
+  variant?: "accent" | "outline" | "outline-inverse";
   className?: string;
 };
 
@@ -18,6 +18,9 @@ const variantClasses: Record<NonNullable<WhatsAppCtaProps["variant"]>, string> =
     "bg-accent text-foreground shadow-sm hover:bg-accent-hover hover:-translate-y-px hover:shadow-md motion-reduce:hover:translate-y-0",
   outline:
     "bg-transparent text-primary border-2 border-primary hover:bg-primary hover:text-on-primary",
+  // Para secciones con fondo teal, donde el borde primary desaparecería.
+  "outline-inverse":
+    "bg-transparent text-white border-2 border-white/40 hover:bg-white/10",
 };
 
 export function WhatsAppCta({

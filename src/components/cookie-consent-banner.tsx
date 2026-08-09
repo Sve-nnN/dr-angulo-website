@@ -22,7 +22,7 @@ export function CookieConsentBanner() {
     <div
       role="region"
       aria-label="Aviso de cookies"
-      className="fixed inset-x-0 bottom-0 z-50 border-t border-border bg-background px-4 py-4 shadow-xl sm:px-6"
+      className="animate-slide-up-in fixed inset-x-0 bottom-0 z-50 border-t border-border bg-background px-4 py-4 shadow-xl sm:px-6"
     >
       <div className="mx-auto flex max-w-6xl flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
         <p className="text-sm text-foreground/80">

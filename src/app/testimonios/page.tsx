@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { ArrowRight } from "lucide-react";
 import { InstagramReelsSection } from "@/components/instagram/instagram-reels-section";
-import { WhatsAppCta } from "@/components/ui/whatsapp-cta";
+import { BookingCta } from "@/components/ui/booking-cta";
 import { testimonials, reviewLinks } from "@/content/testimonials";
 
 export const metadata: Metadata = {
@@ -70,9 +70,7 @@ export default function TestimoniosPage() {
       />
 
       <div className="mt-16 border-t border-border pt-12">
-        <WhatsAppCta location="services" variant="accent">
-          Agendar una cita
-        </WhatsAppCta>
+        <BookingCta>Ver sedes y agendar</BookingCta>
       </div>
     </div>
   );

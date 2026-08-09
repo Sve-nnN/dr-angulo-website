@@ -57,9 +57,12 @@ body {
   color: var(--foreground);
 }
 
-/* El header es sticky (72px): los anclajes internos no deben quedar debajo. */
+/* El header es sticky (72px): los anclajes internos no deben quedar debajo.
+   `interpolate-size` habilita transiciones hacia `auto`, que usa el acordeón
+   de preguntas frecuentes. */
 html {
   scroll-padding-top: 5.5rem;
+  interpolate-size: allow-keywords;
 }
 
 /* Foco visible en todo control, sin repetir la clase en cada componente.
@@ -68,6 +71,118 @@ html {
   outline: 3px solid var(--ring);
   outline-offset: 2px;
   border-radius: 4px;
+}
+
+/* ---------------------------------------------------------------------------
+   Movimiento
+
+   Una sola curva para todo el sitio: desaceleración exponencial, sin rebote.
+   Las entradas usan `animation-fill-mode: both`, así el estado previo al delay
+   es el fotograma inicial y nada parpadea. Si la hoja de estilos no carga, no
+   hay animación y el contenido se ve igual: nunca se oculta con JS.
+--------------------------------------------------------------------------- */
+
+@keyframes rise-in {
+  from {
+    opacity: 0;
+    transform: translateY(0.75rem);
+  }
+}
+
+/* El campo de puntos del hero "se asienta": entra apenas escalado y aterriza. */
+@keyframes settle-in {
+  from {
+    opacity: 0;
+    transform: scale(1.04);
+  }
+}
+
+@keyframes slide-up-in {
+  from {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+}
+
+.animate-rise-in,
+.animate-settle-in,
+.animate-slide-up-in,
+.animate-fade-in {
+  animation-duration: 600ms;
+  animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+  animation-fill-mode: both;
+}
+
+.animate-rise-in {
+  animation-name: rise-in;
+}
+
+.animate-settle-in {
+  animation-name: settle-in;
+  animation-duration: 700ms;
+}
+
+.animate-slide-up-in {
+  animation-name: slide-up-in;
+  animation-duration: 400ms;
+}
+
+.animate-fade-in {
+  animation-name: fade-in;
+}
+
+/* Escalones de la secuencia del hero. El último cierra antes de 900 ms. */
+.animate-step-1 {
+  animation-delay: 60ms;
+}
+.animate-step-2 {
+  animation-delay: 120ms;
+}
+.animate-step-3 {
+  animation-delay: 190ms;
+}
+.animate-step-4 {
+  animation-delay: 260ms;
+}
+
+/* La burbuja de WhatsApp llega cuando el hero ya terminó de asentarse. */
+.animate-delay-late {
+  animation-delay: 900ms;
+}
+
+/* Acordeón de FAQ: al abrir, la respuesta entra en vez de aparecer de golpe.
+   Se anima el contenido, no la altura del `<details>`: animar `::details-content`
+   depende de CSS que el compilador de Tailwind no conserva, y sin él la
+   respuesta queda invisible. Esto funciona en cualquier navegador y, si algo
+   falla, abre al instante. */
+/* Solo se desplaza: nunca se anima la opacidad de la respuesta. Si la pestaña
+   está en segundo plano el navegador congela la animación, y con opacidad
+   animada el texto quedaba invisible hasta volver a enfocar la pestaña. */
+@keyframes answer-in {
+  from {
+    transform: translateY(0.5rem);
+  }
+}
+
+details.accordion[open] > :not(summary) {
+  animation: answer-in 260ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* El giro del `+` va en CSS plano: la variante `group-open` de Tailwind no
+   llegaba a aplicarse y el ícono se quedaba sin indicar el estado abierto. */
+details.accordion summary svg {
+  transform: rotate(0deg);
+  transition: transform 300ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+details.accordion[open] summary svg {
+  transform: rotate(45deg);
 }
 
 @media (prefers-reduced-motion: reduce) {

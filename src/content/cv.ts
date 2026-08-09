@@ -1,31 +1,51 @@
 export type CvEntry = { title: string; place: string; period?: string };
 
+export type TrainingEntry = {
+  title: string;
+  place: string;
+  year: string;
+  /** Marca los entrenamientos hechos fuera del país. */
+  international?: boolean;
+};
+
 /**
- * Formación y trayectoria confirmadas por el propio doctor (ago. 2026) y
- * verificadas públicamente en Doctoralia y LinkedIn. Se amplía a medida que el
- * consultorio comparte más cursos y certificaciones — no se inventan
- * credenciales no verificadas.
+ * Trayectoria completa según el CV que el doctor publica en Doctoralia
+ * (recibido 2026-08-09), más la especialización de columna que confirmó por
+ * escrito el 2026-08-08. No se inventan credenciales: si un dato no está en
+ * esas dos fuentes, no aparece acá.
+ *
+ * Quedaron fuera dos cargos de inicio de carrera (médico rural y coordinador de
+ * ambulatorio en Guarataro) porque las fechas del CV se contradicen entre sí
+ * y no aportan al criterio del paciente. Pendiente de aclarar con el doctor.
  */
 export const education: CvEntry[] = [
   {
-    title: "Especialista en Traumatología y Ortopedia",
-    place: "Universidad de Oriente, Núcleo Bolívar",
+    title: "Residencia de postgrado en Traumatología y Ortopedia",
+    place: "Universidad de Oriente, Núcleo Bolívar, Ciudad Bolívar, Venezuela",
+    period: "2007 – 2009",
   },
   {
     title: "Especialización en Cirugía de Columna",
     place: "Instituto de Columna de Caracas, Hospital de Clínicas Caracas",
   },
   {
-    title: "Cursos y entrenamientos nacionales e internacionales en cirugía de columna",
-    place: "Formación continua, incluida técnica mínimamente invasiva",
+    title: "Diplomado en Ecografía Integral",
+    place: "Universidad Fermín Toro, Barquisimeto, Venezuela",
+    period: "2005",
   },
 ];
 
 export const experience: CvEntry[] = [
   {
-    title: "Cirujano de columna",
-    place: "Hospital Ruiz y Páez",
-    period: "2007 – 2009",
+    title: "Traumatólogo y cirujano de columna",
+    place:
+      "Clínica Ricardo Palma, Clínica Sanna La Molina, Clínica Padre Luis Tezza y consultorio privado en Surco",
+    period: "sedes actuales",
+  },
+  {
+    title: "Traumatólogo",
+    place: "Clínica Montefiori, La Molina, Lima",
+    period: "desde dic. 2018",
   },
   {
     title: "Traumatólogo",
@@ -33,15 +53,92 @@ export const experience: CvEntry[] = [
     period: "nov. 2018 – dic. 2019",
   },
   {
-    title: "Traumatólogo y cirujano de columna",
-    place: "Clínica Montefiori, La Molina, Lima",
-    period: "desde dic. 2018",
+    title: "Cirujano de columna",
+    place: "Hospital Ruiz y Páez, Ciudad Bolívar, Venezuela",
+    period: "may. 2011 – abr. 2018",
   },
   {
-    title: "Traumatólogo y cirujano de columna",
-    place:
-      "Clínica Ricardo Palma, Clínica Sanna La Molina, Clínica Padre Luis Tezza y consultorio privado en Surco",
-    period: "sedes actuales",
+    title: "Traumatólogo",
+    place: "Hospital Ruiz y Páez, Ciudad Bolívar, Venezuela",
+    period: "may. 2010 – feb. 2018",
+  },
+  {
+    title: "Jefe de médicos residentes de Traumatología y Ortopedia",
+    place: "Hospital IVSS Héctor Nouel Joubert, Ciudad Bolívar, Venezuela",
+    period: "2005 – 2006",
+  },
+  {
+    title: "Médico residente asistencial de Traumatología y Ortopedia",
+    place: "Hospital IVSS Héctor Nouel Joubert, Ciudad Bolívar, Venezuela",
+    period: "2005 – 2006",
+  },
+  {
+    title: "Médico interno",
+    place: "Hospital IVSS Héctor Nouel Joubert, Ciudad Bolívar, Venezuela",
+    period: "2004",
+  },
+];
+
+/** Cursos, congresos y entrenamientos, del más reciente al más antiguo. */
+export const training: TrainingEntry[] = [
+  {
+    title: "AOSpine Advanced Course, Degenerative Spine",
+    place: "Lima, Perú",
+    year: "2019",
+  },
+  {
+    title: "ASPECIVE, Patología Degenerativa Lumbar",
+    place: "Lima, Perú",
+    year: "2018",
+  },
+  {
+    title: "Curso de Corrección de Deformidades, Cirugía de Columna (Medtronic)",
+    place: "Buenos Aires, Argentina",
+    year: "2012",
+    international: true,
+  },
+  {
+    title: "Current Spine Latin America (Medtronic)",
+    place: "Miami, Florida, Estados Unidos",
+    year: "2012",
+    international: true,
+  },
+  {
+    title: "STS MAST Lab for Venezuela (Medtronic)",
+    place: "Miami, Florida, Estados Unidos",
+    year: "2012",
+    international: true,
+  },
+  {
+    title: "Prótesis de disco cervical y lumbar de movilidad controlada (MOBI-C, MOBIDISC)",
+    place: "Francia",
+    year: "2012",
+    international: true,
+  },
+  {
+    title: "Curso AO de Cirugía Degenerativa y Traumática de Columna",
+    place: "Caracas, Venezuela",
+    year: "2010",
+  },
+  {
+    title: "Curso Básico AO de Cirugía de Columna",
+    place: "Caracas, Venezuela",
+    year: "2009",
+  },
+  {
+    title: "Curso Teórico Práctico de Electrocardiografía Deductiva",
+    place: "Venezuela",
+    year: "2003",
+  },
+  {
+    title: "Curso de Reanimación Cardiopulmonar y Cerebral, básico y avanzado",
+    place: "Federación Médica Venezolana",
+    year: "2002",
+  },
+  {
+    title: "XI Congreso Panamericano de Anatomía",
+    place: "Preservación y conservación de material cadavérico",
+    year: "1995",
   },
 ];
 
@@ -50,4 +147,6 @@ export const credentialsInfo = {
   rne: "35310",
   /** Años de ejercicio profesional confirmados por el doctor (ago. 2026). */
   yearsOfExperience: 15,
+  /** Entrenamientos hechos fuera del país, según el CV de Doctoralia. */
+  internationalTrainings: 4,
 };

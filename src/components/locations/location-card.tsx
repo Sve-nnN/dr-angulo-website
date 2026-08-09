@@ -15,18 +15,18 @@ export function LocationCard({ location, headingLevel = "h3" }: Props) {
   return (
     <article className="grid gap-6 py-10 sm:grid-cols-[minmax(0,16rem)_1fr] sm:gap-10">
       <div>
-        <p className="text-sm font-semibold uppercase tracking-wide text-accent">
-          {isOwnOffice ? "Agenda el doctor" : "Agenda la clínica"}
-        </p>
-        <Heading className="mt-2 font-heading text-lg font-bold text-primary">
+        <Heading className="font-heading text-lg font-bold text-primary">
           {location.name}
         </Heading>
+        <p className="mt-2 text-sm font-semibold text-accent-strong">
+          {isOwnOffice ? "Agenda el doctor" : "Agenda la clínica"}
+        </p>
       </div>
 
       <div>
         <dl className="space-y-4">
           <div className="flex gap-3">
-            <Clock className="mt-0.5 size-5 shrink-0 text-primary-light" aria-hidden="true" />
+            <Clock className="mt-0.5 size-5 shrink-0 text-primary" aria-hidden="true" />
             <div>
               <dt className="sr-only">Días y horario de atención</dt>
               {location.schedule.map((block) => (
@@ -39,7 +39,7 @@ export function LocationCard({ location, headingLevel = "h3" }: Props) {
           </div>
 
           <div className="flex gap-3">
-            <MapPin className="mt-0.5 size-5 shrink-0 text-primary-light" aria-hidden="true" />
+            <MapPin className="mt-0.5 size-5 shrink-0 text-primary" aria-hidden="true" />
             <div>
               <dt className="sr-only">Dirección</dt>
               <dd className="text-foreground/80">
