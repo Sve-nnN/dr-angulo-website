@@ -2,14 +2,14 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
-import { WhatsAppCta } from "@/components/ui/whatsapp-cta";
-import { education, experience, credentialsInfo } from "@/content/cv";
+import { BookingCta } from "@/components/ui/booking-cta";
+import { education, experience, training, credentialsInfo } from "@/content/cv";
 import { siteConfig } from "@/lib/site-config";
 
 export const metadata: Metadata = {
   title: "Dr. Juan Carlos Angulo — Trayectoria y formación en Lima",
   description:
-    "15 años de experiencia. Formación como traumatólogo en la Universidad de Oriente y especialización en columna en el Instituto de Columna de Caracas. Trayectoria del Dr. Juan Carlos Angulo Totesaut en Lima, Perú.",
+    "15 años de experiencia. Traumatólogo por la Universidad de Oriente, especializado en columna en el Instituto de Columna de Caracas, con cursos AO y entrenamientos en Estados Unidos, Francia y Argentina. Trayectoria del Dr. Juan Carlos Angulo Totesaut en Lima, Perú.",
   alternates: { canonical: "/sobre-el-doctor" },
 };
 
@@ -44,7 +44,8 @@ export default function SobreElDoctorPage() {
               Son 15 años atendiendo pacientes. Me formé como traumatólogo en la
               Universidad de Oriente y me especialicé en columna en el Instituto
               de Columna de Caracas, dentro del Hospital de Clínicas Caracas. A
-              eso le sumo cursos y entrenamientos dentro y fuera del país.
+              eso le sumo entrenamientos en Estados Unidos, Francia y Argentina,
+              y los cursos AO de columna en Caracas.
             </p>
             <p>
               Trato deformidades como la escoliosis, enfermedades degenerativas
@@ -67,7 +68,10 @@ export default function SobreElDoctorPage() {
             {education.map((item) => (
               <li key={item.title} className="border-l border-border pl-4">
                 <p className="font-semibold text-foreground">{item.title}</p>
-                <p className="mt-0.5 text-sm text-foreground/70">{item.place}</p>
+                <p className="mt-0.5 text-sm text-foreground/70">
+                  {item.place}
+                  {item.period ? ` · ${item.period}` : ""}
+                </p>
               </li>
             ))}
           </ol>
@@ -93,6 +97,34 @@ export default function SobreElDoctorPage() {
           </ol>
         </section>
       </div>
+
+      <section className="mt-16 border-t border-border pt-12">
+        <h2 className="font-heading text-xl font-bold text-primary">
+          Cursos, congresos y entrenamientos
+        </h2>
+        <p className="mt-3 max-w-2xl text-foreground/70">
+          {credentialsInfo.internationalTrainings} de estos entrenamientos se
+          hicieron fuera del país, con los fabricantes de los propios implantes
+          de columna.
+        </p>
+        <ol className="mt-6 divide-y divide-border border-y border-border">
+          {training.map((item) => (
+            <li
+              key={item.title + item.year}
+              className="grid gap-1 py-4 sm:grid-cols-[5rem_1fr] sm:gap-6"
+            >
+              <p className="text-sm font-semibold text-primary">{item.year}</p>
+              <div>
+                <p className="font-semibold text-foreground">{item.title}</p>
+                <p className="mt-0.5 text-sm text-foreground/70">
+                  {item.place}
+                  {item.international ? " · Internacional" : ""}
+                </p>
+              </div>
+            </li>
+          ))}
+        </ol>
+      </section>
 
       <section className="mt-16 grid items-center gap-10 border-t border-border pt-12 lg:grid-cols-[300px_1fr] lg:gap-14">
         <Image
@@ -124,9 +156,7 @@ export default function SobreElDoctorPage() {
       </section>
 
       <div className="mt-12">
-        <WhatsAppCta location="services" variant="accent">
-          Agendar una cita
-        </WhatsAppCta>
+        <BookingCta>Ver sedes y agendar</BookingCta>
       </div>
     </div>
   );

@@ -51,7 +51,7 @@ export function ContactForm() {
         ref={successRef}
         role="status"
         tabIndex={-1}
-        className="rounded-xl border border-border bg-white p-6 text-center shadow-sm"
+        className="animate-rise-in rounded-xl border border-border bg-white p-6 text-center shadow-sm"
       >
         <p className="font-heading text-lg font-bold text-primary">
           ¡Mensaje recibido!

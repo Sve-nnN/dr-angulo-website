@@ -23,11 +23,11 @@ export default function AgendarPage() {
         Elige dónde te queda mejor y agenda por el canal de esa sede.
       </p>
 
-      <div className="mt-8 max-w-2xl border-l-4 border-accent bg-muted px-5 py-4">
-        <p className="text-foreground/80">
-          <span className="font-semibold text-foreground">
-            El WhatsApp del doctor agenda solo el consultorio privado.
-          </span>{" "}
+      <div className="mt-8 max-w-2xl rounded-2xl border border-border bg-muted px-6 py-5">
+        <p className="font-heading text-lg font-bold text-foreground">
+          El WhatsApp del doctor agenda solo el consultorio privado.
+        </p>
+        <p className="mt-2 text-foreground/80">
           Las citas en Ricardo Palma, Sanna y Tezza las maneja cada clínica con
           su propio sistema, así que el doctor no puede reservarlas por ti.
         </p>

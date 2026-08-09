@@ -85,12 +85,13 @@ Plans:
   3. El sitio expone una imagen social 1200x630 en openGraph, twitter y el JSON-LD de Physician
   4. Home y Testimonios muestran un carrusel accesible con los últimos reels del Instagram del doctor, que se actualiza sin intervención manual
   5. Sin credenciales de Instagram el carrusel degrada a una tarjeta al perfil, sin romper la página
-**Plans**: 3 plans
+**Plans**: 4 plans
 
 Plans:
 - [x] 05-01: Fotos AVIF + logo oficial + imagen social + trayectoria y procedimientos reales
 - [x] 05-02: Carrusel de reels de Instagram + endpoint de renovación de token + documentación
 - [x] 05-03: Fotos reales de quirófano en Home, Servicios y Sobre el doctor
+- [x] 05-04: CV completo del doctor (trayectoria, cursos y entrenamientos internacionales)
 
 ### Phase 6: Sedes, horarios y flujo de agenda
 **Goal**: El paciente ve dónde atiende el doctor y agenda por el canal que corresponde a cada sede, sin pedirle al doctor citas de clínicas cuya agenda no maneja.
@@ -118,5 +119,5 @@ Fases ejecutan en orden numérico: 1 → 2 → 3 → 4 → 5 → 6
 | 2. Páginas core y trayectoria | 3/3 | Complete | 2026-07-31 |
 | 3. Conversión, tracking y SEO técnico | 3/3 | Complete | 2026-07-31 |
 | 4. Contenido SEO, legal y publicación | 2/2 | Complete (deploy pendiente) | 2026-07-31 |
-| 5. Material real del doctor y feed de Instagram | 3/3 | Complete (vinculación de Instagram pendiente) | 2026-08-09 |
+| 5. Material real del doctor y feed de Instagram | 4/4 | Complete (vinculación de Instagram pendiente) | 2026-08-09 |
 | 6. Sedes, horarios y flujo de agenda | 1/1 | Complete (falta confirmar estado de Montefiori) | 2026-08-09 |

@@ -4,8 +4,8 @@ status: built
 progress:
   total_phases: 6
   completed_phases: 6
-  total_plans: 14
-  completed_plans: 14
+  total_plans: 15
+  completed_plans: 15
   percent: 100
 ---
 
@@ -22,7 +22,7 @@ See: .planning/PROJECT.md (updated 2026-07-31)
 
 Phase: 6 of 6 — todas las fases construidas y verificadas en navegador; el sitio está deployado
 Status: Sitio corriendo en producción (Dokploy, infra propia de Juan) sin dominio público; el carrusel de reels muestra el fallback hasta que se vincule Instagram
-Last activity: 2026-08-09 — Phase 6 ejecutada (cuatro sedes con horarios, página `/agendar`, WhatsApp acotado al consultorio privado) y plan 05-03 sumado: cuatro fotos reales de quirófano en AVIF repartidas entre Home, Servicios y Sobre el doctor
+Last activity: 2026-08-09 — Phase 6 ejecutada (cuatro sedes con horarios, página `/agendar`, WhatsApp acotado al consultorio privado), más los planes 05-03 (fotos de quirófano en AVIF) y 05-04 (CV completo del doctor con cursos y entrenamientos internacionales)
 
 Progress: [██████████] 100% (build + deploy) — pendientes: dominio público, vinculación de Instagram y confirmar el estado de Montefiori
 
@@ -37,7 +37,7 @@ Ver tabla completa en PROJECT.md § Key Decisions.
 ### Pending Todos
 
 - **Asignar dominio público**: el sitio corre en Dokploy pero sin dominio (decisión explícita de Juan — "deploy sin dominio por ahora"). Cuando Juan tenga uno: apuntar el registro DNS `A` a la IP de `sapling-vps-01`, luego `domain.create` vía la API de Dokploy para `applicationId: 29ZFzVVwEczNI733DodMp` (puerto `3000`, HTTPS/Let's Encrypt) — pasos exactos en `04-VERIFICATION.md` § Human Verification Required.
-- Pedir CV completo del doctor (nombres y fechas de los cursos y entrenamientos internacionales) para ampliar "Sobre el doctor". El 2026-08-08 el doctor confirmó: 15 años de experiencia, traumatólogo por la Universidad de Oriente, especialización de columna en el Instituto de Columna de Caracas (Hospital de Clínicas Caracas), procedimientos convencionales y mínimamente invasivos para deformidades (escoliosis), enfermedad degenerativa y procesos inflamatorios. Todo eso ya está publicado en el sitio.
+- **CV completo: recibido y publicado** (2026-08-09, desde el perfil de Doctoralia). "Sobre el doctor" ya muestra la formación con fechas, ocho cargos de trayectoria y once cursos y congresos con año y lugar, incluidos los cuatro entrenamientos internacionales (Miami x2, Francia, Buenos Aires). Único fleco: en el CV los dos cargos iniciales de Guarataro (médico rural y coordinador de ambulatorio) tienen fechas que se contradicen entre sí (2012-2013 contra 2003), así que quedaron fuera del sitio hasta que el doctor aclare.
 - **Confirmar el estado de Clínica Montefiori**: el listado de consultorios del 2026-08-09 no la incluye, así que salió del sitio y las sedes publicadas son consultorio privado (Surco), Ricardo Palma, Sanna La Molina y Tezza. Si el doctor ya no atiende ahí, conviene actualizar su perfil de Doctoralia, que todavía la menciona; si sigue, pasar días y horario para sumarla a `src/content/locations.ts`.
 - **Horas exactas del consultorio privado** los viernes y sábados: hoy la ficha dice "horario coordinado al agendar". Con el rango se puede sumar `openingHoursSpecification` al JSON-LD.
 - **Activar el feed de reels de Instagram**: el carrusel ya está en el Home y en Testimonios, pero muestra el fallback hasta que se configuren `INSTAGRAM_ACCESS_TOKEN`, `INSTAGRAM_TOKEN_FILE` (volumen persistente) y `CRON_SECRET` en Dokploy, más el cron semanal a `/api/instagram/refresh`. Pasos completos en `docs/instagram-reels.md`. Requiere que la cuenta del doctor sea Profesional y una app en Meta for Developers.
@@ -59,7 +59,6 @@ El feed de reels depende de dos cosas fuera del código: la vinculación de Inst
 |-------|-------|--------|
 | 4 | verification_deferred_human — dominio público pendiente de decisión de Juan (deploy ya ejecutado y estable en Dokploy) | Cuando Juan tenga el dominio: asignarlo vía `domain.create` de la API de Dokploy (ver `04-VERIFICATION.md` § Human Verification Required), luego `/gsd-verify-work 4` |
 | 5 | verification_deferred_human — cuenta de Instagram sin vincular (código completo y verificado, SOCIAL-01 y SOCIAL-02 en Pending) | Seguir el paso a paso de `05-VERIFICATION.md` § Human Verification Required (o `docs/instagram-reels.md`): cuenta profesional → app de Meta y token → variables + volumen en Dokploy → cron semanal. Después `/gsd-verify-work 5` |
-
 | 6 | verification_deferred_human — falta confirmar con el consultorio si el doctor sigue atendiendo en Clínica Montefiori (código completo y verificado, LOC-01 a LOC-04 en Done) | Con la respuesta: sumar la sede a `src/content/locations.ts` o actualizar Doctoralia, luego `/gsd-verify-work 6` |
 
 Milestone v1.0 lifecycle (audit → complete-milestone → cleanup) queda en espera de estos ítems antes de cerrarse formalmente.
@@ -67,5 +66,5 @@ Milestone v1.0 lifecycle (audit → complete-milestone → cleanup) queda en esp
 ## Session Continuity
 
 Last session: 2026-08-09
-Stopped at: Phase 6 ejecutada y documentada (cuatro sedes con horarios, página `/agendar`, WhatsApp acotado al consultorio privado, NAP y schema actualizados) más el plan 05-03 con las fotos de quirófano. Build, tsc y lint limpios; verificación visual en navegador hecha. Pendientes: confirmar Montefiori y las horas del consultorio privado, vincular Instagram (`docs/instagram-reels.md`), dominio público, cursos internacionales del CV.
+Stopped at: Phase 6 ejecutada y documentada (cuatro sedes con horarios, página `/agendar`, WhatsApp acotado al consultorio privado, NAP y schema actualizados) más los planes 05-03 (fotos de quirófano) y 05-04 (CV completo). Build, tsc y lint limpios; verificación visual en navegador hecha. Pendientes: confirmar Montefiori, las horas del consultorio privado y las fechas de los dos cargos de Guarataro; vincular Instagram (`docs/instagram-reels.md`); dominio público.
 Resume file: None

@@ -21,13 +21,10 @@ export default function PreguntasFrecuentesPage() {
 
       <div className="mt-12 divide-y divide-border border-y border-border">
         {faqItems.map((item) => (
-          <details key={item.question} className="group py-2">
-            <summary className="flex cursor-pointer list-none items-center justify-between gap-4 py-4 font-heading text-lg font-bold text-foreground marker:content-none">
+          <details key={item.question} className="accordion group py-2">
+            <summary className="flex cursor-pointer list-none items-center justify-between gap-4 py-4 font-heading text-lg font-bold text-foreground transition-colors duration-150 marker:content-none hover:text-primary">
               {item.question}
-              <Plus
-                className="size-5 shrink-0 text-primary transition-transform duration-200 group-open:rotate-45"
-                aria-hidden="true"
-              />
+              <Plus className="size-5 shrink-0 text-primary" aria-hidden="true" />
             </summary>
             <p className="pb-5 pr-9 text-foreground/80">{item.answer}</p>
           </details>
