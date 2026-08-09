@@ -1,8 +1,9 @@
 import Link from "next/link";
 import Image from "next/image";
 import type { Metadata } from "next";
-import { ArrowRight, CalendarDays } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { InstagramReelsSection } from "@/components/instagram/instagram-reels-section";
+import { BookingCta } from "@/components/ui/booking-cta";
 import { WhatsAppCta } from "@/components/ui/whatsapp-cta";
 import { locations } from "@/content/locations";
 import { serviceCategories } from "@/content/services";
@@ -26,32 +27,26 @@ export default function Home() {
       <section className="relative overflow-hidden bg-primary">
         <div
           aria-hidden="true"
-          className="absolute inset-0 opacity-10 [background-image:radial-gradient(circle,white_1.5px,transparent_1.5px)] [background-size:24px_24px]"
+          className="animate-settle-in absolute inset-0 opacity-10 [background-image:radial-gradient(circle,white_1.5px,transparent_1.5px)] [background-size:24px_24px]"
         />
         <div className="relative mx-auto grid max-w-6xl gap-10 px-4 py-16 sm:px-6 sm:py-24 lg:grid-cols-2 lg:items-center lg:py-28">
           <div>
-            <h1 className="font-heading text-3xl font-extrabold leading-tight text-white sm:text-4xl lg:text-5xl">
+            <h1 className="animate-rise-in animate-step-1 font-heading text-3xl font-extrabold leading-tight text-white sm:text-4xl lg:text-5xl">
               Recupera tu movilidad sin miedo a la columna
             </h1>
-            <p className="mt-5 max-w-xl text-lg text-white/85">
+            <p className="animate-rise-in animate-step-2 mt-5 max-w-xl text-lg text-white/85">
               {siteConfig.name}, traumatólogo y cirujano de columna en Lima.
               Escoliosis, hernia discal y desgaste de columna, con opciones que
               van desde el tratamiento conservador hasta la cirugía mínimamente
               invasiva. Si hace falta operar, te acompaño explicando cada paso.
             </p>
-            <p className="mt-5 text-sm text-white/75">
+            <p className="animate-rise-in animate-step-3 mt-5 text-sm text-white/75">
               {credentialsInfo.yearsOfExperience} años de ejercicio · CMP{" "}
               {siteConfig.credentials.cmp} · RNE {siteConfig.credentials.rne} ·
               Atiende en {locations.length} sedes de Lima
             </p>
-            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-              <Link
-                href="/agendar"
-                className="inline-flex cursor-pointer items-center justify-center gap-2 rounded-lg bg-accent px-6 py-3 text-base font-semibold text-foreground shadow-sm transition-[background-color,transform,box-shadow] duration-200 ease-out hover:-translate-y-px hover:bg-accent-hover hover:shadow-md motion-reduce:hover:translate-y-0"
-              >
-                <CalendarDays className="size-5" aria-hidden="true" />
-                Agendar cita
-              </Link>
+            <div className="animate-rise-in animate-step-4 mt-8 flex flex-col gap-3 sm:flex-row">
+              <BookingCta>Agendar cita</BookingCta>
               <Link
                 href="/servicios"
                 className="inline-flex items-center justify-center gap-2 rounded-lg border-2 border-white/30 px-6 py-3 text-base font-semibold text-white transition-colors duration-150 hover:bg-white/10"
@@ -69,7 +64,7 @@ export default function Home() {
             height={1400}
             priority
             sizes="(min-width: 1024px) 560px, 100vw"
-            className="mx-auto aspect-[4/3] w-full max-w-md rounded-2xl object-cover object-[60%_30%] shadow-lg sm:aspect-[16/10] lg:max-w-none"
+            className="animate-settle-in animate-step-2 mx-auto aspect-[4/3] w-full max-w-md rounded-2xl object-cover object-[60%_30%] shadow-lg sm:aspect-[16/10] lg:max-w-none"
           />
         </div>
       </section>
@@ -290,14 +285,8 @@ export default function Home() {
             Elige la sede que te quede mejor y agenda por el canal de esa sede.
           </p>
           <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
-            <Link
-              href="/agendar"
-              className="inline-flex cursor-pointer items-center justify-center gap-2 rounded-lg bg-accent px-6 py-3 text-base font-semibold text-foreground shadow-sm transition-[background-color,transform,box-shadow] duration-200 ease-out hover:-translate-y-px hover:bg-accent-hover hover:shadow-md motion-reduce:hover:translate-y-0"
-            >
-              <CalendarDays className="size-5" aria-hidden="true" />
-              Ver sedes y agendar
-            </Link>
-            <WhatsAppCta location="hero" variant="outline" className="border-white/40 text-white hover:bg-white/10 hover:text-white">
+            <BookingCta>Ver sedes y agendar</BookingCta>
+            <WhatsAppCta location="hero" variant="outline-inverse">
               Consultorio privado por WhatsApp
             </WhatsAppCta>
           </div>
