@@ -7,6 +7,7 @@ import { BookingCta } from "@/components/ui/booking-cta";
 import { WhatsAppCta } from "@/components/ui/whatsapp-cta";
 import { AuthorByline } from "@/components/ui/author-byline";
 import { MedicalDisclaimer } from "@/components/ui/medical-disclaimer";
+import { MidContentCta } from "@/components/ui/mid-content-cta";
 import { TableOfContents } from "@/components/ui/table-of-contents";
 import { blogPosts } from "@/content/blog";
 import {
@@ -122,6 +123,16 @@ export default async function ServiceGuidePage({ params }: Props) {
               </div>
             ))}
           </section>
+          {/* Un banner por página, más el CTA de cierre. Va después de
+              `sintomas` porque es el punto donde el paciente acaba de
+              reconocer lo que le pasa (POS-01). */}
+          {id === "sintomas" && (
+            <MidContentCta
+              heading={page.ctaBanner.heading}
+              body={page.ctaBanner.body}
+              location="service_page"
+            />
+          )}
         </Fragment>
       ))}
 
@@ -136,7 +147,7 @@ export default async function ServiceGuidePage({ params }: Props) {
         </p>
         <div className="mt-6 flex flex-wrap items-center gap-4">
           <BookingCta>Agendar consulta</BookingCta>
-          <WhatsAppCta variant="accent" location="services">
+          <WhatsAppCta variant="accent" location="service_page">
             Escribir por WhatsApp
           </WhatsAppCta>
         </div>

@@ -14,10 +14,15 @@ type WhatsAppCtaProps = {
 
 const variantClasses: Record<NonNullable<WhatsAppCtaProps["variant"]>, string> = {
   // Dorado de marca con texto oscuro: 6.2:1. El blanco sobre este dorado no llega a 2.5:1.
+  // El anillo en `--accent-dark` separa la superficie dorada del fondo: sola da
+  // 2.27:1 y un límite de control necesita 3:1; con el anillo llega a 3.13:1.
   accent:
-    "bg-accent text-foreground shadow-sm hover:bg-accent-hover hover:-translate-y-px hover:shadow-md motion-reduce:hover:translate-y-0",
+    "bg-accent text-foreground shadow-sm ring-1 ring-accent-dark hover:bg-accent-hover hover:-translate-y-px hover:shadow-md motion-reduce:hover:translate-y-0",
+  // Texto en `--primary-dark` (6.31:1) y no en `--primary` (4.37:1): el variante
+  // se estrena a 16px dentro del banner y COLOR-01 lo exige. El borde sigue en
+  // `--primary`, que como límite de control necesita 3:1 y da 4.37:1.
   outline:
-    "bg-transparent text-primary border-2 border-primary hover:bg-primary hover:text-on-primary",
+    "bg-transparent text-primary-dark border-2 border-primary hover:bg-primary hover:text-on-primary",
   // Para secciones con fondo teal, donde el borde primary desaparecería.
   "outline-inverse":
     "bg-transparent text-white border-2 border-white/40 hover:bg-white/10",

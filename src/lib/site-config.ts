@@ -62,6 +62,13 @@ export const whatsappMessages = {
   contact_page: "Hola Dr. Angulo, quisiera agendar una cita. Mis datos:",
   booking_page:
     "Hola Dr. Angulo, quisiera agendar una cita en su consultorio privado (Av. El Derby 254, Surco).",
+  // Dos claves para todo el silo clínico, no una por condición: fragmentar la
+  // etiqueta de `trackWhatsAppClick(location)` volvería inútil comparar
+  // superficies en GA4. La contextualización fina vive en el copy del banner.
+  service_page:
+    "Hola Dr. Angulo, leí la información de su web sobre mi condición y quisiera agendar una evaluación.",
+  blog_post:
+    "Hola Dr. Angulo, leí un artículo de su blog y quisiera agendar una evaluación.",
 } as const;
 
 export type CtaLocation = keyof typeof whatsappMessages;

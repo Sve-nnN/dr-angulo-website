@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import { WhatsAppCta } from "@/components/ui/whatsapp-cta";
+import { ServiceCard } from "@/components/services/service-card";
 import { serviceCategories, procedureApproaches } from "@/content/services";
+import { servicePages } from "@/content/service-pages";
 import { BreadcrumbJsonLd, ServicesJsonLd } from "@/components/structured-data";
 
 export const metadata: Metadata = {
@@ -25,6 +27,22 @@ export default function ServiciosPage() {
         decide según tu caso específico: no todas las condiciones necesitan
         cirugía.
       </p>
+
+      {/* Va arriba de la lista de categorías porque las URLs hijas son el
+          motivo de existir del silo: enterrarlas al pie las volvería
+          invisibles. Los `id` de sección de abajo no se tocan, la home enlaza
+          a `#columna`, `#traumatologia`, `#ortopedia-infantil` y
+          `#procedimientos`. */}
+      <section className="mt-14">
+        <h2 className="font-heading text-2xl font-bold text-primary sm:text-3xl">
+          Condiciones que explico en detalle
+        </h2>
+        <div className="mt-6 grid items-stretch gap-6 sm:grid-cols-2">
+          {servicePages.map((page) => (
+            <ServiceCard key={page.slug} page={page} />
+          ))}
+        </div>
+      </section>
 
       <div className="mt-14 divide-y divide-border border-y border-border">
         {serviceCategories.map((cat) => (
