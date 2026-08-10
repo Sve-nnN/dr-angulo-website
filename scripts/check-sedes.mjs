@@ -57,11 +57,27 @@ const SERVICE_SLUGS = [
   "ortopedia-infantil",
 ];
 
+/** URLs totales del sitemap con la fase 9 completa: las 16 de v1.0 más el hub
+ *  de sedes y las cuatro páginas de sede. */
+const SITEMAP_TOTAL = 21;
+
 /**
  * Expectativas por sede, hardcodeadas a propósito. Una puerta que deriva sus
- * expectativas del mismo archivo que verifica no verifica nada.
+ * expectativas del mismo archivo que verifica no verifica nada. El orden es el
+ * mismo de `locationPages` y el de `locations`.
  */
 const MANIFEST = [
+  {
+    slug: "consultorio-privado",
+    kind: "consultorio",
+    h1: "Consultorio privado del Dr. Angulo en Surco",
+    title: "Consultorio de traumatología y columna en Surco, Lima",
+    streetAddress: "Av. El Derby 254, piso 24, oficina 2403",
+    schemaType: "MedicalBusiness",
+    latitude: -12.0977043,
+    longitude: -76.9729404,
+    channels: ["wa.me/51964305682"],
+  },
   {
     slug: "clinica-ricardo-palma",
     kind: "clinica",
@@ -72,6 +88,28 @@ const MANIFEST = [
     latitude: -12.090602,
     longitude: -77.018276,
     channels: ["tel:+5112242224", "https://www.crp.com.pe/agenda-tu-cita/"],
+  },
+  {
+    slug: "sanna-la-molina",
+    kind: "clinica",
+    h1: "Traumatólogo y cirujano de columna en Clínica Sanna, sede La Molina",
+    title: "Traumatólogo y cirujano de columna en Clínica Sanna, sede La Molina",
+    streetAddress: "Av. Raúl Ferrero 1256",
+    schemaType: "MedicalClinic",
+    latitude: -12.0902268,
+    longitude: -76.9505892,
+    channels: ["tel:+5116355000", "https://agendamiento.sanna.pe/"],
+  },
+  {
+    slug: "clinica-tezza",
+    kind: "clinica",
+    h1: "Traumatólogo y cirujano de columna en Clínica Padre Luis Tezza",
+    title: "Traumatólogo y cirujano de columna en Clínica Padre Luis Tezza",
+    streetAddress: "Av. El Polo 570",
+    schemaType: "MedicalClinic",
+    latitude: -12.1032942,
+    longitude: -76.9718807,
+    channels: ["tel:+5116105050", "https://clinicatezza.com.pe/"],
   },
 ];
 
@@ -310,8 +348,21 @@ function checkSede(entry) {
 // Comprobaciones globales
 // --------------------------------------------------------------------------
 
-function checkGlobals(selected) {
+function checkGlobals(selected, isFullRun) {
   const failures = [];
+
+  // Ninguna sede de `locations.ts` puede quedarse sin página. Si mañana entra
+  // una quinta, la puerta falla hasta que alguien le escriba la suya, en vez
+  // de aprobar en silencio una sede sin superficie propia.
+  if (isFullRun && existsSync(resolve(LOCATIONS))) {
+    const source = readFileSync(resolve(LOCATIONS), "utf8");
+    const declared = [...source.matchAll(/^\s+slug: "/gm)].length;
+    if (declared !== MANIFEST.length) {
+      failures.push(
+        `${LOCATIONS} declara ${declared} sedes y el manifiesto cubre ${MANIFEST.length}: hay una sede sin página de sede o una entrada del manifiesto de más`
+      );
+    }
+  }
 
   // /agendar enlaza al hub, a cada sede y trae el destino de cada ancla
   if (!existsSync(resolve(AGENDAR))) {
@@ -386,6 +437,12 @@ function checkGlobals(selected) {
         failures.push(`el sitemap no declara /sedes/${entry.slug}`);
       }
     }
+    if (isFullRun) {
+      const total = occurrences(sitemap, "<loc>");
+      if (total !== SITEMAP_TOTAL) {
+        failures.push(`el sitemap tiene ${total} URLs, deben ser ${SITEMAP_TOTAL}`);
+      }
+    }
   }
 
   return failures;
@@ -395,6 +452,7 @@ function checkGlobals(selected) {
 
 function main() {
   const args = process.argv.slice(2);
+  const isFullRun = args.length === 0;
 
   if (!existsSync(resolve(APP_DIR))) {
     console.error(
@@ -403,10 +461,9 @@ function main() {
     process.exit(1);
   }
 
-  const selected =
-    args.length === 0
-      ? MANIFEST
-      : args.map((slug) => {
+  const selected = isFullRun
+    ? MANIFEST
+    : args.map((slug) => {
           const entry = MANIFEST.find((e) => e.slug === slug);
           if (!entry) {
             console.error(`check-sedes: la sede ${slug} no está en el manifiesto.`);
@@ -416,7 +473,7 @@ function main() {
         });
 
   const results = selected.map(checkSede);
-  const globalFailures = checkGlobals(selected);
+  const globalFailures = checkGlobals(selected, isFullRun);
 
   console.log("");
   console.log("Puerta de las páginas de sede");
