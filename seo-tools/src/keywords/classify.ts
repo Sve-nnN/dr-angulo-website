@@ -46,7 +46,8 @@ export type Etapa = (typeof ETAPAS)[number];
 /**
  * Los DOS unicos valores que admite la columna de origen de la intencion.
  *
- * Hubo un tercero, `ahrefs`, mientras esa fuente estuvo en el alcance. Juan la difirio el
+ * Hubo un tercero, el nombre de la fuente de dificultad y potencial de trafico, mientras esa
+ * fuente estuvo en el alcance. Juan la difirio el
  * 2026-08-10 y con ella se fue el tercer valor: la clasificacion pasa a ser cien por ciento
  * reglas mas residuo congelado. Una correccion a mano tambien se declara `llm`, porque el
  * Sheet solo acepta dos valores y lo que importa aguas abajo es "no lo decidieron las reglas".
