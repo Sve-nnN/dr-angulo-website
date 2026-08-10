@@ -22,7 +22,7 @@ export function MidContentCta({ heading, body, location }: MidContentCtaProps) {
   return (
     <aside
       data-mid-cta=""
-      className="mt-12 rounded-2xl border border-border border-l-4 border-l-accent bg-muted p-6 sm:p-8"
+      className="mt-12 rounded-2xl border border-border bg-muted p-6 sm:p-8"
     >
       <p className="font-heading text-lg font-bold text-foreground">{heading}</p>
       <p className="mt-2 text-foreground/80">{body}</p>

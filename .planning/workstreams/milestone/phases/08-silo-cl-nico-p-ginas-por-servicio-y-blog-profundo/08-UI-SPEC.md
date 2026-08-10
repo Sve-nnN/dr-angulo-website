@@ -96,7 +96,7 @@ Pesos declarados: **dos por familia**. Poppins en 700 y 800 para encabezados, In
 1. La superficie del botón "Agendar consulta" (`BookingCta`) del banner del primer tercio.
 2. La superficie del botón "Agendar consulta" del CTA de cierre.
 3. La superficie del botón de WhatsApp en variante `accent` del CTA de cierre.
-4. Una barra decorativa de 4px al borde izquierdo del banner de CTA (`border-l-4 border-l-accent`).
+4. ~~Una barra decorativa de 4px al borde izquierdo del banner de CTA (`border-l-4 border-l-accent`).~~ **Revertido el 2026-08-10.** El banner se distingue con `bg-muted` más `border-border`, que es el tratamiento que ya usa v1.0. Motivo: la barra lateral de color no aparece en ninguna parte del código de v1.0, así que contradecía el principio de este mismo spec de replicar el lenguaje visual existente en vez de inventar uno nuevo. Es además un patrón muy reconocible de interfaz generada por IA. El dorado sigue presente en el banner a través del botón `BookingCta`, así que la lista cerrada de usos del acento baja de 4 a 3 sin perder presencia de marca.
 
 Fuera de esa lista, el dorado no aparece. En particular: **no** en las tarjetas del hub, **no** en la tabla de contenidos, **no** en la firma del autor, **no** en el aviso educativo, **no** como color de texto en ningún tamaño.
 
