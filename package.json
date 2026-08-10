@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "content:check": "node scripts/check-content.mjs"
+    "content:check": "node scripts/check-content.mjs",
+    "sedes:check": "node scripts/check-sedes.mjs"
   },
   "dependencies": {
     "@next/third-parties": "^16.2.12",
