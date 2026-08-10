@@ -127,8 +127,12 @@ export const faqItems: FaqItem[] = [
     answer: "Texto de respuesta que no es semilla.",
   },
   {
-    question: "¿Cómo agendo una cita?",
+    question: "Tengo miedo a operarme de la columna, ¿es tan riesgoso como parece?",
     answer: "Otro texto.",
+  },
+  {
+    question: "¿Cómo agendo una cita?",
+    answer: "Un tercer texto.",
   },
 ];
 `;
@@ -217,6 +221,9 @@ test("reducirANucleo saca el termino nuclear de un titular y de una pregunta", (
   assert.equal(reducirANucleo("¿Cuándo debo preocuparme por un dolor de espalda?"), "dolor de espalda");
   // Sin ningun termino del dominio no hay nucleo que valga la pena: se descarta.
   assert.equal(reducirANucleo("¿Cómo agendo una cita?"), null);
+  // Una sola palabra tampoco es semilla: o ya existe en el catalogo estructurado, o es
+  // demasiado generica para el negocio.
+  assert.equal(reducirANucleo("¿Atienden a niños?"), null);
 });
 
 test("cada semilla declara texto visible, clave normalizada, tipo, procedencia y rango", () => {
