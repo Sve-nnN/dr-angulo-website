@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { ArrowLeft } from "lucide-react";
 import { BookingCta } from "@/components/ui/booking-cta";
 import { blogPosts } from "@/content/blog";
+import { BlogPostingJsonLd, BreadcrumbJsonLd } from "@/components/structured-data";
 
 const dateFormatter = new Intl.DateTimeFormat("es-PE", {
   day: "numeric",
@@ -44,6 +45,14 @@ export default async function BlogPostPage({ params }: Props) {
   if (!post) notFound();
 
   return (
+    <>
+      <BlogPostingJsonLd post={post} />
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Blog", path: "/blog" },
+          { name: post.title, path: `/blog/${post.slug}` },
+        ]}
+      />
     <article className="mx-auto max-w-2xl px-4 py-14 sm:px-6 sm:py-20">
       <Link
         href="/blog"
@@ -77,5 +86,6 @@ export default async function BlogPostPage({ params }: Props) {
         </div>
       </div>
     </article>
+    </>
   );
 }

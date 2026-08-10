@@ -17,6 +17,27 @@ export type BookingChannel = {
   detail?: string;
 };
 
+/** Día de la semana en el vocabulario de schema.org. */
+export type SchemaDay =
+  | "Monday"
+  | "Tuesday"
+  | "Wednesday"
+  | "Thursday"
+  | "Friday"
+  | "Saturday"
+  | "Sunday";
+
+/**
+ * Misma información que `schedule`, pero legible por máquina, para el
+ * `openingHoursSpecification` del JSON-LD. `opens`/`closes` van en formato
+ * 24 h; se omiten cuando el horario se coordina caso por caso.
+ */
+export type OpeningHours = {
+  days: SchemaDay[];
+  opens?: string;
+  closes?: string;
+};
+
 export type Location = {
   slug: string;
   name: string;
@@ -30,7 +51,12 @@ export type Location = {
   addressCountry: string;
   geo: { latitude: number; longitude: number };
   mapsUrl: string;
+  /** Teléfono público de la sede, en formato E.164. */
+  telephone: string;
+  /** Web oficial de la sede, si la tiene. */
+  website?: string;
   schedule: { days: string; hours: string }[];
+  openingHours: OpeningHours[];
   /** Cómo se agenda, en una frase. */
   bookingSummary: string;
   channels: BookingChannel[];
@@ -54,7 +80,10 @@ export const locations: Location[] = [
     addressCountry: "PE",
     geo: { latitude: -12.0977043, longitude: -76.9729404 },
     mapsUrl: mapsUrl("Lima Central Tower, Av. El Derby 254, Santiago de Surco, Lima, Perú"),
-    schedule: [{ days: "Viernes y sábados", hours: "Horario coordinado al agendar" }],
+    telephone: "+51964305682",
+    // Horario publicado en la ficha de Google del consultorio (verificado 2026-08-09).
+    schedule: [{ days: "Viernes y sábados", hours: "9:00 a. m. a 5:00 p. m." }],
+    openingHours: [{ days: ["Friday", "Saturday"], opens: "09:00", closes: "17:00" }],
     bookingSummary: "Se agenda directamente por WhatsApp con el consultorio del doctor.",
     channels: [
       {
@@ -75,7 +104,10 @@ export const locations: Location[] = [
     addressCountry: "PE",
     geo: { latitude: -12.090602, longitude: -77.018276 },
     mapsUrl: mapsUrl("Clínica Ricardo Palma, Av. Javier Prado Este 1066, San Isidro, Lima, Perú"),
+    telephone: "+5112242224",
+    website: "https://www.crp.com.pe/",
     schedule: [{ days: "Lunes y miércoles", hours: "9:00 a. m. a 6:00 p. m." }],
+    openingHours: [{ days: ["Monday", "Wednesday"], opens: "09:00", closes: "18:00" }],
     bookingSummary: "La cita se saca con la clínica, por teléfono o desde su web.",
     channels: [
       { label: "Central de citas (01) 224 2224", href: "tel:+5112242224" },
@@ -97,9 +129,15 @@ export const locations: Location[] = [
     addressCountry: "PE",
     geo: { latitude: -12.0902268, longitude: -76.9505892 },
     mapsUrl: mapsUrl("SANNA Centro Clínico La Molina, Av. Raúl Ferrero 1256, La Molina, Lima, Perú"),
+    telephone: "+5116355000",
+    website: "https://www.sanna.pe/centros-clinicos/la-molina-lima/informacion-general/",
     schedule: [
       { days: "Martes", hours: "8:00 a. m. a 7:00 p. m." },
       { days: "Jueves", hours: "8:00 a. m. a 12:00 p. m." },
+    ],
+    openingHours: [
+      { days: ["Tuesday"], opens: "08:00", closes: "19:00" },
+      { days: ["Thursday"], opens: "08:00", closes: "12:00" },
     ],
     bookingSummary: "La cita se saca por la app de Sanna o llamando a la clínica.",
     channels: [
@@ -123,7 +161,10 @@ export const locations: Location[] = [
     addressCountry: "PE",
     geo: { latitude: -12.1032942, longitude: -76.9718807 },
     mapsUrl: mapsUrl("Clínica Padre Luis Tezza, Av. El Polo 570, Santiago de Surco, Lima, Perú"),
+    telephone: "+5116105050",
+    website: "https://clinicatezza.com.pe/",
     schedule: [{ days: "Jueves y viernes", hours: "2:00 p. m. a 6:00 p. m." }],
+    openingHours: [{ days: ["Thursday", "Friday"], opens: "14:00", closes: "18:00" }],
     bookingSummary: "La cita se saca desde la web de la clínica o por teléfono.",
     channels: [
       { label: "Central de citas (01) 610 5050", href: "tel:+5116105050" },

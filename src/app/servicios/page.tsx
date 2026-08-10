@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { WhatsAppCta } from "@/components/ui/whatsapp-cta";
 import { serviceCategories, procedureApproaches } from "@/content/services";
+import { BreadcrumbJsonLd, ServicesJsonLd } from "@/components/structured-data";
 
 export const metadata: Metadata = {
   title: "Traumatólogo Especialista en Columna en Lima — Servicios",
@@ -12,6 +13,9 @@ export const metadata: Metadata = {
 
 export default function ServiciosPage() {
   return (
+    <>
+      <ServicesJsonLd />
+      <BreadcrumbJsonLd items={[{ name: "Servicios", path: "/servicios" }]} />
     <div className="mx-auto max-w-4xl px-4 py-14 sm:px-6 sm:py-20">
       <h1 className="font-heading text-3xl font-extrabold text-primary sm:text-4xl">
         Especialidades y condiciones que trato
@@ -110,5 +114,6 @@ export default function ServiciosPage() {
         </div>
       </section>
     </div>
+    </>
   );
 }

@@ -5,6 +5,7 @@ import { ArrowRight } from "lucide-react";
 import { BookingCta } from "@/components/ui/booking-cta";
 import { education, experience, training, credentialsInfo } from "@/content/cv";
 import { siteConfig } from "@/lib/site-config";
+import { BreadcrumbJsonLd, ProfilePageJsonLd } from "@/components/structured-data";
 
 export const metadata: Metadata = {
   title: "Dr. Juan Carlos Angulo — Trayectoria y formación en Lima",
@@ -15,6 +16,9 @@ export const metadata: Metadata = {
 
 export default function SobreElDoctorPage() {
   return (
+    <>
+      <ProfilePageJsonLd />
+      <BreadcrumbJsonLd items={[{ name: "Sobre el doctor", path: "/sobre-el-doctor" }]} />
     <div className="mx-auto max-w-4xl px-4 py-14 sm:px-6 sm:py-20">
       <div className="flex flex-col gap-10 sm:flex-row sm:items-start">
         <Image
@@ -159,5 +163,6 @@ export default function SobreElDoctorPage() {
         <BookingCta>Ver sedes y agendar</BookingCta>
       </div>
     </div>
+    </>
   );
 }

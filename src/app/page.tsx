@@ -11,6 +11,7 @@ import { credentialsInfo } from "@/content/cv";
 import { faqItems } from "@/content/faq";
 import { reviewLinks } from "@/content/testimonials";
 import { siteConfig } from "@/lib/site-config";
+import { GoogleReviewsSection } from "@/components/reviews/google-reviews";
 
 export const metadata: Metadata = {
   title: `${siteConfig.name} — ${siteConfig.title}`,
@@ -21,7 +22,7 @@ export const metadata: Metadata = {
 /** ISR: la página se regenera cada hora para tomar los reels nuevos. */
 export const revalidate = 3600;
 
-export default function Home() {
+export default async function Home() {
   return (
     <>
       <section className="relative overflow-hidden bg-primary">
@@ -179,16 +180,14 @@ export default function Home() {
 
       <section className="border-t border-border bg-muted py-16 sm:py-24">
         <div className="mx-auto max-w-5xl px-4 sm:px-6">
-          <h2 className="font-heading text-2xl font-bold text-primary sm:text-3xl">
-            Lo que dicen sus pacientes
-          </h2>
+          <GoogleReviewsSection title="Lo que dicen sus pacientes" limit={3} />
 
-          <p className="mt-4 max-w-2xl text-lg text-foreground/80">
-            Los pacientes operados cuentan su recuperación en video, en el
-            Instagram del doctor. Las reseñas escritas están en Doctoralia.
+          <p className="mt-10 max-w-2xl text-lg text-foreground/80">
+            Los pacientes operados también cuentan su recuperación en video, en
+            el Instagram del doctor.
           </p>
 
-          <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:gap-10">
+          <div className="mt-6 flex flex-col gap-4 sm:flex-row sm:gap-10">
             <a
               href={reviewLinks.instagram}
               target="_blank"

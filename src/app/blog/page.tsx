@@ -1,6 +1,7 @@
 import Link from "next/link";
 import type { Metadata } from "next";
 import { blogPosts } from "@/content/blog";
+import { BlogJsonLd, BreadcrumbJsonLd } from "@/components/structured-data";
 
 export const metadata: Metadata = {
   title: "Blog — Salud de columna y traumatología",
@@ -18,6 +19,9 @@ const dateFormatter = new Intl.DateTimeFormat("es-PE", {
 
 export default function BlogPage() {
   return (
+    <>
+      <BlogJsonLd posts={blogPosts} />
+      <BreadcrumbJsonLd items={[{ name: "Blog", path: "/blog" }]} />
     <div className="mx-auto max-w-3xl px-4 py-14 sm:px-6 sm:py-20">
       <h1 className="font-heading text-3xl font-extrabold text-primary sm:text-4xl">
         Artículos sobre columna y traumatología
@@ -47,5 +51,6 @@ export default function BlogPage() {
         ))}
       </div>
     </div>
+    </>
   );
 }

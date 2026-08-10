@@ -3,6 +3,7 @@ import { Plus } from "lucide-react";
 import { WhatsAppCta } from "@/components/ui/whatsapp-cta";
 import { FaqJsonLd } from "@/components/structured-data";
 import { faqItems } from "@/content/faq";
+import { BreadcrumbJsonLd } from "@/components/structured-data";
 
 export const metadata: Metadata = {
   title: "Preguntas frecuentes",
@@ -13,6 +14,8 @@ export const metadata: Metadata = {
 
 export default function PreguntasFrecuentesPage() {
   return (
+    <>
+      <BreadcrumbJsonLd items={[{ name: "Preguntas frecuentes", path: "/preguntas-frecuentes" }]} />
     <div className="mx-auto max-w-3xl px-4 py-14 sm:px-6 sm:py-20">
       <FaqJsonLd items={faqItems} />
       <h1 className="font-heading text-3xl font-extrabold text-primary sm:text-4xl">
@@ -45,5 +48,6 @@ export default function PreguntasFrecuentesPage() {
         </div>
       </section>
     </div>
+    </>
   );
 }

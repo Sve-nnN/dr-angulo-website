@@ -4,6 +4,7 @@ import { ContactForm } from "@/components/contact-form";
 import { WhatsAppCta } from "@/components/ui/whatsapp-cta";
 import { primaryLocation } from "@/content/locations";
 import { siteConfig } from "@/lib/site-config";
+import { BreadcrumbJsonLd, ContactPageJsonLd } from "@/components/structured-data";
 
 export const metadata: Metadata = {
   title: "Contacto y Citas en Lima",
@@ -18,6 +19,9 @@ export default function ContactoPage() {
   );
 
   return (
+    <>
+      <ContactPageJsonLd />
+      <BreadcrumbJsonLd items={[{ name: "Contacto", path: "/contacto" }]} />
     <div className="mx-auto max-w-5xl px-4 py-14 sm:px-6 sm:py-20">
       <h1 className="font-heading text-3xl font-extrabold text-primary sm:text-4xl">
         Contacto
@@ -131,5 +135,6 @@ export default function ContactoPage() {
         </div>
       </div>
     </div>
+    </>
   );
 }
