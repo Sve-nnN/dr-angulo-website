@@ -224,19 +224,38 @@ entre hoy y entonces alguien puede agregar una fórmula.
 
 ---
 
+## Las tres columnas nuevas de `Keyword Research`
+
+Se agregan a la derecha de `Notes`, en este orden, sin renombrar ni reordenar nada:
+
+| Encabezado | Campo del dataset | Ruta en el registro | Origen |
+|---|---|---|---|
+| `CPC` | `cpc` | `metricas.cpc` | J-2 |
+| `Competition` | `competition` | `metricas.competition` | J-2 |
+| `Patient Stage` | `stage` | `stage` | **J-5** |
+
+`Competition` es el índice de competencia **comercial** entre 0 y 1, no dificultad orgánica.
+
+`Patient Stage` lleva encabezado en inglés como el resto de la plantilla y **valores en
+español** (`sintoma`, `diagnostico`, `decision`) para que el doctor los lea. El vocabulario lo
+produce `kw:classify`; el escritor solo transcribe lo que trae el dataset.
+
+La ruta al dataset sale del campo `source` del modelo, no del código. Si el dataset cambia de
+forma, se corrige este JSON y nada más.
+
+---
+
 ## Lo que deliberadamente no está en el Sheet
 
-Dos consecuencias de la decisión J-3 que conviene tener a mano, porque las dos se leen como
-omisión y no lo son:
+**No hay columnas de procedencia.** Es la decisión J-3, y sigue vigente. La procedencia por
+métrica vive en el dataset del repositorio, `seo-tools/data/keywords.jsonl`. Deroga la decisión
+del CONTEXT que pedía una columna sufijo por métrica.
 
-1. **No hay columnas de procedencia.** La procedencia por métrica vive en el dataset del
-   repositorio, `seo-tools/data/keywords.jsonl`. Deroga la decisión del CONTEXT que pedía una
-   columna sufijo por métrica.
-2. **La clasificación del paciente tampoco tiene columna.** KWR-03 la exige clasificada en el
-   dataset, no publicada en el documento, y SHEET-01 de la fase 13 no la lista entre lo que el
-   tab muestra. Vive en el mismo `keywords.jsonl`.
+> La clasificación del paciente llegó a estar en esta lista. Juan la sacó en el checkpoint del
+> plan 12-02 (**J-5**): es un dato de negocio, no de trazabilidad, así que tiene columna propia
+> y no contradice a J-3.
 
-Y una tercera, de J-1: las tres columnas de `Content Model` que nombran una herramienta que el
-milestone no consulta **quedan vacías**. No se escriben, no se renombran y no se borran.
-Escribir ahí un dato de otra procedencia sería entregarle al cliente información falsa sobre su
-origen, en su propio documento.
+Y de J-1: las tres columnas de `Content Model` que nombran una herramienta que el milestone no
+consulta **quedan vacías**. No se escriben, no se renombran y no se borran. Escribir ahí un dato
+de otra procedencia sería entregarle al cliente información falsa sobre su origen, en su propio
+documento.

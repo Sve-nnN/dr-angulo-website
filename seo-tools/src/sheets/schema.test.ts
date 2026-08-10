@@ -615,8 +615,9 @@ test("el modelo de Keyword Research declara los 18 encabezados reales, literales
   const declarados = tab.columns.filter((c) => c.status !== "nueva").map((c) => c.header);
   assert.deepEqual(declarados, KEYWORD_RESEARCH_HEADERS);
 
+  // J-2 agrega CPC y competencia; J-5, confirmada por Juan en el checkpoint, agrega la etapa.
   const nuevas = tab.columns.filter((c) => c.status === "nueva").map((c) => c.header);
-  assert.equal(nuevas.length, 2, "J-2 agrega exactamente dos columnas");
+  assert.deepEqual(nuevas, ["CPC", "Competition", "Patient Stage"]);
 
   const aEliminar = tab.columns.filter((c) => c.status === "eliminar").map((c) => c.header);
   assert.deepEqual(aEliminar, ["CVR", "Lead or Conversion Potential "]);
@@ -624,16 +625,36 @@ test("el modelo de Keyword Research declara los 18 encabezados reales, literales
   assert.equal(tab.keyHeader, "Suggested Keyword");
 });
 
-test("el mapeo de Keyword Research no declara ninguna columna derogada por J-3", async () => {
+test("J-3 sigue vigente: ni una sola columna de procedencia en el Sheet", async () => {
   const model = await loadSheetModel();
-  const serializado = JSON.stringify(model.tabs["Keyword Research"]);
+  const tab = model.tabs["Keyword Research"];
+  assert.ok(tab !== undefined);
 
-  for (const prohibida of ["Source", "Stage", "Etapa"]) {
-    assert.ok(
-      !serializado.includes(prohibida),
-      `el modelo incluye una columna derogada por J-3: ${prohibida}`,
-    );
+  // J-3 prohibe columnas de procedencia. La procedencia por metrica vive en el dataset.
+  for (const column of tab.columns) {
+    for (const prohibida of ["Source", "Fuente", "Procedencia"]) {
+      assert.ok(
+        !column.header.includes(prohibida),
+        `el modelo incluye una columna de procedencia, derogada por J-3: ${column.header}`,
+      );
+    }
   }
+});
+
+test("J-5: la etapa del paciente SI tiene columna, y eso no reabre J-3", async () => {
+  const model = await loadSheetModel();
+  const tab = model.tabs["Keyword Research"];
+  assert.ok(tab !== undefined);
+
+  // Juan veto en el checkpoint la propuesta de dejarla solo en el dataset. Es un dato de
+  // negocio, no de trazabilidad, asi que convive con J-3 sin contradecirlo.
+  const etapa = tab.columns.find((c) => c.header === "Patient Stage");
+  assert.ok(etapa !== undefined, "falta la columna de etapa que Juan pidio");
+  assert.equal(etapa.status, "nueva");
+  assert.equal(etapa.field, "stage");
+
+  // Y la procedencia por metrica sigue fuera del documento.
+  assert.match(String(JSON.stringify(model.meta)), /procedencia por metrica/i);
 });
 
 test("el modelo real resuelve contra los encabezados reales sin ninguna falla", async () => {
@@ -648,9 +669,19 @@ test("el modelo real resuelve contra los encabezados reales sin ninguna falla", 
   assert.equal(schema.byField.get("keyword")?.letter, "A");
   assert.equal(schema.byField.get("volume")?.letter, "D");
   assert.equal(schema.byField.get("intent")?.letter, "F");
-  // Las dos nuevas caen a la derecha de `Notes`, que es la R.
+  // Las tres nuevas caen a la derecha de `Notes`, que es la R.
   assert.deepEqual(
-    schema.added.map((a) => a.letter),
-    ["S", "T"],
+    schema.added.map((a) => [a.header, a.letter]),
+    [
+      ["CPC", "S"],
+      ["Competition", "T"],
+      ["Patient Stage", "U"],
+    ],
   );
+
+  // La ruta hacia el dataset sale del modelo, no del codigo: asi un cambio de forma del
+  // dataset se resuelve en el JSON.
+  assert.equal(schema.byField.get("volume")?.source, "metricas.searchVolume");
+  assert.equal(schema.byField.get("cpc")?.source, "metricas.cpc");
+  assert.equal(schema.byField.get("keyword")?.source, "keyword");
 });
