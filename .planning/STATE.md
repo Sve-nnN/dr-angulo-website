@@ -25,11 +25,21 @@ See: .planning/PROJECT.md (updated 2026-08-10)
 ## Current Position
 
 Phase: 7 de 11 (Dominio público, producción y Search Console), primera de las 5 fases de v1.1
-Plan: sin planes todavía
-Status: Ready to plan
-Last activity: 2026-08-10, ROADMAP de v1.1 creado con las fases 7 a 11 y los 27 requisitos mapeados
+Plan: 5 planes escritos. Ejecutados 07-01 y 07-03. Pendientes 07-02, 07-04 y 07-05
+Status: En ejecución, bloqueada por pasos manuales del cliente
+Last activity: 2026-08-10, DOM-01, DOM-02 y DOM-03 verificados en producción
 
-Progress: [░░░░░░░░░░] 0% de v1.1
+Progress: [████░░░░░░] 40% de v1.1
+
+### Estado de los requisitos de la fase 7, medido en producción el 2026-08-10
+
+| Req | Estado | Evidencia |
+|-----|--------|-----------|
+| DOM-01 | Cumplido | `https://drangulocolumna.com` responde 200 con certificado válido |
+| DOM-02 | Cumplido | `https://www` devuelve `301` con `location: https://drangulocolumna.com/`, un solo salto, vía `src/proxy.ts`. `http://www` hace 2 saltos, pero el intermedio es `https://www` y nunca `http://` del apex |
+| DOM-03 | Cumplido | Fallback de `siteConfig.url` corregido en `origin/main`, sin referencias a vercel.app en `src/`. Sitemap en producción con 12 URLs sobre el apex, `/privacidad` fuera |
+| DOM-04 | Diferido | Decisión del cliente del 2026-08-10: la cuenta de Resend queda para después. El código de observabilidad del formulario sí quedó desplegado |
+| DOM-05 | Pendiente | Requiere que el cliente cree la propiedad en Search Console |
 
 ## Roadmap v1.1
 
@@ -74,6 +84,7 @@ Ver tabla completa en PROJECT.md, sección Key Decisions.
 | 4 | verification_deferred_human, dominio público pendiente | Lo cierra la fase 7 (DOM-01). Después `/gsd-verify-work 4` |
 | 5 | verification_deferred_human, cuenta de Instagram sin vincular (código completo, SOCIAL-01 y SOCIAL-02 en Pending) | Seguir `05-VERIFICATION.md` o `docs/instagram-reels.md`, luego `/gsd-verify-work 5` |
 | 6 | verification_deferred_human, falta confirmar si el doctor sigue en Clínica Montefiori (código completo, LOC-01 a LOC-04 en Done) | Con la respuesta: sumar la sede a `src/content/locations.ts` o actualizar Doctoralia, luego `/gsd-verify-work 6` |
+| 7 | verification_deferred_human, DOM-04 diferido por decisión del cliente y DOM-05 esperando la propiedad en Search Console | Con la cuenta de Resend: `/gsd-execute-plan 07-04`. Con Search Console creado: `/gsd-execute-plan 07-05`. Después `/gsd-verify-work 7` |
 
 El cierre formal del milestone v1.0 (audit, complete-milestone, cleanup) espera estos tres ítems.
 
