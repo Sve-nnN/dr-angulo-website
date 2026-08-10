@@ -50,7 +50,12 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: `${siteConfig.name} — ${siteConfig.title}`,
     description: siteConfig.description,
-    images: ["/og-dr-angulo.jpg"],
+    // Sin `images` a propósito. Cada ruta genera su propia imagen con el
+    // convenio `opengraph-image`, que solo alimenta las etiquetas `og:`. Si acá
+    // se declarara una imagen fija, el `twitter:image` de las 21 rutas seguiría
+    // apuntando a la foto genérica y pisaría a la tarjeta propia de cada una.
+    // X usa `og:image` cuando falta `twitter:image`, así que la ruta correcta
+    // es no declararla.
   },
   robots: { index: true, follow: true },
 };
