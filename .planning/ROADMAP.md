@@ -104,11 +104,19 @@ Plans:
   2. `www.drangulocolumna.com` termina en `https://drangulocolumna.com` con un solo salto 301, sin pasar por HTTP en el camino.
   3. El código fuente de cualquier página muestra canonical, `og:url` y las URLs del sitemap sobre `https://drangulocolumna.com`, y sin `NEXT_PUBLIC_SITE_URL` el sitio no puede caer a un dominio muerto (el fallback de `siteConfig.url` ya no menciona vercel.app).
   4. Un envío de prueba del formulario llega como email a la casilla del doctor, enviado por Resend desde el dominio verificado.
-  5. La propiedad aparece verificada en Search Console, el sitemap enviado, y las 9 rutas base (`/`, `/servicios`, `/sobre-el-doctor`, `/testimonios`, `/preguntas-frecuentes`, `/contacto`, `/blog`, `/agendar`, `/privacidad`) reportan como indexadas.
-**Plans**: TBD
+  5. La propiedad aparece verificada en Search Console, el sitemap enviado, y las rutas base responden 200 e indexables: las 8 indexables (`/`, `/servicios`, `/sobre-el-doctor`, `/testimonios`, `/preguntas-frecuentes`, `/contacto`, `/blog`, `/agendar`) sin `noindex`, y `/privacidad` viva pero fuera del sitemap porque v1.0 la marcó `noindex, follow` a propósito. Confirmar que Google las indexó queda como seguimiento posterior al cierre (decisión de 07-CONTEXT.md), no es criterio de aceptación.
+**Plans**: 5 plans
+
+Plans:
+- [ ] 07-01-PLAN.md — Respaldo de origen: `src/proxy.ts` 301 de www al apex, desplegado, más verificación medida de DOM-01 y DOM-03
+- [ ] 07-02-PLAN.md — Redirect Rule de Cloudflare al borde y retiro del hostname `www` de la aplicación en Dokploy
+- [ ] 07-03-PLAN.md — Fallo de envío del formulario visible en el log y sitemap sin la ruta `noindex`
+- [ ] 07-04-PLAN.md — Resend: dominio verificado, API key y las tres variables de correo en producción
+- [ ] 07-05-PLAN.md — Search Console: propiedad de dominio verificada por TXT y sitemap enviado
 
 **Notas de ejecución**
-- Hosting es Dokploy self-hosted sobre Hetzner (`sapling-vps-01`), no Vercel. El dominio se asigna con la API de Dokploy: `domain.create` para `applicationId: 29ZFzVVwEczNI733DodMp`, puerto `3000`, HTTPS con Let's Encrypt. Las variables de producción van por `application.saveEnvironment` seguido de `application.deploy` (o `infra/apps/set-env-and-redeploy.sh` del repo `hosting`). Pasos exactos en `.planning/milestones/v1.0-phases/04-contenido-seo-legal-y-publicaci-n/04-VERIFICATION.md`, sección Human Verification Required.
+- **Corrección del 2026-08-09, medida contra producción.** El texto de abajo se escribió cuando el dominio servía la página parqueada de Porkbun. Ya no es así. `https://drangulocolumna.com` responde 200 con la app y certificado válido (DOM-01 cumplido), los canonicals, `og:url` y el sitemap ya salen sobre el apex (DOM-03 cumplido) y los nameservers están en Cloudflare. Lo que queda es la redirección de `www` (DOM-02), las variables de Resend (DOM-04) y Search Console (DOM-05). La tabla de estado medido vive en `07-CONTEXT.md` y manda sobre estas notas.
+- Hosting es Dokploy self-hosted sobre Hetzner (`sapling-vps-01`), no Vercel. Los dos hostnames ya están creados con la API de Dokploy sobre `applicationId: 29ZFzVVwEczNI733DodMp`, puerto `3000`, HTTPS con Let's Encrypt; la fase quita el de `www`, no crea ninguno. Las variables de producción van por `application.saveEnvironment` seguido de `application.deploy` (o `infra/apps/set-env-and-redeploy.sh` del repo `hosting`). Pasos exactos en `.planning/milestones/v1.0-phases/04-contenido-seo-legal-y-publicaci-n/04-VERIFICATION.md`, sección Human Verification Required.
 - DNS: registro `A` del apex hacia la IP de `sapling-vps-01` y el `www` hacia el apex. Si algo queda proxeado por Cloudflare, dejarlo en DNS-only hasta que emita el certificado.
 - DOM-05 va después de DOM-01 dentro de la fase: no se puede verificar la propiedad ni enviar sitemap de un dominio que sirve otra cosa.
 - Esta fase cierra INFRA-03 de v1.0 y desbloquea la verificación humana diferida de la fase 4.
@@ -202,7 +210,7 @@ Las fases se ejecutan en orden numérico: 7 → 8 → 9 → 10 → 11. La fase 1
 | 4. Contenido SEO, legal y publicación | v1.0 | 2/2 | Complete (dominio lo cierra la fase 7) | 2026-07-31 |
 | 5. Material real y feed de Instagram | v1.0 | 4/4 | Complete (vinculación de Instagram pendiente) | 2026-08-09 |
 | 6. Sedes, horarios y flujo de agenda | v1.0 | 1/1 | Complete (falta confirmar Montefiori) | 2026-08-09 |
-| 7. Dominio público, producción y Search Console | v1.1 | 0/TBD | Not started | - |
+| 7. Dominio público, producción y Search Console | v1.1 | 0/5 | Planned | - |
 | 8. Silo clínico: servicios y blog profundo | v1.1 | 0/TBD | Not started | - |
 | 9. Páginas por sede y cobertura local | v1.1 | 0/TBD | Not started | - |
 | 10. Schema, metadata y limpieza técnica | v1.1 | 0/TBD | Not started | - |
