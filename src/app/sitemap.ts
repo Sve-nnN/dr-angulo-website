@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
 import { siteConfig } from "@/lib/site-config";
 import { blogPosts } from "@/content/blog";
+import { servicePages } from "@/content/service-pages";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const staticRoutes: MetadataRoute.Sitemap = [
@@ -17,6 +18,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     // el error "Submitted URL marked noindex" en Search Console (D-10).
   ];
 
+  const serviceRoutes: MetadataRoute.Sitemap = servicePages.map((page) => ({
+    url: `${siteConfig.url}/servicios/${page.slug}`,
+    lastModified: page.updatedAt,
+    changeFrequency: "monthly",
+    priority: 0.8,
+  }));
+
   const blogRoutes: MetadataRoute.Sitemap = blogPosts.map((post) => ({
     url: `${siteConfig.url}/blog/${post.slug}`,
     lastModified: post.date,
@@ -24,5 +32,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.5,
   }));
 
-  return [...staticRoutes, ...blogRoutes];
+  return [...staticRoutes, ...serviceRoutes, ...blogRoutes];
 }

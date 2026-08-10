@@ -260,12 +260,24 @@ export function BreadcrumbJsonLd({ items }: { items: BreadcrumbItem[] }) {
 
 export type FaqJsonLdItem = { question: string; answer: string };
 
-/** FAQPage — solo en la página que muestra las preguntas completas. */
-export function FaqJsonLd({ items }: { items: FaqJsonLdItem[] }) {
+/**
+ * FAQPage — solo en páginas que muestran las preguntas completas y visibles.
+ *
+ * `path` existe para que cada página emita su propio `@id` en vez de que todas
+ * reclamen el de `/preguntas-frecuentes`. El valor por defecto conserva
+ * exactamente el `@id` que esa página emitía antes de la parametrización.
+ */
+export function FaqJsonLd({
+  items,
+  path = "/preguntas-frecuentes",
+}: {
+  items: FaqJsonLdItem[];
+  path?: string;
+}) {
   const data = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "@id": abs("/preguntas-frecuentes#faq"),
+    "@id": abs(`${path}#faq`),
     isPartOf: { "@id": ID.website },
     about: { "@id": ID.physician },
     inLanguage: "es-PE",
@@ -301,6 +313,65 @@ export function ServicesJsonLd() {
   };
 
   return <JsonLdScript id="servicios-jsonld" data={data} />;
+}
+
+export type MedicalWebPageJsonLdData = {
+  slug: string;
+  title: string;
+  description: string;
+  conditionName: string;
+  alternateNames?: string[];
+  publishedAt: string;
+  updatedAt: string;
+  describesSurgery: boolean;
+};
+
+/**
+ * Guía clínica de una condición, bajo `/servicios/{slug}`.
+ *
+ * Deliberadamente no emite `reviewedBy` ni `lastReviewed`: el contenido se
+ * publica antes de que el doctor lo revise, y afirmar una revisión médica que
+ * no ocurrió es exactamente el riesgo que las salvaguardas de la fase
+ * previenen. Cuando la revisión suceda, ese es el momento de sumarlos.
+ *
+ * `datePublished` y `dateModified` salen de los mismos campos que muestra
+ * `AuthorByline`, así el marcado y lo que ve el paciente no divergen.
+ */
+export function MedicalWebPageJsonLd({ page }: { page: MedicalWebPageJsonLdData }) {
+  const url = abs(`/servicios/${page.slug}`);
+  // Se referencian los procedimientos ya declarados en el grafo raíz por su
+  // `@id`; no se declara ninguno nuevo.
+  const procedureRefs = procedureApproaches.map((approach) => ({
+    "@id": ID.procedure(approach.slug),
+  }));
+
+  const data = {
+    "@context": "https://schema.org",
+    "@type": "MedicalWebPage",
+    "@id": `${url}#page`,
+    url,
+    name: page.title,
+    description: page.description,
+    inLanguage: "es-PE",
+    isPartOf: { "@id": ID.website },
+    author: { "@id": ID.physician },
+    publisher: { "@id": ID.physician },
+    datePublished: page.publishedAt,
+    dateModified: page.updatedAt,
+    specialty: ["Musculoskeletal", "Surgical"],
+    mainEntityOfPage: url,
+    about: {
+      "@type": "MedicalCondition",
+      name: page.conditionName,
+      ...(page.alternateNames?.length
+        ? { alternateName: page.alternateNames }
+        : {}),
+      ...(page.describesSurgery ? { possibleTreatment: procedureRefs } : {}),
+    },
+    ...(page.describesSurgery ? { mentions: procedureRefs } : {}),
+  };
+
+  return <JsonLdScript id="servicio-jsonld" data={data} />;
 }
 
 /** Página del doctor: perfil profesional. */

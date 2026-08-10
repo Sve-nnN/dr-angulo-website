@@ -9,6 +9,11 @@ import { AuthorByline } from "@/components/ui/author-byline";
 import { MedicalDisclaimer } from "@/components/ui/medical-disclaimer";
 import { MidContentCta } from "@/components/ui/mid-content-cta";
 import { TableOfContents } from "@/components/ui/table-of-contents";
+import {
+  BreadcrumbJsonLd,
+  FaqJsonLd,
+  MedicalWebPageJsonLd,
+} from "@/components/structured-data";
 import { blogPosts } from "@/content/blog";
 import {
   SERVICE_SECTION_ORDER,
@@ -67,7 +72,25 @@ export default async function ServiceGuidePage({ params }: Props) {
     page.relatedPosts.includes(post.slug)
   );
 
+  const faqItems = (page.sections["preguntas-frecuentes"].subsections ?? []).map(
+    (subsection) => ({
+      question: subsection.heading,
+      answer: subsection.paragraphs.join(" "),
+    })
+  );
+
   return (
+    <>
+      <MedicalWebPageJsonLd page={page} />
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Servicios", path: "/servicios" },
+          { name: page.navLabel, path: `/servicios/${page.slug}` },
+        ]}
+      />
+      {faqItems.length > 0 && (
+        <FaqJsonLd items={faqItems} path={`/servicios/${page.slug}`} />
+      )}
     <article
       data-content-body=""
       className="mx-auto max-w-2xl px-4 py-14 sm:px-6 sm:py-20"
@@ -185,5 +208,6 @@ export default async function ServiceGuidePage({ params }: Props) {
         <MedicalDisclaimer />
       </div>
     </article>
+    </>
   );
 }
