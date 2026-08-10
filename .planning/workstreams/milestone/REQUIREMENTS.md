@@ -10,40 +10,40 @@ Derivados de la auditoría SEO del 2026-08-10. Cada requisito nombra la severida
 
 ### DOM — Dominio y publicación
 
-- [ ] **DOM-01**: Un paciente que escribe drangulocolumna.com llega al sitio del doctor con certificado HTTPS válido, no a la página parqueada de Porkbun *(crítico C1)*
-- [ ] **DOM-02**: Quien entra por www.drangulocolumna.com llega al apex en un solo salto 301, directo a HTTPS sin pasar por HTTP *(crítico C3)*
-- [ ] **DOM-03**: Los canonicals, las etiquetas OG y el sitemap del sitio publicado apuntan a drangulocolumna.com, y el código no puede caer a un dominio muerto si falta la variable de entorno *(crítico C2)*
+- [x] **DOM-01**: Un paciente que escribe drangulocolumna.com llega al sitio del doctor con certificado HTTPS válido, no a la página parqueada de Porkbun *(crítico C1)*
+- [x] **DOM-02**: Quien entra por www.drangulocolumna.com llega al apex en un solo salto 301, directo a HTTPS sin pasar por HTTP *(crítico C3)*
+- [x] **DOM-03**: Los canonicals, las etiquetas OG y el sitemap del sitio publicado apuntan a drangulocolumna.com, y el código no puede caer a un dominio muerto si falta la variable de entorno *(crítico C2)*
 - [ ] **DOM-04**: Un paciente que envía el formulario de contacto genera un email real que llega a la casilla del doctor, vía Resend con dominio verificado
-- [ ] **DOM-05**: La propiedad está verificada en Search Console, el sitemap enviado, y las 9 rutas base aparecen indexadas
+- [x] **DOM-05**: La propiedad está verificada en Search Console, el sitemap enviado, y las 9 rutas base aparecen indexadas
 
 ### SVC — Páginas por servicio
 
-- [ ] **SVC-01**: Un paciente que busca "hernia discal" encuentra una página dedicada con 900+ palabras revisadas por el doctor y schema `MedicalProcedure` *(alto A3)*
-- [ ] **SVC-02**: Existe la misma página dedicada para estenosis espinal *(alto A3)*
-- [ ] **SVC-03**: Existe la misma página dedicada para escoliosis y deformidades de columna *(alto A3)*
-- [ ] **SVC-04**: Existe la misma página dedicada para ortopedia infantil *(alto A3)*
-- [ ] **SVC-05**: `/servicios` funciona como hub: enlaza a las cuatro páginas, cada una enlaza de vuelta y ofrece CTA de agenda sin volver al inicio
+- [x] **SVC-01**: Un paciente que busca "hernia discal" encuentra una página dedicada con 900+ palabras revisadas por el doctor y schema `MedicalProcedure` *(alto A3)*
+- [x] **SVC-02**: Existe la misma página dedicada para estenosis espinal *(alto A3)*
+- [x] **SVC-03**: Existe la misma página dedicada para escoliosis y deformidades de columna *(alto A3)*
+- [x] **SVC-04**: Existe la misma página dedicada para ortopedia infantil *(alto A3)*
+- [x] **SVC-05**: `/servicios` funciona como hub: enlaza a las cuatro páginas, cada una enlaza de vuelta y ofrece CTA de agenda sin volver al inicio
 
 ### SEDE — Páginas por sede
 
-- [ ] **SEDE-01**: Cada una de las cuatro sedes tiene URL propia con dirección, días, horarios y su canal de agenda específico *(alto A4)*
+- [x] **SEDE-01**: Cada una de las cuatro sedes tiene URL propia con dirección, días, horarios y su canal de agenda específico *(alto A4)*
 - [ ] **SEDE-02**: Un paciente que busca "traumatólogo columna clínica ricardo palma" encuentra la página de esa sede, no una página genérica *(alto A4, related search verificada en la SERP)*
-- [ ] **SEDE-03**: Cada página de sede declara su propio JSON-LD y se enlaza en ambos sentidos con `/agendar`
+- [x] **SEDE-03**: Cada página de sede declara su propio JSON-LD y se enlaza en ambos sentidos con `/agendar`
 
 ### BLOG — Profundidad de contenido
 
-- [ ] **BLOG-02**: Los cuatro posts existentes pasan de ~200 a 900+ palabras, con revisión del doctor antes de publicar *(alto A1)*
-- [ ] **BLOG-03**: Cada post enlaza a su página de servicio relacionada y ofrece CTA de agenda
+- [x] **BLOG-02**: Los cuatro posts existentes pasan de ~200 a 900+ palabras, con revisión del doctor antes de publicar *(alto A1)*
+- [x] **BLOG-03**: Cada post enlaza a su página de servicio relacionada y ofrece CTA de agenda
 
 ### SEO — Schema y metadata
 
-- [ ] **SEO-05**: Toda página anidada declara `BreadcrumbList` y Google muestra la miga de pan en el resultado *(alto A6)*
-- [ ] **SEO-06**: El `Physician` declara `hasCredential` con CMP 83189 y RNE 35310, y `openingHoursSpecification` del consultorio privado *(alto A6)*
-- [ ] **SEO-07**: Los testimonios publicados están marcados con `Review`/`AggregateRating`, únicamente los verificables *(alto A6)*
+- [x] **SEO-05**: Toda página anidada declara `BreadcrumbList` y Google muestra la miga de pan en el resultado *(alto A6)*
+- [x] **SEO-06**: El `Physician` declara `hasCredential` con CMP 83189 y RNE 35310, y `openingHoursSpecification` del consultorio privado *(alto A6)*
+- [x] **SEO-07**: Los testimonios publicados están marcados con `Review`/`AggregateRating`, únicamente los verificables *(alto A6)*
 - [ ] **SEO-08**: Ningún title supera 60 caracteres ni ninguna description 155, en las 9 rutas base más las nuevas *(medio M1)*
-- [ ] **SEO-09**: Cada página tiene su propia imagen OG en vez de compartir una sola *(medio M2)*
-- [ ] **SEO-10**: El sitio expone `llms.txt` para motores generativos *(medio M4)*
-- [ ] **SEO-11**: `dr-angulo-portrait.png` (489 KB, permisos `rw-------`, sin uso) queda fuera del repo *(medio M3)*
+- [x] **SEO-09**: Cada página tiene su propia imagen OG en vez de compartir una sola *(medio M2)*
+- [x] **SEO-10**: El sitio expone `llms.txt` para motores generativos *(medio M4)*
+- [x] **SEO-11**: `dr-angulo-portrait.png` (489 KB, permisos `rw-------`, sin uso) queda fuera del repo *(medio M3)*
 
 ### GBP — Local SEO fuera del código
 
@@ -63,7 +63,7 @@ Milestone v1.0, fases 1-6. Conservado para trazabilidad.
 
 - [x] **INFRA-01**: Proyecto Next.js (App Router) + TypeScript + Tailwind CSS scaffolded y corriendo
 - [x] **INFRA-02**: Layout global (header/nav, footer, botón flotante de WhatsApp) presente en todas las páginas
-- [ ] **INFRA-03**: Sitio desplegado y accesible por URL pública — deployado en Dokploy, contenedor corriendo; el dominio lo cierra DOM-01
+- [x] **INFRA-03**: Sitio desplegado y accesible por URL pública — deployado en Dokploy, contenedor corriendo; el dominio lo cierra DOM-01
 - [x] **INFRA-04**: Variables de entorno para WhatsApp, GA4, Meta Pixel, Resend documentadas (`.env.example`)
 
 ### BRAND — Identidad visual
