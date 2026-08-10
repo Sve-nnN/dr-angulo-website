@@ -24,12 +24,29 @@ See: .planning/PROJECT.md (updated 2026-08-10)
 
 ## Current Position
 
-Phase: 9 de 11 (Páginas por sede), cerrada y en producción. La siguiente es la 10 (Schema, metadata y limpieza técnica)
-Plan: fases 7, 8 y 9 cerradas. Fase 10 con contexto escrito, sin planes todavía
-Status: Listo para planificar la fase 10
-Last activity: 2026-08-10, fase 9 desplegada y verificada en producción
+Phase: 10 de 11 (Schema, metadata y limpieza técnica), cerrada y en producción. Queda la 11 (Local SEO)
+Plan: fases 7, 8, 9 y 10 cerradas. La 11 no toca código de aplicación
+Status: Listo para la fase 11
+Last activity: 2026-08-10, fase 10 desplegada y verificada en producción
 
-Progress: [██████████] 100% de las fases de contenido de v1.1, quedan 10 y 11
+Progress: [████████░░] 4 de 5 fases de v1.1
+
+### Estado de la fase 10, verificado en producción el 2026-08-10
+
+| Req | Estado | Evidencia |
+|-----|--------|-----------|
+| SEO-05 breadcrumbs | Ya estaba cumplido | `BreadcrumbList` en las 20 rutas anidadas. Se verificó, no se reconstruyó |
+| SEO-06 credenciales y horarios | Ya estaba cumplido | CMP 83189, RNE 35310 y horarios completos de las cuatro sedes. El horario de viernes y sábado del consultorio ya estaba en `locations.ts` (09:00 a 17:00, verificado contra Google el 2026-08-09): el contexto lo daba por pendiente y era dato viejo |
+| SEO-07 marcado de reseñas | Cumplido | Producción emite `"ratingValue":5,"reviewCount":6` leído en vivo de la ficha de Google. En local la clave está restringida por IP al servidor y el sitio degrada a no emitir marcado, que es el comportamiento correcto. Nada escrito a mano, nada persistido |
+| SEO-08 titles y descriptions | **Fuera de alcance** | Juan los reescribe él. Se verificó en el diff que la fase no tocó ninguno |
+| SEO-08 imágenes OG | Cumplido | 22 imágenes distintas, antes había una sola. Dinámicas: leen el title de cada ruta, así que se regeneran solas cuando Juan reescriba los titles |
+| SEO-10 llms.txt | Cumplido | `/llms.txt` responde 200, generado desde las fuentes de contenido |
+| SEO-11 limpieza | Cumplido | `dr-angulo-portrait.png` borrado del repo y del build, responde 404 |
+| Stylesheet del sitemap | Cumplido, pedido nuevo de Juan | `/sitemap.xml` conserva `content-type` XML y sus 21 URLs, y ahora se lee como tabla con la identidad del sitio |
+
+**Hallazgo que valía más que el problema declarado:** las guías de servicio y los posts del blog no declaraban ninguna imagen OG. Al fijar su propio bloque `openGraph` sin `images`, reemplazaban el del layout en vez de heredarlo, así que compartir una guía clínica por WhatsApp no mostraba nada.
+
+**Cuarta puerta ejecutable:** `npm run seo:check`, que cubre solo lo que esta fase entrega y nace en verde. La puerta de longitud de metadata NO se construyó a propósito: nacería en rojo sobre 17 rutas que Juan todavía no reescribió.
 
 ### Estado de la fase 8, verificado en producción el 2026-08-10
 
