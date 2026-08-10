@@ -25,8 +25,8 @@ See: .planning/PROJECT.md (updated 2026-08-10)
 ## Current Position
 
 Phase: 7 de 11 (Dominio público, producción y Search Console), primera de las 5 fases de v1.1
-Plan: 5 planes escritos. Ejecutados 07-01 y 07-03. Pendientes 07-02, 07-04 y 07-05
-Status: En ejecución, bloqueada por pasos manuales del cliente
+Plan: 5 planes escritos. Ejecutados 07-01 y 07-03. DOM-05 lo cerró el cliente por su cuenta. Quedan 07-02 (descartado) y 07-04 (diferido)
+Status: Cerrada salvo DOM-04, que el cliente difirió
 Last activity: 2026-08-10, DOM-01, DOM-02 y DOM-03 verificados en producción
 
 Progress: [████░░░░░░] 40% de v1.1
@@ -39,7 +39,7 @@ Progress: [████░░░░░░] 40% de v1.1
 | DOM-02 | Cumplido | `https://www` devuelve `301` con `location: https://drangulocolumna.com/`, un solo salto, vía `src/proxy.ts`. `http://www` hace 2 saltos, pero el intermedio es `https://www` y nunca `http://` del apex |
 | DOM-03 | Cumplido | Fallback de `siteConfig.url` corregido en `origin/main`, sin referencias a vercel.app en `src/`. Sitemap en producción con 12 URLs sobre el apex, `/privacidad` fuera |
 | DOM-04 | Diferido | Decisión del cliente del 2026-08-10: la cuenta de Resend queda para después. El código de observabilidad del formulario sí quedó desplegado |
-| DOM-05 | Pendiente | Requiere que el cliente cree la propiedad en Search Console |
+| DOM-05 | Cumplido | El cliente confirmó el 2026-08-10 que la propiedad de Search Console es suya y que ya envió el sitemap. El TXT `google-site-verification=FM89gW...` del apex pertenece a esa propiedad: no borrarlo nunca. Verificado aparte contra producción: las 8 rutas del sitemap emiten `index, follow`, `/privacidad` emite `noindex` y quedó fuera del sitemap, y `robots.txt` apunta al sitemap correcto. La confirmación de indexado efectivo es seguimiento posterior y no bloquea la fase |
 
 ## Roadmap v1.1
 
@@ -84,7 +84,9 @@ Ver tabla completa en PROJECT.md, sección Key Decisions.
 | 4 | verification_deferred_human, dominio público pendiente | Lo cierra la fase 7 (DOM-01). Después `/gsd-verify-work 4` |
 | 5 | verification_deferred_human, cuenta de Instagram sin vincular (código completo, SOCIAL-01 y SOCIAL-02 en Pending) | Seguir `05-VERIFICATION.md` o `docs/instagram-reels.md`, luego `/gsd-verify-work 5` |
 | 6 | verification_deferred_human, falta confirmar si el doctor sigue en Clínica Montefiori (código completo, LOC-01 a LOC-04 en Done) | Con la respuesta: sumar la sede a `src/content/locations.ts` o actualizar Doctoralia, luego `/gsd-verify-work 6` |
-| 7 | verification_deferred_human, DOM-04 diferido por decisión del cliente y DOM-05 esperando la propiedad en Search Console | Con la cuenta de Resend: `/gsd-execute-plan 07-04`. Con Search Console creado: `/gsd-execute-plan 07-05`. Después `/gsd-verify-work 7` |
+| 7 | verification_deferred_human, solo DOM-04. Los otros cuatro requisitos están verificados en producción | Cuando el cliente tenga cuenta de Resend, casilla destino y API key: `/gsd-execute-plan 07-04`, después `/gsd-verify-work 7` |
+
+**07-02 descartado, no diferido.** La Redirect Rule de Cloudflare dejó de hacer falta cuando `src/proxy.ts` cerró DOM-02 desde el origen. Solo habría bajado `http://www` de 2 saltos a 1 evitando un golpe al origen, ganancia marginal. **Consecuencia importante: no sacar `www.drangulocolumna.com` de los dominios de la aplicación en Dokploy.** La redirección funciona porque Traefik enruta ese host hacia la app y ahí `proxy.ts` responde el 301. Quitarlo rompe la redirección.
 
 El cierre formal del milestone v1.0 (audit, complete-milestone, cleanup) espera estos tres ítems.
 
