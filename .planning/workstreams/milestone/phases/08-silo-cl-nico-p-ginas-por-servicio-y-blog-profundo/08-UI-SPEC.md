@@ -399,9 +399,9 @@ El enlace hacia la página de servicio del tema sigue el mapa del CONTEXT: los d
 
 Juan decidió que las páginas de servicio van **firmadas por el doctor**, con el riesgo delante: se le atribuye texto que todavía no escribió ni aprobó. La decisión se ejecuta y las salvaguardas se endurecen.
 
-**SAFE-01. El aviso viaja pegado a la firma.** `MedicalDisclaimer` se renderiza inmediatamente después de `AuthorByline`, arriba del pliegue, antes de la tabla de contenidos. No al pie. La atribución y la advertencia se leen juntas o el aviso no cumple su función.
+**SAFE-01. Revertido el 2026-08-10 por decisión de Juan.** Redacción original: "El aviso viaja pegado a la firma. `MedicalDisclaimer` se renderiza inmediatamente después de `AuthorByline`, arriba del pliegue, antes de la tabla de contenidos. No al pie. La atribución y la advertencia se leen juntas o el aviso no cumple su función." Juan pidió explícitamente que el aviso aparezca solo al cierre, no al inicio. Es su decisión y se ejecuta. Queda registrado que esto debilita la mitigación original: la atribución al doctor ya no se lee junto con la advertencia. El resto de las salvaguardas de contenido (SAFE-04 a SAFE-10) sigue vigente sin cambios y es lo que ahora carga más peso.
 
-**SAFE-02. El aviso además se repite al cierre**, después del CTA. Dos apariciones: una junto a la firma y otra cerrando la página. La primera es la que importa.
+**SAFE-02. El aviso aparece una sola vez, al cierre**, después del CTA y de la firma. La aparición previa a la tabla de contenidos se quitó tanto en las páginas de servicio como en los posts del blog, para que el tratamiento sea consistente en todo el sitio.
 
 **SAFE-03. El aviso es visible, no decorativo.** Superficie `bg-muted`, borde `border border-border`, `rounded-2xl p-6`, ícono `Info` de Lucide en `text-primary` con `aria-hidden="true"`, título en `font-heading text-base font-bold text-foreground` y cuerpo en `text-foreground/80` a 16px. Prohibido: `text-xs`, opacidad por debajo de `/70`, gris claro sobre gris, o colapsarlo dentro de un `details`.
 
