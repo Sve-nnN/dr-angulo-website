@@ -30,7 +30,10 @@ export function BookingCta({
       href="/agendar"
       onClick={onClick}
       className={cn(
-        "inline-flex cursor-pointer items-center justify-center gap-2 rounded-lg bg-accent font-semibold text-foreground shadow-sm transition-[background-color,transform,box-shadow] duration-200 ease-out hover:-translate-y-px hover:bg-accent-hover hover:shadow-md motion-reduce:hover:translate-y-0",
+        // El anillo en `--accent-dark` existe por contraste, no por estética: la
+        // superficie dorada da 2.27:1 contra el fondo de página y un límite de
+        // control necesita 3:1. El anillo de 1px lo lleva a 3.13:1 (COLOR-03).
+        "inline-flex cursor-pointer items-center justify-center gap-2 rounded-lg bg-accent font-semibold text-foreground shadow-sm ring-1 ring-accent-dark transition-[background-color,transform,box-shadow] duration-200 ease-out hover:-translate-y-px hover:bg-accent-hover hover:shadow-md motion-reduce:hover:translate-y-0",
         size === "sm" ? "px-5 py-2.5 text-sm" : "px-6 py-3 text-base",
         className
       )}
