@@ -24,12 +24,31 @@ See: .planning/PROJECT.md (updated 2026-08-10)
 
 ## Current Position
 
-Phase: 7 de 11 (Dominio público, producción y Search Console), primera de las 5 fases de v1.1
-Plan: 5 planes escritos. Ejecutados 07-01 y 07-03. DOM-05 lo cerró el cliente por su cuenta. Quedan 07-02 (descartado) y 07-04 (diferido)
-Status: Cerrada salvo DOM-04, que el cliente difirió
-Last activity: 2026-08-10, DOM-01, DOM-02 y DOM-03 verificados en producción
+Phase: 8 de 11 (Silo clínico), cerrada y en producción. La siguiente es la 9 (Páginas por sede)
+Plan: fase 8 con 4 planes ejecutados más una ronda de rediseño pedida por el cliente. Fase 7 cerrada salvo DOM-04, diferido
+Status: Listo para planificar la fase 9
+Last activity: 2026-08-10, fase 8 desplegada y verificada en producción, 13 rutas en 200
 
-Progress: [████░░░░░░] 40% de v1.1
+Progress: [████████░░] 80% de v1.1
+
+### Estado de la fase 8, verificado en producción el 2026-08-10
+
+Las cuatro páginas de servicio viven en `/servicios/{hernia-discal,estenosis-espinal,escoliosis,ortopedia-infantil}`, todas por encima de 1900 palabras. Los cuatro posts del blog superan las 900. Sitemap en 16 URLs. `scripts/check-content.mjs` es la puerta ejecutable que lo verifica y corre en verde sobre las ocho rutas.
+
+Dos rondas de cambios pedidos por el cliente después de la primera entrega, ambas aplicadas y desplegadas:
+
+1. **Las páginas parecían blog.** Se rediseñó la plantilla: banda de cabecera con hero y CTA arriba del pliegue, layout de dos columnas con aside sticky, y tratamiento visual propio por sección (tarjetas para síntomas y complicaciones, alerta para cuándo consultar, comparación de dos columnas para tratamiento, pasos numerados para diagnóstico y recuperación). Se agregó la sección `complicaciones` a las cuatro páginas.
+2. **Megamenú de servicios** en el navbar, con hover más foco de teclado, Escape y `aria-expanded`. En móvil las cuatro páginas quedan anidadas bajo Servicios.
+
+**Decisiones del cliente que debilitan salvaguardas acordadas, registradas para que no se pierdan:**
+
+- El contenido clínico se publica sin revisión previa del doctor. La revisión es posterior. Ver PROJECT.md, sección Constraints, y la nota del criterio 4 en el ROADMAP.
+- Las páginas van **firmadas por el doctor** pese a que él no las escribió ni las aprobó.
+- El aviso de contenido educativo aparece **solo al cierre**, ya no pegado a la firma arriba del pliegue. Esto revierte SAFE-01 y quedó documentado en `08-UI-SPEC.md` y en el docblock de `MedicalDisclaimer`.
+
+Lo que sigue protegiendo: cero credenciales fuera de `cv.ts`, cero cifras de cirugías, tasas de éxito, plazos garantizados o precios, cero voz en primera persona sobre casos, y el schema no emite `reviewedBy` ni `lastReviewed` porque a la fecha nadie revisó. Todo eso lo verifica la puerta por máquina.
+
+**Pendiente de verificación humana del cliente:** lectura de la prosa clínica de las ocho rutas. Ninguna puerta puede juzgar exactitud clínica.
 
 ### Estado de los requisitos de la fase 7, medido en producción el 2026-08-10
 
