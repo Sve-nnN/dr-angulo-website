@@ -5,17 +5,22 @@ import Image from "next/image";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
 import { BookingCta } from "@/components/ui/booking-cta";
+import { ServicesMenu } from "@/components/layout/services-menu";
 import { cn } from "@/lib/utils";
 import { siteConfig } from "@/lib/site-config";
+import { servicePages } from "@/content/service-pages";
 
 /**
  * `label` es el texto del menú de escritorio, donde el espacio manda;
  * `longLabel` es el del menú móvil, que sí tiene ancho para ser explícito.
+ *
+ * "Servicios" no vive acá: en escritorio lo resuelve `ServicesMenu` como
+ * megamenú, y en móvil se renderiza aparte con las cuatro páginas anidadas
+ * debajo (ver el bloque de navegación móvil más abajo).
  */
 const NAV_LINKS = [
   { href: "/", label: "Inicio" },
   { href: "/sobre-el-doctor", label: "El doctor", longLabel: "Sobre el doctor" },
-  { href: "/servicios", label: "Servicios" },
   { href: "/agendar", label: "Sedes", longLabel: "Sedes y horarios" },
   { href: "/testimonios", label: "Testimonios" },
   {
@@ -90,7 +95,17 @@ export function Header() {
           aria-label="Principal"
           className="hidden items-center gap-5 xl:flex"
         >
-          {NAV_LINKS.map((link) => (
+          {NAV_LINKS.slice(0, 2).map((link) => (
+            <Link
+              key={link.href}
+              href={link.href}
+              className="whitespace-nowrap text-sm font-medium text-foreground/80 transition-colors duration-150 hover:text-primary"
+            >
+              {link.label}
+            </Link>
+          ))}
+          <ServicesMenu />
+          {NAV_LINKS.slice(2).map((link) => (
             <Link
               key={link.href}
               href={link.href}
@@ -126,7 +141,37 @@ export function Header() {
           aria-label="Principal"
           className="animate-rise-in flex flex-col gap-1 border-t border-border bg-background px-4 pb-4 pt-2 [animation-duration:250ms] xl:hidden"
         >
-          {NAV_LINKS.map((link) => (
+          {NAV_LINKS.slice(0, 2).map((link) => (
+            <Link
+              key={link.href}
+              href={link.href}
+              onClick={() => setOpen(false)}
+              className="rounded-lg px-3 py-3 text-base font-medium text-foreground/80 transition-colors duration-150 hover:bg-muted hover:text-primary"
+            >
+              {link.longLabel ?? link.label}
+            </Link>
+          ))}
+          <Link
+            href="/servicios"
+            onClick={() => setOpen(false)}
+            className="rounded-lg px-3 py-3 text-base font-medium text-foreground/80 transition-colors duration-150 hover:bg-muted hover:text-primary"
+          >
+            Servicios
+          </Link>
+          <ul className="ml-3 flex flex-col gap-0.5 border-l border-border pl-3">
+            {servicePages.map((page) => (
+              <li key={page.slug}>
+                <Link
+                  href={`/servicios/${page.slug}`}
+                  onClick={() => setOpen(false)}
+                  className="block min-h-11 rounded-lg px-3 py-2.5 text-sm font-medium text-foreground/70 transition-colors duration-150 hover:bg-muted hover:text-primary"
+                >
+                  {page.navLabel}
+                </Link>
+              </li>
+            ))}
+          </ul>
+          {NAV_LINKS.slice(2).map((link) => (
             <Link
               key={link.href}
               href={link.href}
