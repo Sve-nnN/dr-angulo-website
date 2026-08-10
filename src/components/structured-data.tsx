@@ -85,7 +85,14 @@ function locationNode(location: Location) {
     },
     telephone: location.telephone,
     hasMap: location.mapsUrl,
-    ...(location.website ? { url: location.website } : { url: abs("/agendar") }),
+    // La URL canónica de esta ubicación dentro del sitio es su página de sede,
+    // no la web de la clínica: es la superficie que este dominio controla y la
+    // que se quiere indexar. La web oficial, cuando existe, es la misma entidad
+    // en otro dominio, que es lo que significa `sameAs`. Antes de que las
+    // páginas de sede existieran, este campo apuntaba a la web de la clínica o,
+    // a falta de ella, a `/agendar` como sustituto.
+    url: abs(`/sedes/${location.slug}`),
+    ...(location.website ? { sameAs: [location.website] } : {}),
     openingHoursSpecification: openingHours(location),
     medicalSpecialty: ["Musculoskeletal", "Surgical"],
     ...(isOwnOffice ? { branchOf: { "@id": ID.physician } } : {}),
