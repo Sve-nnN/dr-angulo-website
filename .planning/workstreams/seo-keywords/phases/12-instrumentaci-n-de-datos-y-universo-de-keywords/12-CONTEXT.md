@@ -62,9 +62,11 @@ dura del milestone.
   - Expansión a 400 o más: DinoRank más SerpApi (related searches, People Also Ask,
     autocomplete) más permutación de semillas.
   - Volumen, CPC y competencia de las 400 o más: DinoRank.
-  - Las columnas de KD y traffic potential existen en el dataset y en el Sheet, con valor
-    `no_consultado` para todo el universo. No se borran: se dejan listas para cuando el
-    enriquecimiento se retome.
+  - **Son tres las columnas diferidas, no dos** (corregido el 2026-08-10 tras leer el Sheet
+    en vivo): `Keyword Difficulty`, `Traffic Potential` y `Referring Domains Needed`. Las tres
+    existen en el dataset y en el Sheet con valor `no_consultado` para todo el universo. No se
+    borran: se dejan listas para cuando el enriquecimiento se retome, así no hace falta migrar
+    el esquema.
   - *Trayectoria de la decisión: se pidió primero economía de Ahrefs (shortlist de 40 a 60,
     unas 1.200 unidades con el select recortado a `keyword,difficulty,traffic_potential`), y
     después sacarlo del todo. Registrado porque el dato de costo sigue siendo útil cuando se
