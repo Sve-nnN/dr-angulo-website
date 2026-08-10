@@ -2,15 +2,18 @@
 gsd_state_version: 1.0
 milestone: v1.2
 milestone_name: "SEO semantico: keyword research y optimizacion on-page"
-status: planning
-last_updated: "2026-08-10T15:10:00.000Z"
-last_activity: 2026-08-10
+current_phase: 12
+current_phase_name: Instrumentación de datos y universo de keywords
+status: executing
+stopped_at: "Completado 12-02-PLAN.md: modelo del Sheet, escritor idempotente y sheet:push. Carga real diferida al plan 04"
+last_updated: "2026-08-10T23:12:08.705Z"
+last_activity: 2026-08-10, cerrado el plan 12-02 con el escritor idempotente del Sheet
 progress:
   total_phases: 4
   completed_phases: 0
-  total_plans: 0
-  completed_plans: 0
-  percent: 0
+  total_plans: 5
+  completed_plans: 2
+  percent: 40
 ---
 
 # Project State
@@ -25,11 +28,11 @@ See: .planning/PROJECT.md (updated 2026-08-10)
 ## Current Position
 
 Phase: 12 de 15 (Instrumentación de datos y universo de keywords), primera de las 4 fases de v1.2
-Plan: Ninguno todavía. Roadmap escrito, planes sin generar
-Status: Roadmap aprobado, listo para planificar la fase 12
-Last activity: 2026-08-10, roadmap de v1.2 escrito con 4 fases (12 a 15) y 30 requisitos mapeados
+Plan: 12-02 y 12-03 cerrados. Siguen 12-04 (clasificación) y 12-05 (enriquecimiento)
+Status: Ejecutando la fase 12. El escritor del Sheet está listo y probado; la carga real al documento del cliente se difiere al plan 12-04
+Last activity: 2026-08-10, cerrado el plan 12-02: modelo del Sheet, escritor idempotente y `sheet:push`
 
-Progress: [░░░░░░░░░░] 0% de v1.2
+Progress: [████░░░░░░] 40% de v1.2
 
 ## Roadmap v1.2
 
@@ -59,6 +62,8 @@ Los dos milestones corren a la vez sobre el mismo repositorio.
 - **Numeración de fases desde 12:** v1.1 ocupa de la 7 a la 11 y ambos roadmaps se leen en paralelo. Ningún número se repite entre workstreams.
 - **Reparto de los requisitos SHEET:** cada tab se llena en cuanto sus datos existen, no todos al final. SHEET-06 (idempotencia) va con el escritor en la fase 12 porque es propiedad del cargador, no de un tab.
 - **Punto dulce sobre volumen:** las keywords se eligen por KD alcanzable con el perfil de enlaces real del dominio, que es de agosto de 2026 y casi sin historial.
+- **[Fase 12] J-5 (2026-08-10):** la etapa del paciente va como columna `Patient Stage` al Sheet. Juan vetó dejarla solo en el dataset. No reabre J-3: la procedencia por métrica sigue fuera del documento.
+- **[Fase 12] J-6 (2026-08-10):** los residuos de plantilla se borran completos, las 51 filas de `Keyword Research` con casillas incluidas y las 6 de `Content Model`.
 
 ### Pending Todos
 
@@ -75,6 +80,12 @@ Los dos milestones corren a la vez sobre el mismo repositorio.
 
 ## Session Continuity
 
-Last session: 2026-08-10
-Stopped at: ROADMAP de v1.2 escrito con 4 fases (12 a 15) y trazabilidad completa de los 30 requisitos en REQUIREMENTS.md. Nada de código escrito todavía.
+Last session: 2026-08-10T23:12:08.699Z
+Stopped at: Completado 12-02-PLAN.md: modelo del Sheet, escritor idempotente y sheet:push. Carga real diferida al plan 04
 Resume file: None
+
+## Performance Metrics
+
+| Plan | Duration | Tasks | Files |
+|------|----------|-------|-------|
+| Phase 12 P02 | 1h | 3 tasks | 7 files |

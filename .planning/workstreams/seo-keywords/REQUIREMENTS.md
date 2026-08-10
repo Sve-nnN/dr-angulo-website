@@ -60,7 +60,7 @@ Ricardo Palma, Sanna La Molina, Padre Luis Tezza), más el hub `/servicios` refo
 
 ### Infraestructura de datos (INFRA)
 
-- [ ] **INFRA-01**: Un script del repo escribe celdas en el Sheet del cliente con la
+- [x] **INFRA-01**: Un script del repo escribe celdas en el Sheet del cliente con la
   service account de Google, sin intervención manual
 - [ ] **INFRA-02**: Un cliente de la API de DinoRank consulta `/keyword-research`,
   `/tfidf`, `/auditoria` y `/canibalizaciones` con la clave fuera del control de versiones
@@ -142,7 +142,7 @@ Ricardo Palma, Sanna La Molina, Padre Luis Tezza), más el hub `/servicios` refo
   topic y canonical propuesto
 - [ ] **SHEET-05**: El tab `Internal Linking Audit` tiene una fila por URL con hasta ocho
   enlaces salientes propuestos y su anchor
-- [ ] **SHEET-06**: Reejecutar la carga actualiza las filas existentes en vez de duplicarlas
+- [x] **SHEET-06**: Reejecutar la carga actualiza las filas existentes en vez de duplicarlas
 
 ---
 
@@ -176,7 +176,7 @@ Mapeada por `ROADMAP.md` del workstream `seo-keywords` el 2026-08-10.
 
 | Requisito | Fase | Estado |
 |-----------|------|--------|
-| INFRA-01 | Fase 12 | Pendiente |
+| INFRA-01 | Fase 12 | Completo (12-02) |
 | INFRA-02 | Fase 12 | Pendiente |
 | INFRA-03 | Fase 12 | Pendiente |
 | KWR-01 | Fase 12 | Pendiente |
@@ -205,7 +205,7 @@ Mapeada por `ROADMAP.md` del workstream `seo-keywords` el 2026-08-10.
 | SHEET-03 | Fase 13 | Pendiente |
 | SHEET-04 | Fase 14 | Pendiente |
 | SHEET-05 | Fase 14 | Pendiente |
-| SHEET-06 | Fase 12 | Pendiente |
+| SHEET-06 | Fase 12 | Completo (12-02) |
 
 ### Resumen por fase
 
