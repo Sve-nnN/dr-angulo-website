@@ -133,11 +133,17 @@ Plans:
   4. Todo el contenido clínico publicado se apoya únicamente en fuentes ya verificadas del proyecto: el CV confirmado del doctor, `src/content/` de v1.0, y consenso clínico general no atribuido a él. Cero credenciales, cifras de cirugías, tasas de éxito o resultados inventados. Cada página lleva un aviso de que la información es educativa y no reemplaza una consulta.
 
   > **Criterio modificado el 2026-08-10 por decisión de Juan.** La redacción original era "Nada de este contenido clínico está publicado sin la aprobación escrita del doctor". Juan optó por escribir y publicar directo, sin ronda previa de revisión médica. Queda registrado que el contenido YMYL sale a un sitio con el nombre del doctor sin su visto bueno previo, y que la revisión pasa a ser posterior a la publicación. La restricción equivalente de PROJECT.md se actualizó en el mismo commit. El criterio se reescribió para que siga siendo verificable en vez de quedar imposible de cumplir.
-**Plans**: TBD
+**Plans**: 4 plans
 **UI hint**: yes
 
+Plans:
+- [ ] 08-01-PLAN.md — Trazador del silo: `/servicios/hernia-discal` de punta a punta, componentes de firma, aviso, tabla de contenidos y banner, tarjeta del hub, schema `MedicalWebPage`, sitemap y la puerta automática `scripts/check-content.mjs`
+- [ ] 08-02-PLAN.md — Las otras tres guías del silo: estenosis espinal, escoliosis y ortopedia infantil, solo datos, con el hub en cuatro tarjetas y el sitemap en 16 URLs
+- [ ] 08-03-PLAN.md — Blog: nueva forma de `BlogPost` con secciones y anclas, plantilla de post reconstruida con firma, tabla de contenidos, banner y enlace al servicio, más los dos posts de hernia discal sobre 900 palabras
+- [ ] 08-04-PLAN.md — Blog: los dos posts restantes sobre 900 palabras, puerta de contenido completa sobre las ocho URLs y verificación humana de teclado, responsive y contenido publicado
+
 **Notas de ejecución**
-- Gate de contenido médico: SVC-01 a SVC-04 y BLOG-02 los redacta el agente, pero el doctor los revisa y aprueba antes de publicar. PROJECT.md, sección Constraints, prohíbe desplegar contenido YMYL sin validar. Es verificación humana, no automatizable, y conviene agruparla en una sola ronda de revisión para no fragmentar el tiempo del doctor.
+- Gate de contenido médico: la redacción original de esta nota decía que el doctor revisa y aprueba antes de publicar. Quedó superada por la decisión de Juan del 2026-08-10, registrada en `08-CONTEXT.md` y en las Constraints de PROJECT.md: se publica directo y la revisión del doctor pasa a ser posterior. Lo que reemplaza a la aprobación previa son las diez salvaguardas SAFE del contrato de diseño, verificadas por `scripts/check-content.mjs` en cada plan.
 - BLOG-03 se ejecuta después de que existan las páginas de servicio, porque cada post enlaza a la suya.
 - Nada de credenciales, cifras de cirugías ni resultados inventados. Solo lo verificado o lo que el doctor confirme por escrito.
 - El hub `/servicios` ya existe desde v1.0 con `src/content/services.ts`. La fase lo reconvierte en índice del silo, no lo reescribe desde cero.
