@@ -1,7 +1,7 @@
 {
   "spreadsheetId": "1aowectbAJhyyZWhwQ6N_re-ENeSENvNN-5DebqCIls0",
   "title": "Dr Juan Carlos Angulo - SEO Master",
-  "inspectedAt": "2026-08-10T17:01:41.907Z",
+  "inspectedAt": "2026-08-10T23:48:16.434Z",
   "writeProbe": {
     "ok": true,
     "range": "'Index'!Z970",
@@ -45,10 +45,10 @@
       "sheetId": 407303476,
       "title": "Keyword Research",
       "index": 2,
-      "rowCount": 981,
-      "columnCount": 30,
+      "rowCount": 5719,
+      "columnCount": 28,
       "headerRow": 3,
-      "headerCellCount": 18,
+      "headerCellCount": 19,
       "orientation": "filas",
       "headers": [
         "Suggested Keyword",
@@ -57,18 +57,19 @@
         "Search Volume",
         "Traffic Potential",
         "Search Intent ",
-        "CVR",
         "Highest Achievable Position",
         "CTR",
         "Real Traffic Potential",
-        "Lead or Conversion Potential ",
         "Keyword Difficulty",
         "Referring Domains Needed ",
         "Suggested H1",
         "Top Result",
         "Internal Approval ",
         "Client Approval ",
-        "Notes"
+        "Notes",
+        "CPC",
+        "Competition",
+        "Patient Stage"
       ]
     },
     {
@@ -119,10 +120,10 @@
       "sheetId": 814545527,
       "title": "Content Model",
       "index": 5,
-      "rowCount": 870,
-      "columnCount": 28,
+      "rowCount": 864,
+      "columnCount": 26,
       "headerRow": 3,
-      "headerCellCount": 19,
+      "headerCellCount": 17,
       "orientation": "filas",
       "headers": [
         "URL",
@@ -138,8 +139,6 @@
         "Traffic Potential (Ahrefs)",
         "KD Difficulty (Ahrefs)",
         "Position",
-        "Free Trial CVR",
-        "Free Trial Potential",
         "Action",
         "Notes/Ideas",
         "Leave, Update, or Bin?",
