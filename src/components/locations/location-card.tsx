@@ -1,4 +1,5 @@
-import { ArrowUpRight, Clock, MapPin } from "lucide-react";
+import Link from "next/link";
+import { ArrowRight, ArrowUpRight, Clock, MapPin } from "lucide-react";
 import { WhatsAppCta } from "@/components/ui/whatsapp-cta";
 import type { Location } from "@/content/locations";
 
@@ -6,14 +7,33 @@ type Props = {
   location: Location;
   /** Nivel de encabezado, para no romper la jerarquía de la página que la use. */
   headingLevel?: "h2" | "h3";
+  /**
+   * Ruta de la página de esa sede, si ya está publicada. Cuando llega, la
+   * tarjeta muestra el enlace de ida hacia ella. Se pasa desde afuera para que
+   * ninguna tarjeta apunte a una ruta que todavía no existe.
+   */
+  pageHref?: string;
 };
 
-export function LocationCard({ location, headingLevel = "h3" }: Props) {
+export function LocationCard({
+  location,
+  headingLevel = "h3",
+  pageHref,
+}: Props) {
   const Heading = headingLevel;
   const isOwnOffice = location.kind === "consultorio";
 
   return (
-    <article className="grid gap-6 py-10 sm:grid-cols-[minmax(0,16rem)_1fr] sm:gap-10">
+    // `id` es el destino del ancla que devuelve desde la página de sede, y
+    // `tabIndex={-1}` hace que el navegador mueva el foco a la tarjeta al
+    // llegar por ese ancla en vez de solo desplazar la vista. El resaltado lo
+    // dibuja la regla `:target` de `globals.css` sobre `data-location-card`.
+    <article
+      id={location.slug}
+      tabIndex={-1}
+      data-location-card=""
+      className="grid scroll-mt-28 gap-6 py-10 sm:grid-cols-[minmax(0,16rem)_1fr] sm:gap-10"
+    >
       <div>
         <Heading className="font-heading text-lg font-bold text-primary">
           {location.name}
@@ -112,6 +132,18 @@ export function LocationCard({ location, headingLevel = "h3" }: Props) {
             ))}
           </ul>
         )}
+
+        {/* Esta tarjeta no usa enlace extendido, así que sumar un enlace
+            normal no rompe A11Y-21. */}
+        {pageHref ? (
+          <Link
+            href={pageHref}
+            className="mt-6 inline-flex min-h-11 items-center gap-1.5 text-base font-semibold text-primary-dark hover:underline"
+          >
+            Ver la sede
+            <ArrowRight className="size-4" aria-hidden="true" />
+          </Link>
+        ) : null}
       </div>
     </article>
   );

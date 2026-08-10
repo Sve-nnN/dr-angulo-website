@@ -3,6 +3,7 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { LocationCard } from "@/components/locations/location-card";
 import { primaryLocation, clinicLocations, weeklySchedule } from "@/content/locations";
+import { getLocationPage } from "@/content/location-pages";
 import { siteConfig } from "@/lib/site-config";
 import { BreadcrumbJsonLd, BookingPageJsonLd } from "@/components/structured-data";
 
@@ -12,6 +13,15 @@ export const metadata: Metadata = {
     "Dónde atiende el Dr. Juan Carlos Angulo y cómo agendar en cada sede: consultorio privado en Surco por WhatsApp, y Clínica Ricardo Palma, Sanna La Molina y Clínica Tezza con sus propias centrales de citas.",
   alternates: { canonical: "/agendar" },
 };
+
+/**
+ * Ruta de la página de una sede, solo si esa sede ya tiene entrada editorial.
+ * Mientras no la tenga, la tarjeta no muestra el enlace y no queda ningún
+ * `href` apuntando a una ruta inexistente.
+ */
+function sedeHref(slug: string) {
+  return getLocationPage(slug) ? `/sedes/${slug}` : undefined;
+}
 
 export default function AgendarPage() {
   return (
@@ -26,6 +36,13 @@ export default function AgendarPage() {
         El Dr. Angulo atiende en cuatro sedes y cada una tiene su propia agenda.
         Elige dónde te queda mejor y agenda por el canal de esa sede.
       </p>
+      <Link
+        href="/sedes"
+        className="mt-4 inline-flex min-h-11 items-center gap-2 text-base font-semibold text-primary-dark hover:underline"
+      >
+        Ver la página de cada sede
+        <ArrowRight className="size-4" aria-hidden="true" />
+      </Link>
 
       <div className="mt-8 max-w-2xl rounded-2xl border border-border bg-muted px-6 py-5">
         <p className="font-heading text-lg font-bold text-foreground">
@@ -41,7 +58,10 @@ export default function AgendarPage() {
         Consultorio privado
       </h2>
       <div className="divide-y divide-border border-y border-border">
-        <LocationCard location={primaryLocation} />
+        <LocationCard
+          location={primaryLocation}
+          pageHref={sedeHref(primaryLocation.slug)}
+        />
       </div>
 
       <h2 className="mt-14 font-heading text-2xl font-bold text-primary">
@@ -53,7 +73,11 @@ export default function AgendarPage() {
       </p>
       <div className="mt-4 divide-y divide-border border-y border-border">
         {clinicLocations.map((location) => (
-          <LocationCard key={location.slug} location={location} />
+          <LocationCard
+            key={location.slug}
+            location={location}
+            pageHref={sedeHref(location.slug)}
+          />
         ))}
       </div>
 

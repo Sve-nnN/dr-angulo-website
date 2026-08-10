@@ -185,6 +185,26 @@ details.accordion[open] summary svg {
   transform: rotate(45deg);
 }
 
+/* Resaltado de la tarjeta de sede al llegar por ancla desde `/sedes/{slug}`.
+
+   Va en CSS plano y no con la variante `target:` de Tailwind por el mismo
+   motivo que el acordeón de arriba: el compilador no conserva de forma
+   confiable esas variantes, y acá el resaltado es la única señal de que el
+   navegador llegó a la tarjeta correcta. Una regla plana no depende de qué
+   sobrevive a la compilación.
+
+   El contorno usa `--primary-dark` y no `--primary` por COLOR-01, y conserva
+   el `outline-offset: 2px` de la regla global de foco (A11Y-17). El resaltado
+   no depende solo del color: suma un contorno, que es un cambio de forma. Sin
+   animación, así que `prefers-reduced-motion` no necesita cambios. */
+[data-location-card]:target {
+  background: var(--muted);
+  outline: 2px solid var(--primary-dark);
+  outline-offset: 2px;
+  border-radius: 8px;
+  scroll-margin-top: 7rem;
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;

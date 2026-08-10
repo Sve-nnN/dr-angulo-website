@@ -27,12 +27,12 @@ const MIN_WORDS = 900;
 const HUB_ANCHORS = ["columna", "traumatologia", "ortopedia-infantil", "procedimientos"];
 
 /**
- * URLs totales del sitemap. Las 16 de v1.0 más la primera página de sede,
- * `/sedes/clinica-ricardo-palma`. Esta constante es lo único que la fase 9
- * cambia de este archivo: la puerta de 900 palabras no aplica a las rutas de
- * sede y ninguna de ellas entra al `MANIFEST`.
+ * URLs totales del sitemap. Las 16 de v1.0 más el hub de sedes y la primera
+ * página de sede, `/sedes/clinica-ricardo-palma`. Esta constante es lo único
+ * que la fase 9 cambia de este archivo: la puerta de 900 palabras no aplica a
+ * las rutas de sede y ninguna de ellas entra al `MANIFEST`.
  */
-const SITEMAP_TOTAL = 17;
+const SITEMAP_TOTAL = 18;
 
 /** Banner del primer tercio: palabras previas sobre el total del cuerpo. */
 const BANNER_MIN_RATIO = 0.15;
