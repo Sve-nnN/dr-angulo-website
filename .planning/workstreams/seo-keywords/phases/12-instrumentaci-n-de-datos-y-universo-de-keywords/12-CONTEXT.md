@@ -55,33 +55,41 @@ dura del milestone.
   cuatro posts del blog, servicios y sedes), la competencia ya investigada en
   `.planning/research/COMPETITORS.md`, y el CV y las especialidades del doctor. El roadmap
   pide cubrir el negocio completo, no solo las cuatro condiciones que v1.1 va a publicar.
-- **Economía de Ahrefs (decisión de Juan, 2026-08-10).** Ahrefs se usa lo mínimo posible.
-  El reparto queda así:
+- **Ahrefs queda fuera de la fase 12 (decisión final de Juan, 2026-08-10).** La instrumentación
+  corre sobre **DinoRank y SerpApi únicamente**. Cero llamadas a Ahrefs, cero cliente, cero
+  `AHREFS_API_KEY`. El enriquecimiento con KD, traffic potential y referring domains queda
+  diferido sin fase asignada.
   - Expansión a 400 o más: DinoRank más SerpApi (related searches, People Also Ask,
-    autocomplete) más permutación de semillas. **Cero llamadas a Ahrefs.** La expansión con
-    `keywords-explorer-matching-terms` devuelve miles de filas y es lo que realmente quema
-    cuota.
+    autocomplete) más permutación de semillas.
   - Volumen, CPC y competencia de las 400 o más: DinoRank.
-  - KD y traffic potential: solo sobre una shortlist de 40 a 60 keywords, filtrada por
-    volumen, intención comercial o transaccional y relevancia de negocio. El `select` va
-    recortado a lo indispensable porque Ahrefs cobra por columna.
-  - El resto del universo queda con `KD = sin_datos` y la columna de fuente lo declara.
-  - Presupuesto medido: 44 unidades por keyword con el select completo. Las 400 costarían
-    17.600 unidades; la shortlist de 60 cuesta unas 2.600. La cuenta es Lite, 100.000
-    unidades al mes, con 66.582 libres al 2026-08-10 y reset el 2026-08-20.
-- **Consecuencia sobre KWR-02:** el requisito dice hoy que *cada* keyword del universo trae
-  KD, traffic potential y referring domains de Ahrefs. Con la decisión de economía eso deja
-  de ser cierto. Hay que enmendar KWR-02 en `REQUIREMENTS.md` para que aplique a la
-  shortlist, no al universo entero, y dejar la nota de por qué. Sin la enmienda, el audit del
-  milestone marca el requisito como incumplido cuando en realidad se cambió a propósito.
+  - Las columnas de KD y traffic potential existen en el dataset y en el Sheet, con valor
+    `no_consultado` para todo el universo. No se borran: se dejan listas para cuando el
+    enriquecimiento se retome.
+  - *Trayectoria de la decisión: se pidió primero economía de Ahrefs (shortlist de 40 a 60,
+    unas 1.200 unidades con el select recortado a `keyword,difficulty,traffic_potential`), y
+    después sacarlo del todo. Registrado porque el dato de costo sigue siendo útil cuando se
+    retome.*
+- **Consecuencias registradas:**
+  - **KWR-02** se enmendó dos veces en `REQUIREMENTS.md`. Sin la enmienda, el audit del
+    milestone marcaría el requisito como incumplido cuando en realidad se cambió a propósito.
+    Lo mismo con el criterio de éxito 4 de esta fase en `ROADMAP.md`.
+  - **KWR-05, el punto dulce de la fase 13, depende de KD, que es métrica propietaria de
+    Ahrefs.** Sin ella hace falta un proxy de dificultad orgánica: leer de la SERP de Lima con
+    SerpApi quién ocupa el top 10 de cada cluster. La captura de SERP ya es requisito de
+    COMP-03, así que el proxy reutiliza datos que la fase 13 igual tiene que traer. Ojo con
+    usar `competition` de DinoRank como sustituto: es competencia de **pago**, mide subasta
+    publicitaria, no dificultad orgánica. Se decide al discutir la fase 13.
+  - **La clasificación de intención pasa a ser 100% por reglas más residuo por LLM**, porque
+    `intents` de Ahrefs ya no está disponible. `Intent Source` solo toma los valores `reglas`
+    o `llm`.
 - Las keywords sin datos en ninguna fuente se conservan marcadas `sin_datos`, no se
   descartan. El geo long tail sin volumen medible es justo el terreno donde un dominio nuevo
   de agosto de 2026 puede ganar.
-- La intención sale de `intents` de Ahrefs donde exista; el resto se clasifica por reglas
-  sobre el patrón de la keyword ("qué es" y "síntomas" caen en informacional y etapa síntoma;
-  "precio", "cerca de mí" y las que llevan sede caen en transaccional y etapa decisión). Un
-  LLM interviene solo sobre el residuo ambiguo. Las reglas son deterministas, que es lo que
-  mantiene estable la reejecución de SHEET-06.
+- La intención se clasifica por reglas deterministas sobre el patrón de la keyword ("qué es"
+  y "síntomas" caen en informacional y etapa síntoma; "precio", "cerca de mí" y las que
+  llevan sede caen en transaccional y etapa decisión). Un LLM interviene solo sobre el
+  residuo ambiguo. Las reglas son deterministas, que es lo que mantiene estable la
+  reejecución de SHEET-06.
 
 ### Escritura en el Sheet (INFRA-01, SHEET-06)
 

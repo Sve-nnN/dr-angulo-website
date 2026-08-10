@@ -21,9 +21,10 @@ v1.2 escribe en `src/`.
 - **DinoRank** — primaria para volumen, CPC y competencia (`/keyword-research`), más
   TF-IDF semántico, canibalizaciones y auditoría on-page
 - **Ahrefs** — KD, traffic potential y referring domains needed, que DinoRank no devuelve.
-  Se usa con economía deliberada (decisión de Juan, 2026-08-10): nunca para expandir el
-  universo, solo para enriquecer una shortlist y perfilar competidores. Cuenta Lite de
-  100.000 unidades al mes
+  **Diferido, fuera de la fase 12** (decisión de Juan, 2026-08-10). Cuando se reincorpore:
+  nunca para expandir el universo, solo para enriquecer una shortlist y perfilar
+  competidores. Cuenta Lite de 100.000 unidades al mes, y la API v3 directa está incluida en
+  ese plan consumiendo del mismo pool que el MCP
 - **SerpApi** — validación de la SERP real geolocalizada en Lima, y expansión por related
   searches, People Also Ask y autocomplete
 
@@ -65,13 +66,16 @@ Ricardo Palma, Sanna La Molina, Padre Luis Tezza), más el hub `/servicios` refo
 - [ ] **KWR-01**: Existe un universo de 400 o más keywords del negocio del doctor,
   expandido desde semillas por condición, procedimiento, síntoma, especialidad y sede
 - [ ] **KWR-02**: Cada keyword del universo trae volumen, CPC y competencia de DinoRank
-  para Perú en español. Una shortlist de 40 a 60 keywords priorizadas trae además KD y
-  traffic potential de Ahrefs; el resto del universo queda con esas columnas marcadas
-  `sin_datos`. La fuente va marcada por columna, no por fila
-  <br>*Enmendado el 2026-08-10 (decisión de Juan): la redacción original pedía KD y traffic
-  potential para **cada** keyword del universo. Enriquecer las 400+ cuesta unas 17.600
-  unidades de Ahrefs, contra 2.600 de la shortlist, sobre una cuenta Lite de 100.000 al mes.
-  Referring domains needed sale de COMP-01 sobre los competidores, no keyword por keyword.*
+  para Perú en español, con la fuente marcada por columna. Las columnas de KD y traffic
+  potential existen en el dataset y en el Sheet, pero quedan con valor `no_consultado`
+  <br>*Enmendado dos veces el 2026-08-10, decisión de Juan. Redacción original: KD, traffic
+  potential y referring domains de Ahrefs para **cada** keyword. Primera enmienda: solo para
+  una shortlist de 40 a 60. Segunda y vigente: **Ahrefs queda fuera de la fase 12 por
+  completo**, la instrumentación corre con DinoRank y SerpApi únicamente. El enriquecimiento
+  con métricas de Ahrefs queda diferido, sin fase asignada todavía.*
+  <br>*Consecuencia registrada: KWR-05 (punto dulce) depende de KD. La fase 13 tiene que
+  resolverlo con un proxy de dificultad orgánica leído de la SERP con SerpApi, o reincorporar
+  Ahrefs entonces. Se decide al discutir la fase 13, no antes.*
 - [ ] **KWR-03**: Cada keyword está clasificada por intención (informacional, comercial,
   transaccional, navegacional) y por etapa del paciente (síntoma, diagnóstico, decisión)
 - [ ] **KWR-04**: Las keywords están agrupadas en clusters por solape de SERP, no por

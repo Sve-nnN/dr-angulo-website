@@ -63,7 +63,7 @@ tabs `Keyword Research`, `Content Model`, `Competitor Analysis`, `Canonicalizati
   1. Ejecutar un comando del repo escribe celdas en el Sheet del cliente y Juan las ve aparecer sin haber abierto el archivo; ninguna clave ni credencial de servicio queda en el control de versiones.
   2. Una consulta que ya se hizo antes se responde desde el caché en disco: se puede reprocesar el análisis completo sin volver a gastar cuota de DinoRank, Ahrefs ni SerpApi.
   3. El universo tiene 400 keywords o más del negocio del doctor, expandido desde semillas por condición, procedimiento, síntoma, especialidad y sede.
-  4. Cada keyword trae volumen, CPC y competencia de DinoRank para Perú en español, más KD, traffic potential y referring domains needed de Ahrefs, con una columna que indica de qué fuente salió cada dato.
+  4. Cada keyword trae volumen, CPC y competencia de DinoRank para Perú en español, con una columna que indica de qué fuente salió cada dato. Las columnas de KD y traffic potential existen pero quedan en `no_consultado`. *(Enmendado el 2026-08-10 por decisión de Juan: Ahrefs queda fuera de la fase 12 por completo y su enriquecimiento se difiere. Ver la nota bajo KWR-02 en `REQUIREMENTS.md`.)*
   5. Cada keyword está clasificada por intención (informacional, comercial, transaccional, navegacional) y por etapa del paciente (síntoma, diagnóstico, decisión), y ejecutar la carga dos veces seguidas deja el mismo número de filas en el Sheet.
 **Plans**: TBD
 
@@ -83,7 +83,7 @@ tabs `Keyword Research`, `Content Model`, `Competitor Analysis`, `Canonicalizati
 **Success Criteria** (qué debe ser TRUE):
   1. Cada keyword pertenece a un cluster formado por solape de resultados en la SERP: dos keywords escritas distinto pero con los mismos resultados en Google caen juntas, y dos keywords parecidas con SERP distinta quedan separadas.
   2. Cada cluster tiene su SERP de Lima capturada con SerpApi y anotado qué tipo de página premia Google ahí (guía, página de servicio, ficha de clínica, directorio).
-  3. Está marcado el punto dulce: las keywords cuyo KD es alcanzable con los referring domains reales del dominio, separadas de las de volumen alto que hoy están fuera de alcance con el perfil de enlaces actual.
+  3. Está marcado el punto dulce: las keywords cuya dificultad orgánica es alcanzable con el perfil de enlaces real del dominio, separadas de las de volumen alto que hoy están fuera de alcance. *(Pendiente de decidir al discutir esta fase: con Ahrefs fuera desde el 2026-08-10, la dificultad se mide con un proxy leído de la SERP de Lima con SerpApi (quién ocupa el top 10 de cada cluster), o se reincorpora Ahrefs solo para este cálculo. La captura de SERP ya es requisito de COMP-03, así que el proxy reutiliza datos que la fase igual tiene que traer.)*
   4. Existen las "10 de Oro" con su justificación de negocio, y Juan puede leer por qué esas diez y no simplemente las diez de mayor volumen.
   5. En el Sheet, el tab `Keyword Research` muestra el universo con métricas, cluster, intención, H1 sugerido y top result; el tab `Competitor Analysis` muestra los cinco competidores de Lima con DR, referring domains, tráfico orgánico estimado, keywords en top 100, presencia de blog, gap de keywords, featured snippets y páginas más enlazadas.
 **Plans**: TBD

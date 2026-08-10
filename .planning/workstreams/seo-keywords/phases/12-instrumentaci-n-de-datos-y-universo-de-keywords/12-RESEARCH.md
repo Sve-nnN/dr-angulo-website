@@ -3,7 +3,59 @@
 **Researched:** 2026-08-10
 **Workstream:** `seo-keywords` (v1.2)
 **Domain:** Tooling de datos en Node/TypeScript, tres APIs de SEO, escritura idempotente en Google Sheets, expansión y clasificación de keywords en español
-**Confidence:** HIGH en stack, Sheets, Ahrefs REST y riesgos de build. MEDIUM en expansión y clasificación. LOW en el contrato de respuesta de DinoRank (indocumentado y clave rechazada).
+**Confidence:** HIGH en stack, Sheets y riesgos de build. MEDIUM en expansión y clasificación. LOW en el contrato de respuesta de DinoRank (indocumentado y clave rechazada).
+
+---
+
+> ## ⚠ ENMIENDA POSTERIOR A LA INVESTIGACIÓN — 2026-08-10
+>
+> **Decisión de Juan, tomada después de que este documento se escribiera. Supersede todo lo
+> que este archivo dice sobre Ahrefs.**
+>
+> > *"Mejor, evitemos usar Ahrefs para obtener únicamente el KD, potential y referring
+> > domains. Dejémoslo diferir."*
+>
+> ### Qué cambia
+>
+> **Ahrefs queda fuera de la fase 12, completo.** No es "solo sobre una shortlist": es cero
+> llamadas, cero cliente, cero `AHREFS_API_KEY`. La fase 12 corre sobre **DinoRank y SerpApi
+> únicamente**.
+>
+> Lo que queda **derogado** de este documento:
+>
+> - Todo el módulo `src/sources/ahrefs.ts` y el snippet C7.
+> - El tier de presupuesto de KD y traffic potential, y el cálculo de ~1.200 unidades.
+> - La regla de conflicto de intención que le daba prioridad a `intents` de Ahrefs sobre las
+>   reglas. **La clasificación de intención pasa a ser 100% por reglas deterministas más el
+>   residuo por LLM.** Un eje menos de ambigüedad, y `Intent Source` solo toma los valores
+>   `reglas` o `llm`.
+> - `KD Source = ahrefs_sin_datos` como valor posible. En la fase 12 las columnas de KD y
+>   traffic potential quedan con `no_consultado` para todo el universo.
+> - La necesidad de que Juan genere `AHREFS_API_KEY`. **`SERPAPI_API_KEY` sí sigue haciendo
+>   falta.**
+>
+> Lo que **sigue vigente y no cambia**: el análisis de Sheets, el riesgo de build del
+> `tsconfig` raíz, el seam de caché, el diseño del CLI, la expansión sin Ahrefs (*Pattern 5*,
+> que ya era cero Ahrefs por diseño), el probe de DinoRank y el manejo de errores.
+>
+> ### Consecuencia aguas abajo, para la fase 13
+>
+> **KWR-05, el punto dulce, está definido como "las keywords cuyo KD es alcanzable con el
+> perfil de enlaces real del dominio". KD es una métrica propietaria de Ahrefs.** Sin ella la
+> fase 13 necesita un proxy de dificultad orgánica. Dos candidatos, a decidir cuando se
+> discuta esa fase:
+>
+> 1. **Dificultad leída de la SERP con SerpApi.** Para cada cluster, mirar quién ocupa el top
+>    10 en Lima: si son clínicas grandes con marca o dominios exact-match, la keyword es
+>    difícil; si son directorios genéricos y agregadores, hay hueco. Es más trabajo, pero mide
+>    exactamente lo que importa para un dominio de agosto de 2026 sin historial, y usa datos
+>    que la fase 13 ya tiene que capturar de todos modos para COMP-03.
+> 2. **`competition` de DinoRank.** Cuidado: es competencia de **pago**, viene de DataForSEO y
+>    mide subasta publicitaria, no dificultad orgánica. Sirve como señal secundaria, nunca
+>    como sustituto directo de KD.
+>
+> No hace falta resolverlo en la fase 12. Queda registrado para que la fase 13 no lo descubra
+> tarde.
 
 ---
 
