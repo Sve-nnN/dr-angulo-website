@@ -70,7 +70,7 @@ tabs `Keyword Research`, `Content Model`, `Competitor Analysis`, `Canonical Audi
 Plans:
 - [ ] 12-01-PLAN.md — Guardarraíl de build, paquete `seo-tools`, seam de caché y sondeo del Sheet (wave 1)
 - [ ] 12-02-PLAN.md — Aprobación de columnas y escritor idempotente del Sheet (wave 2)
-- [ ] 12-03-PLAN.md — Semillas, permutación y expansión con datos reales de Google (wave 2)
+- [x] 12-03-PLAN.md — Semillas, permutación y expansión con datos reales de Google (wave 2) — 5716 keywords, 12 búsquedas de SerpApi gastadas
 - [ ] 12-04-PLAN.md — Clasificación determinista, dataset consolidado y primera carga (wave 3)
 - [ ] 12-05-PLAN.md — Cliente de DinoRank, enriquecimiento del universo y recarga (wave 4)
 
