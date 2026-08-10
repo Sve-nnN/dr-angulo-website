@@ -1,0 +1,467 @@
+{
+  "schema": 1,
+  "seeds": [
+    {
+      "keyword": "Escoliosis y deformidades de columna",
+      "keywordKey": "escoliosis y deformidades de columna",
+      "tipo": "condicion",
+      "procedencia": "service-pages.ts:h1",
+      "rango": 1
+    },
+    {
+      "keyword": "Estenosis espinal",
+      "keywordKey": "estenosis espinal",
+      "tipo": "condicion",
+      "procedencia": "services.ts:serviceCategories[].conditions",
+      "rango": 1
+    },
+    {
+      "keyword": "Hernia discal",
+      "keywordKey": "hernia discal",
+      "tipo": "condicion",
+      "procedencia": "services.ts:serviceCategories[].conditions",
+      "rango": 1
+    },
+    {
+      "keyword": "Ortopedia infantil",
+      "keywordKey": "ortopedia infantil",
+      "tipo": "especialidad",
+      "procedencia": "services.ts:serviceCategories[].name",
+      "rango": 1
+    },
+    {
+      "keyword": "Clínica Padre Luis Tezza",
+      "keywordKey": "clinica padre luis tezza",
+      "tipo": "sede",
+      "procedencia": "locations.ts:name",
+      "rango": 2
+    },
+    {
+      "keyword": "Clínica Ricardo Palma",
+      "keywordKey": "clinica ricardo palma",
+      "tipo": "sede",
+      "procedencia": "locations.ts:name",
+      "rango": 2
+    },
+    {
+      "keyword": "Clínica Sanna La Molina",
+      "keywordKey": "clinica sanna la molina",
+      "tipo": "sede",
+      "procedencia": "locations.ts:name",
+      "rango": 2
+    },
+    {
+      "keyword": "Consultorio privado del Dr. Angulo",
+      "keywordKey": "consultorio privado del dr angulo",
+      "tipo": "sede",
+      "procedencia": "locations.ts:name",
+      "rango": 2
+    },
+    {
+      "keyword": "Artrodesis en varios niveles",
+      "keywordKey": "artrodesis en varios niveles",
+      "tipo": "procedimiento",
+      "procedencia": "services.ts:procedureApproaches[].examples",
+      "rango": 3
+    },
+    {
+      "keyword": "Casos de revisión",
+      "keywordKey": "casos de revision",
+      "tipo": "procedimiento",
+      "procedencia": "services.ts:procedureApproaches[].examples",
+      "rango": 3
+    },
+    {
+      "keyword": "Cirugía convencional",
+      "keywordKey": "cirugia convencional",
+      "tipo": "procedimiento",
+      "procedencia": "services.ts:procedureApproaches[].name",
+      "rango": 3
+    },
+    {
+      "keyword": "Cirugía de columna",
+      "keywordKey": "cirugia de columna",
+      "tipo": "especialidad",
+      "procedencia": "services.ts:serviceCategories[].name",
+      "rango": 3
+    },
+    {
+      "keyword": "cirugía endoscópica de columna",
+      "keywordKey": "cirugia endoscopica de columna",
+      "tipo": "procedimiento",
+      "procedencia": "COMPETITORS.md:perfil",
+      "rango": 3
+    },
+    {
+      "keyword": "cirugía mínima invasión",
+      "keywordKey": "cirugia minima invasion",
+      "tipo": "procedimiento",
+      "procedencia": "COMPETITORS.md:Servicios",
+      "rango": 3
+    },
+    {
+      "keyword": "Cirugía mínimamente invasiva",
+      "keywordKey": "cirugia minimamente invasiva",
+      "tipo": "procedimiento",
+      "procedencia": "services.ts:procedureApproaches[].name",
+      "rango": 3
+    },
+    {
+      "keyword": "cirujano de columna",
+      "keywordKey": "cirujano de columna",
+      "tipo": "especialidad",
+      "procedencia": "cv.ts:education/experience",
+      "rango": 3
+    },
+    {
+      "keyword": "Corrección de escoliosis y deformidades",
+      "keywordKey": "correccion de escoliosis y deformidades",
+      "tipo": "procedimiento",
+      "procedencia": "services.ts:procedureApproaches[].examples",
+      "rango": 3
+    },
+    {
+      "keyword": "endoscopía espinal",
+      "keywordKey": "endoscopia espinal",
+      "tipo": "procedimiento",
+      "procedencia": "COMPETITORS.md:Servicios",
+      "rango": 3
+    },
+    {
+      "keyword": "Estenosis de canal",
+      "keywordKey": "estenosis de canal",
+      "tipo": "procedimiento",
+      "procedencia": "services.ts:procedureApproaches[].examples",
+      "rango": 3
+    },
+    {
+      "keyword": "Fijación percutánea de fracturas",
+      "keywordKey": "fijacion percutanea de fracturas",
+      "tipo": "procedimiento",
+      "procedencia": "services.ts:procedureApproaches[].examples",
+      "rango": 3
+    },
+    {
+      "keyword": "Hernia discal lumbar y cervical",
+      "keywordKey": "hernia discal lumbar y cervical",
+      "tipo": "procedimiento",
+      "procedencia": "services.ts:procedureApproaches[].examples",
+      "rango": 3
+    },
+    {
+      "keyword": "monitorización neurofisiológica intraoperatoria",
+      "keywordKey": "monitorizacion neurofisiologica intraoperatoria",
+      "tipo": "procedimiento",
+      "procedencia": "COMPETITORS.md:Servicios",
+      "rango": 3
+    },
+    {
+      "keyword": "Neurocirujano",
+      "keywordKey": "neurocirujano",
+      "tipo": "especialidad",
+      "procedencia": "COMPETITORS.md:perfil",
+      "rango": 3
+    },
+    {
+      "keyword": "Ortopedia",
+      "keywordKey": "ortopedia",
+      "tipo": "especialidad",
+      "procedencia": "cv.ts:education/experience",
+      "rango": 3
+    },
+    {
+      "keyword": "Procedimientos para dolor de origen degenerativo",
+      "keywordKey": "procedimientos para dolor de origen degenerativo",
+      "tipo": "procedimiento",
+      "procedencia": "services.ts:procedureApproaches[].examples",
+      "rango": 3
+    },
+    {
+      "keyword": "procedimientos percutáneos",
+      "keywordKey": "procedimientos percutaneos",
+      "tipo": "procedimiento",
+      "procedencia": "COMPETITORS.md:Servicios",
+      "rango": 3
+    },
+    {
+      "keyword": "Reconstrucción tras fracturas complejas",
+      "keywordKey": "reconstruccion tras fracturas complejas",
+      "tipo": "procedimiento",
+      "procedencia": "services.ts:procedureApproaches[].examples",
+      "rango": 3
+    },
+    {
+      "keyword": "Traumatología",
+      "keywordKey": "traumatologia",
+      "tipo": "especialidad",
+      "procedencia": "cv.ts:education/experience",
+      "rango": 3
+    },
+    {
+      "keyword": "Traumatología y ortopedia",
+      "keywordKey": "traumatologia y ortopedia",
+      "tipo": "especialidad",
+      "procedencia": "services.ts:serviceCategories[].name",
+      "rango": 3
+    },
+    {
+      "keyword": "Traumatólogo",
+      "keywordKey": "traumatologo",
+      "tipo": "especialidad",
+      "procedencia": "cv.ts:education/experience",
+      "rango": 3
+    },
+    {
+      "keyword": "Alteraciones de la marcha",
+      "keywordKey": "alteraciones de la marcha",
+      "tipo": "condicion",
+      "procedencia": "services.ts:serviceCategories[].conditions",
+      "rango": 4
+    },
+    {
+      "keyword": "Artrodesis de columna",
+      "keywordKey": "artrodesis de columna",
+      "tipo": "condicion",
+      "procedencia": "services.ts:serviceCategories[].conditions",
+      "rango": 4
+    },
+    {
+      "keyword": "Artrosis",
+      "keywordKey": "artrosis",
+      "tipo": "condicion",
+      "procedencia": "services.ts:serviceCategories[].conditions",
+      "rango": 4
+    },
+    {
+      "keyword": "Cervicalgia",
+      "keywordKey": "cervicalgia",
+      "tipo": "condicion",
+      "procedencia": "services.ts:serviceCategories[].conditions",
+      "rango": 4
+    },
+    {
+      "keyword": "ciática",
+      "keywordKey": "ciatica",
+      "tipo": "condicion",
+      "procedencia": "COMPETITORS.md:Servicios",
+      "rango": 4
+    },
+    {
+      "keyword": "cifosis",
+      "keywordKey": "cifosis",
+      "tipo": "condicion",
+      "procedencia": "COMPETITORS.md:Servicios",
+      "rango": 4
+    },
+    {
+      "keyword": "Deformidades de postura",
+      "keywordKey": "deformidades de postura",
+      "tipo": "condicion",
+      "procedencia": "services.ts:serviceCategories[].conditions",
+      "rango": 4
+    },
+    {
+      "keyword": "Desgarro muscular",
+      "keywordKey": "desgarro muscular",
+      "tipo": "condicion",
+      "procedencia": "services.ts:serviceCategories[].conditions",
+      "rango": 4
+    },
+    {
+      "keyword": "discopatía degenerativa",
+      "keywordKey": "discopatia degenerativa",
+      "tipo": "condicion",
+      "procedencia": "COMPETITORS.md:Servicios",
+      "rango": 4
+    },
+    {
+      "keyword": "Displasia congénita de cadera",
+      "keywordKey": "displasia congenita de cadera",
+      "tipo": "condicion",
+      "procedencia": "services.ts:serviceCategories[].conditions",
+      "rango": 4
+    },
+    {
+      "keyword": "Dolor de espalda",
+      "keywordKey": "dolor de espalda",
+      "tipo": "sintoma",
+      "procedencia": "blog.ts:title",
+      "rango": 4
+    },
+    {
+      "keyword": "Enfermedad degenerativa discal",
+      "keywordKey": "enfermedad degenerativa discal",
+      "tipo": "condicion",
+      "procedencia": "services.ts:serviceCategories[].conditions",
+      "rango": 4
+    },
+    {
+      "keyword": "escoliosis",
+      "keywordKey": "escoliosis",
+      "tipo": "condicion",
+      "procedencia": "COMPETITORS.md:Servicios",
+      "rango": 4
+    },
+    {
+      "keyword": "Escoliosis en niños y adolescentes",
+      "keywordKey": "escoliosis en ninos y adolescentes",
+      "tipo": "condicion",
+      "procedencia": "services.ts:serviceCategories[].conditions",
+      "rango": 4
+    },
+    {
+      "keyword": "Escoliosis y otras deformidades",
+      "keywordKey": "escoliosis y otras deformidades",
+      "tipo": "condicion",
+      "procedencia": "services.ts:serviceCategories[].conditions",
+      "rango": 4
+    },
+    {
+      "keyword": "fractura vertebral",
+      "keywordKey": "fractura vertebral",
+      "tipo": "condicion",
+      "procedencia": "COMPETITORS.md:Servicios",
+      "rango": 4
+    },
+    {
+      "keyword": "Fracturas",
+      "keywordKey": "fracturas",
+      "tipo": "condicion",
+      "procedencia": "services.ts:serviceCategories[].conditions",
+      "rango": 4
+    },
+    {
+      "keyword": "Fracturas vertebrales",
+      "keywordKey": "fracturas vertebrales",
+      "tipo": "condicion",
+      "procedencia": "services.ts:serviceCategories[].conditions",
+      "rango": 4
+    },
+    {
+      "keyword": "hernia de disco",
+      "keywordKey": "hernia de disco",
+      "tipo": "condicion",
+      "procedencia": "COMPETITORS.md:Servicios",
+      "rango": 4
+    },
+    {
+      "keyword": "La Molina",
+      "keywordKey": "la molina",
+      "tipo": "sede",
+      "procedencia": "locations.ts:addressLocality",
+      "rango": 4
+    },
+    {
+      "keyword": "Lesiones de cadera",
+      "keywordKey": "lesiones de cadera",
+      "tipo": "condicion",
+      "procedencia": "services.ts:serviceCategories[].conditions",
+      "rango": 4
+    },
+    {
+      "keyword": "Lesiones de codo",
+      "keywordKey": "lesiones de codo",
+      "tipo": "condicion",
+      "procedencia": "services.ts:serviceCategories[].conditions",
+      "rango": 4
+    },
+    {
+      "keyword": "Lesiones de hombro",
+      "keywordKey": "lesiones de hombro",
+      "tipo": "condicion",
+      "procedencia": "services.ts:serviceCategories[].conditions",
+      "rango": 4
+    },
+    {
+      "keyword": "Lesiones de rodilla",
+      "keywordKey": "lesiones de rodilla",
+      "tipo": "condicion",
+      "procedencia": "services.ts:serviceCategories[].conditions",
+      "rango": 4
+    },
+    {
+      "keyword": "Lima",
+      "keywordKey": "lima",
+      "tipo": "sede",
+      "procedencia": "locations.ts:addressRegion",
+      "rango": 4
+    },
+    {
+      "keyword": "lumbalgia",
+      "keywordKey": "lumbalgia",
+      "tipo": "condicion",
+      "procedencia": "COMPETITORS.md:Servicios",
+      "rango": 4
+    },
+    {
+      "keyword": "Lumbalgia y ciática",
+      "keywordKey": "lumbalgia y ciatica",
+      "tipo": "condicion",
+      "procedencia": "services.ts:serviceCategories[].conditions",
+      "rango": 4
+    },
+    {
+      "keyword": "miedo a operarme de la columna",
+      "keywordKey": "miedo a operarme de la columna",
+      "tipo": "pregunta",
+      "procedencia": "faq.ts:question",
+      "rango": 4
+    },
+    {
+      "keyword": "miedo a operarte de la columna",
+      "keywordKey": "miedo a operarte de la columna",
+      "tipo": "pregunta",
+      "procedencia": "blog.ts:title",
+      "rango": 4
+    },
+    {
+      "keyword": "Procesos inflamatorios de la columna",
+      "keywordKey": "procesos inflamatorios de la columna",
+      "tipo": "condicion",
+      "procedencia": "services.ts:serviceCategories[].conditions",
+      "rango": 4
+    },
+    {
+      "keyword": "San Isidro",
+      "keywordKey": "san isidro",
+      "tipo": "sede",
+      "procedencia": "locations.ts:addressLocality",
+      "rango": 4
+    },
+    {
+      "keyword": "Santiago de Surco",
+      "keywordKey": "santiago de surco",
+      "tipo": "sede",
+      "procedencia": "locations.ts:addressLocality",
+      "rango": 4
+    },
+    {
+      "keyword": "simple contractura de una hernia discal",
+      "keywordKey": "simple contractura de una hernia discal",
+      "tipo": "sintoma",
+      "procedencia": "faq.ts:question",
+      "rango": 4
+    },
+    {
+      "keyword": "síntomas de columna",
+      "keywordKey": "sintomas de columna",
+      "tipo": "sintoma",
+      "procedencia": "blog.ts:title",
+      "rango": 4
+    },
+    {
+      "keyword": "Tendinitis",
+      "keywordKey": "tendinitis",
+      "tipo": "condicion",
+      "procedencia": "services.ts:serviceCategories[].conditions",
+      "rango": 4
+    },
+    {
+      "keyword": "tumores de columna",
+      "keywordKey": "tumores de columna",
+      "tipo": "condicion",
+      "procedencia": "COMPETITORS.md:Servicios",
+      "rango": 4
+    }
+  ]
+}
