@@ -59,7 +59,7 @@ una expiracion silenciosa rompe eso justo cuando menos conviene.
 | `cache:put` | **ninguna** | Rellena la cache desde afuera |
 | `kw:seeds` | **ninguna** | Lee el contenido del sitio, no la red |
 | `kw:classify` | **ninguna** | Motor de reglas determinista, sin red |
-| `kw:expand` | `SERPAPI_API_KEY` | Con `--offline` corre sin clave si la consulta ya esta en cache |
+| `kw:expand` | `DINORANK_API_KEY` + `SERPAPI_API_KEY` | Con `--offline` corre sin ninguna clave si las consultas ya estan en cache. Ver la seccion 6 |
 | `kw:enrich` | `DINORANK_API_KEY` | Idem |
 | `dino:probe` | `DINORANK_API_KEY` | Se sondea con `country=pe`, nunca con `es` |
 
@@ -134,3 +134,125 @@ Ninguna credencial entra al control de versiones. `.secrets/` esta ignorado, los
 que parecen claves se recortan antes de escribir cualquier archivo de cache, y los mensajes de
 error reportan como maximo la longitud y el prefijo de cuatro caracteres de una clave, nunca
 su valor.
+
+## 6. Como se expande el universo de keywords (`kw:expand`)
+
+### Las tres capas, de la mas barata a la mas cara
+
+| Capa | Costo | Que aporta |
+|---|---|---|
+| Permutacion | **cero**, sin red | Cruza las semillas del snapshot con las cuatro familias de `data/modifiers.json`. Es control de cobertura: detecta los huecos entre condicion, procedimiento y sede que ninguna fuente externa devolvio. **Por si sola ya supera el umbral de 400 de KWR-01** |
+| DinoRank `/keyword-research` | 1 llamada por semilla | El motor de expansion. Una sola llamada devuelve cientos de relacionadas para Peru, cada una con volumen, CPC y competencia |
+| SerpApi busqueda geolocalizada | 1 busqueda por semilla | Busquedas relacionadas y "la gente tambien pregunta": lenguaje real de paciente, que ninguna fuente de metricas devuelve. Ademas la captura completa de la SERP es insumo directo de la fase 13 |
+
+El orden importa: la deduplicacion conserva la primera aparicion, asi que el conteo por capa
+dice cuanto aporto **de nuevo** cada fuente pagada sobre lo que la permutacion ya tenia.
+
+### Tres trampas medidas de la respuesta de DinoRank
+
+Verificadas en vivo el 2026-08-10. Estan en el codigo y tienen prueba propia:
+
+1. **La keyword consultada siempre vuelve con `search_volume: 0`** en el bloque `datos`, junto
+   con el CPC, la competencia y los doce meses de historia. El volumen se lee de `keywords[]`;
+   si hace falta el de la propia semilla, se la busca dentro de ese arreglo por `key`. Un
+   parser que lea `datos` saca el universo entero en cero **y el fallo es silencioso, porque
+   cero es un valor valido**.
+2. **Solo una fraccion de las relacionadas trae volumen medible.** El filtro de calidad no
+   puede ser "tiene volumen" o el universo se derrumba y se pierde justo el long tail
+   geolocalizado. Las keywords sin volumen se conservan marcadas `sin_datos`.
+3. **La respuesta anida `data.data`.** No es un error de transcripcion.
+
+Ademas, el rendimiento depende del largo de la semilla: los terminos cabecera de una o dos
+palabras rinden cientos de relacionadas y las frases de cuatro o cinco palabras devuelven
+cero. Por eso el presupuesto de semillas de esta fuente es holgado.
+
+### Presupuesto y orden de gasto
+
+**El tope de SerpApi es de 60 busquedas por corrida y lo hace cumplir el codigo abortando**,
+no una nota en esta pagina. Es el valor de la constante `MAX_BUSQUEDAS_POR_DEFECTO`, con
+prueba unitaria que lo fija. La cuenta esta en plan gratuito y lo que sobra pertenece a la
+fase 13, que necesita capturar la SERP de cada cluster para COMP-03.
+
+Si el tope corta, corta por lo que menos importa, porque el orden de gasto es determinista y
+sale del rango de valor de negocio que declara `data/seeds.json`:
+
+1. Las cuatro condiciones que v1.1 ya publica.
+2. Las cuatro sedes.
+3. Las especialidades nucleares del doctor y los procedimientos principales.
+4. El resto de condiciones y la cola larga.
+
+Las ocho primeras sostienen el handoff con v1.1 y la prioridad de datos de Ricardo Palma que
+declara la fase 14: son las ultimas que se pueden perder. Alcanzado el tope, la corrida sale
+con codigo distinto de cero, nombra las semillas que quedaron pendientes y deja el archivo de
+candidatos consistente con lo ya obtenido. Lo consultado antes del corte queda en cache, asi
+que subir el tope y volver a correr **solo gasta por las que faltaban**.
+
+```bash
+# Que se va a gastar, sin gastar nada
+npm run cli -- kw:expand --plan-only
+
+# La corrida normal: pregunta antes de gastar
+npm run cli -- kw:expand
+
+# Sin preguntar, con tope propio
+npm run cli -- kw:expand --yes --max-searches 10
+
+# Reproducir el universo sin una sola llamada de red
+npm run cli -- kw:expand --offline
+```
+
+Banderas propias: `--seeds-file` (usar otro snapshot; el resultado se desvia a la cache para
+no pisar `data/candidates.jsonl`), `--dino-seeds`, `--serp-seeds`, `--autocomplete` (apagada
+por defecto, para no gastar en lo que la fase 13 necesita) y `--out`.
+
+`data/seeds.fixture.json` tiene exactamente cinco semillas y esta commiteado a proposito: es
+lo que hace reproducible la prueba del tope. Con el snapshot completo, un criterio escrito
+sobre cinco semillas no se podria comprobar.
+
+### Los dos caminos de datos, y por que dan el mismo resultado
+
+El camino esperado es el directo: el CLI llama a la fuente por HTTP con la clave de
+`.secrets/.env`. El camino de relleno existe para cuando una clave no esta disponible pero si
+hay una herramienta externa que puede traer el cuerpo crudo.
+
+```bash
+# 1. El CLI calcula las claves de cache y las emite. No llama a nadie.
+npm run cli -- kw:expand --plan-only
+#    -> escribe .cache/pending-queries.json con clave, fuente, endpoint y parametros
+
+# 2. Quien tenga acceso a la fuente obtiene el cuerpo crudo y lo guarda en un archivo.
+
+# 3. Se deja en la cache con la clave que emitio el paso 1.
+npm run cli -- cache:put --source serpapi --key <clave del paso 1> --file respuesta.json
+
+# 4. La expansion resuelve esa consulta como acierto de cache.
+npm run cli -- kw:expand --offline
+```
+
+**La propiedad critica es que la funcion de hash vive en un solo lugar: quien rellena nunca
+calcula el nombre del archivo, se lo pregunta al CLI.** Si inventara la ruta, la cache se
+desincroniza y nadie se entera hasta el reprocesamiento del mes siguiente. Hay una prueba que
+afirma que una expansion alimentada por llamada directa y una alimentada por relleno producen
+candidatos identicos: aguas abajo el codigo no puede distinguir el origen.
+
+### Que hay en `data/candidates.jsonl`
+
+Una linea por candidato, en JSON. Se eligio este formato por sobre el separado por comas
+porque las keywords en espanol llevan comas y porque el diff de git queda legible sin
+entrecomillado.
+
+| Campo | Que es |
+|---|---|
+| `keyword` | Texto visible, con tildes. Es lo que se busca y lo que se escribe en el Sheet |
+| `keywordKey` | Forma normalizada. Clave de deduplicacion y de idempotencia del upsert |
+| `semilla` | Semilla de la que nacio |
+| `capa` | Que capa lo encontro primero |
+| `estado` | `con_datos` cuando tiene volumen medible, `sin_datos` cuando no |
+| `metricas` | Volumen, CPC y competencia cuando la fuente los devolvio. Presente incluso con volumen cero: cero significa "sin volumen medible", no "sin dato" |
+
+Dos filtros deciden que entra: el candidato tiene que contener al menos un termino del dominio
+medico o de especialidad, y no puede nombrar una geografia que el negocio no atienda. El
+segundo cubre las ciudades del Peru fuera de Lima y tambien Espana, Mexico y el resto de la
+region, porque la fuente de expansion resuelve el long tail en espanol con un backend global.
+La comparacion es **por palabra completa y no por subcadena**: `ciatica` contiene `ica` y no
+es la ciudad de Ica.

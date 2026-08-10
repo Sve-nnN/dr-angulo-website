@@ -1,0 +1,41 @@
+{
+  "schema": 1,
+  "//": "Fixture de exactamente 5 semillas, las cinco primeras del snapshot por orden de gasto. Existe para que la prueba del tope de cuota sea reproducible: con el snapshot completo el numero de pendientes seria ~53 y ningun criterio escrito sobre 5 semillas podria comprobarse. Se commitea a proposito.",
+  "seeds": [
+    {
+      "keyword": "Escoliosis y deformidades de columna",
+      "keywordKey": "escoliosis y deformidades de columna",
+      "tipo": "condicion",
+      "procedencia": "service-pages.ts:h1",
+      "rango": 1
+    },
+    {
+      "keyword": "Estenosis espinal",
+      "keywordKey": "estenosis espinal",
+      "tipo": "condicion",
+      "procedencia": "services.ts:serviceCategories[].conditions",
+      "rango": 1
+    },
+    {
+      "keyword": "Hernia discal",
+      "keywordKey": "hernia discal",
+      "tipo": "condicion",
+      "procedencia": "services.ts:serviceCategories[].conditions",
+      "rango": 1
+    },
+    {
+      "keyword": "Ortopedia infantil",
+      "keywordKey": "ortopedia infantil",
+      "tipo": "especialidad",
+      "procedencia": "services.ts:serviceCategories[].name",
+      "rango": 1
+    },
+    {
+      "keyword": "Clínica Padre Luis Tezza",
+      "keywordKey": "clinica padre luis tezza",
+      "tipo": "sede",
+      "procedencia": "locations.ts:name",
+      "rango": 2
+    }
+  ]
+}
