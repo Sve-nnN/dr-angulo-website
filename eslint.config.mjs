@@ -12,6 +12,8 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+    // Tooling de datos del milestone v1.2: paquete Node independiente, fuera de la app.
+    "seo-tools/**",
   ]),
 ]);
 

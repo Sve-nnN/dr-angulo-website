@@ -1,0 +1,11 @@
+# El .gitignore de la raiz tiene "/node_modules" con barra inicial, que ancla el patron
+# a la raiz del repositorio y NO cubre esta carpeta. Por eso este archivo existe.
+#
+# Los patrones van SIN barra final a proposito. Un patron "dir/" solo matchea cuando git
+# puede confirmar en disco que la ruta es un directorio, asi que antes de la primera corrida
+# "git check-ignore seo-tools/.cache" fallaba por no existir todavia la carpeta.
+node_modules
+
+# Cache cruda de respuestas de API: son miles de archivos y el repositorio se comparte
+# con el workstream milestone. Lo que se commitea es el dataset consolidado, no la cache.
+.cache
