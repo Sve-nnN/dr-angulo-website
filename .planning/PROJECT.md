@@ -2,36 +2,70 @@
 
 ## What This Is
 
-Sitio web de marketing y captación de pacientes para el Dr. Juan Carlos Angulo Totesaut, traumatólogo, especialista en ortopedia infantil y cirujano de columna en Lima, Perú (consulta privada, atiende en Clínica Montefiori, La Molina). El sitio debe hacerlo más visible en Google y en redes, y convertir visitantes en citas/consultas reales por WhatsApp y formulario de contacto.
+Sitio web de marketing y captación de pacientes para el Dr. Juan Carlos Angulo Totesaut, traumatólogo, especialista en ortopedia infantil y cirujano de columna en Lima, Perú. Consulta privada en su consultorio de Surco (Lima Central Tower) y consulta en tres clínicas: Ricardo Palma, Sanna La Molina y Padre Luis Tezza. El sitio debe hacerlo más visible en Google y en redes, y convertir visitantes en citas/consultas reales por WhatsApp y formulario de contacto.
 
 ## Core Value
 
 Que un paciente que busca "traumatólogo" / "cirujano de columna" en Lima encuentre el sitio, confíe en el doctor (credenciales, trayectoria, testimonios) y agende una cita por WhatsApp en menos de 2 clics — todo evento de contacto debe quedar rastreado.
 
+## Current Milestone: v1.1 Lanzamiento público y competitividad SEO
+
+**Goal:** Poner el sitio vivo en drangulocolumna.com y llevarlo de "existe" a "compite" en las SERP de Lima para cirugía de columna.
+
+**Target features:**
+- Dominio público en Dokploy con HTTPS, apex primario y www redirigido
+- Variables de entorno de producción y canonicals apuntando al dominio real
+- Páginas por servicio con contenido clínico profundo y `MedicalProcedure`
+- Páginas por sede para las cuatro ubicaciones
+- Blog expandido de ~200 a 900+ palabras por post
+- Schema completo: breadcrumbs, credenciales, horarios, reseñas
+- Local SEO: GBP corregido, campaña de reseñas, citaciones
+- Search Console verificado con sitemap enviado
+
+**Origen:** auditoría SEO del 2026-08-10 sobre drangulocolumna.com. Detectó que el dominio, comprado el 2026-08-09, servía la página parqueada de Porkbun mientras la ficha de Google Business Profile ya enviaba pacientes ahí.
+
 ## Requirements
 
 ### Validated
 
-(Ninguno aún — proyecto greenfield, se valida al publicar)
+Entregados y verificados en el milestone v1.0 (fases 1-6):
+
+- [x] Home con propuesta de valor, especialidades y CTA de WhatsApp — Fase 1
+- [x] Página "Sobre el doctor" con biografía y CV completo (formación con fechas, ocho cargos, once cursos y congresos, cuatro entrenamientos internacionales, CMP 83189 / RNE 35310) — Fases 2 y 5
+- [x] Página de Servicios / condiciones tratadas — Fase 2
+- [x] Testimonios de pacientes — Fase 3
+- [x] Preguntas frecuentes, incluidos miedos comunes sobre cirugía de columna — Fase 3
+- [x] Blog/recursos educativos (4 posts) — Fase 4
+- [x] Contacto: formulario + dirección + WhatsApp — Fase 3
+- [x] Botón flotante de WhatsApp con mensaje prellenado por ubicación de CTA — Fase 1
+- [x] Formulario de contacto vía Resend con WhatsApp como fallback — Fase 3
+- [x] JSON-LD `Physician` + `FAQPage` — Fase 4
+- [x] sitemap.xml + robots.txt dinámicos + metadata por página — Fase 4
+- [x] Tracking de eventos GA4 y Meta Pixel con consentimiento previo — Fase 4
+- [x] Página de Política de Privacidad — Fase 4
+- [x] Identidad visual real del doctor (logo oficial, teal + dorado/mostaza) — Fase 1
+- [x] Responsive mobile-first — Fase 1
+- [x] Deploy en producción — Fase 4 (Dokploy, no Vercel; ver Key Decisions)
+- [x] Cuatro sedes con horarios y página `/agendar` — Fase 6
+- [x] Carrusel de reels de Instagram (código completo; el feed vivo espera vinculación de la cuenta) — Fase 5
 
 ### Active
 
-- [ ] Home con propuesta de valor, especialidades (traumatología, ortopedia infantil, cirugía de columna) y CTA de WhatsApp
-- [ ] Página "Sobre el doctor" con biografía y trayectoria/CV extenso (formación, certificaciones, cursos, colegiatura CMP/RNE, experiencia hospitalaria)
-- [ ] Página de Servicios / condiciones tratadas
-- [ ] Testimonios de pacientes
-- [ ] Preguntas frecuentes (incluye miedos comunes: cirugía de columna, recuperación)
-- [ ] Blog/recursos educativos (SEO, contenido propio basado en su Instagram)
-- [ ] Contacto: formulario + mapa/dirección de Clínica Montefiori + WhatsApp
-- [ ] Botón flotante de WhatsApp en todo el sitio con mensaje prellenado
-- [ ] Formulario de contacto que envía email (Resend) y/o deriva a WhatsApp
-- [ ] JSON-LD (Physician + FAQPage) para SEO/Knowledge Graph
-- [ ] sitemap.xml + robots.txt + metadata por página (Next.js Metadata API)
-- [ ] Tracking de eventos: clic WhatsApp (por ubicación de CTA) y envío de formulario, en GA4 y Meta Pixel
-- [ ] Página de Política de Privacidad (aviso de cookies/datos personales — Perú)
-- [ ] Diseño con identidad visual real del doctor (logo JA, teal + dorado/mostaza, ver Key Decisions)
-- [ ] Responsive mobile-first, Core Web Vitals cuidados
-- [ ] Deploy en Vercel
+Milestone v1.1 — derivados de la auditoría SEO del 2026-08-10:
+
+- [ ] Sitio servido en https://drangulocolumna.com con certificado válido
+- [ ] www redirigido al apex en un solo salto, directo a HTTPS
+- [ ] `NEXT_PUBLIC_SITE_URL` en producción y fallback de `siteConfig.url` sin referencias a vercel.app
+- [ ] Resend operativo con dominio verificado
+- [ ] Páginas por servicio: hernia discal, estenosis espinal, escoliosis, ortopedia infantil
+- [ ] Páginas por sede para las cuatro ubicaciones, con la de Ricardo Palma como prioritaria
+- [ ] Los 4 posts del blog expandidos a 900+ palabras con revisión del doctor
+- [ ] `BreadcrumbList`, `MedicalWebPage`, `MedicalProcedure`, `openingHoursSpecification`, `hasCredential`, `AggregateRating`/`Review`
+- [ ] Titles ≤60 caracteres e imagen OG propia por página
+- [ ] `llms.txt` y limpieza de `dr-angulo-portrait.png`
+- [ ] GBP con horario correcto, categorías secundarias y campaña de reseñas hacia 15-20
+- [ ] Citaciones NAP consistentes en Doctoralia, CMP y directorios de las cuatro clínicas
+- [ ] Search Console verificado con sitemap enviado e indexación confirmada
 
 ### Out of Scope
 
@@ -48,13 +82,16 @@ Que un paciente que busca "traumatólogo" / "cirujano de columna" en Lima encuen
 - Identidad visual real (extraída de Instagram, ver Key Decisions): logo "JA" monograma con columna vertebral estilizada, paleta teal/turquesa + dorado-mostaza, tipografía sans-serif bold para titulares.
 - Competencia directa investigada (médicos individuales de columna en Lima): drcarranzacolumna.com, drciezatraumatologia.com, cirujanocolumna-elaos.com. Patrón común: WhatsApp flotante, sección de trayectoria/formación, testimonios/reseñas de Google, FAQ, sin sistema de reserva complejo. Ver `.planning/research/COMPETITORS.md`.
 - Investigación técnica SEO/schema/tracking en `.planning/research/SEO-TRACKING.md`.
+- **Auditoría SEO del 2026-08-10** (origen del milestone v1.1). Datos verificados ese día: drangulocolumna.com servía la página parqueada de Porkbun (openresty/PHP), `site:` con cero resultados indexados, y el GBP del doctor —vivo, 5.0 con 6 reseñas, Av. El Derby 254— ya apuntaba su botón de sitio web y su enlace de reservas a ese dominio parqueado. SERP de "cirujano de columna en Lima": posiciones 1 y 3 son dominios exact-match (cirujanocolumna-elaos.com, drcarranzacolumna.com), el resto son clínicas grandes (Internacional, San Felipe, Anglo Americana, San Juan de Dios) y Doctoralia. Local pack liderado por Centro de Columna Vertebral (5.0, 13 reseñas) y Clínica De La Columna (3.5, 34 reseñas). Related search relevante sin capturar: "traumatologo especialista en columna clínica ricardo palma".
+- Horario publicado en el GBP (cerrado lunes a jueves, abierto viernes y sábado 9-17) contradice las cuatro sedes del sitio. Pendiente de corregir con el doctor.
 - Juan (cliente que gestiona el proyecto) pidió explícitamente incluir la mayor parte del currículum del doctor (certificaciones, cursos, títulos) — pendiente que el doctor comparta el CV completo; mientras tanto se usa lo verificado públicamente (Doctoralia, LinkedIn).
 - Pendiente de Juan/doctor: archivo de logo real (PNG/SVG), CV completo, confirmación de precios de consulta a mostrar (o no mostrar precio).
 
 ## Constraints
 
-- **Stack**: Next.js (App Router) + TypeScript + Tailwind CSS, contenido como código (sin CMS) — pedido explícito del cliente de mantenerlo simple
-- **Hosting**: Vercel, subdominio temporal *.vercel.app hasta definir dominio final
+- **Stack**: Next.js 16 (App Router) + TypeScript + Tailwind CSS 4, contenido como código (sin CMS) — pedido explícito del cliente de mantenerlo simple
+- **Hosting**: Dokploy self-hosted sobre Hetzner (`sapling-vps-01`), la misma infraestructura que juantech y Juan Portfolio. Dominio: drangulocolumna.com, registrado en Porkbun el 2026-08-09
+- **Contenido médico**: todo texto clínico nuevo pasa por revisión del doctor antes de publicar. Contenido YMYL sin validar no se despliega
 - **Datos reales**: no inventar credenciales médicas, cifras de cirugías realizadas ni testimonios — solo usar lo verificado o lo que el doctor confirme
 - **Mercado**: Lima, Perú — copy en español neutro/peruano, moneda soles (S/)
 - **Cumplimiento**: Ley de Protección de Datos Personales (Perú) — aviso de privacidad antes de cargar GA4/Meta Pixel
@@ -67,12 +104,15 @@ Que un paciente que busca "traumatólogo" / "cirujano de columna" en Lima encuen
 | WhatsApp (964305682) como canal principal de citas, formulario como secundario | Confirmado por Juan; mercado peruano prefiere WhatsApp; evita construir sistema de calendario | ✓ Confirmado por Juan |
 | Sede mostrada: Clínica Montefiori, Av. Separadora Industrial 1820, La Molina | Confirmado por Juan como sede principal actual | ✓ Confirmado por Juan |
 | Paleta: teal/turquesa (~#0E8A8C) + dorado-mostaza (~#E8971F) | Extraída directamente de posts e íconos de highlights de Instagram del doctor | — Pendiente afinar tras ver el sitio construido |
-| Dominio: subdominio temporal de Vercel por ahora | Juan prefirió probar antes de comprar dominio | — Pendiente definir dominio final |
+| Dominio: subdominio temporal de Vercel por ahora | Juan prefirió probar antes de comprar dominio | ✗ Superado — se compró drangulocolumna.com el 2026-08-09 |
+| Deploy en Dokploy self-hosted, no Vercel | Juan usa su propia infraestructura (Hetzner + Dokploy) para el resto de sus proyectos; consistencia operativa | ✓ En producción desde la fase 4 |
+| Dominio final: drangulocolumna.com | Coincide con la búsqueda de marca del doctor y con lo que ya apunta su ficha de Google Business Profile | ✓ Registrado, pendiente de apuntar |
+| Arquitectura de contenido en silo: una URL por servicio y una por sede | La SERP de Lima está segmentada por condición ("hernia discal", "estenosis") y por clínica; una sola página `/servicios` no compite contra dominios exact-match como drcarranzacolumna.com | — Se valida en v1.1 |
 | JSON-LD tipo `Physician` (no LocalBusiness separado) | Recomendación de investigación técnica: Physician ya hereda de MedicalBusiness/LocalBusiness | ✓ |
 | Email de formulario vía Resend, con WhatsApp como fallback siempre visible | Investigación: mayoría de pacientes en Perú prefiere WhatsApp; Resend necesita dominio verificado para producción (aún no hay dominio) | — Pendiente activar cuando haya dominio |
 
 ---
-*Last updated: 2026-07-31 after initialización del proyecto*
+*Last updated: 2026-08-10 al iniciar el milestone v1.1 (lanzamiento público y competitividad SEO)*
 
 ## Evolution
 

@@ -1,12 +1,16 @@
 ---
-gsd_state_version: '1.0'
-status: built
+gsd_state_version: 1.0
+milestone: v1.1
+milestone_name: Lanzamiento público y competitividad SEO
+status: planning
+last_updated: "2026-08-10T02:33:49.578Z"
+last_activity: 2026-08-09
 progress:
-  total_phases: 6
-  completed_phases: 6
-  total_plans: 15
-  completed_plans: 15
-  percent: 100
+  total_phases: 0
+  completed_phases: 0
+  total_plans: 0
+  completed_plans: 0
+  percent: 0
 ---
 
 # Project State
@@ -20,11 +24,10 @@ See: .planning/PROJECT.md (updated 2026-07-31)
 
 ## Current Position
 
-Phase: 6 of 6 — todas las fases construidas y verificadas en navegador; el sitio está deployado
-Status: Sitio corriendo en producción (Dokploy, infra propia de Juan) sin dominio público; el carrusel de reels muestra el fallback hasta que se vincule Instagram
-Last activity: 2026-08-09 — Phase 6 ejecutada (cuatro sedes con horarios, página `/agendar`, WhatsApp acotado al consultorio privado), más los planes 05-03 (fotos de quirófano en AVIF) y 05-04 (CV completo del doctor con cursos y entrenamientos internacionales)
-
-Progress: [██████████] 100% (build + deploy) — pendientes: dominio público, vinculación de Instagram y confirmar el estado de Montefiori
+Phase: Not started (defining requirements)
+Plan: —
+Status: Defining requirements
+Last activity: 2026-08-09 — Milestone v1.1 started
 
 ## Accumulated Context
 
