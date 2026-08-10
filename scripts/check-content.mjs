@@ -324,10 +324,14 @@ function checkRoute(entry) {
     }
   }
 
-  // --- firma y avisos -------------------------------------------------------
+  // --- firma y avisos ---------------------------------------------------
+  // SAFE-01 se revirtió el 2026-08-10 por decisión de Juan: el aviso ya no
+  // va pegado a la firma arriba del pliegue, va una sola vez al cierre
+  // (SAFE-02, ver 08-UI-SPEC.md). La puerta se actualizó junto con el
+  // cambio en vez de quedar verificando un requisito superado.
   const disclaimers = [...article.matchAll(/data-medical-disclaimer/g)].map((m) => m.index);
-  if (disclaimers.length !== 2) {
-    fail(`hay ${disclaimers.length} avisos educativos, deben ser exactamente dos`);
+  if (disclaimers.length !== 1) {
+    fail(`hay ${disclaimers.length} avisos educativos, debe haber exactamente uno`);
   }
   const bylineAt = article.indexOf("data-author-byline");
   const bylineCount = occurrences(article, "data-author-byline");
@@ -335,13 +339,9 @@ function checkRoute(entry) {
     fail(`hay ${bylineCount} firmas de autor, debe haber exactamente una`);
   }
   if (disclaimers.length > 0) {
-    const tocAt = article.indexOf("data-toc");
-    const firstH2 = articleHeadings.find((h) => h.level === 2);
-    if (tocAt !== -1 && disclaimers[0] > tocAt) {
-      fail("el aviso educativo va después de la tabla de contenidos, debe ir pegado a la firma");
-    }
-    if (firstH2 && disclaimers[0] > firstH2.index) {
-      fail("el aviso educativo va después del primer h2, debe estar arriba del pliegue");
+    const lastAnchor = anchorH2[anchorH2.length - 1];
+    if (lastAnchor && disclaimers[0] < lastAnchor.index) {
+      fail("el aviso educativo aparece antes de la última sección, debe ir al cierre");
     }
     if (bylineAt !== -1 && bylineAt > disclaimers[0]) {
       fail("la firma va después del aviso educativo, deben leerse en ese orden");
