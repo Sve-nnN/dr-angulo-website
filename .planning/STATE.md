@@ -20,7 +20,7 @@ progress:
 See: .planning/PROJECT.md (updated 2026-08-10)
 
 **Core value:** Que un paciente que busca traumatólogo/cirujano de columna en Lima encuentre el sitio y agende cita por WhatsApp en menos de 2 clics, con todo evento rastreado.
-**Current focus:** Fase 7, dominio público en drangulocolumna.com. Es el desbloqueo duro del milestone: nada de v1.1 se puede medir mientras el dominio sirva la página parqueada de Porkbun.
+**Current focus:** Fase 7. OJO: verificado el 2026-08-09, `https://drangulocolumna.com` ya sirve el sitio real (canonical y JSON-LD con el dominio propio, sitemap correcto), no la página parqueada. Lo que queda de la fase es confirmar el estado en Dokploy y cerrar Search Console.
 
 ## Current Position
 
@@ -55,15 +55,16 @@ Ver tabla completa en PROJECT.md, sección Key Decisions.
 
 ### Pending Todos
 
-- **Dominio (fase 7):** apuntar el registro `A` de drangulocolumna.com a la IP de `sapling-vps-01`, luego `domain.create` vía API de Dokploy (`applicationId: 29ZFzVVwEczNI733DodMp`, puerto 3000, HTTPS/Let's Encrypt). Variables de producción por `application.saveEnvironment` + `application.deploy`: `NEXT_PUBLIC_SITE_URL`, `RESEND_API_KEY`, `EMAIL_FROM`, y `NEXT_PUBLIC_GA_ID` / `NEXT_PUBLIC_META_PIXEL_ID` cuando Juan tenga esas cuentas.
-- **Datos que faltan del doctor:** horas exactas del consultorio privado los viernes y sábados (las necesita SEO-06 y GBP-01); días reales por sede para corregir el GBP; si sigue atendiendo en Clínica Montefiori; si se publica precio de consulta (dato sin confirmar de Doctoralia: ~S/130 presencial, ~S/100 online); fechas contradictorias de los dos cargos de Guarataro en el CV (2012-2013 contra 2003), hoy fuera del sitio.
+- **Dominio (fase 7): en producción ya resuelto.** `https://drangulocolumna.com` responde con el sitio real y `NEXT_PUBLIC_SITE_URL` está bien seteada (el canonical y el `@id` del JSON-LD salen con el dominio propio). Falta confirmarlo en el panel y seguir con Search Console. Si hiciera falta rehacerlo: apuntar el registro `A` a la IP de `sapling-vps-01`, luego `domain.create` vía API de Dokploy (`applicationId: 29ZFzVVwEczNI733DodMp`, puerto 3000, HTTPS/Let's Encrypt). Variables de producción por `application.saveEnvironment` + `application.deploy`: `NEXT_PUBLIC_SITE_URL`, `RESEND_API_KEY`, `EMAIL_FROM`, y `NEXT_PUBLIC_GA_ID` / `NEXT_PUBLIC_META_PIXEL_ID` cuando Juan tenga esas cuentas.
+- **Datos que faltan del doctor:** días reales por sede para corregir el GBP; si sigue atendiendo en Clínica Montefiori; si se publica precio de consulta (dato sin confirmar de Doctoralia: ~S/130 presencial, ~S/100 online); fechas contradictorias de los dos cargos de Guarataro en el CV (2012-2013 contra 2003), hoy fuera del sitio.
 - **Feed de Instagram (FUT-07):** el carrusel muestra el fallback hasta configurar `INSTAGRAM_ACCESS_TOKEN`, `INSTAGRAM_TOKEN_FILE` (volumen persistente) y `CRON_SECRET` en Dokploy, más el cron semanal a `/api/instagram/refresh`. Pasos en `docs/instagram-reels.md`. El cron por HTTPS depende del dominio de la fase 7.
-- **Testimonios:** el doctor pasó `https://www.instagram.com/p/CoE2FSWOJgR/` con testimonios en video, hoy solo enlazado. Si consigue los videos o el texto se pueden citar directamente y marcar como `Review` en la fase 10.
+- **Testimonios:** el doctor pasó `https://www.instagram.com/p/CoE2FSWOJgR/` con testimonios en video, hoy solo enlazado. Si consigue los videos o el texto se pueden citar directamente.
+- **Reseñas de Google:** falta `GOOGLE_PLACES_API_KEY` en Dokploy para que la sección se renderice (place ID ya cableado: `ChIJQ4nDssLHBZEROmZ9nyesA5c`). Pasos en `docs/structured-data.md`. Sin la clave el sitio queda como estaba, sin sección de reseñas.
 
 ### Blockers/Concerns
 
-- La ficha de Google Business Profile del doctor está viva (5.0 con 6 reseñas, Av. El Derby 254) y ya manda su botón de sitio web y su enlace de reservas al dominio parqueado. Cada día que pasa sin la fase 7 es tráfico de intención alta que se pierde.
-- El horario del GBP (cerrado lunes a jueves, abierto viernes y sábado 9-17) contradice las cuatro sedes publicadas en el sitio. Lo corrige GBP-01, pero necesita el dato del doctor.
+- La ficha de Google Business Profile está viva (5.0 con 6 reseñas, Av. El Derby 254) y su botón de sitio web y su enlace de reservas ya apuntan al dominio, que sirve el sitio real. El cuello de botella ahora es el volumen de reseñas: 6 es poco para competir en la SERP local de Lima.
+- El horario del GBP (viernes y sábado 9-17) es el del consultorio privado y ya está publicado tal cual en `locations.ts` y en el `openingHoursSpecification` del JSON-LD. Lo que sigue abierto es si el GBP debe reflejar además los días de clínica, que es la discusión de GBP-01.
 - El logo actual es `images/logo.jpeg` recortado por bounding box. Si aparece el SVG vectorial original conviene reemplazarlo. `public/dr-angulo-portrait.png` sigue en el repo sin uso y lo saca SEO-11.
 
 ## Deferred Verification
