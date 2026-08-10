@@ -12,7 +12,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${siteConfig.url}/agendar`, changeFrequency: "monthly", priority: 0.9 },
     { url: `${siteConfig.url}/contacto`, changeFrequency: "yearly", priority: 0.8 },
     { url: `${siteConfig.url}/blog`, changeFrequency: "weekly", priority: 0.7 },
-    { url: `${siteConfig.url}/privacidad`, changeFrequency: "yearly", priority: 0.2 },
+    // `/privacidad` no va en el sitemap: la página declara `noindex, follow` desde
+    // v1.0, y proponerle a Google una URL que uno mismo pide no indexar produce
+    // el error "Submitted URL marked noindex" en Search Console (D-10).
   ];
 
   const blogRoutes: MetadataRoute.Sitemap = blogPosts.map((post) => ({
