@@ -104,7 +104,7 @@ Plans:
   2. `www.drangulocolumna.com` termina en `https://drangulocolumna.com` con un solo salto 301, sin pasar por HTTP en el camino.
   3. El código fuente de cualquier página muestra canonical, `og:url` y las URLs del sitemap sobre `https://drangulocolumna.com`, y sin `NEXT_PUBLIC_SITE_URL` el sitio no puede caer a un dominio muerto (el fallback de `siteConfig.url` ya no menciona vercel.app).
   4. Un envío de prueba del formulario llega como email a la casilla del doctor, enviado por Resend desde el dominio verificado.
-  5. La propiedad aparece verificada en Search Console, el sitemap enviado, y las rutas base responden 200 e indexables: las 8 indexables (`/`, `/servicios`, `/sobre-el-doctor`, `/testimonios`, `/preguntas-frecuentes`, `/contacto`, `/blog`, `/agendar`) sin `noindex`, y `/privacidad` viva pero fuera del sitemap porque v1.0 la marcó `noindex, follow` a propósito. Confirmar que Google las indexó queda como seguimiento posterior al cierre (decisión de 07-CONTEXT.md), no es criterio de aceptación.
+  5. La propiedad aparece verificada en Search Console, el sitemap enviado, y las rutas base responden 200 e indexables: las 8 indexables (`/`, `/servicios`, `/sobre-el-doctor`, `/testimonios`, `/preguntas-frecuentes`, `/contacto`, `/blog`, `/agendar`) sin `noindex`, y `/privacidad` viva pero fuera del sitemap porque v1.0 la marcó `noindex, follow` a propósito (decisión D-10, cerrada por Juan el 2026-08-10: se saca del sitemap y se respeta el `noindex`; el sitemap queda en 12 URLs). Confirmar que Google las indexó queda como seguimiento posterior al cierre (decisión de 07-CONTEXT.md), no es criterio de aceptación.
 **Plans**: 5 plans
 
 Plans:
