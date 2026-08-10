@@ -57,7 +57,7 @@ Un solo médico con trayectoria verificable en tres especialidades que en Lima s
 
 - **Nombre:** "Dr. Juan Carlos Angulo Totesaut" en formal, "Dr. Juan Angulo" en corto.
 - **Logo JA actual (vinculante).** Monograma J+A con la diagonal de la A formada por puntos que simulan una columna vertebral. El archivo en repo es un recorte de captura de Instagram y se mantiene como logo oficial hasta que llegue el vectorial. No se reemplaza ni se rediseña por cuenta propia.
-- **Fotos reales del doctor (vinculante).** `public/dr-angulo-consulta.avif`, `public/dr-angulo-implante-disco.avif`, `public/dr-angulo-modelo-columna.avif`. Son el material visual obligatorio del sitio. Nada de stock ni de retratos genéricos para representar al doctor. (`public/dr-angulo-portrait.png` es el retrato antiguo, ya sin uso.)
+- **Fotos reales del doctor (vinculante).** `public/dr-angulo-consulta.avif`, `public/dr-angulo-implante-disco.avif`, `public/dr-angulo-modelo-columna.avif`. Son el material visual obligatorio del sitio. Nada de stock ni de retratos genéricos para representar al doctor. (El retrato antiguo `public/dr-angulo-portrait.png`, un frame de video con marca de agua, se borró del repo en la fase 10 por SEO-11.)
 - **Voz:** educativa y tranquilizadora, no alarmista. El miedo a la cirugía de columna es el tema recurrente de su Instagram y el sitio lo trata de frente. Cercana pero profesional, sin infantilizar al paciente.
 - **Paleta teal + dorado:** identidad incumbente, no declarada vinculante.
 
