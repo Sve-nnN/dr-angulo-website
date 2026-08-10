@@ -4,7 +4,7 @@ export const siteConfig = {
   title: "Traumatólogo y Cirujano de Columna en Lima",
   description:
     "Dr. Juan Carlos Angulo Totesaut — Traumatólogo, especialista en ortopedia infantil y cirujano de columna en Lima, Perú. Agenda tu consulta por WhatsApp.",
-  url: process.env.NEXT_PUBLIC_SITE_URL || "https://dr-angulo.vercel.app",
+  url: process.env.NEXT_PUBLIC_SITE_URL || "https://drangulocolumna.com",
 
   whatsapp: {
     number: "51964305682",

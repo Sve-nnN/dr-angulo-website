@@ -6,7 +6,7 @@ import { Footer } from "@/components/layout/footer";
 import { WhatsAppFloatButton } from "@/components/layout/whatsapp-float-button";
 import { CookieConsentBanner } from "@/components/cookie-consent-banner";
 import { AnalyticsScripts } from "@/components/analytics/analytics-scripts";
-import { PhysicianJsonLd } from "@/components/structured-data";
+import { SiteJsonLd } from "@/components/structured-data";
 import { siteConfig } from "@/lib/site-config";
 
 const poppins = Poppins({
@@ -67,7 +67,7 @@ export default function RootLayout({
       suppressHydrationWarning
     >
       <body className="flex min-h-full flex-col font-sans" suppressHydrationWarning>
-        <PhysicianJsonLd />
+        <SiteJsonLd />
         <a
           href="#contenido"
           className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:rounded-lg focus:bg-primary focus:px-4 focus:py-3 focus:text-base focus:font-semibold focus:text-on-primary"

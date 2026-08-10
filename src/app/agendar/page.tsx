@@ -4,6 +4,7 @@ import { ArrowRight } from "lucide-react";
 import { LocationCard } from "@/components/locations/location-card";
 import { primaryLocation, clinicLocations, weeklySchedule } from "@/content/locations";
 import { siteConfig } from "@/lib/site-config";
+import { BreadcrumbJsonLd, BookingPageJsonLd } from "@/components/structured-data";
 
 export const metadata: Metadata = {
   title: "Agendar cita — Consultorios y horarios en Lima",
@@ -14,6 +15,9 @@ export const metadata: Metadata = {
 
 export default function AgendarPage() {
   return (
+    <>
+      <BookingPageJsonLd />
+      <BreadcrumbJsonLd items={[{ name: "Agendar cita", path: "/agendar" }]} />
     <div className="mx-auto max-w-5xl px-4 py-14 sm:px-6 sm:py-20">
       <h1 className="font-heading text-3xl font-extrabold text-primary sm:text-4xl">
         Agendar cita
@@ -113,5 +117,6 @@ export default function AgendarPage() {
         </Link>
       </div>
     </div>
+    </>
   );
 }
