@@ -1,0 +1,180 @@
+{
+  "_meta": {
+    "documento": "Dr Juan Carlos Angulo - SEO Master",
+    "spreadsheetId": "1aowectbAJhyyZWhwQ6N_re-ENeSENvNN-5DebqCIls0",
+    "medidoEl": "2026-08-10",
+    "origen": ".planning/workstreams/seo-keywords/data/sheet-recon-2026-08-10.md",
+    "volcado": ".planning/workstreams/seo-keywords/data/sheet-headers.json",
+    "advertencias": [
+      "La fila 1 de cada tab es un banner decorativo, no la fila de encabezados. La fila real es la 3 en dos tabs y la 2 en otros dos.",
+      "Varios encabezados reales llevan espacio final. Los valores de este archivo son LITERALES: no recortarlos aca, el recorte se hace al comparar.",
+      "El tab de canonicals se llama 'Canonical Audit'. El nombre largo que se lee en la fila 1 es el banner y pedirlo a la API devuelve 400.",
+      "El documento tiene 11 tabs. Este archivo declara solo los cinco del alcance del milestone."
+    ],
+    "decisionesDeJuan": {
+      "J-1": "Las tres columnas de Content Model que nombran la fuente diferida quedan vacias: no se escriben, no se renombran y no se borran. Cero dato mal etiquetado en el documento del cliente.",
+      "J-2": "En Keyword Research se agregan dos columnas a la derecha, CPC y competencia, porque DinoRank las devuelve y el tab no tiene ninguna de las dos. Se agregan al final, sin renombrar ni reordenar nada.",
+      "J-3": "No se agregan columnas de procedencia al Sheet. La procedencia por metrica vive en el dataset del repositorio, no en la tabla que mira el cliente. DEROGA la decision del CONTEXT que pedia una columna sufijo por metrica.",
+      "J-4": "Se eliminan las cuatro columnas muertas de la plantilla SaaS. Condicion de Juan: antes de borrar corre el escaneo de referencias, y el borrado aborta ante cualquier mencion. Sin bandera de fuerza."
+    },
+    "fueraDelSheet": [
+      "La procedencia por metrica, consecuencia de J-3, vive en seo-tools/data/keywords.jsonl.",
+      "La clasificacion del paciente que pide KWR-03 tampoco tiene columna en ningun tab: se exige clasificada en el dataset, no publicada en el documento, y SHEET-01 de la fase 13 no la lista entre lo que el tab muestra. Vive en el mismo keywords.jsonl."
+    ],
+    "estados": {
+      "fase-12": "La fase 12 escribe esta columna.",
+      "no-consultado": "La fase 12 escribe el valor literal no_consultado porque su fuente quedo diferida.",
+      "fase-13": "La escribe la fase 13.",
+      "fase-14": "La escribe la fase 14.",
+      "fase-15": "La escribe la fase 15.",
+      "nueva": "No existe en el documento y se agrega a la derecha del ultimo encabezado ocupado.",
+      "eliminar": "Columna muerta de la plantilla. Se elimina solo si el escaneo de referencias sale limpio.",
+      "sin-uso": "Existe en la plantilla y ninguna fase del milestone la escribe. Se deja intacta."
+    }
+  },
+
+  "Keyword Research": {
+    "sheetTitle": "Keyword Research",
+    "sheetId": 407303476,
+    "headerRow": 3,
+    "orientation": "filas",
+    "mapBy": "nombre",
+    "keyField": "keyword",
+    "keyHeader": "Suggested Keyword",
+    "writtenBy": 12,
+    "note": "Unico tab que escribe la fase 12. La clave de idempotencia se deriva normalizando el texto leido de la columna A: la normalizacion produce la clave, nunca el valor visible.",
+    "columns": [
+      { "header": "Suggested Keyword", "field": "keyword", "status": "fase-12" },
+      { "header": "Cluster", "field": null, "status": "fase-13" },
+      { "header": "URL", "field": null, "status": "fase-14" },
+      { "header": "Search Volume", "field": "volume", "status": "fase-12", "note": "Volumen de DinoRank. El encabezado no nombra ninguna herramienta, asi que no hay dato mal etiquetado." },
+      { "header": "Traffic Potential", "field": null, "status": "no-consultado", "literal": "no_consultado" },
+      { "header": "Search Intent ", "field": "intent", "status": "fase-12", "note": "Lleva espacio final en el documento." },
+      { "header": "CVR", "field": null, "status": "eliminar", "note": "J-4: columna muerta de la plantilla SaaS." },
+      { "header": "Highest Achievable Position", "field": null, "status": "sin-uso" },
+      { "header": "CTR", "field": null, "status": "sin-uso" },
+      { "header": "Real Traffic Potential", "field": null, "status": "sin-uso" },
+      { "header": "Lead or Conversion Potential ", "field": null, "status": "eliminar", "note": "J-4: columna muerta de la plantilla SaaS. Lleva espacio final en el documento." },
+      { "header": "Keyword Difficulty", "field": null, "status": "no-consultado", "literal": "no_consultado" },
+      { "header": "Referring Domains Needed ", "field": null, "status": "no-consultado", "literal": "no_consultado", "note": "Lleva espacio final en el documento." },
+      { "header": "Suggested H1", "field": null, "status": "fase-15" },
+      { "header": "Top Result", "field": null, "status": "fase-15" },
+      { "header": "Internal Approval ", "field": null, "status": "sin-uso", "note": "Lleva espacio final en el documento." },
+      { "header": "Client Approval ", "field": null, "status": "sin-uso", "note": "Lleva espacio final en el documento." },
+      { "header": "Notes", "field": null, "status": "sin-uso" },
+      { "header": "CPC", "field": "cpc", "status": "nueva", "note": "J-2. Numero, en la moneda que devuelva la consulta para el pais configurado." },
+      { "header": "Competition", "field": "competition", "status": "nueva", "note": "J-2. Indice de competencia comercial entre 0 y 1, no dificultad organica." }
+    ]
+  },
+
+  "Content Model": {
+    "sheetTitle": "Content Model",
+    "sheetId": 814545527,
+    "headerRow": 3,
+    "orientation": "filas",
+    "mapBy": "nombre",
+    "keyField": "url",
+    "keyHeader": "URL",
+    "writtenBy": 14,
+    "note": "La fase 12 no escribe este tab. El mapeo de campo a columna lo cierra el checkpoint de la fase 14; aca solo queda fijada la forma real y las dos decisiones que ya estan tomadas, J-1 y J-4.",
+    "columns": [
+      { "header": "URL", "field": "url", "status": "fase-14" },
+      { "header": "SEO Page?", "field": null, "status": "fase-14" },
+      { "header": "Keyword", "field": null, "status": "fase-14" },
+      { "header": "Intent", "field": null, "status": "fase-14" },
+      { "header": "Type", "field": null, "status": "fase-14" },
+      { "header": "New/Existing", "field": null, "status": "fase-14" },
+      { "header": "Cluster", "field": null, "status": "fase-14" },
+      { "header": "Organic Clicks (GSC)", "field": null, "status": "sin-uso" },
+      { "header": "Organic Impressions (GSC)", "field": null, "status": "sin-uso" },
+      { "header": "Volume (Ahrefs)", "field": null, "status": "sin-uso", "note": "J-1: queda vacia. El encabezado nombra una herramienta que el milestone no consulta, asi que escribir aca un volumen de otra procedencia seria entregar informacion falsa. No se renombra ni se borra." },
+      { "header": "Traffic Potential (Ahrefs)", "field": null, "status": "sin-uso", "note": "J-1: queda vacia por el mismo motivo." },
+      { "header": "KD Difficulty (Ahrefs)", "field": null, "status": "sin-uso", "note": "J-1: queda vacia por el mismo motivo." },
+      { "header": "Position", "field": null, "status": "sin-uso" },
+      { "header": "Free Trial CVR", "field": null, "status": "eliminar", "note": "J-4: columna muerta de la plantilla SaaS." },
+      { "header": "Free Trial Potential", "field": null, "status": "eliminar", "note": "J-4: columna muerta de la plantilla SaaS." },
+      { "header": "Action", "field": null, "status": "fase-14" },
+      { "header": "Notes/Ideas", "field": null, "status": "sin-uso" },
+      { "header": "Leave, Update, or Bin?", "field": null, "status": "fase-14" },
+      { "header": "Client's Feedback/Notes", "field": null, "status": "sin-uso" }
+    ]
+  },
+
+  "Canonical Audit": {
+    "sheetTitle": "Canonical Audit",
+    "sheetId": 1259097992,
+    "headerRow": 2,
+    "orientation": "filas",
+    "mapBy": "nombre",
+    "keyField": "url",
+    "keyHeader": "URL",
+    "writtenBy": 14,
+    "note": "El nombre real del tab es este. 'Canonicalization Audit' es el texto del banner de la fila 1 y pedirlo a la API devuelve 400. Calza exacto con SHEET-04, sin columnas de sobra ni faltantes.",
+    "columns": [
+      { "header": "URL", "field": "url", "status": "fase-14" },
+      { "header": "Keyword", "field": null, "status": "fase-14" },
+      { "header": "Topic", "field": null, "status": "fase-14" },
+      { "header": "Canonical", "field": null, "status": "fase-14" },
+      { "header": "Approved?", "field": null, "status": "fase-14" },
+      { "header": "Implemented?", "field": null, "status": "fase-14" }
+    ]
+  },
+
+  "Internal Linking Audit": {
+    "sheetTitle": "Internal Linking Audit",
+    "sheetId": 1398984258,
+    "headerRow": 2,
+    "orientation": "filas",
+    "mapBy": "posicion",
+    "keyField": "url",
+    "keyHeader": "URL",
+    "writtenBy": 14,
+    "note": "El encabezado 'Title with Link' se repite ocho veces, asi que el mapeo por nombre es ambiguo y este tab se mapea POR POSICION. Cada bloque de tres columnas es un enlace saliente: Link N, Anchor N y su titulo.",
+    "columns": [
+      { "header": "URL", "field": "url", "status": "fase-14" },
+      { "header": "Title", "field": "title", "status": "fase-14" },
+      { "header": "Code", "field": "code", "status": "fase-14" },
+      { "header": "Action", "field": "action", "status": "fase-14" },
+      { "header": "Cluster", "field": "cluster", "status": "fase-14" },
+      { "header": "Link 1", "field": "link1", "status": "fase-14" },
+      { "header": "Anchor 1", "field": "anchor1", "status": "fase-14" },
+      { "header": "Title with Link", "field": "titleWithLink1", "status": "fase-14" },
+      { "header": "Link 2", "field": "link2", "status": "fase-14" },
+      { "header": "Anchor 2", "field": "anchor2", "status": "fase-14" },
+      { "header": "Title with Link", "field": "titleWithLink2", "status": "fase-14" },
+      { "header": "Link 3", "field": "link3", "status": "fase-14" },
+      { "header": "Anchor 3", "field": "anchor3", "status": "fase-14" },
+      { "header": "Title with Link", "field": "titleWithLink3", "status": "fase-14" },
+      { "header": "Link 4", "field": "link4", "status": "fase-14" },
+      { "header": "Anchor 4", "field": "anchor4", "status": "fase-14" },
+      { "header": "Title with Link", "field": "titleWithLink4", "status": "fase-14" },
+      { "header": "Link 5", "field": "link5", "status": "fase-14" },
+      { "header": "Anchor 5", "field": "anchor5", "status": "fase-14" },
+      { "header": "Title with Link", "field": "titleWithLink5", "status": "fase-14" },
+      { "header": "Link 6", "field": "link6", "status": "fase-14" },
+      { "header": "Anchor 6", "field": "anchor6", "status": "fase-14" },
+      { "header": "Title with Link", "field": "titleWithLink6", "status": "fase-14" },
+      { "header": "Link 7", "field": "link7", "status": "fase-14" },
+      { "header": "Anchor 7", "field": "anchor7", "status": "fase-14" },
+      { "header": "Title with Link", "field": "titleWithLink7", "status": "fase-14" },
+      { "header": "Link 8", "field": "link8", "status": "fase-14" },
+      { "header": "Anchor 8 ", "field": "anchor8", "status": "fase-14", "note": "Lleva espacio final en el documento, a diferencia de los otros siete." },
+      { "header": "Title with Link", "field": "titleWithLink8", "status": "fase-14" },
+      { "header": "Done", "field": "done", "status": "fase-14" },
+      { "header": "Notas", "field": "notas", "status": "sin-uso" }
+    ]
+  },
+
+  "Competitor Analysis": {
+    "sheetTitle": "Competitor Analysis",
+    "sheetId": 333897514,
+    "headerRow": null,
+    "orientation": "columnas",
+    "mapBy": "posicion",
+    "keyField": "domain",
+    "keyHeader": null,
+    "writtenBy": 13,
+    "note": "Tab TRANSPUESTO: los competidores corren a lo ancho, una columna por competidor, y las metricas a lo alto con sus etiquetas en la columna A. No tiene fila de encabezados, asi que el modelo de una fila por registro no aplica. El escritor orientado a filas se niega a tocarlo. El modo orientado a columnas lo implementa la fase 13, que es la que escribe este tab.",
+    "columns": []
+  }
+}
