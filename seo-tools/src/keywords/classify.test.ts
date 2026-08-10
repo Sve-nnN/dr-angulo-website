@@ -124,7 +124,7 @@ test("comportamiento 5 (clinicas): clinica mas especialidad en la misma frase re
 // ---------------------------------------------------------------------------
 
 test("comportamiento 6: sin ningun disparador cae en informacional y nunca queda sin clasificar", () => {
-  const r = c("hernia discal l5 s1 bicicleta");
+  const r = c("hernia discal lumbar gpc");
   assert.equal(r.intent, "informacional");
   assert.equal(r.intentRegla, "defecto");
   // Ninguna keyword del universo queda fuera del dominio, ni siquiera una cadena vacia.
@@ -308,7 +308,8 @@ const CASOS_REALES: ReadonlyArray<readonly [string, string, string]> = [
   ["cie 10 hernia discal", "informacional", "diagnostico"],
   ["artrosis cie 10", "informacional", "diagnostico"],
   ["tipos de hernia discal en perros", "informacional", "diagnostico"],
-  ["hernia discal l5 s1 bicicleta", "informacional", "diagnostico"],
+  ["hernia discal lumbar gpc", "informacional", "diagnostico"],
+  ["clinica san bernardo especialistas en traumatologia", "transaccional", "decision"],
 ];
 
 test("cobertura: 35 keywords reales del universo resuelven a la intencion y etapa esperadas", () => {
@@ -383,14 +384,16 @@ test("alcance: la mayoria del universo queda dentro de alcance", () => {
 // ---------------------------------------------------------------------------
 
 test("residuo: la frase larga sin ningun disparador entra al residuo", () => {
-  const r = c("hernia discal l5 s1 bicicleta");
+  const r = c("hernia discal lumbar gpc");
   assert.equal(r.ambiguo, true);
   assert.equal(r.motivoAmbiguo, "sin-senal");
 });
 
 test("residuo: la frase corta sin disparador NO entra al residuo", () => {
   // Tres palabras o menos: el nivel por defecto alcanza y no hay nada que desambiguar.
-  assert.equal(c("hernia discal bicicleta").ambiguo, false);
+  const r = c("lumbalgia y ciatica");
+  assert.equal(r.intentRegla, "defecto", "el caso solo prueba lo que dice si no dispara nada");
+  assert.equal(r.ambiguo, false);
 });
 
 test("residuo: el empate de especificidad entre transaccional e informacional entra al residuo", () => {
