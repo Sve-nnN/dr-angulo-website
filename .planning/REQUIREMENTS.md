@@ -161,14 +161,42 @@ Reconocidos pero fuera del roadmap actual.
 
 ## Traceability
 
-Se completa al aprobar el ROADMAP de v1.1.
+Mapeo v1.1 completado al crear el ROADMAP (2026-08-10). Fases 7 a 11.
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| _v1.1_ | _pendiente de roadmap_ | — |
+| DOM-01 | Phase 7 | Pending |
+| DOM-02 | Phase 7 | Pending |
+| DOM-03 | Phase 7 | Pending |
+| DOM-04 | Phase 7 | Pending |
+| DOM-05 | Phase 7 | Pending |
+| SVC-01 | Phase 8 | Pending |
+| SVC-02 | Phase 8 | Pending |
+| SVC-03 | Phase 8 | Pending |
+| SVC-04 | Phase 8 | Pending |
+| SVC-05 | Phase 8 | Pending |
+| BLOG-02 | Phase 8 | Pending |
+| BLOG-03 | Phase 8 | Pending |
+| SEDE-01 | Phase 9 | Pending |
+| SEDE-02 | Phase 9 | Pending |
+| SEDE-03 | Phase 9 | Pending |
+| SEO-05 | Phase 10 | Pending |
+| SEO-06 | Phase 10 | Pending |
+| SEO-07 | Phase 10 | Pending |
+| SEO-08 | Phase 10 | Pending |
+| SEO-09 | Phase 10 | Pending |
+| SEO-10 | Phase 10 | Pending |
+| SEO-11 | Phase 10 | Pending |
+| GBP-01 | Phase 11 | Pending |
+| GBP-02 | Phase 11 | Pending |
+| GBP-03 | Phase 11 | Pending |
+| GBP-04 | Phase 11 | Pending |
+| GBP-05 | Phase 11 | Pending |
+
+**Coverage v1.1:** 27 requisitos, 27 mapeados, 0 sin mapear, 0 duplicados. Cada requisito vive en una sola fase.
 
 **Coverage v1.0:** 40 requisitos, 40 mapeados, 0 sin mapear. Pendientes por acción humana: INFRA-03 (lo cierra DOM-01), SOCIAL-01, SOCIAL-02.
 
 ---
 *Requirements defined: 2026-07-31*
-*Last updated: 2026-08-10 al definir el milestone v1.1 a partir de la auditoría SEO*
+*Last updated: 2026-08-10 al mapear los 27 requisitos de v1.1 a las fases 7-11 del ROADMAP*

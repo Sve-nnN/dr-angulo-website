@@ -1,10 +1,18 @@
 # Roadmap: Sitio web Dr. Juan Carlos Angulo Totesaut
 
+## Milestones
+
+- [x] **v1.0 MVP** (fases 1-6, entregado 2026-08-09): sitio completo con contenido, conversión, tracking, CV, sedes y deploy en Dokploy, todavía sin dominio público.
+- [ ] **v1.1 Lanzamiento público y competitividad SEO** (fases 7-11, en curso): poner el sitio vivo en drangulocolumna.com y llevarlo de "existe" a "compite" en las SERP de Lima.
+
 ## Overview
 
-De cero a un sitio de marketing médico publicado: primero la base técnica y la identidad visual real del doctor, luego las páginas de contenido (incluida una trayectoria/CV extensa), después el motor de conversión (WhatsApp + formulario + tracking) y el SEO técnico, y por último el contenido de blog, lo legal y el pulido final antes de publicar en Vercel.
+La auditoría del 2026-08-10 encontró un sitio terminado que nadie puede visitar: drangulocolumna.com servía la página parqueada de Porkbun mientras la ficha de Google Business Profile del doctor ya mandaba pacientes ahí. v1.1 arranca resolviendo eso, porque ninguna otra mejora se puede medir hasta que el sitio responda en su dominio. Con el dominio vivo y el sitio en Search Console, el trabajo se abre en tres frentes de contenido y uno manual: primero el silo clínico (una URL por condición, con los posts del blog convertidos en contenido de fondo que empuja hacia esas URLs), luego las cuatro sedes con URL propia para pelear las búsquedas por clínica, después el schema y la metadata que cubren todas las rutas nuevas y viejas, y al final el trabajo de local SEO en la ficha del doctor, que es manual y queda documentado en el repo.
 
 ## Phases
+
+<details>
+<summary>v1.0 MVP (fases 1-6), entregado 2026-08-09</summary>
 
 - [x] **Phase 1: Fundación técnica y de marca** - Scaffold Next.js, design tokens de marca real, layout global con WhatsApp flotante
 - [x] **Phase 2: Páginas core y trayectoria** - Home, Servicios, Testimonios, FAQ, Sobre el doctor con CV extenso
@@ -13,16 +21,24 @@ De cero a un sitio de marketing médico publicado: primero la base técnica y la
 - [x] **Phase 5: Material real del doctor y feed de Instagram** - Fotos AVIF, logo oficial, trayectoria confirmada, carrusel de reels autoactualizable
 - [x] **Phase 6: Sedes, horarios y flujo de agenda** - Cuatro sedes con horarios, página /agendar, WhatsApp acotado al consultorio privado
 
+</details>
+
+**v1.1 Lanzamiento público y competitividad SEO (en curso)**
+
+- [ ] **Phase 7: Dominio público, producción y Search Console** - drangulocolumna.com sirviendo el sitio con HTTPS, www redirigido, canonicals reales, Resend verificado y sitemap enviado a Google
+- [ ] **Phase 8: Silo clínico: páginas por servicio y blog profundo** - Una URL por condición con 900+ palabras revisadas por el doctor, hub de servicios y los cuatro posts expandidos con enlace a su servicio
+- [ ] **Phase 9: Páginas por sede y cobertura local** - Las cuatro sedes con URL propia, schema de ubicación y enlace en ambos sentidos con /agendar
+- [ ] **Phase 10: Schema, metadata y limpieza técnica** - Breadcrumbs, credenciales, horarios, reseñas, titles y OG por página, llms.txt y limpieza de assets
+- [ ] **Phase 11: Local SEO: GBP, reseñas y citaciones** - Ficha corregida, categorías, campaña de reseñas hacia 15-20, NAP consistente y UTM del GBP resolviendo a URLs vivas
+
 ## Phase Details
 
+<details>
+<summary>Detalle de las fases 1-6 (v1.0). Planes y verificaciones archivados en .planning/milestones/v1.0-phases/</summary>
+
 ### Phase 1: Fundación técnica y de marca
-**Goal**: Proyecto Next.js corriendo con la identidad visual real del doctor (colores, tipografía, logo) y el esqueleto de layout (header, footer, botón flotante de WhatsApp) en todas las páginas.
-**Depends on**: Nada (primera fase)
+**Goal**: Proyecto Next.js corriendo con la identidad visual real del doctor y el esqueleto de layout en todas las páginas.
 **Requirements**: INFRA-01, INFRA-02, INFRA-04, BRAND-01, BRAND-02, BRAND-03, BRAND-04
-**Success Criteria** (qué debe ser TRUE):
-  1. `npm run dev` levanta el sitio sin errores y se ve un layout con header/footer/botón WhatsApp flotante
-  2. Los colores y tipografía visibles coinciden con la paleta e identidad extraída del Instagram del doctor
-  3. Existe un `.env.example` documentando las variables necesarias (WhatsApp, GA4, Meta Pixel, Resend)
 **Plans**: 2 plans
 
 Plans:
@@ -30,13 +46,8 @@ Plans:
 - [x] 01-02: Layout global (header, nav, footer, WhatsAppCta flotante) + logo/favicon placeholder
 
 ### Phase 2: Páginas core y trayectoria
-**Goal**: Todas las páginas de contenido principales existen con copy real (no lorem ipsum), incluida una página de trayectoria con CV extenso del doctor.
-**Depends on**: Phase 1
+**Goal**: Todas las páginas de contenido principales con copy real, incluida la trayectoria del doctor.
 **Requirements**: CONTENT-01, CONTENT-02, CONTENT-03, CONTENT-04, CV-01, CV-02
-**Success Criteria** (qué debe ser TRUE):
-  1. Un visitante puede navegar Home → Servicios → Sobre el doctor → Testimonios → FAQ sin páginas rotas o placeholder
-  2. La página "Sobre el doctor" muestra formación, colegiatura CMP/RNE y experiencia verificada, con estructura lista para más certificaciones/cursos
-  3. La Home comunica las 3 especialidades (traumatología, ortopedia infantil, cirugía de columna) y tiene CTA de WhatsApp visible sin hacer scroll
 **Plans**: 3 plans
 
 Plans:
@@ -45,14 +56,8 @@ Plans:
 - [x] 02-03: Sobre el doctor / Trayectoria con sección de CV
 
 ### Phase 3: Conversión, tracking y SEO técnico
-**Goal**: Toda interacción de contacto (WhatsApp o formulario) funciona y queda medida; el sitio es técnicamente indexable con datos estructurados correctos.
-**Depends on**: Phase 2
+**Goal**: Toda interacción de contacto funciona y queda medida; el sitio es técnicamente indexable.
 **Requirements**: CONTENT-05, CONTACT-01, CONTACT-02, CONTACT-03, CONTACT-04, TRACK-01, TRACK-02, TRACK-03, TRACK-04, SEO-01, SEO-02, SEO-03
-**Success Criteria** (qué debe ser TRUE):
-  1. Página de Contacto muestra dirección/mapa de Clínica Montefiori y un formulario funcional
-  2. Enviar el formulario dispara el evento de conversión y, si Resend está configurado, llega un correo; si no, deriva a WhatsApp con los datos prellenados
-  3. Cada botón de WhatsApp del sitio (header, hero, flotante, footer) dispara `whatsapp_click` con su `cta_location` cuando GA4/Meta Pixel están configurados
-  4. `sitemap.xml`, `robots.txt` y el JSON-LD de tipo Physician/FAQPage son válidos (verificado con un validador de structured data)
 **Plans**: 3 plans
 
 Plans:
@@ -61,30 +66,17 @@ Plans:
 - [x] 03-03: JSON-LD Physician/FAQPage + sitemap.ts + robots.ts + metadata por página
 
 ### Phase 4: Contenido SEO, legal y publicación
-**Goal**: El sitio tiene contenido de blog propio, cumple con el aviso de privacidad/cookies, pasa una revisión visual/performance, y queda publicado en Vercel.
-**Depends on**: Phase 3
+**Goal**: Blog propio, cumplimiento de privacidad/cookies, QA visual y despliegue en producción.
 **Requirements**: BLOG-01, LEGAL-01, LEGAL-02, SEO-04, INFRA-03
-**Success Criteria** (qué debe ser TRUE):
-  1. Existen 4-6 artículos de blog basados en el contenido educativo real de Instagram del doctor, cada uno con su propia metadata
-  2. Aparece un aviso de cookies antes de cargar GA4/Meta Pixel y existe una página de Política de Privacidad enlazada desde el footer
-  3. El sitio responde bien en mobile y desktop (verificado visualmente en navegador) y las imágenes/fuentes no generan layout shift visible
-  4. El sitio está desplegado y accesible en una URL pública de Vercel
 **Plans**: 2 plans
 
 Plans:
 - [x] 04-01: Blog (listado + artículos) + Política de Privacidad + banner de cookies
-- [x] 04-02: QA visual/responsive/performance + deploy a Vercel
+- [x] 04-02: QA visual/responsive/performance + deploy (Dokploy, no Vercel)
 
 ### Phase 5: Material real del doctor y feed de Instagram
-**Goal**: El sitio muestra el material real que entregó el doctor (fotos de consultorio, logo oficial, trayectoria y procedimientos confirmados) y un carrusel con sus reels de Instagram que se actualiza solo.
-**Depends on**: Phase 4
+**Goal**: El sitio muestra el material real del doctor y un carrusel de reels que se actualiza solo.
 **Requirements**: MEDIA-01, MEDIA-02, MEDIA-03, CV-03, CONTENT-06, SOCIAL-01, SOCIAL-02
-**Success Criteria** (qué debe ser TRUE):
-  1. Las fotos profesionales del doctor y su logo oficial reemplazan al material placeholder, servidos en AVIF optimizado
-  2. La biografía, la formación y los procedimientos publicados corresponden a lo que el doctor confirmó por escrito
-  3. El sitio expone una imagen social 1200x630 en openGraph, twitter y el JSON-LD de Physician
-  4. Home y Testimonios muestran un carrusel accesible con los últimos reels del Instagram del doctor, que se actualiza sin intervención manual
-  5. Sin credenciales de Instagram el carrusel degrada a una tarjeta al perfil, sin romper la página
 **Plans**: 4 plans
 
 Plans:
@@ -94,30 +86,127 @@ Plans:
 - [x] 05-04: CV completo del doctor (trayectoria, cursos y entrenamientos internacionales)
 
 ### Phase 6: Sedes, horarios y flujo de agenda
-**Goal**: El paciente ve dónde atiende el doctor y agenda por el canal que corresponde a cada sede, sin pedirle al doctor citas de clínicas cuya agenda no maneja.
-**Depends on**: Phase 5
+**Goal**: El paciente ve dónde atiende el doctor y agenda por el canal que corresponde a cada sede.
 **Requirements**: LOC-01, LOC-02, LOC-03, LOC-04
-**Success Criteria** (qué debe ser TRUE):
-  1. El sitio publica las cuatro sedes con sus días, horarios y direcciones
-  2. Un botón general de "Agendar cita" lleva a una página donde el paciente elige sede y ve el canal de esa sede
-  3. Queda explícito que el WhatsApp del doctor agenda solo el consultorio privado
-  4. El NAP principal y el JSON-LD apuntan al consultorio privado, con las tres clínicas como afiliación
-  5. Los teléfonos y enlaces de agenda de las clínicas son los oficiales
 **Plans**: 1 plan
 
 Plans:
 - [x] 06-01: Fuente de verdad de sedes + página /agendar + reruteo de CTA, contenido y schema
 
+</details>
+
+### Phase 7: Dominio público, producción y Search Console
+**Goal**: Un paciente que escribe drangulocolumna.com llega al sitio del doctor, todo lo que el sitio publica de sí mismo apunta a ese dominio, el formulario entrega correo real y Google ya tiene el sitemap.
+**Depends on**: Phase 6 (v1.0 en producción, sin dominio)
+**Requirements**: DOM-01, DOM-02, DOM-03, DOM-04, DOM-05
+**Success Criteria** (qué debe ser TRUE):
+  1. Escribir `drangulocolumna.com` abre el sitio del doctor con candado válido de Let's Encrypt, no la página parqueada de Porkbun.
+  2. `www.drangulocolumna.com` termina en `https://drangulocolumna.com` con un solo salto 301, sin pasar por HTTP en el camino.
+  3. El código fuente de cualquier página muestra canonical, `og:url` y las URLs del sitemap sobre `https://drangulocolumna.com`, y sin `NEXT_PUBLIC_SITE_URL` el sitio no puede caer a un dominio muerto (el fallback de `siteConfig.url` ya no menciona vercel.app).
+  4. Un envío de prueba del formulario llega como email a la casilla del doctor, enviado por Resend desde el dominio verificado.
+  5. La propiedad aparece verificada en Search Console, el sitemap enviado, y las 9 rutas base (`/`, `/servicios`, `/sobre-el-doctor`, `/testimonios`, `/preguntas-frecuentes`, `/contacto`, `/blog`, `/agendar`, `/privacidad`) reportan como indexadas.
+**Plans**: TBD
+
+**Notas de ejecución**
+- Hosting es Dokploy self-hosted sobre Hetzner (`sapling-vps-01`), no Vercel. El dominio se asigna con la API de Dokploy: `domain.create` para `applicationId: 29ZFzVVwEczNI733DodMp`, puerto `3000`, HTTPS con Let's Encrypt. Las variables de producción van por `application.saveEnvironment` seguido de `application.deploy` (o `infra/apps/set-env-and-redeploy.sh` del repo `hosting`). Pasos exactos en `.planning/milestones/v1.0-phases/04-contenido-seo-legal-y-publicaci-n/04-VERIFICATION.md`, sección Human Verification Required.
+- DNS: registro `A` del apex hacia la IP de `sapling-vps-01` y el `www` hacia el apex. Si algo queda proxeado por Cloudflare, dejarlo en DNS-only hasta que emita el certificado.
+- DOM-05 va después de DOM-01 dentro de la fase: no se puede verificar la propiedad ni enviar sitemap de un dominio que sirve otra cosa.
+- Esta fase cierra INFRA-03 de v1.0 y desbloquea la verificación humana diferida de la fase 4.
+- El feed de Instagram (SOCIAL-01/02) no entra aquí, pero el cron por HTTPS depende de este dominio.
+
+### Phase 8: Silo clínico: páginas por servicio y blog profundo
+**Goal**: Cada condición que la gente busca en Lima tiene su propia URL con contenido clínico de fondo aprobado por el doctor, y el blog deja de ser resumen para empujar tráfico hacia esas URLs.
+**Depends on**: Phase 7
+**Requirements**: SVC-01, SVC-02, SVC-03, SVC-04, SVC-05, BLOG-02, BLOG-03
+**Success Criteria** (qué debe ser TRUE):
+  1. Existen cuatro URLs dedicadas (hernia discal, estenosis espinal, escoliosis y deformidades, ortopedia infantil), cada una con 900 palabras o más y con `MedicalProcedure` que pasa el Rich Results Test sin errores.
+  2. `/servicios` funciona como hub: enlaza a las cuatro páginas, cada página enlaza de vuelta al hub y ofrece CTA de agenda sin obligar al paciente a volver al inicio.
+  3. Los cuatro posts existentes superan las 900 palabras y cada uno enlaza a la página de servicio de su tema con un CTA de agenda al cierre.
+  4. Nada de este contenido clínico está publicado sin la aprobación escrita del doctor.
+**Plans**: TBD
+**UI hint**: yes
+
+**Notas de ejecución**
+- Gate de contenido médico: SVC-01 a SVC-04 y BLOG-02 los redacta el agente, pero el doctor los revisa y aprueba antes de publicar. PROJECT.md, sección Constraints, prohíbe desplegar contenido YMYL sin validar. Es verificación humana, no automatizable, y conviene agruparla en una sola ronda de revisión para no fragmentar el tiempo del doctor.
+- BLOG-03 se ejecuta después de que existan las páginas de servicio, porque cada post enlaza a la suya.
+- Nada de credenciales, cifras de cirugías ni resultados inventados. Solo lo verificado o lo que el doctor confirme por escrito.
+- El hub `/servicios` ya existe desde v1.0 con `src/content/services.ts`. La fase lo reconvierte en índice del silo, no lo reescribe desde cero.
+- Breadcrumbs, titles y OG de estas rutas nuevas los cubre la fase 10.
+
+### Phase 9: Páginas por sede y cobertura local
+**Goal**: Cada sede pelea su propia búsqueda con página propia, en vez de competir todas desde una página genérica.
+**Depends on**: Phase 8
+**Requirements**: SEDE-01, SEDE-02, SEDE-03
+**Success Criteria** (qué debe ser TRUE):
+  1. Las cuatro sedes (consultorio privado en Surco, Ricardo Palma, Sanna La Molina, Padre Luis Tezza) tienen URL propia con dirección, días, horario y el canal de agenda que corresponde a esa sede.
+  2. La página de Ricardo Palma nombra la clínica en title, H1 y contenido, y un `site:drangulocolumna.com ricardo palma` la devuelve a ella, no a `/servicios` ni a `/agendar`.
+  3. Cada página de sede declara su propio JSON-LD de ubicación, válido en el Rich Results Test, con la dirección y el horario de esa sede.
+  4. `/agendar` enlaza a cada página de sede y cada página de sede vuelve a `/agendar` con su sede ya seleccionada.
+**Plans**: TBD
+**UI hint**: yes
+
+**Notas de ejecución**
+- La fuente de verdad sigue siendo `src/content/locations.ts` (v1.0, fase 6). Las páginas se generan desde ahí, no duplicando datos.
+- Ricardo Palma es la prioritaria: la related search "traumatologo especialista en columna clínica ricardo palma" está verificada en la SERP y hoy nadie del sitio la responde.
+- SEDE-03 depende de SEDE-01: primero existen las rutas, después el schema y el enlazado con `/agendar`.
+- Sigue vigente que el WhatsApp del doctor agenda solo el consultorio privado (LOC-03). Las páginas de clínica muestran el canal oficial de cada clínica.
+- Pendiente humano heredado: confirmar si el doctor sigue atendiendo en Clínica Montefiori. Si vuelve, es una quinta sede con el mismo patrón.
+
+### Phase 10: Schema, metadata y limpieza técnica
+**Goal**: Google y los motores generativos leen el sitio completo sin ambigüedad: quién es el doctor, qué acredita, cuándo atiende, qué opera y dónde está parado el usuario dentro del sitio.
+**Depends on**: Phase 9 (las rutas de servicio y sede ya existen y hay que cubrirlas)
+**Requirements**: SEO-05, SEO-06, SEO-07, SEO-08, SEO-09, SEO-10, SEO-11
+**Success Criteria** (qué debe ser TRUE):
+  1. Toda página anidada (servicios, sedes y blog) declara `BreadcrumbList` válido y el resultado de Google muestra la miga de pan en lugar de la URL cruda.
+  2. El `Physician` declara `hasCredential` con CMP 83189 y RNE 35310 más `openingHoursSpecification` del consultorio privado, y valida sin errores.
+  3. Los testimonios publicados que son verificables están marcados con `Review` o `AggregateRating`, y ninguno no verificable aparece marcado.
+  4. Ningún title del sitio pasa de 60 caracteres ni ninguna description de 155, contando las 9 rutas base más las de servicio y sede, y compartir cualquier URL en WhatsApp muestra la imagen OG propia de esa página.
+  5. `/llms.txt` responde 200 con el resumen del sitio y `dr-angulo-portrait.png` ya no está ni en el repo ni en el build.
+**Plans**: TBD
+
+**Notas de ejecución**
+- Esta fase corre después de las fases 8 y 9 a propósito: si corriera antes, los breadcrumbs, los titles y las imágenes OG dejarían fuera las rutas nuevas y habría que rehacer el trabajo.
+- SEO-06 necesita las horas exactas del consultorio privado los viernes y sábados. Hoy la ficha dice "horario coordinado al agendar". Si el doctor no las confirma a tiempo, se publica el rango que sí confirme y se anota el resto como pendiente, sin inventar horarios.
+- SEO-07 solo marca lo verificable. El testimonio en video vive en un post de Instagram y no se puede citar como `Review` con autor identificable mientras no haya texto o autorización.
+- SEO-11 es limpieza: `dr-angulo-portrait.png` son 489 KB con permisos `rw-------` y sin ninguna referencia en el código.
+
+### Phase 11: Local SEO: GBP, reseñas y citaciones
+**Goal**: La ficha del doctor en Google deja de contradecir al sitio, empieza a competir en el local pack y su tráfico se puede medir.
+**Depends on**: Phase 7 (GBP-05 necesita que las URLs con UTM resuelvan a un sitio vivo)
+**Requirements**: GBP-01, GBP-02, GBP-03, GBP-04, GBP-05
+**Success Criteria** (qué debe ser TRUE):
+  1. El horario publicado en el GBP coincide con los días reales de atención y desaparece el "cerrado lunes a jueves" que hoy contradice a las cuatro sedes del sitio.
+  2. La ficha declara categorías secundarias y servicios además de "Cirujano ortopédico".
+  3. La ficha pasa de 6 a entre 15 y 20 reseñas siguiendo un procedimiento de solicitud documentado en el repo.
+  4. El nombre, la dirección y el teléfono del doctor son idénticos en el sitio, el GBP, Doctoralia, el registro del CMP y los directorios de las cuatro clínicas.
+  5. El botón de sitio web y el de reservas del GBP abren una URL viva de drangulocolumna.com y esa visita aparece en GA4 con `utm_campaign=gbp`.
+**Plans**: TBD
+
+**Notas de ejecución**
+- Esta fase no produce código de aplicación. Produce un checklist documentado en el repo (por ejemplo `docs/local-seo-gbp.md`) con los pasos exactos, el texto de solicitud de reseñas y la tabla de citaciones con su estado.
+- La ejecución material es del doctor y de Juan: requiere acceso a la ficha de Google Business Profile, al perfil de Doctoralia y a los directorios de las clínicas. El agente prepara, verifica y deja constancia.
+- GBP-03 es una campaña, no un despliegue: se cierra cuando el contador de reseñas llega al rango, y eso puede tardar semanas después de que el checklist esté listo. Conviene verificarla por separado del resto.
+- GBP-01 depende de que el doctor confirme sus días y horas reales por sede, el mismo dato que necesita SEO-06.
+- Se puede arrancar en paralelo a las fases 8, 9 y 10 una vez que la fase 7 esté cerrada, porque no toca el código de la aplicación.
+
 ## Progress
 
 **Execution Order:**
-Fases ejecutan en orden numérico: 1 → 2 → 3 → 4 → 5 → 6
+Las fases se ejecutan en orden numérico: 7 → 8 → 9 → 10 → 11. La fase 11 no toca código y puede adelantarse en paralelo apenas cierre la 7.
 
-| Phase | Plans Complete | Status | Completed |
-|-------|----------------|--------|-----------|
-| 1. Fundación técnica y de marca | 2/2 | Complete | 2026-07-31 |
-| 2. Páginas core y trayectoria | 3/3 | Complete | 2026-07-31 |
-| 3. Conversión, tracking y SEO técnico | 3/3 | Complete | 2026-07-31 |
-| 4. Contenido SEO, legal y publicación | 2/2 | Complete (deploy pendiente) | 2026-07-31 |
-| 5. Material real del doctor y feed de Instagram | 4/4 | Complete (vinculación de Instagram pendiente) | 2026-08-09 |
-| 6. Sedes, horarios y flujo de agenda | 1/1 | Complete (falta confirmar estado de Montefiori) | 2026-08-09 |
+| Phase | Milestone | Plans Complete | Status | Completed |
+|-------|-----------|----------------|--------|-----------|
+| 1. Fundación técnica y de marca | v1.0 | 2/2 | Complete | 2026-07-31 |
+| 2. Páginas core y trayectoria | v1.0 | 3/3 | Complete | 2026-07-31 |
+| 3. Conversión, tracking y SEO técnico | v1.0 | 3/3 | Complete | 2026-07-31 |
+| 4. Contenido SEO, legal y publicación | v1.0 | 2/2 | Complete (dominio lo cierra la fase 7) | 2026-07-31 |
+| 5. Material real y feed de Instagram | v1.0 | 4/4 | Complete (vinculación de Instagram pendiente) | 2026-08-09 |
+| 6. Sedes, horarios y flujo de agenda | v1.0 | 1/1 | Complete (falta confirmar Montefiori) | 2026-08-09 |
+| 7. Dominio público, producción y Search Console | v1.1 | 0/TBD | Not started | - |
+| 8. Silo clínico: servicios y blog profundo | v1.1 | 0/TBD | Not started | - |
+| 9. Páginas por sede y cobertura local | v1.1 | 0/TBD | Not started | - |
+| 10. Schema, metadata y limpieza técnica | v1.1 | 0/TBD | Not started | - |
+| 11. Local SEO: GBP, reseñas y citaciones | v1.1 | 0/TBD | Not started | - |
+
+---
+*Roadmap v1.1 creado: 2026-08-10, a partir de la auditoría SEO del mismo día*
