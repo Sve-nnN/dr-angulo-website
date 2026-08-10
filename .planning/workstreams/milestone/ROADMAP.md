@@ -158,8 +158,13 @@ Plans:
   2. La página de Ricardo Palma nombra la clínica en title, H1 y contenido, y un `site:drangulocolumna.com ricardo palma` la devuelve a ella, no a `/servicios` ni a `/agendar`.
   3. Cada página de sede declara su propio JSON-LD de ubicación, válido en el Rich Results Test, con la dirección y el horario de esa sede.
   4. `/agendar` enlaza a cada página de sede y cada página de sede vuelve a `/agendar` con su sede ya seleccionada.
-**Plans**: TBD
+**Plans**: 3 plans
 **UI hint**: yes
+
+Plans:
+- [ ] 09-01-PLAN.md (ola 1, trazador): `/sedes/clinica-ricardo-palma` de punta a punta, hub `/sedes`, schema por sede, enlazado con `/agendar` y puerta `sedes:check`
+- [ ] 09-02-PLAN.md (ola 2): las tres sedes restantes, `url` canónica del nodo de cada sede y la puerta cubriendo el contraste de canal
+- [ ] 09-03-PLAN.md (ola 3): el header apunta al hub con submenú móvil, más la verificación humana de la fase
 
 **Notas de ejecución**
 - La fuente de verdad sigue siendo `src/content/locations.ts` (v1.0, fase 6). Las páginas se generan desde ahí, no duplicando datos.
