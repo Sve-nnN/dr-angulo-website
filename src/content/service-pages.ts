@@ -4,7 +4,7 @@
  *
  * El orden de las secciones no depende de la disciplina de quien escribe: la
  * tupla `SERVICE_SECTION_ORDER` lo fija y el `Record` sobre ella obliga a que
- * cada página declare las siete. Si falta una, TypeScript rompe el build.
+ * cada página declare las ocho. Si falta una, TypeScript rompe el build.
  *
  * Reglas de contenido, heredadas de 08-CONTEXT.md y del contrato de la fase:
  * consenso clínico general en voz explicativa, nunca testimonial. Las
@@ -16,6 +16,7 @@ export const SERVICE_SECTION_ORDER = [
   "que-es",
   "sintomas",
   "cuando-consultar",
+  "complicaciones",
   "diagnostico",
   "tratamiento",
   "recuperacion",
@@ -31,12 +32,28 @@ export type ServiceSubsection = {
 };
 
 /**
+ * Unidad breve dentro de una sección: un rótulo y un cuerpo de una a tres
+ * frases. Existe para que síntomas, complicaciones, pasos del diagnóstico y
+ * etapas de la recuperación se puedan presentar como tarjetas, pasos o línea
+ * de tiempo en vez de párrafos apilados.
+ *
+ * `body` es una cadena plana, igual que `paragraphs`: el rótulo va en el
+ * `title` y el cuerpo no admite marcado, así ninguna cifra puede quedar
+ * resaltada tipográficamente dentro del texto.
+ */
+export type ServiceSectionItem = {
+  title: string;
+  body: string;
+};
+
+/**
  * Sección de contenido. `paragraphs` son cadenas planas sin marcado: así
  * ninguna cifra puede quedar resaltada tipográficamente dentro del cuerpo.
  */
 export type ServiceSection = {
   heading: string;
   paragraphs: string[];
+  items?: ServiceSectionItem[];
   subsections?: ServiceSubsection[];
 };
 
@@ -44,6 +61,11 @@ export type ServicePage = {
   slug: string;
   navLabel: string;
   h1: string;
+  /**
+   * Frase de orientación que abre la página, debajo del `h1` y dentro de la
+   * banda de cabecera. Una o dos oraciones: qué encuentra el paciente acá.
+   */
+  heroLead: string;
   title: string;
   description: string;
   /** Resumen de la tarjeta del hub. Máximo 120 caracteres. */
@@ -65,6 +87,8 @@ export const servicePages: ServicePage[] = [
     slug: "hernia-discal",
     navLabel: "Hernia discal",
     h1: "Hernia discal",
+    heroLead:
+      "El dolor que baja por la pierna o por el brazo rara vez nace en la espalda: nace en una raíz nerviosa comprimida. Acá encuentras qué es una hernia discal, cómo se confirma y qué opciones existen antes de plantear una cirugía.",
     title: "Hernia discal: síntomas, diagnóstico y tratamiento",
     description:
       "Qué es una hernia discal, qué síntomas produce, cómo se diagnostica y en qué casos se plantea la cirugía. Guía del Dr. Juan Carlos Angulo, cirujano de columna en Lima.",
@@ -96,9 +120,25 @@ export const servicePages: ServicePage[] = [
       sintomas: {
         heading: "Síntomas de una hernia discal",
         paragraphs: [
-          "El síntoma que más orienta hacia una hernia discal no es el dolor de espalda, sino el dolor que se irradia. Si la hernia es lumbar, el dolor suele bajar por la parte posterior del glúteo, del muslo y de la pierna, a veces hasta el pie. Es lo que se conoce popularmente como ciática. Si la hernia es cervical, el recorrido va del cuello al hombro y baja por el brazo, en ocasiones hasta los dedos.",
-          "Junto a ese dolor aparecen otras señales que apuntan al nervio y no al músculo: hormigueo o sensación de adormecimiento en una zona bien delimitada de la pierna o del brazo, y la impresión de que la extremidad responde con menos fuerza que antes, como al pararte en puntas o al sostener un objeto.",
-          "También es frecuente que el dolor se dispare al toser, estornudar o hacer fuerza, porque esos movimientos aumentan la presión dentro del canal. Y que estar mucho rato sentado o inclinado hacia adelante resulte más molesto que caminar. Ese patrón, más el recorrido del dolor, es lo que distingue una hernia de una contractura común.",
+          "El síntoma que más orienta hacia una hernia discal no es el dolor de espalda, sino el dolor que se irradia. Ese recorrido, junto con las señales que lo acompañan, es lo que distingue una hernia de una contractura común.",
+        ],
+        items: [
+          {
+            title: "Dolor que baja por la pierna o por el brazo",
+            body: "Si la hernia es lumbar, el dolor suele bajar por la parte posterior del glúteo, del muslo y de la pierna, a veces hasta el pie. Es lo que se conoce popularmente como ciática. Si la hernia es cervical, el recorrido va del cuello al hombro y baja por el brazo, en ocasiones hasta los dedos.",
+          },
+          {
+            title: "Hormigueo y adormecimiento",
+            body: "Aparecen en una zona bien delimitada de la pierna o del brazo, no en toda la extremidad. Ese mapa acotado apunta a una raíz nerviosa concreta y no a un problema muscular.",
+          },
+          {
+            title: "Sensación de menos fuerza",
+            body: "La impresión de que la extremidad responde menos que antes, como al pararte en puntas, al subir una escalera o al sostener un objeto. Es la señal que más apura la evaluación.",
+          },
+          {
+            title: "Dolor que cambia con el esfuerzo y con la postura",
+            body: "Toser, estornudar o hacer fuerza aumenta la presión dentro del canal y suele disparar el dolor en ese momento. Estar mucho rato sentado o inclinado hacia adelante también resulta más molesto que caminar.",
+          },
         ],
       },
       "cuando-consultar": {
@@ -108,12 +148,52 @@ export const servicePages: ServicePage[] = [
           "Hay tres situaciones que no admiten esperar y justifican atención inmediata: pérdida de fuerza que avanza rápido en una pierna o en un brazo, adormecimiento en la zona de la entrepierna y los genitales, y dificultad para controlar la orina o la deposición. Ese conjunto puede indicar una compresión seria del canal y se evalúa el mismo día, no en la próxima cita disponible.",
         ],
       },
+      complicaciones: {
+        heading: "Complicaciones posibles",
+        paragraphs: [
+          "La mayoría de las hernias discales evoluciona bien y no deja secuelas. Lo que conviene conocer es qué puede ocurrir cuando la compresión de la raíz se sostiene en el tiempo sin evaluación, porque ahí el cuadro deja de ser solamente doloroso.",
+        ],
+        items: [
+          {
+            title: "Debilidad que no revierte del todo",
+            body: "Una raíz nerviosa comprimida durante mucho tiempo puede quedar con secuelas de fuerza o de sensibilidad. Por eso el dolor se puede observar un tiempo, pero la pérdida de fuerza se evalúa sin postergar.",
+          },
+          {
+            title: "Dolor que se vuelve persistente",
+            body: "Cuando el estímulo sobre el nervio se mantiene, el dolor puede dejar de responder como respondía al inicio y volverse más difícil de controlar. Atender el cuadro mientras todavía es reciente amplía las opciones disponibles.",
+          },
+          {
+            title: "Compresión seria del canal",
+            body: "Es poco frecuente y es la situación que más apura. Combina adormecimiento en la zona de la entrepierna, dificultad para controlar la orina o la deposición y debilidad en las dos piernas. Se evalúa el mismo día.",
+          },
+          {
+            title: "Pérdida de condición física y recaídas",
+            body: "El dolor sostenido lleva a moverse menos, y la musculatura que sostiene la columna se debilita. Esa pérdida de soporte facilita nuevos episodios en el mismo nivel o en el vecino, y es de lo poco que sí está en tus manos evitar.",
+          },
+        ],
+      },
       diagnostico: {
         heading: "Cómo se diagnostica",
         paragraphs: [
-          "El diagnóstico empieza en la consulta, no en el equipo de imágenes. La historia clínica define desde cuándo duele, hasta dónde baja el dolor, qué lo empeora y qué lo alivia. El examen físico completa el mapa: se revisa la fuerza de grupos musculares específicos, los reflejos, la sensibilidad por territorios y algunas maniobras que ponen en tensión la raíz nerviosa para reproducir el síntoma.",
-          "La resonancia magnética es el estudio que mejor muestra el disco, la raíz y el contenido del canal, y es el que confirma la sospecha. La radiografía sirve para otra cosa: muestra hueso, alineación y estabilidad, no el disco. La tomografía se reserva para casos puntuales, como cuando interesa ver detalle óseo o el paciente no puede entrar a una resonancia.",
-          "Hay un matiz importante que conviene tener claro antes de leer un informe: una parte considerable de las resonancias de personas sin ningún dolor muestra discos alterados. Por eso el estudio no se interpreta solo. Lo que define la conducta es la coincidencia entre lo que muestra la imagen y lo que muestran tus síntomas y tu examen.",
+          "El diagnóstico empieza en la consulta, no en el equipo de imágenes. La secuencia es siempre la misma y cada paso acota lo que el siguiente tiene que resolver.",
+        ],
+        items: [
+          {
+            title: "Historia clínica",
+            body: "Define desde cuándo duele, hasta dónde baja el dolor, qué lo empeora y qué lo alivia. Ese relato orienta todo lo que viene después.",
+          },
+          {
+            title: "Examen físico",
+            body: "Completa el mapa: se revisa la fuerza de grupos musculares específicos, los reflejos, la sensibilidad por territorios y algunas maniobras que ponen en tensión la raíz nerviosa para reproducir el síntoma.",
+          },
+          {
+            title: "Estudios de imagen",
+            body: "La resonancia magnética es la que mejor muestra el disco, la raíz y el contenido del canal, y es la que confirma la sospecha. La radiografía sirve para otra cosa: muestra hueso, alineación y estabilidad, no el disco. La tomografía se reserva para casos puntuales, como cuando interesa ver detalle óseo o cuando no se puede entrar a una resonancia.",
+          },
+          {
+            title: "Lectura conjunta del estudio y del examen",
+            body: "Una parte considerable de las resonancias de personas sin ningún dolor muestra discos alterados. Por eso el estudio no se interpreta solo: lo que define la conducta es la coincidencia entre lo que muestra la imagen y lo que muestran tus síntomas.",
+          },
         ],
       },
       tratamiento: {
@@ -143,9 +223,21 @@ export const servicePages: ServicePage[] = [
       recuperacion: {
         heading: "Cómo es la recuperación",
         paragraphs: [
-          "Con manejo conservador la mejoría suele ser gradual y no lineal. Hay semanas buenas y días de retroceso, sobre todo si se vuelve demasiado rápido a la actividad que desencadenó el cuadro. Lo esperable es que la tendencia general apunte a menos dolor irradiado y más tolerancia al movimiento.",
-          "Después de una cirugía de descompresión el criterio actual es movilizarte de forma temprana, y el retorno a las actividades cotidianas se plantea de manera progresiva en las semanas siguientes. El plazo concreto depende de la técnica usada, del estado previo de tu musculatura y de tu trabajo, y se define en los controles, no de antemano.",
-          "En ambos caminos hay un punto en común: la recuperación no termina cuando se va el dolor. Sostener el ejercicio indicado, cuidar la mecánica al cargar peso y mantener un peso corporal razonable es lo que reduce la probabilidad de una recaída en el mismo nivel o en el vecino.",
+          "Los dos caminos, el conservador y el quirúrgico, tienen etapas parecidas. En ninguno de los dos la meta es un calendario fijo.",
+        ],
+        items: [
+          {
+            title: "Con manejo conservador",
+            body: "La mejoría suele ser gradual y no lineal. Hay semanas buenas y días de retroceso, sobre todo si se vuelve demasiado rápido a la actividad que desencadenó el cuadro. Lo esperable es que la tendencia general apunte a menos dolor irradiado y más tolerancia al movimiento.",
+          },
+          {
+            title: "Después de una cirugía de descompresión",
+            body: "El criterio actual es movilizarte de forma temprana, y el retorno a las actividades cotidianas se plantea de manera progresiva en las semanas siguientes. El plazo concreto depende de la técnica usada, del estado previo de tu musculatura y de tu trabajo, y se define en los controles, no de antemano.",
+          },
+          {
+            title: "Lo que sostiene el resultado",
+            body: "La recuperación no termina cuando se va el dolor. Sostener el ejercicio indicado, cuidar la mecánica al cargar peso y mantener un peso corporal razonable es lo que reduce la probabilidad de una recaída en el mismo nivel o en el vecino.",
+          },
         ],
       },
       "preguntas-frecuentes": {
@@ -184,6 +276,8 @@ export const servicePages: ServicePage[] = [
     slug: "estenosis-espinal",
     navLabel: "Estenosis espinal",
     h1: "Estenosis espinal (canal estrecho)",
+    heroLead:
+      "Cuando el túnel por donde viajan los nervios se estrecha, el cuerpo lo avisa al caminar. Acá encuentras por qué las piernas pesan después de unas cuadras, cómo se confirma el diagnóstico y qué opciones hay en cada etapa.",
     title: "Estenosis espinal: síntomas, diagnóstico y tratamiento",
     description:
       "Qué es la estenosis espinal o canal estrecho, por qué las piernas pesan al caminar, cómo se diagnostica y cuándo se plantea la cirugía. Guía del Dr. Juan Carlos Angulo, cirujano de columna en Lima.",
@@ -212,10 +306,25 @@ export const servicePages: ServicePage[] = [
       sintomas: {
         heading: "Síntomas del canal estrecho",
         paragraphs: [
-          "El síntoma que mejor define a la estenosis lumbar no es el dolor de espalda, sino lo que pasa al caminar. Después de un tramo variable aparecen pesadez, calambre, ardor u hormigueo en una pierna o en las dos, y la marcha se vuelve insegura. Si te detienes y te sientas, o si te inclinas hacia adelante, la molestia cede en pocos minutos y puedes retomar el camino.",
-          "Esa respuesta a la postura tiene una explicación mecánica: al inclinarte hacia adelante el canal gana algo de espacio, y al enderezarte lo pierde. Por eso muchas personas notan que toleran mejor empujar un carrito de supermercado o pedalear en una bicicleta que caminar erguidas la misma distancia. Bajar una pendiente suele costar más que subirla, por la misma razón.",
-          "Con el tiempo lo que cambia no es tanto la intensidad del dolor como la distancia. Empiezas a medir tus salidas por cuadras, evitas los trámites que implican cola y planificas de antemano dónde vas a poder sentarte. Ese recorte progresivo del radio de movimiento es el dato clínico más útil de todo el cuadro, y conviene llevarlo anotado a la consulta.",
-          "En la estenosis cervical el patrón es otro: torpeza de las manos para abotonar o escribir, sensación de inestabilidad al caminar y cambios en el equilibrio. Ese conjunto de señales se evalúa sin postergar.",
+          "El síntoma que mejor define a la estenosis lumbar no es el dolor de espalda, sino lo que pasa al caminar y lo que pasa al detenerse.",
+        ],
+        items: [
+          {
+            title: "Pesadez en las piernas al caminar",
+            body: "Después de un tramo variable aparecen pesadez, calambre, ardor u hormigueo en una pierna o en las dos, y la marcha se vuelve insegura. Si te detienes y te sientas, o si te inclinas hacia adelante, la molestia cede en pocos minutos y puedes retomar el camino.",
+          },
+          {
+            title: "Alivio al inclinarte hacia adelante",
+            body: "Al inclinarte, el canal gana algo de espacio; al enderezarte, lo pierde. Por eso muchas personas toleran mejor empujar un carrito de supermercado o pedalear que caminar erguidas la misma distancia, y bajar una pendiente les cuesta más que subirla.",
+          },
+          {
+            title: "Cada vez menos distancia",
+            body: "Con el tiempo lo que cambia no es tanto la intensidad del dolor como la distancia. Empiezas a medir tus salidas por cuadras, evitas los trámites que implican cola y planificas de antemano dónde vas a poder sentarte. Ese recorte progresivo es el dato más útil de todo el cuadro y conviene llevarlo anotado a la consulta.",
+          },
+          {
+            title: "Cuando el estrechamiento es cervical",
+            body: "El patrón es otro: torpeza de las manos para abotonar o escribir, sensación de inestabilidad al caminar y cambios en el equilibrio. Ese conjunto de señales se evalúa sin postergar.",
+          },
         ],
       },
       "cuando-consultar": {
@@ -226,13 +335,52 @@ export const servicePages: ServicePage[] = [
           "También vale consultar si el cuadro te cambió la vida cotidiana aunque el dolor te resulte tolerable. Dejar de salir, abandonar el ejercicio o depender de que alguien te acompañe son consecuencias que pesan tanto como el dolor a la hora de decidir un tratamiento.",
         ],
       },
+      complicaciones: {
+        heading: "Complicaciones posibles",
+        paragraphs: [
+          "El canal estrecho avanza despacio, y esa lentitud es justamente lo que hace que muchas personas se acostumbren a hacer cada vez menos sin darse cuenta. Estas son las consecuencias que conviene tener presentes.",
+        ],
+        items: [
+          {
+            title: "El radio de movimiento se achica",
+            body: "Cada tramo que se deja de caminar cuesta más recuperarlo que el anterior. La pérdida de autonomía suele instalarse antes de que el dolor se vuelva intolerable, y la marcha insegura agrega riesgo de caídas.",
+          },
+          {
+            title: "Pérdida de estado físico",
+            body: "Caminar menos deteriora el acondicionamiento general y la fuerza de las piernas, y con menos fondo la tolerancia a la marcha baja todavía más. Es un círculo que se puede cortar, pero difícilmente por cuenta propia.",
+          },
+          {
+            title: "Secuelas de fuerza y sensibilidad",
+            body: "Una raíz comprimida por tiempo prolongado puede quedar con debilidad o adormecimiento que ya no revierten del todo, incluso después de haber liberado el canal.",
+          },
+          {
+            title: "Compresión seria del canal",
+            body: "Es poco frecuente y no admite espera: adormecimiento en la zona de la entrepierna, dificultad para controlar la orina o la deposición y debilidad que avanza en las piernas. Se evalúa el mismo día.",
+          },
+        ],
+      },
       diagnostico: {
         heading: "Cómo se diagnostica",
         paragraphs: [
-          "El diagnóstico se arma primero con lo que cuentas. La historia clínica precisa a qué distancia aparece la molestia, qué la alivia, cuánto demoras en recuperarte al sentarte y desde cuándo se viene acortando ese trayecto. Ese relato es bastante característico y orienta mucho antes de mirar cualquier imagen.",
-          "El examen físico revisa fuerza por grupos musculares, reflejos, sensibilidad por territorios y también los pulsos de las piernas. Este último punto importa porque hay un cuadro de origen circulatorio que se le parece, en el que la pierna igualmente duele al caminar. La diferencia está en que ahí la molestia cede con solo detenerse, sin necesidad de sentarse ni de inclinarse, y no cambia con la postura.",
-          "La resonancia magnética es el estudio que mejor muestra el contenido del canal, el grosor del ligamento y el grado de compresión en cada nivel. La radiografía aporta otra cosa: alineación, altura de los discos y, en las tomas de pie o en movimiento, si existe un deslizamiento que se hace mayor al inclinarte. La tomografía se reserva para ver detalle óseo o para quien no puede entrar a una resonancia.",
-          "Como en cualquier estudio de columna, la imagen no se lee sola. Hay canales estrechos en las resonancias de personas que caminan sin ningún problema. Lo que define la conducta es la coincidencia entre lo que muestra el estudio y lo que muestran tus síntomas y tu examen.",
+          "El diagnóstico se arma primero con lo que cuentas. Recién después entran las imágenes, y entran para responder preguntas concretas.",
+        ],
+        items: [
+          {
+            title: "Historia clínica",
+            body: "Precisa a qué distancia aparece la molestia, qué la alivia, cuánto demoras en recuperarte al sentarte y desde cuándo se viene acortando ese trayecto. Ese relato es bastante característico y orienta mucho antes de mirar cualquier imagen.",
+          },
+          {
+            title: "Examen físico",
+            body: "Revisa fuerza por grupos musculares, reflejos, sensibilidad por territorios y también los pulsos de las piernas. Este último punto importa porque hay un cuadro de origen circulatorio que se le parece: ahí la molestia cede con solo detenerse, sin necesidad de sentarse ni de inclinarse, y no cambia con la postura.",
+          },
+          {
+            title: "Estudios de imagen",
+            body: "La resonancia magnética muestra el contenido del canal, el grosor del ligamento y el grado de compresión en cada nivel. La radiografía aporta otra cosa: alineación, altura de los discos y, en las tomas de pie o en movimiento, si existe un deslizamiento que se hace mayor al inclinarte. La tomografía se reserva para ver detalle óseo o para quien no puede entrar a una resonancia.",
+          },
+          {
+            title: "Lectura conjunta del estudio y del examen",
+            body: "Hay canales estrechos en las resonancias de personas que caminan sin ningún problema. Lo que define la conducta es la coincidencia entre lo que muestra el estudio y lo que muestran tus síntomas.",
+          },
         ],
       },
       tratamiento: {
@@ -262,9 +410,21 @@ export const servicePages: ServicePage[] = [
       recuperacion: {
         heading: "Cómo es la recuperación",
         paragraphs: [
-          "Con manejo conservador la mejoría se mide en distancia y no en ausencia total de dolor. La señal de que el plan funciona es que vuelves a caminar tramos que habías dejado de hacer y que necesitas menos pausas. El avance es gradual y con retrocesos, sobre todo si se retoma de golpe una actividad que estuvo suspendida meses.",
-          "Después de una descompresión el criterio actual es levantarte y caminar de forma temprana, con progresión de la distancia según tolerancia y con indicaciones de cuidado de la espalda mientras la zona cicatriza. El retorno a las actividades cotidianas se plantea de manera progresiva, y el plazo depende de la técnica usada, de si hubo artrodesis, de tu estado previo y de tu trabajo. Se define en los controles, no de antemano.",
-          "Conviene tener claro un punto desde el inicio: liberar el canal resuelve la compresión, pero no borra los años de la columna. Sostener el ejercicio indicado, cuidar la mecánica al cargar peso y mantener un peso corporal razonable es lo que ayuda a que el resultado se mantenga y reduce la probabilidad de que un nivel vecino dé problemas más adelante.",
+          "Acá la mejoría se mide en distancia recuperada, no en ausencia total de molestia. Las etapas se parecen en los dos caminos.",
+        ],
+        items: [
+          {
+            title: "Con manejo conservador",
+            body: "La señal de que el plan funciona es que vuelves a caminar tramos que habías dejado de hacer y que necesitas menos pausas. El avance es gradual y con retrocesos, sobre todo si se retoma de golpe una actividad que estuvo suspendida meses.",
+          },
+          {
+            title: "Después de una descompresión",
+            body: "El criterio actual es levantarte y caminar de forma temprana, con progresión de la distancia según tolerancia y con indicaciones de cuidado de la espalda mientras la zona cicatriza. El plazo depende de la técnica usada, de si hubo artrodesis, de tu estado previo y de tu trabajo. Se define en los controles, no de antemano.",
+          },
+          {
+            title: "Lo que sostiene el resultado",
+            body: "Liberar el canal resuelve la compresión, pero no borra los años de la columna. Sostener el ejercicio indicado, cuidar la mecánica al cargar peso y mantener un peso corporal razonable ayuda a que el resultado se mantenga y reduce la probabilidad de que un nivel vecino dé problemas más adelante.",
+          },
         ],
       },
       "preguntas-frecuentes": {
@@ -303,6 +463,8 @@ export const servicePages: ServicePage[] = [
     slug: "escoliosis",
     navLabel: "Escoliosis",
     h1: "Escoliosis y deformidades de columna",
+    heroLead:
+      "Una curva de columna casi nunca duele durante el crecimiento, y por eso suele detectarse tarde. Acá encuentras qué mirar en casa, qué logra realmente un corsé y en qué momento se plantea una corrección.",
     title: "Escoliosis y deformidades de columna: diagnóstico y tratamiento",
     description:
       "Qué es la escoliosis, cómo se detecta durante el crecimiento, qué hace el corsé y cuándo se plantea una corrección quirúrgica. Guía del Dr. Juan Carlos Angulo, cirujano de columna en Lima.",
@@ -331,10 +493,25 @@ export const servicePages: ServicePage[] = [
       sintomas: {
         heading: "Cómo se manifiesta",
         paragraphs: [
-          "En el adolescente la escoliosis casi nunca duele, y esa es justamente la razón por la que suele detectarse tarde. Lo que se nota es la asimetría: un hombro más alto que el otro, una escápula que sobresale, la cintura despareja, la ropa que cae torcida o un lado del tronco que se ve más prominente.",
-          "Hay una manera sencilla de mirarlo en casa. Al pedirle que se incline hacia adelante con las rodillas rectas y los brazos colgando, la rotación de las vértebras hace que un lado de la espalda quede más alto que el otro. Si aparece ese desnivel, corresponde una evaluación aunque no haya ninguna molestia.",
-          "En el adulto el cuadro cambia. Ahí sí suele haber dolor lumbar, sensación de fatiga de la espalda al estar de pie un rato, pérdida de estatura y la impresión de estar inclinándote hacia adelante o hacia un lado sin poder evitarlo. Cuando la deformidad reduce el espacio por donde salen los nervios, se suman dolor irradiado a la pierna, hormigueo y limitación para caminar.",
-          "En la cifosis lo que se ve es la espalda encorvada, con molestia en la zona dorsal después de estar sentado o de pie por periodos largos. Si esa curvatura aparece de manera brusca en una persona mayor, conviene descartar una fractura vertebral por fragilidad del hueso.",
+          "En el adolescente la escoliosis casi nunca duele. Lo que se nota es la forma del tronco, y por eso lo que sigue se observa más de lo que se siente.",
+        ],
+        items: [
+          {
+            title: "Asimetría del tronco",
+            body: "Un hombro más alto que el otro, una escápula que sobresale, la cintura despareja, la ropa que cae torcida o un lado del tronco que se ve más prominente.",
+          },
+          {
+            title: "La prueba de inclinarse hacia adelante",
+            body: "Al pedirle que se incline con las rodillas rectas y los brazos colgando, la rotación de las vértebras hace que un lado de la espalda quede más alto que el otro. Si aparece ese desnivel, corresponde una evaluación aunque no haya ninguna molestia.",
+          },
+          {
+            title: "En el adulto el cuadro cambia",
+            body: "Ahí sí suele haber dolor lumbar, fatiga de la espalda al estar de pie un rato, pérdida de estatura y la impresión de estar inclinándote hacia adelante o hacia un lado sin poder evitarlo. Cuando la deformidad reduce el espacio por donde salen los nervios, se suman dolor irradiado a la pierna, hormigueo y limitación para caminar.",
+          },
+          {
+            title: "Cuando la curva se ve de perfil",
+            body: "En la cifosis lo que se nota es la espalda encorvada, con molestia en la zona dorsal después de estar sentado o de pie por periodos largos. Si esa curvatura aparece de manera brusca en una persona mayor, conviene descartar una fractura vertebral por fragilidad del hueso.",
+          },
         ],
       },
       "cuando-consultar": {
@@ -345,13 +522,52 @@ export const servicePages: ServicePage[] = [
           "Hay situaciones que se evalúan sin postergar a cualquier edad: dolor que despierta en la noche, pérdida de fuerza en una pierna o en un brazo, adormecimiento en la zona de la entrepierna, cambios en el control de la orina o la deposición, y una deformidad que aparece o se acentúa de manera rápida. En el adulto, también la imposibilidad de mantenerte erguido al caminar.",
         ],
       },
+      complicaciones: {
+        heading: "Complicaciones posibles",
+        paragraphs: [
+          "No todas las curvas progresan, y muchas terminan el crecimiento sin haber cambiado la vida de nadie. El seguimiento existe para detectar a tiempo las que sí avanzan, porque una curva que crece sin control deja consecuencias que después cuestan más de revertir.",
+        ],
+        items: [
+          {
+            title: "La curva sigue creciendo",
+            body: "Durante el estirón una curva puede aumentar rápido, y cuanto mayor es al terminar el crecimiento, más probable es que siga avanzando en la vida adulta. Cada grado ganado es también un grado más difícil de corregir después.",
+          },
+          {
+            title: "Dolor y fatiga de la espalda",
+            body: "En el adulto la deformidad reparte la carga de forma despareja y acelera el desgaste de los discos y de las articulaciones. De ahí el dolor lumbar y la sensación de agotamiento al estar de pie.",
+          },
+          {
+            title: "Compromiso de los nervios",
+            body: "Cuando la deformidad estrecha el espacio por donde salen las raíces aparecen dolor irradiado a la pierna, hormigueo y limitación para caminar. Es uno de los motivos de consulta más frecuentes en la escoliosis del adulto.",
+          },
+          {
+            title: "Desequilibrio del tronco",
+            body: "Si el tronco deja de estar centrado sobre la pelvis, mantenerse erguido pasa a costar un esfuerzo permanente. En curvas dorsales de gran magnitud también se evalúa el efecto sobre la capacidad respiratoria.",
+          },
+        ],
+      },
       diagnostico: {
         heading: "Cómo se diagnostica",
         paragraphs: [
-          "La evaluación empieza en la consulta, con la persona de pie y el tronco visto de frente, de perfil y de espaldas. Se revisa la altura de los hombros y de las caderas, la simetría de la cintura, la alineación de la cabeza sobre la pelvis y el desnivel del tronco al inclinarse hacia adelante. En niños y adolescentes se suma la valoración del desarrollo, porque el crecimiento que queda pesa tanto como la curva actual.",
-          "El estudio de base es la radiografía de columna completa tomada de pie, que muestra la curva tal como se comporta con el peso del cuerpo encima. Sobre esa imagen se mide el ángulo de la desviación, se identifican las vértebras que la limitan y se estima la madurez ósea, que es lo que permite anticipar cuánto puede progresar.",
-          "Las radiografías en inclinación lateral sirven para saber qué tan flexible es la curva, un dato que cambia el plan cuando se está evaluando una corrección. La resonancia magnética no es de rutina: se pide cuando la curva tiene características atípicas, cuando hay signos neurológicos, o cuando interesa ver el estado de los discos y del canal antes de una cirugía.",
-          "El seguimiento se hace comparando estudios equivalentes a lo largo del tiempo, siempre con la misma técnica, para que la comparación sea válida y para no repetir radiografías más de lo necesario.",
+          "La evaluación empieza en la consulta, con la persona de pie y el tronco visto de frente, de perfil y de espaldas. Las imágenes vienen después y responden preguntas concretas.",
+        ],
+        items: [
+          {
+            title: "Examen del tronco",
+            body: "Se revisa la altura de los hombros y de las caderas, la simetría de la cintura, la alineación de la cabeza sobre la pelvis y el desnivel del tronco al inclinarse hacia adelante. En niños y adolescentes se suma la valoración del desarrollo, porque el crecimiento que queda pesa tanto como la curva actual.",
+          },
+          {
+            title: "Radiografía de columna completa de pie",
+            body: "Es el estudio de base y muestra la curva tal como se comporta con el peso del cuerpo encima. Sobre esa imagen se mide el ángulo de la desviación, se identifican las vértebras que la limitan y se estima la madurez ósea, que es lo que permite anticipar cuánto puede progresar.",
+          },
+          {
+            title: "Estudios complementarios",
+            body: "Las radiografías en inclinación lateral indican qué tan flexible es la curva, un dato que cambia el plan cuando se evalúa una corrección. La resonancia magnética no es de rutina: se pide cuando la curva tiene características atípicas, cuando hay signos neurológicos, o cuando interesa ver el estado de los discos y del canal antes de una cirugía.",
+          },
+          {
+            title: "Seguimiento comparativo",
+            body: "Se comparan estudios equivalentes a lo largo del tiempo, siempre con la misma técnica, para que la comparación sea válida y para no repetir radiografías más de lo necesario.",
+          },
         ],
       },
       tratamiento: {
@@ -423,6 +639,8 @@ export const servicePages: ServicePage[] = [
     slug: "ortopedia-infantil",
     navLabel: "Ortopedia infantil",
     h1: "Ortopedia infantil",
+    heroLead:
+      "No toda pierna arqueada o pie plano necesita tratamiento, y no toda espalda encorvada es postura. Acá encuentras qué es parte del desarrollo normal, qué hallazgos sí necesitan evaluación y cuándo conviene consultar sin esperar el próximo control.",
     title: "Ortopedia infantil: desarrollo, marcha y columna en crecimiento",
     description:
       "Qué se evalúa en una consulta de ortopedia infantil, qué hallazgos son parte del desarrollo normal y cuáles necesitan atención. Guía del Dr. Juan Carlos Angulo, traumatólogo en Lima.",
@@ -474,6 +692,30 @@ export const servicePages: ServicePage[] = [
           "Hay otros que no conviene postergar. La cojera es el primero: un niño que cojea necesita ser evaluado, aunque no refiera dolor. El dolor que lo despierta de noche, el que se concentra en una sola articulación con hinchazón o calor, y el que viene acompañado de fiebre entran en el mismo grupo, porque obligan a descartar causas que no son mecánicas.",
           "También se revisan sin esperar la pérdida de una habilidad que ya tenía, la limitación para mover una extremidad, la deformidad que aparece o aumenta rápido y cualquier debilidad en una pierna o en un brazo. En el recién nacido y el lactante, la asimetría de pliegues o la limitación para abrir una cadera se evalúan pronto, porque el margen para un tratamiento sencillo es más amplio cuanto antes se detecta.",
           "Un punto para las madres y los padres que llegan con miedo: consultar temprano no significa que vaya a haber un tratamiento. En muchos casos la consulta termina con un control programado y con la explicación de qué esperar en los meses siguientes. Salir de la duda es, por sí solo, un buen motivo para pedir la cita.",
+        ],
+      },
+      complicaciones: {
+        heading: "Qué pasa si se deja pasar el tiempo",
+        paragraphs: [
+          "La mayoría de los hallazgos de esta etapa se resuelve sola o con controles simples. Lo que conviene conocer es qué cambia cuando algo que sí necesitaba tratamiento no se detecta a tiempo, porque en el niño el margen para corregir se relaciona directamente con el crecimiento que le queda por delante.",
+        ],
+        items: [
+          {
+            title: "Displasia de cadera diagnosticada tarde",
+            body: "Detectada en los primeros meses de vida, el tratamiento suele ser simple. Detectada después de que el niño ya camina, el abordaje se vuelve más largo y más complejo, porque la articulación ya se desarrolló sobre una posición incorrecta.",
+          },
+          {
+            title: "Curvas de columna que progresan sin control",
+            body: "Una curva que no se sigue durante el estirón del crecimiento puede aumentar sin que nadie lo note, porque en general no duele. El control periódico es lo que permite intervenir con la opción menos invasiva mientras la curva todavía es pequeña.",
+          },
+          {
+            title: "Alteraciones de la marcha que se instalan como hábito",
+            body: "Un patrón de marcha que se sostiene más allá de la edad en la que solía corregirse solo puede consolidarse como costumbre, y eso hace que la corrección posterior lleve más tiempo que si se hubiera acompañado antes.",
+          },
+          {
+            title: "Confundir una causa no mecánica con una ortopédica",
+            body: "La cojera con fiebre, el dolor nocturno o el dolor con hinchazón en una sola articulación pueden tener un origen que no es mecánico. Tratarlos como si fueran un problema de postura o de desarrollo retrasa la evaluación que realmente corresponde.",
+          },
         ],
       },
       diagnostico: {
