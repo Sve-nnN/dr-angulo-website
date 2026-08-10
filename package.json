@@ -8,7 +8,8 @@
     "start": "next start",
     "lint": "eslint",
     "content:check": "node scripts/check-content.mjs",
-    "sedes:check": "node scripts/check-sedes.mjs"
+    "sedes:check": "node scripts/check-sedes.mjs",
+    "seo:check": "node scripts/check-seo.mjs"
   },
   "dependencies": {
     "@next/third-parties": "^16.2.12",

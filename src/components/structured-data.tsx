@@ -13,9 +13,17 @@ import { getGoogleReviews, type GoogleReviewsData } from "@/lib/google-reviews";
  * de repetir los datos. Así el doctor es una sola entidad para el buscador,
  * no una copia distinta por página.
  *
- * Decisión consciente: no se emite `Review` ni `AggregateRating`. Las reseñas
- * son de Doctoralia y marcarlas desde el propio sitio del doctor entra en la
- * categoría de reseñas autopublicadas, que Google ignora o penaliza.
+ * Sobre reseñas (SEO-07): `AggregateRating` sale de la ficha de Google en vivo
+ * y de ningún otro lado, vía `ratingNodes` más abajo. El único testimonio de
+ * `src/content/testimonials.ts` es una línea anónima de Doctoralia y no se
+ * marca: una nota agregada sobre una sola reseña anónima sería un dato
+ * inventado. Los testimonios en video de Instagram siguen enlazados y sin
+ * marcar. Si Google no responde o falta la clave, no se emite nada.
+ *
+ * Un comentario anterior acá decía que el sitio no emitía `Review` ni
+ * `AggregateRating`. Dejó de ser cierto en el commit `5387091`, que sumó el
+ * cliente de Places API; se corrige ahora para que el archivo no describa algo
+ * que no hace.
  */
 
 const ID = {
@@ -136,6 +144,21 @@ function conditionNodes() {
 function ratingNodes(data: GoogleReviewsData | null) {
   if (!data || process.env.REVIEWS_SCHEMA_ENABLED === "false") return {};
 
+  const reviews = data.reviews.slice(0, 5).map((review) => ({
+    "@type": "Review",
+    author: { "@type": "Person", name: review.author },
+    reviewRating: {
+      "@type": "Rating",
+      ratingValue: review.rating,
+      bestRating: 5,
+      worstRating: 1,
+    },
+    reviewBody: review.text,
+    ...(review.publishedAt ? { datePublished: review.publishedAt } : {}),
+    publisher: { "@type": "Organization", name: "Google" },
+    ...(review.reviewUrl ? { url: review.reviewUrl } : {}),
+  }));
+
   return {
     aggregateRating: {
       "@type": "AggregateRating",
@@ -144,20 +167,10 @@ function ratingNodes(data: GoogleReviewsData | null) {
       bestRating: 5,
       worstRating: 1,
     },
-    review: data.reviews.slice(0, 5).map((review) => ({
-      "@type": "Review",
-      author: { "@type": "Person", name: review.author },
-      reviewRating: {
-        "@type": "Rating",
-        ratingValue: review.rating,
-        bestRating: 5,
-        worstRating: 1,
-      },
-      reviewBody: review.text,
-      ...(review.publishedAt ? { datePublished: review.publishedAt } : {}),
-      publisher: { "@type": "Organization", name: "Google" },
-      ...(review.reviewUrl ? { url: review.reviewUrl } : {}),
-    })),
+    // La ficha puede tener calificación y conteo pero ninguna reseña con texto,
+    // que es lo que devuelve hoy la API: producción emitía `"review": []`.
+    // Una propiedad vacía no aporta nada y se omite.
+    ...(reviews.length > 0 ? { review: reviews } : {}),
   };
 }
 
