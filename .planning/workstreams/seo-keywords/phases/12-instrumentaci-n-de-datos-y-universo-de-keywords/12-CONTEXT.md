@@ -124,7 +124,7 @@ dura del milestone.
 
 - Next.js 16 con App Router, TypeScript y Tailwind 4. Node 24 y Python 3.14 disponibles en el
   entorno.
-- **No existe `scripts/`** ni ningún directorio de tooling. `seo-tools/` se crea desde cero.
+- ~~**No existe `scripts/`** ni ningún directorio de tooling.~~ **Corregido el 2026-08-10 al planificar:** `scripts/` sí existe y contiene `check-content.mjs`. No cambia ninguna decisión ni afecta el guardarraíl de build: el `include` del `tsconfig.json` raíz lista `**/*.ts`, `**/*.tsx` y `**/*.mts`, pero **no** `**/*.mjs`, así que ese archivo nunca entró en la compilación y el riesgo del Pitfall 1 sigue siendo específico de los `.ts` de `seo-tools/`. `seo-tools/` se crea desde cero igual, como paquete aparte de `scripts/`.
 - **No hay Dockerfile ni `.dockerignore`.** El deploy en Dokploy corre por Nixpacks, que
   detecta el `package.json` de la raíz. Por eso el tooling necesita su propio manifiesto.
 - `package.json` raíz tiene nueve dependencias de producción y ninguna de datos o de Google.

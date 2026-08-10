@@ -148,7 +148,7 @@ Esta fase es de infraestructura, no de contenido: construye una herramienta CLI 
 | Permutación semilla × modificador × geo | CLI local (pure function) | — | Determinista, sin API. Es la única capa de expansión con costo cero y reproducibilidad total |
 | Autocomplete / related searches / PAA | API externa (SerpApi REST) | Caché en disco | Datos de Google que ninguna fuente local puede sintetizar |
 | Volumen, CPC, competencia | API externa (DinoRank REST → DataForSEO) | Caché en disco | Única fuente con cobertura del geo long tail de Lima |
-| KD y traffic potential | API externa (Ahrefs REST v3) | Caché en disco | Métricas propietarias de Ahrefs. Tier con presupuesto medido, se aplica solo a la shortlist |
+| ~~KD y traffic potential~~ | ~~API externa (Ahrefs REST v3)~~ | ~~Caché en disco~~ | **DEROGADO por la enmienda del encabezado (2026-08-10).** Ahrefs queda fuera de la fase 12 por completo. En la fase 12 estas dos columnas existen en el dataset y en el Sheet con el valor literal `no_consultado` para todo el universo. **La fase 13 no debe leer esta fila como vigente**: si necesita dificultad orgánica, ver los dos candidatos de proxy en la enmienda del encabezado |
 | Clasificación de intención y etapa | CLI local (rule engine) | Override commiteado | Debe ser determinista para que SHEET-06 se cumpla. Un LLM en runtime rompería la estabilidad de reejecución |
 | Persistencia cruda | Filesystem (`.cache/`) | — | Gitignoreado, content-addressed, sin TTL |
 | Persistencia consolidada | Git (`seo-tools/data/keywords.jsonl`) | — | Es la evidencia reproducible que sí se commitea |
@@ -1099,6 +1099,18 @@ npm run cli -- cache:stats
 ---
 
 ## Open Questions
+
+> **Estado: RESUELTAS en la planificación de la fase 12 (2026-08-10).** Las cinco quedaron
+> asignadas a una tarea concreta de un plan, así que ninguna sigue abierta a la hora de ejecutar.
+> Se conservan escritas porque documentan por qué cada tarea existe.
+>
+> | # | Pregunta | Dónde se cierra |
+> |---|----------|-----------------|
+> | 1 | Forma real de la respuesta de `/keyword-research` para Perú | `dino:probe` con `country=pe`, plan `12-05` tarea 2, que graba la fixture antes de escribir el parser |
+> | 2 | Si existen las columnas de fuente por métrica en la plantilla | `sheet:inspect`, plan `12-01` tarea 1, más el `checkpoint:human-verify` del plan `12-02` tarea 1 |
+> | 3 | Cuota de DinoRank y consumo de `/keyword-research` | Bandera `--limit` con corrida acotada de medición, plan `12-05` tarea 3, más la confirmación de plan en su tarea 1 |
+> | 4 | Plan contratado de SerpApi | `user_setup` y confirmación explícita antes de gastar búsquedas, plan `12-03` |
+> | 5 | Si hace falta enmendar KWR-02 y el criterio de éxito 4 del ROADMAP | **Ya aplicado.** La enmienda está en `REQUIREMENTS.md` líneas 67-78 y en `ROADMAP.md` línea 66. No hace falta tarea |
 
 1. **¿Qué devuelve realmente `/keyword-research` de DinoRank para Perú?**
    - Lo que se sabe: parámetros exactos, envelope de error, y que el top level trae `keyword`, `country`, `language`, `source` y `data`.
