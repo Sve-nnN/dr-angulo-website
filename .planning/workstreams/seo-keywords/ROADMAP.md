@@ -65,7 +65,14 @@ tabs `Keyword Research`, `Content Model`, `Competitor Analysis`, `Canonicalizati
   3. El universo tiene 400 keywords o más del negocio del doctor, expandido desde semillas por condición, procedimiento, síntoma, especialidad y sede.
   4. Cada keyword trae volumen, CPC y competencia de DinoRank para Perú en español, con una columna que indica de qué fuente salió cada dato. Las columnas de KD y traffic potential existen pero quedan en `no_consultado`. *(Enmendado el 2026-08-10 por decisión de Juan: Ahrefs queda fuera de la fase 12 por completo y su enriquecimiento se difiere. Ver la nota bajo KWR-02 en `REQUIREMENTS.md`.)*
   5. Cada keyword está clasificada por intención (informacional, comercial, transaccional, navegacional) y por etapa del paciente (síntoma, diagnóstico, decisión), y ejecutar la carga dos veces seguidas deja el mismo número de filas en el Sheet.
-**Plans**: TBD
+**Plans**: 5 plans
+
+Plans:
+- [ ] 12-01-PLAN.md — Guardarraíl de build, paquete `seo-tools`, seam de caché y sondeo del Sheet (wave 1)
+- [ ] 12-02-PLAN.md — Aprobación de columnas y escritor idempotente del Sheet (wave 2)
+- [ ] 12-03-PLAN.md — Semillas, permutación y expansión con datos reales de Google (wave 2)
+- [ ] 12-04-PLAN.md — Clasificación determinista, dataset consolidado y primera carga (wave 3)
+- [ ] 12-05-PLAN.md — Cliente de DinoRank, enriquecimiento del universo y recarga (wave 4)
 
 **Notas de ejecución**
 - Esta fase no escribe en `src/`. El código de tooling vive fuera de la aplicación (scripts y caché), no dentro del sitio que v1.1 está desplegando.
@@ -156,7 +163,7 @@ paquete de la fase 15 para su contenido y su metadata.
 
 | Phase | Milestone | Plans Complete | Status | Completed |
 |-------|-----------|----------------|--------|-----------|
-| 12. Instrumentación de datos y universo de keywords | v1.2 | 0/TBD | Not started | - |
+| 12. Instrumentación de datos y universo de keywords | v1.2 | 0/5 | Planned | - |
 | 13. Clusters, competencia y las 10 de Oro | v1.2 | 0/TBD | Not started | - |
 | 14. Mapa keyword → URL y matriz de enlazado | v1.2 | 0/TBD | Not started | - |
 | 15. Paquete on-page por URL | v1.2 | 0/TBD | Not started | - |
