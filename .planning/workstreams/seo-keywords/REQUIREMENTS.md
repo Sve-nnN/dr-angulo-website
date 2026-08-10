@@ -20,8 +20,17 @@ v1.2 escribe en `src/`.
 **Fuentes de datos** (decidido 2026-08-10):
 - **DinoRank** — primaria para volumen, CPC y competencia (`/keyword-research`), más
   TF-IDF semántico, canibalizaciones y auditoría on-page
-- **Ahrefs** — KD, traffic potential y referring domains needed, que DinoRank no devuelve
-- **SerpApi** — validación de la SERP real geolocalizada en Lima
+- **Ahrefs** — KD, traffic potential y referring domains needed, que DinoRank no devuelve.
+  Se usa con economía deliberada (decisión de Juan, 2026-08-10): nunca para expandir el
+  universo, solo para enriquecer una shortlist y perfilar competidores. Cuenta Lite de
+  100.000 unidades al mes
+- **SerpApi** — validación de la SERP real geolocalizada en Lima, y expansión por related
+  searches, People Also Ask y autocomplete
+
+**Complementariedad verificada el 2026-08-10:** Ahrefs devuelve datos para keywords genéricas
+en Perú (`hernia discal`: 6.000 de volumen, KD 5, traffic potential 1.500) pero **vacío** para
+el geo long tail de Lima (`hernia discal lima`, `traumatologo columna lima`). Ese terreno solo
+lo cubre DinoRank vía DataForSEO. Las dos fuentes no se solapan.
 
 **Entregable externo:** el Sheet de SEO del cliente
 (`1aowectbAJhyyZWhwQ6N_re-ENeSENvNN-5DebqCIls0`), tabs `Keyword Research`,
@@ -56,8 +65,13 @@ Ricardo Palma, Sanna La Molina, Padre Luis Tezza), más el hub `/servicios` refo
 - [ ] **KWR-01**: Existe un universo de 400 o más keywords del negocio del doctor,
   expandido desde semillas por condición, procedimiento, síntoma, especialidad y sede
 - [ ] **KWR-02**: Cada keyword del universo trae volumen, CPC y competencia de DinoRank
-  para Perú en español, y KD, traffic potential y referring domains needed de Ahrefs,
-  con la fuente marcada por columna
+  para Perú en español. Una shortlist de 40 a 60 keywords priorizadas trae además KD y
+  traffic potential de Ahrefs; el resto del universo queda con esas columnas marcadas
+  `sin_datos`. La fuente va marcada por columna, no por fila
+  <br>*Enmendado el 2026-08-10 (decisión de Juan): la redacción original pedía KD y traffic
+  potential para **cada** keyword del universo. Enriquecer las 400+ cuesta unas 17.600
+  unidades de Ahrefs, contra 2.600 de la shortlist, sobre una cuenta Lite de 100.000 al mes.
+  Referring domains needed sale de COMP-01 sobre los competidores, no keyword por keyword.*
 - [ ] **KWR-03**: Cada keyword está clasificada por intención (informacional, comercial,
   transaccional, navegacional) y por etapa del paciente (síntoma, diagnóstico, decisión)
 - [ ] **KWR-04**: Las keywords están agrupadas en clusters por solape de SERP, no por
