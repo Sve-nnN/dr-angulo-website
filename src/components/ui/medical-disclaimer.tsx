@@ -1,8 +1,9 @@
 import { Info } from "lucide-react";
 
 /**
- * Aviso de contenido educativo. Va pegado a la firma del doctor y arriba del
- * pliegue, además de repetirse al cierre de la página (SAFE-01, SAFE-02).
+ * Aviso de contenido educativo. Aparece una sola vez, al cierre de la
+ * página, después de la firma del doctor (SAFE-02, revisado 2026-08-10 por
+ * decisión de Juan; ver 08-UI-SPEC.md).
  *
  * Es una superficie visible, no un pie de página gris: el texto va a 16px con
  * contraste pleno y nunca se colapsa dentro de un desplegable (SAFE-03).

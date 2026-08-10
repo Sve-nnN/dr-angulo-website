@@ -81,10 +81,6 @@ export default async function BlogPostPage({ params }: Props) {
       <AuthorByline publishedAt={post.publishedAt} updatedAt={post.updatedAt} />
 
       <div className="mt-8">
-        <MedicalDisclaimer />
-      </div>
-
-      <div className="mt-8">
         <TableOfContents
           title="En este artículo"
           entries={post.sections.map((section) => ({
