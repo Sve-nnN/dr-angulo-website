@@ -1,0 +1,248 @@
+{
+  "//": "Residuo ambiguo resuelto UNA sola vez, en la sesion de ejecucion del plan 12-04 del 2026-08-10, y congelado aca. El clasificador consulta este archivo ANTES de evaluar reglas: si la keyword figura, gana la anulacion y el origen se declara como de modelo. Eso es lo que garantiza que ninguna corrida futura del CLI vuelva a invocar un modelo de lenguaje, y con ello que dos cargas seguidas al Sheet produzcan exactamente la misma clasificacion. El campo origen distingue 'llm' de 'manual' para el rastro interno; para el Sheet las dos se declaran 'llm', porque la columna solo acepta dos valores.",
+
+  "//alcance": "El archivo NO contiene una entrada por cada keyword del residuo. Las 747 se revisaron una por una; estas son las que la revision resolvio DISTINTO de lo que dan las reglas. Escribir tambien las que coinciden seria congelar un no-cambio: la anulacion gana siempre, asi que una entrada redundante le prohibe a la fase 13 mejorar la regla que la produjo. El SUMMARY del plan documenta el resto y por que se dejo en manos de las reglas.",
+
+  "//esquema": "claveNormalizada: { intent, stage, origen, nota }. intent en informacional|comercial|transaccional|navegacional. stage en sintoma|diagnostico|decision. origen en llm|manual.",
+
+  "donde estudiar traumatologia en peru": {
+    "intent": "informacional",
+    "stage": "diagnostico",
+    "origen": "llm",
+    "nota": "Las reglas la leen como transaccional porque nombra el pais y empieza con 'donde'. Pero quien la escribe es un postulante a la residencia, no un paciente: 'peru' aca acota un sistema educativo, no una intencion de ir a una consulta en Surco."
+  },
+
+  "ortopedia wong corrector de postura": {
+    "intent": "navegacional",
+    "stage": "decision",
+    "origen": "llm",
+    "nota": "Las reglas le ponen etapa de sintoma porque la frase dice 'postura'. No es un paciente describiendo una molestia: ya eligio la tienda y el producto. La etapa correcta es decision."
+  },
+  "corrector de postura ortopedia wong": {
+    "intent": "navegacional",
+    "stage": "decision",
+    "origen": "llm",
+    "nota": "Misma consulta con las palabras al reves, misma resolucion."
+  },
+
+  "artrosis de rodilla especialista": {
+    "intent": "comercial",
+    "stage": "decision",
+    "origen": "llm",
+    "nota": "Las reglas la dejan informacional porque el disparador comercial pide 'especialista en' con preposicion y aca la palabra va suelta al final. La persona esta buscando a quien acudir, que es comercial de manual."
+  },
+
+  "miedo a operarme de la columna": {
+    "intent": "informacional",
+    "stage": "decision",
+    "origen": "llm",
+    "nota": "Semilla que sale del contenido propio del sitio. La intencion es informacional, pero la etapa NO es diagnostico: a quien escribe esto ya le propusieron una cirugia y esta decidiendo si acepta. Es la consulta que mejor describe al paciente que el consultorio quiere convertir, y clasificarla como diagnostico la mandaria a una pagina de que-es en lugar de a una de miedos y riesgos."
+  },
+  "miedo a operarte de la columna": {
+    "intent": "informacional",
+    "stage": "decision",
+    "origen": "llm",
+    "nota": "Variante en segunda persona de la anterior."
+  },
+
+  "correccion de escoliosis y deformidades": {
+    "intent": "comercial",
+    "stage": "decision",
+    "origen": "llm",
+    "nota": "No nombra la condicion sino el PROCEDIMIENTO que la corrige, y ese es un servicio que el doctor presta. Las reglas la dejan informacional porque 'correccion de' no esta entre los disparadores de cirugia."
+  },
+  "reconstruccion tras fracturas complejas": {
+    "intent": "comercial",
+    "stage": "decision",
+    "origen": "llm",
+    "nota": "Mismo caso: nombre de procedimiento tomado del contenido del sitio, no de una condicion."
+  },
+
+  "solucion a hernia discal": {
+    "intent": "comercial",
+    "stage": "decision",
+    "origen": "llm",
+    "nota": "Quien busca 'solucion a' ya paso el diagnostico y esta evaluando con que resolverlo. Es la misma intencion que 'tratamiento de', que las reglas si reconocen."
+  },
+  "terapias para hernia discal": {
+    "intent": "comercial",
+    "stage": "decision",
+    "origen": "llm",
+    "nota": "Las reglas tienen 'terapia' en singular y la consulta viene en plural. La intencion es la misma."
+  },
+
+  "centro especializado de traumatologia y columna": {
+    "intent": "transaccional",
+    "stage": "decision",
+    "origen": "llm",
+    "nota": "Busca un establecimiento concreto donde atenderse. Las reglas no la enganchan porque el nombre no esta en ninguna lista de marcas, pero la intencion es la misma que 'traumatologo clinica ricardo palma'."
+  },
+
+  "traumatologo especialista en mano lima": {
+    "intent": "transaccional",
+    "stage": "decision",
+    "origen": "llm",
+    "nota": "Las reglas ya la resuelven asi y la revision lo confirma. Se congela igual porque es el empate de mayor volumen del residuo, con 50, y porque su lectura importa aguas abajo: es demanda real de Lima que este consultorio NO atiende, ya que la mano no es su subespecialidad. La fase 13 tiene que verla como inteligencia de mercado y no como objetivo."
+  },
+  "traumatologo especialista en pie y tobillo en lima": {
+    "intent": "transaccional",
+    "stage": "decision",
+    "origen": "llm",
+    "nota": "Mismo caso que la anterior: subespecialidad ajena, demanda real de Lima."
+  },
+  "traumatologo especialista en pie lima peru": {
+    "intent": "transaccional",
+    "stage": "decision",
+    "origen": "llm",
+    "nota": "Mismo caso."
+  },
+  "traumatologo de mano lima peru": {
+    "intent": "transaccional",
+    "stage": "decision",
+    "origen": "llm",
+    "nota": "Mismo caso."
+  },
+
+  "cirugia de columna lumbar l4-l5 precio": {
+    "intent": "transaccional",
+    "stage": "decision",
+    "origen": "llm",
+    "nota": "Empate resuelto a favor de transaccional y congelado: es el arquetipo que el research nombra, procedimiento mas nivel vertebral mas precio en la misma frase, y es ademas una de las consultas de mayor valor comercial del universo entero. No puede quedar sujeta a como se afinen las reglas en la fase 13."
+  },
+
+  "ozonoterapia hernia discal peru": {
+    "intent": "transaccional",
+    "stage": "decision",
+    "origen": "llm",
+    "nota": "La ozonoterapia aparece doce veces en el residuo cruzada con precio y con geografia. Es demanda de un tratamiento concreto en un lugar concreto: transaccional y etapa decision. Se congela toda la familia porque su lectura decide si la fase 14 le asigna pagina propia."
+  },
+  "ozonoterapia en lima hernia discal": {
+    "intent": "transaccional",
+    "stage": "decision",
+    "origen": "llm",
+    "nota": "Familia de la ozonoterapia."
+  },
+  "precio de ozonoterapia para hernia discal": {
+    "intent": "transaccional",
+    "stage": "decision",
+    "origen": "llm",
+    "nota": "Familia de la ozonoterapia."
+  },
+  "tratamiento ozono hernia discal precio": {
+    "intent": "transaccional",
+    "stage": "decision",
+    "origen": "llm",
+    "nota": "Familia de la ozonoterapia."
+  },
+  "hernia discal ozonoterapia precio": {
+    "intent": "transaccional",
+    "stage": "decision",
+    "origen": "llm",
+    "nota": "Familia de la ozonoterapia."
+  },
+  "ozonoterapia hernia discal precio peru": {
+    "intent": "transaccional",
+    "stage": "decision",
+    "origen": "llm",
+    "nota": "Familia de la ozonoterapia."
+  },
+
+  "inyeccion epidural para la ciatica precio": {
+    "intent": "transaccional",
+    "stage": "decision",
+    "origen": "llm",
+    "nota": "Procedimiento medico real con precio: transaccional y decision. Se separa a proposito de la familia de la crema y la faja, que comparten la palabra precio pero son compra de producto."
+  },
+  "inyeccion para la ciatica precio": {
+    "intent": "transaccional",
+    "stage": "decision",
+    "origen": "llm",
+    "nota": "Mismo caso que la epidural."
+  },
+  "nombre de inyecciones para la ciatica precio": {
+    "intent": "informacional",
+    "stage": "diagnostico",
+    "origen": "llm",
+    "nota": "Las reglas la resuelven transaccional por la palabra precio. Pero lo que pide es el NOMBRE del medicamento: es una consulta de farmacia, informacional, y quien la escribe no esta contratando un procedimiento."
+  },
+
+  "precio de la crema artrosis": {
+    "intent": "transaccional",
+    "stage": "decision",
+    "origen": "llm",
+    "nota": "Compra de un producto de mostrador, no de una consulta. La intencion transaccional que dan las reglas es correcta; se congela para dejar registrado que esta familia es comercio y no captacion de pacientes, porque el eje de alcance no la separa: 'artrosis' es condicion nucleo y por eso la excepcion del retail la deja dentro."
+  },
+  "artrosis crema precio": {
+    "intent": "transaccional",
+    "stage": "decision",
+    "origen": "llm",
+    "nota": "Familia de la crema: comercio de mostrador."
+  },
+  "artrosis artrosy crema precio": {
+    "intent": "transaccional",
+    "stage": "decision",
+    "origen": "llm",
+    "nota": "Familia de la crema. 'Artrosy' es una marca de producto."
+  },
+  "rodilla artrosis artrosy crema precio": {
+    "intent": "transaccional",
+    "stage": "decision",
+    "origen": "llm",
+    "nota": "Familia de la crema."
+  },
+  "crema de cannabi para la artrosis precio": {
+    "intent": "transaccional",
+    "stage": "decision",
+    "origen": "llm",
+    "nota": "Familia de la crema."
+  },
+  "faja para ciatica precio": {
+    "intent": "transaccional",
+    "stage": "decision",
+    "origen": "llm",
+    "nota": "Compra de producto ortopedico. Misma lectura que la familia de la crema."
+  },
+  "las mejores pastillas para la ciatica precio": {
+    "intent": "transaccional",
+    "stage": "decision",
+    "origen": "llm",
+    "nota": "Compra de medicamento de mostrador."
+  },
+
+  "procedimientos para dolor de origen degenerativo precio": {
+    "intent": "transaccional",
+    "stage": "decision",
+    "origen": "llm",
+    "nota": "Permutacion de una semilla del propio sitio con el modificador de precio. Transaccional y decision, confirmado."
+  },
+  "procedimientos para dolor de origen degenerativo en lima": {
+    "intent": "transaccional",
+    "stage": "decision",
+    "origen": "llm",
+    "nota": "Misma semilla con el modificador de geografia."
+  },
+  "precio de discopatia degenerativa": {
+    "intent": "transaccional",
+    "stage": "decision",
+    "origen": "llm",
+    "nota": "Preguntar el precio de una CONDICION es preguntar el precio de tratarla. Transaccional."
+  },
+  "precio de enfermedad degenerativa discal": {
+    "intent": "transaccional",
+    "stage": "decision",
+    "origen": "llm",
+    "nota": "Mismo caso."
+  },
+  "precio de displasia congenita de cadera": {
+    "intent": "transaccional",
+    "stage": "decision",
+    "origen": "llm",
+    "nota": "Mismo caso, en ortopedia infantil."
+  },
+  "precio de escoliosis en ninos y adolescentes": {
+    "intent": "transaccional",
+    "stage": "decision",
+    "origen": "llm",
+    "nota": "Mismo caso, en ortopedia infantil."
+  }
+}
