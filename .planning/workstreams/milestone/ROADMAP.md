@@ -130,7 +130,9 @@ Plans:
   1. Existen cuatro URLs dedicadas (hernia discal, estenosis espinal, escoliosis y deformidades, ortopedia infantil), cada una con 900 palabras o más y con `MedicalProcedure` que pasa el Rich Results Test sin errores.
   2. `/servicios` funciona como hub: enlaza a las cuatro páginas, cada página enlaza de vuelta al hub y ofrece CTA de agenda sin obligar al paciente a volver al inicio.
   3. Los cuatro posts existentes superan las 900 palabras y cada uno enlaza a la página de servicio de su tema con un CTA de agenda al cierre.
-  4. Nada de este contenido clínico está publicado sin la aprobación escrita del doctor.
+  4. Todo el contenido clínico publicado se apoya únicamente en fuentes ya verificadas del proyecto: el CV confirmado del doctor, `src/content/` de v1.0, y consenso clínico general no atribuido a él. Cero credenciales, cifras de cirugías, tasas de éxito o resultados inventados. Cada página lleva un aviso de que la información es educativa y no reemplaza una consulta.
+
+  > **Criterio modificado el 2026-08-10 por decisión de Juan.** La redacción original era "Nada de este contenido clínico está publicado sin la aprobación escrita del doctor". Juan optó por escribir y publicar directo, sin ronda previa de revisión médica. Queda registrado que el contenido YMYL sale a un sitio con el nombre del doctor sin su visto bueno previo, y que la revisión pasa a ser posterior a la publicación. La restricción equivalente de PROJECT.md se actualizó en el mismo commit. El criterio se reescribió para que siga siendo verificable en vez de quedar imposible de cumplir.
 **Plans**: TBD
 **UI hint**: yes
 

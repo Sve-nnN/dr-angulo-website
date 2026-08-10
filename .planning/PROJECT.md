@@ -91,7 +91,7 @@ Milestone v1.1 — derivados de la auditoría SEO del 2026-08-10:
 
 - **Stack**: Next.js 16 (App Router) + TypeScript + Tailwind CSS 4, contenido como código (sin CMS) — pedido explícito del cliente de mantenerlo simple
 - **Hosting**: Dokploy self-hosted sobre Hetzner (`sapling-vps-01`), la misma infraestructura que juantech y Juan Portfolio. Dominio: drangulocolumna.com, registrado en Porkbun el 2026-08-09
-- **Contenido médico**: todo texto clínico nuevo pasa por revisión del doctor antes de publicar. Contenido YMYL sin validar no se despliega
+- **Contenido médico**: el texto clínico nuevo se publica sin ronda previa de revisión del doctor, por decisión de Juan del 2026-08-10. La revisión pasa a ser posterior. A cambio, el contenido solo puede apoyarse en fuentes ya verificadas del proyecto (CV confirmado, `src/content/` de v1.0, consenso clínico general no atribuido al doctor), no puede afirmar credenciales, cifras de cirugías, tasas de éxito ni resultados, y cada página lleva aviso de que es información educativa que no reemplaza una consulta. La redacción anterior era "todo texto clínico nuevo pasa por revisión del doctor antes de publicar; contenido YMYL sin validar no se despliega"
 - **Datos reales**: no inventar credenciales médicas, cifras de cirugías realizadas ni testimonios — solo usar lo verificado o lo que el doctor confirme
 - **Mercado**: Lima, Perú — copy en español neutro/peruano, moneda soles (S/)
 - **Cumplimiento**: Ley de Protección de Datos Personales (Perú) — aviso de privacidad antes de cargar GA4/Meta Pixel
