@@ -34,8 +34,8 @@ export default function BlogPage() {
         {blogPosts.map((post) => (
           <article key={post.slug} className="py-8">
             <p className="text-sm text-foreground/70">
-              <time dateTime={post.date}>
-                {dateFormatter.format(new Date(post.date))}
+              <time dateTime={post.publishedAt}>
+                {dateFormatter.format(new Date(post.publishedAt))}
               </time>
             </p>
             <h2 className="mt-2 font-heading text-xl font-bold text-primary">

@@ -437,7 +437,10 @@ export type BlogPostJsonLdItem = {
   slug: string;
   title: string;
   description: string;
-  date: string;
+  publishedAt: string;
+  updatedAt: string;
+  /** Slug de la guía de servicio que este post alimenta. */
+  relatedService: string;
 };
 
 /** Listado del blog. */
@@ -456,7 +459,7 @@ export function BlogJsonLd({ posts }: { posts: BlogPostJsonLdItem[] }) {
       "@id": abs(`/blog/${post.slug}#post`),
       headline: post.title,
       description: post.description,
-      datePublished: post.date,
+      datePublished: post.publishedAt,
       url: abs(`/blog/${post.slug}`),
     })),
   };
@@ -464,7 +467,17 @@ export function BlogJsonLd({ posts }: { posts: BlogPostJsonLdItem[] }) {
   return <JsonLdScript id="blog-jsonld" data={data} />;
 }
 
-/** Artículo individual, escrito y publicado por el doctor. */
+/**
+ * Artículo individual, escrito y publicado por el doctor.
+ *
+ * `datePublished` y `dateModified` salen de los mismos dos campos que muestra
+ * `AuthorByline`, así el marcado y lo que ve el paciente no divergen. Como en
+ * las guías de servicio, no se emite `reviewedBy` ni `lastReviewed`: el texto
+ * se publica antes de que el doctor lo revise.
+ *
+ * `about` apunta al `@id` de la guía de servicio del tema, que es lo que le
+ * dice al buscador que el post y la guía son el mismo silo.
+ */
 export function BlogPostingJsonLd({ post }: { post: BlogPostJsonLdItem }) {
   const data = {
     "@context": "https://schema.org",
@@ -472,8 +485,9 @@ export function BlogPostingJsonLd({ post }: { post: BlogPostJsonLdItem }) {
     "@id": abs(`/blog/${post.slug}#post`),
     headline: post.title,
     description: post.description,
-    datePublished: post.date,
-    dateModified: post.date,
+    datePublished: post.publishedAt,
+    dateModified: post.updatedAt,
+    about: { "@id": `${abs(`/servicios/${post.relatedService}`)}#page` },
     url: abs(`/blog/${post.slug}`),
     inLanguage: "es-PE",
     image: abs("/og-dr-angulo.jpg"),
