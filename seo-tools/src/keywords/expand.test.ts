@@ -4,15 +4,24 @@
  */
 
 import assert from "node:assert/strict";
-import { test } from "node:test";
+import { mkdtemp, rm } from "node:fs/promises";
+import { tmpdir } from "node:os";
+import path from "node:path";
+import { after, test } from "node:test";
 
+import { QuotaBook } from "../quota.js";
 import {
+  MAX_BUSQUEDAS_POR_DEFECTO,
   consolidar,
   esGeoAjeno,
   esRelevante,
+  expandir,
+  planificarConsultas,
   serializarCandidatos,
   type Candidato,
 } from "./expand.js";
+import type { Modificadores } from "./permute.js";
+import type { Semilla } from "./seeds.js";
 
 const candidato = (keyword: string, extra: Partial<Candidato> = {}): Candidato => ({
   keyword,
@@ -128,4 +137,115 @@ test("serializar dos veces el mismo universo produce exactamente el mismo texto"
     serializarCandidatos(consolidar(brutos).candidatos),
     serializarCandidatos(consolidar(brutos).candidatos),
   );
+});
+
+// --- Presupuesto: el tope lo gobierna el codigo, no la invocacion ---
+
+const temporales: string[] = [];
+
+async function cacheTemporal(): Promise<string> {
+  const dir = await mkdtemp(path.join(tmpdir(), "seo-tools-expand-"));
+  temporales.push(dir);
+  return dir;
+}
+
+after(async () => {
+  for (const dir of temporales) await rm(dir, { recursive: true, force: true });
+});
+
+const CINCO_SEMILLAS: Semilla[] = [
+  { keyword: "Hernia discal", keywordKey: "hernia discal", tipo: "condicion", procedencia: "prueba", rango: 1 },
+  { keyword: "Estenosis espinal", keywordKey: "estenosis espinal", tipo: "condicion", procedencia: "prueba", rango: 1 },
+  { keyword: "Ortopedia infantil", keywordKey: "ortopedia infantil", tipo: "especialidad", procedencia: "prueba", rango: 1 },
+  { keyword: "Clínica Ricardo Palma", keywordKey: "clinica ricardo palma", tipo: "sede", procedencia: "prueba", rango: 2 },
+  { keyword: "Cirugía de columna", keywordKey: "cirugia de columna", tipo: "especialidad", procedencia: "prueba", rango: 3 },
+];
+
+const SIN_MODIFICADORES: Modificadores = { schema: 1, familias: {} };
+
+test("el tope de busquedas por defecto vale exactamente 60, como constante del modulo", () => {
+  assert.equal(MAX_BUSQUEDAS_POR_DEFECTO, 60);
+});
+
+test("el orden de gasto es el del snapshot y es identico entre dos corridas", () => {
+  const a = planificarConsultas(CINCO_SEMILLAS, { semillasDinorank: 2, semillasSerpapi: 3 });
+  const b = planificarConsultas(CINCO_SEMILLAS, { semillasDinorank: 2, semillasSerpapi: 3 });
+
+  assert.deepEqual(a, b);
+  assert.deepEqual(
+    a.filter((c) => c.capa === "dinorank").map((c) => c.semilla),
+    ["Hernia discal", "Estenosis espinal"],
+  );
+  assert.deepEqual(
+    a.filter((c) => c.capa === "serpapi-busqueda").map((c) => c.semilla),
+    ["Hernia discal", "Estenosis espinal", "Ortopedia infantil"],
+  );
+  // Cada consulta trae su clave ya calculada por el CLI: quien rellena nunca la inventa.
+  for (const consulta of a) assert.match(consulta.clave, /^[0-9a-f]{64}$/);
+});
+
+test("alcanzado el tope, la expansion corta y nombra las semillas que quedaron sin procesar", async () => {
+  const cacheDir = await cacheTemporal();
+  const quota = await QuotaBook.open(cacheDir);
+
+  const resultado = await expandir({
+    seeds: CINCO_SEMILLAS,
+    modificadores: SIN_MODIFICADORES,
+    cacheDir,
+    quota,
+    maxBusquedas: 2,
+    semillasDinorank: 0,
+    semillasSerpapi: 5,
+    llamadaSerpapi: async () => ({
+      httpStatus: 200,
+      body: { related_searches: [{ query: "cirugia de hernia discal en lima" }] },
+    }),
+  });
+
+  assert.equal(resultado.cortada, true);
+  assert.equal(resultado.pendientes.length, 3);
+  assert.deepEqual(resultado.pendientes, [
+    "Ortopedia infantil",
+    "Clínica Ricardo Palma",
+    "Cirugía de columna",
+  ]);
+  assert.equal(quota.runCalls("serpapi"), 2);
+  // El archivo de candidatos queda con lo ya obtenido, no a medio escribir.
+  assert.ok(resultado.candidatos.length > 0);
+});
+
+test("subir el tope y volver a correr solo gasta por las semillas que faltaban", async () => {
+  const cacheDir = await cacheTemporal();
+  const llamada = async (): Promise<{ httpStatus: number; body: unknown }> => ({
+    httpStatus: 200,
+    body: { related_searches: [{ query: "cirugia de hernia discal en lima" }] },
+  });
+
+  const primera = await QuotaBook.open(cacheDir);
+  await expandir({
+    seeds: CINCO_SEMILLAS,
+    modificadores: SIN_MODIFICADORES,
+    cacheDir,
+    quota: primera,
+    maxBusquedas: 2,
+    semillasDinorank: 0,
+    semillasSerpapi: 5,
+    llamadaSerpapi: llamada,
+  });
+  assert.equal(primera.runCalls("serpapi"), 2);
+
+  const segunda = await QuotaBook.open(cacheDir);
+  const resultado = await expandir({
+    seeds: CINCO_SEMILLAS,
+    modificadores: SIN_MODIFICADORES,
+    cacheDir,
+    quota: segunda,
+    maxBusquedas: 60,
+    semillasDinorank: 0,
+    semillasSerpapi: 5,
+    llamadaSerpapi: llamada,
+  });
+
+  assert.equal(resultado.cortada, false);
+  assert.equal(segunda.runCalls("serpapi"), 3, "las dos primeras tenian que resolver desde cache");
 });
