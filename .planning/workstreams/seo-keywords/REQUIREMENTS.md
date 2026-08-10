@@ -35,7 +35,13 @@ lo cubre DinoRank vía DataForSEO. Las dos fuentes no se solapan.
 
 **Entregable externo:** el Sheet de SEO del cliente
 (`1aowectbAJhyyZWhwQ6N_re-ENeSENvNN-5DebqCIls0`), tabs `Keyword Research`,
-`Content Model`, `Competitor Analysis`, `Canonicalization Audit`, `Internal Linking Audit`.
+`Content Model`, `Competitor Analysis`, `Canonical Audit`, `Internal Linking Audit`.
+
+> **Corrección del 2026-08-10, tras leer el documento en vivo** (ver
+> `.planning/workstreams/seo-keywords/data/sheet-recon-2026-08-10.md`): el tab se llama
+> `Canonical Audit`, no `Canonicalization Audit`. El texto largo existe, pero como banner
+> dentro de la fila 1 del tab. Pedirlo por el nombre largo devuelve error 400. Además el
+> documento tiene **11 tabs**, no 5, y la fila de encabezados no es la fila 1 en ninguno.
 
 ## Inventario de URLs a cubrir (19)
 
@@ -132,7 +138,7 @@ Ricardo Palma, Sanna La Molina, Padre Luis Tezza), más el hub `/servicios` refo
   tipo, cluster, métricas y la acción recomendada (dejar, actualizar o eliminar)
 - [ ] **SHEET-03**: El tab `Competitor Analysis` tiene los cinco competidores con sus
   stats, keywords, snippets, páginas principales y contenido más enlazado
-- [ ] **SHEET-04**: El tab `Canonicalization Audit` tiene una fila por URL con su keyword,
+- [ ] **SHEET-04**: El tab `Canonical Audit` tiene una fila por URL con su keyword,
   topic y canonical propuesto
 - [ ] **SHEET-05**: El tab `Internal Linking Audit` tiene una fila por URL con hasta ocho
   enlaces salientes propuestos y su anchor

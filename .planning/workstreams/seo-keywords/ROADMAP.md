@@ -36,7 +36,7 @@ copy clínico listo para que v1.1 lo publique.
 > lo que evita conflictos de merge.
 
 **Entregable externo:** el Sheet de SEO del cliente `1aowectbAJhyyZWhwQ6N_re-ENeSENvNN-5DebqCIls0`,
-tabs `Keyword Research`, `Content Model`, `Competitor Analysis`, `Canonicalization Audit`,
+tabs `Keyword Research`, `Content Model`, `Competitor Analysis`, `Canonical Audit`,
 `Internal Linking Audit`.
 
 ### Handoffs hacia v1.1
@@ -111,7 +111,7 @@ Plans:
   2. Ninguna keyword primaria está asignada a dos URLs: la canibalización quedó detectada y resuelta al asignar, no heredada para descubrirla en producción.
   3. Las nueve URLs que aún no existen —las cuatro de servicio, las cuatro de sede y el hub `/servicios` reformulado— tienen su keyword primaria y sus secundarias publicadas en el Sheet, de modo que la fase 8 de v1.1 pueda arrancar sin elegir keywords por su cuenta.
   4. Cada asignación declara qué tipo de página exige la SERP y qué hay que hacer con la URL: dejarla como está, reescribirla o crearla.
-  5. Los tabs `Content Model`, `Canonicalization Audit` e `Internal Linking Audit` tienen una fila por URL con keyword, intención, tipo, cluster, métricas, acción recomendada, canonical propuesto y hasta ocho enlaces salientes con su anchor; recargarlos no duplica filas.
+  5. Los tabs `Content Model`, `Canonical Audit` e `Internal Linking Audit` tienen una fila por URL con keyword, intención, tipo, cluster, métricas, acción recomendada, canonical propuesto y hasta ocho enlaces salientes con su anchor; recargarlos no duplica filas.
 **Plans**: TBD
 
 > **HANDOFF BLOQUEANTE — MAP-03.**

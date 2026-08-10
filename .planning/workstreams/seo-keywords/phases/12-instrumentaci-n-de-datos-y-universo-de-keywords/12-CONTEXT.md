@@ -99,9 +99,41 @@ dura del milestone.
   cliente que haya que preservar. Las filas residuales y lo escrito a mano se pueden
   eliminar. Lo que sí se respeta siempre es el formato de columnas de cada tab: el escritor
   lee la fila de encabezados y se ajusta a ella, no impone la suya.
-- La fuente de cada dato se marca por métrica, con columna sufijo (`Volume`,
-  `Volume Source`), no con una sola columna por fila. Una columna global miente cuando la
-  fila mezcla datos de DinoRank y de Ahrefs, y KWR-02 pide la fuente marcada por columna.
+  <br>**Precisión del 2026-08-10 tras leer el documento en vivo** (ver
+  `.planning/workstreams/seo-keywords/data/sheet-recon-2026-08-10.md`): "la fila de
+  encabezados" **no es la fila 1**. La fila 1 de cada tab es un banner decorativo. Los
+  encabezados están en la fila 3 de `Keyword Research` y `Content Model`, en la fila 2 de
+  `Canonical Audit` e `Internal Linking Audit`, y `Competitor Analysis` está transpuesto y no
+  tiene fila de encabezados. Varios encabezados llevan espacios finales. El documento tiene
+  11 tabs, no 5.
+
+### Decisiones de Juan del 2026-08-10 sobre el documento real
+
+Tomadas con el reconocimiento delante. No se relitigan al planificar ni al ejecutar.
+
+- **J-1.** Las columnas `Volume (Ahrefs)`, `Traffic Potential (Ahrefs)` y `KD Difficulty (Ahrefs)`
+  de `Content Model` quedan **vacías**: no se escriben, no se renombran, no se borran. El
+  volumen de DinoRank va a una columna nueva con nombre propio. Criterio: cero dato mal
+  etiquetado en el documento del cliente.
+- **J-2.** En `Keyword Research` se **agregan dos columnas a la derecha**, CPC y competencia.
+  DinoRank las devuelve, KWR-02 las pide y el tab no tiene ninguna de las dos.
+- **J-3.** **No se agregan columnas de fuente al Sheet.** Deroga la decisión de columna sufijo
+  de más arriba. La fuente por métrica vive en el dataset del repositorio.
+- **J-4.** Se **eliminan** las columnas muertas de la plantilla SaaS: `Free Trial CVR` y
+  `Free Trial Potential` en `Content Model`, `CVR` y `Lead or Conversion Potential` en
+  `Keyword Research`. **Condición puesta por Juan:** antes de borrar hay que verificar que
+  ninguna alimente una fórmula ni un formato condicional de otro tab, y el borrado aborta si
+  encuentra una referencia.
+- ~~La fuente de cada dato se marca por métrica, con columna sufijo (`Volume`,
+  `Volume Source`), no con una sola columna por fila.~~
+  **DEROGADO el 2026-08-10 (decisión J-3 de Juan), después de leer el documento en vivo.**
+  No se agrega ninguna columna de fuente al Sheet: la fuente por métrica se documenta en el
+  dataset del repositorio (`seo-tools/data/keywords.jsonl`), que es donde KWR-02 la exige de
+  forma verificable. Motivo: con Ahrefs diferido casi todo viene de DinoRank, y tres o cuatro
+  columnas nuevas solo ensancharían la tabla que mira el cliente sin agregar información.
+  El razonamiento original —que una columna global miente cuando la fila mezcla fuentes—
+  sigue siendo válido y por eso el **dataset** sí mantiene la fuente por métrica, no una
+  global por fila.
 - Si un tab no existe o su estructura no calza, el escritor falla ruidoso mostrando el diff
   de columnas esperadas contra las reales. No crea tabs a ciegas.
 - El borrado de filas residuales va detrás de un flag explícito que reporta qué elimina antes
