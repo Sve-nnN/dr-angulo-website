@@ -147,6 +147,47 @@ Ricardo Palma, Sanna La Molina, Padre Luis Tezza), más el hub `/servicios` refo
 
 ## Trazabilidad
 
+Mapeada por `ROADMAP.md` del workstream `seo-keywords` el 2026-08-10.
+30 requisitos, cada uno en exactamente una fase. Cobertura 30/30.
+
 | Requisito | Fase | Estado |
 |-----------|------|--------|
-| _(lo llena el roadmap)_ | | |
+| INFRA-01 | Fase 12 | Pendiente |
+| INFRA-02 | Fase 12 | Pendiente |
+| INFRA-03 | Fase 12 | Pendiente |
+| KWR-01 | Fase 12 | Pendiente |
+| KWR-02 | Fase 12 | Pendiente |
+| KWR-03 | Fase 12 | Pendiente |
+| KWR-04 | Fase 13 | Pendiente |
+| KWR-05 | Fase 13 | Pendiente |
+| KWR-06 | Fase 13 | Pendiente |
+| COMP-01 | Fase 13 | Pendiente |
+| COMP-02 | Fase 13 | Pendiente |
+| COMP-03 | Fase 13 | Pendiente |
+| COMP-04 | Fase 13 | Pendiente |
+| MAP-01 | Fase 14 | Pendiente |
+| MAP-02 | Fase 14 | Pendiente |
+| MAP-03 | Fase 14 | Pendiente — **handoff bloqueante** para la fase 8 de v1.1 |
+| MAP-04 | Fase 14 | Pendiente |
+| MAP-05 | Fase 14 | Pendiente |
+| ONPAGE-01 | Fase 15 | Pendiente |
+| ONPAGE-02 | Fase 15 | Pendiente |
+| ONPAGE-03 | Fase 15 | Pendiente |
+| ONPAGE-04 | Fase 15 | Pendiente |
+| ONPAGE-05 | Fase 15 | Pendiente |
+| ONPAGE-06 | Fase 15 | Pendiente — handoff de contenido para las fases 8 y 10 de v1.1 |
+| SHEET-01 | Fase 13 | Pendiente |
+| SHEET-02 | Fase 14 | Pendiente |
+| SHEET-03 | Fase 13 | Pendiente |
+| SHEET-04 | Fase 14 | Pendiente |
+| SHEET-05 | Fase 14 | Pendiente |
+| SHEET-06 | Fase 12 | Pendiente |
+
+### Resumen por fase
+
+| Fase | Entrega | Requisitos | Total |
+|------|---------|------------|-------|
+| 12 | Instrumentación de datos y universo de keywords | INFRA-01 a INFRA-03, KWR-01 a KWR-03, SHEET-06 | 7 |
+| 13 | Clusters, competencia y las 10 de Oro | KWR-04 a KWR-06, COMP-01 a COMP-04, SHEET-01, SHEET-03 | 9 |
+| 14 | Mapa keyword → URL y matriz de enlazado | MAP-01 a MAP-05, SHEET-02, SHEET-04, SHEET-05 | 8 |
+| 15 | Paquete on-page por URL | ONPAGE-01 a ONPAGE-06 | 6 |
