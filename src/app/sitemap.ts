@@ -2,6 +2,7 @@ import type { MetadataRoute } from "next";
 import { siteConfig } from "@/lib/site-config";
 import { blogPosts } from "@/content/blog";
 import { servicePages } from "@/content/service-pages";
+import { locationPages } from "@/content/location-pages";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const staticRoutes: MetadataRoute.Sitemap = [
@@ -25,6 +26,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8,
   }));
 
+  // Se deriva de `locationPages`, que es lo que genera las rutas: una sede sin
+  // entrada editorial no tiene página y no puede entrar acá.
+  const locationRoutes: MetadataRoute.Sitemap = locationPages.map((page) => ({
+    url: `${siteConfig.url}/sedes/${page.slug}`,
+    changeFrequency: "monthly",
+    priority: 0.8,
+  }));
+
   const blogRoutes: MetadataRoute.Sitemap = blogPosts.map((post) => ({
     url: `${siteConfig.url}/blog/${post.slug}`,
     lastModified: post.updatedAt,
@@ -32,5 +41,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.5,
   }));
 
-  return [...staticRoutes, ...serviceRoutes, ...blogRoutes];
+  return [...staticRoutes, ...serviceRoutes, ...locationRoutes, ...blogRoutes];
 }

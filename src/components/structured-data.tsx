@@ -1,5 +1,6 @@
 import { siteConfig } from "@/lib/site-config";
 import { locations, primaryLocation, clinicLocations, type Location } from "@/content/locations";
+import type { LocationPage } from "@/content/location-pages";
 import { serviceCategories, procedureApproaches } from "@/content/services";
 import { education, credentialsInfo } from "@/content/cv";
 import { getGoogleReviews, type GoogleReviewsData } from "@/lib/google-reviews";
@@ -60,12 +61,20 @@ function openingHours(location: Location) {
   }));
 }
 
-/** Cada sede como lugar de atención propio. */
+/**
+ * Cada sede como lugar de atención propio.
+ *
+ * El mapeo de tipos sale de 09-CONTEXT.md (D-07): las tres clínicas son
+ * `MedicalClinic` y el consultorio propio es `MedicalBusiness`. Antes emitía
+ * `Hospital` para las clínicas, que schema.org reserva para instituciones con
+ * internamiento, y `MedicalClinic` para el consultorio, que es un despacho de
+ * un solo médico. No devolverlo al mapeo anterior.
+ */
 function locationNode(location: Location) {
   const isOwnOffice = location.kind === "consultorio";
 
   return {
-    "@type": isOwnOffice ? "MedicalClinic" : "Hospital",
+    "@type": isOwnOffice ? "MedicalBusiness" : "MedicalClinic",
     "@id": ID.location(location.slug),
     name: location.name,
     address: postalAddress(location),
@@ -414,6 +423,45 @@ export function BookingPageJsonLd() {
   };
 
   return <JsonLdScript id="agendar-jsonld" data={data} />;
+}
+
+/**
+ * Página de una sede, bajo `/sedes/{slug}`.
+ *
+ * El nodo de la ubicación lo produce la **misma** `locationNode` que usa el
+ * grafo raíz, con el mismo `@id`. Un solo camino de código produce marcado de
+ * ubicación en todo el sitio, así la página y el grafo raíz no pueden decir
+ * cosas distintas de la misma sede (D-08).
+ */
+export function SedeJsonLd({
+  page,
+  location,
+}: {
+  page: LocationPage;
+  location: Location;
+}) {
+  const url = abs(`/sedes/${page.slug}`);
+
+  const data = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "MedicalWebPage",
+        "@id": `${url}#page`,
+        url,
+        name: page.title,
+        description: page.description,
+        inLanguage: "es-PE",
+        isPartOf: { "@id": ID.website },
+        about: { "@id": ID.physician },
+        publisher: { "@id": ID.physician },
+        mainEntity: { "@id": ID.location(location.slug) },
+      },
+      locationNode(location),
+    ],
+  };
+
+  return <JsonLdScript id="sede-jsonld" data={data} />;
 }
 
 /** Página de contacto. */

@@ -26,8 +26,13 @@ const MIN_WORDS = 900;
 /** Anclas de sección del hub heredadas de v1.0. La home enlaza a las cuatro. */
 const HUB_ANCHORS = ["columna", "traumatologia", "ortopedia-infantil", "procedimientos"];
 
-/** URLs totales del sitemap cuando la fase esté completa. */
-const SITEMAP_TOTAL = 16;
+/**
+ * URLs totales del sitemap. Las 16 de v1.0 más la primera página de sede,
+ * `/sedes/clinica-ricardo-palma`. Esta constante es lo único que la fase 9
+ * cambia de este archivo: la puerta de 900 palabras no aplica a las rutas de
+ * sede y ninguna de ellas entra al `MANIFEST`.
+ */
+const SITEMAP_TOTAL = 17;
 
 /** Banner del primer tercio: palabras previas sobre el total del cuerpo. */
 const BANNER_MIN_RATIO = 0.15;
