@@ -300,11 +300,13 @@ function fakeDoc(extraRows: CellValue[][] = []): Fake {
   ]);
 }
 
-interface Record_ {
+// Alias y no interfaz: una interfaz no infiere firma de indice y no encaja en
+// Record<string, unknown>, que es lo que recibe el escritor.
+type Record_ = {
   keyword: string;
   intent?: string;
   metricas?: { searchVolume?: number; cpc?: number };
-}
+};
 
 function rec(keyword: string, volume: number, intent: string, cpc = 0.5): Record_ {
   return { keyword, intent, metricas: { searchVolume: volume, cpc } };
