@@ -12,6 +12,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${siteConfig.url}/testimonios`, changeFrequency: "monthly", priority: 0.6 },
     { url: `${siteConfig.url}/preguntas-frecuentes`, changeFrequency: "monthly", priority: 0.6 },
     { url: `${siteConfig.url}/agendar`, changeFrequency: "monthly", priority: 0.9 },
+    { url: `${siteConfig.url}/sedes`, changeFrequency: "monthly", priority: 0.8 },
     { url: `${siteConfig.url}/contacto`, changeFrequency: "yearly", priority: 0.8 },
     { url: `${siteConfig.url}/blog`, changeFrequency: "weekly", priority: 0.7 },
     // `/privacidad` no va en el sitemap: la página declara `noindex, follow` desde
