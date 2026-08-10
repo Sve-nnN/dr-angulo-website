@@ -1,0 +1,60 @@
+{
+  "schema": 1,
+  "//": "Familias de modificadores de la capa de permutacion. Viven en un archivo de datos y no en el codigo para que la fase 13 pueda ampliarlas sin tocar la logica ni volver a probarla. 'aplicaA' declara sobre que tipos de semilla se cruza cada familia; 'posicion' es donde va el modificador respecto de la semilla, y respeta el orden natural del espanol.",
+  "familias": {
+    "informacional": {
+      "descripcion": "El paciente todavia esta entendiendo que tiene. Se cruza con condiciones y sintomas.",
+      "aplicaA": ["condicion", "sintoma"],
+      "modificadores": [
+        { "texto": "qué es", "posicion": "prefijo" },
+        { "texto": "síntomas de", "posicion": "prefijo" },
+        { "texto": "causas de", "posicion": "prefijo" },
+        { "texto": "tipos de", "posicion": "prefijo" },
+        { "texto": "ejercicios para", "posicion": "prefijo" },
+        { "texto": "cómo se cura", "posicion": "prefijo" },
+        { "texto": "cuánto dura la recuperación de", "posicion": "prefijo" },
+        { "texto": "se opera", "posicion": "sufijo" }
+      ]
+    },
+    "comercial": {
+      "descripcion": "El paciente ya le puso nombre y esta evaluando a quien acudir y con que tratamiento.",
+      "aplicaA": ["condicion"],
+      "modificadores": [
+        { "texto": "tratamiento de", "posicion": "prefijo" },
+        { "texto": "cirugía de", "posicion": "prefijo" },
+        { "texto": "operación de", "posicion": "prefijo" },
+        { "texto": "precio de", "posicion": "prefijo" },
+        { "texto": "especialista en", "posicion": "prefijo" },
+        { "texto": "mejor médico para", "posicion": "prefijo" }
+      ]
+    },
+    "geo": {
+      "descripcion": "Lima y solo Lima: el negocio es presencial y no hay sede que respalde otra ciudad. Las cuatro clinicas son las sedes reales del doctor mas Montefiori, donde atendio antes y sigue apareciendo asociado.",
+      "aplicaA": ["especialidad"],
+      "modificadores": [
+        { "texto": "lima", "posicion": "sufijo" },
+        { "texto": "surco", "posicion": "sufijo" },
+        { "texto": "san isidro", "posicion": "sufijo" },
+        { "texto": "la molina", "posicion": "sufijo" },
+        { "texto": "cerca de mí", "posicion": "sufijo" },
+        { "texto": "clínica ricardo palma", "posicion": "sufijo" },
+        { "texto": "clínica sanna", "posicion": "sufijo" },
+        { "texto": "clínica tezza", "posicion": "sufijo" },
+        { "texto": "clínica montefiori", "posicion": "sufijo" },
+        { "texto": "perú", "posicion": "sufijo" }
+      ]
+    },
+    "procedimiento": {
+      "descripcion": "El paciente ya sabe que procedimiento le proponen y esta decidiendo. Es la familia de mayor intencion transaccional.",
+      "aplicaA": ["procedimiento"],
+      "modificadores": [
+        { "texto": "qué es", "posicion": "prefijo" },
+        { "texto": "cuánto cuesta", "posicion": "prefijo" },
+        { "texto": "precio", "posicion": "sufijo" },
+        { "texto": "recuperación", "posicion": "sufijo" },
+        { "texto": "riesgos", "posicion": "sufijo" },
+        { "texto": "en lima", "posicion": "sufijo" }
+      ]
+    }
+  }
+}
