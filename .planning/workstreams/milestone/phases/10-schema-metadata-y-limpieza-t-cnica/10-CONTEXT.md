@@ -21,7 +21,9 @@ El ROADMAP de esta fase se escribió antes de que existieran las fases 8 y 9 y a
 | SEO-05 breadcrumbs | **Ya cumplido** | `BreadcrumbList` presente en `/servicios/[slug]`, `/sedes/[slug]` y `/blog/[slug]`. Verificar, no reconstruir |
 | SEO-06 credenciales y horarios | **Ya cumplido en estructura** | `hasCredential` y `openingHoursSpecification` presentes en el grafo raíz. Falta el dato humano del horario exacto |
 | SEO-07 marcado de reseñas | **Pendiente y delicado** | Cero `Review` y cero `AggregateRating` en `/testimonios`. Ver abajo |
-| SEO-08 titles, descriptions y OG | **Pendiente, es el grueso** | 17 rutas fuera de rango. Una sola imagen OG para las 14 rutas |
+| SEO-08 titles y descriptions | **Fuera de alcance** | Juan lo hace él más adelante, decisión del 2026-08-10. Medición registrada abajo para cuando lo retome |
+| SEO-08 imágenes OG | **Pendiente, sí entra** | Una sola imagen para las 14 rutas. Se generan dinámicas |
+| Stylesheet del sitemap | **Pendiente, pedido nuevo** | Juan lo pidió el 2026-08-10. No estaba en el ROADMAP |
 | SEO-09 | Ver requisitos | |
 | SEO-10 llms.txt | **Pendiente** | No existe el archivo |
 | SEO-11 limpieza | **Pendiente** | `public/dr-angulo-portrait.png` sigue en el repo y no lo referencia nada de `src/` |
@@ -31,29 +33,35 @@ El ROADMAP de esta fase se escribió antes de que existieran las fases 8 y 9 y a
 <decisions>
 ## Implementation Decisions
 
-### SEO-08, el grueso de la fase
+### SEO-08 titles y descriptions: FUERA DE ALCANCE por decisión de Juan
 
-Medición exacta contra el build. Los titles incluyen el sufijo del layout, ` | Dr. Juan Angulo`, que son 19 caracteres, así que el título base tiene que ser corto de verdad.
+Juan decidió el 2026-08-10 que la reescritura de titles y descriptions la hace él, más adelante. **No se toca ni un title ni una description en esta fase.**
 
-Titles por encima de 60 caracteres, 15 rutas:
+Consecuencias que hay que respetar:
 
-`/` 76, `/agendar` 64, `/servicios` 74, `/sedes` 71, `/sobre-el-doctor` 74, `/servicios/hernia-discal` 68, `/servicios/estenosis-espinal` 72, `/servicios/escoliosis` 81, `/servicios/ortopedia-infantil` 81, `/sedes/consultorio-privado` 71, `/sedes/clinica-ricardo-palma` 77, `/sedes/clinica-tezza` 80, `/sedes/sanna-la-molina` 85, y tres posts del blog en 72, 73 y 81.
+- No se edita `title` ni `description` en ningún `generateMetadata`, ni en `layout.tsx`, ni en los archivos de contenido.
+- **No se construye la puerta de longitud de metadata.** Una puerta que falla en 17 rutas el día que se crea no es una puerta, es ruido: Juan la encontraría en rojo sin haber hecho nada mal. Cuando él termine su pasada, se puede sumar en otra fase.
+- La medición queda registrada acá para cuando la retome, así no tiene que volver a levantarla:
+  - Titles sobre 60 caracteres, 15 rutas. El sufijo del layout ` | Dr. Juan Angulo` son 19 caracteres y cuenta. Los peores: `/sedes/sanna-la-molina` 85, `/servicios/escoliosis` 81, `/servicios/ortopedia-infantil` 81, el post "miedo a operarte" 81, `/sedes/clinica-tezza` 80, `/sedes/clinica-ricardo-palma` 77, `/` 76, `/servicios` 74, `/sobre-el-doctor` 74.
+  - Descriptions sobre 155, 8 rutas: `/sobre-el-doctor` 265, `/agendar` 204, `/servicios/estenosis-espinal` 197, `/servicios` 190, `/servicios/escoliosis` 188, `/servicios/ortopedia-infantil` 182, `/contacto` 174, `/servicios/hernia-discal` 167.
+  - Cuando los reescriba: el nombre de la clínica no se puede caer del title de Ricardo Palma. Es lo que la fase 9 puso ahí a propósito para atacar la related search verificada.
 
-Descriptions por encima de 155 caracteres, 7 rutas:
+### Imágenes OG: sí entra
 
-`/sobre-el-doctor` 265, `/agendar` 204, `/servicios/estenosis-espinal` 197, `/servicios` 190, `/servicios/escoliosis` 188, `/servicios/ortopedia-infantil` 182, `/contacto` 174, `/servicios/hernia-discal` 167.
+La parte de imagen propia por página de SEO-08 **sí se hace**. Es independiente del texto de los titles.
 
-Decisiones:
-
-- Se acortan title y description de todas esas rutas sin perder la keyword principal de cada una. En Ricardo Palma en particular, el nombre de la clínica no se puede caer: es lo que la fase 9 puso ahí a propósito para atacar la related search verificada.
-- La comprobación se automatiza en una puerta ejecutable que mide sobre el HTML prerenderizado, igual que `scripts/check-content.mjs` y `scripts/check-sedes.mjs`. No se verifica a mano ruta por ruta, porque el sitio va a seguir creciendo.
-- El límite se mide sobre el title final renderizado, con sufijo incluido, que es lo que ve Google.
-
-### Imágenes OG
-
-- Hoy las 14 rutas comparten `og-dr-angulo.jpg`. El criterio pide imagen propia por página.
-- Se generan con la API de imágenes OG de Next.js, no como archivos estáticos: son 21 rutas y mantener 21 JPG a mano es insostenible. Cada imagen lleva el título de la página sobre la identidad de marca.
+- Hoy las 14 rutas comparten `og-dr-angulo.jpg`.
+- Se generan **dinámicas** con la API de imágenes OG de Next.js, no como archivos estáticos. Dos razones: son 21 rutas y mantener 21 JPG a mano es insostenible, y sobre todo, al leer el título desde la metadata de cada ruta, cuando Juan reescriba los titles las imágenes se actualizan solas sin tocar nada.
 - Antes de escribir código hay que leer la guía correspondiente en `node_modules/next/dist/docs/`. Esta versión de Next difiere del entrenamiento y ya causó dos errores reales en este proyecto.
+
+### Stylesheet del sitemap, pedido por Juan el 2026-08-10
+
+- `/sitemap.xml` hoy se ve como XML crudo en el navegador. Juan pidió que se vea profesional.
+- Se resuelve con una hoja XSL enlazada desde el XML: el navegador la aplica y muestra una tabla legible, mientras que Google y el resto de los rastreadores siguen leyendo el XML tal cual. Cero impacto en SEO.
+- La hoja tiene que respetar la identidad de marca del sitio: paleta, tipografía y tono ya establecidos.
+- Ojo con un detalle real: `sitemap.ts` de Next.js genera el XML y no expone un punto oficial para inyectar la instrucción de procesamiento `xml-stylesheet`. Hay que resolverlo y verificar que la instrucción llegue efectivamente al XML servido, no asumirlo. Comprobarlo contra el archivo prerenderizado y contra la respuesta HTTP.
+- El XSL se sirve como archivo estático desde `public/`.
+- Criterio de aceptación: `/sitemap.xml` sigue devolviendo 200 con `content-type` de XML y las 21 URLs intactas, y su contenido incluye la referencia a la hoja de estilo.
 
 ### SEO-07, marcado de reseñas. Es lo más delicado de la fase
 
@@ -121,6 +129,7 @@ Decisiones:
 <deferred>
 ## Deferred Ideas
 
+- **Reescritura de titles y descriptions:** la hace Juan, por decisión propia del 2026-08-10. La medición de las 15 rutas con title largo y las 8 con description larga quedó registrada arriba para cuando la retome. Tampoco se construye la puerta de longitud en esta fase, porque nacería en rojo.
 - Confirmación en la SERP de que Google muestra breadcrumbs y de que indexó las rutas nuevas: seguimiento posterior, no bloquea.
 - Horario exacto del consultorio los viernes y sábados: bloqueado por dato del doctor. Se publica lo confirmado.
 - Google Business Profile, campaña de reseñas hacia 15-20 y citaciones NAP: fase 11.
