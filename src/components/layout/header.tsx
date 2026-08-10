@@ -9,6 +9,7 @@ import { ServicesMenu } from "@/components/layout/services-menu";
 import { cn } from "@/lib/utils";
 import { siteConfig } from "@/lib/site-config";
 import { servicePages } from "@/content/service-pages";
+import { locationPages } from "@/content/location-pages";
 
 /**
  * `label` es el texto del menú de escritorio, donde el espacio manda;
@@ -17,11 +18,17 @@ import { servicePages } from "@/content/service-pages";
  * "Servicios" no vive acá: en escritorio lo resuelve `ServicesMenu` como
  * megamenú, y en móvil se renderiza aparte con las cuatro páginas anidadas
  * debajo (ver el bloque de navegación móvil más abajo).
+ *
+ * "Sedes" apunta al hub `/sedes`, no a `/agendar`. Son dos intenciones
+ * distintas con dos superficies distintas: dónde atiende el doctor contra
+ * quiero una cita. `/agendar` sigue a un clic desde el header por el botón
+ * "Agendar cita", en la barra de escritorio y al pie del menú móvil. En móvil,
+ * debajo de esta entrada cuelgan las cuatro páginas de sede.
  */
 const NAV_LINKS = [
   { href: "/", label: "Inicio" },
   { href: "/sobre-el-doctor", label: "El doctor", longLabel: "Sobre el doctor" },
-  { href: "/agendar", label: "Sedes", longLabel: "Sedes y horarios" },
+  { href: "/sedes", label: "Sedes", longLabel: "Sedes y horarios" },
   { href: "/testimonios", label: "Testimonios" },
   {
     href: "/preguntas-frecuentes",
@@ -171,7 +178,33 @@ export function Header() {
               </li>
             ))}
           </ul>
-          {NAV_LINKS.slice(2).map((link) => (
+          {/* Sedes y su lista anidada, con el mismo patrón que Servicios. Se
+              renderiza por recortes y no con un condicional dentro del `map`,
+              igual que ya hace el bloque de arriba. */}
+          {NAV_LINKS.slice(2, 3).map((link) => (
+            <Link
+              key={link.href}
+              href={link.href}
+              onClick={() => setOpen(false)}
+              className="rounded-lg px-3 py-3 text-base font-medium text-foreground/80 transition-colors duration-150 hover:bg-muted hover:text-primary"
+            >
+              {link.longLabel ?? link.label}
+            </Link>
+          ))}
+          <ul className="ml-3 flex flex-col gap-0.5 border-l border-border pl-3">
+            {locationPages.map((page) => (
+              <li key={page.slug}>
+                <Link
+                  href={`/sedes/${page.slug}`}
+                  onClick={() => setOpen(false)}
+                  className="block min-h-11 rounded-lg px-3 py-2.5 text-sm font-medium text-foreground/70 transition-colors duration-150 hover:bg-muted hover:text-primary"
+                >
+                  {page.navLabel}
+                </Link>
+              </li>
+            ))}
+          </ul>
+          {NAV_LINKS.slice(3).map((link) => (
             <Link
               key={link.href}
               href={link.href}
