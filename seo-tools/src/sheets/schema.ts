@@ -62,6 +62,12 @@ export interface ColumnModel {
   readonly header: string;
   /** Campo interno del dataset que llena la columna. null si nadie la llena. */
   readonly field: string | null;
+  /**
+   * Ruta con puntos hacia el valor dentro del registro del dataset, por ejemplo
+   * `metricas.searchVolume`. Si falta, se usa el propio `field`. Existe para que un cambio de
+   * forma del dataset se resuelva en este archivo y no en el codigo.
+   */
+  readonly source?: string;
   readonly status: ColumnStatus;
   /** Valor literal a escribir cuando el estado es `no-consultado`. */
   readonly literal?: string;
@@ -146,6 +152,7 @@ function parseTabModel(key: string, raw: unknown): TabModel {
       header,
       field: field as string | null,
       status: status as ColumnStatus,
+      ...(typeof c["source"] === "string" ? { source: c["source"] } : {}),
       ...(typeof c["literal"] === "string" ? { literal: c["literal"] } : {}),
       ...(typeof c["note"] === "string" ? { note: c["note"] } : {}),
     };
@@ -506,6 +513,8 @@ export function createGoogleGateway(session: SheetsSession): SpreadsheetGateway 
 
 export interface ResolvedColumn {
   readonly field: string | null;
+  /** Ruta con puntos hacia el valor en el registro del dataset. null si nadie la llena. */
+  readonly source: string | null;
   /** Encabezado real, con espacio final si el documento lo trae. */
   readonly header: string;
   readonly status: ColumnStatus;
@@ -554,6 +563,7 @@ function resolveByPosition(tab: TabModel, headers: readonly string[]): ResolvedC
     }
     return {
       field: column.field,
+      source: column.source ?? column.field,
       header: actual,
       status: column.status,
       ...(column.literal === undefined ? {} : { literal: column.literal }),
@@ -646,6 +656,7 @@ export async function loadTabSchema(
     }
     register({
       field: column.field,
+      source: column.source ?? column.field,
       header: hit.header,
       status: column.status,
       ...(column.literal === undefined ? {} : { literal: column.literal }),
@@ -680,6 +691,7 @@ export async function loadTabSchema(
       const plan = added[i] as PlannedHeader;
       register({
         field: column.field,
+        source: column.source ?? column.field,
         header: column.header,
         status: column.status,
         ...(column.literal === undefined ? {} : { literal: column.literal }),

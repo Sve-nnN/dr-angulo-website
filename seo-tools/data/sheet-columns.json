@@ -15,11 +15,13 @@
       "J-1": "Las tres columnas de Content Model que nombran la fuente diferida quedan vacias: no se escriben, no se renombran y no se borran. Cero dato mal etiquetado en el documento del cliente.",
       "J-2": "En Keyword Research se agregan dos columnas a la derecha, CPC y competencia, porque DinoRank las devuelve y el tab no tiene ninguna de las dos. Se agregan al final, sin renombrar ni reordenar nada.",
       "J-3": "No se agregan columnas de procedencia al Sheet. La procedencia por metrica vive en el dataset del repositorio, no en la tabla que mira el cliente. DEROGA la decision del CONTEXT que pedia una columna sufijo por metrica.",
-      "J-4": "Se eliminan las cuatro columnas muertas de la plantilla SaaS. Condicion de Juan: antes de borrar corre el escaneo de referencias, y el borrado aborta ante cualquier mencion. Sin bandera de fuerza."
+      "J-4": "Se eliminan las cuatro columnas muertas de la plantilla SaaS. Condicion de Juan: antes de borrar corre el escaneo de referencias, y el borrado aborta ante cualquier mencion. Sin bandera de fuerza.",
+      "J-5": "Confirmado en el checkpoint del plan 12-02. La etapa del paciente SI va como columna al Sheet, en contra de lo que proponia el plan. Es un dato de negocio, no de trazabilidad, asi que no reabre J-3: sigue sin haber columnas de procedencia. Encabezado Patient Stage, tercera columna nueva a la derecha.",
+      "J-6": "Confirmado en el mismo checkpoint. Los residuos de plantilla se borran completos: las 51 filas de Keyword Research, casillas de verificacion incluidas, y las 6 de Content Model. Tabla limpia de entrada."
     },
     "fueraDelSheet": [
-      "La procedencia por metrica, consecuencia de J-3, vive en seo-tools/data/keywords.jsonl.",
-      "La clasificacion del paciente que pide KWR-03 tampoco tiene columna en ningun tab: se exige clasificada en el dataset, no publicada en el documento, y SHEET-01 de la fase 13 no la lista entre lo que el tab muestra. Vive en el mismo keywords.jsonl."
+      "La procedencia por metrica, consecuencia de J-3, vive en seo-tools/data/keywords.jsonl y NO tiene columna en ningun tab.",
+      "Nada mas. La etapa del paciente de KWR-03 llego a estar en esta lista y Juan la saco por J-5: ahora tiene columna propia."
     ],
     "estados": {
       "fase-12": "La fase 12 escribe esta columna.",
@@ -28,6 +30,7 @@
       "fase-14": "La escribe la fase 14.",
       "fase-15": "La escribe la fase 15.",
       "nueva": "No existe en el documento y se agrega a la derecha del ultimo encabezado ocupado.",
+      "_source": "Ruta con puntos hacia el valor dentro del registro del dataset. Si falta, se usa el propio field.",
       "eliminar": "Columna muerta de la plantilla. Se elimina solo si el escaneo de referencias sale limpio.",
       "sin-uso": "Existe en la plantilla y ninguna fase del milestone la escribe. Se deja intacta."
     }
@@ -44,12 +47,12 @@
     "writtenBy": 12,
     "note": "Unico tab que escribe la fase 12. La clave de idempotencia se deriva normalizando el texto leido de la columna A: la normalizacion produce la clave, nunca el valor visible.",
     "columns": [
-      { "header": "Suggested Keyword", "field": "keyword", "status": "fase-12" },
+      { "header": "Suggested Keyword", "field": "keyword", "source": "keyword", "status": "fase-12", "note": "El texto ORIGINAL, con tildes y enie. La clave de idempotencia sale de normalizarlo, y el normalizado nunca se escribe." },
       { "header": "Cluster", "field": null, "status": "fase-13" },
       { "header": "URL", "field": null, "status": "fase-14" },
-      { "header": "Search Volume", "field": "volume", "status": "fase-12", "note": "Volumen de DinoRank. El encabezado no nombra ninguna herramienta, asi que no hay dato mal etiquetado." },
+      { "header": "Search Volume", "field": "volume", "source": "metricas.searchVolume", "status": "fase-12", "note": "Volumen de DinoRank. El encabezado no nombra ninguna herramienta, asi que no hay dato mal etiquetado." },
       { "header": "Traffic Potential", "field": null, "status": "no-consultado", "literal": "no_consultado" },
-      { "header": "Search Intent ", "field": "intent", "status": "fase-12", "note": "Lleva espacio final en el documento." },
+      { "header": "Search Intent ", "field": "intent", "source": "intent", "status": "fase-12", "note": "Lleva espacio final en el documento." },
       { "header": "CVR", "field": null, "status": "eliminar", "note": "J-4: columna muerta de la plantilla SaaS." },
       { "header": "Highest Achievable Position", "field": null, "status": "sin-uso" },
       { "header": "CTR", "field": null, "status": "sin-uso" },
@@ -62,8 +65,9 @@
       { "header": "Internal Approval ", "field": null, "status": "sin-uso", "note": "Lleva espacio final en el documento." },
       { "header": "Client Approval ", "field": null, "status": "sin-uso", "note": "Lleva espacio final en el documento." },
       { "header": "Notes", "field": null, "status": "sin-uso" },
-      { "header": "CPC", "field": "cpc", "status": "nueva", "note": "J-2. Numero, en la moneda que devuelva la consulta para el pais configurado." },
-      { "header": "Competition", "field": "competition", "status": "nueva", "note": "J-2. Indice de competencia comercial entre 0 y 1, no dificultad organica." }
+      { "header": "CPC", "field": "cpc", "source": "metricas.cpc", "status": "nueva", "note": "J-2. Numero, en la moneda que devuelva la consulta para el pais configurado." },
+      { "header": "Competition", "field": "competition", "source": "metricas.competition", "status": "nueva", "note": "J-2. Indice de competencia comercial entre 0 y 1, no dificultad organica." },
+      { "header": "Patient Stage", "field": "stage", "source": "stage", "status": "nueva", "note": "J-5. Etapa del paciente de KWR-03. Encabezado en ingles como el resto de la plantilla, valores en espanol para que el doctor los lea: sintoma, diagnostico, decision. El vocabulario lo produce kw:classify en la fase 12; el escritor solo transcribe lo que trae el dataset." }
     ]
   },
 
