@@ -69,7 +69,7 @@ Ricardo Palma, Sanna La Molina, Padre Luis Tezza), más el hub `/servicios` refo
 
 ### Investigación de keywords (KWR)
 
-- [ ] **KWR-01**: Existe un universo de 400 o más keywords del negocio del doctor,
+- [x] **KWR-01**: Existe un universo de 400 o más keywords del negocio del doctor,
   expandido desde semillas por condición, procedimiento, síntoma, especialidad y sede
 - [ ] **KWR-02**: Cada keyword del universo trae volumen, CPC y competencia de DinoRank
   para Perú en español, con la fuente marcada por columna. Las columnas de KD y traffic
@@ -82,7 +82,7 @@ Ricardo Palma, Sanna La Molina, Padre Luis Tezza), más el hub `/servicios` refo
   <br>*Consecuencia registrada: KWR-05 (punto dulce) depende de KD. La fase 13 tiene que
   resolverlo con un proxy de dificultad orgánica leído de la SERP con SerpApi, o reincorporar
   Ahrefs entonces. Se decide al discutir la fase 13, no antes.*
-- [ ] **KWR-03**: Cada keyword está clasificada por intención (informacional, comercial,
+- [x] **KWR-03**: Cada keyword está clasificada por intención (informacional, comercial,
   transaccional, navegacional) y por etapa del paciente (síntoma, diagnóstico, decisión)
 - [ ] **KWR-04**: Las keywords están agrupadas en clusters por solape de SERP, no por
   parecido de texto
@@ -179,9 +179,9 @@ Mapeada por `ROADMAP.md` del workstream `seo-keywords` el 2026-08-10.
 | INFRA-01 | Fase 12 | Completo (12-02) |
 | INFRA-02 | Fase 12 | Pendiente |
 | INFRA-03 | Fase 12 | Pendiente |
-| KWR-01 | Fase 12 | Pendiente |
+| KWR-01 | Fase 12 | Completo (12-03, 12-04) |
 | KWR-02 | Fase 12 | Pendiente |
-| KWR-03 | Fase 12 | Pendiente |
+| KWR-03 | Fase 12 | Completo (12-04) |
 | KWR-04 | Fase 13 | Pendiente |
 | KWR-05 | Fase 13 | Pendiente |
 | KWR-06 | Fase 13 | Pendiente |
@@ -205,7 +205,7 @@ Mapeada por `ROADMAP.md` del workstream `seo-keywords` el 2026-08-10.
 | SHEET-03 | Fase 13 | Pendiente |
 | SHEET-04 | Fase 14 | Pendiente |
 | SHEET-05 | Fase 14 | Pendiente |
-| SHEET-06 | Fase 12 | Completo (12-02) |
+| SHEET-06 | Fase 12 | Completo (12-02, verificado contra el documento real en 12-04) |
 
 ### Resumen por fase
 

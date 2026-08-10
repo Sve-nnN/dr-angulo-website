@@ -5,15 +5,15 @@ milestone_name: "SEO semantico: keyword research y optimizacion on-page"
 current_phase: 12
 current_phase_name: Instrumentación de datos y universo de keywords
 status: executing
-stopped_at: "Completado 12-02-PLAN.md: modelo del Sheet, escritor idempotente y sheet:push. Carga real diferida al plan 04"
-last_updated: "2026-08-10T23:12:08.705Z"
-last_activity: 2026-08-10, cerrado el plan 12-02 con el escritor idempotente del Sheet
+stopped_at: "Completado 12-04-PLAN.md: universo clasificado, dataset consolidado y carga real en el Sheet del cliente. SHEET-06 cerrado"
+last_updated: "2026-08-10T23:53:12.244Z"
+last_activity: "2026-08-10, cerrado el plan 12-04: universo de 5716 keywords clasificado y cargado en el Sheet del cliente"
 progress:
   total_phases: 4
   completed_phases: 0
   total_plans: 5
-  completed_plans: 2
-  percent: 40
+  completed_plans: 4
+  percent: 80
 ---
 
 # Project State
@@ -28,11 +28,11 @@ See: .planning/PROJECT.md (updated 2026-08-10)
 ## Current Position
 
 Phase: 12 de 15 (Instrumentación de datos y universo de keywords), primera de las 4 fases de v1.2
-Plan: 12-02 y 12-03 cerrados. Siguen 12-04 (clasificación) y 12-05 (enriquecimiento)
-Status: Ejecutando la fase 12. El escritor del Sheet está listo y probado; la carga real al documento del cliente se difiere al plan 12-04
-Last activity: 2026-08-10, cerrado el plan 12-02: modelo del Sheet, escritor idempotente y `sheet:push`
+Plan: 12-01 a 12-04 cerrados. Sigue 12-05 (enriquecimiento de las 724 keywords sin métricas)
+Status: Ejecutando la fase 12. El universo está clasificado y cargado en el Sheet del cliente, y SHEET-06 quedó probado contra el documento real
+Last activity: 2026-08-10, cerrado el plan 12-04: clasificación determinista, dataset consolidado y primera carga real
 
-Progress: [████░░░░░░] 40% de v1.2
+Progress: [████████░░] 80% de v1.2
 
 ## Roadmap v1.2
 
@@ -63,7 +63,10 @@ Los dos milestones corren a la vez sobre el mismo repositorio.
 - **Reparto de los requisitos SHEET:** cada tab se llena en cuanto sus datos existen, no todos al final. SHEET-06 (idempotencia) va con el escritor en la fase 12 porque es propiedad del cargador, no de un tab.
 - **Punto dulce sobre volumen:** las keywords se eligen por KD alcanzable con el perfil de enlaces real del dominio, que es de agosto de 2026 y casi sin historial.
 - **[Fase 12] J-5 (2026-08-10):** la etapa del paciente va como columna `Patient Stage` al Sheet. Juan vetó dejarla solo en el dataset. No reabre J-3: la procedencia por métrica sigue fuera del documento.
-- **[Fase 12] J-6 (2026-08-10):** los residuos de plantilla se borran completos, las 51 filas de `Keyword Research` con casillas incluidas y las 6 de `Content Model`.
+- **[Fase 12] J-6 (2026-08-10):** los residuos de plantilla se borran completos, las 51 filas de `Keyword Research` con casillas incluidas y las 6 de `Content Model`. **Ejecutado en el plan 12-04**: 51 y 6 filas eliminadas y las cuatro columnas muertas de J-4 también.
+- **[Fase 12, plan 04] Tercer eje de alcance:** la clasificación agrega un eje ortogonal a intención y etapa que separa la deriva del universo real (veterinaria, académica, retail, CIE-10, geografía ajena, sector público, marca ajena, otra especialidad). 950 de 5716 keywords, el 16,6 %, no son demanda de este consultorio. Vive en el dataset y NO agrega columna al Sheet: no roza J-3.
+- **[Fase 12, plan 04] La etapa por defecto es `diagnostico`:** una keyword pelada como `hernia discal` es alguien que ya tiene el nombre de lo que le pasa.
+- **[Fase 12, plan 04] Las anulaciones registran solo lo que difiere de las reglas:** 38 sobre un residuo de 747. Una anulación redundante congela un no-cambio y le prohíbe a la fase 13 mejorar la regla que la produjo.
 
 ### Pending Todos
 
@@ -80,8 +83,8 @@ Los dos milestones corren a la vez sobre el mismo repositorio.
 
 ## Session Continuity
 
-Last session: 2026-08-10T23:12:08.699Z
-Stopped at: Completado 12-02-PLAN.md: modelo del Sheet, escritor idempotente y sheet:push. Carga real diferida al plan 04
+Last session: 2026-08-10T23:53:12.237Z
+Stopped at: Completado 12-04-PLAN.md: universo clasificado, dataset consolidado y carga real en el Sheet del cliente. SHEET-06 cerrado
 Resume file: None
 
 ## Performance Metrics
@@ -89,3 +92,4 @@ Resume file: None
 | Plan | Duration | Tasks | Files |
 |------|----------|-------|-------|
 | Phase 12 P02 | 1h | 3 tasks | 7 files |
+| Phase 12 P04 | 3h | 3 tasks | 6 files |
