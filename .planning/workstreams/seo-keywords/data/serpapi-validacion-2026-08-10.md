@@ -6,6 +6,46 @@ llamada real antes de ejecutar la fase 12.
 
 **Consulta:** `cirujano de columna`, engine `google`, `location: Lima, Peru`, `gl=pe`, `hl=es`.
 
+## Restricción dura de cuota, verificada el 2026-08-10
+
+`SERPAPI_API_KEY` está en `.secrets/.env` y el REST directo responde 200. Pero la cuenta está
+en plan gratuito:
+
+```
+account_email:        juancarlosanguloabud@gmail.com
+account_status:       Active
+plan_name:            Free Plan
+searches_per_month:   250
+this_month_usage:     123
+total_searches_left:  127
+plan_renewal_date:    2026-08-21
+account_rate_limit_per_hour: 250
+```
+
+**Quedan 127 búsquedas hasta el 21 de agosto.** Con Ahrefs diferido, SerpApi es la fuente
+principal de expansión, así que esto deja de ser holgura y pasa a ser el recurso escaso del
+milestone.
+
+Reparto propuesto:
+
+| Uso | Búsquedas |
+|---|---|
+| Expansión de la fase 12 | 60, tope duro en el CLI |
+| Margen de reintentos y validación | 20 |
+| Sobrante para arrancar la fase 13 | 47 |
+
+**Consecuencia sobre la fase 13:** COMP-03 pide capturar la SERP de cada cluster. Con 20 o 30
+clusters, 47 búsquedas no alcanzan. O se espera al reset del 21 de agosto, o se sube de plan.
+Se decide al cerrar la fase 12, cuando se sepa el número real de clusters.
+
+**Consecuencia sobre INFRA-03:** el caché deja de ser una optimización de costo y pasa a ser
+lo que hace viable el milestone. Cada consulta repetida es 1 de 127. La decisión de caché sin
+TTL con invalidación explícita queda confirmada por esto, no solo por preferencia.
+
+**Consecuencia sobre el CLI:** hace falta un tope de cuota que se haga cumplir solo, con
+contador persistido entre ejecuciones y aborto al llegar al límite. Un comentario en el código
+no sirve.
+
 ## Qué devuelve, y para qué sirve cada bloque
 
 | Bloque | Cantidad | Consume |
