@@ -20,16 +20,16 @@ progress:
 See: .planning/PROJECT.md (updated 2026-08-10)
 
 **Core value:** Que un paciente que busca traumatólogo/cirujano de columna en Lima encuentre el sitio y agende cita por WhatsApp en menos de 2 clics, con todo evento rastreado.
-**Current focus:** Fase 7. OJO: verificado el 2026-08-09, `https://drangulocolumna.com` ya sirve el sitio real (canonical y JSON-LD con el dominio propio, sitemap correcto), no la página parqueada. Lo que queda de la fase es confirmar el estado en Dokploy y cerrar Search Console.
+**Current focus:** Fase 10, schema y metadata. Las fases 7, 8 y 9 están cerradas y desplegadas: el sitio vive en su dominio, tiene silo clínico con 4 páginas de servicio y 4 posts largos, y 4 páginas de sede. Sitemap en 21 URLs.
 
 ## Current Position
 
-Phase: 8 de 11 (Silo clínico), cerrada y en producción. La siguiente es la 9 (Páginas por sede)
-Plan: fase 8 con 4 planes ejecutados más una ronda de rediseño pedida por el cliente. Fase 7 cerrada salvo DOM-04, diferido
-Status: Listo para planificar la fase 9
-Last activity: 2026-08-10, fase 8 desplegada y verificada en producción, 13 rutas en 200
+Phase: 9 de 11 (Páginas por sede), cerrada y en producción. La siguiente es la 10 (Schema, metadata y limpieza técnica)
+Plan: fases 7, 8 y 9 cerradas. Fase 10 con contexto escrito, sin planes todavía
+Status: Listo para planificar la fase 10
+Last activity: 2026-08-10, fase 9 desplegada y verificada en producción
 
-Progress: [████████░░] 80% de v1.1
+Progress: [██████████] 100% de las fases de contenido de v1.1, quedan 10 y 11
 
 ### Estado de la fase 8, verificado en producción el 2026-08-10
 
@@ -80,7 +80,7 @@ Ver tabla completa en PROJECT.md, sección Key Decisions.
 
 - **Deploy: Dokploy self-hosted, no Vercel.** Infraestructura propia de Juan (Hetzner + Dokploy en `/Users/juan/Documents/Codigo/Personal/hosting`), el mismo stack de juantech y Juan Portfolio. Repo: `github.com/Sve-nnN/dr-angulo-website`. Dokploy: proyecto `client-dr-angulo`, `applicationId: 29ZFzVVwEczNI733DodMp`, appName real `dr-angulo-website-nqscdc`. Pasos de dominio y variables en `.planning/milestones/v1.0-phases/04-contenido-seo-legal-y-publicaci-n/04-VERIFICATION.md`, sección Human Verification Required.
 - **Arquitectura en silo:** una URL por servicio y una por sede. La SERP de Lima está segmentada por condición y por clínica, y una sola página `/servicios` no compite contra dominios exact-match. Se valida en las fases 8 y 9.
-- **Contenido médico con gate humano:** todo texto clínico nuevo o expandido (SVC-01 a SVC-04, BLOG-02) lo redacta el agente y lo aprueba el doctor antes de publicar. No es verificación automatizable.
+- **Contenido médico SIN gate previo, cambiado el 2026-08-10 por decisión de Juan.** El texto clínico se publica y el doctor revisa después. Además las páginas van firmadas por él. Lo que reemplaza a la aprobación previa son las salvaguardas verificadas por máquina en `scripts/check-content.mjs`: cero credenciales fuera de `cv.ts`, cero cifras de cirugías, tasas de éxito, plazos garantizados o precios, cero voz en primera persona sobre casos, y schema sin `reviewedBy` ni `lastReviewed`.
 
 ### Pending Todos
 
