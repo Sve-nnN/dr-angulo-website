@@ -2,8 +2,23 @@
   "schema": 1,
   "generadoPor": "seo-tools/src/phase13/serp-candidates.ts",
   "presupuesto": 90,
-  "objetivoDeCabezas": 95,
+  "objetivoDeCabezas": 91,
   "candidatas": [
+    {
+      "keyword": "traumatólogo ortopedia infantil",
+      "keywordKey": "traumatologo ortopedia infantil",
+      "rango": 0,
+      "familia": "agregadas-en-la-revision",
+      "etiqueta": "Agregadas en la revision de Juan",
+      "motivo": "Juan la agrego en la revision del checkpoint, por encima del criterio automatico. Su rango automatico era 5.",
+      "volumen": 70,
+      "volumenFuente": "dinorank",
+      "intent": "comercial",
+      "alcance": "objetivo",
+      "enCache": false,
+      "posibleRuido": null,
+      "motivoRuido": null
+    },
     {
       "keyword": "hernia discal",
       "keywordKey": "hernia discal",
@@ -1040,21 +1055,6 @@
       "motivoRuido": null
     },
     {
-      "keyword": "cirujano de columna clínica montefiori",
-      "keywordKey": "cirujano de columna clinica montefiori",
-      "rango": 4,
-      "familia": "sedes",
-      "etiqueta": "Las cuatro sedes donde atiende el doctor",
-      "motivo": "Alimenta las cuatro URLs de sede de la fase 14. La related search `traumatologo especialista en columna clinica ricardo palma` ya esta verificada en la SERP de Lima y hoy no la responde ninguna URL del sitio. (sobre \"cirujano de columna\")",
-      "volumen": null,
-      "volumenFuente": "sin_datos",
-      "intent": "transaccional",
-      "alcance": "objetivo",
-      "enCache": false,
-      "posibleRuido": null,
-      "motivoRuido": null
-    },
-    {
       "keyword": "traumatólogo clínica ricardo palma",
       "keywordKey": "traumatologo clinica ricardo palma",
       "rango": 4,
@@ -1100,21 +1100,6 @@
       "motivoRuido": null
     },
     {
-      "keyword": "traumatólogo clínica montefiori",
-      "keywordKey": "traumatologo clinica montefiori",
-      "rango": 4,
-      "familia": "sedes",
-      "etiqueta": "Las cuatro sedes donde atiende el doctor",
-      "motivo": "Alimenta las cuatro URLs de sede de la fase 14. La related search `traumatologo especialista en columna clinica ricardo palma` ya esta verificada en la SERP de Lima y hoy no la responde ninguna URL del sitio. (sobre \"traumatologo\")",
-      "volumen": null,
-      "volumenFuente": "sin_datos",
-      "intent": "transaccional",
-      "alcance": "objetivo",
-      "enCache": false,
-      "posibleRuido": null,
-      "motivoRuido": null
-    },
-    {
       "keyword": "ortopedia infantil clínica ricardo palma",
       "keywordKey": "ortopedia infantil clinica ricardo palma",
       "rango": 4,
@@ -1147,21 +1132,6 @@
     {
       "keyword": "ortopedia infantil clínica tezza",
       "keywordKey": "ortopedia infantil clinica tezza",
-      "rango": 4,
-      "familia": "sedes",
-      "etiqueta": "Las cuatro sedes donde atiende el doctor",
-      "motivo": "Alimenta las cuatro URLs de sede de la fase 14. La related search `traumatologo especialista en columna clinica ricardo palma` ya esta verificada en la SERP de Lima y hoy no la responde ninguna URL del sitio. (sobre \"ortopedia infantil\")",
-      "volumen": null,
-      "volumenFuente": "sin_datos",
-      "intent": "transaccional",
-      "alcance": "objetivo",
-      "enCache": false,
-      "posibleRuido": null,
-      "motivoRuido": null
-    },
-    {
-      "keyword": "ortopedia infantil clínica montefiori",
-      "keywordKey": "ortopedia infantil clinica montefiori",
       "rango": 4,
       "familia": "sedes",
       "etiqueta": "Las cuatro sedes donde atiende el doctor",
@@ -1338,36 +1308,6 @@
       "enCache": false,
       "posibleRuido": null,
       "motivoRuido": null
-    },
-    {
-      "keyword": "cuál es el mejor antiinflamatorio para desgarro muscular",
-      "keywordKey": "cual es el mejor antiinflamatorio para desgarro muscular",
-      "rango": 5,
-      "familia": "resto-comercial",
-      "etiqueta": "El resto del universo objetivo con intencion de contratar",
-      "motivo": "Criterio literal de D-03: alcance objetivo, intencion comercial o transaccional y volumen medible mayor que cero, ordenado por volumen. (volumen 110)",
-      "volumen": 110,
-      "volumenFuente": "dinorank",
-      "intent": "comercial",
-      "alcance": "objetivo",
-      "enCache": false,
-      "posibleRuido": "farmacologico",
-      "motivoRuido": "Busca un farmaco o un remedio y no una operacion. La practica es quirurgica: la conversion es dudosa."
-    },
-    {
-      "keyword": "cual es el mejor antiinflamatorio para la artrosis",
-      "keywordKey": "cual es el mejor antiinflamatorio para la artrosis",
-      "rango": 5,
-      "familia": "resto-comercial",
-      "etiqueta": "El resto del universo objetivo con intencion de contratar",
-      "motivo": "Criterio literal de D-03: alcance objetivo, intencion comercial o transaccional y volumen medible mayor que cero, ordenado por volumen. (volumen 110)",
-      "volumen": 110,
-      "volumenFuente": "dinorank",
-      "intent": "comercial",
-      "alcance": "objetivo",
-      "enCache": false,
-      "posibleRuido": "farmacologico",
-      "motivoRuido": "Busca un farmaco o un remedio y no una operacion. La practica es quirurgica: la conversion es dudosa."
     },
     {
       "keyword": "tratamientos para desgarro muscular",
@@ -1552,21 +1492,6 @@
       "motivoRuido": "Compara dos especialidades entre si. Sirve de contenido, no de pagina de servicio."
     },
     {
-      "keyword": "traumatólogo ortopedia infantil",
-      "keywordKey": "traumatologo ortopedia infantil",
-      "rango": 5,
-      "familia": "resto-comercial",
-      "etiqueta": "El resto del universo objetivo con intencion de contratar",
-      "motivo": "Criterio literal de D-03: alcance objetivo, intencion comercial o transaccional y volumen medible mayor que cero, ordenado por volumen. (volumen 70)",
-      "volumen": 70,
-      "volumenFuente": "dinorank",
-      "intent": "comercial",
-      "alcance": "objetivo",
-      "enCache": false,
-      "posibleRuido": null,
-      "motivoRuido": null
-    },
-    {
       "keyword": "como curar un desgarro muscular en el muslo",
       "keywordKey": "como curar un desgarro muscular en el muslo",
       "rango": 5,
@@ -1580,6 +1505,21 @@
       "enCache": false,
       "posibleRuido": null,
       "motivoRuido": null
+    },
+    {
+      "keyword": "cuál es la mejor vitamina para la artrosis",
+      "keywordKey": "cual es la mejor vitamina para la artrosis",
+      "rango": 5,
+      "familia": "resto-comercial",
+      "etiqueta": "El resto del universo objetivo con intencion de contratar",
+      "motivo": "Criterio literal de D-03: alcance objetivo, intencion comercial o transaccional y volumen medible mayor que cero, ordenado por volumen. (volumen 50)",
+      "volumen": 50,
+      "volumenFuente": "dinorank",
+      "intent": "comercial",
+      "alcance": "objetivo",
+      "enCache": false,
+      "posibleRuido": "farmacologico",
+      "motivoRuido": "Busca un farmaco o un remedio y no una operacion. La practica es quirurgica: la conversion es dudosa."
     }
   ],
   "posiblesRuido": [
@@ -1657,36 +1597,6 @@
       "enCache": false,
       "posibleRuido": "definicional",
       "motivoRuido": "Es una consulta de enciclopedia. Trae trafico pero rara vez paciente."
-    },
-    {
-      "keyword": "cuál es el mejor antiinflamatorio para desgarro muscular",
-      "keywordKey": "cual es el mejor antiinflamatorio para desgarro muscular",
-      "rango": 5,
-      "familia": "resto-comercial",
-      "etiqueta": "El resto del universo objetivo con intencion de contratar",
-      "motivo": "Criterio literal de D-03: alcance objetivo, intencion comercial o transaccional y volumen medible mayor que cero, ordenado por volumen. (volumen 110)",
-      "volumen": 110,
-      "volumenFuente": "dinorank",
-      "intent": "comercial",
-      "alcance": "objetivo",
-      "enCache": false,
-      "posibleRuido": "farmacologico",
-      "motivoRuido": "Busca un farmaco o un remedio y no una operacion. La practica es quirurgica: la conversion es dudosa."
-    },
-    {
-      "keyword": "cual es el mejor antiinflamatorio para la artrosis",
-      "keywordKey": "cual es el mejor antiinflamatorio para la artrosis",
-      "rango": 5,
-      "familia": "resto-comercial",
-      "etiqueta": "El resto del universo objetivo con intencion de contratar",
-      "motivo": "Criterio literal de D-03: alcance objetivo, intencion comercial o transaccional y volumen medible mayor que cero, ordenado por volumen. (volumen 110)",
-      "volumen": 110,
-      "volumenFuente": "dinorank",
-      "intent": "comercial",
-      "alcance": "objetivo",
-      "enCache": false,
-      "posibleRuido": "farmacologico",
-      "motivoRuido": "Busca un farmaco o un remedio y no una operacion. La practica es quirurgica: la conversion es dudosa."
     }
   ],
   "duplicadosProbables": [
@@ -1776,11 +1686,32 @@
       "volumen": 20
     },
     {
+      "keyword": "cirujano de columna clínica montefiori",
+      "keywordKey": "cirujano de columna clinica montefiori",
+      "regla": "quitada-en-la-revision",
+      "motivo": "Juan la saco de la lista en el checkpoint de aprobacion.",
+      "volumen": null
+    },
+    {
       "keyword": "como se escribe ortopedia",
       "keywordKey": "como se escribe ortopedia",
       "regla": "lexico-o-traduccion",
       "motivo": "Es una consulta de diccionario y no de paciente: no hay servicio que ofrecerle.",
       "volumen": 10
+    },
+    {
+      "keyword": "cuál es el mejor antiinflamatorio para desgarro muscular",
+      "keywordKey": "cual es el mejor antiinflamatorio para desgarro muscular",
+      "regla": "quitada-en-la-revision",
+      "motivo": "Juan la saco de la lista en el checkpoint de aprobacion.",
+      "volumen": 110
+    },
+    {
+      "keyword": "cual es el mejor antiinflamatorio para la artrosis",
+      "keywordKey": "cual es el mejor antiinflamatorio para la artrosis",
+      "regla": "quitada-en-la-revision",
+      "motivo": "Juan la saco de la lista en el checkpoint de aprobacion.",
+      "volumen": 110
     },
     {
       "keyword": "cual es el mejor neurocirujano del mundo",
@@ -1991,6 +1922,13 @@
       "regla": "lexico-o-traduccion",
       "motivo": "Es una consulta de diccionario y no de paciente: no hay servicio que ofrecerle.",
       "volumen": 10
+    },
+    {
+      "keyword": "ortopedia infantil clínica montefiori",
+      "keywordKey": "ortopedia infantil clinica montefiori",
+      "regla": "quitada-en-la-revision",
+      "motivo": "Juan la saco de la lista en el checkpoint de aprobacion.",
+      "volumen": null
     },
     {
       "keyword": "ortopedia lince",
@@ -2217,6 +2155,13 @@
       "volumen": 20
     },
     {
+      "keyword": "traumatólogo clínica montefiori",
+      "keywordKey": "traumatologo clinica montefiori",
+      "regla": "quitada-en-la-revision",
+      "motivo": "Juan la saco de la lista en el checkpoint de aprobacion.",
+      "volumen": null
+    },
+    {
       "keyword": "traumatólogo en inglés",
       "keywordKey": "traumatologo en ingles",
       "regla": "lexico-o-traduccion",
@@ -2239,22 +2184,23 @@
     }
   ],
   "resumen": {
-    "cabezas": 95,
+    "cabezas": 91,
     "porRango": {
+      "agregadas-en-la-revision": 1,
       "condiciones-nucleo": 4,
       "especialidad-y-procedimientos": 20,
       "geo-de-lima": 42,
-      "sedes": 12,
-      "resto-comercial": 17
+      "sedes": 9,
+      "resto-comercial": 15
     },
     "enCache": 7,
-    "busquedasNuevas": 88,
+    "busquedasNuevas": 84,
     "presupuesto": 90,
-    "holgura": 2,
-    "posiblesRuido": 7,
+    "holgura": 6,
+    "posiblesRuido": 5,
     "duplicadosProbables": 1,
     "cercaDelCorte": 10,
-    "excluidas": 70,
+    "excluidas": 75,
     "absorbidas": 8,
     "evaluadas": 4766
   }

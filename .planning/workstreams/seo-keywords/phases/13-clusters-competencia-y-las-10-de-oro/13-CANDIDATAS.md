@@ -1,10 +1,68 @@
-# Las 95 cabezas de cluster: qué compran las 90 búsquedas
+# Las 91 cabezas de cluster: qué compran las 90 búsquedas
 
 **Fecha:** 2026-08-11
-**Para:** aprobación de Juan antes de emitir la primera búsqueda
-**Estado del libro de cuota al abrir este informe:** SerpApi en **12**. Ninguna búsqueda se emitió todavía.
+**Estado:** **aprobado con cambios por Juan el 2026-08-11.**
+**Estado del libro de cuota al cerrar la revisión:** SerpApi en **12**. Ninguna búsqueda se emitió antes de la aprobación.
 
-Este documento es todo lo que hace falta para decidir. No hay que abrir ningún archivo de datos.
+Este documento es todo lo que hizo falta para decidir. No hay que abrir ningún archivo de datos.
+
+---
+
+## La decisión de Juan, 2026-08-11
+
+Aprobó la lista con tres cambios. Quedó en **91 cabezas, 84 búsquedas nuevas y 6 de holgura**.
+
+**Quitó las tres de clínica Montefiori:** `cirujano de columna clínica montefiori`,
+`traumatólogo clínica montefiori` y `ortopedia infantil clínica montefiori`. Montefiori está
+marcada como dato sin confirmar en `PROJECT.md` desde la fase 6, queda pendiente preguntarle al
+doctor si sigue atendiendo ahí, y no es ninguna de las cuatro sedes que el sitio publica. Gastar
+búsquedas irrecuperables en una sede sin confirmar no se justifica.
+
+**Quitó dos de las tres de farmacia:** `cuál es el mejor antiinflamatorio para desgarro muscular` y
+`cual es el mejor antiinflamatorio para la artrosis`. Son consultas de "qué pastilla tomo": la SERP
+la dominan farmacias y portales de salud, y aun ganándolas traen a alguien que busca automedicarse.
+
+**Mantuvo `las mejores pastillas para la ciática` (390), y la distinción importa.** Es de la misma
+familia que las dos que salieron, pero la ciática sí es una condición que el doctor trata y 390 es
+volumen alto para este mercado. Se queda **como contenido educativo de captación, no como página de
+servicio.** Que la intención registrada diga "comercial" no la convierte en transaccional: en la
+fase 14 esta keyword se mapea a un artículo, nunca a una página de conversión.
+
+**Sumó `traumatólogo ortopedia infantil` (70)** desde la lista de cerca del corte. Es uno de los
+cuatro servicios centrales, y wave 1 midió que `ortopedia infantil` es la única condición núcleo
+cuya SERP premia páginas de servicio, o sea la más ganable de las cuatro.
+
+### Un detalle del recálculo que hay que dejar escrito
+
+Quitar cinco cabezas no libera cinco búsquedas por sí solo: el corte se recalcula y sube a las
+siguientes de la lista. En la primera regeneración eso volvió a dejar 95 cabezas y 88 búsquedas, y
+entre las que subieron estaba `cual es el mejor colageno para la artrosis`, que es exactamente la
+familia de farmacia que Juan acababa de rechazar.
+
+Se topó la lista en 91 cabezas para que las cinco que salieron no se reemplacen por keywords que
+nadie revisó. El comando que produjo el archivo final:
+
+```
+./node_modules/.bin/tsx src/phase13/serp-candidates.ts --budget 90 --heads 91 \
+  --exclude "cirujano de columna clínica montefiori,traumatólogo clínica montefiori,ortopedia infantil clínica montefiori,cuál es el mejor antiinflamatorio para desgarro muscular,cual es el mejor antiinflamatorio para la artrosis" \
+  --include "traumatólogo ortopedia infantil"
+```
+
+### Cómo quedaron los números
+
+| Concepto | Antes | Después |
+|---|---|---|
+| Cabezas | 95 | **91** |
+| Ya en caché, gratis | 7 | 7 |
+| Búsquedas que se emiten | 88 | **84** |
+| Holgura sobre el presupuesto de 90 | 2 | **6** |
+| Acumulado del libro al terminar | 100 | **96** de un techo de 102 |
+| Reserva que sobrevive | 26 | **30** |
+| Sedes | 12 | 9 |
+| Marcadas como posible ruido | 7 | 5 |
+
+Lo que sigue es el informe tal como se revisó. Las tablas describen las 95 originales; las cinco
+que salieron y la que entró están nombradas arriba.
 
 ---
 
