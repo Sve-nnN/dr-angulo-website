@@ -1,0 +1,715 @@
+{
+  "schema": 1,
+  "generadoPor": "src/phase13/gap.ts",
+  "dominioPropio": "drangulocolumna.com",
+  "cobertura": {
+    "serpMedidas": 91,
+    "serpSinMedir": 4675,
+    "universo": 4766,
+    "cabezas": 91,
+    "nota": "El gap solo se calcula sobre SERP efectivamente capturadas. Las que faltan no estan ni dentro ni fuera del gap: estan sin medir, y eso es un limite de presupuesto de SerpApi, no un diagnostico del sitio."
+  },
+  "destacadosMedidos": 0,
+  "destacadosSobre": 91,
+  "destacadosPorOcupante": {},
+  "porCompetidor": [
+    {
+      "domain": "drcarranzacolumna.com",
+      "name": "Dr. Paul Carranza",
+      "keywords": [
+        {
+          "keyword": "traumatología especialista en columna",
+          "keywordKey": "traumatologia especialista en columna",
+          "posicion": 6,
+          "url": "https://www.drcarranzacolumna.com/",
+          "cluster": "especialista-en-columna-y-trauma-en-lima",
+          "volumen": 110,
+          "volumenFuente": "dinorank"
+        },
+        {
+          "keyword": "mejor neurocirujano de columna lima",
+          "keywordKey": "mejor neurocirujano de columna lima",
+          "posicion": 6,
+          "url": "https://www.drcarranzacolumna.com/",
+          "cluster": "especialista-en-columna-y-trauma-en-lima",
+          "volumen": 90,
+          "volumenFuente": "dinorank"
+        },
+        {
+          "keyword": "cirujano de columna cerca de mí",
+          "keywordKey": "cirujano de columna cerca de mi",
+          "posicion": 3,
+          "url": "https://www.drcarranzacolumna.com/",
+          "cluster": "especialista-en-columna-y-trauma-en-lima",
+          "volumen": 0,
+          "volumenFuente": "dinorank"
+        },
+        {
+          "keyword": "neurocirujano cerca de mí",
+          "keywordKey": "neurocirujano cerca de mi",
+          "posicion": 6,
+          "url": "https://www.drcarranzacolumna.com/",
+          "cluster": "especialista-en-columna-y-trauma-en-lima",
+          "volumen": 0,
+          "volumenFuente": "dinorank"
+        },
+        {
+          "keyword": "neurocirujano lima",
+          "keywordKey": "neurocirujano lima",
+          "posicion": 9,
+          "url": "https://www.drcarranzacolumna.com/",
+          "cluster": "especialista-en-columna-y-trauma-en-lima",
+          "volumen": 0,
+          "volumenFuente": "dinorank"
+        },
+        {
+          "keyword": "traumatólogo de columna",
+          "keywordKey": "traumatologo de columna",
+          "posicion": 6,
+          "url": "https://www.drcarranzacolumna.com/",
+          "cluster": "especialista-en-columna-y-trauma-en-lima",
+          "volumen": 0,
+          "volumenFuente": "dinorank"
+        },
+        {
+          "keyword": "cirugía de columna cerca de mí",
+          "keywordKey": "cirugia de columna cerca de mi",
+          "posicion": 5,
+          "url": "https://www.drcarranzacolumna.com/",
+          "cluster": "especialista-en-columna-y-trauma-en-lima",
+          "volumen": null,
+          "volumenFuente": "sin_datos"
+        },
+        {
+          "keyword": "cirugía de columna lima",
+          "keywordKey": "cirugia de columna lima",
+          "posicion": 4,
+          "url": "https://www.drcarranzacolumna.com/",
+          "cluster": "especialista-en-columna-y-trauma-en-lima",
+          "volumen": null,
+          "volumenFuente": "sin_datos"
+        },
+        {
+          "keyword": "cirugía de columna san isidro",
+          "keywordKey": "cirugia de columna san isidro",
+          "posicion": 5,
+          "url": "https://www.drcarranzacolumna.com/",
+          "cluster": "especialista-en-columna-y-trauma-en-lima",
+          "volumen": null,
+          "volumenFuente": "sin_datos"
+        },
+        {
+          "keyword": "cirugía de columna surco",
+          "keywordKey": "cirugia de columna surco",
+          "posicion": 7,
+          "url": "https://www.drcarranzacolumna.com/",
+          "cluster": "especialista-en-columna-y-trauma-en-lima",
+          "volumen": null,
+          "volumenFuente": "sin_datos"
+        },
+        {
+          "keyword": "cirugía endoscópica de columna en lima",
+          "keywordKey": "cirugia endoscopica de columna en lima",
+          "posicion": 4,
+          "url": "https://www.drcarranzacolumna.com/",
+          "cluster": "especialista-en-columna-y-trauma-en-lima",
+          "volumen": null,
+          "volumenFuente": "sin_datos"
+        },
+        {
+          "keyword": "cirujano de columna",
+          "keywordKey": "cirujano de columna",
+          "posicion": 6,
+          "url": "https://www.drcarranzacolumna.com/",
+          "cluster": "especialista-en-columna-y-trauma-en-lima",
+          "volumen": null,
+          "volumenFuente": "sin_datos"
+        },
+        {
+          "keyword": "cirujano de columna clínica tezza",
+          "keywordKey": "cirujano de columna clinica tezza",
+          "posicion": 8,
+          "url": "https://www.drcarranzacolumna.com/",
+          "cluster": "cirujano-de-columna-clinica-tezza",
+          "volumen": null,
+          "volumenFuente": "sin_datos"
+        },
+        {
+          "keyword": "cirujano de columna lima",
+          "keywordKey": "cirujano de columna lima",
+          "posicion": 3,
+          "url": "https://www.drcarranzacolumna.com/",
+          "cluster": "especialista-en-columna-y-trauma-en-lima",
+          "volumen": null,
+          "volumenFuente": "sin_datos"
+        },
+        {
+          "keyword": "cirujano de columna san isidro",
+          "keywordKey": "cirujano de columna san isidro",
+          "posicion": 6,
+          "url": "https://www.drcarranzacolumna.com/",
+          "cluster": "especialista-en-columna-y-trauma-en-lima",
+          "volumen": null,
+          "volumenFuente": "sin_datos"
+        },
+        {
+          "keyword": "cirujano de columna surco",
+          "keywordKey": "cirujano de columna surco",
+          "posicion": 9,
+          "url": "https://www.drcarranzacolumna.com/",
+          "cluster": "especialista-en-columna-y-trauma-en-lima",
+          "volumen": null,
+          "volumenFuente": "sin_datos"
+        },
+        {
+          "keyword": "neurocirujano san isidro",
+          "keywordKey": "neurocirujano san isidro",
+          "posicion": 6,
+          "url": "https://www.drcarranzacolumna.com/",
+          "cluster": "neurocirujano-san-isidro",
+          "volumen": null,
+          "volumenFuente": "sin_datos"
+        }
+      ],
+      "aparicionesEnTop": 17,
+      "aparicionesEnPackLocal": 0,
+      "featuredSnippets": 0,
+      "mejorPosicion": 3
+    },
+    {
+      "domain": "drciezatraumatologia.com",
+      "name": "Dr. Ramiro Cieza",
+      "keywords": [
+        {
+          "keyword": "traumatología especialista en columna",
+          "keywordKey": "traumatologia especialista en columna",
+          "posicion": 7,
+          "url": "https://www.drciezatraumatologia.com/",
+          "cluster": "especialista-en-columna-y-trauma-en-lima",
+          "volumen": 110,
+          "volumenFuente": "dinorank"
+        },
+        {
+          "keyword": "cirujano de columna cerca de mí",
+          "keywordKey": "cirujano de columna cerca de mi",
+          "posicion": 4,
+          "url": "https://www.drciezatraumatologia.com/",
+          "cluster": "especialista-en-columna-y-trauma-en-lima",
+          "volumen": 0,
+          "volumenFuente": "dinorank"
+        },
+        {
+          "keyword": "cirugía de columna san isidro",
+          "keywordKey": "cirugia de columna san isidro",
+          "posicion": 1,
+          "url": "https://www.drciezatraumatologia.com/",
+          "cluster": "especialista-en-columna-y-trauma-en-lima",
+          "volumen": null,
+          "volumenFuente": "sin_datos"
+        },
+        {
+          "keyword": "cirujano de columna",
+          "keywordKey": "cirujano de columna",
+          "posicion": 5,
+          "url": "https://www.drciezatraumatologia.com/",
+          "cluster": "especialista-en-columna-y-trauma-en-lima",
+          "volumen": null,
+          "volumenFuente": "sin_datos"
+        },
+        {
+          "keyword": "cirujano de columna san isidro",
+          "keywordKey": "cirujano de columna san isidro",
+          "posicion": 2,
+          "url": "https://www.drciezatraumatologia.com/",
+          "cluster": "especialista-en-columna-y-trauma-en-lima",
+          "volumen": null,
+          "volumenFuente": "sin_datos"
+        }
+      ],
+      "aparicionesEnTop": 5,
+      "aparicionesEnPackLocal": 5,
+      "featuredSnippets": 0,
+      "mejorPosicion": 1
+    },
+    {
+      "domain": "cirujanocolumna-elaos.com",
+      "name": "Dr. Eduardo Laos",
+      "keywords": [
+        {
+          "keyword": "mejor neurocirujano de columna lima",
+          "keywordKey": "mejor neurocirujano de columna lima",
+          "posicion": 2,
+          "url": "https://www.cirujanocolumna-elaos.com/",
+          "cluster": "especialista-en-columna-y-trauma-en-lima",
+          "volumen": 90,
+          "volumenFuente": "dinorank"
+        },
+        {
+          "keyword": "cirujano de columna cerca de mí",
+          "keywordKey": "cirujano de columna cerca de mi",
+          "posicion": 6,
+          "url": "https://www.cirujanocolumna-elaos.com/",
+          "cluster": "especialista-en-columna-y-trauma-en-lima",
+          "volumen": 0,
+          "volumenFuente": "dinorank"
+        },
+        {
+          "keyword": "neurocirujano lima",
+          "keywordKey": "neurocirujano lima",
+          "posicion": 3,
+          "url": "https://www.cirujanocolumna-elaos.com/",
+          "cluster": "especialista-en-columna-y-trauma-en-lima",
+          "volumen": 0,
+          "volumenFuente": "dinorank"
+        },
+        {
+          "keyword": "cirugía de columna cerca de mí",
+          "keywordKey": "cirugia de columna cerca de mi",
+          "posicion": 7,
+          "url": "https://www.cirujanocolumna-elaos.com/",
+          "cluster": "especialista-en-columna-y-trauma-en-lima",
+          "volumen": null,
+          "volumenFuente": "sin_datos"
+        },
+        {
+          "keyword": "cirugía de columna lima",
+          "keywordKey": "cirugia de columna lima",
+          "posicion": 1,
+          "url": "https://www.cirujanocolumna-elaos.com/",
+          "cluster": "especialista-en-columna-y-trauma-en-lima",
+          "volumen": null,
+          "volumenFuente": "sin_datos"
+        },
+        {
+          "keyword": "cirugía endoscópica de columna en lima",
+          "keywordKey": "cirugia endoscopica de columna en lima",
+          "posicion": 3,
+          "url": "https://www.cirujanocolumna-elaos.com/",
+          "cluster": "especialista-en-columna-y-trauma-en-lima",
+          "volumen": null,
+          "volumenFuente": "sin_datos"
+        },
+        {
+          "keyword": "cirujano de columna",
+          "keywordKey": "cirujano de columna",
+          "posicion": 1,
+          "url": "https://www.cirujanocolumna-elaos.com/",
+          "cluster": "especialista-en-columna-y-trauma-en-lima",
+          "volumen": null,
+          "volumenFuente": "sin_datos"
+        },
+        {
+          "keyword": "cirujano de columna lima",
+          "keywordKey": "cirujano de columna lima",
+          "posicion": 1,
+          "url": "https://www.cirujanocolumna-elaos.com/",
+          "cluster": "especialista-en-columna-y-trauma-en-lima",
+          "volumen": null,
+          "volumenFuente": "sin_datos"
+        },
+        {
+          "keyword": "endoscopía espinal en lima",
+          "keywordKey": "endoscopia espinal en lima",
+          "posicion": 9,
+          "url": "https://www.cirujanocolumna-elaos.com/",
+          "cluster": "especialista-en-columna-y-trauma-en-lima",
+          "volumen": null,
+          "volumenFuente": "sin_datos"
+        },
+        {
+          "keyword": "neurocirujano",
+          "keywordKey": "neurocirujano",
+          "posicion": 6,
+          "url": "https://www.cirujanocolumna-elaos.com/",
+          "cluster": "especialista-en-columna-y-trauma-en-lima",
+          "volumen": null,
+          "volumenFuente": "sin_datos"
+        }
+      ],
+      "aparicionesEnTop": 10,
+      "aparicionesEnPackLocal": 0,
+      "featuredSnippets": 0,
+      "mejorPosicion": 1
+    },
+    {
+      "domain": "doctormunguia.com",
+      "name": "Dr. Gunter Munguia",
+      "keywords": [
+        {
+          "keyword": "cirugía endoscópica de columna en lima",
+          "keywordKey": "cirugia endoscopica de columna en lima",
+          "posicion": 7,
+          "url": "https://doctormunguia.com/cirugia-endoscopica-de-columna/",
+          "cluster": "especialista-en-columna-y-trauma-en-lima",
+          "volumen": null,
+          "volumenFuente": "sin_datos"
+        }
+      ],
+      "aparicionesEnTop": 1,
+      "aparicionesEnPackLocal": 5,
+      "featuredSnippets": 0,
+      "mejorPosicion": 7
+    },
+    {
+      "domain": "clinicarthromeds.pe",
+      "name": "Clinica Arthromeds",
+      "keywords": [
+        {
+          "keyword": "traumatología lima",
+          "keywordKey": "traumatologia lima",
+          "posicion": 9,
+          "url": "https://clinicarthromeds.pe/mejor-traumatologo-en-lima-peru/",
+          "cluster": "especialista-en-columna-y-trauma-en-lima",
+          "volumen": 880,
+          "volumenFuente": "dinorank"
+        },
+        {
+          "keyword": "mejor clínica de traumatología en lima",
+          "keywordKey": "mejor clinica de traumatologia en lima",
+          "posicion": 4,
+          "url": "https://clinicarthromeds.pe/mejor-traumatologo-en-lima-peru/",
+          "cluster": "especialista-en-columna-y-trauma-en-lima",
+          "volumen": 210,
+          "volumenFuente": "dinorank"
+        },
+        {
+          "keyword": "traumatología especialista en columna",
+          "keywordKey": "traumatologia especialista en columna",
+          "posicion": 2,
+          "url": "https://clinicarthromeds.pe/traumatologo-especialista-en-columna-lima-peru/",
+          "cluster": "especialista-en-columna-y-trauma-en-lima",
+          "volumen": 110,
+          "volumenFuente": "dinorank"
+        },
+        {
+          "keyword": "traumatólogo ortopedia infantil",
+          "keywordKey": "traumatologo ortopedia infantil",
+          "posicion": 1,
+          "url": "https://clinicarthromeds.pe/traumatologia-pedriatica-infantil-y-ortopedia-lima-peru/",
+          "cluster": "especialista-en-columna-y-trauma-en-lima",
+          "volumen": 70,
+          "volumenFuente": "dinorank"
+        },
+        {
+          "keyword": "ortopedia infantil cerca de mí",
+          "keywordKey": "ortopedia infantil cerca de mi",
+          "posicion": 2,
+          "url": "https://clinicarthromeds.pe/traumatologia-pedriatica-infantil-y-ortopedia-lima-peru/",
+          "cluster": "especialista-en-columna-y-trauma-en-lima",
+          "volumen": 10,
+          "volumenFuente": "dinorank"
+        },
+        {
+          "keyword": "cirujano de columna cerca de mí",
+          "keywordKey": "cirujano de columna cerca de mi",
+          "posicion": 1,
+          "url": "https://clinicarthromeds.pe/traumatologo-especialista-en-columna-lima-peru/",
+          "cluster": "especialista-en-columna-y-trauma-en-lima",
+          "volumen": 0,
+          "volumenFuente": "dinorank"
+        },
+        {
+          "keyword": "ortopedia infantil lima",
+          "keywordKey": "ortopedia infantil lima",
+          "posicion": 1,
+          "url": "https://clinicarthromeds.pe/traumatologia-pedriatica-infantil-y-ortopedia-lima-peru/",
+          "cluster": "especialista-en-columna-y-trauma-en-lima",
+          "volumen": 0,
+          "volumenFuente": "dinorank"
+        },
+        {
+          "keyword": "traumatología y ortopedia cerca de mí",
+          "keywordKey": "traumatologia y ortopedia cerca de mi",
+          "posicion": 5,
+          "url": "https://clinicarthromeds.pe/",
+          "cluster": "especialista-en-columna-y-trauma-en-lima",
+          "volumen": 0,
+          "volumenFuente": "dinorank"
+        },
+        {
+          "keyword": "traumatólogo cerca de mí",
+          "keywordKey": "traumatologo cerca de mi",
+          "posicion": 3,
+          "url": "https://clinicarthromeds.pe/",
+          "cluster": "especialista-en-columna-y-trauma-en-lima",
+          "volumen": 0,
+          "volumenFuente": "dinorank"
+        },
+        {
+          "keyword": "traumatólogo de columna",
+          "keywordKey": "traumatologo de columna",
+          "posicion": 2,
+          "url": "https://clinicarthromeds.pe/traumatologo-especialista-en-columna-lima-peru/",
+          "cluster": "especialista-en-columna-y-trauma-en-lima",
+          "volumen": 0,
+          "volumenFuente": "dinorank"
+        },
+        {
+          "keyword": "cirugía de columna cerca de mí",
+          "keywordKey": "cirugia de columna cerca de mi",
+          "posicion": 2,
+          "url": "https://clinicarthromeds.pe/traumatologo-especialista-en-columna-lima-peru/",
+          "cluster": "especialista-en-columna-y-trauma-en-lima",
+          "volumen": null,
+          "volumenFuente": "sin_datos"
+        },
+        {
+          "keyword": "cirugía de columna lima",
+          "keywordKey": "cirugia de columna lima",
+          "posicion": 3,
+          "url": "https://clinicarthromeds.pe/traumatologo-especialista-en-columna-lima-peru/",
+          "cluster": "especialista-en-columna-y-trauma-en-lima",
+          "volumen": null,
+          "volumenFuente": "sin_datos"
+        },
+        {
+          "keyword": "cirugía de columna san isidro",
+          "keywordKey": "cirugia de columna san isidro",
+          "posicion": 9,
+          "url": "https://clinicarthromeds.pe/traumatologo-especialista-en-columna-lima-peru/",
+          "cluster": "especialista-en-columna-y-trauma-en-lima",
+          "volumen": null,
+          "volumenFuente": "sin_datos"
+        },
+        {
+          "keyword": "cirujano de columna",
+          "keywordKey": "cirujano de columna",
+          "posicion": 4,
+          "url": "https://clinicarthromeds.pe/traumatologo-especialista-en-columna-lima-peru/",
+          "cluster": "especialista-en-columna-y-trauma-en-lima",
+          "volumen": null,
+          "volumenFuente": "sin_datos"
+        },
+        {
+          "keyword": "cirujano de columna clínica ricardo palma",
+          "keywordKey": "cirujano de columna clinica ricardo palma",
+          "posicion": 8,
+          "url": "https://clinicarthromeds.pe/dr-hittler-torres/",
+          "cluster": "cirujano-de-columna-clinica-ricardo-palma",
+          "volumen": null,
+          "volumenFuente": "sin_datos"
+        },
+        {
+          "keyword": "cirujano de columna lima",
+          "keywordKey": "cirujano de columna lima",
+          "posicion": 6,
+          "url": "https://clinicarthromeds.pe/traumatologo-especialista-en-columna-lima-peru/",
+          "cluster": "especialista-en-columna-y-trauma-en-lima",
+          "volumen": null,
+          "volumenFuente": "sin_datos"
+        },
+        {
+          "keyword": "cirujano de columna san isidro",
+          "keywordKey": "cirujano de columna san isidro",
+          "posicion": 9,
+          "url": "https://clinicarthromeds.pe/traumatologo-especialista-en-columna-lima-peru/",
+          "cluster": "especialista-en-columna-y-trauma-en-lima",
+          "volumen": null,
+          "volumenFuente": "sin_datos"
+        },
+        {
+          "keyword": "hernia discal lumbar y cervical en lima",
+          "keywordKey": "hernia discal lumbar y cervical en lima",
+          "posicion": 6,
+          "url": "https://clinicarthromeds.pe/especialidades-quirurgicas/cirugia-para-hernia-discal-lumbal-y-cervical/",
+          "cluster": "hernia-discal-lumbar-y-cervical-en-lima",
+          "volumen": null,
+          "volumenFuente": "sin_datos"
+        },
+        {
+          "keyword": "ortopedia infantil",
+          "keywordKey": "ortopedia infantil",
+          "posicion": 2,
+          "url": "https://clinicarthromeds.pe/traumatologia-pedriatica-infantil-y-ortopedia-lima-peru/",
+          "cluster": "especialista-en-columna-y-trauma-en-lima",
+          "volumen": null,
+          "volumenFuente": "sin_datos"
+        },
+        {
+          "keyword": "ortopedia infantil clínica tezza",
+          "keywordKey": "ortopedia infantil clinica tezza",
+          "posicion": 8,
+          "url": "https://clinicarthromeds.pe/traumatologia-pedriatica-infantil-y-ortopedia-lima-peru/",
+          "cluster": "cirujano-de-columna-clinica-tezza",
+          "volumen": null,
+          "volumenFuente": "sin_datos"
+        },
+        {
+          "keyword": "ortopedia infantil san isidro",
+          "keywordKey": "ortopedia infantil san isidro",
+          "posicion": 8,
+          "url": "https://clinicarthromeds.pe/traumatologia-pedriatica-infantil-y-ortopedia-lima-peru/",
+          "cluster": "especialista-en-columna-y-trauma-en-lima",
+          "volumen": null,
+          "volumenFuente": "sin_datos"
+        },
+        {
+          "keyword": "ortopedia infantil surco",
+          "keywordKey": "ortopedia infantil surco",
+          "posicion": 9,
+          "url": "https://clinicarthromeds.pe/traumatologia-pedriatica-infantil-y-ortopedia-lima-peru/",
+          "cluster": "especialista-en-columna-y-trauma-en-lima",
+          "volumen": null,
+          "volumenFuente": "sin_datos"
+        },
+        {
+          "keyword": "traumatología cerca de mí",
+          "keywordKey": "traumatologia cerca de mi",
+          "posicion": 5,
+          "url": "https://clinicarthromeds.pe/",
+          "cluster": "especialista-en-columna-y-trauma-en-lima",
+          "volumen": null,
+          "volumenFuente": "sin_datos"
+        },
+        {
+          "keyword": "traumatólogo",
+          "keywordKey": "traumatologo",
+          "posicion": 5,
+          "url": "https://clinicarthromeds.pe/mejor-traumatologo-en-lima-peru/",
+          "cluster": "especialista-en-columna-y-trauma-en-lima",
+          "volumen": null,
+          "volumenFuente": "sin_datos"
+        },
+        {
+          "keyword": "traumatólogo lima",
+          "keywordKey": "traumatologo lima",
+          "posicion": 6,
+          "url": "https://clinicarthromeds.pe/mejor-traumatologo-en-lima-peru/",
+          "cluster": "especialista-en-columna-y-trauma-en-lima",
+          "volumen": null,
+          "volumenFuente": "sin_datos"
+        },
+        {
+          "keyword": "traumatólogo san isidro",
+          "keywordKey": "traumatologo san isidro",
+          "posicion": 5,
+          "url": "https://clinicarthromeds.pe/mejor-traumatologo-en-lima-peru/",
+          "cluster": "especialista-en-columna-y-trauma-en-lima",
+          "volumen": null,
+          "volumenFuente": "sin_datos"
+        },
+        {
+          "keyword": "traumatólogo surco",
+          "keywordKey": "traumatologo surco",
+          "posicion": 8,
+          "url": "https://clinicarthromeds.pe/",
+          "cluster": "especialista-en-columna-y-trauma-en-lima",
+          "volumen": null,
+          "volumenFuente": "sin_datos"
+        }
+      ],
+      "aparicionesEnTop": 27,
+      "aparicionesEnPackLocal": 14,
+      "featuredSnippets": 0,
+      "mejorPosicion": 1
+    }
+  ],
+  "competenciaDirecta": [],
+  "marcaAjenaComoInteligencia": [
+    {
+      "keyword": "clínica san bernardo especialistas en traumatología",
+      "keywordKey": "clinica san bernardo especialistas en traumatologia",
+      "volumen": 2400,
+      "objetivo": false,
+      "motivo": "Marca de un competidor. Se lee como inteligencia —dice a quien busca el paciente por nombre— y NUNCA se persigue: posicionar por la marca de otro no trae al paciente que este proyecto quiere y ademas no se sostiene (D-14)."
+    },
+    {
+      "keyword": "clínica de traumatología arthrosalud",
+      "keywordKey": "clinica de traumatologia arthrosalud",
+      "volumen": 1600,
+      "objetivo": false,
+      "motivo": "Marca de un competidor. Se lee como inteligencia —dice a quien busca el paciente por nombre— y NUNCA se persigue: posicionar por la marca de otro no trae al paciente que este proyecto quiere y ademas no se sostiene (D-14)."
+    },
+    {
+      "keyword": "ortopedia wong miraflores",
+      "keywordKey": "ortopedia wong miraflores",
+      "volumen": 720,
+      "objetivo": false,
+      "motivo": "Marca de un competidor. Se lee como inteligencia —dice a quien busca el paciente por nombre— y NUNCA se persigue: posicionar por la marca de otro no trae al paciente que este proyecto quiere y ademas no se sostiene (D-14)."
+    },
+    {
+      "keyword": "ortopedia wong locales",
+      "keywordKey": "ortopedia wong locales",
+      "volumen": 390,
+      "objetivo": false,
+      "motivo": "Marca de un competidor. Se lee como inteligencia —dice a quien busca el paciente por nombre— y NUNCA se persigue: posicionar por la marca de otro no trae al paciente que este proyecto quiere y ademas no se sostiene (D-14)."
+    },
+    {
+      "keyword": "ortopedia wong telefono",
+      "keywordKey": "ortopedia wong telefono",
+      "volumen": 320,
+      "objetivo": false,
+      "motivo": "Marca de un competidor. Se lee como inteligencia —dice a quien busca el paciente por nombre— y NUNCA se persigue: posicionar por la marca de otro no trae al paciente que este proyecto quiere y ademas no se sostiene (D-14)."
+    },
+    {
+      "keyword": "clínica de traumatología arthrosalud avenida paseo de la república lince",
+      "keywordKey": "clinica de traumatologia arthrosalud avenida paseo de la republica lince",
+      "volumen": 260,
+      "objetivo": false,
+      "motivo": "Marca de un competidor. Se lee como inteligencia —dice a quien busca el paciente por nombre— y NUNCA se persigue: posicionar por la marca de otro no trae al paciente que este proyecto quiere y ademas no se sostiene (D-14)."
+    },
+    {
+      "keyword": "ortopedia wong surco",
+      "keywordKey": "ortopedia wong surco",
+      "volumen": 260,
+      "objetivo": false,
+      "motivo": "Marca de un competidor. Se lee como inteligencia —dice a quien busca el paciente por nombre— y NUNCA se persigue: posicionar por la marca de otro no trae al paciente que este proyecto quiere y ademas no se sostiene (D-14)."
+    },
+    {
+      "keyword": "ortopedia wong en lima",
+      "keywordKey": "ortopedia wong en lima",
+      "volumen": 210,
+      "objetivo": false,
+      "motivo": "Marca de un competidor. Se lee como inteligencia —dice a quien busca el paciente por nombre— y NUNCA se persigue: posicionar por la marca de otro no trae al paciente que este proyecto quiere y ademas no se sostiene (D-14)."
+    },
+    {
+      "keyword": "ortopedia wong lima",
+      "keywordKey": "ortopedia wong lima",
+      "volumen": 210,
+      "objetivo": false,
+      "motivo": "Marca de un competidor. Se lee como inteligencia —dice a quien busca el paciente por nombre— y NUNCA se persigue: posicionar por la marca de otro no trae al paciente que este proyecto quiere y ademas no se sostiene (D-14)."
+    },
+    {
+      "keyword": "ortopedia medical life sjl",
+      "keywordKey": "ortopedia medical life sjl",
+      "volumen": 140,
+      "objetivo": false,
+      "motivo": "Marca de un competidor. Se lee como inteligencia —dice a quien busca el paciente por nombre— y NUNCA se persigue: posicionar por la marca de otro no trae al paciente que este proyecto quiere y ademas no se sostiene (D-14)."
+    },
+    {
+      "keyword": "ortopedia wong miraflores dirección",
+      "keywordKey": "ortopedia wong miraflores direccion",
+      "volumen": 140,
+      "objetivo": false,
+      "motivo": "Marca de un competidor. Se lee como inteligencia —dice a quien busca el paciente por nombre— y NUNCA se persigue: posicionar por la marca de otro no trae al paciente que este proyecto quiere y ademas no se sostiene (D-14)."
+    },
+    {
+      "keyword": "ortopedia juan de dios",
+      "keywordKey": "ortopedia juan de dios",
+      "volumen": 110,
+      "objetivo": false,
+      "motivo": "Marca de un competidor. Se lee como inteligencia —dice a quien busca el paciente por nombre— y NUNCA se persigue: posicionar por la marca de otro no trae al paciente que este proyecto quiere y ademas no se sostiene (D-14)."
+    },
+    {
+      "keyword": "ortopedia wong locales en lima",
+      "keywordKey": "ortopedia wong locales en lima",
+      "volumen": 110,
+      "objetivo": false,
+      "motivo": "Marca de un competidor. Se lee como inteligencia —dice a quien busca el paciente por nombre— y NUNCA se persigue: posicionar por la marca de otro no trae al paciente que este proyecto quiere y ademas no se sostiene (D-14)."
+    },
+    {
+      "keyword": "ortopedia wong miraflores telefono",
+      "keywordKey": "ortopedia wong miraflores telefono",
+      "volumen": 110,
+      "objetivo": false,
+      "motivo": "Marca de un competidor. Se lee como inteligencia —dice a quien busca el paciente por nombre— y NUNCA se persigue: posicionar por la marca de otro no trae al paciente que este proyecto quiere y ademas no se sostiene (D-14)."
+    },
+    {
+      "keyword": "ortopedia juan pablo ii",
+      "keywordKey": "ortopedia juan pablo ii",
+      "volumen": 90,
+      "objetivo": false,
+      "motivo": "Marca de un competidor. Se lee como inteligencia —dice a quien busca el paciente por nombre— y NUNCA se persigue: posicionar por la marca de otro no trae al paciente que este proyecto quiere y ademas no se sostiene (D-14)."
+    }
+  ]
+}

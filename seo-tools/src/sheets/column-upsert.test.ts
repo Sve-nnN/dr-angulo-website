@@ -422,9 +422,14 @@ test("comportamiento 5: un campo ausente deja la celda VACIA y nunca un cero", a
 test("comportamiento 5: las filas declaradas como no consultadas escriben su literal", async () => {
   const g = doble();
   await upsertColumns(g, modelo, CINCO, { dryRun: false });
-  // La fila 8 esta declarada `no-consultado` con literal `no_consultado` en el modelo.
-  assert.equal(g.celda("B8"), "no_consultado");
-  assert.equal(g.celda("F8"), "no_consultado");
+  // La fila 12, `Country 1`, esta declarada `no-consultado` con literal `no_consultado`.
+  //
+  // Esta prueba miraba la fila 8 hasta el plan 13-04. Dejo de servir ahi porque esa fila SI se
+  // consulto: `site-explorer/metrics` trajo el trafico organico en la misma llamada que las
+  // keywords, y mantener el literal habria declarado como no consultado un dato que ya estaba
+  // en la cache. El reparto de trafico por pais, en cambio, sigue sin pedirse.
+  assert.equal(g.celda("B12"), "no_consultado");
+  assert.equal(g.celda("F12"), "no_consultado");
 });
 
 // ---------------------------------------------------------------------------
