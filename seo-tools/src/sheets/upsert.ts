@@ -32,6 +32,7 @@ import {
   scanColumnReferences,
   trimHeader,
   type ColumnScanResult,
+  type ColumnStatus,
   type ScanTarget,
   type SpreadsheetGateway,
   type TabModel,
@@ -229,7 +230,31 @@ export interface UpsertOptions {
    * cliente.
    */
   readonly omitirCamposAusentes?: boolean;
+  /**
+   * Estados de columna que ESTA carga tiene permitido escribir.
+   *
+   * POR QUE ES UN PARAMETRO Y NO UNA LISTA FIJA EN EL CODIGO.
+   *
+   * Hasta la fase 13 la lista estaba escrita aca dentro y crecia con cada fase. Eso convertia
+   * cada ampliacion en un cambio GLOBAL: habilitar `fase-14` para que el plan 14-01 pudiera
+   * escribir `Content Model` habilitaria de paso que una carga de `Keyword Research` pisara
+   * columnas de fase 14, y como el escritor coalesce indices contiguos en rangos, bastaria con
+   * que una columna ajena quedara en medio de dos propias para que se sobreescribiera sin
+   * lanzar nada (T-13-02, T-14-01). Con el permiso declarado por quien llama, cada punto de
+   * entrada solo puede tocar lo suyo y la ampliacion de una fase no afloja las demas.
+   *
+   * El valor por defecto reproduce bit a bit el comportamiento anterior a la fase 14.
+   */
+  readonly estadosPropios?: readonly ColumnStatus[];
 }
+
+/** Lo que una carga podia escribir antes de que el permiso fuera explicito. */
+export const ESTADOS_PROPIOS_POR_DEFECTO: readonly ColumnStatus[] = [
+  "fase-12",
+  "no-consultado",
+  "nueva",
+  "fase-13",
+];
 
 export interface DuplicadoPreexistente {
   readonly clave: string;
@@ -326,20 +351,15 @@ export async function upsertRows(
     .filter(([, filas]) => filas.length > 1)
     .map(([clave, filas]) => ({ clave, filas }));
 
-  // Columnas que esta fase escribe. El resto del tab no se toca ni con un valor vacio.
+  // Columnas que esta carga escribe. El resto del tab no se toca ni con un valor vacio.
   //
-  // `fase-13` entra desde el plan 13-01: es lo que habilita `Cluster` y `Top Result`. Lo que
-  // NO puede entrar nunca es `fase-14` (`URL`) ni `fase-15` (`Suggested H1`); ampliar esta
-  // lista de mas haria que la carga pise columnas de fases que todavia no corrieron, y como
-  // el escritor coalesce indices contiguos en rangos, bastaria con que una columna ajena
-  // quedara en medio de dos propias para que se sobreescribiera sin lanzar nada (T-13-02).
-  const propias = [...schema.byHeader.values()].filter(
-    (c) =>
-      c.status === "fase-12" ||
-      c.status === "no-consultado" ||
-      c.status === "nueva" ||
-      c.status === "fase-13",
+  // El permiso lo declara quien llama, nunca este archivo: ver `estadosPropios`. Una carga de
+  // `Keyword Research` sigue sin poder tocar una columna de fase 14 aunque la fase 14 ya haya
+  // corrido, porque su punto de entrada no pide ese permiso.
+  const estadosPropios = new Set<ColumnStatus>(
+    options.estadosPropios ?? ESTADOS_PROPIOS_POR_DEFECTO,
   );
+  const propias = [...schema.byHeader.values()].filter((c) => estadosPropios.has(c.status));
   const runs = columnRuns(propias.map((c) => c.index));
 
   // Deduplicacion del propio dataset: dos escrituras de la misma keyword, una con tildes y
