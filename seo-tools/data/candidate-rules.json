@@ -147,6 +147,34 @@
       "terminaEn": []
     },
     {
+      "regla": "producto-farmaceutico",
+      "motivo": "Busca que producto tomarse y no a quien operarse. Esas SERP las dominan farmacias y portales de salud, un cirujano no las gana, y aunque las ganara traeria a alguien que busca automedicarse. Regla aprobada por Juan el 2026-08-11 despues de revisar la lista de candidatas.",
+      "//excepciones": "`las mejores pastillas para la ciatica` (390) se mantiene por decision explicita de Juan: la ciatica si es condicion que el doctor trata y 390 es volumen alto para este mercado. ATENCION PARA LA FASE 14: entra como contenido de captacion y NO como pagina de servicio. Que su intencion registrada diga `comercial` no la vuelve transaccional; quien la busca no esta por agendar cirugia.",
+      "excepciones": ["las mejores pastillas para la ciatica"],
+      "//contiene": "El patron es superlativo mas producto. `antiinflamatorio` a secas no alcanza: `cirugia vs antiinflamatorios` seria una comparacion legitima de tratamiento.",
+      "contiene": [
+        "mejor pastilla",
+        "mejores pastillas",
+        "mejor antiinflamatorio",
+        "mejores antiinflamatorios",
+        "mejor analgesico",
+        "mejores analgesicos",
+        "mejor colageno",
+        "mejor medicamento",
+        "mejores medicamentos",
+        "mejor crema",
+        "mejores cremas",
+        "mejor pomada",
+        "mejor vitamina",
+        "mejores vitaminas",
+        "mejor suplemento",
+        "mejor inyeccion",
+        "mejor calcio",
+        "mejor magnesio"
+      ],
+      "terminaEn": []
+    },
+    {
       "regla": "lexico-o-traduccion",
       "motivo": "Es una consulta de diccionario y no de paciente: no hay servicio que ofrecerle.",
       "contiene": [
