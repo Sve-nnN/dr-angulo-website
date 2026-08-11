@@ -18,13 +18,16 @@ jerarquía, entidades); las fases 8, 9 y 10 de v1.1 los implementan. Ningún req
 v1.2 escribe en `src/`.
 
 **Fuentes de datos** (decidido 2026-08-10):
+
 - **DinoRank** — primaria para volumen, CPC y competencia (`/keyword-research`), más
   TF-IDF semántico, canibalizaciones y auditoría on-page
+
 - **Ahrefs** — KD, traffic potential y referring domains needed, que DinoRank no devuelve.
   **Diferido, fuera de la fase 12** (decisión de Juan, 2026-08-10). Cuando se reincorpore:
   nunca para expandir el universo, solo para enriquecer una shortlist y perfilar
   competidores. Cuenta Lite de 100.000 unidades al mes, y la API v3 directa está incluida en
   ese plan consumiendo del mismo pool que el MCP
+
 - **SerpApi** — validación de la SERP real geolocalizada en Lima, y expansión por related
   searches, People Also Ask y autocomplete
 
@@ -62,12 +65,14 @@ Ricardo Palma, Sanna La Molina, Padre Luis Tezza), más el hub `/servicios` refo
 
 - [x] **INFRA-01**: Un script del repo escribe celdas en el Sheet del cliente con la
   service account de Google, sin intervención manual
+
 - [x] **INFRA-02**: Un cliente de la API de DinoRank consulta `/keyword-research`,
   `/tfidf`, `/auditoria` y `/canibalizaciones` con la clave fuera del control de versiones
   <br>*Cerrado en el plan 12-05. Los cuatro endpoints implementados y probados contra fixtures
   reales de Perú, con las pruebas corriendo sin clave. `/auditoria` y `/canibalizaciones`
   exigen además que el dominio esté dado de alta como proyecto en el panel de DinoRank, y el
   segundo que tenga Search Console conectado: es requisito del proveedor, no del cliente.*
+
 - [x] **INFRA-03**: Toda respuesta cruda de DinoRank, Ahrefs y SerpApi queda cacheada en
   disco, de modo que reprocesar el análisis no vuelva a consumir cuota de API
   <br>*Entregado por el plan 12-01 y verificado en la fuente más cara por el 12-05: reprocesar
@@ -77,6 +82,7 @@ Ricardo Palma, Sanna La Molina, Padre Luis Tezza), más el hub `/servicios` refo
 
 - [x] **KWR-01**: Existe un universo de 400 o más keywords del negocio del doctor,
   expandido desde semillas por condición, procedimiento, síntoma, especialidad y sede
+
 - [x] **KWR-02**: Cada keyword del universo trae volumen, CPC y competencia de DinoRank
   para Perú en español, con la fuente marcada por columna. Las columnas de KD y traffic
   potential existen en el dataset y en el Sheet, pero quedan con valor `no_consultado`
@@ -92,12 +98,16 @@ Ricardo Palma, Sanna La Molina, Padre Luis Tezza), más el hub `/servicios` refo
   <br>*Consecuencia registrada: KWR-05 (punto dulce) depende de KD. La fase 13 tiene que
   resolverlo con un proxy de dificultad orgánica leído de la SERP con SerpApi, o reincorporar
   Ahrefs entonces. Se decide al discutir la fase 13, no antes.*
+
 - [x] **KWR-03**: Cada keyword está clasificada por intención (informacional, comercial,
   transaccional, navegacional) y por etapa del paciente (síntoma, diagnóstico, decisión)
-- [ ] **KWR-04**: Las keywords están agrupadas en clusters por solape de SERP, no por
+
+- [x] **KWR-04**: Las keywords están agrupadas en clusters por solape de SERP, no por
   parecido de texto
+
 - [ ] **KWR-05**: Está identificado el "punto dulce": las keywords cuyo KD es alcanzable
   con el perfil de enlaces real del dominio, no las de mayor volumen
+
 - [ ] **KWR-06**: Están seleccionadas las "10 de Oro" — las keywords que mueven la aguja
   del negocio primero, con su justificación
 
@@ -105,10 +115,13 @@ Ricardo Palma, Sanna La Molina, Padre Luis Tezza), más el hub `/servicios` refo
 
 - [ ] **COMP-01**: Cinco competidores de Lima están perfilados con DR, referring domains,
   tráfico orgánico estimado, cantidad de keywords en top 100 y presencia de blog
+
 - [ ] **COMP-02**: Está el gap de keywords: los términos por los que los competidores
   posicionan y el doctor no
-- [ ] **COMP-03**: Para cada cluster está registrada la SERP real de Lima capturada con
+
+- [x] **COMP-03**: Para cada cluster está registrada la SERP real de Lima capturada con
   SerpApi, con el tipo de página que Google premia en cada una
+
 - [ ] **COMP-04**: Están registrados los featured snippets y las páginas más enlazadas
   de cada competidor
 
@@ -116,12 +129,16 @@ Ricardo Palma, Sanna La Molina, Padre Luis Tezza), más el hub `/servicios` refo
 
 - [ ] **MAP-01**: Cada una de las 18 URLs mapeables tiene exactamente una keyword primaria
   asignada y de tres a cinco secundarias
+
 - [ ] **MAP-02**: Ninguna keyword primaria está asignada a dos URLs — la canibalización
   está detectada y resuelta antes de asignar
+
 - [ ] **MAP-03**: Las nueve URLs que aún no existen (servicios y sedes de v1.1) tienen su
   keyword asignada antes de que la fase 8 las escriba
+
 - [ ] **MAP-04**: Cada asignación declara el tipo de página que la SERP exige y si la URL
   actual lo cumple, la hay que reescribir o hay que crearla
+
 - [ ] **MAP-05**: Está definida la matriz de enlazado interno entre clusters: qué URL
   enlaza a cuál y con qué anchor
 
@@ -129,14 +146,19 @@ Ricardo Palma, Sanna La Molina, Padre Luis Tezza), más el hub `/servicios` refo
 
 - [ ] **ONPAGE-01**: Cada URL mapeable tiene title y meta description reescritos, dentro
   de límite de caracteres y con la keyword primaria al frente
+
 - [ ] **ONPAGE-02**: Cada URL tiene H1 propuesto y jerarquía H2/H3 derivada de las
   preguntas reales de la SERP
+
 - [ ] **ONPAGE-03**: Cada URL trae su lista de entidades y términos semánticos obligatorios
   del TF-IDF de DinoRank contra los que ya posicionan
+
 - [ ] **ONPAGE-04**: El copy clínico nuevo o reescrito está redactado, humanizado y marcado
   como pendiente de aprobación del doctor antes de que v1.1 lo publique
+
 - [ ] **ONPAGE-05**: La auditoría de DinoRank confirma cero titles duplicados, cero H1
   duplicados y cero metas faltantes en el mapa propuesto
+
 - [ ] **ONPAGE-06**: Existe un paquete de entrega por URL que la fase 8 y la fase 10 de
   v1.1 pueden implementar sin volver a decidir nada
 
@@ -144,14 +166,19 @@ Ricardo Palma, Sanna La Molina, Padre Luis Tezza), más el hub `/servicios` refo
 
 - [ ] **SHEET-01**: El tab `Keyword Research` está lleno con el universo de keywords y
   todas sus columnas de métricas, cluster, intención, H1 sugerido y top result
+
 - [ ] **SHEET-02**: El tab `Content Model` tiene una fila por URL con keyword, intención,
   tipo, cluster, métricas y la acción recomendada (dejar, actualizar o eliminar)
+
 - [ ] **SHEET-03**: El tab `Competitor Analysis` tiene los cinco competidores con sus
   stats, keywords, snippets, páginas principales y contenido más enlazado
+
 - [ ] **SHEET-04**: El tab `Canonical Audit` tiene una fila por URL con su keyword,
   topic y canonical propuesto
+
 - [ ] **SHEET-05**: El tab `Internal Linking Audit` tiene una fila por URL con hasta ocho
   enlaces salientes propuestos y su anchor
+
 - [x] **SHEET-06**: Reejecutar la carga actualiza las filas existentes en vez de duplicarlas
 
 ---
@@ -161,8 +188,10 @@ Ricardo Palma, Sanna La Molina, Padre Luis Tezza), más el hub `/servicios` refo
 - Calendario editorial de blog y producción de contenido nuevo (tabs
   `Content Strategy Proposal` y `Content Production`) — depende de que los clusters
   estén validados por el doctor
+
 - Seguimiento de posiciones con el tracking de DinoRank — necesita el sitio ya optimizado
   y semanas de historial
+
 - Auditoría técnica completa (tab `Tech SEO Audit`, 59 checks) — se solapa con v1.1
 - SEO local por sede con el endpoint `/seolocal` de DinoRank — depende de que existan
   las páginas de sede de la fase 9
@@ -171,12 +200,16 @@ Ricardo Palma, Sanna La Molina, Padre Luis Tezza), más el hub `/servicios` refo
 
 - **Escribir en `src/`** — reparto acordado: v1.1 implementa el código, v1.2 entrega
   keywords y textos. Evita conflictos de merge entre dos milestones paralelos.
+
 - **Publicar contenido clínico** — todo texto médico pasa por el doctor antes de salir
   (restricción YMYL del proyecto).
+
 - **Linkbuilding** — el endpoint existe en DinoRank, pero adquirir enlaces es un proyecto
   aparte con presupuesto propio.
+
 - **Keywords fuera de Lima** — el negocio es presencial en Lima; expandir a otras
   ciudades del Perú no tiene sede que lo respalde.
+
 - **`/privacidad`** — página legal, ya excluida del sitemap.
 
 ## Trazabilidad

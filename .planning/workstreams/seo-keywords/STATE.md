@@ -5,15 +5,15 @@ milestone_name: "SEO semantico: keyword research y optimizacion on-page"
 current_phase: 13
 current_phase_name: Clusters, competencia y las 10 de Oro
 status: in_progress
-stopped_at: "Cerrados 13-01, 13-03 y las tareas 1 y 2 de 13-02. El perfil de los cinco competidores esta completo con datos reales de Ahrefs y las 91 cabezas estan aprobadas por Juan. Queda disparar las 84 busquedas de SerpApi (tarea 3 de 13-02) y formar los clusters (tarea 4)"
-last_updated: "2026-08-11T16:20:00.000Z"
-last_activity: "2026-08-11, COMP-01 cerrado con 24 consultas a Ahrefs. SerpApi sigue intacto en 12: tres executors se detuvieron antes de disparar y ninguno gasto una busqueda"
+stopped_at: Completado 13-02-PLAN.md (tareas 3 y 4)
+last_updated: "2026-08-11T17:19:34.390Z"
+last_activity: "2026-08-11, cerrado el plan 13-02: 84 búsquedas emitidas en un solo disparo bajo techo acumulado (libro en 96 de 102), 31 clusters y las 4.766 filas de alcance objetivo con su procedencia marcada"
 progress:
   total_phases: 4
   completed_phases: 1
-  total_plans: 5
-  completed_plans: 3
-  percent: 40
+  total_plans: 10
+  completed_plans: 8
+  percent: 25
 ---
 
 # Project State
@@ -23,16 +23,16 @@ progress:
 See: .planning/PROJECT.md (updated 2026-08-10)
 
 **Core value:** Que un paciente que busca traumatólogo/cirujano de columna en Lima encuentre el sitio y agende cita por WhatsApp en menos de 2 clics, con todo evento rastreado.
-**Current focus:** Fase 13 en curso. Falta unicamente la captura de SERP y el clustering. Hallazgo que reordena la estrategia: los cinco competidores rankean **sin enlaces** en sus paginas interiores, asi que el contenido es la palanca y no el linkbuilding. Ver `data/lectura-competencia-2026-08-11.md`.
+**Current focus:** Fase 13 en curso. La captura de SERP y el clustering ya están cerrados. Hallazgo que reordena la estrategia: los cinco competidores rankean **sin enlaces** en sus paginas interiores, asi que el contenido es la palanca y no el linkbuilding. Ver `data/lectura-competencia-2026-08-11.md`. Segundo hallazgo, del clustering: 41 de las 91 cabezas comparten SERP en Lima, así que el geo de especialidad es **una sola página** y no 41.
 
 ## Current Position
 
 Phase: 13 de 15 en curso (Clusters, competencia y las 10 de Oro), segunda de las 4 fases de v1.2
-Plan: 13-01 cerrado (wave 1). Siguen 13-02 y 13-03, que corren en paralelo en la wave 2
-Status: la fundación de la fase está probada de punta a punta y no costó cuota. Ningún requisito de la fase 13 está cerrado todavía: KWR-04, COMP-03, SHEET-01 y SHEET-03 quedan habilitados, no completos
-Last activity: 2026-08-11, cerrado el plan 13-01: 95 orgánicos tipificados sobre las 12 capturas ya en caché, `Cluster` y `Top Result` escribibles, y el tab transpuesto medido contra el documento en vivo
+Plan: 13-01, 13-02 y 13-03 cerrados (waves 1 y 2). Siguen 13-04 y 13-05
+Status: KWR-04 y COMP-03 cerrados por el plan 13-02. SHEET-01 y SHEET-03 siguen habilitados, no completos. Quedan **30 búsquedas de SerpApi** hasta el reset del 2026-08-21
+Last activity: 2026-08-11, cerrado el plan 13-02: 84 búsquedas emitidas en un solo disparo bajo techo acumulado (libro en 96 de 102), 31 clusters y las 4.766 filas de alcance objetivo con su procedencia marcada
 
-Progress: [██░░░░░░░░] 20% de la fase 13 · 1 de 4 fases de v1.2 cerradas
+Progress: [██████░░░░] 60% de la fase 13 (3 de 5 planes) · 1 de 4 fases de v1.2 cerradas
 
 ## Roadmap v1.2
 
@@ -75,6 +75,8 @@ Los dos milestones corren a la vez sobre el mismo repositorio.
 - **[Fase 13, plan 01] Siete tipos de página y no cuatro:** a los cuatro del ROADMAP (guía, página de servicio, ficha de clínica, directorio) la medición sobre los 95 orgánicos obligó a sumar contenido internacional, red social y otro. Forzar un resultado dentro de una caja que no le corresponde mentiría sobre la SERP.
 - **[Fase 13, plan 01] El tab `Competitor Analysis` se declara fila por fila, nunca por columna entera:** la columna B es el primer slot de competidor **y además** carga los títulos de sección en las filas 1, 4, 11, 17, 23, 25 y 31. Volcar una columna entera los borraría sin lanzar ninguna excepción.
 - **[Fase 13, plan 01] Los ejecutables de la fase son puntos de entrada propios bajo `src/phase13/`:** `src/cli.ts` llama a `main()` al cargarse, así que importarlo desde otro punto de entrada ejecuta el despachador con los argumentos equivocados. Por eso existe `src/phase13/args.ts`, que es copia funcional y no importación.
+- [Phase ?]: El techo acumulado de cuota vive en capture.ts y no en quota.ts: quota.ts esta cerrado desde la fase 12 y el techo es una regla de esta fase
+- [Phase ?]: Umbral de similitud de la cola en 0,5 mas termino clinico compartido obligatorio; el geo se quita antes de medir porque es terreno y no tema
 
 ### Pending Todos
 
@@ -91,8 +93,8 @@ Los dos milestones corren a la vez sobre el mismo repositorio.
 
 ## Session Continuity
 
-Last session: 2026-08-11T16:20:00.000Z
-Stopped at: Completado 13-01-PLAN.md. Sigue la wave 2 de la fase 13: 13-02 y 13-03 en paralelo
+Last session: 2026-08-11T17:18:53.567Z
+Stopped at: Completado 13-02-PLAN.md (tareas 3 y 4)
 Resume file: None
 
 ## Performance Metrics
@@ -103,6 +105,7 @@ Resume file: None
 | Phase 12 P04 | 3h | 3 tasks | 6 files |
 | Phase 12 P05 | 3h | 3 tasks | 12 files |
 | Phase 13 P01 | 1h 50min | 3 tasks | 16 files |
+| Phase 13 P02 | ~1h 15min | 2 tasks | 9 files |
 
 ## Presupuesto de fuentes externas al cerrar la fase 12
 
