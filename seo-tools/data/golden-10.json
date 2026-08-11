@@ -626,10 +626,10 @@
     },
     {
       "puesto": 10,
-      "keyword": "artrodesis en varios niveles en lima",
-      "keywordKey": "artrodesis en varios niveles en lima",
-      "cluster": "artrodesis-en-varios-niveles",
-      "tipoDePagina": "contenido-internacional",
+      "keyword": "cirugía mínimamente invasiva en lima",
+      "keywordKey": "cirugia minimamente invasiva en lima",
+      "cluster": "cirugia-minimamente-invasiva-en-lima",
+      "tipoDePagina": "pagina-de-servicio",
       "categoria": "cirugia-de-columna",
       "intent": "transaccional",
       "stage": "decision",
@@ -639,20 +639,20 @@
       "keywordDifficultyFuente": "no_consultado",
       "trafficPotential": null,
       "trafficPotentialFuente": "no_consultado",
-      "nivelDeAlcance": "alto",
-      "disputables": 6,
+      "nivelDeAlcance": "medio",
+      "disputables": 5,
       "posicionesMedidas": 9,
-      "primeraDisputable": 1,
+      "primeraDisputable": 2,
       "ocupanTop10": [
-        "doctoralia.pe",
-        "youtube.com",
-        "columna.com",
-        "instagram.com",
-        "institutamoros.com",
-        "medlineplus.gov",
-        "doctorjuanalvarezdemon.es",
+        "clinicaangloamericana.pe",
+        "cirugiaendoscopicaperu.com",
         "facebook.com",
-        "drtafurneurocirugia.com"
+        "essalud.gob.pe",
+        "clinicainternacional.com.pe",
+        "facebook.com",
+        "clinicaangloamericana.pe",
+        "centromedicoabc.com",
+        "mayoclinic.org"
       ],
       "competidoresEnTop": [],
       "valorDeNegocio": 38,
@@ -683,7 +683,7 @@
           "detalle": "rango 3 de la lista de candidatas"
         }
       ],
-      "justificacion": "Es un servicio declarado del consultorio: \"artrodesis en varios niveles\" sale de services.ts:procedureApproaches[].examples, dentro de Cirugia de columna. Sin volumen medido, que no es sin mercado: DinoRank trunca las relacionadas en 900 y no devuelve la keyword consultada. El hueco es de la fuente y esta documentado. Su cluster es artrodesis-en-varios-niveles y la SERP premia ahi contenido-internacional. Hoy su top 10 lo encabezan doctoralia.pe, youtube.com, columna.com (3 barreras): 6 de 9 posiciones medidas son disputables y la primera libre es la 1. Sin KD: Ahrefs no devolvio dificultad para esta cabeza (no_consultado), y no se inventa. Ningun competidor perfilado aparece en este top 10. Candidata a ganarla: /servicios (existente, reescribir).",
+      "justificacion": "Es un servicio declarado del consultorio: \"cirugia minimamente invasiva\" sale de services.ts:procedureApproaches[].name, dentro de Cirugia de columna. Sin volumen medido, que no es sin mercado: DinoRank trunca las relacionadas en 900 y no devuelve la keyword consultada. El hueco es de la fuente y esta documentado. Su cluster es cirugia-minimamente-invasiva-en-lima y la SERP premia ahi pagina-de-servicio. Hoy su top 10 lo encabezan clinicaangloamericana.pe, cirugiaendoscopicaperu.com, facebook.com (4 barreras): 5 de 9 posiciones medidas son disputables y la primera libre es la 2. Sin KD: Ahrefs no devolvio dificultad para esta cabeza (no_consultado), y no se inventa. Ningun competidor perfilado aparece en este top 10. Candidata a ganarla: /servicios (existente, reescribir).",
       "motivoDeCluster": "primera cabeza de su cluster",
       "urlCandidata": {
         "url": "/servicios",
@@ -719,7 +719,7 @@
       "keywordKey": "cifosis",
       "volumen": 3600,
       "volumenFuente": "dinorank",
-      "motivo": "No nombra ningun servicio que el consultorio declare. Su semilla salio del perfil de un competidor (COMPETITORS.md) y no del codigo del sitio, asi que perseguirla seria reclamar algo que el doctor no publica que haga."
+      "motivo": "Quedo fuera del corte de 10 con 37 puntos de valor de negocio."
     },
     {
       "keyword": "artrosis cie 10",
@@ -863,19 +863,19 @@
       "keyword": "cirugía de columna lima",
       "keywordKey": "cirugia de columna lima",
       "cluster": "especialista-en-columna-y-trauma-en-lima",
-      "motivo": "Quedo fuera del corte de 10 con 38 puntos de valor de negocio."
-    },
-    {
-      "keyword": "cirugía mínimamente invasiva en lima",
-      "keywordKey": "cirugia minimamente invasiva en lima",
-      "cluster": "cirugia-minimamente-invasiva-en-lima",
-      "motivo": "Quedo fuera del corte de 10 con 38 puntos de valor de negocio."
+      "motivo": "Mismo cluster (especialista-en-columna-y-trauma-en-lima) y misma categoria de servicio (cirugia-de-columna) que \"cirujano de columna lima\", que ya entro con mas valor de negocio. Serian la misma pagina."
     },
     {
       "keyword": "traumatología y ortopedia lima",
       "keywordKey": "traumatologia y ortopedia lima",
       "cluster": "especialista-en-columna-y-trauma-en-lima",
       "motivo": "Quedo fuera del corte de 10 con 38 puntos de valor de negocio."
+    },
+    {
+      "keyword": "cifosis",
+      "keywordKey": "cifosis",
+      "cluster": "cifosis",
+      "motivo": "Quedo fuera del corte de 10 con 37 puntos de valor de negocio."
     },
     {
       "keyword": "hernia discal lumbar y cervical",
