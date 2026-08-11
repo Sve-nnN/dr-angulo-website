@@ -9,9 +9,9 @@
 > se mide contra la calidad del contenido que ocupa el top 10, no contra los enlaces.
 
 **Cabezas evaluadas:** 91 · **alcanzables:** 66
-(45 de alcance alto, 21 medio, 25 bajo) · resueltas con las dos mitades: **0 de 91**
+(49 de alcance alto, 17 medio, 25 bajo) · resueltas con las dos mitades: **22 de 91**
 
-> **Falta la mitad declarada.** 91 cabezas se resolvieron solo por la
+> **Falta la mitad declarada.** 69 cabezas se resolvieron solo por la
 > SERP porque el KD de Ahrefs todavia no esta ingerido. Ninguna se descarto por eso: la
 > SERP es la mitad que si existe. Al llegar el KD hay que volver a correr este comando,
 > que no cuesta ninguna busqueda.
@@ -49,10 +49,10 @@ Cortes: **alto** con 6 disputables o mas, **medio** con 4 o mas, y baja un nivel
 | traumatología surco | especialista-en-columna-y-trauma-en-lima | — | — | — | 8/9 | 1 | transaccional |
 | traumatología y ortopedia la molina | cirugia-de-columna-la-molina | — | — | — | 8/10 | 1 | transaccional |
 | mejor neurocirujano de columna lima | especialista-en-columna-y-trauma-en-lima | 90 | — | — | 8/9 | 1 | transaccional |
-| neurocirujano | especialista-en-columna-y-trauma-en-lima | — | — | — | 7/9 | 1 | comercial |
+| neurocirujano | especialista-en-columna-y-trauma-en-lima | — | 0 | 40 | 7/9 | 1 | comercial |
 | traumatología lima | especialista-en-columna-y-trauma-en-lima | 880 | — | — | 7/9 | 3 | transaccional |
 | cirujano de columna cerca de mí | especialista-en-columna-y-trauma-en-lima | 0 | — | — | 7/9 | 1 | transaccional |
-| neurocirujano lima | especialista-en-columna-y-trauma-en-lima | 0 | — | — | 7/9 | 1 | transaccional |
+| neurocirujano lima | especialista-en-columna-y-trauma-en-lima | 0 | 0 | 90 | 7/9 | 1 | transaccional |
 | cirugía de columna cerca de mí | especialista-en-columna-y-trauma-en-lima | — | — | — | 7/9 | 1 | transaccional |
 | cirugía de columna la molina | cirugia-de-columna-la-molina | — | — | — | 7/9 | 1 | transaccional |
 | cirugía de columna san isidro | especialista-en-columna-y-trauma-en-lima | — | — | — | 7/9 | 1 | transaccional |
@@ -63,8 +63,8 @@ Cortes: **alto** con 6 disputables o mas, **medio** con 4 o mas, y baja un nivel
 | traumatólogo la molina | cirugia-de-columna-la-molina | — | — | — | 7/9 | 1 | transaccional |
 | ciática: tratamientos | ciatica-tratamientos | 590 | — | — | 7/9 | 2 | comercial |
 | traumatólogo ortopedia infantil | especialista-en-columna-y-trauma-en-lima | 70 | — | — | 6/9 | 1 | comercial |
-| ortopedia infantil | especialista-en-columna-y-trauma-en-lima | — | — | — | 6/8 | 1 | informacional |
-| traumatología y ortopedia | especialista-en-columna-y-trauma-en-lima | 0 | — | — | 6/9 | 2 | informacional |
+| ortopedia infantil | especialista-en-columna-y-trauma-en-lima | — | 0 | 20 | 6/8 | 1 | informacional |
+| traumatología y ortopedia | especialista-en-columna-y-trauma-en-lima | 0 | 0 | 1600 | 6/9 | 2 | informacional |
 | endoscopía espinal | endoscopia-espinal | — | — | — | 6/8 | 1 | comercial |
 | ortopedia infantil lima | especialista-en-columna-y-trauma-en-lima | 0 | — | — | 6/9 | 1 | transaccional |
 | traumatología y ortopedia cerca de mí | especialista-en-columna-y-trauma-en-lima | 0 | — | — | 6/9 | 3 | transaccional |
@@ -76,14 +76,17 @@ Cortes: **alto** con 6 disputables o mas, **medio** con 4 o mas, y baja un nivel
 | traumatólogo lima | especialista-en-columna-y-trauma-en-lima | — | — | — | 6/8 | 2 | transaccional |
 | cirujano de columna clínica sanna | cirujano-de-columna-clinica-sanna | — | — | — | 6/10 | 2 | transaccional |
 | ortopedia infantil clínica tezza | cirujano-de-columna-clinica-tezza | — | — | — | 6/9 | 3 | transaccional |
-| que es un neurocirujano | especialista-en-columna-y-trauma-en-lima | 480 | — | — | 6/8 | 1 | comercial |
+| que es un neurocirujano | especialista-en-columna-y-trauma-en-lima | 480 | 0 | 60 | 6/8 | 1 | comercial |
 | fisioterapia traumatología | fisioterapia-traumatologia | 90 | — | — | 6/9 | 2 | comercial |
+| cifosis | cifosis | 3600 | 3 | 200 | 5/7 | 3 | informacional |
+| las mejores pastillas para la ciática | las-mejores-pastillas-para-la-ciatica | 390 | 12 | 1100 | 5/8 | 1 | comercial |
+| traumatología | especialista-en-columna-y-trauma-en-lima | — | 1 | 2200 | 4/7 | 2 | informacional |
+| como se cura un desgarro muscular | desgarro-muscular | 110 | 12 | 1100 | 4/8 | 1 | comercial |
 
 ## Alcance medio
 
 | Cabeza | Cluster | Vol. | KD | TP | Disputables | Primera libre | Intencion |
 |---|---|---:|---:|---:|---:|---:|---|
-| cifosis | cifosis | 3600 | — | — | 5/7 | 3 | informacional |
 | traumatólogo de columna | especialista-en-columna-y-trauma-en-lima | 0 | — | — | 5/9 | 1 | comercial |
 | cirujano de columna | especialista-en-columna-y-trauma-en-lima | — | — | — | 5/8 | 1 | comercial |
 | cirugía de columna lima | especialista-en-columna-y-trauma-en-lima | — | — | — | 5/8 | 1 | transaccional |
@@ -91,18 +94,15 @@ Cortes: **alto** con 6 disputables o mas, **medio** con 4 o mas, y baja un nivel
 | ortopedia infantil san isidro | especialista-en-columna-y-trauma-en-lima | — | — | — | 5/9 | 1 | transaccional |
 | traumatología y ortopedia lima | especialista-en-columna-y-trauma-en-lima | — | — | — | 5/9 | 3 | transaccional |
 | traumatólogo san isidro | especialista-en-columna-y-trauma-en-lima | — | — | — | 5/8 | 2 | transaccional |
-| las mejores pastillas para la ciática | las-mejores-pastillas-para-la-ciatica | 390 | — | — | 5/8 | 1 | comercial |
 | mejor clínica de traumatología en lima | especialista-en-columna-y-trauma-en-lima | 210 | — | — | 5/8 | 3 | transaccional |
 | cirugía endoscópica de columna | cirugia-endoscopica-de-columna | 0 | — | — | 4/7 | 2 | comercial |
-| artrosis | artrosis | — | — | — | 4/7 | 1 | informacional |
-| traumatología | especialista-en-columna-y-trauma-en-lima | — | — | — | 4/7 | 2 | informacional |
+| artrosis | artrosis | — | 26 | 1800 | 4/7 | 1 | informacional |
 | traumatólogo | especialista-en-columna-y-trauma-en-lima | — | — | — | 4/8 | 2 | comercial |
 | estenosis de canal en lima | estenosis-de-canal-en-lima | — | — | — | 4/8 | 1 | transaccional |
 | traumatología la molina | cirugia-de-columna-la-molina | — | — | — | 4/9 | 2 | transaccional |
 | traumatología san isidro | especialista-en-columna-y-trauma-en-lima | — | — | — | 4/9 | 1 | transaccional |
 | traumatología y ortopedia san isidro | especialista-en-columna-y-trauma-en-lima | — | — | — | 4/9 | 1 | transaccional |
 | cirujano de columna clínica tezza | cirujano-de-columna-clinica-tezza | — | — | — | 4/9 | 2 | transaccional |
-| como se cura un desgarro muscular | desgarro-muscular | 110 | — | — | 4/8 | 1 | comercial |
 | traumatología especialista en columna | especialista-en-columna-y-trauma-en-lima | 110 | — | — | 4/9 | 1 | comercial |
 
 ## Volumen alto que quedo FUERA de alcance
@@ -116,14 +116,14 @@ por volumen va a preguntar por que no estan en la lista de objetivos.
 - 3 de las 7 posiciones medidas del top 10 las ocupa contenido que un medico individual puede disputar.
 - BAJA: 4 de contenido internacional (mayoclinic.org, medlineplus.gov, quironsalud.com, cigna.com), que Lima no disputa. Ademas indica que esta SERP no es de intencion local.
 - SUBE: 3 posiciones de medico o clinica pequena sin marca. Esta medido que en este nicho rankean con CERO dominios de referencia en la pagina interior.
-- KD NO MEDIDO (no_consultado). La cabeza no se descarta por eso: se resuelve por la SERP, que es la mitad que si existe. El veredicto se revisa cuando Ahrefs devuelva el dato.
+- KD 19 es bajo, pero NO sube el veredicto: con 3 posiciones disputables no hay sitio donde entrar. El KD es un promedio de mercado y no sabe quien ocupa esta SERP.
 
 ### desgarro muscular · volumen 5400 · 3/8 disputables
 
 - 3 de las 8 posiciones medidas del top 10 las ocupa contenido que un medico individual puede disputar.
 - BAJA: 5 de contenido internacional (medlineplus.gov, actimove.es, copac.com.pa, paracelsosagasta.es), que Lima no disputa. Ademas indica que esta SERP no es de intencion local.
 - SUBE: 3 posiciones de medico o clinica pequena sin marca. Esta medido que en este nicho rankean con CERO dominios de referencia en la pagina interior.
-- KD NO MEDIDO (no_consultado). La cabeza no se descarta por eso: se resuelve por la SERP, que es la mitad que si existe. El veredicto se revisa cuando Ahrefs devuelva el dato.
+- KD 13 es bajo, pero NO sube el veredicto: con 3 posiciones disputables no hay sitio donde entrar. El KD es un promedio de mercado y no sabe quien ocupa esta SERP.
 
 ### desgarro muscular tratamiento · volumen 590 · 2/7 disputables
 
@@ -131,7 +131,7 @@ por volumen va a preguntar por que no estan en la lista de objetivos.
 - BAJA: 1 posicion de grupo clinico con marca (blog.auna.pe), que no se ganan con contenido.
 - BAJA: 4 de contenido internacional (medlineplus.gov, elsevier.es, actimove.es, copac.com.pa), que Lima no disputa. Ademas indica que esta SERP no es de intencion local.
 - SUBE: 2 posiciones de medico o clinica pequena sin marca. Esta medido que en este nicho rankean con CERO dominios de referencia en la pagina interior.
-- KD NO MEDIDO (no_consultado). La cabeza no se descarta por eso: se resuelve por la SERP, que es la mitad que si existe. El veredicto se revisa cuando Ahrefs devuelva el dato.
+- KD 11 es bajo, pero NO sube el veredicto: con 2 posiciones disputables no hay sitio donde entrar. El KD es un promedio de mercado y no sabe quien ocupa esta SERP.
 
 ### desgarro muscular tratamientos · volumen 590 · 2/8 disputables
 
@@ -139,7 +139,7 @@ por volumen va a preguntar por que no estan en la lista de objetivos.
 - BAJA: 1 posicion de grupo clinico con marca (blog.auna.pe), que no se ganan con contenido.
 - BAJA: 5 de contenido internacional (medlineplus.gov, actimove.es, quironsalud.com, copac.com.pa), que Lima no disputa. Ademas indica que esta SERP no es de intencion local.
 - SUBE: 2 posiciones de medico o clinica pequena sin marca. Esta medido que en este nicho rankean con CERO dominios de referencia en la pagina interior.
-- KD NO MEDIDO (no_consultado). La cabeza no se descarta por eso: se resuelve por la SERP, que es la mitad que si existe. El veredicto se revisa cuando Ahrefs devuelva el dato.
+- KD NO MEDIDO (ahrefs_sin_dato). La cabeza no se descarta por eso: se resuelve por la SERP, que es la mitad que si existe. El veredicto se revisa cuando Ahrefs devuelva el dato.
 
 ### reumatólogo o traumatólogo · volumen 260 · 2/7 disputables
 
@@ -147,14 +147,14 @@ por volumen va a preguntar por que no estan en la lista de objetivos.
 - BAJA: 1 posicion de grupo clinico con marca (clinicainternacional.com.pe), que no se ganan con contenido.
 - BAJA: 4 de contenido internacional (traumacor.es, sare.org.es, traumadrid.es, camde.es), que Lima no disputa. Ademas indica que esta SERP no es de intencion local.
 - SUBE: 2 posiciones de medico o clinica pequena sin marca. Esta medido que en este nicho rankean con CERO dominios de referencia en la pagina interior.
-- KD NO MEDIDO (no_consultado). La cabeza no se descarta por eso: se resuelve por la SERP, que es la mitad que si existe. El veredicto se revisa cuando Ahrefs devuelva el dato.
+- KD NO MEDIDO (ahrefs_sin_dato). La cabeza no se descarta por eso: se resuelve por la SERP, que es la mitad que si existe. El veredicto se revisa cuando Ahrefs devuelva el dato.
 
 ### cual es la diferencia entre artritis y artrosis · volumen 170 · 3/8 disputables
 
 - 3 de las 8 posiciones medidas del top 10 las ocupa contenido que un medico individual puede disputar.
 - BAJA: 5 de contenido internacional (clinicauandes.cl, teknon.quironsalud.com, rochepacientes.es, canalsalud.imq.es), que Lima no disputa. Ademas indica que esta SERP no es de intencion local.
 - SUBE: 3 posiciones de medico o clinica pequena sin marca. Esta medido que en este nicho rankean con CERO dominios de referencia en la pagina interior.
-- KD NO MEDIDO (no_consultado). La cabeza no se descarta por eso: se resuelve por la SERP, que es la mitad que si existe. El veredicto se revisa cuando Ahrefs devuelva el dato.
+- KD 1 es bajo, pero NO sube el veredicto: con 3 posiciones disputables no hay sitio donde entrar. El KD es un promedio de mercado y no sabe quien ocupa esta SERP.
 
 ### como curar desgarro muscular · volumen 110 · 3/8 disputables
 
@@ -162,7 +162,7 @@ por volumen va a preguntar por que no estan en la lista de objetivos.
 - BAJA: 1 posicion de grupo clinico con marca (blog.auna.pe), que no se ganan con contenido.
 - BAJA: 4 de contenido internacional (copac.com.pa, actimove.es, quironsalud.com, bupasalud.com), que Lima no disputa. Ademas indica que esta SERP no es de intencion local.
 - SUBE: 3 posiciones de medico o clinica pequena sin marca. Esta medido que en este nicho rankean con CERO dominios de referencia en la pagina interior.
-- KD NO MEDIDO (no_consultado). La cabeza no se descarta por eso: se resuelve por la SERP, que es la mitad que si existe. El veredicto se revisa cuando Ahrefs devuelva el dato.
+- KD 11 es bajo, pero NO sube el veredicto: con 3 posiciones disputables no hay sitio donde entrar. El KD es un promedio de mercado y no sabe quien ocupa esta SERP.
 
 ### tratamientos para desgarro muscular · volumen 110 · 3/7 disputables
 
@@ -170,7 +170,7 @@ por volumen va a preguntar por que no estan en la lista de objetivos.
 - BAJA: 1 posicion de grupo clinico con marca (blog.auna.pe), que no se ganan con contenido.
 - BAJA: 3 de contenido internacional (medlineplus.gov, actimove.es, elsevier.es), que Lima no disputa. Ademas indica que esta SERP no es de intencion local.
 - SUBE: 3 posiciones de medico o clinica pequena sin marca. Esta medido que en este nicho rankean con CERO dominios de referencia en la pagina interior.
-- KD NO MEDIDO (no_consultado). La cabeza no se descarta por eso: se resuelve por la SERP, que es la mitad que si existe. El veredicto se revisa cuando Ahrefs devuelva el dato.
+- KD 14 es bajo, pero NO sube el veredicto: con 3 posiciones disputables no hay sitio donde entrar. El KD es un promedio de mercado y no sabe quien ocupa esta SERP.
 
 ### cirugía mínimamente invasiva · volumen 30 · 3/7 disputables
 
@@ -178,7 +178,7 @@ por volumen va a preguntar por que no estan en la lista de objetivos.
 - BAJA: 1 posicion de grupo clinico con marca (clinicaangloamericana.pe), que no se ganan con contenido.
 - BAJA: 3 de contenido internacional (mayoclinic.org, cancer.gov, scielo.isciii.es), que Lima no disputa. Ademas indica que esta SERP no es de intencion local.
 - SUBE: 3 posiciones de medico o clinica pequena sin marca. Esta medido que en este nicho rankean con CERO dominios de referencia en la pagina interior.
-- KD NO MEDIDO (no_consultado). La cabeza no se descarta por eso: se resuelve por la SERP, que es la mitad que si existe. El veredicto se revisa cuando Ahrefs devuelva el dato.
+- KD 0 es bajo, pero NO sube el veredicto: con 3 posiciones disputables no hay sitio donde entrar. El KD es un promedio de mercado y no sabe quien ocupa esta SERP.
 
 ### ortopedia infantil clínica sanna · volumen — · 4/9 disputables
 
@@ -194,7 +194,7 @@ por volumen va a preguntar por que no estan en la lista de objetivos.
 - BAJA: 5 posiciones de grupo clinico con marca (crp.com.pe, ipot-crp.pe), que no se ganan con contenido.
 - SUBE: 2 posiciones de directorio o red social (doctoralia.pe, youtube.com): eso no es contenido y se gana con una pagina clinica de verdad.
 - SUBE: 1 posicion de medico o clinica pequena sin marca. Esta medido que en este nicho rankean con CERO dominios de referencia en la pagina interior.
-- KD NO MEDIDO (no_consultado). La cabeza no se descarta por eso: se resuelve por la SERP, que es la mitad que si existe. El veredicto se revisa cuando Ahrefs devuelva el dato.
+- KD NO MEDIDO (ahrefs_sin_dato). La cabeza no se descarta por eso: se resuelve por la SERP, que es la mitad que si existe. El veredicto se revisa cuando Ahrefs devuelva el dato.
 - Competidores perfilados en este top 10: clinicarthromeds.pe (DR 1.1). La linea de base propia es DR 0, y en este nicho eso NO es la barrera: sus paginas interiores rankean con cero dominios de referencia.
 
 ### ortopedia infantil clínica ricardo palma · volumen — · 3/9 disputables
@@ -210,7 +210,7 @@ por volumen va a preguntar por que no estan en la lista de objetivos.
 - 3 de las 9 posiciones medidas del top 10 las ocupa contenido que un medico individual puede disputar.
 - BAJA: 6 posiciones de grupo clinico con marca (crp.com.pe, ipot-crp.pe), que no se ganan con contenido.
 - SUBE: 3 posiciones de directorio o red social (doctoralia.pe, youtube.com, instagram.com): eso no es contenido y se gana con una pagina clinica de verdad.
-- KD NO MEDIDO (no_consultado). La cabeza no se descarta por eso: se resuelve por la SERP, que es la mitad que si existe. El veredicto se revisa cuando Ahrefs devuelva el dato.
+- KD NO MEDIDO (ahrefs_sin_dato). La cabeza no se descarta por eso: se resuelve por la SERP, que es la mitad que si existe. El veredicto se revisa cuando Ahrefs devuelva el dato.
 
 ### traumatólogo clínica sanna · volumen — · 3/8 disputables
 
@@ -233,7 +233,7 @@ por volumen va a preguntar por que no estan en la lista de objetivos.
 - BAJA: 4 de contenido internacional (revespcardiol.org, mayoclinic.org, icatme.com, clinicrobotics.com), que Lima no disputa. Ademas indica que esta SERP no es de intencion local.
 - SUBE: 1 posicion de directorio o red social (topdoctors.cl): eso no es contenido y se gana con una pagina clinica de verdad.
 - SUBE: 1 posicion de medico o clinica pequena sin marca. Esta medido que en este nicho rankean con CERO dominios de referencia en la pagina interior.
-- KD NO MEDIDO (no_consultado). La cabeza no se descarta por eso: se resuelve por la SERP, que es la mitad que si existe. El veredicto se revisa cuando Ahrefs devuelva el dato.
+- KD NO MEDIDO (ahrefs_sin_dato). La cabeza no se descarta por eso: se resuelve por la SERP, que es la mitad que si existe. El veredicto se revisa cuando Ahrefs devuelva el dato.
 
 ### estenosis de canal · volumen — · 2/7 disputables
 
@@ -241,14 +241,14 @@ por volumen va a preguntar por que no estan en la lista de objetivos.
 - BAJA: 5 de contenido internacional (cun.es, medlineplus.gov, mayoclinic.org, institutoclavel.com), que Lima no disputa. Ademas indica que esta SERP no es de intencion local.
 - SUBE: 1 posicion de directorio o red social (youtube.com): eso no es contenido y se gana con una pagina clinica de verdad.
 - SUBE: 1 posicion de medico o clinica pequena sin marca. Esta medido que en este nicho rankean con CERO dominios de referencia en la pagina interior.
-- KD NO MEDIDO (no_consultado). La cabeza no se descarta por eso: se resuelve por la SERP, que es la mitad que si existe. El veredicto se revisa cuando Ahrefs devuelva el dato.
+- KD NO MEDIDO (ahrefs_sin_dato). La cabeza no se descarta por eso: se resuelve por la SERP, que es la mitad que si existe. El veredicto se revisa cuando Ahrefs devuelva el dato.
 
 ### hernia discal lumbar y cervical · volumen — · 2/8 disputables
 
 - 2 de las 8 posiciones medidas del top 10 las ocupa contenido que un medico individual puede disputar.
 - BAJA: 6 de contenido internacional (medlineplus.gov, mayoclinic.org, clinicbarcelona.org, clinicadeldolorpuebla.com.mx), que Lima no disputa. Ademas indica que esta SERP no es de intencion local.
 - SUBE: 2 posiciones de medico o clinica pequena sin marca. Esta medido que en este nicho rankean con CERO dominios de referencia en la pagina interior.
-- KD NO MEDIDO (no_consultado). La cabeza no se descarta por eso: se resuelve por la SERP, que es la mitad que si existe. El veredicto se revisa cuando Ahrefs devuelva el dato.
+- KD NO MEDIDO (ahrefs_sin_dato). La cabeza no se descarta por eso: se resuelve por la SERP, que es la mitad que si existe. El veredicto se revisa cuando Ahrefs devuelva el dato.
 
 ### escoliosis · volumen — · 1/7 disputables
 
@@ -256,7 +256,7 @@ por volumen va a preguntar por que no estan en la lista de objetivos.
 - BAJA: 1 posicion de grupo clinico con marca (clinicasanfelipe.com), que no se ganan con contenido.
 - BAJA: 5 de contenido internacional (medlineplus.gov, mayoclinic.org, cun.es, niams.nih.gov), que Lima no disputa. Ademas indica que esta SERP no es de intencion local.
 - SUBE: 1 posicion de directorio o red social (facebook.com): eso no es contenido y se gana con una pagina clinica de verdad.
-- KD NO MEDIDO (no_consultado). La cabeza no se descarta por eso: se resuelve por la SERP, que es la mitad que si existe. El veredicto se revisa cuando Ahrefs devuelva el dato.
+- KD 12 es bajo, pero NO sube el veredicto: con 1 posiciones disputables no hay sitio donde entrar. El KD es un promedio de mercado y no sabe quien ocupa esta SERP.
 
 ### lumbalgia · volumen — · 1/7 disputables
 
@@ -264,7 +264,7 @@ por volumen va a preguntar por que no estan en la lista de objetivos.
 - BAJA: 1 posicion de grupo clinico con marca (blog.auna.pe), que no se ganan con contenido.
 - BAJA: 5 de contenido internacional (who.int, cigna.com, elsevier.es, institutoclavel.com), que Lima no disputa. Ademas indica que esta SERP no es de intencion local.
 - SUBE: 1 posicion de medico o clinica pequena sin marca. Esta medido que en este nicho rankean con CERO dominios de referencia en la pagina interior.
-- KD NO MEDIDO (no_consultado). La cabeza no se descarta por eso: se resuelve por la SERP, que es la mitad que si existe. El veredicto se revisa cuando Ahrefs devuelva el dato.
+- KD 16 es bajo, pero NO sube el veredicto: con 1 posiciones disputables no hay sitio donde entrar. El KD es un promedio de mercado y no sabe quien ocupa esta SERP.
 
 ## Todas las cabezas, con sus razones
 
@@ -273,7 +273,7 @@ por volumen va a preguntar por que no estan en la lista de objetivos.
 - 9 de las 9 posiciones medidas del top 10 las ocupa contenido que un medico individual puede disputar.
 - SUBE: 4 posiciones de directorio o red social (doctoralia.pe, facebook.com, instagram.com): eso no es contenido y se gana con una pagina clinica de verdad.
 - SUBE: 5 posiciones de medico o clinica pequena sin marca. Esta medido que en este nicho rankean con CERO dominios de referencia en la pagina interior.
-- KD NO MEDIDO (no_consultado). La cabeza no se descarta por eso: se resuelve por la SERP, que es la mitad que si existe. El veredicto se revisa cuando Ahrefs devuelva el dato.
+- KD NO MEDIDO (ahrefs_sin_dato). La cabeza no se descarta por eso: se resuelve por la SERP, que es la mitad que si existe. El veredicto se revisa cuando Ahrefs devuelva el dato.
 - Competidores perfilados en este top 10: drcarranzacolumna.com (DR 0). La linea de base propia es DR 0, y en este nicho eso NO es la barrera: sus paginas interiores rankean con cero dominios de referencia.
 
 | Pos. | Dominio | Veredicto | Motivo |
@@ -293,7 +293,7 @@ por volumen va a preguntar por que no estan en la lista de objetivos.
 - 9 de las 9 posiciones medidas del top 10 las ocupa contenido que un medico individual puede disputar.
 - SUBE: 5 posiciones de directorio o red social (doctoralia.pe, facebook.com, instagram.com): eso no es contenido y se gana con una pagina clinica de verdad.
 - SUBE: 4 posiciones de medico o clinica pequena sin marca. Esta medido que en este nicho rankean con CERO dominios de referencia en la pagina interior.
-- KD NO MEDIDO (no_consultado). La cabeza no se descarta por eso: se resuelve por la SERP, que es la mitad que si existe. El veredicto se revisa cuando Ahrefs devuelva el dato.
+- KD NO MEDIDO (ahrefs_sin_dato). La cabeza no se descarta por eso: se resuelve por la SERP, que es la mitad que si existe. El veredicto se revisa cuando Ahrefs devuelva el dato.
 
 | Pos. | Dominio | Veredicto | Motivo |
 |---:|---|---|---|
@@ -312,7 +312,7 @@ por volumen va a preguntar por que no estan en la lista de objetivos.
 - 9 de las 9 posiciones medidas del top 10 las ocupa contenido que un medico individual puede disputar.
 - SUBE: 5 posiciones de directorio o red social (doctoralia.pe, instagram.com, paginasamarillas.com.pe): eso no es contenido y se gana con una pagina clinica de verdad.
 - SUBE: 4 posiciones de medico o clinica pequena sin marca. Esta medido que en este nicho rankean con CERO dominios de referencia en la pagina interior.
-- KD NO MEDIDO (no_consultado). La cabeza no se descarta por eso: se resuelve por la SERP, que es la mitad que si existe. El veredicto se revisa cuando Ahrefs devuelva el dato.
+- KD NO MEDIDO (ahrefs_sin_dato). La cabeza no se descarta por eso: se resuelve por la SERP, que es la mitad que si existe. El veredicto se revisa cuando Ahrefs devuelva el dato.
 - Competidores perfilados en este top 10: clinicarthromeds.pe (DR 1.1). La linea de base propia es DR 0, y en este nicho eso NO es la barrera: sus paginas interiores rankean con cero dominios de referencia.
 
 | Pos. | Dominio | Veredicto | Motivo |
@@ -351,7 +351,7 @@ por volumen va a preguntar por que no estan en la lista de objetivos.
 - 9 de las 9 posiciones medidas del top 10 las ocupa contenido que un medico individual puede disputar.
 - SUBE: 4 posiciones de directorio o red social (doctoralia.pe, facebook.com): eso no es contenido y se gana con una pagina clinica de verdad.
 - SUBE: 5 posiciones de medico o clinica pequena sin marca. Esta medido que en este nicho rankean con CERO dominios de referencia en la pagina interior.
-- KD NO MEDIDO (no_consultado). La cabeza no se descarta por eso: se resuelve por la SERP, que es la mitad que si existe. El veredicto se revisa cuando Ahrefs devuelva el dato.
+- KD NO MEDIDO (ahrefs_sin_dato). La cabeza no se descarta por eso: se resuelve por la SERP, que es la mitad que si existe. El veredicto se revisa cuando Ahrefs devuelva el dato.
 - Competidores perfilados en este top 10: clinicarthromeds.pe (DR 1.1). La linea de base propia es DR 0, y en este nicho eso NO es la barrera: sus paginas interiores rankean con cero dominios de referencia.
 
 | Pos. | Dominio | Veredicto | Motivo |
@@ -371,7 +371,7 @@ por volumen va a preguntar por que no estan en la lista de objetivos.
 - 9 de las 9 posiciones medidas del top 10 las ocupa contenido que un medico individual puede disputar.
 - SUBE: 5 posiciones de directorio o red social (instagram.com, doctoralia.pe, facebook.com, paginasamarillas.com.pe): eso no es contenido y se gana con una pagina clinica de verdad.
 - SUBE: 4 posiciones de medico o clinica pequena sin marca. Esta medido que en este nicho rankean con CERO dominios de referencia en la pagina interior.
-- KD NO MEDIDO (no_consultado). La cabeza no se descarta por eso: se resuelve por la SERP, que es la mitad que si existe. El veredicto se revisa cuando Ahrefs devuelva el dato.
+- KD NO MEDIDO (ahrefs_sin_dato). La cabeza no se descarta por eso: se resuelve por la SERP, que es la mitad que si existe. El veredicto se revisa cuando Ahrefs devuelva el dato.
 
 | Pos. | Dominio | Veredicto | Motivo |
 |---:|---|---|---|
@@ -391,7 +391,7 @@ por volumen va a preguntar por que no estan en la lista de objetivos.
 - BAJA: 2 posiciones de grupo clinico con marca (clinicalima.sanjuandedios.pe, ipot-crp.pe), que no se ganan con contenido.
 - SUBE: 4 posiciones de directorio o red social (instagram.com, doctoralia.pe, facebook.com): eso no es contenido y se gana con una pagina clinica de verdad.
 - SUBE: 4 posiciones de medico o clinica pequena sin marca. Esta medido que en este nicho rankean con CERO dominios de referencia en la pagina interior.
-- KD NO MEDIDO (no_consultado). La cabeza no se descarta por eso: se resuelve por la SERP, que es la mitad que si existe. El veredicto se revisa cuando Ahrefs devuelva el dato.
+- KD NO MEDIDO (ahrefs_sin_dato). La cabeza no se descarta por eso: se resuelve por la SERP, que es la mitad que si existe. El veredicto se revisa cuando Ahrefs devuelva el dato.
 - Competidores perfilados en este top 10: clinicarthromeds.pe (DR 1.1). La linea de base propia es DR 0, y en este nicho eso NO es la barrera: sus paginas interiores rankean con cero dominios de referencia.
 
 | Pos. | Dominio | Veredicto | Motivo |
@@ -413,7 +413,7 @@ por volumen va a preguntar por que no estan en la lista de objetivos.
 - BAJA: 1 posicion de grupo clinico con marca (clinicainternacional.com.pe), que no se ganan con contenido.
 - SUBE: 2 posiciones de directorio o red social (doctoralia.pe, facebook.com): eso no es contenido y se gana con una pagina clinica de verdad.
 - SUBE: 6 posiciones de medico o clinica pequena sin marca. Esta medido que en este nicho rankean con CERO dominios de referencia en la pagina interior.
-- KD NO MEDIDO (no_consultado). La cabeza no se descarta por eso: se resuelve por la SERP, que es la mitad que si existe. El veredicto se revisa cuando Ahrefs devuelva el dato.
+- KD NO MEDIDO (ahrefs_sin_dato). La cabeza no se descarta por eso: se resuelve por la SERP, que es la mitad que si existe. El veredicto se revisa cuando Ahrefs devuelva el dato.
 - Competidores perfilados en este top 10: drcarranzacolumna.com (DR 0). La linea de base propia es DR 0, y en este nicho eso NO es la barrera: sus paginas interiores rankean con cero dominios de referencia.
 
 | Pos. | Dominio | Veredicto | Motivo |
@@ -472,7 +472,7 @@ por volumen va a preguntar por que no estan en la lista de objetivos.
 - BAJA: 1 posicion de grupo clinico con marca (clinicainternacional.com.pe), que no se ganan con contenido.
 - SUBE: 4 posiciones de directorio o red social (doctoralia.pe, facebook.com): eso no es contenido y se gana con una pagina clinica de verdad.
 - SUBE: 4 posiciones de medico o clinica pequena sin marca. Esta medido que en este nicho rankean con CERO dominios de referencia en la pagina interior.
-- KD NO MEDIDO (no_consultado). La cabeza no se descarta por eso: se resuelve por la SERP, que es la mitad que si existe. El veredicto se revisa cuando Ahrefs devuelva el dato.
+- KD NO MEDIDO (ahrefs_sin_dato). La cabeza no se descarta por eso: se resuelve por la SERP, que es la mitad que si existe. El veredicto se revisa cuando Ahrefs devuelva el dato.
 - Competidores perfilados en este top 10: drcarranzacolumna.com (DR 0). La linea de base propia es DR 0, y en este nicho eso NO es la barrera: sus paginas interiores rankean con cero dominios de referencia.
 
 | Pos. | Dominio | Veredicto | Motivo |
@@ -534,7 +534,7 @@ por volumen va a preguntar por que no estan en la lista de objetivos.
 - BAJA: 1 posicion de grupo clinico con marca (clinicainternacional.com.pe), que no se ganan con contenido.
 - SUBE: 4 posiciones de directorio o red social (doctoralia.pe, facebook.com): eso no es contenido y se gana con una pagina clinica de verdad.
 - SUBE: 4 posiciones de medico o clinica pequena sin marca. Esta medido que en este nicho rankean con CERO dominios de referencia en la pagina interior.
-- KD NO MEDIDO (no_consultado). La cabeza no se descarta por eso: se resuelve por la SERP, que es la mitad que si existe. El veredicto se revisa cuando Ahrefs devuelva el dato.
+- KD NO MEDIDO (ahrefs_sin_dato). La cabeza no se descarta por eso: se resuelve por la SERP, que es la mitad que si existe. El veredicto se revisa cuando Ahrefs devuelva el dato.
 
 | Pos. | Dominio | Veredicto | Motivo |
 |---:|---|---|---|
@@ -575,7 +575,7 @@ por volumen va a preguntar por que no estan en la lista de objetivos.
 - BAJA: 1 posicion de grupo clinico con marca (clinicasanfelipe.com), que no se ganan con contenido.
 - SUBE: 1 posicion de directorio o red social (doctoralia.pe): eso no es contenido y se gana con una pagina clinica de verdad.
 - SUBE: 7 posiciones de medico o clinica pequena sin marca. Esta medido que en este nicho rankean con CERO dominios de referencia en la pagina interior.
-- KD NO MEDIDO (no_consultado). La cabeza no se descarta por eso: se resuelve por la SERP, que es la mitad que si existe. El veredicto se revisa cuando Ahrefs devuelva el dato.
+- KD NO MEDIDO (ahrefs_sin_dato). La cabeza no se descarta por eso: se resuelve por la SERP, que es la mitad que si existe. El veredicto se revisa cuando Ahrefs devuelva el dato.
 - Competidores perfilados en este top 10: drcarranzacolumna.com (DR 0), cirujanocolumna-elaos.com (DR 0). La linea de base propia es DR 0, y en este nicho eso NO es la barrera: sus paginas interiores rankean con cero dominios de referencia.
 
 | Pos. | Dominio | Veredicto | Motivo |
@@ -590,14 +590,14 @@ por volumen va a preguntar por que no estan en la lista de objetivos.
 | 8 | clinicasanfelipe.com | barrera | clinica con marca: clinicasanfelipe.com |
 | 9 | ineurocienciaslima.com.pe | disputable | medico o clinica pequena, sin marca |
 
-### neurocirujano — **alto** · 7/9 disputables · volumen — · KD —
+### neurocirujano — **alto** · 7/9 disputables · volumen — · KD 0
 
 - 7 de las 9 posiciones medidas del top 10 las ocupa contenido que un medico individual puede disputar.
 - BAJA: 1 posicion de grupo clinico con marca (clinicainternacional.com.pe), que no se ganan con contenido.
 - BAJA: 1 de contenido internacional (nyspine.com), que Lima no disputa. Ademas indica que esta SERP no es de intencion local.
 - SUBE: 1 posicion de directorio o red social (doctoralia.pe): eso no es contenido y se gana con una pagina clinica de verdad.
 - SUBE: 6 posiciones de medico o clinica pequena sin marca. Esta medido que en este nicho rankean con CERO dominios de referencia en la pagina interior.
-- KD NO MEDIDO (no_consultado). La cabeza no se descarta por eso: se resuelve por la SERP, que es la mitad que si existe. El veredicto se revisa cuando Ahrefs devuelva el dato.
+- SUBE: KD 0 declarado por Ahrefs, por debajo de 20.
 - Competidores perfilados en este top 10: cirujanocolumna-elaos.com (DR 0). La linea de base propia es DR 0, y en este nicho eso NO es la barrera: sus paginas interiores rankean con cero dominios de referencia.
 
 | Pos. | Dominio | Veredicto | Motivo |
@@ -618,7 +618,7 @@ por volumen va a preguntar por que no estan en la lista de objetivos.
 - BAJA: 2 posiciones de grupo clinico con marca (clinicainternacional.com.pe, clinicalima.sanjuandedios.pe), que no se ganan con contenido.
 - SUBE: 1 posicion de directorio o red social (doctoralia.pe): eso no es contenido y se gana con una pagina clinica de verdad.
 - SUBE: 6 posiciones de medico o clinica pequena sin marca. Esta medido que en este nicho rankean con CERO dominios de referencia en la pagina interior.
-- KD NO MEDIDO (no_consultado). La cabeza no se descarta por eso: se resuelve por la SERP, que es la mitad que si existe. El veredicto se revisa cuando Ahrefs devuelva el dato.
+- KD NO MEDIDO (ahrefs_sin_dato). La cabeza no se descarta por eso: se resuelve por la SERP, que es la mitad que si existe. El veredicto se revisa cuando Ahrefs devuelva el dato.
 - Competidores perfilados en este top 10: clinicarthromeds.pe (DR 1.1). La linea de base propia es DR 0, y en este nicho eso NO es la barrera: sus paginas interiores rankean con cero dominios de referencia.
 
 | Pos. | Dominio | Veredicto | Motivo |
@@ -639,7 +639,7 @@ por volumen va a preguntar por que no estan en la lista de objetivos.
 - BAJA: 2 posiciones de grupo clinico con marca (clinicainternacional.com.pe, clinicalima.sanjuandedios.pe), que no se ganan con contenido.
 - SUBE: 2 posiciones de directorio o red social (doctoralia.pe, facebook.com): eso no es contenido y se gana con una pagina clinica de verdad.
 - SUBE: 5 posiciones de medico o clinica pequena sin marca. Esta medido que en este nicho rankean con CERO dominios de referencia en la pagina interior.
-- KD NO MEDIDO (no_consultado). La cabeza no se descarta por eso: se resuelve por la SERP, que es la mitad que si existe. El veredicto se revisa cuando Ahrefs devuelva el dato.
+- KD NO MEDIDO (ahrefs_sin_dato). La cabeza no se descarta por eso: se resuelve por la SERP, que es la mitad que si existe. El veredicto se revisa cuando Ahrefs devuelva el dato.
 - Competidores perfilados en este top 10: drcarranzacolumna.com (DR 0), drciezatraumatologia.com (DR 2.9), cirujanocolumna-elaos.com (DR 0), clinicarthromeds.pe (DR 1.1). La linea de base propia es DR 0, y en este nicho eso NO es la barrera: sus paginas interiores rankean con cero dominios de referencia.
 
 | Pos. | Dominio | Veredicto | Motivo |
@@ -654,13 +654,13 @@ por volumen va a preguntar por que no estan en la lista de objetivos.
 | 8 | clinicalima.sanjuandedios.pe | barrera | clinica con marca: clinicalima.sanjuandedios.pe |
 | 9 | traumacenterperu.com | disputable | medico o clinica pequena, sin marca |
 
-### neurocirujano lima — **alto** · 7/9 disputables · volumen 0 · KD —
+### neurocirujano lima — **alto** · 7/9 disputables · volumen 0 · KD 0
 
 - 7 de las 9 posiciones medidas del top 10 las ocupa contenido que un medico individual puede disputar.
 - BAJA: 2 posiciones de grupo clinico con marca (clinicasanfelipe.com, clinicainternacional.com.pe), que no se ganan con contenido.
 - SUBE: 1 posicion de directorio o red social (doctoralia.pe): eso no es contenido y se gana con una pagina clinica de verdad.
 - SUBE: 6 posiciones de medico o clinica pequena sin marca. Esta medido que en este nicho rankean con CERO dominios de referencia en la pagina interior.
-- KD NO MEDIDO (no_consultado). La cabeza no se descarta por eso: se resuelve por la SERP, que es la mitad que si existe. El veredicto se revisa cuando Ahrefs devuelva el dato.
+- SUBE: KD 0 declarado por Ahrefs, por debajo de 20.
 - Competidores perfilados en este top 10: drcarranzacolumna.com (DR 0), cirujanocolumna-elaos.com (DR 0). La linea de base propia es DR 0, y en este nicho eso NO es la barrera: sus paginas interiores rankean con cero dominios de referencia.
 
 | Pos. | Dominio | Veredicto | Motivo |
@@ -681,7 +681,7 @@ por volumen va a preguntar por que no estan en la lista de objetivos.
 - BAJA: 2 posiciones de grupo clinico con marca (clinicainternacional.com.pe, clinicasanfelipe.com), que no se ganan con contenido.
 - SUBE: 3 posiciones de directorio o red social (facebook.com): eso no es contenido y se gana con una pagina clinica de verdad.
 - SUBE: 4 posiciones de medico o clinica pequena sin marca. Esta medido que en este nicho rankean con CERO dominios de referencia en la pagina interior.
-- KD NO MEDIDO (no_consultado). La cabeza no se descarta por eso: se resuelve por la SERP, que es la mitad que si existe. El veredicto se revisa cuando Ahrefs devuelva el dato.
+- KD NO MEDIDO (ahrefs_sin_dato). La cabeza no se descarta por eso: se resuelve por la SERP, que es la mitad que si existe. El veredicto se revisa cuando Ahrefs devuelva el dato.
 - Competidores perfilados en este top 10: drcarranzacolumna.com (DR 0), cirujanocolumna-elaos.com (DR 0), clinicarthromeds.pe (DR 1.1). La linea de base propia es DR 0, y en este nicho eso NO es la barrera: sus paginas interiores rankean con cero dominios de referencia.
 
 | Pos. | Dominio | Veredicto | Motivo |
@@ -846,7 +846,7 @@ por volumen va a preguntar por que no estan en la lista de objetivos.
 - BAJA: 2 de contenido internacional (mayoclinic.org, medlineplus.gov), que Lima no disputa. Ademas indica que esta SERP no es de intencion local.
 - SUBE: 1 posicion de directorio o red social (youtube.com): eso no es contenido y se gana con una pagina clinica de verdad.
 - SUBE: 6 posiciones de medico o clinica pequena sin marca. Esta medido que en este nicho rankean con CERO dominios de referencia en la pagina interior.
-- KD NO MEDIDO (no_consultado). La cabeza no se descarta por eso: se resuelve por la SERP, que es la mitad que si existe. El veredicto se revisa cuando Ahrefs devuelva el dato.
+- KD NO MEDIDO (ahrefs_sin_dato). La cabeza no se descarta por eso: se resuelve por la SERP, que es la mitad que si existe. El veredicto se revisa cuando Ahrefs devuelva el dato.
 
 | Pos. | Dominio | Veredicto | Motivo |
 |---:|---|---|---|
@@ -866,7 +866,7 @@ por volumen va a preguntar por que no estan en la lista de objetivos.
 - BAJA: 3 posiciones de grupo clinico con marca (clinicalima.sanjuandedios.pe, ipot-crp.pe, auna.org), que no se ganan con contenido.
 - SUBE: 1 posicion de directorio o red social (doctoralia.pe): eso no es contenido y se gana con una pagina clinica de verdad.
 - SUBE: 5 posiciones de medico o clinica pequena sin marca. Esta medido que en este nicho rankean con CERO dominios de referencia en la pagina interior.
-- KD NO MEDIDO (no_consultado). La cabeza no se descarta por eso: se resuelve por la SERP, que es la mitad que si existe. El veredicto se revisa cuando Ahrefs devuelva el dato.
+- KD NO MEDIDO (ahrefs_sin_dato). La cabeza no se descarta por eso: se resuelve por la SERP, que es la mitad que si existe. El veredicto se revisa cuando Ahrefs devuelva el dato.
 - Competidores perfilados en este top 10: clinicarthromeds.pe (DR 1.1). La linea de base propia es DR 0, y en este nicho eso NO es la barrera: sus paginas interiores rankean con cero dominios de referencia.
 
 | Pos. | Dominio | Veredicto | Motivo |
@@ -881,14 +881,14 @@ por volumen va a preguntar por que no estan en la lista de objetivos.
 | 8 | ipot-crp.pe | barrera | clinica con marca: ipot-crp.pe |
 | 9 | auna.org | barrera | clinica con marca: auna.org |
 
-### ortopedia infantil — **alto** · 6/8 disputables · volumen — · KD —
+### ortopedia infantil — **alto** · 6/8 disputables · volumen — · KD 0
 
 - 6 de las 8 posiciones medidas del top 10 las ocupa contenido que un medico individual puede disputar.
 - BAJA: 1 posicion de grupo clinico con marca (clinicaangloamericana.pe), que no se ganan con contenido.
 - BAJA: 1 de contenido internacional (lacardio.org), que Lima no disputa. Ademas indica que esta SERP no es de intencion local.
 - SUBE: 2 posiciones de directorio o red social (doctoralia.pe, facebook.com): eso no es contenido y se gana con una pagina clinica de verdad.
 - SUBE: 4 posiciones de medico o clinica pequena sin marca. Esta medido que en este nicho rankean con CERO dominios de referencia en la pagina interior.
-- KD NO MEDIDO (no_consultado). La cabeza no se descarta por eso: se resuelve por la SERP, que es la mitad que si existe. El veredicto se revisa cuando Ahrefs devuelva el dato.
+- SUBE: KD 0 declarado por Ahrefs, por debajo de 20.
 - Competidores perfilados en este top 10: clinicarthromeds.pe (DR 1.1). La linea de base propia es DR 0, y en este nicho eso NO es la barrera: sus paginas interiores rankean con cero dominios de referencia.
 
 | Pos. | Dominio | Veredicto | Motivo |
@@ -902,14 +902,14 @@ por volumen va a preguntar por que no estan en la lista de objetivos.
 | 7 | drabeltrantraumatologia.com | disputable | medico o clinica pequena, sin marca |
 | 8 | lacardio.org | barrera | contenido internacional |
 
-### traumatología y ortopedia — **alto** · 6/9 disputables · volumen 0 · KD —
+### traumatología y ortopedia — **alto** · 6/9 disputables · volumen 0 · KD 0
 
 - 6 de las 9 posiciones medidas del top 10 las ocupa contenido que un medico individual puede disputar.
 - BAJA: 2 posiciones de grupo clinico con marca (clinicainternacional.com.pe, auna.org), que no se ganan con contenido.
 - BAJA: 1 de contenido internacional (clinicalascondes.cl), que Lima no disputa. Ademas indica que esta SERP no es de intencion local.
 - SUBE: 1 posicion de directorio o red social (doctoralia.pe): eso no es contenido y se gana con una pagina clinica de verdad.
 - SUBE: 5 posiciones de medico o clinica pequena sin marca. Esta medido que en este nicho rankean con CERO dominios de referencia en la pagina interior.
-- KD NO MEDIDO (no_consultado). La cabeza no se descarta por eso: se resuelve por la SERP, que es la mitad que si existe. El veredicto se revisa cuando Ahrefs devuelva el dato.
+- SUBE: KD 0 declarado por Ahrefs, por debajo de 20.
 
 | Pos. | Dominio | Veredicto | Motivo |
 |---:|---|---|---|
@@ -929,7 +929,7 @@ por volumen va a preguntar por que no estan en la lista de objetivos.
 - BAJA: 2 de contenido internacional (clinicbarcelona.org, quironsalud.com), que Lima no disputa. Ademas indica que esta SERP no es de intencion local.
 - SUBE: 1 posicion de directorio o red social (topdoctors.es): eso no es contenido y se gana con una pagina clinica de verdad.
 - SUBE: 5 posiciones de medico o clinica pequena sin marca. Esta medido que en este nicho rankean con CERO dominios de referencia en la pagina interior.
-- KD NO MEDIDO (no_consultado). La cabeza no se descarta por eso: se resuelve por la SERP, que es la mitad que si existe. El veredicto se revisa cuando Ahrefs devuelva el dato.
+- KD NO MEDIDO (ahrefs_sin_dato). La cabeza no se descarta por eso: se resuelve por la SERP, que es la mitad que si existe. El veredicto se revisa cuando Ahrefs devuelva el dato.
 
 | Pos. | Dominio | Veredicto | Motivo |
 |---:|---|---|---|
@@ -948,7 +948,7 @@ por volumen va a preguntar por que no estan en la lista de objetivos.
 - BAJA: 3 posiciones de grupo clinico con marca (clinicaangloamericana.pe, ipot-crp.pe, clinicalima.sanjuandedios.pe), que no se ganan con contenido.
 - SUBE: 3 posiciones de directorio o red social (doctoralia.pe, instagram.com, facebook.com): eso no es contenido y se gana con una pagina clinica de verdad.
 - SUBE: 3 posiciones de medico o clinica pequena sin marca. Esta medido que en este nicho rankean con CERO dominios de referencia en la pagina interior.
-- KD NO MEDIDO (no_consultado). La cabeza no se descarta por eso: se resuelve por la SERP, que es la mitad que si existe. El veredicto se revisa cuando Ahrefs devuelva el dato.
+- KD NO MEDIDO (ahrefs_sin_dato). La cabeza no se descarta por eso: se resuelve por la SERP, que es la mitad que si existe. El veredicto se revisa cuando Ahrefs devuelva el dato.
 - Competidores perfilados en este top 10: clinicarthromeds.pe (DR 1.1). La linea de base propia es DR 0, y en este nicho eso NO es la barrera: sus paginas interiores rankean con cero dominios de referencia.
 
 | Pos. | Dominio | Veredicto | Motivo |
@@ -990,7 +990,7 @@ por volumen va a preguntar por que no estan en la lista de objetivos.
 - BAJA: 3 posiciones de grupo clinico con marca (clinicalima.sanjuandedios.pe, clinicainternacional.com.pe, crp.com.pe), que no se ganan con contenido.
 - SUBE: 1 posicion de directorio o red social (doctoralia.pe): eso no es contenido y se gana con una pagina clinica de verdad.
 - SUBE: 5 posiciones de medico o clinica pequena sin marca. Esta medido que en este nicho rankean con CERO dominios de referencia en la pagina interior.
-- KD NO MEDIDO (no_consultado). La cabeza no se descarta por eso: se resuelve por la SERP, que es la mitad que si existe. El veredicto se revisa cuando Ahrefs devuelva el dato.
+- KD NO MEDIDO (ahrefs_sin_dato). La cabeza no se descarta por eso: se resuelve por la SERP, que es la mitad que si existe. El veredicto se revisa cuando Ahrefs devuelva el dato.
 - Competidores perfilados en este top 10: clinicarthromeds.pe (DR 1.1). La linea de base propia es DR 0, y en este nicho eso NO es la barrera: sus paginas interiores rankean con cero dominios de referencia.
 
 | Pos. | Dominio | Veredicto | Motivo |
@@ -1073,7 +1073,7 @@ por volumen va a preguntar por que no estan en la lista de objetivos.
 - BAJA: 3 posiciones de grupo clinico con marca (clinicalima.sanjuandedios.pe, clinicainternacional.com.pe, crp.com.pe), que no se ganan con contenido.
 - SUBE: 1 posicion de directorio o red social (doctoralia.pe): eso no es contenido y se gana con una pagina clinica de verdad.
 - SUBE: 5 posiciones de medico o clinica pequena sin marca. Esta medido que en este nicho rankean con CERO dominios de referencia en la pagina interior.
-- KD NO MEDIDO (no_consultado). La cabeza no se descarta por eso: se resuelve por la SERP, que es la mitad que si existe. El veredicto se revisa cuando Ahrefs devuelva el dato.
+- KD NO MEDIDO (ahrefs_sin_dato). La cabeza no se descarta por eso: se resuelve por la SERP, que es la mitad que si existe. El veredicto se revisa cuando Ahrefs devuelva el dato.
 - Competidores perfilados en este top 10: clinicarthromeds.pe (DR 1.1). La linea de base propia es DR 0, y en este nicho eso NO es la barrera: sus paginas interiores rankean con cero dominios de referencia.
 
 | Pos. | Dominio | Veredicto | Motivo |
@@ -1094,7 +1094,7 @@ por volumen va a preguntar por que no estan en la lista de objetivos.
 - BAJA: 2 posiciones de grupo clinico con marca (clinicainternacional.com.pe, clinicalima.sanjuandedios.pe), que no se ganan con contenido.
 - SUBE: 1 posicion de directorio o red social (doctoralia.pe): eso no es contenido y se gana con una pagina clinica de verdad.
 - SUBE: 5 posiciones de medico o clinica pequena sin marca. Esta medido que en este nicho rankean con CERO dominios de referencia en la pagina interior.
-- KD NO MEDIDO (no_consultado). La cabeza no se descarta por eso: se resuelve por la SERP, que es la mitad que si existe. El veredicto se revisa cuando Ahrefs devuelva el dato.
+- KD NO MEDIDO (ahrefs_sin_dato). La cabeza no se descarta por eso: se resuelve por la SERP, que es la mitad que si existe. El veredicto se revisa cuando Ahrefs devuelva el dato.
 - Competidores perfilados en este top 10: clinicarthromeds.pe (DR 1.1). La linea de base propia es DR 0, y en este nicho eso NO es la barrera: sus paginas interiores rankean con cero dominios de referencia.
 
 | Pos. | Dominio | Veredicto | Motivo |
@@ -1150,13 +1150,13 @@ por volumen va a preguntar por que no estan en la lista de objetivos.
 | 8 | clinicarthromeds.pe | disputable | medico o clinica pequena, sin marca |
 | 9 | cuidadosintensivos.ojo-publico.com | disputable | medico o clinica pequena, sin marca |
 
-### que es un neurocirujano — **alto** · 6/8 disputables · volumen 480 · KD —
+### que es un neurocirujano — **alto** · 6/8 disputables · volumen 480 · KD 0
 
 - 6 de las 8 posiciones medidas del top 10 las ocupa contenido que un medico individual puede disputar.
 - BAJA: 1 posicion de grupo clinico con marca (clinicainternacional.com.pe), que no se ganan con contenido.
 - BAJA: 1 de contenido internacional (nyspine.com), que Lima no disputa. Ademas indica que esta SERP no es de intencion local.
 - SUBE: 6 posiciones de medico o clinica pequena sin marca. Esta medido que en este nicho rankean con CERO dominios de referencia en la pagina interior.
-- KD NO MEDIDO (no_consultado). La cabeza no se descarta por eso: se resuelve por la SERP, que es la mitad que si existe. El veredicto se revisa cuando Ahrefs devuelva el dato.
+- SUBE: KD 0 declarado por Ahrefs, por debajo de 20.
 
 | Pos. | Dominio | Veredicto | Motivo |
 |---:|---|---|---|
@@ -1175,7 +1175,7 @@ por volumen va a preguntar por que no estan en la lista de objetivos.
 - BAJA: 3 de contenido internacional (martinvasco.es, berri.es, quironsalud.com), que Lima no disputa. Ademas indica que esta SERP no es de intencion local.
 - SUBE: 1 posicion de directorio o red social (youtube.com): eso no es contenido y se gana con una pagina clinica de verdad.
 - SUBE: 5 posiciones de medico o clinica pequena sin marca. Esta medido que en este nicho rankean con CERO dominios de referencia en la pagina interior.
-- KD NO MEDIDO (no_consultado). La cabeza no se descarta por eso: se resuelve por la SERP, que es la mitad que si existe. El veredicto se revisa cuando Ahrefs devuelva el dato.
+- KD NO MEDIDO (ahrefs_sin_dato). La cabeza no se descarta por eso: se resuelve por la SERP, que es la mitad que si existe. El veredicto se revisa cuando Ahrefs devuelva el dato.
 
 | Pos. | Dominio | Veredicto | Motivo |
 |---:|---|---|---|
@@ -1189,12 +1189,12 @@ por volumen va a preguntar por que no estan en la lista de objetivos.
 | 8 | elgeaditraumatologia.com | disputable | medico o clinica pequena, sin marca |
 | 9 | traumamedical.com.pe | disputable | medico o clinica pequena, sin marca |
 
-### cifosis — **medio** · 5/7 disputables · volumen 3600 · KD —
+### cifosis — **alto** · 5/7 disputables · volumen 3600 · KD 3
 
 - 5 de las 7 posiciones medidas del top 10 las ocupa contenido que un medico individual puede disputar.
 - BAJA: 2 de contenido internacional (medlineplus.gov, mayoclinic.org), que Lima no disputa. Ademas indica que esta SERP no es de intencion local.
 - SUBE: 5 posiciones de medico o clinica pequena sin marca. Esta medido que en este nicho rankean con CERO dominios de referencia en la pagina interior.
-- KD NO MEDIDO (no_consultado). La cabeza no se descarta por eso: se resuelve por la SERP, que es la mitad que si existe. El veredicto se revisa cuando Ahrefs devuelva el dato.
+- SUBE: KD 3 declarado por Ahrefs, por debajo de 20.
 
 | Pos. | Dominio | Veredicto | Motivo |
 |---:|---|---|---|
@@ -1206,6 +1206,61 @@ por volumen va a preguntar por que no estan en la lista de objetivos.
 | 6 | childrensmn.org | disputable | medico o clinica pequena, sin marca |
 | 7 | nicklauschildrens.org | disputable | medico o clinica pequena, sin marca |
 
+### las mejores pastillas para la ciática — **alto** · 5/8 disputables · volumen 390 · KD 12
+
+- 5 de las 8 posiciones medidas del top 10 las ocupa contenido que un medico individual puede disputar.
+- BAJA: 3 de contenido internacional (mayoclinic.org, infoespalda.es, farmaciaribera.es), que Lima no disputa. Ademas indica que esta SERP no es de intencion local.
+- SUBE: 1 posicion de directorio o red social (youtube.com): eso no es contenido y se gana con una pagina clinica de verdad.
+- SUBE: 4 posiciones de medico o clinica pequena sin marca. Esta medido que en este nicho rankean con CERO dominios de referencia en la pagina interior.
+- SUBE: KD 12 declarado por Ahrefs, por debajo de 20.
+
+| Pos. | Dominio | Veredicto | Motivo |
+|---:|---|---|---|
+| 1 | mejorconsalud.as.com | disputable | medico o clinica pequena, sin marca |
+| 2 | mayoclinic.org | barrera | contenido internacional |
+| 3 | infoespalda.es | barrera | contenido internacional |
+| 4 | spine-health.com | disputable | medico o clinica pequena, sin marca |
+| 5 | youtube.com | disputable | contenido debil: red-social |
+| 6 | tuasaude.com | disputable | medico o clinica pequena, sin marca |
+| 7 | farmaciaribera.es | barrera | contenido internacional |
+| 8 | prixz.com | disputable | medico o clinica pequena, sin marca |
+
+### traumatología — **alto** · 4/7 disputables · volumen — · KD 1
+
+- 4 de las 7 posiciones medidas del top 10 las ocupa contenido que un medico individual puede disputar.
+- BAJA: 3 posiciones de grupo clinico con marca (clinicainternacional.com.pe, clinicalima.sanjuandedios.pe, crp.com.pe), que no se ganan con contenido.
+- SUBE: 4 posiciones de medico o clinica pequena sin marca. Esta medido que en este nicho rankean con CERO dominios de referencia en la pagina interior.
+- SUBE: KD 1 declarado por Ahrefs, por debajo de 20.
+
+| Pos. | Dominio | Veredicto | Motivo |
+|---:|---|---|---|
+| 1 | clinicainternacional.com.pe | barrera | clinica con marca: clinicainternacional.com.pe |
+| 2 | stellamaris.com.pe | disputable | medico o clinica pequena, sin marca |
+| 3 | clinicalima.sanjuandedios.pe | barrera | clinica con marca: clinicalima.sanjuandedios.pe |
+| 4 | crp.com.pe | barrera | clinica con marca: crp.com.pe |
+| 5 | especialidadesmedicas.pe | disputable | medico o clinica pequena, sin marca |
+| 6 | insn.gob.pe | disputable | medico o clinica pequena, sin marca |
+| 7 | es.wikipedia.org | disputable | medico o clinica pequena, sin marca |
+
+### como se cura un desgarro muscular — **alto** · 4/8 disputables · volumen 110 · KD 12
+
+- 4 de las 8 posiciones medidas del top 10 las ocupa contenido que un medico individual puede disputar.
+- BAJA: 1 posicion de grupo clinico con marca (blog.auna.pe), que no se ganan con contenido.
+- BAJA: 3 de contenido internacional (copac.com.pa, actimove.es, medlineplus.gov), que Lima no disputa. Ademas indica que esta SERP no es de intencion local.
+- SUBE: 4 posiciones de medico o clinica pequena sin marca. Esta medido que en este nicho rankean con CERO dominios de referencia en la pagina interior.
+- SUBE: KD 12 declarado por Ahrefs, por debajo de 20.
+
+| Pos. | Dominio | Veredicto | Motivo |
+|---:|---|---|---|
+| 1 | palma.fisio-clinics.com | disputable | medico o clinica pequena, sin marca |
+| 2 | clinicaelgeadi.com | disputable | medico o clinica pequena, sin marca |
+| 3 | clinicadelesionesdeportivas.com | disputable | medico o clinica pequena, sin marca |
+| 4 | blog.auna.pe | barrera | clinica con marca: auna.pe |
+| 5 | copac.com.pa | barrera | contenido internacional |
+| 6 | actimove.es | barrera | contenido internacional |
+| 7 | medlineplus.gov | barrera | contenido internacional |
+| 8 | fisiob.com | disputable | medico o clinica pequena, sin marca |
+
 ### traumatólogo de columna — **medio** · 5/9 disputables · volumen 0 · KD —
 
 - 5 de las 9 posiciones medidas del top 10 las ocupa contenido que un medico individual puede disputar.
@@ -1213,7 +1268,7 @@ por volumen va a preguntar por que no estan en la lista de objetivos.
 - BAJA: 2 de contenido internacional (redsalud.cl, integramedica.cl), que Lima no disputa. Ademas indica que esta SERP no es de intencion local.
 - SUBE: 1 posicion de directorio o red social (doctoralia.pe): eso no es contenido y se gana con una pagina clinica de verdad.
 - SUBE: 4 posiciones de medico o clinica pequena sin marca. Esta medido que en este nicho rankean con CERO dominios de referencia en la pagina interior.
-- KD NO MEDIDO (no_consultado). La cabeza no se descarta por eso: se resuelve por la SERP, que es la mitad que si existe. El veredicto se revisa cuando Ahrefs devuelva el dato.
+- KD NO MEDIDO (ahrefs_sin_dato). La cabeza no se descarta por eso: se resuelve por la SERP, que es la mitad que si existe. El veredicto se revisa cuando Ahrefs devuelva el dato.
 - Competidores perfilados en este top 10: drcarranzacolumna.com (DR 0), clinicarthromeds.pe (DR 1.1). La linea de base propia es DR 0, y en este nicho eso NO es la barrera: sus paginas interiores rankean con cero dominios de referencia.
 
 | Pos. | Dominio | Veredicto | Motivo |
@@ -1235,7 +1290,7 @@ por volumen va a preguntar por que no estan en la lista de objetivos.
 - BAJA: 2 de contenido internacional (newyorkspinespecialist.com, orthoinfo.org), que Lima no disputa. Ademas indica que esta SERP no es de intencion local.
 - SUBE: 1 posicion de directorio o red social (doctoralia.pe): eso no es contenido y se gana con una pagina clinica de verdad.
 - SUBE: 4 posiciones de medico o clinica pequena sin marca. Esta medido que en este nicho rankean con CERO dominios de referencia en la pagina interior.
-- KD NO MEDIDO (no_consultado). La cabeza no se descarta por eso: se resuelve por la SERP, que es la mitad que si existe. El veredicto se revisa cuando Ahrefs devuelva el dato.
+- KD NO MEDIDO (ahrefs_sin_dato). La cabeza no se descarta por eso: se resuelve por la SERP, que es la mitad que si existe. El veredicto se revisa cuando Ahrefs devuelva el dato.
 - Competidores perfilados en este top 10: drcarranzacolumna.com (DR 0), drciezatraumatologia.com (DR 2.9), cirujanocolumna-elaos.com (DR 0), clinicarthromeds.pe (DR 1.1). La linea de base propia es DR 0, y en este nicho eso NO es la barrera: sus paginas interiores rankean con cero dominios de referencia.
 
 | Pos. | Dominio | Veredicto | Motivo |
@@ -1318,7 +1373,7 @@ por volumen va a preguntar por que no estan en la lista de objetivos.
 - BAJA: 4 posiciones de grupo clinico con marca (clinicainternacional.com.pe, clinicalima.sanjuandedios.pe, auna.org, ipot-crp.pe), que no se ganan con contenido.
 - SUBE: 2 posiciones de directorio o red social (facebook.com, doctoralia.pe): eso no es contenido y se gana con una pagina clinica de verdad.
 - SUBE: 3 posiciones de medico o clinica pequena sin marca. Esta medido que en este nicho rankean con CERO dominios de referencia en la pagina interior.
-- KD NO MEDIDO (no_consultado). La cabeza no se descarta por eso: se resuelve por la SERP, que es la mitad que si existe. El veredicto se revisa cuando Ahrefs devuelva el dato.
+- KD NO MEDIDO (ahrefs_sin_dato). La cabeza no se descarta por eso: se resuelve por la SERP, que es la mitad que si existe. El veredicto se revisa cuando Ahrefs devuelva el dato.
 
 | Pos. | Dominio | Veredicto | Motivo |
 |---:|---|---|---|
@@ -1352,31 +1407,12 @@ por volumen va a preguntar por que no estan en la lista de objetivos.
 | 7 | crp.com.pe | barrera | clinica con marca: crp.com.pe |
 | 8 | clinicalaluz.pe | disputable | medico o clinica pequena, sin marca |
 
-### las mejores pastillas para la ciática — **medio** · 5/8 disputables · volumen 390 · KD —
-
-- 5 de las 8 posiciones medidas del top 10 las ocupa contenido que un medico individual puede disputar.
-- BAJA: 3 de contenido internacional (mayoclinic.org, infoespalda.es, farmaciaribera.es), que Lima no disputa. Ademas indica que esta SERP no es de intencion local.
-- SUBE: 1 posicion de directorio o red social (youtube.com): eso no es contenido y se gana con una pagina clinica de verdad.
-- SUBE: 4 posiciones de medico o clinica pequena sin marca. Esta medido que en este nicho rankean con CERO dominios de referencia en la pagina interior.
-- KD NO MEDIDO (no_consultado). La cabeza no se descarta por eso: se resuelve por la SERP, que es la mitad que si existe. El veredicto se revisa cuando Ahrefs devuelva el dato.
-
-| Pos. | Dominio | Veredicto | Motivo |
-|---:|---|---|---|
-| 1 | mejorconsalud.as.com | disputable | medico o clinica pequena, sin marca |
-| 2 | mayoclinic.org | barrera | contenido internacional |
-| 3 | infoespalda.es | barrera | contenido internacional |
-| 4 | spine-health.com | disputable | medico o clinica pequena, sin marca |
-| 5 | youtube.com | disputable | contenido debil: red-social |
-| 6 | tuasaude.com | disputable | medico o clinica pequena, sin marca |
-| 7 | farmaciaribera.es | barrera | contenido internacional |
-| 8 | prixz.com | disputable | medico o clinica pequena, sin marca |
-
 ### mejor clínica de traumatología en lima — **medio** · 5/8 disputables · volumen 210 · KD —
 
 - 5 de las 8 posiciones medidas del top 10 las ocupa contenido que un medico individual puede disputar.
 - BAJA: 3 posiciones de grupo clinico con marca (clinicalima.sanjuandedios.pe, clinicainternacional.com.pe, crp.com.pe), que no se ganan con contenido.
 - SUBE: 5 posiciones de medico o clinica pequena sin marca. Esta medido que en este nicho rankean con CERO dominios de referencia en la pagina interior.
-- KD NO MEDIDO (no_consultado). La cabeza no se descarta por eso: se resuelve por la SERP, que es la mitad que si existe. El veredicto se revisa cuando Ahrefs devuelva el dato.
+- KD NO MEDIDO (ahrefs_sin_dato). La cabeza no se descarta por eso: se resuelve por la SERP, que es la mitad que si existe. El veredicto se revisa cuando Ahrefs devuelva el dato.
 - Competidores perfilados en este top 10: clinicarthromeds.pe (DR 1.1). La linea de base propia es DR 0, y en este nicho eso NO es la barrera: sus paginas interiores rankean con cero dominios de referencia.
 
 | Pos. | Dominio | Veredicto | Motivo |
@@ -1395,7 +1431,7 @@ por volumen va a preguntar por que no estan en la lista de objetivos.
 - 4 de las 7 posiciones medidas del top 10 las ocupa contenido que un medico individual puede disputar.
 - BAJA: 3 de contenido internacional (quironsalud.com, elsevier.es, barnaclinic.com), que Lima no disputa. Ademas indica que esta SERP no es de intencion local.
 - SUBE: 4 posiciones de medico o clinica pequena sin marca. Esta medido que en este nicho rankean con CERO dominios de referencia en la pagina interior.
-- KD NO MEDIDO (no_consultado). La cabeza no se descarta por eso: se resuelve por la SERP, que es la mitad que si existe. El veredicto se revisa cuando Ahrefs devuelva el dato.
+- KD NO MEDIDO (ahrefs_sin_dato). La cabeza no se descarta por eso: se resuelve por la SERP, que es la mitad que si existe. El veredicto se revisa cuando Ahrefs devuelva el dato.
 
 | Pos. | Dominio | Veredicto | Motivo |
 |---:|---|---|---|
@@ -1407,12 +1443,12 @@ por volumen va a preguntar por que no estan en la lista de objetivos.
 | 6 | cirugiaendoscopicaperu.com | disputable | medico o clinica pequena, sin marca |
 | 7 | barnaclinic.com | barrera | contenido internacional |
 
-### artrosis — **medio** · 4/7 disputables · volumen — · KD —
+### artrosis — **medio** · 4/7 disputables · volumen — · KD 26
 
 - 4 de las 7 posiciones medidas del top 10 las ocupa contenido que un medico individual puede disputar.
 - BAJA: 3 de contenido internacional (cun.es, who.int, elsevier.es), que Lima no disputa. Ademas indica que esta SERP no es de intencion local.
 - SUBE: 4 posiciones de medico o clinica pequena sin marca. Esta medido que en este nicho rankean con CERO dominios de referencia en la pagina interior.
-- KD NO MEDIDO (no_consultado). La cabeza no se descarta por eso: se resuelve por la SERP, que es la mitad que si existe. El veredicto se revisa cuando Ahrefs devuelva el dato.
+- KD 26: intermedio. No mueve el veredicto en ninguna direccion.
 
 | Pos. | Dominio | Veredicto | Motivo |
 |---:|---|---|---|
@@ -1422,23 +1458,6 @@ por volumen va a preguntar por que no estan en la lista de objetivos.
 | 4 | msdmanuals.com | disputable | medico o clinica pequena, sin marca |
 | 5 | elsevier.es | barrera | contenido internacional |
 | 6 | oafifoundation.com | disputable | medico o clinica pequena, sin marca |
-| 7 | es.wikipedia.org | disputable | medico o clinica pequena, sin marca |
-
-### traumatología — **medio** · 4/7 disputables · volumen — · KD —
-
-- 4 de las 7 posiciones medidas del top 10 las ocupa contenido que un medico individual puede disputar.
-- BAJA: 3 posiciones de grupo clinico con marca (clinicainternacional.com.pe, clinicalima.sanjuandedios.pe, crp.com.pe), que no se ganan con contenido.
-- SUBE: 4 posiciones de medico o clinica pequena sin marca. Esta medido que en este nicho rankean con CERO dominios de referencia en la pagina interior.
-- KD NO MEDIDO (no_consultado). La cabeza no se descarta por eso: se resuelve por la SERP, que es la mitad que si existe. El veredicto se revisa cuando Ahrefs devuelva el dato.
-
-| Pos. | Dominio | Veredicto | Motivo |
-|---:|---|---|---|
-| 1 | clinicainternacional.com.pe | barrera | clinica con marca: clinicainternacional.com.pe |
-| 2 | stellamaris.com.pe | disputable | medico o clinica pequena, sin marca |
-| 3 | clinicalima.sanjuandedios.pe | barrera | clinica con marca: clinicalima.sanjuandedios.pe |
-| 4 | crp.com.pe | barrera | clinica con marca: crp.com.pe |
-| 5 | especialidadesmedicas.pe | disputable | medico o clinica pequena, sin marca |
-| 6 | insn.gob.pe | disputable | medico o clinica pequena, sin marca |
 | 7 | es.wikipedia.org | disputable | medico o clinica pequena, sin marca |
 
 ### traumatólogo — **medio** · 4/8 disputables · volumen — · KD —
@@ -1560,25 +1579,6 @@ por volumen va a preguntar por que no estan en la lista de objetivos.
 | 8 | drcarranzacolumna.com | disputable | medico o clinica pequena, sin marca |
 | 9 | facebook.com | disputable | contenido debil: red-social |
 
-### como se cura un desgarro muscular — **medio** · 4/8 disputables · volumen 110 · KD —
-
-- 4 de las 8 posiciones medidas del top 10 las ocupa contenido que un medico individual puede disputar.
-- BAJA: 1 posicion de grupo clinico con marca (blog.auna.pe), que no se ganan con contenido.
-- BAJA: 3 de contenido internacional (copac.com.pa, actimove.es, medlineplus.gov), que Lima no disputa. Ademas indica que esta SERP no es de intencion local.
-- SUBE: 4 posiciones de medico o clinica pequena sin marca. Esta medido que en este nicho rankean con CERO dominios de referencia en la pagina interior.
-- KD NO MEDIDO (no_consultado). La cabeza no se descarta por eso: se resuelve por la SERP, que es la mitad que si existe. El veredicto se revisa cuando Ahrefs devuelva el dato.
-
-| Pos. | Dominio | Veredicto | Motivo |
-|---:|---|---|---|
-| 1 | palma.fisio-clinics.com | disputable | medico o clinica pequena, sin marca |
-| 2 | clinicaelgeadi.com | disputable | medico o clinica pequena, sin marca |
-| 3 | clinicadelesionesdeportivas.com | disputable | medico o clinica pequena, sin marca |
-| 4 | blog.auna.pe | barrera | clinica con marca: auna.pe |
-| 5 | copac.com.pa | barrera | contenido internacional |
-| 6 | actimove.es | barrera | contenido internacional |
-| 7 | medlineplus.gov | barrera | contenido internacional |
-| 8 | fisiob.com | disputable | medico o clinica pequena, sin marca |
-
 ### traumatología especialista en columna — **medio** · 4/9 disputables · volumen 110 · KD —
 
 - 4 de las 9 posiciones medidas del top 10 las ocupa contenido que un medico individual puede disputar.
@@ -1586,7 +1586,7 @@ por volumen va a preguntar por que no estan en la lista de objetivos.
 - BAJA: 1 de contenido internacional (redsalud.cl), que Lima no disputa. Ademas indica que esta SERP no es de intencion local.
 - SUBE: 1 posicion de directorio o red social (doctoralia.pe): eso no es contenido y se gana con una pagina clinica de verdad.
 - SUBE: 3 posiciones de medico o clinica pequena sin marca. Esta medido que en este nicho rankean con CERO dominios de referencia en la pagina interior.
-- KD NO MEDIDO (no_consultado). La cabeza no se descarta por eso: se resuelve por la SERP, que es la mitad que si existe. El veredicto se revisa cuando Ahrefs devuelva el dato.
+- KD NO MEDIDO (ahrefs_sin_dato). La cabeza no se descarta por eso: se resuelve por la SERP, que es la mitad que si existe. El veredicto se revisa cuando Ahrefs devuelva el dato.
 - Competidores perfilados en este top 10: drcarranzacolumna.com (DR 0), drciezatraumatologia.com (DR 2.9), clinicarthromeds.pe (DR 1.1). La linea de base propia es DR 0, y en este nicho eso NO es la barrera: sus paginas interiores rankean con cero dominios de referencia.
 
 | Pos. | Dominio | Veredicto | Motivo |
@@ -1621,12 +1621,12 @@ por volumen va a preguntar por que no estan en la lista de objetivos.
 | 8 | facebook.com | disputable | contenido debil: red-social |
 | 9 | sanna.pe | barrera | clinica con marca: sanna.pe |
 
-### ciática — **bajo** · 3/7 disputables · volumen 8100 · KD —
+### ciática — **bajo** · 3/7 disputables · volumen 8100 · KD 19
 
 - 3 de las 7 posiciones medidas del top 10 las ocupa contenido que un medico individual puede disputar.
 - BAJA: 4 de contenido internacional (mayoclinic.org, medlineplus.gov, quironsalud.com, cigna.com), que Lima no disputa. Ademas indica que esta SERP no es de intencion local.
 - SUBE: 3 posiciones de medico o clinica pequena sin marca. Esta medido que en este nicho rankean con CERO dominios de referencia en la pagina interior.
-- KD NO MEDIDO (no_consultado). La cabeza no se descarta por eso: se resuelve por la SERP, que es la mitad que si existe. El veredicto se revisa cuando Ahrefs devuelva el dato.
+- KD 19 es bajo, pero NO sube el veredicto: con 3 posiciones disputables no hay sitio donde entrar. El KD es un promedio de mercado y no sabe quien ocupa esta SERP.
 
 | Pos. | Dominio | Veredicto | Motivo |
 |---:|---|---|---|
@@ -1638,12 +1638,12 @@ por volumen va a preguntar por que no estan en la lista de objetivos.
 | 6 | spine-health.com | disputable | medico o clinica pequena, sin marca |
 | 7 | cigna.com | barrera | contenido internacional |
 
-### desgarro muscular — **bajo** · 3/8 disputables · volumen 5400 · KD —
+### desgarro muscular — **bajo** · 3/8 disputables · volumen 5400 · KD 13
 
 - 3 de las 8 posiciones medidas del top 10 las ocupa contenido que un medico individual puede disputar.
 - BAJA: 5 de contenido internacional (medlineplus.gov, actimove.es, copac.com.pa, paracelsosagasta.es), que Lima no disputa. Ademas indica que esta SERP no es de intencion local.
 - SUBE: 3 posiciones de medico o clinica pequena sin marca. Esta medido que en este nicho rankean con CERO dominios de referencia en la pagina interior.
-- KD NO MEDIDO (no_consultado). La cabeza no se descarta por eso: se resuelve por la SERP, que es la mitad que si existe. El veredicto se revisa cuando Ahrefs devuelva el dato.
+- KD 13 es bajo, pero NO sube el veredicto: con 3 posiciones disputables no hay sitio donde entrar. El KD es un promedio de mercado y no sabe quien ocupa esta SERP.
 
 | Pos. | Dominio | Veredicto | Motivo |
 |---:|---|---|---|
@@ -1656,13 +1656,13 @@ por volumen va a preguntar por que no estan en la lista de objetivos.
 | 7 | paracelsosagasta.es | barrera | contenido internacional |
 | 8 | gob.mx | barrera | contenido internacional |
 
-### cirugía mínimamente invasiva — **bajo** · 3/7 disputables · volumen 30 · KD —
+### cirugía mínimamente invasiva — **bajo** · 3/7 disputables · volumen 30 · KD 0
 
 - 3 de las 7 posiciones medidas del top 10 las ocupa contenido que un medico individual puede disputar.
 - BAJA: 1 posicion de grupo clinico con marca (clinicaangloamericana.pe), que no se ganan con contenido.
 - BAJA: 3 de contenido internacional (mayoclinic.org, cancer.gov, scielo.isciii.es), que Lima no disputa. Ademas indica que esta SERP no es de intencion local.
 - SUBE: 3 posiciones de medico o clinica pequena sin marca. Esta medido que en este nicho rankean con CERO dominios de referencia en la pagina interior.
-- KD NO MEDIDO (no_consultado). La cabeza no se descarta por eso: se resuelve por la SERP, que es la mitad que si existe. El veredicto se revisa cuando Ahrefs devuelva el dato.
+- KD 0 es bajo, pero NO sube el veredicto: con 3 posiciones disputables no hay sitio donde entrar. El KD es un promedio de mercado y no sabe quien ocupa esta SERP.
 
 | Pos. | Dominio | Veredicto | Motivo |
 |---:|---|---|---|
@@ -1680,7 +1680,7 @@ por volumen va a preguntar por que no estan en la lista de objetivos.
 - BAJA: 5 posiciones de grupo clinico con marca (crp.com.pe, ipot-crp.pe), que no se ganan con contenido.
 - SUBE: 2 posiciones de directorio o red social (doctoralia.pe, youtube.com): eso no es contenido y se gana con una pagina clinica de verdad.
 - SUBE: 1 posicion de medico o clinica pequena sin marca. Esta medido que en este nicho rankean con CERO dominios de referencia en la pagina interior.
-- KD NO MEDIDO (no_consultado). La cabeza no se descarta por eso: se resuelve por la SERP, que es la mitad que si existe. El veredicto se revisa cuando Ahrefs devuelva el dato.
+- KD NO MEDIDO (ahrefs_sin_dato). La cabeza no se descarta por eso: se resuelve por la SERP, que es la mitad que si existe. El veredicto se revisa cuando Ahrefs devuelva el dato.
 - Competidores perfilados en este top 10: clinicarthromeds.pe (DR 1.1). La linea de base propia es DR 0, y en este nicho eso NO es la barrera: sus paginas interiores rankean con cero dominios de referencia.
 
 | Pos. | Dominio | Veredicto | Motivo |
@@ -1719,7 +1719,7 @@ por volumen va a preguntar por que no estan en la lista de objetivos.
 - 3 de las 9 posiciones medidas del top 10 las ocupa contenido que un medico individual puede disputar.
 - BAJA: 6 posiciones de grupo clinico con marca (crp.com.pe, ipot-crp.pe), que no se ganan con contenido.
 - SUBE: 3 posiciones de directorio o red social (doctoralia.pe, youtube.com, instagram.com): eso no es contenido y se gana con una pagina clinica de verdad.
-- KD NO MEDIDO (no_consultado). La cabeza no se descarta por eso: se resuelve por la SERP, que es la mitad que si existe. El veredicto se revisa cuando Ahrefs devuelva el dato.
+- KD NO MEDIDO (ahrefs_sin_dato). La cabeza no se descarta por eso: se resuelve por la SERP, que es la mitad que si existe. El veredicto se revisa cuando Ahrefs devuelva el dato.
 
 | Pos. | Dominio | Veredicto | Motivo |
 |---:|---|---|---|
@@ -1770,12 +1770,12 @@ por volumen va a preguntar por que no estan en la lista de objetivos.
 | 8 | facebook.com | disputable | contenido debil: red-social |
 | 9 | clinicatezza.com.pe | barrera | clinica con marca: clinicatezza.com.pe |
 
-### cual es la diferencia entre artritis y artrosis — **bajo** · 3/8 disputables · volumen 170 · KD —
+### cual es la diferencia entre artritis y artrosis — **bajo** · 3/8 disputables · volumen 170 · KD 1
 
 - 3 de las 8 posiciones medidas del top 10 las ocupa contenido que un medico individual puede disputar.
 - BAJA: 5 de contenido internacional (clinicauandes.cl, teknon.quironsalud.com, rochepacientes.es, canalsalud.imq.es), que Lima no disputa. Ademas indica que esta SERP no es de intencion local.
 - SUBE: 3 posiciones de medico o clinica pequena sin marca. Esta medido que en este nicho rankean con CERO dominios de referencia en la pagina interior.
-- KD NO MEDIDO (no_consultado). La cabeza no se descarta por eso: se resuelve por la SERP, que es la mitad que si existe. El veredicto se revisa cuando Ahrefs devuelva el dato.
+- KD 1 es bajo, pero NO sube el veredicto: con 3 posiciones disputables no hay sitio donde entrar. El KD es un promedio de mercado y no sabe quien ocupa esta SERP.
 
 | Pos. | Dominio | Veredicto | Motivo |
 |---:|---|---|---|
@@ -1788,13 +1788,13 @@ por volumen va a preguntar por que no estan en la lista de objetivos.
 | 7 | bupasalud.com | barrera | contenido internacional |
 | 8 | reumatologomanuelromero.com | disputable | medico o clinica pequena, sin marca |
 
-### como curar desgarro muscular — **bajo** · 3/8 disputables · volumen 110 · KD —
+### como curar desgarro muscular — **bajo** · 3/8 disputables · volumen 110 · KD 11
 
 - 3 de las 8 posiciones medidas del top 10 las ocupa contenido que un medico individual puede disputar.
 - BAJA: 1 posicion de grupo clinico con marca (blog.auna.pe), que no se ganan con contenido.
 - BAJA: 4 de contenido internacional (copac.com.pa, actimove.es, quironsalud.com, bupasalud.com), que Lima no disputa. Ademas indica que esta SERP no es de intencion local.
 - SUBE: 3 posiciones de medico o clinica pequena sin marca. Esta medido que en este nicho rankean con CERO dominios de referencia en la pagina interior.
-- KD NO MEDIDO (no_consultado). La cabeza no se descarta por eso: se resuelve por la SERP, que es la mitad que si existe. El veredicto se revisa cuando Ahrefs devuelva el dato.
+- KD 11 es bajo, pero NO sube el veredicto: con 3 posiciones disputables no hay sitio donde entrar. El KD es un promedio de mercado y no sabe quien ocupa esta SERP.
 
 | Pos. | Dominio | Veredicto | Motivo |
 |---:|---|---|---|
@@ -1807,13 +1807,13 @@ por volumen va a preguntar por que no estan en la lista de objetivos.
 | 7 | quironsalud.com | barrera | contenido internacional |
 | 8 | bupasalud.com | barrera | contenido internacional |
 
-### tratamientos para desgarro muscular — **bajo** · 3/7 disputables · volumen 110 · KD —
+### tratamientos para desgarro muscular — **bajo** · 3/7 disputables · volumen 110 · KD 14
 
 - 3 de las 7 posiciones medidas del top 10 las ocupa contenido que un medico individual puede disputar.
 - BAJA: 1 posicion de grupo clinico con marca (blog.auna.pe), que no se ganan con contenido.
 - BAJA: 3 de contenido internacional (medlineplus.gov, actimove.es, elsevier.es), que Lima no disputa. Ademas indica que esta SERP no es de intencion local.
 - SUBE: 3 posiciones de medico o clinica pequena sin marca. Esta medido que en este nicho rankean con CERO dominios de referencia en la pagina interior.
-- KD NO MEDIDO (no_consultado). La cabeza no se descarta por eso: se resuelve por la SERP, que es la mitad que si existe. El veredicto se revisa cuando Ahrefs devuelva el dato.
+- KD 14 es bajo, pero NO sube el veredicto: con 3 posiciones disputables no hay sitio donde entrar. El KD es un promedio de mercado y no sabe quien ocupa esta SERP.
 
 | Pos. | Dominio | Veredicto | Motivo |
 |---:|---|---|---|
@@ -1832,7 +1832,7 @@ por volumen va a preguntar por que no estan en la lista de objetivos.
 - BAJA: 4 de contenido internacional (revespcardiol.org, mayoclinic.org, icatme.com, clinicrobotics.com), que Lima no disputa. Ademas indica que esta SERP no es de intencion local.
 - SUBE: 1 posicion de directorio o red social (topdoctors.cl): eso no es contenido y se gana con una pagina clinica de verdad.
 - SUBE: 1 posicion de medico o clinica pequena sin marca. Esta medido que en este nicho rankean con CERO dominios de referencia en la pagina interior.
-- KD NO MEDIDO (no_consultado). La cabeza no se descarta por eso: se resuelve por la SERP, que es la mitad que si existe. El veredicto se revisa cuando Ahrefs devuelva el dato.
+- KD NO MEDIDO (ahrefs_sin_dato). La cabeza no se descarta por eso: se resuelve por la SERP, que es la mitad que si existe. El veredicto se revisa cuando Ahrefs devuelva el dato.
 
 | Pos. | Dominio | Veredicto | Motivo |
 |---:|---|---|---|
@@ -1850,7 +1850,7 @@ por volumen va a preguntar por que no estan en la lista de objetivos.
 - BAJA: 5 de contenido internacional (cun.es, medlineplus.gov, mayoclinic.org, institutoclavel.com), que Lima no disputa. Ademas indica que esta SERP no es de intencion local.
 - SUBE: 1 posicion de directorio o red social (youtube.com): eso no es contenido y se gana con una pagina clinica de verdad.
 - SUBE: 1 posicion de medico o clinica pequena sin marca. Esta medido que en este nicho rankean con CERO dominios de referencia en la pagina interior.
-- KD NO MEDIDO (no_consultado). La cabeza no se descarta por eso: se resuelve por la SERP, que es la mitad que si existe. El veredicto se revisa cuando Ahrefs devuelva el dato.
+- KD NO MEDIDO (ahrefs_sin_dato). La cabeza no se descarta por eso: se resuelve por la SERP, que es la mitad que si existe. El veredicto se revisa cuando Ahrefs devuelva el dato.
 
 | Pos. | Dominio | Veredicto | Motivo |
 |---:|---|---|---|
@@ -1867,7 +1867,7 @@ por volumen va a preguntar por que no estan en la lista de objetivos.
 - 2 de las 8 posiciones medidas del top 10 las ocupa contenido que un medico individual puede disputar.
 - BAJA: 6 de contenido internacional (medlineplus.gov, mayoclinic.org, clinicbarcelona.org, clinicadeldolorpuebla.com.mx), que Lima no disputa. Ademas indica que esta SERP no es de intencion local.
 - SUBE: 2 posiciones de medico o clinica pequena sin marca. Esta medido que en este nicho rankean con CERO dominios de referencia en la pagina interior.
-- KD NO MEDIDO (no_consultado). La cabeza no se descarta por eso: se resuelve por la SERP, que es la mitad que si existe. El veredicto se revisa cuando Ahrefs devuelva el dato.
+- KD NO MEDIDO (ahrefs_sin_dato). La cabeza no se descarta por eso: se resuelve por la SERP, que es la mitad que si existe. El veredicto se revisa cuando Ahrefs devuelva el dato.
 
 | Pos. | Dominio | Veredicto | Motivo |
 |---:|---|---|---|
@@ -1880,13 +1880,13 @@ por volumen va a preguntar por que no estan en la lista de objetivos.
 | 7 | biziondo.com | disputable | medico o clinica pequena, sin marca |
 | 8 | drnelsoncolumna.com | disputable | medico o clinica pequena, sin marca |
 
-### desgarro muscular tratamiento — **bajo** · 2/7 disputables · volumen 590 · KD —
+### desgarro muscular tratamiento — **bajo** · 2/7 disputables · volumen 590 · KD 11
 
 - 2 de las 7 posiciones medidas del top 10 las ocupa contenido que un medico individual puede disputar.
 - BAJA: 1 posicion de grupo clinico con marca (blog.auna.pe), que no se ganan con contenido.
 - BAJA: 4 de contenido internacional (medlineplus.gov, elsevier.es, actimove.es, copac.com.pa), que Lima no disputa. Ademas indica que esta SERP no es de intencion local.
 - SUBE: 2 posiciones de medico o clinica pequena sin marca. Esta medido que en este nicho rankean con CERO dominios de referencia en la pagina interior.
-- KD NO MEDIDO (no_consultado). La cabeza no se descarta por eso: se resuelve por la SERP, que es la mitad que si existe. El veredicto se revisa cuando Ahrefs devuelva el dato.
+- KD 11 es bajo, pero NO sube el veredicto: con 2 posiciones disputables no hay sitio donde entrar. El KD es un promedio de mercado y no sabe quien ocupa esta SERP.
 
 | Pos. | Dominio | Veredicto | Motivo |
 |---:|---|---|---|
@@ -1904,7 +1904,7 @@ por volumen va a preguntar por que no estan en la lista de objetivos.
 - BAJA: 1 posicion de grupo clinico con marca (blog.auna.pe), que no se ganan con contenido.
 - BAJA: 5 de contenido internacional (medlineplus.gov, actimove.es, quironsalud.com, copac.com.pa), que Lima no disputa. Ademas indica que esta SERP no es de intencion local.
 - SUBE: 2 posiciones de medico o clinica pequena sin marca. Esta medido que en este nicho rankean con CERO dominios de referencia en la pagina interior.
-- KD NO MEDIDO (no_consultado). La cabeza no se descarta por eso: se resuelve por la SERP, que es la mitad que si existe. El veredicto se revisa cuando Ahrefs devuelva el dato.
+- KD NO MEDIDO (ahrefs_sin_dato). La cabeza no se descarta por eso: se resuelve por la SERP, que es la mitad que si existe. El veredicto se revisa cuando Ahrefs devuelva el dato.
 
 | Pos. | Dominio | Veredicto | Motivo |
 |---:|---|---|---|
@@ -1923,7 +1923,7 @@ por volumen va a preguntar por que no estan en la lista de objetivos.
 - BAJA: 1 posicion de grupo clinico con marca (clinicainternacional.com.pe), que no se ganan con contenido.
 - BAJA: 4 de contenido internacional (traumacor.es, sare.org.es, traumadrid.es, camde.es), que Lima no disputa. Ademas indica que esta SERP no es de intencion local.
 - SUBE: 2 posiciones de medico o clinica pequena sin marca. Esta medido que en este nicho rankean con CERO dominios de referencia en la pagina interior.
-- KD NO MEDIDO (no_consultado). La cabeza no se descarta por eso: se resuelve por la SERP, que es la mitad que si existe. El veredicto se revisa cuando Ahrefs devuelva el dato.
+- KD NO MEDIDO (ahrefs_sin_dato). La cabeza no se descarta por eso: se resuelve por la SERP, que es la mitad que si existe. El veredicto se revisa cuando Ahrefs devuelva el dato.
 
 | Pos. | Dominio | Veredicto | Motivo |
 |---:|---|---|---|
@@ -1935,13 +1935,13 @@ por volumen va a preguntar por que no estan en la lista de objetivos.
 | 6 | reumatologolima.com.pe | disputable | medico o clinica pequena, sin marca |
 | 7 | camde.es | barrera | contenido internacional |
 
-### escoliosis — **bajo** · 1/7 disputables · volumen — · KD —
+### escoliosis — **bajo** · 1/7 disputables · volumen — · KD 12
 
 - 1 de las 7 posiciones medidas del top 10 las ocupa contenido que un medico individual puede disputar.
 - BAJA: 1 posicion de grupo clinico con marca (clinicasanfelipe.com), que no se ganan con contenido.
 - BAJA: 5 de contenido internacional (medlineplus.gov, mayoclinic.org, cun.es, niams.nih.gov), que Lima no disputa. Ademas indica que esta SERP no es de intencion local.
 - SUBE: 1 posicion de directorio o red social (facebook.com): eso no es contenido y se gana con una pagina clinica de verdad.
-- KD NO MEDIDO (no_consultado). La cabeza no se descarta por eso: se resuelve por la SERP, que es la mitad que si existe. El veredicto se revisa cuando Ahrefs devuelva el dato.
+- KD 12 es bajo, pero NO sube el veredicto: con 1 posiciones disputables no hay sitio donde entrar. El KD es un promedio de mercado y no sabe quien ocupa esta SERP.
 
 | Pos. | Dominio | Veredicto | Motivo |
 |---:|---|---|---|
@@ -1953,13 +1953,13 @@ por volumen va a preguntar por que no estan en la lista de objetivos.
 | 6 | clinicasanfelipe.com | barrera | clinica con marca: clinicasanfelipe.com |
 | 7 | cigna.com | barrera | contenido internacional |
 
-### lumbalgia — **bajo** · 1/7 disputables · volumen — · KD —
+### lumbalgia — **bajo** · 1/7 disputables · volumen — · KD 16
 
 - 1 de las 7 posiciones medidas del top 10 las ocupa contenido que un medico individual puede disputar.
 - BAJA: 1 posicion de grupo clinico con marca (blog.auna.pe), que no se ganan con contenido.
 - BAJA: 5 de contenido internacional (who.int, cigna.com, elsevier.es, institutoclavel.com), que Lima no disputa. Ademas indica que esta SERP no es de intencion local.
 - SUBE: 1 posicion de medico o clinica pequena sin marca. Esta medido que en este nicho rankean con CERO dominios de referencia en la pagina interior.
-- KD NO MEDIDO (no_consultado). La cabeza no se descarta por eso: se resuelve por la SERP, que es la mitad que si existe. El veredicto se revisa cuando Ahrefs devuelva el dato.
+- KD 16 es bajo, pero NO sube el veredicto: con 1 posiciones disputables no hay sitio donde entrar. El KD es un promedio de mercado y no sabe quien ocupa esta SERP.
 
 | Pos. | Dominio | Veredicto | Motivo |
 |---:|---|---|---|
@@ -1971,11 +1971,11 @@ por volumen va a preguntar por que no estan en la lista de objetivos.
 | 6 | quironsalud.com | barrera | contenido internacional |
 | 7 | blog.auna.pe | barrera | clinica con marca: auna.pe |
 
-### estenosis espinal — **bajo** · 0/8 disputables · volumen — · KD —
+### estenosis espinal — **bajo** · 0/8 disputables · volumen — · KD 2
 
 - 0 de las 8 posiciones medidas del top 10 las ocupa contenido que un medico individual puede disputar.
 - BAJA: 8 de contenido internacional (mayoclinic.org, niams.nih.gov, medlineplus.gov, nyspine.com), que Lima no disputa. Ademas indica que esta SERP no es de intencion local.
-- KD NO MEDIDO (no_consultado). La cabeza no se descarta por eso: se resuelve por la SERP, que es la mitad que si existe. El veredicto se revisa cuando Ahrefs devuelva el dato.
+- KD 2 es bajo, pero NO sube el veredicto: con 0 posiciones disputables no hay sitio donde entrar. El KD es un promedio de mercado y no sabe quien ocupa esta SERP.
 
 | Pos. | Dominio | Veredicto | Motivo |
 |---:|---|---|---|
@@ -1988,12 +1988,12 @@ por volumen va a preguntar por que no estan en la lista de objetivos.
 | 7 | advansur.es | barrera | contenido internacional |
 | 8 | cigna.com | barrera | contenido internacional |
 
-### hernia discal — **bajo** · 0/7 disputables · volumen — · KD —
+### hernia discal — **bajo** · 0/7 disputables · volumen — · KD 5
 
 - 0 de las 7 posiciones medidas del top 10 las ocupa contenido que un medico individual puede disputar.
 - BAJA: 1 posicion de grupo clinico con marca (auna.org), que no se ganan con contenido.
 - BAJA: 6 de contenido internacional (mayoclinic.org, medlineplus.gov, neurorgs.net, quironsalud.com), que Lima no disputa. Ademas indica que esta SERP no es de intencion local.
-- KD NO MEDIDO (no_consultado). La cabeza no se descarta por eso: se resuelve por la SERP, que es la mitad que si existe. El veredicto se revisa cuando Ahrefs devuelva el dato.
+- KD 5 es bajo, pero NO sube el veredicto: con 0 posiciones disputables no hay sitio donde entrar. El KD es un promedio de mercado y no sabe quien ocupa esta SERP.
 
 | Pos. | Dominio | Veredicto | Motivo |
 |---:|---|---|---|
@@ -2009,7 +2009,7 @@ por volumen va a preguntar por que no estan en la lista de objetivos.
 
 - 0 de las 8 posiciones medidas del top 10 las ocupa contenido que un medico individual puede disputar.
 - BAJA: 8 de contenido internacional (medlineplus.gov, columna.com, aetsa.org, elsevier.es), que Lima no disputa. Ademas indica que esta SERP no es de intencion local.
-- KD NO MEDIDO (no_consultado). La cabeza no se descarta por eso: se resuelve por la SERP, que es la mitad que si existe. El veredicto se revisa cuando Ahrefs devuelva el dato.
+- KD NO MEDIDO (ahrefs_sin_dato). La cabeza no se descarta por eso: se resuelve por la SERP, que es la mitad que si existe. El veredicto se revisa cuando Ahrefs devuelva el dato.
 
 | Pos. | Dominio | Veredicto | Motivo |
 |---:|---|---|---|
@@ -2022,11 +2022,11 @@ por volumen va a preguntar por que no estan en la lista de objetivos.
 | 7 | infoespalda.es | barrera | contenido internacional |
 | 8 | aaot.org.ar | barrera | contenido internacional |
 
-### cirugía de columna — **bajo** · 0/7 disputables · volumen — · KD —
+### cirugía de columna — **bajo** · 0/7 disputables · volumen — · KD 0
 
 - 0 de las 7 posiciones medidas del top 10 las ocupa contenido que un medico individual puede disputar.
 - BAJA: 7 de contenido internacional (traumadrid.es, institutoclavel.com, teknon.quironsalud.com, barnaclinic.com), que Lima no disputa. Ademas indica que esta SERP no es de intencion local.
-- KD NO MEDIDO (no_consultado). La cabeza no se descarta por eso: se resuelve por la SERP, que es la mitad que si existe. El veredicto se revisa cuando Ahrefs devuelva el dato.
+- KD 0 es bajo, pero NO sube el veredicto: con 0 posiciones disputables no hay sitio donde entrar. El KD es un promedio de mercado y no sabe quien ocupa esta SERP.
 
 | Pos. | Dominio | Veredicto | Motivo |
 |---:|---|---|---|
@@ -2043,7 +2043,7 @@ por volumen va a preguntar por que no estan en la lista de objetivos.
 - 0 de las 8 posiciones medidas del top 10 las ocupa contenido que un medico individual puede disputar.
 - BAJA: 1 posicion de grupo clinico con marca (clinicasanfelipe.com), que no se ganan con contenido.
 - BAJA: 7 de contenido internacional (medlineplus.gov, mayoclinic.org, cun.es, scielo.isciii.es), que Lima no disputa. Ademas indica que esta SERP no es de intencion local.
-- KD NO MEDIDO (no_consultado). La cabeza no se descarta por eso: se resuelve por la SERP, que es la mitad que si existe. El veredicto se revisa cuando Ahrefs devuelva el dato.
+- KD NO MEDIDO (ahrefs_sin_dato). La cabeza no se descarta por eso: se resuelve por la SERP, que es la mitad que si existe. El veredicto se revisa cuando Ahrefs devuelva el dato.
 
 | Pos. | Dominio | Veredicto | Motivo |
 |---:|---|---|---|
