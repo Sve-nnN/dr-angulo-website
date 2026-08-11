@@ -11,9 +11,11 @@
  * Uso:
  *   cd seo-tools
  *   ./node_modules/.bin/tsx src/phase13/serp-show.ts --keyword "hernia discal" --offline
+ *   ./node_modules/.bin/tsx src/phase13/serp-show.ts --keyword "hernia discal" --offline --with-types
  */
 
 import { booleana, ejecutar, parseBanderas, texto, textoObligatorio } from "./args.js";
+import { clasificarSerp } from "./pagetype.js";
 import { leerSerp } from "./serp.js";
 
 async function main(): Promise<number> {
@@ -27,7 +29,22 @@ async function main(): Promise<number> {
     ...(cacheDir === undefined ? {} : { cacheDir }),
   });
 
-  process.stdout.write(`${JSON.stringify(serp, null, 2)}\n`);
+  if (!booleana(banderas, "with-types")) {
+    process.stdout.write(`${JSON.stringify(serp, null, 2)}\n`);
+    return 0;
+  }
+
+  // La salida con tipos reemplaza `organicos` por su version tipificada y suma el reparto del
+  // top 10, que es lo que COMP-03 registra por cluster.
+  const clasificada = clasificarSerp(serp);
+  const salida = {
+    ...serp,
+    organicos: clasificada.resultados,
+    tipoDominante: clasificada.tipoDominante,
+    reparto: clasificada.reparto,
+  };
+
+  process.stdout.write(`${JSON.stringify(salida, null, 2)}\n`);
   return 0;
 }
 
