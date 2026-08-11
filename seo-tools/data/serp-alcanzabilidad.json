@@ -1,0 +1,41 @@
+{
+  "schema": 1,
+  "medidoEl": "2026-08-11",
+  "//": "Quien ocupa hoy cada posicion del top 10 y si un medico individual con contenido propio puede disputarsela. Es la mitad de EVIDENCIA del punto dulce (KWR-05, D-09); la otra mitad es el KD declarado por Ahrefs.",
+
+  "//porQueNoSeMideConEnlaces": "El ROADMAP definia el punto dulce como 'las keywords cuyo KD es alcanzable con el perfil de enlaces real del dominio'. La medicion del 2026-08-11 contra Ahrefs invalida ese encuadre: en los CINCO competidores la home concentra todos los dominios de referencia y las paginas interiores tienen CERO, y son justo las interiores las que traen el trafico (clinicarthromeds.pe: 371 en la home, 0 en cada una de las nueve que rankean, con 98, 71, 65 y 16 de trafico). Ademas tres de los cinco tienen cero trafico organico. Los enlaces no son el factor limitante en este nicho: el contenido si. Por eso la alcanzabilidad se calcula contra la CALIDAD DEL CONTENIDO que ocupa el top 10. Fuente: .planning/workstreams/seo-keywords/data/lectura-competencia-2026-08-11.md",
+
+  "//marcaFuerte": "Grupos clinicos y hospitalarios de Lima con marca, presupuesto de contenido y trafico de navegacion propio. Un dominio comprado el 2026-08-09 no les gana la posicion en el horizonte de este proyecto, y decir lo contrario seria vender humo. La lista sale de MEDIR quien ocupa las 768 posiciones del top 10 de las 91 capturas, no de suponer.",
+  "marcaFuerte": [
+    { "dominio": "clinicainternacional.com.pe", "posiciones": 33, "quien": "Clinica Internacional, grupo Breca" },
+    { "dominio": "crp.com.pe", "posiciones": 18, "quien": "Clinica Ricardo Palma" },
+    { "dominio": "ipot-crp.pe", "posiciones": 13, "quien": "Instituto de Patologia Osteoarticular de la Clinica Ricardo Palma" },
+    { "dominio": "clinicalima.sanjuandedios.pe", "posiciones": 18, "quien": "Clinica San Juan de Dios" },
+    { "dominio": "clinicaangloamericana.pe", "posiciones": 17, "quien": "Clinica Anglo Americana" },
+    { "dominio": "sanna.pe", "posiciones": 17, "quien": "Red SANNA, grupo Pacifico" },
+    { "dominio": "clinicasanfelipe.com", "posiciones": 15, "quien": "Clinica San Felipe" },
+    { "dominio": "clinicatezza.com.pe", "posiciones": 14, "quien": "Clinica Tezza" },
+    { "dominio": "auna.org", "posiciones": 10, "quien": "Red Auna" },
+    { "dominio": "auna.pe", "posiciones": 6, "quien": "Red Auna, incluido su blog" },
+    { "dominio": "clinicadelima.com.pe", "posiciones": 2, "quien": "Clinica de Lima" },
+    { "dominio": "clinicagoodhope.org.pe", "posiciones": 2, "quien": "Clinica Good Hope" },
+    { "dominio": "clinicaricardopalma.com.pe", "posiciones": 1, "quien": "Clinica Ricardo Palma, dominio alterno" }
+  ],
+
+  "//tiposNoDisputables": "El contenido internacional ocupa 46 de los 95 organicos que el plan 13-01 tipifico. No es competencia que Lima dispute: son dominios con autoridad de decadas respondiendo la pregunta clinica generica. Su presencia dice ademas que esa SERP no es de intencion local, que es informacion util por si sola.",
+  "tiposNoDisputables": ["contenido-internacional"],
+
+  "//tiposDeContenidoDebil": "Posiciones que hoy ocupa contenido que NO es contenido: una ficha de directorio y un post de red social se ganan con una pagina clinica de verdad. Son el 21 % de las posiciones medidas (doctoralia.pe 80, facebook.com 54, instagram.com 25, youtube.com 8, paginasamarillas 4).",
+  "tiposDeContenidoDebil": ["directorio", "red-social"],
+
+  "//umbrales": "El nivel de alcanzabilidad sale de cuantas posiciones del top 10 son disputables. Los cortes son de este proyecto y estan aca para poder discutirlos sin tocar codigo. El caso de referencia esta medido y sirve de control: en el top 10 de `cirujano de columna`, seis de ocho resultados son alcanzables para un medico individual y las posiciones 3 y 7 no lo son.",
+  "umbrales": {
+    "alto": 6,
+    "medio": 4,
+    "//topeDeCabecera": "Ademas del recuento, hace falta que al menos una de las TRES primeras posiciones sea disputable. Un top 3 entero de marca fuerte deja al que llega peleando por la posicion 4 aunque el resto de la pagina este flojo.",
+    "disputablesEnElTop3": 1,
+    "//kd": "Cuando Ahrefs devuelva el KD, estos cortes lo suman al veredicto. Hasta entonces la alcanzabilidad sale solo de la SERP y cada fila lo declara.",
+    "kdFacil": 20,
+    "kdDuro": 40
+  }
+}

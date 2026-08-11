@@ -861,3 +861,168 @@ test("el escritor orientado a filas sigue negandose a tocar el tab transpuesto",
   // Y el residuo sigue exactamente donde estaba.
   assert.equal(gw.cell("Competitor Analysis", "B3"), "pera.com");
 });
+
+// ---------------------------------------------------------------------------
+// omitirCamposAusentes: la red de seguridad contra el borrado silencioso (plan 13-04)
+// ---------------------------------------------------------------------------
+
+/** Modelo con una columna de fase 13 cuyo campo el dataset de la fase 12 no tiene. */
+function tabConColumnaDeFase13(): TabModel {
+  return {
+    ...tabModel(),
+    columns: [
+      col("Suggested Keyword", "keyword", "fase-12", { source: "keyword" }),
+      col("Cluster", "cluster", "fase-13", { source: "cluster" }),
+      col("Search Volume", "volume", "fase-12", { source: "metricas.searchVolume" }),
+    ],
+  };
+}
+
+test("sin la opcion, un campo ausente BORRA la celda: es la trampa que este plan cierra", async () => {
+  const gw = fakeGateway([
+    {
+      title: "Keyword Research",
+      sheetId: 407,
+      rows: [
+        ["", " Keyword Research "],
+        [],
+        ["Suggested Keyword", "Cluster", "Search Volume"],
+        ["hernia discal", "hernia-discal", 320],
+      ],
+      rowCount: 20,
+      columnCount: 10,
+    },
+  ]);
+
+  // El registro NO trae `cluster`, igual que las 5.716 lineas de data/keywords.jsonl.
+  await upsertRows(gw, tabConColumnaDeFase13(), [{ keyword: "hernia discal", metricas: { searchVolume: 320 } }], {
+    dryRun: false,
+  });
+
+  assert.equal(gw.cell("Keyword Research", "B4"), "", "el comportamiento historico borra, y no lanza nada");
+});
+
+test("con omitirCamposAusentes, un campo ausente deja la celda INTACTA en vez de borrarla", async () => {
+  const gw = fakeGateway([
+    {
+      title: "Keyword Research",
+      sheetId: 407,
+      rows: [
+        ["", " Keyword Research "],
+        [],
+        ["Suggested Keyword", "Cluster", "Search Volume"],
+        ["hernia discal", "hernia-discal", 320],
+      ],
+      rowCount: 20,
+      columnCount: 10,
+    },
+  ]);
+
+  await upsertRows(
+    gw,
+    tabConColumnaDeFase13(),
+    [{ keyword: "hernia discal", metricas: { searchVolume: 999 } }],
+    { dryRun: false, omitirCamposAusentes: true },
+  );
+
+  assert.equal(gw.cell("Keyword Research", "B4"), "hernia-discal", "lo que ya estaba escrito sobrevive");
+  assert.equal(gw.cell("Keyword Research", "C4"), 999, "lo que si trae el registro se actualiza igual");
+});
+
+test("la celda omitida queda FUERA de todo rango emitido, no dentro con un valor especial", async () => {
+  const gw = fakeGateway([
+    {
+      title: "Keyword Research",
+      sheetId: 407,
+      rows: [
+        ["", " Keyword Research "],
+        [],
+        ["Suggested Keyword", "Cluster", "Search Volume"],
+      ],
+      rowCount: 20,
+      columnCount: 10,
+    },
+  ]);
+
+  await upsertRows(gw, tabConColumnaDeFase13(), [{ keyword: "nueva", metricas: { searchVolume: 10 } }], {
+    dryRun: false,
+    omitirCamposAusentes: true,
+  });
+
+  // Depender de que la API interprete un valor nulo como "no tocar" seria confiar en un detalle
+  // del proveedor para no destruir datos del cliente. La celda se omite partiendo el rango.
+  const rangos = gw.writtenUpdates.flat().map((u) => u.range);
+  assert.equal(
+    rangos.some((r) => /!A\d+:C\d+$/.test(r)),
+    false,
+    "ningun rango puede cubrir A a C, porque B es la columna omitida",
+  );
+  assert.ok(rangos.some((r) => /!A\d+:A\d+$/.test(r)));
+  assert.ok(rangos.some((r) => /!C\d+:C\d+$/.test(r)));
+});
+
+test("dos filas que omiten columnas distintas no comparten rango", async () => {
+  const gw = fakeGateway([
+    {
+      title: "Keyword Research",
+      sheetId: 407,
+      rows: [
+        ["", " Keyword Research "],
+        [],
+        ["Suggested Keyword", "Cluster", "Search Volume"],
+      ],
+      rowCount: 20,
+      columnCount: 10,
+    },
+  ]);
+
+  await upsertRows(
+    gw,
+    tabConColumnaDeFase13(),
+    [
+      { keyword: "con cluster", cluster: "un-cluster", metricas: { searchVolume: 1 } },
+      { keyword: "sin cluster", metricas: { searchVolume: 2 } },
+    ],
+    { dryRun: false, omitirCamposAusentes: true },
+  );
+
+  assert.equal(gw.cell("Keyword Research", "B4"), "un-cluster");
+  // Si las dos filas hubieran viajado en el mismo rectangulo A4:C5, la celda B5 se habria
+  // borrado igual pese a la opcion. Ese es exactamente el fallo que esta prueba impide.
+  assert.equal(
+    gw.writtenUpdates.flat().some((u) => /!A4:C5$/.test(u.range)),
+    false,
+  );
+});
+
+test("una columna con literal sigue escribiendo su literal aunque la opcion este activa", async () => {
+  const gw = fakeGateway([
+    {
+      title: "Keyword Research",
+      sheetId: 407,
+      rows: [
+        ["", " Keyword Research "],
+        [],
+        ["Suggested Keyword", "Traffic Potential", "Search Volume"],
+      ],
+      rowCount: 20,
+      columnCount: 10,
+    },
+  ]);
+  const modelo: TabModel = {
+    ...tabModel(),
+    columns: [
+      col("Suggested Keyword", "keyword", "fase-12", { source: "keyword" }),
+      col("Traffic Potential", null, "no-consultado", { literal: "no_consultado" }),
+      col("Search Volume", "volume", "fase-12", { source: "metricas.searchVolume" }),
+    ],
+  };
+
+  await upsertRows(gw, modelo, [{ keyword: "hernia discal", metricas: { searchVolume: 320 } }], {
+    dryRun: false,
+    omitirCamposAusentes: true,
+  });
+
+  // Un literal declarado NO es un campo ausente: la opcion no lo toca y se sigue escribiendo.
+  assert.equal(gw.cell("Keyword Research", "B4"), "no_consultado");
+});
