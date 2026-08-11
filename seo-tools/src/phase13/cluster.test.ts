@@ -286,3 +286,59 @@ test("urlsDelTop se queda en el top 10 y topResultDe devuelve la posicion 1", ()
   assert.equal(topResultDe(s), "https://sitio1.pe/p");
   assert.equal(idDeCluster("Cirugía de Columna"), "cirugia-de-columna");
 });
+
+// ---------------------------------------------------------------------------
+// Renombre explicito de cluster (plan 13-04)
+// ---------------------------------------------------------------------------
+
+test("un renombre declarado cambia el nombre Y el id del cluster, y no toca los demas", () => {
+  const cabezas = [
+    cabeza("traumatologo ortopedia infantil", [A, B, C, D], 0),
+    cabeza("traumatologo lima", [A, B, C, E], 1),
+    cabeza("escoliosis", [E, F, G], 2),
+  ];
+
+  const sinRenombre = agruparCabezas(cabezas);
+  assert.equal(sinRenombre[0]?.nombre, "traumatologo ortopedia infantil");
+
+  const conRenombre = agruparCabezas(cabezas, {
+    nombres: { "traumatologo ortopedia infantil": "especialista en columna y trauma en Lima" },
+  });
+
+  const renombrado = conRenombre.find((c) => c.cabezas.includes("traumatologo lima"));
+  assert.equal(renombrado?.nombre, "especialista en columna y trauma en Lima");
+  assert.equal(renombrado?.id, "especialista-en-columna-y-trauma-en-lima");
+  assert.equal(renombrado?.cabezas.length, 2, "el renombre no cambia que cabezas agrupa");
+
+  const intacto = conRenombre.find((c) => c.cabezas.includes("escoliosis"));
+  assert.equal(intacto?.nombre, "escoliosis", "un cluster sin renombre declarado no se toca");
+});
+
+test("un renombre que no calza con ninguna cabeza principal no cambia nada", () => {
+  const cabezas = [cabeza("escoliosis", [A, B, C, D], 2)];
+  const conRenombre = agruparCabezas(cabezas, { nombres: { "keyword que no existe": "otro" } });
+  assert.equal(conRenombre[0]?.nombre, "escoliosis");
+  assert.equal(conRenombre[0]?.id, "escoliosis");
+});
+
+test("la cola renombrada arrastra el nombre nuevo a las filas del universo", () => {
+  const cabezas = [cabeza("traumatologo ortopedia infantil", [A, B, C, D], 0)];
+  const clusters = agruparCabezas(cabezas, {
+    nombres: { "traumatologo ortopedia infantil": "especialista en columna y trauma en Lima" },
+  });
+  const asignacion = asignarCola(
+    [
+      { keyword: "traumatologo ortopedia infantil", keywordKey: "traumatologo ortopedia infantil" },
+      { keyword: "traumatologo ortopedia infantil lima", keywordKey: "traumatologo ortopedia infantil lima" },
+    ],
+    cabezas,
+    clusters,
+  );
+
+  // La fila del universo lleva el ID del cluster, que es lo que viaja a la columna `Cluster`
+  // del Sheet. Renombrar el cluster tiene que arrastrarlo tambien ahi, o el dataset quedaria
+  // con dos nombres para el mismo grupo.
+  for (const fila of asignacion.filas) {
+    assert.equal(fila.cluster, "especialista-en-columna-y-trauma-en-lima");
+  }
+});

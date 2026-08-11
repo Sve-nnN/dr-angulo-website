@@ -32,6 +32,7 @@ import {
   UMBRAL_SOLAPE,
   agruparCabezas,
   asignarCola,
+  cargarNombresDeCluster,
   contarPorCluster,
   type CabezaConSerp,
   type Cluster,
@@ -257,7 +258,10 @@ async function main(): Promise<number> {
     for (const k of sinCaptura) out.write(`  - ${k}\n`);
   }
 
-  const crudos = agruparCabezas(cabezas, { umbral: solape, reglas });
+  // Los renombres declarados viven en data/cluster-nombres.json. La regla de nombrado no
+  // cambia: esto solo sustituye el nombre del resultado, y cada excepcion trae su motivo.
+  const nombres = cargarNombresDeCluster();
+  const crudos = agruparCabezas(cabezas, { umbral: solape, reglas, nombres });
   const asignacion = asignarCola(universo, cabezas, crudos, { umbral });
   const clusters = contarPorCluster(crudos, asignacion.filas);
 

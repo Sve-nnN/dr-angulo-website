@@ -36,9 +36,47 @@
  * entre si a casi todas las condiciones del universo y el clustering no diria nada.
  */
 
+import { readFileSync } from "node:fs";
+import path from "node:path";
+
+import { SEO_TOOLS_ROOT } from "../config.js";
 import { clasificarSerp, cargarReglasDeTipo, type ReglasDeTipo } from "./pagetype.js";
 import { normalizeKeyword } from "../keywords/normalize.js";
 import type { SerpCompleta } from "./serp.js";
+
+const RUTA_NOMBRES = path.join(SEO_TOOLS_ROOT, "data", "cluster-nombres.json");
+
+/**
+ * Lee los renombres declarados de cluster. Archivo ausente o ilegible devuelve vacio: un
+ * renombre es una mejora de presentacion y su falta no puede tumbar el clustering entero.
+ */
+export function cargarNombresDeCluster(ruta: string = RUTA_NOMBRES): Record<string, string> {
+  let crudo: string;
+  try {
+    crudo = readFileSync(ruta, "utf8");
+  } catch {
+    return {};
+  }
+
+  let parseado: unknown;
+  try {
+    parseado = JSON.parse(crudo);
+  } catch {
+    return {};
+  }
+  if (parseado === null || typeof parseado !== "object") return {};
+
+  const nombres = (parseado as Record<string, unknown>)["nombres"];
+  if (nombres === null || typeof nombres !== "object" || Array.isArray(nombres)) return {};
+
+  const salida: Record<string, string> = {};
+  for (const [clave, valor] of Object.entries(nombres as Record<string, unknown>)) {
+    if (valor === null || typeof valor !== "object") continue;
+    const nombre = (valor as Record<string, unknown>)["nombre"];
+    if (typeof nombre === "string" && nombre.trim() !== "") salida[normalizeKeyword(clave)] = nombre;
+  }
+  return salida;
+}
 
 /** URLs compartidas en el top 10 que hacen falta para unir dos cabezas (D-05). */
 export const UMBRAL_SOLAPE = 3;
@@ -247,10 +285,23 @@ export function idDeCluster(nombre: string): string {
  */
 export function agruparCabezas(
   cabezas: readonly CabezaConSerp[],
-  opciones: { readonly umbral?: number; readonly reglas?: ReglasDeTipo } = {},
+  opciones: {
+    readonly umbral?: number;
+    readonly reglas?: ReglasDeTipo;
+    /**
+     * Renombres explicitos, por clave normalizada de la cabeza principal.
+     *
+     * La regla automatica de abajo NO cambia: sigue nombrando por la cabeza de mayor valor de
+     * negocio, que es lo que hace el nombre reproducible entre corridas. Esto es la excepcion
+     * declarada, y vive en `data/cluster-nombres.json` con su motivo y su fecha en vez de en
+     * una bandera de linea de comandos que se pierde al terminar la corrida.
+     */
+    readonly nombres?: Readonly<Record<string, string>>;
+  } = {},
 ): Cluster[] {
   const umbral = opciones.umbral ?? UMBRAL_SOLAPE;
   const reglas = opciones.reglas ?? cargarReglasDeTipo();
+  const renombres = opciones.nombres ?? {};
 
   const urls = new Map<string, Set<string>>();
   for (const cabeza of cabezas) urls.set(cabeza.keywordKey, urlsDelTop(cabeza.serp));
@@ -295,9 +346,13 @@ export function agruparCabezas(
     const clasificada = clasificarSerp(principal.serp, reglas);
     const clavesDelGrupo = new Set(grupo.map((c) => c.keywordKey));
 
+    // El renombre se aplica DESPUES de que la regla eligio la cabeza principal, asi que no
+    // puede cambiar que cabezas se agrupan ni cual manda: solo como se llama el resultado.
+    const nombre = renombres[principal.keywordKey] ?? principal.keyword;
+
     clusters.push({
-      id: idDeCluster(principal.keyword),
-      nombre: principal.keyword,
+      id: idDeCluster(nombre),
+      nombre,
       rango: principal.rango,
       familia: principal.familia,
       cabezas: ordenadas.map((c) => c.keywordKey),
