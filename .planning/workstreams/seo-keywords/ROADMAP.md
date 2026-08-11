@@ -98,7 +98,7 @@ Plans:
 
 Plans:
 - [ ] 13-01-PLAN.md — Fundación de la fase: SERP completa desde caché, tipo de página y el modelo del Sheet (tracer, coste cero de cuota)
-- [ ] 13-02-PLAN.md — Candidatas, captura presupuestada de 90 búsquedas y clusters por solape de SERP
+- [ ] 13-02-PLAN.md — Candidatas con aprobación de Juan antes de gastar, captura presupuestada de 90 búsquedas y clusters por solape de SERP
 - [ ] 13-03-PLAN.md — Los cinco competidores con Ahrefs y el tab transpuesto `Competitor Analysis`
 - [ ] 13-04-PLAN.md — Dificultad, punto dulce, gap de keywords y la carga del universo al Sheet
 - [ ] 13-05-PLAN.md — Las 10 de Oro con su justificación, y la aprobación de Juan
