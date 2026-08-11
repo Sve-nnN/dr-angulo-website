@@ -15,6 +15,7 @@ import type {
   TabMetadata,
   TabModel,
 } from "./schema.js";
+import { loadSheetModel } from "./schema.js";
 import {
   columnRuns,
   contiguousBlocks,
@@ -254,7 +255,12 @@ function col(
 /**
  * Siete encabezados reales, A a G, mas una columna nueva que cae en H.
  * Las columnas propias quedan salteadas a proposito: A, C, D, E y H. Lo que hay en el medio,
- * `Cluster` y `Notes`, es de otras fases y no se puede pisar.
+ * `Suggested H1` y `Notes`, es de otra fase y no se puede pisar.
+ *
+ * La columna B era `Cluster` hasta el plan 13-01. Dejo de servir para esta prueba cuando la
+ * fase 13 se hizo duena de esa columna: una columna que la fase SI escribe no puede seguir
+ * probando que las columnas ajenas quedan intactas. La reemplaza `Suggested H1`, que sigue
+ * siendo de la fase 15.
  */
 function tabModel(): TabModel {
   return {
@@ -267,7 +273,7 @@ function tabModel(): TabModel {
     keyHeader: "Suggested Keyword",
     columns: [
       col("Suggested Keyword", "keyword", "fase-12", { source: "keyword" }),
-      col("Cluster", null, "fase-13"),
+      col("Suggested H1", null, "fase-15"),
       col("Search Volume", "volume", "fase-12", { source: "metricas.searchVolume" }),
       col("Traffic Potential", null, "no-consultado", { literal: "no_consultado" }),
       col("Search Intent ", "intent", "fase-12", { source: "intent" }),
@@ -280,7 +286,7 @@ function tabModel(): TabModel {
 
 const HEADERS: CellValue[] = [
   "Suggested Keyword",
-  "Cluster",
+  "Suggested H1",
   "Search Volume",
   "Traffic Potential",
   "Search Intent ",
@@ -469,12 +475,12 @@ test("sanitizeCell deja pasar numeros y convierte el resto a texto", () => {
 // ---------------------------------------------------------------------------
 
 test("las columnas de otras fases quedan intactas: solo se escriben las propias", async () => {
-  const gw = fakeDoc([["hernia discal", "cluster-columna", 1, "x", "y", "z", "nota del cliente"]]);
+  const gw = fakeDoc([["hernia discal", "h1 del cliente", 1, "x", "y", "z", "nota del cliente"]]);
   await upsertRows(gw, tabModel(), [rec("hernia discal", 500, "comercial")], OPTS);
 
   assert.equal(gw.cell("Keyword Research", "C4"), 500);
-  // B es Cluster, de la fase 13. G es Notes, sin uso. F es CVR, a eliminar.
-  assert.equal(gw.cell("Keyword Research", "B4"), "cluster-columna");
+  // B es Suggested H1, de la fase 15. G es Notes, sin uso. F es CVR, a eliminar.
+  assert.equal(gw.cell("Keyword Research", "B4"), "h1 del cliente");
   assert.equal(gw.cell("Keyword Research", "G4"), "nota del cliente");
   assert.equal(gw.cell("Keyword Research", "F4"), "z");
 });
@@ -596,7 +602,7 @@ test("comportamiento 11: con el escaneo limpio se elimina de mayor a menor indic
     ...tabModel(),
     columns: [
       col("Suggested Keyword", "keyword", "fase-12", { source: "keyword" }),
-      col("Cluster", null, "eliminar"),
+      col("Suggested H1", null, "eliminar"),
       col("Search Volume", "volume", "fase-12", { source: "metricas.searchVolume" }),
       col("Traffic Potential", null, "no-consultado", { literal: "no_consultado" }),
       col("Search Intent ", "intent", "fase-12", { source: "intent" }),
@@ -610,7 +616,7 @@ test("comportamiento 11: con el escaneo limpio se elimina de mayor a menor indic
 
   assert.equal(report.abortado, false);
   assert.equal(report.exitCode, 0);
-  assert.deepEqual(report.eliminadas, ["CVR", "Cluster"]);
+  assert.deepEqual(report.eliminadas, ["CVR", "Suggested H1"]);
   assert.equal(gw.calls.deleteColumns, 1);
 
   // F es el indice 5 y B el 1: primero el mas alto, porque borrar corre lo que esta a la derecha.
@@ -709,4 +715,149 @@ test("la grilla no se crece cuando ya alcanza", async () => {
   const gw = fakeDoc();
   await upsertRows(gw, tabModel(), [rec("una sola", 1, "x")], OPTS);
   assert.equal(gw.calls.growGrid, 0);
+});
+
+// ---------------------------------------------------------------------------
+// Las columnas de la fase 13, contra el MODELO REAL de data/sheet-columns.json
+// ---------------------------------------------------------------------------
+
+/**
+ * Los 19 encabezados reales del tab `Keyword Research`, tal como los devolvio la API el
+ * 2026-08-10 y quedaron en `.planning/.../data/sheet-headers.json`. `CVR` y
+ * `Lead or Conversion Potential ` ya no estan: Juan autorizo su borrado en J-4.
+ */
+const HEADERS_REALES: CellValue[] = [
+  "Suggested Keyword",
+  "Cluster",
+  "URL",
+  "Search Volume",
+  "Traffic Potential",
+  "Search Intent ",
+  "Highest Achievable Position",
+  "CTR",
+  "Real Traffic Potential",
+  "Keyword Difficulty",
+  "Referring Domains Needed ",
+  "Suggested H1",
+  "Top Result",
+  "Internal Approval ",
+  "Client Approval ",
+  "Notes",
+  "CPC",
+  "Competition",
+  "Patient Stage",
+];
+
+function docReal(extraRows: CellValue[][] = []): Fake {
+  return fakeGateway([
+    {
+      title: "Keyword Research",
+      sheetId: 407303476,
+      rows: [["", " Keyword Research "], [], [...HEADERS_REALES], ...extraRows],
+      rowCount: Math.max(20, 3 + extraRows.length),
+      columnCount: 28,
+    },
+  ]);
+}
+
+async function tabReal(): Promise<TabModel> {
+  const modelo = await loadSheetModel();
+  const tab = modelo.tabs["Keyword Research"];
+  assert.ok(tab !== undefined, "el modelo real declara el tab Keyword Research");
+  return tab;
+}
+
+test("con el modelo real las columnas propias incluyen Cluster y Top Result", async () => {
+  const gw = docReal([HEADERS_REALES.map(() => "")]);
+  await upsertRows(gw, await tabReal(), [{ keyword: "hernia discal", cluster: "columna", topResult: "https://ejemplo.pe/" }]);
+
+  // B es Cluster y M es Top Result en el documento real, despues del borrado de J-4.
+  assert.equal(gw.cell("Keyword Research", "B4"), "columna");
+  assert.equal(gw.cell("Keyword Research", "M4"), "https://ejemplo.pe/");
+});
+
+test("con el modelo real las columnas propias NO incluyen URL ni Suggested H1", async () => {
+  const modelo = await tabReal();
+  const propias = modelo.columns.filter(
+    (c) => c.status === "fase-12" || c.status === "no-consultado" || c.status === "nueva" || c.status === "fase-13",
+  );
+  const encabezados = propias.map((c) => c.header.trim());
+
+  assert.ok(encabezados.includes("Cluster"), "Cluster tiene que ser propia de la fase 13");
+  assert.ok(encabezados.includes("Top Result"), "Top Result tiene que ser propia de la fase 13");
+  assert.ok(!encabezados.includes("URL"), "URL es de la fase 14 y no puede entrar en propias");
+  assert.ok(
+    !encabezados.includes("Suggested H1"),
+    "Suggested H1 es de la fase 15 y no puede entrar en propias",
+  );
+
+  const byHeader = Object.fromEntries(modelo.columns.map((c) => [c.header.trim(), c]));
+  assert.equal(byHeader["Cluster"]?.status, "fase-13");
+  assert.equal(byHeader["Cluster"]?.field, "cluster");
+  assert.equal(byHeader["Top Result"]?.status, "fase-13");
+  assert.equal(byHeader["Top Result"]?.field, "topResult");
+  assert.equal(byHeader["URL"]?.status, "fase-14");
+  assert.equal(byHeader["Suggested H1"]?.status, "fase-15");
+});
+
+test("actualizar una fila existente no escribe nada en las columnas de las fases 14 y 15", async () => {
+  // La fila 4 llega con contenido en TODAS las columnas ajenas.
+  const previa: CellValue[] = HEADERS_REALES.map((_, i) => `ajeno-${i}`);
+  previa[0] = "hernia discal";
+  const gw = docReal([previa]);
+
+  await upsertRows(gw, await tabReal(), [
+    { keyword: "hernia discal", cluster: "columna", topResult: "https://ejemplo.pe/" },
+  ]);
+
+  // C es URL (fase 14) y L es Suggested H1 (fase 15). Ninguna se toca.
+  assert.equal(gw.cell("Keyword Research", "C4"), "ajeno-2");
+  assert.equal(gw.cell("Keyword Research", "L4"), "ajeno-11");
+  // Y las que si son de la fase 13 sí se escriben.
+  assert.equal(gw.cell("Keyword Research", "B4"), "columna");
+  assert.equal(gw.cell("Keyword Research", "M4"), "https://ejemplo.pe/");
+  // Las de otras fases tampoco entran en ningun rango escrito.
+  const rangos = gw.writtenUpdates.flat().map((u) => u.range);
+  assert.ok(!rangos.some((r) => r.includes("!C")), `un rango alcanza la columna URL: ${rangos.join(", ")}`);
+  assert.ok(!rangos.some((r) => r.includes("!L")), `un rango alcanza Suggested H1: ${rangos.join(", ")}`);
+});
+
+test("el modelo del tab transpuesto declara sus filas de metrica y su clave por dominio", async () => {
+  const modelo = await loadSheetModel();
+  const tab = modelo.tabs["Competitor Analysis"];
+  assert.ok(tab !== undefined);
+
+  assert.equal(tab.orientation, "columnas");
+  assert.equal(tab.headerRow, null);
+  assert.equal(tab.keyField, "domain");
+  assert.ok(tab.columns.length >= 8, `filas de metrica declaradas: ${tab.columns.length}`);
+  // Cada entrada nombra la FILA real que ocupa: sin eso el escritor de 13-03 no sabe donde va.
+  for (const columna of tab.columns) {
+    assert.equal(typeof columna.row, "number", `la metrica ${columna.header} no declara fila`);
+    assert.ok((columna.row as number) > 0);
+  }
+  // Y las filas no se repiten: dos metricas en la misma fila se pisarian.
+  const filas = tab.columns.map((c) => c.row);
+  assert.equal(new Set(filas).size, filas.length, "hay dos metricas declaradas en la misma fila");
+});
+
+test("el escritor orientado a filas sigue negandose a tocar el tab transpuesto", async () => {
+  const modelo = await loadSheetModel();
+  const tab = modelo.tabs["Competitor Analysis"] as TabModel;
+  // La doble trae el tab de verdad: si no existiera, la prueba pasaria por la razon
+  // equivocada, fallando en "el tab no existe" en vez de en la guarda de orientacion.
+  const gw = fakeGateway([
+    {
+      title: "Competitor Analysis",
+      sheetId: 333897514,
+      rows: [["", "Competitor Analysis "], ["", "pera"], ["Website", "pera.com"]],
+      rowCount: 36,
+      columnCount: 21,
+    },
+  ]);
+
+  await assert.rejects(upsertRows(gw, tab, [{ domain: "drcarranzacolumna.com" }]), /orientacion columnas/);
+  assert.equal(gw.calls.writeValues, 0, "no puede emitir ni una escritura");
+  // Y el residuo sigue exactamente donde estaba.
+  assert.equal(gw.cell("Competitor Analysis", "B3"), "pera.com");
 });

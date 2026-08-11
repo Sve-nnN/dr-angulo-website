@@ -52,6 +52,11 @@ const REQUIRED_STATUSES: ReadonlySet<ColumnStatus> = new Set<ColumnStatus>([
   "fase-12",
   "no-consultado",
   "nueva",
+  // La fase 13 escribe `Cluster` y `Top Result`. Si alguien las renombra en el documento del
+  // cliente, la carga tiene que fallar RUIDOSA en vez de escribir en el vacio: una columna
+  // declarada que no se encuentra y no es requerida se salta en silencio, y el resumen
+  // reportaria filas actualizadas sin que el dato haya llegado a ninguna celda.
+  "fase-13",
 ]);
 
 export type Orientation = "filas" | "columnas";
@@ -62,6 +67,15 @@ export interface ColumnModel {
   readonly header: string;
   /** Campo interno del dataset que llena la columna. null si nadie la llena. */
   readonly field: string | null;
+  /**
+   * Fila real, base 1, SOLO en tabs con orientacion `columnas`.
+   *
+   * En un tab transpuesto lo que se declara no es una columna sino una FILA de metrica: el
+   * registro corre a lo ancho y la etiqueta vive en la columna A de esa fila. El escritor
+   * orientado a columnas de la fase 13-03 la necesita para saber en que fila cae cada dato.
+   * En un tab orientado a filas no aplica y no viene.
+   */
+  readonly row?: number;
   /**
    * Ruta con puntos hacia el valor dentro del registro del dataset, por ejemplo
    * `metricas.searchVolume`. Si falta, se usa el propio `field`. Existe para que un cambio de
@@ -148,10 +162,16 @@ function parseTabModel(key: string, raw: unknown): TabModel {
     if (typeof status !== "string" || !(COLUMN_STATUSES as readonly string[]).includes(status)) {
       badModel(`El tab "${key}", columna ${i}: estado desconocido ${String(status)}.`);
     }
+    const rowRaw = c["row"];
+    if (rowRaw !== undefined && (typeof rowRaw !== "number" || !Number.isInteger(rowRaw) || rowRaw < 1)) {
+      badModel(`El tab "${key}", columna ${i}: la fila tiene que ser un entero base 1.`);
+    }
+
     const model: ColumnModel = {
       header,
       field: field as string | null,
       status: status as ColumnStatus,
+      ...(typeof rowRaw === "number" ? { row: rowRaw } : {}),
       ...(typeof c["source"] === "string" ? { source: c["source"] } : {}),
       ...(typeof c["literal"] === "string" ? { literal: c["literal"] } : {}),
       ...(typeof c["note"] === "string" ? { note: c["note"] } : {}),
