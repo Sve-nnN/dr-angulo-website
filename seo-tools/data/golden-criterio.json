@@ -1,0 +1,145 @@
+{
+  "schema": 1,
+  "generadoPor": "plan 13-05 (KWR-06, D-10)",
+  "fecha": "2026-08-11",
+  "nota": "El criterio de las 10 de Oro vive aca y no dentro del codigo, igual que serp-alcanzabilidad.json y cluster-nombres.json. Es discutible por definicion: Juan lo aprueba o lo cambia en el checkpoint, y un cambio futuro queda en el historial de git en vez de perderse dentro de una funcion.",
+
+  "orden": {
+    "nota": "D-10 fija el orden y no se invierte: PRIMERO valor de negocio, DESPUES alcanzabilidad. Una keyword de valor alto y alcanzabilidad media entra antes que una de valor bajo y alcanzabilidad alta. La alcanzabilidad solo desempata dentro del mismo valor."
+  },
+
+  "puertaDeServicioPropio": {
+    "activa": true,
+    "motivo": "Una keyword de oro tiene que nombrar algo que el consultorio DECLARA que hace. El universo se sembro desde dos lugares distintos: el codigo del propio sitio y el perfil de los competidores. Una semilla que salio de COMPETITORS.md describe lo que hace OTRO. Perseguir 'neurocirujano' seria reclamar una credencial que el doctor no tiene, y PROJECT.md lo prohibe explicitamente: no inventar credenciales medicas.",
+    "fuentesPropias": ["services.ts", "service-pages.ts", "cv.ts"],
+    "tiposDeServicio": ["condicion", "especialidad", "procedimiento"],
+    "notaTipos": "Las semillas de tipo 'sede' (lima, san isidro, la molina, santiago de surco, los tres nombres de clinica) NO abren esta puerta. Un distrito no es un servicio: si contara, cualquier keyword geo pasaria sin nombrar nada que el doctor haga. La localidad se puntua aparte, mas abajo."
+  },
+
+  "minimoDisputables": {
+    "valor": 1,
+    "motivo": "Piso de evidencia, no de valor. Una cabeza con CERO posiciones disputables en su top 10 medido no tiene por donde entrar: 'hernia discal' tiene 6.000 de volumen, KD 5 y potencial de trafico 1.500, y sus siete posiciones medidas son Mayo Clinic, MedlinePlus, Quironsalud, Auna, Clinic Barcelona, Elsevier y neurorgs.net. Ponerla en una lista de objetivos seria prometer algo que la medicion dice que no pasa. Su forma ganable —'hernia discal lumbar y cervical en lima', 7 de 8 disputables— si entra."
+  },
+
+  "demanda": {
+    "nota": "El potencial de trafico manda sobre el volumen propio, y esto es el corazon del criterio. 'traumatologia' tiene 1.300 de volumen y 2.200 de potencial; 'traumatologia y ortopedia' tiene 90 y 1.600; 'ciatica' tiene 900 y 1.800. La pagina que gana esas keywords captura mucho mas que el termino en si. Elegir por volumen se perderia exactamente eso, que es lo que KWR-06 existe para evitar.",
+    "cortes": [
+      { "desde": 1000, "puntos": 30 },
+      { "desde": 500, "puntos": 22 },
+      { "desde": 100, "puntos": 15 },
+      { "desde": 1, "puntos": 8 }
+    ],
+    "sinDatos": {
+      "puntos": 15,
+      "motivo": "Sin dato NO es cero. DinoRank trunca las relacionadas en 900 y nunca devuelve la keyword consultada, y las 30 busquedas de SerpApi que quedan no alcanzan para medir el resto. El hueco es de la fuente, no del mercado, y esta documentado en data/dinorank-limite-900-2026-08-10.md. Puntuarlo como cero mandaria las condiciones nucleo del negocio al final de cualquier orden."
+    }
+  },
+
+  "localidad": {
+    "nota": "Tres niveles, y el orden sale de una medicion, no de una preferencia. El cluster de 41 cabezas probo que en Lima 'traumatologo surco', 'cirujano de columna san isidro' y 'neurocirujano la molina' son la MISMA SERP: trece modificadores de distrito son una pagina, no trece. Asi que un distrito vale menos que Lima. Un nombre de clinica vale mas que un distrito porque v1.1 ya tiene planificada una pagina por sede: esa keyword mapea a una URL real.",
+    "niveles": [
+      { "nivel": "lima", "puntos": 15, "terminos": ["lima"] },
+      {
+        "nivel": "clinica",
+        "puntos": 8,
+        "terminos": ["clinica ricardo palma", "clinica sanna", "clinica tezza", "clinica padre luis tezza", "sanna la molina"]
+      },
+      {
+        "nivel": "distrito",
+        "puntos": 4,
+        "terminos": ["surco", "santiago de surco", "san isidro", "la molina", "cerca de mi"]
+      }
+    ]
+  },
+
+  "pesoDeRango": {
+    "factor": 4,
+    "base": 5,
+    "motivo": "El rango es el valor de negocio que la lista de candidatas del plan 13-02 ya asigno: 0 es lo mas central del negocio y 5 lo mas periferico. Se reusa en vez de inventar un segundo criterio que diga lo mismo con otros numeros. Puntos = (5 - rango) * 4."
+  },
+
+  "categoriasDeServicio": {
+    "nota": "Las tres categorias son literalmente serviceCategories[].name de services.ts: es la taxonomia que el propio sitio declara, y la fase 14 va a mapear una URL por categoria. Sirven para partir el cluster de 41 cabezas sin inventar nada: dos cabezas del mismo cluster pero de categorias distintas las va a servir URLs distintas, asi que las dos pueden ser de oro. Se evaluan en este orden, de la mas especifica a la mas general.",
+    "orden": [
+      {
+        "id": "ortopedia-infantil",
+        "nombre": "Ortopedia infantil",
+        "terminos": ["ortopedia infantil", "ortopedista infantil", "traumatologo infantil", "displasia congenita de cadera", "alteraciones de la marcha", "escoliosis en ninos"]
+      },
+      {
+        "id": "cirugia-de-columna",
+        "nombre": "Cirugia de columna",
+        "terminos": ["columna", "escoliosis", "hernia discal", "hernia de disco", "estenosis", "lumbalgia", "ciatica", "artrodesis", "cifosis", "espinal", "vertebral", "discal", "discopatia", "cervicalgia", "minimamente invasiva", "endoscopia"]
+      },
+      {
+        "id": "traumatologia-y-ortopedia",
+        "nombre": "Traumatologia y ortopedia",
+        "terminos": [],
+        "esPorDefecto": true
+      }
+    ]
+  },
+
+  "reglaDeCluster": {
+    "porClusterPorDefecto": 1,
+    "motivo": "Diez keywords de oro del mismo cluster serian una sola pagina disfrazada de diez, y el criterio de desempate de la fase 14 quedaria apuntando siempre a la misma URL.",
+    "escape": {
+      "exigeCategoriaDistinta": true,
+      "solapeMaximoDeUrls": 0,
+      "motivo": "Una segunda cabeza del mismo cluster entra solo si cumple las DOS condiciones: que sea de otra categoria de servicio —o sea, que la fase 14 le vaya a dar otra URL— y que su top 10 medido no comparta NI UNA url con la cabeza ya elegida de ese cluster. La segunda condicion se mide, no se supone: el cluster de 41 se formo por transitividad, y medido de a pares 'traumatologia y ortopedia', 'cirujano de columna lima' y 'ortopedia infantil' comparten CERO urls entre si. No son la misma SERP; quedaron encadenadas a traves de terceras cabezas."
+    }
+  },
+
+  "vetos": [
+    {
+      "keywordKey": "cirugia convencional en lima",
+      "motivo": "Su top 10 medido es de cirugia GENERAL, no de columna: cirugia24horas.com, cirugiasperu.com, cjp.pe, novoclinic.com.pe, cirugiaendoscopicaperu.com. La keyword nombra una tecnica que el doctor si realiza, pero su SERP responde a otra intencion. 8 de 9 posiciones disputables no sirven de nada si el que busca no es su paciente."
+    },
+    {
+      "keywordKey": "cirugia convencional",
+      "motivo": "Misma razon que su forma geo: la SERP es de cirugia general y de contenido internacional (revespcardiol.org, mayoclinic.org, icatme.com)."
+    },
+    {
+      "keywordKey": "las mejores pastillas para la ciatica",
+      "motivo": "Juan la conservo el 2026-08-11 como contenido educativo de tope de embudo y EXPLICITAMENTE no transaccional. Informa la estrategia de contenido; mapearla como si el que busca estuviera por operarse seria leer mal su propia decision."
+    },
+    {
+      "keywordKey": "clinica montefiori",
+      "motivo": "Juan confirmo el 2026-08-11 que el doctor YA NO atiende en Montefiori. Las cuatro sedes vigentes son consultorio Surco, Clinica Ricardo Palma, Sanna La Molina y Padre Luis Tezza."
+    }
+  ],
+
+  "urls": {
+    "nota": "A que URL —existente o planificada— le tocaria pelear cada keyword de oro. La fase 14 (MAP-04) es la que decide de verdad; esto es la candidata de partida y su accion esperada. Las nueve planificadas son las que declara el ROADMAP: cuatro de servicio, cuatro de sede y el hub /servicios reformulado.",
+    "porCategoria": {
+      "ortopedia-infantil": { "url": "/servicios/ortopedia-infantil", "estado": "planificada", "accion": "crear" },
+      "cirugia-de-columna": { "url": "/servicios", "estado": "existente", "accion": "reescribir" },
+      "traumatologia-y-ortopedia": { "url": "/", "estado": "existente", "accion": "reescribir" }
+    },
+    "porKeyword": {
+      "escoliosis": { "url": "/servicios/escoliosis-y-deformidades", "estado": "planificada", "accion": "crear" },
+      "artrosis": { "url": "/blog/artrosis", "estado": "inexistente", "accion": "crear" },
+      "ciatica": { "url": "/blog/ciatica", "estado": "inexistente", "accion": "crear" },
+      "lumbalgia": { "url": "/blog/lumbalgia", "estado": "inexistente", "accion": "crear" },
+      "hernia discal lumbar y cervical en lima": { "url": "/servicios/hernia-discal", "estado": "planificada", "accion": "crear" },
+      "estenosis de canal en lima": { "url": "/servicios/estenosis-espinal", "estado": "planificada", "accion": "crear" },
+      "cirugia minimamente invasiva en lima": { "url": "/servicios", "estado": "existente", "accion": "reescribir" },
+      "artrodesis en varios niveles en lima": { "url": "/servicios", "estado": "existente", "accion": "reescribir" },
+      "traumatologia lima": { "url": "/", "estado": "existente", "accion": "reescribir" },
+      "cirujano de columna lima": { "url": "/servicios", "estado": "existente", "accion": "reescribir" },
+      "ortopedia infantil lima": { "url": "/servicios/ortopedia-infantil", "estado": "planificada", "accion": "crear" },
+      "ortopedia infantil la molina": { "url": "/sedes/sanna-la-molina", "estado": "planificada", "accion": "crear" },
+      "cirujano de columna clinica ricardo palma": { "url": "/sedes/ricardo-palma", "estado": "planificada", "accion": "crear" },
+      "traumatologo clinica ricardo palma": { "url": "/sedes/ricardo-palma", "estado": "planificada", "accion": "crear" },
+      "ortopedia infantil clinica tezza": { "url": "/sedes/padre-luis-tezza", "estado": "planificada", "accion": "crear" },
+      "cirujano de columna clinica sanna": { "url": "/sedes/sanna-la-molina", "estado": "planificada", "accion": "crear" }
+    }
+  },
+
+  "advertencias": [
+    "El universo de 5.716 keywords es una **muestra truncada**, no un censo de lo que se busca en Lima. DinoRank corta las relacionadas en 900 por consulta y nunca devuelve la keyword consultada dentro de su propio arreglo. Leer esta lista como 'las diez mejores de Lima' seria leerla mal: son las diez mejores de lo que se pudo medir.",
+    "De las 114 busquedas de SerpApi disponibles se gastaron 96 midiendo la SERP de 91 cabezas. **Quedan 4.675 keywords del universo objetivo sin una sola SERP medida**, y ninguna de ellas pudo ser candidata a esta lista. Dos de las cinco keywords de mayor volumen del universo —'tendinitis' con 14.800 y 'fracturas' con 6.600— quedaron fuera por eso y no por un juicio de negocio.",
+    "**Ahrefs y DinoRank discrepan fuerte** en volumen para las condiciones nucleo y las dos cifras se publican sin promediar: 'cifosis' da 2.300 en Ahrefs y 3.600 en DinoRank; 'ciatica' da 900 en Ahrefs y 8.100 en DinoRank; 'hernia discal' da 6.000 en Ahrefs y 0 en DataForSEO via DinoRank. Cuando las dos aparecen, las dos se leen.",
+    "El punto dulce se midio contra la **calidad del contenido** del top 10 y no contra el perfil de enlaces, porque la medicion del 2026-08-11 mostro que en los cinco competidores la home concentra todos los dominios de referencia y las paginas interiores que traen el trafico tienen cero. Si esa lectura cambiara, la mitad de alcanzabilidad de esta lista habria que recalcularla."
+  ]
+}
