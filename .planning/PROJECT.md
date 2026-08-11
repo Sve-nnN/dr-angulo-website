@@ -77,7 +77,7 @@ Milestone v1.1 — derivados de la auditoría SEO del 2026-08-10:
 
 ## Context
 
-- Cliente: Dr. Juan Carlos Angulo Totesaut. CMP 83189 / RNE 35310. Formación: Universidad de Oriente, Núcleo Bolívar. Experiencia: cirujano de columna en Hospital Ruiz y Páez (2007-2009), Clínica San Juan de Dios San Luis (2018-2019), Clínica Montefiori La Molina (desde dic. 2018, sede actual). Consulta privada, no trabaja con seguros. Consulta particular ~S/130, consulta online ~S/100 (dato de Doctoralia, verificar antes de publicar precio).
+- Cliente: Dr. Juan Carlos Angulo Totesaut. CMP 83189 / RNE 35310. Formación: Universidad de Oriente, Núcleo Bolívar. Experiencia: cirujano de columna en Hospital Ruiz y Páez (2007-2009), Clínica San Juan de Dios San Luis (2018-2019), Clínica Montefiori La Molina (dic. 2018 hasta 2026; Juan confirmó el 2026-08-11 que ya NO atiende ahí). Consulta privada, no trabaja con seguros. Consulta particular ~S/130, consulta online ~S/100 (dato de Doctoralia, verificar antes de publicar precio).
 - Instagram @dr.juancarlosangulo: 3,429 seguidores, bio "TRAUMATOLOGÍA / ORTOPEDIA INFANTIL / CIRUJANO DE COLUMNA", WhatsApp de contacto 964305682. Contenido: educación al paciente (hernia discal, estenosis, contracturas, miedo a cirugía, postura), historias destacadas: Cirugías, Testimonios, Cervical, Preguntas, Post operado.
 - Identidad visual real (extraída de Instagram, ver Key Decisions): logo "JA" monograma con columna vertebral estilizada, paleta teal/turquesa + dorado-mostaza, tipografía sans-serif bold para titulares.
 - Competencia directa investigada (médicos individuales de columna en Lima): drcarranzacolumna.com, drciezatraumatologia.com, cirujanocolumna-elaos.com. Patrón común: WhatsApp flotante, sección de trayectoria/formación, testimonios/reseñas de Google, FAQ, sin sistema de reserva complejo. Ver `.planning/research/COMPETITORS.md`.
@@ -102,7 +102,7 @@ Milestone v1.1 — derivados de la auditoría SEO del 2026-08-10:
 |----------|-----------|---------|
 | Stack: Next.js + Tailwind + Vercel, sin CMS | Cliente pidió "stack super simple"; sitio de marketing de un solo médico no necesita backend complejo | — Pendiente validar tras ver el sitio |
 | WhatsApp (964305682) como canal principal de citas, formulario como secundario | Confirmado por Juan; mercado peruano prefiere WhatsApp; evita construir sistema de calendario | ✓ Confirmado por Juan |
-| Sede mostrada: Clínica Montefiori, Av. Separadora Industrial 1820, La Molina | Confirmado por Juan como sede principal actual | ✓ Confirmado por Juan |
+| Sede mostrada: Clínica Montefiori, Av. Separadora Industrial 1820, La Molina | Confirmado por Juan como sede principal actual | ✗ **Superado el 2026-08-11: Juan confirmó que el doctor YA NO atiende en Montefiori.** Las sedes vigentes son las cuatro que el sitio publica: consultorio Surco, Clínica Ricardo Palma, Sanna La Molina y Padre Luis Tezza. Cierra la pregunta abierta desde la fase 6 |
 | Paleta: teal/turquesa (~#0E8A8C) + dorado-mostaza (~#E8971F) | Extraída directamente de posts e íconos de highlights de Instagram del doctor | — Pendiente afinar tras ver el sitio construido |
 | Dominio: subdominio temporal de Vercel por ahora | Juan prefirió probar antes de comprar dominio | ✗ Superado — se compró drangulocolumna.com el 2026-08-09 |
 | Deploy en Dokploy self-hosted, no Vercel | Juan usa su propia infraestructura (Hetzner + Dokploy) para el resto de sus proyectos; consistencia operativa | ✓ En producción desde la fase 4 |
