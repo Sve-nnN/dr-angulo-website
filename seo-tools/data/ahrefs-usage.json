@@ -1,0 +1,32 @@
+{
+  "schema": 1,
+  "fuente": "ahrefs",
+  "cuenta": "Lite",
+  "unidadesLibresDeclaradas": 66000,
+  "formulaDeCoste": "max(costeBase, costePorFila * filas); costeBase = 50 unidades",
+  "origenDeLaFormula": "https://docs.ahrefs.com/en/api/docs/limits-consumption",
+  "consultasPorEndpoint": {
+    "site-explorer/backlinks-stats": 6,
+    "site-explorer/domain-rating": 6,
+    "site-explorer/metrics": 6,
+    "site-explorer/top-pages": 6
+  },
+  "consultas": 24,
+  "unidadesEstimadas": 2280,
+  "corridas": [
+    {
+      "plan": "13-03",
+      "estado": "planificado",
+      "fecha": "2026-08-11",
+      "consultasPorEndpoint": {
+        "site-explorer/backlinks-stats": 6,
+        "site-explorer/domain-rating": 6,
+        "site-explorer/metrics": 6,
+        "site-explorer/top-pages": 6
+      },
+      "consultas": 24,
+      "unidadesEstimadas": 2280,
+      "nota": "Consultas previstas y todavia no obtenidas. Ahrefs no tiene credencial en el entorno: el cuerpo se captura por el servidor MCP y entra por ahrefs-ingest.ts."
+    }
+  ]
+}

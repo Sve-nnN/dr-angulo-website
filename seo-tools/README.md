@@ -415,3 +415,124 @@ vacios. MAP-02 tendra que volver a sondear cuando exista un proyecto con datos.
    `--project-id`, para grabar las fixtures definitivas del proyecto propio.
 
 Ninguno de los dos consume cuota, segun la doc del proveedor, asi que resondear es gratis.
+
+## 8. Contrato de Ahrefs (`ahrefs-plan` + `ahrefs-ingest`)
+
+Ahrefs vuelve al milestone por decision de Juan del 2026-08-10 (D-07), acotado a lo que
+COMP-01 y COMP-04 exigen. Es la unica fuente que tiene Domain Rating y referring domains.
+
+### Por que Ahrefs entra por un traspaso y no por un cliente HTTP
+
+**No hay credencial de Ahrefs en `.secrets/.env`.** El entorno solo trae `DINORANK_API_KEY`,
+`GOOGLE_SERVICE_ACCOUNT_FILE`, `SEO_SHEET_ID` y `SERPAPI_API_KEY`. El unico camino de acceso
+es el servidor MCP de Ahrefs, que vive en la sesion del agente y no en el proceso de Node. Asi
+que el proyecto usa el seam que la fase 12 dejo armado para exactamente este caso: el cuerpo
+crudo se obtiene por fuera y se deja en la cache, y toda la cadena aguas abajo queda
+verificable sin ninguna credencial.
+
+Son dos comandos y ninguno de los dos llama a Ahrefs:
+
+```bash
+cd seo-tools
+
+# 1. El proyecto dice que hay que pedir y bajo que clave va a quedar guardado.
+./node_modules/.bin/tsx src/phase13/ahrefs-plan.ts --domains drcarranzacolumna.com
+# -> por cada consulta: etiqueta de endpoint, ruta de la API v3, params y clave de 64 hex
+
+# 2. Quien tenga el MCP obtiene el cuerpo crudo, lo guarda en un archivo y lo deja aca.
+./node_modules/.bin/tsx src/phase13/ahrefs-ingest.ts \
+    --endpoint site-explorer/domain-rating \
+    --params '{"target":"drcarranzacolumna.com","mode":"domain","protocol":"both","date":"2026-08-11"}' \
+    --file /tmp/cuerpo.json --plan 13-03
+```
+
+**La clave no se pasa por bandera a proposito.** `ahrefs-ingest` la recalcula a partir de los
+mismos `--endpoint` y `--params` que imprimio el plan, con la misma funcion. Si el que captura
+tuviera que copiar un hash de 64 caracteres, un dato podria quedar guardado bajo una clave que
+despues nadie encuentra, y el problema no se veria hasta el reprocesamiento.
+
+Propiedades que la ingesta garantiza:
+
+- Un cuerpo que no es JSON valido aborta **sin escribir nada**.
+- Un cuerpo con algo con forma de credencial o de identificador de cuenta aborta **sin escribir
+  nada** (T-13-20). El control corre sobre el texto crudo, porque una credencial puede venir
+  dentro de una URL de eco y no como campo propio.
+- Reingerir el **mismo** cuerpo no reescribe el archivo y **no vuelve a contar cuota**: el
+  `fetchedAt` que queda es el de la captura real.
+- Una respuesta **vacia se persiste igual**, con `outcome: "empty"`. Para Ahrefs, vacio
+  significa "la fuente no conoce este dato", que es distinto de cero, y volver a preguntarlo
+  costaria otras 50 unidades para llegar al mismo lugar.
+
+### Etiquetas de endpoint de este proyecto
+
+La etiqueta **no** es la ruta de la API ni el nombre de la herramienta del MCP: es la parte de
+la clave de cache que el proyecto controla. Si el proveedor renombra una ruta —ya lo hizo,
+`best-by-external-links` es hoy `pages-by-backlinks`— la cache sigue siendo valida.
+
+| Etiqueta | Ruta de la API v3 | Para que | Unidades |
+|---|---|---|---|
+| `site-explorer/domain-rating` | `/v3/site-explorer/domain-rating` | DR y Ahrefs Rank (COMP-01) | 50 |
+| `site-explorer/backlinks-stats` | `/v3/site-explorer/backlinks-stats` | referring domains (COMP-01) | 50 |
+| `site-explorer/metrics` | `/v3/site-explorer/metrics` | trafico organico y keywords top 100 (COMP-01) | 50 |
+| `site-explorer/top-pages` | `/v3/site-explorer/top-pages` | paginas mas enlazadas y evidencia de blog (COMP-04) | ~230 |
+| `keywords-explorer/overview` | `/v3/keywords-explorer/overview` | KD y traffic potential (plan 13-04) | ~50 |
+
+### Nombres de campo, tal como llegan
+
+Escritos contra la referencia publica de la API v3. **Todos los parsers leen por nombre y
+ninguno por posicion.** Un campo que no viene queda en `null`, nunca en cero.
+
+```
+GET /v3/site-explorer/domain-rating
+  { "domain_rating": { "domain_rating": 0.0, "ahrefs_rank": 0 } }
+
+GET /v3/site-explorer/backlinks-stats
+  { "metrics": { "all_time": 0, "all_time_refdomains": 0, "live": 0, "live_refdomains": 0 } }
+
+GET /v3/site-explorer/metrics
+  { "metrics": { "org_cost": 0, "org_keywords": 0, "org_keywords_1_3": 0, "org_traffic": 0,
+                 "paid_cost": 0, "paid_keywords": 0, "paid_pages": 0, "paid_traffic": 0 } }
+
+GET /v3/site-explorer/top-pages
+  { "pages": [ { "url": "", "raw_url": "", "referring_domains": 0, "sum_traffic": 0,
+                 "keywords": 0, "top_keyword": "", "top_keyword_volume": 0,
+                 "top_keyword_best_position": 0, "page_type": "", "ur": 0.0, "value": 0 } ] }
+```
+
+Detalles que importan y no son obvios:
+
+- **`live_refdomains`, no `all_time_refdomains`.** El conteo vivo describe el perfil de enlaces
+  de hoy; el historico incluye dominios que ya no enlazan y sobreestimaria la distancia real
+  entre el dominio del doctor y sus competidores, que es justo lo que el punto dulce mide.
+- **Los importes vienen en centavos de dolar**, no en dolares. Aplica a `org_cost`,
+  `paid_cost` y `value`.
+- **`top-pages` no trae titulo de pagina.** Lo mas parecido es `top_keyword`. Cuando falta, el
+  parser deja `null` en vez de repetir la URL: inventar un titulo seria afirmar algo que la
+  fuente no dijo.
+- **El orden lo impone el parser, no el proveedor.** `order_by` viaja en la peticion, pero
+  confiar en que la respuesta llegue ordenada haria que un cambio del proveedor reordenara el
+  entregable sin que nada fallara.
+- **`date` va fija en `2026-08-11`** y no sale del reloj. Tomarla del reloj haria que la clave
+  de cache cambiara cada dia y la misma consulta se pagaria otra vez cada 24 horas.
+
+### Unidades y saldo
+
+La formula del proveedor es `max(costeBase, costePorFila * filas)`, con un minimo de **50
+unidades** por peticion facturable
+(<https://docs.ahrefs.com/en/api/docs/limits-consumption>). **El proveedor no expone saldo por
+API**, asi que `data/ahrefs-usage.json` mas el libro de cuota son todo el control que este
+proyecto tiene sobre su propio consumo (T-13-22).
+
+Ese archivo lleva la clave `corridas`, que es un **arreglo**: cada plan agrega su entrada y
+ninguno pisa la de los demas. Es contrato con el plan 13-04.
+
+### Fixtures
+
+- `data/fixtures/ahrefs-contrato-sintetico.json` — **sintetica y declarada como tal**. Apunta a
+  `ejemplo-sintetico.test`, un TLD reservado por la RFC 2606 que no existe. Congela la forma
+  del contrato para que la suite corra sin credenciales y sin red. Ningun numero suyo es una
+  medicion.
+- `data/fixtures/ahrefs-domain-overview.json` y `data/fixtures/ahrefs-top-pages.json` — las
+  respuestas **reales**, que las escribe `ahrefs-ingest.ts --fixture <ruta>` con el cuerpo
+  capturado por el MCP. La ingesta imprime que campos llegaron y avisa si el parser no
+  encontro ninguno, que es como se detecta una deriva de contrato sin abrir el archivo.
