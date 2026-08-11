@@ -6,14 +6,14 @@
   "formulaDeCoste": "max(costeBase, costePorFila * filas); costeBase = 50 unidades",
   "origenDeLaFormula": "https://docs.ahrefs.com/en/api/docs/limits-consumption",
   "consultasPorEndpoint": {
-    "keywords-explorer/overview": 91,
+    "keywords-explorer/overview": 149,
     "site-explorer/backlinks-stats": 12,
     "site-explorer/domain-rating": 12,
     "site-explorer/metrics": 12,
     "site-explorer/top-pages": 12
   },
-  "consultas": 139,
-  "unidadesEstimadas": 9110,
+  "consultas": 197,
+  "unidadesEstimadas": 12010,
   "corridas": [
     {
       "plan": "13-03",
@@ -31,14 +31,14 @@
     },
     {
       "plan": "13-04",
-      "estado": "planificado",
+      "estado": "ingerido",
       "fecha": "2026-08-11",
       "consultasPorEndpoint": {
-        "keywords-explorer/overview": 91
+        "keywords-explorer/overview": 149
       },
-      "consultas": 91,
-      "unidadesEstimadas": 4550,
-      "nota": "Alcance del plan: 91 cabezas, 0 ya en cache. Las 91 restantes NO se han emitido: el estado es planificado y las unidades son una estimacion del alcance, no un gasto ocurrido."
+      "consultas": 149,
+      "unidadesEstimadas": 7450,
+      "nota": "Consumo real: cada consulta se conto al entrar a la cache. Reingerir el mismo cuerpo no vuelve a contar."
     }
   ]
 }
