@@ -213,7 +213,7 @@ arreglos llegaron vacíos. MAP-02 tendrá que resondear cuando exista un proyect
 ### Las fixtures de auditoría y canibalizaciones están seudonimizadas, y por qué
 
 El único proyecto cargado en la cuenta de DinoRank de Juan **es de otro cliente**
-(`site_id 138969`, un hotel de Miraflores). Como esos dos endpoints no aceptan un dominio
+(un proyecto ajeno; identificador y rubro omitidos a proposito). Como esos dos endpoints no aceptan un dominio
 suelto, la única forma de conocer su contrato era sondear ese proyecto.
 
 De esa respuesta se conserva **sólo la forma**: dominios, URLs, títulos, metas e
