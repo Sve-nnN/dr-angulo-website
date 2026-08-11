@@ -97,7 +97,7 @@ Plans:
 **Plans**: 5 plans
 
 Plans:
-- [ ] 13-01-PLAN.md — Fundación de la fase: SERP completa desde caché, tipo de página y el modelo del Sheet (tracer, coste cero de cuota)
+- [x] 13-01-PLAN.md — Fundación de la fase: SERP completa desde caché, tipo de página y el modelo del Sheet (tracer, coste cero de cuota) *(2026-08-11: 95 orgánicos tipificados, `Cluster` y `Top Result` habilitados, tab transpuesto medido en vivo. Cero búsquedas gastadas)*
 - [ ] 13-02-PLAN.md — Candidatas con aprobación de Juan antes de gastar, captura presupuestada de 90 búsquedas y clusters por solape de SERP
 - [ ] 13-03-PLAN.md — Los cinco competidores con Ahrefs y el tab transpuesto `Competitor Analysis`
 - [ ] 13-04-PLAN.md — Dificultad, punto dulce, gap de keywords y la carga del universo al Sheet
@@ -107,6 +107,8 @@ Plans:
 - COMP-01, COMP-02 y COMP-04 solo necesitan el tooling de la fase 12: se pueden ejecutar en paralelo a la expansión de keywords si conviene por cuota o por tiempo de espera de las APIs. Lo que sí depende del universo es COMP-03, porque la captura de SERP se hace por cluster.
 - KWR-04 y COMP-03 comparten la misma captura de SerpApi. Capturar una vez y reutilizar; no hacer dos pasadas de SERP sobre las mismas keywords.
 - Los tres competidores ya investigados en v1.0 (drcarranzacolumna.com, drciezatraumatologia.com, cirujanocolumna-elaos.com) son el punto de partida documentado en `.planning/research/COMPETITORS.md`. Faltan dos, y la auditoría del 2026-08-10 sugiere dónde buscarlos: Centro de Columna Vertebral y Clínica De La Columna lideran el local pack.
+- **Medido en el plan 13-01 (2026-08-11):** el tab `Competitor Analysis` tiene exactamente **cinco slots** de competidor, en las columnas `B`, `F`, `J`, `N` y `R`, con paso 4. Es justo lo que pide COMP-01: el slot `B` lo ocupa hoy el residuo de plantilla y al limpiarlo quedan los cinco libres. La forma completa está en `.planning/workstreams/seo-keywords/data/competitor-tab-recon-2026-08-11.md`.
+- **Medido en el plan 13-01 (2026-08-11):** de los 95 resultados orgánicos de las 12 capturas de Lima, **46 son contenido internacional** que un consultorio de Lima no disputa, 29 son directorios y redes sociales, y **solo 2 son guías peruanas**. El hueco de contenido local es el argumento central de las 10 de Oro.
 - El punto dulce se calcula contra el perfil de enlaces real de drangulocolumna.com, que es un dominio de agosto de 2026 con historial casi nulo. Elegir por volumen aquí sería elegir keywords que no se ganan en el horizonte del proyecto.
 - Las 10 de Oro son la entrada del criterio de priorización de la fase 14: cuando dos URLs se peleen la misma keyword, gana la que sirve a la keyword de oro.
 
@@ -177,7 +179,7 @@ paquete de la fase 15 para su contenido y su metadata.
 | Phase | Milestone | Plans Complete | Status | Completed |
 |-------|-----------|----------------|--------|-----------|
 | 12. Instrumentación de datos y universo de keywords | v1.2 | 5/5 | Complete | 2026-08-11 |
-| 13. Clusters, competencia y las 10 de Oro | v1.2 | 0/5 | Planned | - |
+| 13. Clusters, competencia y las 10 de Oro | v1.2 | 1/5 | In progress | - |
 | 14. Mapa keyword → URL y matriz de enlazado | v1.2 | 0/TBD | Not started | - |
 | 15. Paquete on-page por URL | v1.2 | 0/TBD | Not started | - |
 

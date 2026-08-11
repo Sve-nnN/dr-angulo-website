@@ -2,18 +2,18 @@
 gsd_state_version: 1.0
 milestone: v1.2
 milestone_name: "SEO semantico: keyword research y optimizacion on-page"
-current_phase: 12
-current_phase_name: Instrumentación de datos y universo de keywords
-status: phase_complete
-stopped_at: "Completado 12-05-PLAN.md y con él la fase 12 entera: los cuatro endpoints de DinoRank con fixtures reales, universo enriquecido y Sheet recargado. INFRA-02, INFRA-03 y KWR-02 cerrados"
-last_updated: "2026-08-11T00:35:00.000Z"
-last_activity: "2026-08-11, cerrada la fase 12: 5087 de 5716 keywords con métricas y el contrato de los cuatro endpoints documentado con respuestas reales"
+current_phase: 13
+current_phase_name: Clusters, competencia y las 10 de Oro
+status: in_progress
+stopped_at: "Completado 13-01-PLAN.md, el tracer de coste cero: SERP completa desde caché, 95 orgánicos tipificados, Cluster y Top Result habilitados y el tab transpuesto medido en vivo. Sigue la wave 2: 13-02 y 13-03 en paralelo"
+last_updated: "2026-08-11T16:20:00.000Z"
+last_activity: "2026-08-11, cerrado el plan 13-01 sin gastar ni una búsqueda de SerpApi: el contador sigue en 12"
 progress:
   total_phases: 4
   completed_phases: 1
   total_plans: 5
-  completed_plans: 5
-  percent: 100
+  completed_plans: 1
+  percent: 20
 ---
 
 # Project State
@@ -23,16 +23,16 @@ progress:
 See: .planning/PROJECT.md (updated 2026-08-10)
 
 **Core value:** Que un paciente que busca traumatólogo/cirujano de columna en Lima encuentre el sitio y agende cita por WhatsApp en menos de 2 clics, con todo evento rastreado.
-**Current focus:** Fase 12 cerrada. Sigue la fase 13: clusters por solape de SERP, cinco competidores perfilados y las 10 de Oro.
+**Current focus:** Fase 13 en curso. El plan 13-01 dejó probado el camino de la SERP con coste cero; sigue la wave 2, que es la que gasta las 90 búsquedas aprobadas.
 
 ## Current Position
 
-Phase: 12 de 15 cerrada (Instrumentación de datos y universo de keywords), primera de las 4 fases de v1.2
-Plan: los cinco planes de la fase 12 están cerrados. Sigue la fase 13, que todavía no tiene planes
-Status: Fase 12 completa. Los siete requisitos de la fase cerrados: INFRA-01 a INFRA-03, KWR-01 a KWR-03 y SHEET-06
-Last activity: 2026-08-11, cerrado el plan 12-05: los cuatro endpoints de DinoRank con fixtures reales de Perú, universo con 5087 de 5716 keywords con métricas y Sheet recargado sin mover una fila
+Phase: 13 de 15 en curso (Clusters, competencia y las 10 de Oro), segunda de las 4 fases de v1.2
+Plan: 13-01 cerrado (wave 1). Siguen 13-02 y 13-03, que corren en paralelo en la wave 2
+Status: la fundación de la fase está probada de punta a punta y no costó cuota. Ningún requisito de la fase 13 está cerrado todavía: KWR-04, COMP-03, SHEET-01 y SHEET-03 quedan habilitados, no completos
+Last activity: 2026-08-11, cerrado el plan 13-01: 95 orgánicos tipificados sobre las 12 capturas ya en caché, `Cluster` y `Top Result` escribibles, y el tab transpuesto medido contra el documento en vivo
 
-Progress: [██████████] 100% de la fase 12 · 1 de 4 fases de v1.2
+Progress: [██░░░░░░░░] 20% de la fase 13 · 1 de 4 fases de v1.2 cerradas
 
 ## Roadmap v1.2
 
@@ -71,6 +71,11 @@ Los dos milestones corren a la vez sobre el mismo repositorio.
 - **[Fase 12, plan 05] No se gasta cuota en keywords de cuatro o más palabras:** dos muestras acotadas midieron rendimiento cero y el plan 12-03 ya lo había visto en 15 de sus 40 semillas. La regla vive en el código como bandera `--max-words`, no como criterio de una corrida. Se ahorraron 499 llamadas.
 - **[Fase 12, plan 05] Las fixtures de `/auditoria` y `/canibalizaciones` se commitean seudonimizadas:** esos dos endpoints sólo resuelven contra un proyecto dado de alta y el único de la cuenta de DinoRank es de otro cliente. Se conserva la forma y nada del contenido, con reemplazo estable para que la relación de duplicidad sobreviva.
 
+- **[Fase 13, plan 01] `Top Result` se reasigna de la fase 15 a la 13:** es el resultado que Google pone primero, o sea dato de SERP, y la SERP la captura esta fase. Volver a leer la misma captura dos fases después costaría búsquedas de una cuota que no se repone. `URL` sigue en la 14 y `Suggested H1` en la 15.
+- **[Fase 13, plan 01] Siete tipos de página y no cuatro:** a los cuatro del ROADMAP (guía, página de servicio, ficha de clínica, directorio) la medición sobre los 95 orgánicos obligó a sumar contenido internacional, red social y otro. Forzar un resultado dentro de una caja que no le corresponde mentiría sobre la SERP.
+- **[Fase 13, plan 01] El tab `Competitor Analysis` se declara fila por fila, nunca por columna entera:** la columna B es el primer slot de competidor **y además** carga los títulos de sección en las filas 1, 4, 11, 17, 23, 25 y 31. Volcar una columna entera los borraría sin lanzar ninguna excepción.
+- **[Fase 13, plan 01] Los ejecutables de la fase son puntos de entrada propios bajo `src/phase13/`:** `src/cli.ts` llama a `main()` al cargarse, así que importarlo desde otro punto de entrada ejecuta el despachador con los argumentos equivocados. Por eso existe `src/phase13/args.ts`, que es copia funcional y no importación.
+
 ### Pending Todos
 
 - **Dar de alta `drangulocolumna.com` como proyecto en DinoRank y conectarle Search Console (bloqueante para la fase 14).** `/auditoria` responde HTTP 500 con un dominio que no es proyecto de la cuenta, y `/canibalizaciones` devuelve `has_data: false` sin Search Console conectado. MAP-02 y ONPAGE-05 dependen de esto y no lo puede resolver el tooling. Ninguno de los dos endpoints consume cuota, así que resondear después es gratis.
@@ -86,8 +91,8 @@ Los dos milestones corren a la vez sobre el mismo repositorio.
 
 ## Session Continuity
 
-Last session: 2026-08-11T00:35:00.000Z
-Stopped at: Completado 12-05-PLAN.md y con él la fase 12 entera. Sigue la fase 13, que necesita discuss y planning
+Last session: 2026-08-11T16:20:00.000Z
+Stopped at: Completado 13-01-PLAN.md. Sigue la wave 2 de la fase 13: 13-02 y 13-03 en paralelo
 Resume file: None
 
 ## Performance Metrics
@@ -97,6 +102,7 @@ Resume file: None
 | Phase 12 P02 | 1h | 3 tasks | 7 files |
 | Phase 12 P04 | 3h | 3 tasks | 6 files |
 | Phase 12 P05 | 3h | 3 tasks | 12 files |
+| Phase 13 P01 | 1h 50min | 3 tasks | 16 files |
 
 ## Presupuesto de fuentes externas al cerrar la fase 12
 
