@@ -1,0 +1,219 @@
+{
+  "schema": 1,
+  "generadoPor": "src/phase14/inventory.ts",
+  "requisito": "MAP-01",
+  "urls": [
+    {
+      "url": "/",
+      "titulo": "Dr. Juan Carlos Angulo Totesaut — Traumatólogo y Cirujano de Columna en Lima",
+      "estado": "viva",
+      "mapeable": true,
+      "origen": "src/app/page.tsx:17",
+      "familia": "home"
+    },
+    {
+      "url": "/agendar",
+      "titulo": "Agendar cita — Consultorios y horarios en Lima",
+      "estado": "viva",
+      "mapeable": true,
+      "origen": "src/app/agendar/page.tsx:11",
+      "familia": "conversion"
+    },
+    {
+      "url": "/blog",
+      "titulo": "Blog — Salud de columna y traumatología",
+      "estado": "viva",
+      "mapeable": true,
+      "origen": "src/app/blog/page.tsx:7",
+      "familia": "hub"
+    },
+    {
+      "url": "/blog/5-sintomas-de-columna-que-no-debes-ignorar",
+      "titulo": "5 síntomas de columna que no debes ignorar",
+      "estado": "viva",
+      "mapeable": true,
+      "origen": "src/content/blog.ts:32",
+      "familia": "blog"
+    },
+    {
+      "url": "/blog/estenosis-espinal-que-es",
+      "titulo": "Estenosis espinal: qué es y por qué aparece con la edad",
+      "estado": "viva",
+      "mapeable": true,
+      "origen": "src/content/blog.ts:242",
+      "familia": "blog"
+    },
+    {
+      "url": "/blog/hernia-discal-o-dolor-de-espalda-como-diferenciarlos",
+      "titulo": "¿Dolor de espalda o hernia discal? Cómo diferenciarlos",
+      "estado": "viva",
+      "mapeable": true,
+      "origen": "src/content/blog.ts:105",
+      "familia": "blog"
+    },
+    {
+      "url": "/blog/miedo-a-operarte-de-la-columna-5-cosas-que-debes-saber",
+      "titulo": "¿Tienes miedo a operarte de la columna? 5 cosas que debes saber",
+      "estado": "viva",
+      "mapeable": true,
+      "origen": "src/content/blog.ts:169",
+      "familia": "blog"
+    },
+    {
+      "url": "/contacto",
+      "titulo": "Contacto y Citas en Lima",
+      "estado": "viva",
+      "mapeable": true,
+      "origen": "src/app/contacto/page.tsx:10",
+      "familia": "conversion"
+    },
+    {
+      "url": "/preguntas-frecuentes",
+      "titulo": "Preguntas frecuentes",
+      "estado": "viva",
+      "mapeable": true,
+      "origen": "src/app/preguntas-frecuentes/page.tsx:9",
+      "familia": "institucional"
+    },
+    {
+      "url": "/privacidad",
+      "titulo": "Política de privacidad",
+      "estado": "viva",
+      "mapeable": false,
+      "motivoNoMapeable": "D-11: es una pagina legal y ya declara noindex desde v1.0, asi que esta fuera del sitemap. Asignarle una keyword seria pedirle a Google que posicione una URL que el propio sitio le pide no indexar.",
+      "origen": "src/app/privacidad/page.tsx:5",
+      "familia": "legal"
+    },
+    {
+      "url": "/sedes",
+      "titulo": "Sedes donde atiende el Dr. Juan Carlos Angulo en Lima",
+      "estado": "viva",
+      "mapeable": true,
+      "origen": "src/app/sedes/page.tsx:8",
+      "familia": "hub"
+    },
+    {
+      "url": "/sedes/clinica-ricardo-palma",
+      "titulo": "Traumatólogo y cirujano de columna en Clínica Ricardo Palma",
+      "estado": "viva",
+      "mapeable": true,
+      "origen": "src/content/location-pages.ts:67",
+      "familia": "sede"
+    },
+    {
+      "url": "/sedes/clinica-tezza",
+      "titulo": "Traumatólogo y cirujano de columna en Clínica Padre Luis Tezza",
+      "estado": "viva",
+      "mapeable": true,
+      "origen": "src/content/location-pages.ts:105",
+      "familia": "sede"
+    },
+    {
+      "url": "/sedes/consultorio-privado",
+      "titulo": "Consultorio de traumatología y columna en Surco, Lima",
+      "estado": "viva",
+      "mapeable": true,
+      "origen": "src/content/location-pages.ts:45",
+      "familia": "sede"
+    },
+    {
+      "url": "/sedes/sanna-la-molina",
+      "titulo": "Traumatólogo y cirujano de columna en Clínica Sanna, sede La Molina",
+      "estado": "viva",
+      "mapeable": true,
+      "origen": "src/content/location-pages.ts:86",
+      "familia": "sede"
+    },
+    {
+      "url": "/servicios",
+      "titulo": "Traumatólogo Especialista en Columna en Lima — Servicios",
+      "estado": "viva",
+      "mapeable": true,
+      "origen": "src/app/servicios/page.tsx:10",
+      "familia": "hub"
+    },
+    {
+      "url": "/servicios/escoliosis",
+      "titulo": "Escoliosis y deformidades de columna: diagnóstico y tratamiento",
+      "estado": "viva",
+      "mapeable": true,
+      "origen": "src/content/service-pages.ts:463",
+      "familia": "servicio"
+    },
+    {
+      "url": "/servicios/estenosis-espinal",
+      "titulo": "Estenosis espinal: síntomas, diagnóstico y tratamiento",
+      "estado": "viva",
+      "mapeable": true,
+      "origen": "src/content/service-pages.ts:276",
+      "familia": "servicio"
+    },
+    {
+      "url": "/servicios/hernia-discal",
+      "titulo": "Hernia discal: síntomas, diagnóstico y tratamiento",
+      "estado": "viva",
+      "mapeable": true,
+      "origen": "src/content/service-pages.ts:87",
+      "familia": "servicio"
+    },
+    {
+      "url": "/servicios/ortopedia-infantil",
+      "titulo": "Ortopedia infantil: desarrollo, marcha y columna en crecimiento",
+      "estado": "viva",
+      "mapeable": true,
+      "origen": "src/content/service-pages.ts:639",
+      "familia": "servicio"
+    },
+    {
+      "url": "/sobre-el-doctor",
+      "titulo": "Dr. Juan Carlos Angulo — Trayectoria y formación en Lima",
+      "estado": "viva",
+      "mapeable": true,
+      "origen": "src/app/sobre-el-doctor/page.tsx:11",
+      "familia": "institucional"
+    },
+    {
+      "url": "/testimonios",
+      "titulo": "Testimonios de pacientes",
+      "estado": "viva",
+      "mapeable": true,
+      "origen": "src/app/testimonios/page.tsx:10",
+      "familia": "institucional"
+    }
+  ],
+  "resumen": {
+    "total": 22,
+    "mapeables": 21,
+    "porFamilia": {
+      "home": 1,
+      "hub": 3,
+      "servicio": 4,
+      "sede": 4,
+      "blog": 4,
+      "institucional": 3,
+      "conversion": 2,
+      "legal": 1
+    }
+  },
+  "reconciliacion": {
+    "esperadoRoadmap": 19,
+    "esperadoMapeableRoadmap": 18,
+    "medido": 22,
+    "medidoMapeable": 21,
+    "diferencia": 3,
+    "diferenciaMapeable": 3,
+    "sobran": [
+      "/blog/5-sintomas-de-columna-que-no-debes-ignorar",
+      "/blog/estenosis-espinal-que-es",
+      "/blog/hernia-discal-o-dolor-de-espalda-como-diferenciarlos",
+      "/blog/miedo-a-operarte-de-la-columna-5-cosas-que-debes-saber",
+      "/sedes",
+      "/servicios/escoliosis"
+    ],
+    "faltan": [
+      "/blog/[slug]",
+      "/servicios/escoliosis-y-deformidades"
+    ],
+    "nota": "El inventario reporta lo que mide. La cifra de 19 y 18 de REQUIREMENTS.md se escribio antes de que v1.1 publicara, y ademas cuenta `/blog/[slug]` como una sola URL sin expandir, repite `/servicios` (una vez como existente y otra como hub reformulado) y no nombra el hub `/sedes`. Ajustar la medicion para que diera 19 seria falsearla. Las listas `sobran` y `faltan` son la diferencia nominal y entran como primer punto de decision al checkpoint del plan 14-02."
+  }
+}
