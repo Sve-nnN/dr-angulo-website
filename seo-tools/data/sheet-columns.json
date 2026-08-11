@@ -214,9 +214,9 @@
       { "row": 5, "header": "Domain Rating (DR)", "field": "domainRating", "status": "fase-13", "note": "D-12: sale de Ahrefs, cinco dominios. Hoy tiene el residuo 20 en el slot B." },
       { "row": 6, "header": "Ahrefs Rank (AR)", "field": "ahrefsRank", "status": "fase-13", "note": "Viene en la misma llamada que el DR, asi que no cuesta unidades extra. Hoy tiene el residuo 13 en el slot B." },
       { "row": 7, "header": "Referring Domains", "field": "referringDomains", "status": "fase-13", "note": "COMP-01 lo pide explicitamente. Misma llamada que DR y AR." },
-      { "row": 8, "header": "Estimated Monthly Search Traffic", "field": null, "status": "no-consultado", "literal": "no_consultado", "note": "Queda fuera del select recortado de D-07, que se limita a lo que COMP-01 exige. Pedirlo ampliaria el consumo sin que ningun requisito lo use." },
-      { "row": 9, "header": "Estimated Top 100 Keyword Rankings", "field": null, "status": "no-consultado", "literal": "no_consultado", "note": "Mismo motivo que la fila 8." },
-      { "row": 10, "header": "Do they have a blog?", "field": null, "status": "no-consultado", "literal": "no_consultado", "note": "Exige visitar cada sitio competidor, que no es alcance de esta fase. Se deja declarado y sin llenar en vez de inventarlo." },
+      { "row": 8, "header": "Estimated Monthly Search Traffic", "field": "organicTraffic", "status": "fase-13", "note": "HABILITADA POR EL PLAN 13-04. El plan 13-01 la dejo en no_consultado suponiendo que quedaba fuera del select de D-07; no quedo fuera: `site-explorer/metrics` la trajo en la misma consulta que las keywords organicas, y el dato ya esta en la cache. Dejar el literal aqui seria declarar como no consultado algo que si se consulto. Un cero con procedencia `ahrefs` es un cero REAL: tres de los cinco competidores no tienen trafico organico." },
+      { "row": 9, "header": "Estimated Top 100 Keyword Rankings", "field": "organicKeywords", "status": "fase-13", "note": "Mismo caso que la fila 8: viene de `site-explorer/metrics`, ya esta en cache." },
+      { "row": 10, "header": "Do they have a blog?", "field": "blogTexto", "status": "fase-13", "note": "Se deduce del top por enlaces, sin visitar ningun sitio. La ausencia de evidencia NO niega: cuando no se encuentra una ruta de blog la celda dice \"sin evidencia en el top por enlaces\" y nunca \"no\". El top por enlaces son diez paginas, no un mapa del sitio." },
 
       { "row": 12, "header": "Country 1", "field": null, "status": "no-consultado", "literal": "no_consultado", "note": "El reparto de trafico por pais es metrica de Ahrefs fuera del select de D-07. Hoy tiene el residuo 'United States' con 20% en D12." },
       { "row": 13, "header": "Country 2", "field": null, "status": "no-consultado", "literal": "no_consultado" },
@@ -232,17 +232,17 @@
 
       { "row": 24, "header": "Number of featured snippets", "field": "featuredSnippets", "status": "fase-13", "note": "Se cuenta sobre las capturas propias sin pedir nada nuevo. Dato medido el 2026-08-11: las 12 capturas de la fase 12 traen CERO bloque destacado, asi que un 0 aca sera un 0 real y no un dato ausente. Hoy tiene el residuo 6 en el slot B." },
 
-      { "row": 26, "header": "Top page 1", "field": null, "status": "no-consultado", "literal": "no_consultado", "note": "Las paginas principales por trafico salen de un endpoint de Ahrefs que queda fuera del select recortado de D-07." },
-      { "row": 27, "header": "Top page 2", "field": null, "status": "no-consultado", "literal": "no_consultado" },
-      { "row": 28, "header": "Top page 3", "field": null, "status": "no-consultado", "literal": "no_consultado" },
-      { "row": 29, "header": "Top page 4", "field": null, "status": "no-consultado", "literal": "no_consultado" },
-      { "row": 30, "header": "Top page 5", "field": null, "status": "no-consultado", "literal": "no_consultado" },
+      { "row": 26, "header": "Top page 1", "field": "topPage1", "status": "fase-13", "note": "HABILITADA POR EL PLAN 13-04. Salen de `site-explorer/top-pages`, que el plan 13-03 si consulto. Van ordenadas por TRAFICO, que en este nicho da un orden OPUESTO al de la seccion de abajo: la home concentra los enlaces y las interiores traen el trafico." },
+      { "row": 27, "header": "Top page 2", "field": "topPage2", "status": "fase-13" },
+      { "row": 28, "header": "Top page 3", "field": "topPage3", "status": "fase-13" },
+      { "row": 29, "header": "Top page 4", "field": "topPage4", "status": "fase-13" },
+      { "row": 30, "header": "Top page 5", "field": "topPage5", "status": "fase-13" },
 
-      { "row": 32, "header": "Most linked content 1", "field": null, "status": "no-consultado", "literal": "no_consultado", "note": "El contenido mas enlazado sale de otro endpoint de Ahrefs, tambien fuera del select de D-07." },
-      { "row": 33, "header": "Most linked content 2", "field": null, "status": "no-consultado", "literal": "no_consultado" },
-      { "row": 34, "header": "Most linked content 3", "field": null, "status": "no-consultado", "literal": "no_consultado" },
-      { "row": 35, "header": "Most linked content 4", "field": null, "status": "no-consultado", "literal": "no_consultado" },
-      { "row": 36, "header": "Most linked content 5", "field": null, "status": "no-consultado", "literal": "no_consultado" }
+      { "row": 32, "header": "Most linked content 1", "field": "mostLinked1", "status": "fase-13", "note": "Misma consulta que las filas 26 a 30, ordenada por DOMINIOS DE REFERENCIA. Medido el 2026-08-11: en los cinco competidores la home se lleva todos los dominios de referencia y las interiores tienen cero." },
+      { "row": 33, "header": "Most linked content 2", "field": "mostLinked2", "status": "fase-13" },
+      { "row": 34, "header": "Most linked content 3", "field": "mostLinked3", "status": "fase-13" },
+      { "row": 35, "header": "Most linked content 4", "field": "mostLinked4", "status": "fase-13" },
+      { "row": 36, "header": "Most linked content 5", "field": "mostLinked5", "status": "fase-13" }
     ],
 
     "//filasQueNoSeTocan": "Titulos de seccion en la columna B. El escritor de 13-03 NO puede escribir en estas filas del slot B.",
