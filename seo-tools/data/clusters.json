@@ -1,0 +1,2443 @@
+{
+  "schema": 1,
+  "generadoPor": "src/phase13/serp-cluster.ts",
+  "umbralDeSolape": 3,
+  "umbralDeSimilitud": 0.5,
+  "resumen": {
+    "clusters": 31,
+    "cabezas": 91,
+    "universo": 4766,
+    "validadasPorSerp": 91,
+    "inferidasPorTexto": 2348,
+    "sinCluster": 2327,
+    "similitudMedia": 0.5818,
+    "porTipoDePagina": {
+      "contenido-internacional": 14,
+      "directorio": 5,
+      "guia": 3,
+      "otro": 2,
+      "pagina-de-servicio": 6,
+      "red-social": 1
+    }
+  },
+  "clusters": [
+    {
+      "id": "traumatologo-ortopedia-infantil",
+      "nombre": "traumatólogo ortopedia infantil",
+      "rango": 0,
+      "familia": "agregadas-en-la-revision",
+      "cabezas": [
+        "traumatologo ortopedia infantil",
+        "ortopedia infantil",
+        "cirujano de columna",
+        "neurocirujano",
+        "traumatologia",
+        "traumatologia y ortopedia",
+        "traumatologo",
+        "traumatologo de columna",
+        "cirugia de columna cerca de mi",
+        "cirugia de columna lima",
+        "cirugia de columna san isidro",
+        "cirugia de columna surco",
+        "cirugia endoscopica de columna en lima",
+        "cirujano de columna cerca de mi",
+        "cirujano de columna lima",
+        "cirujano de columna san isidro",
+        "cirujano de columna surco",
+        "endoscopia espinal en lima",
+        "neurocirujano cerca de mi",
+        "neurocirujano lima",
+        "ortopedia infantil cerca de mi",
+        "ortopedia infantil lima",
+        "ortopedia infantil san isidro",
+        "ortopedia infantil surco",
+        "traumatologia cerca de mi",
+        "traumatologia lima",
+        "traumatologia san isidro",
+        "traumatologia surco",
+        "traumatologia y ortopedia cerca de mi",
+        "traumatologia y ortopedia lima",
+        "traumatologia y ortopedia san isidro",
+        "traumatologia y ortopedia surco",
+        "traumatologo cerca de mi",
+        "traumatologo lima",
+        "traumatologo san isidro",
+        "traumatologo surco",
+        "mejor clinica de traumatologia en lima",
+        "mejor neurocirujano de columna lima",
+        "ortopedia surco",
+        "que es un neurocirujano",
+        "traumatologia especialista en columna"
+      ],
+      "uniones": [
+        {
+          "a": "cirugia de columna cerca de mi",
+          "b": "endoscopia espinal en lima",
+          "urls": [
+            "cirujanocolumna-elaos.com",
+            "clinicasanfelipe.com/unidad-de-columna-y-medula-espinal",
+            "discalcentro.com"
+          ]
+        },
+        {
+          "a": "cirugia de columna cerca de mi",
+          "b": "traumatologia especialista en columna",
+          "urls": [
+            "clinicainternacional.com.pe/unidad-especializada/columna-medula-espinal",
+            "clinicarthromeds.pe/traumatologo-especialista-en-columna-lima-peru",
+            "drcarranzacolumna.com"
+          ]
+        },
+        {
+          "a": "cirugia de columna lima",
+          "b": "cirugia de columna cerca de mi",
+          "urls": [
+            "cirujanocolumna-elaos.com",
+            "clinicarthromeds.pe/traumatologo-especialista-en-columna-lima-peru",
+            "clinicasanfelipe.com/unidad-de-columna-y-medula-espinal",
+            "drcarranzacolumna.com",
+            "facebook.com/ClinicaSanJuanDeDiosDeLima/posts/-tu-columna-en-las-mejores-manos-en-cl%C3%ADnica-san-juan-de-dios-lima-realizamos-cir/983608080477396"
+          ]
+        },
+        {
+          "a": "cirugia de columna lima",
+          "b": "cirugia de columna san isidro",
+          "urls": [
+            "clinicaangloamericana.pe/medicos/traumatologia-cirugia-de-columna-vertebral",
+            "clinicarthromeds.pe/traumatologo-especialista-en-columna-lima-peru",
+            "drcarranzacolumna.com"
+          ]
+        },
+        {
+          "a": "cirugia de columna lima",
+          "b": "traumatologia especialista en columna",
+          "urls": [
+            "clinicaangloamericana.pe/medicos/traumatologia-cirugia-de-columna-vertebral",
+            "clinicalima.sanjuandedios.pe/traumatologia-columna",
+            "clinicarthromeds.pe/traumatologo-especialista-en-columna-lima-peru",
+            "drcarranzacolumna.com"
+          ]
+        },
+        {
+          "a": "cirugia de columna san isidro",
+          "b": "cirugia de columna cerca de mi",
+          "urls": [
+            "clinicainternacional.com.pe/unidad-especializada/columna-medula-espinal",
+            "clinicarthromeds.pe/traumatologo-especialista-en-columna-lima-peru",
+            "drcarranzacolumna.com"
+          ]
+        },
+        {
+          "a": "cirugia de columna san isidro",
+          "b": "traumatologia especialista en columna",
+          "urls": [
+            "clinicaangloamericana.pe/medicos/traumatologia-cirugia-de-columna-vertebral",
+            "clinicainternacional.com.pe/unidad-especializada/columna-medula-espinal",
+            "clinicarthromeds.pe/traumatologo-especialista-en-columna-lima-peru",
+            "drcarranzacolumna.com",
+            "drciezatraumatologia.com"
+          ]
+        },
+        {
+          "a": "cirugia de columna surco",
+          "b": "cirugia de columna cerca de mi",
+          "urls": [
+            "discalcentro.com",
+            "drcarranzacolumna.com",
+            "facebook.com/drblacksclinicadelacolumna?locale=es_LA"
+          ]
+        },
+        {
+          "a": "cirugia endoscopica de columna en lima",
+          "b": "endoscopia espinal en lima",
+          "urls": [
+            "cirugiaendoscopicaperu.com?q=node/185",
+            "cirujanocolumna-elaos.com",
+            "perujournalneurosurgery.org/es/node/243"
+          ]
+        },
+        {
+          "a": "cirujano de columna cerca de mi",
+          "b": "cirugia de columna cerca de mi",
+          "urls": [
+            "cirujanocolumna-elaos.com",
+            "clinicainternacional.com.pe/unidad-especializada/columna-medula-espinal",
+            "clinicarthromeds.pe/traumatologo-especialista-en-columna-lima-peru",
+            "drcarranzacolumna.com"
+          ]
+        },
+        {
+          "a": "cirujano de columna cerca de mi",
+          "b": "cirugia de columna lima",
+          "urls": [
+            "cirujanocolumna-elaos.com",
+            "clinicalima.sanjuandedios.pe/traumatologia-columna",
+            "clinicarthromeds.pe/traumatologo-especialista-en-columna-lima-peru",
+            "drcarranzacolumna.com"
+          ]
+        },
+        {
+          "a": "cirujano de columna cerca de mi",
+          "b": "cirugia de columna san isidro",
+          "urls": [
+            "clinicainternacional.com.pe/unidad-especializada/columna-medula-espinal",
+            "clinicarthromeds.pe/traumatologo-especialista-en-columna-lima-peru",
+            "drcarranzacolumna.com",
+            "drciezatraumatologia.com"
+          ]
+        },
+        {
+          "a": "cirujano de columna cerca de mi",
+          "b": "traumatologia especialista en columna",
+          "urls": [
+            "clinicainternacional.com.pe/unidad-especializada/columna-medula-espinal",
+            "clinicalima.sanjuandedios.pe/traumatologia-columna",
+            "clinicarthromeds.pe/traumatologo-especialista-en-columna-lima-peru",
+            "doctoralia.pe/tratamientos-servicios/consultas-especialista-de-columna/lima",
+            "drcarranzacolumna.com",
+            "drciezatraumatologia.com"
+          ]
+        },
+        {
+          "a": "cirujano de columna lima",
+          "b": "cirugia de columna cerca de mi",
+          "urls": [
+            "cirujanocolumna-elaos.com",
+            "clinicarthromeds.pe/traumatologo-especialista-en-columna-lima-peru",
+            "drcarranzacolumna.com"
+          ]
+        },
+        {
+          "a": "cirujano de columna lima",
+          "b": "cirugia de columna lima",
+          "urls": [
+            "cirujanocolumna-elaos.com",
+            "clinicarthromeds.pe/traumatologo-especialista-en-columna-lima-peru",
+            "drcarranzacolumna.com"
+          ]
+        },
+        {
+          "a": "cirujano de columna lima",
+          "b": "cirujano de columna cerca de mi",
+          "urls": [
+            "cirujanocolumna-elaos.com",
+            "clinicarthromeds.pe/traumatologo-especialista-en-columna-lima-peru",
+            "drcarranzacolumna.com"
+          ]
+        },
+        {
+          "a": "cirujano de columna lima",
+          "b": "mejor neurocirujano de columna lima",
+          "urls": [
+            "cirugiacerebroalmenara.com/neurotrauma-y-columna-2",
+            "cirujanocolumna-elaos.com",
+            "clinicasanfelipe.com/especialidades/neurocirugia",
+            "doctoralia.pe/neurocirujano/lima",
+            "drcarranzacolumna.com",
+            "ineurocienciaslima.com.pe"
+          ]
+        },
+        {
+          "a": "cirujano de columna lima",
+          "b": "neurocirujano cerca de mi",
+          "urls": [
+            "clinicainternacional.com.pe/especialidad/neurocirugia",
+            "doctoralia.pe/neurocirujano/lima",
+            "drcarranzacolumna.com",
+            "ineurocienciaslima.com.pe"
+          ]
+        },
+        {
+          "a": "cirujano de columna lima",
+          "b": "neurocirujano lima",
+          "urls": [
+            "cirujanocolumna-elaos.com",
+            "clinicainternacional.com.pe/especialidad/neurocirugia",
+            "clinicasanfelipe.com/especialidades/neurocirugia",
+            "doctoralia.pe/neurocirujano/lima",
+            "drcarranzacolumna.com",
+            "ineurocienciaslima.com.pe"
+          ]
+        },
+        {
+          "a": "cirujano de columna san isidro",
+          "b": "cirugia de columna cerca de mi",
+          "urls": [
+            "clinicainternacional.com.pe/unidad-especializada/columna-medula-espinal",
+            "clinicarthromeds.pe/traumatologo-especialista-en-columna-lima-peru",
+            "drcarranzacolumna.com"
+          ]
+        },
+        {
+          "a": "cirujano de columna san isidro",
+          "b": "cirugia de columna lima",
+          "urls": [
+            "clinicaangloamericana.pe/medicos/traumatologia-cirugia-de-columna-vertebral",
+            "clinicarthromeds.pe/traumatologo-especialista-en-columna-lima-peru",
+            "drcarranzacolumna.com"
+          ]
+        },
+        {
+          "a": "cirujano de columna san isidro",
+          "b": "cirugia de columna san isidro",
+          "urls": [
+            "clinicaangloamericana.pe/medicos/traumatologia-cirugia-de-columna-vertebral",
+            "clinicainternacional.com.pe/unidad-especializada/columna-medula-espinal",
+            "clinicarthromeds.pe/traumatologo-especialista-en-columna-lima-peru",
+            "drcarranzacolumna.com",
+            "drciezatraumatologia.com",
+            "facebook.com/InstitutoPeruanoOrtopediaTraumatologia?locale=es_LA"
+          ]
+        },
+        {
+          "a": "cirujano de columna san isidro",
+          "b": "cirujano de columna cerca de mi",
+          "urls": [
+            "clinicainternacional.com.pe/unidad-especializada/columna-medula-espinal",
+            "clinicarthromeds.pe/traumatologo-especialista-en-columna-lima-peru",
+            "drcarranzacolumna.com",
+            "drciezatraumatologia.com"
+          ]
+        },
+        {
+          "a": "cirujano de columna san isidro",
+          "b": "traumatologia especialista en columna",
+          "urls": [
+            "clinicaangloamericana.pe/medicos/traumatologia-cirugia-de-columna-vertebral",
+            "clinicainternacional.com.pe/unidad-especializada/columna-medula-espinal",
+            "clinicarthromeds.pe/traumatologo-especialista-en-columna-lima-peru",
+            "drcarranzacolumna.com",
+            "drciezatraumatologia.com"
+          ]
+        },
+        {
+          "a": "cirujano de columna san isidro",
+          "b": "traumatologia san isidro",
+          "urls": [
+            "ctosanisidro.com.ar",
+            "doctoralia.pe/tratamientos-servicios/consulta-especialista-de-traumatologia/san-isidro",
+            "doctoralia.pe/traumatologo-y-ortopedista/san-isidro",
+            "facebook.com/InstitutoPeruanoOrtopediaTraumatologia?locale=es_LA"
+          ]
+        },
+        {
+          "a": "cirujano de columna san isidro",
+          "b": "traumatologia y ortopedia san isidro",
+          "urls": [
+            "ctosanisidro.com.ar",
+            "doctoralia.pe/traumatologo-y-ortopedista/san-isidro",
+            "facebook.com/InstitutoPeruanoOrtopediaTraumatologia?locale=es_LA"
+          ]
+        },
+        {
+          "a": "cirujano de columna surco",
+          "b": "cirugia de columna cerca de mi",
+          "urls": [
+            "clinicainternacional.com.pe/unidad-especializada/columna-medula-espinal",
+            "discalcentro.com",
+            "drcarranzacolumna.com",
+            "facebook.com/drblacksclinicadelacolumna?locale=es_LA"
+          ]
+        },
+        {
+          "a": "cirujano de columna surco",
+          "b": "cirugia de columna surco",
+          "urls": [
+            "discalcentro.com",
+            "drcarranzacolumna.com",
+            "drperalestraumatologo.com/traumatologo-en-surco",
+            "facebook.com/drblacksclinicadelacolumna/videos/nos-lo-preguntan-mucho-d%C3%B3nde-est%C3%A1-la-cl%C3%ADnica-de-la-columnaestamos-en-chacarilla-/1395308928860687",
+            "facebook.com/drblacksclinicadelacolumna?locale=es_LA"
+          ]
+        },
+        {
+          "a": "cirujano de columna",
+          "b": "cirugia de columna cerca de mi",
+          "urls": [
+            "cirujanocolumna-elaos.com",
+            "clinicainternacional.com.pe/unidad-especializada/columna-medula-espinal",
+            "clinicarthromeds.pe/traumatologo-especialista-en-columna-lima-peru",
+            "drcarranzacolumna.com"
+          ]
+        },
+        {
+          "a": "cirujano de columna",
+          "b": "cirugia de columna lima",
+          "urls": [
+            "cirujanocolumna-elaos.com",
+            "clinicarthromeds.pe/traumatologo-especialista-en-columna-lima-peru",
+            "drcarranzacolumna.com"
+          ]
+        },
+        {
+          "a": "cirujano de columna",
+          "b": "cirugia de columna san isidro",
+          "urls": [
+            "clinicainternacional.com.pe/unidad-especializada/columna-medula-espinal",
+            "clinicarthromeds.pe/traumatologo-especialista-en-columna-lima-peru",
+            "drcarranzacolumna.com",
+            "drciezatraumatologia.com"
+          ]
+        },
+        {
+          "a": "cirujano de columna",
+          "b": "cirujano de columna cerca de mi",
+          "urls": [
+            "cirujanocolumna-elaos.com",
+            "clinicainternacional.com.pe/unidad-especializada/columna-medula-espinal",
+            "clinicarthromeds.pe/traumatologo-especialista-en-columna-lima-peru",
+            "doctoralia.pe/tratamientos-servicios/consultas-especialista-de-columna/lima",
+            "drcarranzacolumna.com",
+            "drciezatraumatologia.com"
+          ]
+        },
+        {
+          "a": "cirujano de columna",
+          "b": "cirujano de columna lima",
+          "urls": [
+            "cirujanocolumna-elaos.com",
+            "clinicarthromeds.pe/traumatologo-especialista-en-columna-lima-peru",
+            "drcarranzacolumna.com"
+          ]
+        },
+        {
+          "a": "cirujano de columna",
+          "b": "cirujano de columna san isidro",
+          "urls": [
+            "clinicainternacional.com.pe/unidad-especializada/columna-medula-espinal",
+            "clinicarthromeds.pe/traumatologo-especialista-en-columna-lima-peru",
+            "drcarranzacolumna.com",
+            "drciezatraumatologia.com"
+          ]
+        },
+        {
+          "a": "cirujano de columna",
+          "b": "traumatologia especialista en columna",
+          "urls": [
+            "clinicainternacional.com.pe/unidad-especializada/columna-medula-espinal",
+            "clinicarthromeds.pe/traumatologo-especialista-en-columna-lima-peru",
+            "doctoralia.pe/tratamientos-servicios/consultas-especialista-de-columna/lima",
+            "drcarranzacolumna.com",
+            "drciezatraumatologia.com"
+          ]
+        },
+        {
+          "a": "cirujano de columna",
+          "b": "traumatologo de columna",
+          "urls": [
+            "clinicainternacional.com.pe/unidad-especializada/columna-medula-espinal",
+            "clinicarthromeds.pe/traumatologo-especialista-en-columna-lima-peru",
+            "doctoralia.pe/tratamientos-servicios/consultas-especialista-de-columna/lima",
+            "drcarranzacolumna.com"
+          ]
+        },
+        {
+          "a": "neurocirujano cerca de mi",
+          "b": "mejor neurocirujano de columna lima",
+          "urls": [
+            "doctoralia.pe/neurocirujano/lima",
+            "drcarranzacolumna.com",
+            "ineurocienciaslima.com.pe"
+          ]
+        },
+        {
+          "a": "neurocirujano lima",
+          "b": "mejor neurocirujano de columna lima",
+          "urls": [
+            "cirugiaendoscopicaperu.com?q=node/170",
+            "cirujanocolumna-elaos.com",
+            "clinicasanfelipe.com/especialidades/neurocirugia",
+            "doctoralia.pe/neurocirujano/lima",
+            "drcarranzacolumna.com",
+            "drmaiz.com",
+            "ineurocienciaslima.com.pe",
+            "ineurocienciaslima.com.pe/videos"
+          ]
+        },
+        {
+          "a": "neurocirujano lima",
+          "b": "neurocirujano cerca de mi",
+          "urls": [
+            "clinicainternacional.com.pe/especialidad/neurocirugia",
+            "doctoralia.pe/neurocirujano/lima",
+            "drcarranzacolumna.com",
+            "ineurocienciaslima.com.pe"
+          ]
+        },
+        {
+          "a": "neurocirujano",
+          "b": "cirujano de columna lima",
+          "urls": [
+            "cirujanocolumna-elaos.com",
+            "clinicainternacional.com.pe/especialidad/neurocirugia",
+            "doctoralia.pe/neurocirujano/lima",
+            "ineurocienciaslima.com.pe"
+          ]
+        },
+        {
+          "a": "neurocirujano",
+          "b": "mejor neurocirujano de columna lima",
+          "urls": [
+            "cirujanocolumna-elaos.com",
+            "doctoralia.pe/neurocirujano/lima",
+            "ineurocienciaslima.com.pe"
+          ]
+        },
+        {
+          "a": "neurocirujano",
+          "b": "neurocirujano cerca de mi",
+          "urls": [
+            "clinicainternacional.com.pe/especialidad/neurocirugia",
+            "doctoralia.pe/neurocirujano/lima",
+            "ineurocienciaslima.com.pe",
+            "stellamaris.com.pe/especialidad/neurocirugia"
+          ]
+        },
+        {
+          "a": "neurocirujano",
+          "b": "neurocirujano lima",
+          "urls": [
+            "cirujanocolumna-elaos.com",
+            "clinicainternacional.com.pe/especialidad/neurocirugia",
+            "doctoralia.pe/neurocirujano/lima",
+            "ineurocienciaslima.com.pe"
+          ]
+        },
+        {
+          "a": "neurocirujano",
+          "b": "que es un neurocirujano",
+          "urls": [
+            "centromedicoabc.com/revista-digital/neurocirujano",
+            "clinicainternacional.com.pe/especialidad/neurocirugia",
+            "nyspine.com/es/blog/que-trata-un-neurocirujano"
+          ]
+        },
+        {
+          "a": "ortopedia infantil lima",
+          "b": "ortopedia infantil cerca de mi",
+          "urls": [
+            "clinicalima.sanjuandedios.pe/traumatologia-pediatrica",
+            "clinicarthromeds.pe/traumatologia-pedriatica-infantil-y-ortopedia-lima-peru",
+            "doctoralia.pe/tratamientos-servicios/ortopedia-infantil/lima",
+            "drabeltrantraumatologia.com/ortopedia-infantil-en-lima",
+            "ipot-crp.pe",
+            "stellamaris.com.pe/especialidad/ortopedia-y-traumatologia-pediatrica"
+          ]
+        },
+        {
+          "a": "ortopedia infantil lima",
+          "b": "ortopedia infantil san isidro",
+          "urls": [
+            "clinicaangloamericana.pe/medicos/traumatologia-y-ortopedia-pediatrica",
+            "clinicarthromeds.pe/traumatologia-pedriatica-infantil-y-ortopedia-lima-peru",
+            "ipot-crp.pe"
+          ]
+        },
+        {
+          "a": "ortopedia infantil lima",
+          "b": "ortopedia infantil surco",
+          "urls": [
+            "clinicarthromeds.pe/traumatologia-pedriatica-infantil-y-ortopedia-lima-peru",
+            "drabeltrantraumatologia.com/ortopedia-infantil-en-lima",
+            "stellamaris.com.pe/especialidad/ortopedia-y-traumatologia-pediatrica"
+          ]
+        },
+        {
+          "a": "ortopedia infantil san isidro",
+          "b": "cirujano de columna san isidro",
+          "urls": [
+            "ctosanisidro.com.ar",
+            "doctoralia.pe/traumatologo-y-ortopedista/san-isidro",
+            "facebook.com/InstitutoPeruanoOrtopediaTraumatologia?locale=es_LA"
+          ]
+        },
+        {
+          "a": "ortopedia infantil san isidro",
+          "b": "traumatologia san isidro",
+          "urls": [
+            "auna.org/pe/especialidades/ortopedia-y-traumatologia",
+            "ctosanisidro.com.ar",
+            "doctoralia.pe/traumatologo-y-ortopedista/san-isidro",
+            "facebook.com/InstitutoPeruanoOrtopediaTraumatologia?locale=es_LA",
+            "ipot-crp.pe"
+          ]
+        },
+        {
+          "a": "ortopedia infantil san isidro",
+          "b": "traumatologia y ortopedia lima",
+          "urls": [
+            "auna.org/pe/especialidades/ortopedia-y-traumatologia",
+            "facebook.com/InstitutoPeruanoOrtopediaTraumatologia?locale=es_LA",
+            "ipot-crp.pe"
+          ]
+        },
+        {
+          "a": "ortopedia infantil san isidro",
+          "b": "traumatologia y ortopedia san isidro",
+          "urls": [
+            "auna.org/pe/especialidades/ortopedia-y-traumatologia",
+            "ctosanisidro.com.ar",
+            "doctoralia.pe/traumatologo-y-ortopedista/san-isidro",
+            "facebook.com/InstitutoPeruanoOrtopediaTraumatologia?locale=es_LA",
+            "ipot-crp.pe"
+          ]
+        },
+        {
+          "a": "ortopedia infantil surco",
+          "b": "ortopedia infantil cerca de mi",
+          "urls": [
+            "clinicarthromeds.pe/traumatologia-pedriatica-infantil-y-ortopedia-lima-peru",
+            "drabeltrantraumatologia.com/ortopedia-infantil-en-lima",
+            "stellamaris.com.pe/especialidad/ortopedia-y-traumatologia-pediatrica"
+          ]
+        },
+        {
+          "a": "ortopedia infantil surco",
+          "b": "traumatologia y ortopedia surco",
+          "urls": [
+            "doctoralia.pe/clinicas/ortopedia-y-traumatologia/surco",
+            "drperalestraumatologo.com/traumatologo-en-surco",
+            "instagram.com/ortopediacastillo",
+            "instagram.com/reel/C-dk-m_yNRA?hl=es"
+          ]
+        },
+        {
+          "a": "ortopedia infantil",
+          "b": "ortopedia infantil cerca de mi",
+          "urls": [
+            "clinicarthromeds.pe/traumatologia-pedriatica-infantil-y-ortopedia-lima-peru",
+            "doctoralia.pe/tratamientos-servicios/ortopedia-infantil/lima",
+            "drabeltrantraumatologia.com/ortopedia-infantil-en-lima",
+            "stellamaris.com.pe/especialidad/ortopedia-y-traumatologia-pediatrica"
+          ]
+        },
+        {
+          "a": "ortopedia infantil",
+          "b": "ortopedia infantil lima",
+          "urls": [
+            "clinicaangloamericana.pe/medicos/traumatologia-y-ortopedia-pediatrica",
+            "clinicarthromeds.pe/traumatologia-pedriatica-infantil-y-ortopedia-lima-peru",
+            "doctoralia.pe/tratamientos-servicios/ortopedia-infantil/lima",
+            "drabeltrantraumatologia.com/ortopedia-infantil-en-lima",
+            "facebook.com/Dr.Monteagudo.V?locale=es_LA",
+            "stellamaris.com.pe/especialidad/ortopedia-y-traumatologia-pediatrica"
+          ]
+        },
+        {
+          "a": "ortopedia infantil",
+          "b": "ortopedia infantil surco",
+          "urls": [
+            "clinicarthromeds.pe/traumatologia-pedriatica-infantil-y-ortopedia-lima-peru",
+            "drabeltrantraumatologia.com/ortopedia-infantil-en-lima",
+            "stellamaris.com.pe/especialidad/ortopedia-y-traumatologia-pediatrica"
+          ]
+        },
+        {
+          "a": "traumatologia cerca de mi",
+          "b": "mejor clinica de traumatologia en lima",
+          "urls": [
+            "clinicainternacional.com.pe/especialidad/traumatologia",
+            "clinicalima.sanjuandedios.pe",
+            "crp.com.pe/especialidades/traumatologia",
+            "sportsmedicinelima.com/clinica-de-traumatologia-en-lima",
+            "traumamedical.com.pe"
+          ]
+        },
+        {
+          "a": "traumatologia cerca de mi",
+          "b": "traumatologia y ortopedia cerca de mi",
+          "urls": [
+            "clinicainternacional.com.pe/especialidad/traumatologia",
+            "clinicalima.sanjuandedios.pe",
+            "clinicarthromeds.pe",
+            "clinicatraumatologicalima.com/10-clinicas-de-salud-baratas-en-lima",
+            "doctoralia.pe/traumatologo-y-ortopedista/lima",
+            "stellamaris.com.pe/especialidad/ortopedia-y-traumatologia",
+            "traumamedical.com.pe"
+          ]
+        },
+        {
+          "a": "traumatologia cerca de mi",
+          "b": "traumatologia y ortopedia lima",
+          "urls": [
+            "clinicainternacional.com.pe/especialidad/traumatologia",
+            "doctoralia.pe/traumatologo-y-ortopedista/lima",
+            "sportsmedicinelima.com/clinica-de-traumatologia-en-lima",
+            "stellamaris.com.pe/especialidad/ortopedia-y-traumatologia"
+          ]
+        },
+        {
+          "a": "traumatologia lima",
+          "b": "mejor clinica de traumatologia en lima",
+          "urls": [
+            "clinicainternacional.com.pe/especialidad/traumatologia",
+            "clinicalima.sanjuandedios.pe",
+            "clinicarthromeds.pe/mejor-traumatologo-en-lima-peru",
+            "sportsmedicinelima.com/clinica-de-traumatologia-en-lima",
+            "traumamedical.com.pe"
+          ]
+        },
+        {
+          "a": "traumatologia lima",
+          "b": "traumatologia cerca de mi",
+          "urls": [
+            "clinicainternacional.com.pe/especialidad/traumatologia",
+            "clinicalima.sanjuandedios.pe",
+            "doctoralia.pe/traumatologo-y-ortopedista/lima",
+            "sportsmedicinelima.com/clinica-de-traumatologia-en-lima",
+            "stellamaris.com.pe/especialidad/ortopedia-y-traumatologia",
+            "traumamedical.com.pe"
+          ]
+        },
+        {
+          "a": "traumatologia lima",
+          "b": "traumatologia y ortopedia cerca de mi",
+          "urls": [
+            "clinicainternacional.com.pe/especialidad/traumatologia",
+            "clinicalima.sanjuandedios.pe",
+            "doctoralia.pe/traumatologo-y-ortopedista/lima",
+            "stellamaris.com.pe/especialidad/ortopedia-y-traumatologia",
+            "traumamedical.com.pe"
+          ]
+        },
+        {
+          "a": "traumatologia lima",
+          "b": "traumatologia y ortopedia lima",
+          "urls": [
+            "clinicainternacional.com.pe/especialidad/traumatologia",
+            "doctoralia.pe/traumatologo-y-ortopedista/lima",
+            "sportsmedicinelima.com/clinica-de-traumatologia-en-lima",
+            "stellamaris.com.pe/especialidad/ortopedia-y-traumatologia"
+          ]
+        },
+        {
+          "a": "traumatologia san isidro",
+          "b": "traumatologia y ortopedia cerca de mi",
+          "urls": [
+            "clinicainternacional.com.pe/especialidad/traumatologia",
+            "clinicalima.sanjuandedios.pe",
+            "ipot-crp.pe"
+          ]
+        },
+        {
+          "a": "traumatologia san isidro",
+          "b": "traumatologia y ortopedia lima",
+          "urls": [
+            "auna.org/pe/especialidades/ortopedia-y-traumatologia",
+            "clinicainternacional.com.pe/especialidad/traumatologia",
+            "facebook.com/InstitutoPeruanoOrtopediaTraumatologia?locale=es_LA",
+            "ipot-crp.pe"
+          ]
+        },
+        {
+          "a": "traumatologia san isidro",
+          "b": "traumatologia y ortopedia san isidro",
+          "urls": [
+            "auna.org/pe/especialidades/ortopedia-y-traumatologia",
+            "clinicainternacional.com.pe/especialidad/traumatologia",
+            "clinicalima.sanjuandedios.pe",
+            "ctosanisidro.com.ar",
+            "doctoralia.pe/traumatologo-y-ortopedista/san-isidro",
+            "facebook.com/InstitutoPeruanoOrtopediaTraumatologia?locale=es_LA",
+            "ipot-crp.pe"
+          ]
+        },
+        {
+          "a": "traumatologia surco",
+          "b": "traumatologia y ortopedia surco",
+          "urls": [
+            "clinicatraumatologicalima.com/surco",
+            "clinicavistaalegre.com.pe/especialidades/traumatologia",
+            "doctoralia.pe/clinicas/ortopedia-y-traumatologia/surco",
+            "doctoralia.pe/traumatologo-y-ortopedista/surco",
+            "drperalestraumatologo.com/traumatologo-en-surco"
+          ]
+        },
+        {
+          "a": "traumatologia y ortopedia cerca de mi",
+          "b": "mejor clinica de traumatologia en lima",
+          "urls": [
+            "clinicainternacional.com.pe/especialidad/traumatologia",
+            "clinicalima.sanjuandedios.pe",
+            "laclinicasanfrancisco.com",
+            "traumamedical.com.pe"
+          ]
+        },
+        {
+          "a": "traumatologia y ortopedia lima",
+          "b": "mejor clinica de traumatologia en lima",
+          "urls": [
+            "clinicainternacional.com.pe/especialidad/traumatologia",
+            "laclinicasanfrancisco.com",
+            "sportsmedicinelima.com/clinica-de-traumatologia-en-lima"
+          ]
+        },
+        {
+          "a": "traumatologia y ortopedia lima",
+          "b": "traumatologia y ortopedia cerca de mi",
+          "urls": [
+            "clinicainternacional.com.pe/especialidad/traumatologia",
+            "doctoralia.pe/traumatologo-y-ortopedista/lima",
+            "ipot-crp.pe",
+            "laclinicasanfrancisco.com",
+            "stellamaris.com.pe/especialidad/ortopedia-y-traumatologia"
+          ]
+        },
+        {
+          "a": "traumatologia y ortopedia lima",
+          "b": "traumatologia y ortopedia san isidro",
+          "urls": [
+            "auna.org/pe/especialidades/ortopedia-y-traumatologia",
+            "clinicainternacional.com.pe/especialidad/traumatologia",
+            "facebook.com/InstitutoPeruanoOrtopediaTraumatologia?locale=es_LA",
+            "ipot-crp.pe"
+          ]
+        },
+        {
+          "a": "traumatologia y ortopedia san isidro",
+          "b": "traumatologia y ortopedia cerca de mi",
+          "urls": [
+            "clinicainternacional.com.pe/especialidad/traumatologia",
+            "clinicalima.sanjuandedios.pe",
+            "ipot-crp.pe"
+          ]
+        },
+        {
+          "a": "traumatologia y ortopedia surco",
+          "b": "ortopedia surco",
+          "urls": [
+            "doctoralia.pe/clinicas/ortopedia-y-traumatologia/surco",
+            "instagram.com/ortopediacastillo",
+            "ventasortopediawong.pe"
+          ]
+        },
+        {
+          "a": "traumatologia y ortopedia",
+          "b": "traumatologia cerca de mi",
+          "urls": [
+            "clinicainternacional.com.pe/especialidad/traumatologia",
+            "doctoralia.pe/traumatologo-y-ortopedista/lima",
+            "stellamaris.com.pe/especialidad/ortopedia-y-traumatologia"
+          ]
+        },
+        {
+          "a": "traumatologia y ortopedia",
+          "b": "traumatologia lima",
+          "urls": [
+            "clinicainternacional.com.pe/especialidad/traumatologia",
+            "doctoralia.pe/traumatologo-y-ortopedista/lima",
+            "stellamaris.com.pe/especialidad/ortopedia-y-traumatologia"
+          ]
+        },
+        {
+          "a": "traumatologia y ortopedia",
+          "b": "traumatologia y ortopedia cerca de mi",
+          "urls": [
+            "clinicainternacional.com.pe/especialidad/traumatologia",
+            "doctoralia.pe/traumatologo-y-ortopedista/lima",
+            "stellamaris.com.pe/especialidad/ortopedia-y-traumatologia"
+          ]
+        },
+        {
+          "a": "traumatologia y ortopedia",
+          "b": "traumatologia y ortopedia lima",
+          "urls": [
+            "auna.org/pe/especialidades/ortopedia-y-traumatologia",
+            "clinicainternacional.com.pe/especialidad/traumatologia",
+            "doctoralia.pe/traumatologo-y-ortopedista/lima",
+            "stellamaris.com.pe/especialidad/ortopedia-y-traumatologia"
+          ]
+        },
+        {
+          "a": "traumatologia y ortopedia",
+          "b": "traumatologo lima",
+          "urls": [
+            "clinicainternacional.com.pe/especialidad/traumatologia",
+            "doctoralia.pe/traumatologo-y-ortopedista/lima",
+            "stellamaris.com.pe/especialidad/ortopedia-y-traumatologia"
+          ]
+        },
+        {
+          "a": "traumatologia y ortopedia",
+          "b": "traumatologo san isidro",
+          "urls": [
+            "clinicainternacional.com.pe/especialidad/traumatologia",
+            "doctoralia.pe/traumatologo-y-ortopedista/lima",
+            "stellamaris.com.pe/especialidad/ortopedia-y-traumatologia"
+          ]
+        },
+        {
+          "a": "traumatologia",
+          "b": "mejor clinica de traumatologia en lima",
+          "urls": [
+            "clinicainternacional.com.pe/especialidad/traumatologia",
+            "clinicalima.sanjuandedios.pe",
+            "crp.com.pe/especialidades/traumatologia"
+          ]
+        },
+        {
+          "a": "traumatologia",
+          "b": "traumatologia cerca de mi",
+          "urls": [
+            "clinicainternacional.com.pe/especialidad/traumatologia",
+            "clinicalima.sanjuandedios.pe",
+            "crp.com.pe/especialidades/traumatologia",
+            "stellamaris.com.pe/especialidad/ortopedia-y-traumatologia"
+          ]
+        },
+        {
+          "a": "traumatologia",
+          "b": "traumatologia lima",
+          "urls": [
+            "clinicainternacional.com.pe/especialidad/traumatologia",
+            "clinicalima.sanjuandedios.pe",
+            "stellamaris.com.pe/especialidad/ortopedia-y-traumatologia"
+          ]
+        },
+        {
+          "a": "traumatologia",
+          "b": "traumatologia y ortopedia",
+          "urls": [
+            "clinicainternacional.com.pe/especialidad/traumatologia",
+            "especialidadesmedicas.pe/especialidad/traumatologia-y-ortopedia",
+            "stellamaris.com.pe/especialidad/ortopedia-y-traumatologia"
+          ]
+        },
+        {
+          "a": "traumatologia",
+          "b": "traumatologia y ortopedia cerca de mi",
+          "urls": [
+            "clinicainternacional.com.pe/especialidad/traumatologia",
+            "clinicalima.sanjuandedios.pe",
+            "stellamaris.com.pe/especialidad/ortopedia-y-traumatologia"
+          ]
+        },
+        {
+          "a": "traumatologia",
+          "b": "traumatologo cerca de mi",
+          "urls": [
+            "clinicainternacional.com.pe/especialidad/traumatologia",
+            "clinicalima.sanjuandedios.pe",
+            "crp.com.pe/especialidades/traumatologia",
+            "stellamaris.com.pe/especialidad/ortopedia-y-traumatologia"
+          ]
+        },
+        {
+          "a": "traumatologia",
+          "b": "traumatologo lima",
+          "urls": [
+            "clinicainternacional.com.pe/especialidad/traumatologia",
+            "clinicalima.sanjuandedios.pe",
+            "stellamaris.com.pe/especialidad/ortopedia-y-traumatologia"
+          ]
+        },
+        {
+          "a": "traumatologia",
+          "b": "traumatologo san isidro",
+          "urls": [
+            "clinicainternacional.com.pe/especialidad/traumatologia",
+            "clinicalima.sanjuandedios.pe",
+            "crp.com.pe/especialidades/traumatologia",
+            "stellamaris.com.pe/especialidad/ortopedia-y-traumatologia"
+          ]
+        },
+        {
+          "a": "traumatologo cerca de mi",
+          "b": "mejor clinica de traumatologia en lima",
+          "urls": [
+            "clinicainternacional.com.pe/especialidad/traumatologia",
+            "clinicalima.sanjuandedios.pe",
+            "crp.com.pe/especialidades/traumatologia",
+            "traumamedical.com.pe"
+          ]
+        },
+        {
+          "a": "traumatologo cerca de mi",
+          "b": "traumatologia cerca de mi",
+          "urls": [
+            "clinicainternacional.com.pe/especialidad/traumatologia",
+            "clinicalima.sanjuandedios.pe",
+            "clinicarthromeds.pe",
+            "crp.com.pe/especialidades/traumatologia",
+            "stellamaris.com.pe/especialidad/ortopedia-y-traumatologia",
+            "traumamedical.com.pe"
+          ]
+        },
+        {
+          "a": "traumatologo cerca de mi",
+          "b": "traumatologia lima",
+          "urls": [
+            "clinicainternacional.com.pe/especialidad/traumatologia",
+            "clinicalima.sanjuandedios.pe",
+            "drperalestraumatologo.com/traumatologo",
+            "stellamaris.com.pe/especialidad/ortopedia-y-traumatologia",
+            "traumamedical.com.pe"
+          ]
+        },
+        {
+          "a": "traumatologo cerca de mi",
+          "b": "traumatologia y ortopedia cerca de mi",
+          "urls": [
+            "clinicainternacional.com.pe/especialidad/traumatologia",
+            "clinicalima.sanjuandedios.pe",
+            "clinicarthromeds.pe",
+            "stellamaris.com.pe/especialidad/ortopedia-y-traumatologia",
+            "traumamedical.com.pe"
+          ]
+        },
+        {
+          "a": "traumatologo de columna",
+          "b": "cirugia de columna cerca de mi",
+          "urls": [
+            "clinicainternacional.com.pe/unidad-especializada/columna-medula-espinal",
+            "clinicarthromeds.pe/traumatologo-especialista-en-columna-lima-peru",
+            "drcarranzacolumna.com"
+          ]
+        },
+        {
+          "a": "traumatologo de columna",
+          "b": "cirugia de columna lima",
+          "urls": [
+            "clinicaangloamericana.pe/medicos/traumatologia-cirugia-de-columna-vertebral",
+            "clinicarthromeds.pe/traumatologo-especialista-en-columna-lima-peru",
+            "drcarranzacolumna.com"
+          ]
+        },
+        {
+          "a": "traumatologo de columna",
+          "b": "cirugia de columna san isidro",
+          "urls": [
+            "clinicaangloamericana.pe/medicos/traumatologia-cirugia-de-columna-vertebral",
+            "clinicainternacional.com.pe/unidad-especializada/columna-medula-espinal",
+            "clinicarthromeds.pe/traumatologo-especialista-en-columna-lima-peru",
+            "drcarranzacolumna.com"
+          ]
+        },
+        {
+          "a": "traumatologo de columna",
+          "b": "cirujano de columna cerca de mi",
+          "urls": [
+            "clinicainternacional.com.pe/unidad-especializada/columna-medula-espinal",
+            "clinicarthromeds.pe/traumatologo-especialista-en-columna-lima-peru",
+            "doctoralia.pe/tratamientos-servicios/consultas-especialista-de-columna/lima",
+            "drcarranzacolumna.com"
+          ]
+        },
+        {
+          "a": "traumatologo de columna",
+          "b": "cirujano de columna san isidro",
+          "urls": [
+            "clinicaangloamericana.pe/medicos/traumatologia-cirugia-de-columna-vertebral",
+            "clinicainternacional.com.pe/unidad-especializada/columna-medula-espinal",
+            "clinicarthromeds.pe/traumatologo-especialista-en-columna-lima-peru",
+            "drcarranzacolumna.com"
+          ]
+        },
+        {
+          "a": "traumatologo de columna",
+          "b": "traumatologia especialista en columna",
+          "urls": [
+            "clinicaangloamericana.pe/medicos/traumatologia-cirugia-de-columna-vertebral",
+            "clinicainternacional.com.pe/unidad-especializada/columna-medula-espinal",
+            "clinicarthromeds.pe/traumatologo-especialista-en-columna-lima-peru",
+            "doctoralia.pe/tratamientos-servicios/consultas-especialista-de-columna/lima",
+            "drcarranzacolumna.com",
+            "redsalud.cl/especialidades/traumatologia-de-columna"
+          ]
+        },
+        {
+          "a": "traumatologo lima",
+          "b": "mejor clinica de traumatologia en lima",
+          "urls": [
+            "clinicainternacional.com.pe/especialidad/traumatologia",
+            "clinicalima.sanjuandedios.pe",
+            "clinicarthromeds.pe/mejor-traumatologo-en-lima-peru",
+            "traumamedical.com.pe"
+          ]
+        },
+        {
+          "a": "traumatologo lima",
+          "b": "traumatologia cerca de mi",
+          "urls": [
+            "clinicainternacional.com.pe/especialidad/traumatologia",
+            "clinicalima.sanjuandedios.pe",
+            "doctoralia.pe/traumatologo-y-ortopedista/lima",
+            "stellamaris.com.pe/especialidad/ortopedia-y-traumatologia",
+            "traumamedical.com.pe"
+          ]
+        },
+        {
+          "a": "traumatologo lima",
+          "b": "traumatologia lima",
+          "urls": [
+            "clinicainternacional.com.pe/especialidad/traumatologia",
+            "clinicalaluz.pe/especialidades/traumatologia",
+            "clinicalima.sanjuandedios.pe",
+            "clinicarthromeds.pe/mejor-traumatologo-en-lima-peru",
+            "doctoralia.pe/traumatologo-y-ortopedista/lima",
+            "drperalestraumatologo.com/traumatologo",
+            "stellamaris.com.pe/especialidad/ortopedia-y-traumatologia",
+            "traumamedical.com.pe"
+          ]
+        },
+        {
+          "a": "traumatologo lima",
+          "b": "traumatologia y ortopedia cerca de mi",
+          "urls": [
+            "clinicainternacional.com.pe/especialidad/traumatologia",
+            "clinicalima.sanjuandedios.pe",
+            "doctoralia.pe/traumatologo-y-ortopedista/lima",
+            "stellamaris.com.pe/especialidad/ortopedia-y-traumatologia",
+            "traumamedical.com.pe"
+          ]
+        },
+        {
+          "a": "traumatologo lima",
+          "b": "traumatologia y ortopedia lima",
+          "urls": [
+            "clinicainternacional.com.pe/especialidad/traumatologia",
+            "doctoralia.pe/traumatologo-y-ortopedista/lima",
+            "stellamaris.com.pe/especialidad/ortopedia-y-traumatologia"
+          ]
+        },
+        {
+          "a": "traumatologo lima",
+          "b": "traumatologo cerca de mi",
+          "urls": [
+            "clinicainternacional.com.pe/especialidad/traumatologia",
+            "clinicalima.sanjuandedios.pe",
+            "drperalestraumatologo.com/traumatologo",
+            "stellamaris.com.pe/especialidad/ortopedia-y-traumatologia",
+            "traumamedical.com.pe"
+          ]
+        },
+        {
+          "a": "traumatologo lima",
+          "b": "traumatologo san isidro",
+          "urls": [
+            "clinicainternacional.com.pe/especialidad/traumatologia",
+            "clinicalaluz.pe/especialidades/traumatologia",
+            "clinicalima.sanjuandedios.pe",
+            "clinicarthromeds.pe/mejor-traumatologo-en-lima-peru",
+            "doctoralia.pe/traumatologo-y-ortopedista/lima",
+            "drperalestraumatologo.com/traumatologo",
+            "stellamaris.com.pe/especialidad/ortopedia-y-traumatologia"
+          ]
+        },
+        {
+          "a": "traumatologo ortopedia infantil",
+          "b": "ortopedia infantil",
+          "urls": [
+            "clinicarthromeds.pe/traumatologia-pedriatica-infantil-y-ortopedia-lima-peru",
+            "doctoralia.pe/tratamientos-servicios/ortopedia-infantil/lima",
+            "drabeltrantraumatologia.com/ortopedia-infantil-en-lima",
+            "stellamaris.com.pe/especialidad/ortopedia-y-traumatologia-pediatrica"
+          ]
+        },
+        {
+          "a": "traumatologo ortopedia infantil",
+          "b": "ortopedia infantil cerca de mi",
+          "urls": [
+            "clinicalima.sanjuandedios.pe/traumatologia-pediatrica",
+            "clinicarthromeds.pe/traumatologia-pedriatica-infantil-y-ortopedia-lima-peru",
+            "doctoralia.pe/tratamientos-servicios/ortopedia-infantil/lima",
+            "drabeltrantraumatologia.com/ortopedia-infantil-en-lima",
+            "drq.com.pe",
+            "ipot-crp.pe",
+            "stellamaris.com.pe/especialidad/ortopedia-y-traumatologia-pediatrica"
+          ]
+        },
+        {
+          "a": "traumatologo ortopedia infantil",
+          "b": "ortopedia infantil lima",
+          "urls": [
+            "clinicalima.sanjuandedios.pe/traumatologia-pediatrica",
+            "clinicarthromeds.pe/traumatologia-pedriatica-infantil-y-ortopedia-lima-peru",
+            "doctoralia.pe/tratamientos-servicios/ortopedia-infantil/lima",
+            "drabeltrantraumatologia.com/ortopedia-infantil-en-lima",
+            "ipot-crp.pe",
+            "stellamaris.com.pe/especialidad/ortopedia-y-traumatologia-pediatrica"
+          ]
+        },
+        {
+          "a": "traumatologo ortopedia infantil",
+          "b": "ortopedia infantil san isidro",
+          "urls": [
+            "auna.org/pe/especialidades/ortopedia-y-traumatologia",
+            "clinicarthromeds.pe/traumatologia-pedriatica-infantil-y-ortopedia-lima-peru",
+            "ipot-crp.pe"
+          ]
+        },
+        {
+          "a": "traumatologo ortopedia infantil",
+          "b": "ortopedia infantil surco",
+          "urls": [
+            "clinicarthromeds.pe/traumatologia-pedriatica-infantil-y-ortopedia-lima-peru",
+            "drabeltrantraumatologia.com/ortopedia-infantil-en-lima",
+            "stellamaris.com.pe/especialidad/ortopedia-y-traumatologia-pediatrica"
+          ]
+        },
+        {
+          "a": "traumatologo san isidro",
+          "b": "mejor clinica de traumatologia en lima",
+          "urls": [
+            "clinicainternacional.com.pe/especialidad/traumatologia",
+            "clinicalima.sanjuandedios.pe",
+            "clinicarthromeds.pe/mejor-traumatologo-en-lima-peru",
+            "crp.com.pe/especialidades/traumatologia"
+          ]
+        },
+        {
+          "a": "traumatologo san isidro",
+          "b": "traumatologia cerca de mi",
+          "urls": [
+            "clinicainternacional.com.pe/especialidad/traumatologia",
+            "clinicalima.sanjuandedios.pe",
+            "crp.com.pe/especialidades/traumatologia",
+            "doctoralia.pe/traumatologo-y-ortopedista/lima",
+            "stellamaris.com.pe/especialidad/ortopedia-y-traumatologia"
+          ]
+        },
+        {
+          "a": "traumatologo san isidro",
+          "b": "traumatologia lima",
+          "urls": [
+            "clinicainternacional.com.pe/especialidad/traumatologia",
+            "clinicalaluz.pe/especialidades/traumatologia",
+            "clinicalima.sanjuandedios.pe",
+            "clinicarthromeds.pe/mejor-traumatologo-en-lima-peru",
+            "doctoralia.pe/traumatologo-y-ortopedista/lima",
+            "drperalestraumatologo.com/traumatologo",
+            "stellamaris.com.pe/especialidad/ortopedia-y-traumatologia"
+          ]
+        },
+        {
+          "a": "traumatologo san isidro",
+          "b": "traumatologia y ortopedia cerca de mi",
+          "urls": [
+            "clinicainternacional.com.pe/especialidad/traumatologia",
+            "clinicalima.sanjuandedios.pe",
+            "doctoralia.pe/traumatologo-y-ortopedista/lima",
+            "stellamaris.com.pe/especialidad/ortopedia-y-traumatologia"
+          ]
+        },
+        {
+          "a": "traumatologo san isidro",
+          "b": "traumatologia y ortopedia lima",
+          "urls": [
+            "clinicainternacional.com.pe/especialidad/traumatologia",
+            "doctoralia.pe/traumatologo-y-ortopedista/lima",
+            "stellamaris.com.pe/especialidad/ortopedia-y-traumatologia"
+          ]
+        },
+        {
+          "a": "traumatologo san isidro",
+          "b": "traumatologo cerca de mi",
+          "urls": [
+            "clinicainternacional.com.pe/especialidad/traumatologia",
+            "clinicalima.sanjuandedios.pe",
+            "crp.com.pe/especialidades/traumatologia",
+            "drperalestraumatologo.com/traumatologo",
+            "stellamaris.com.pe/especialidad/ortopedia-y-traumatologia"
+          ]
+        },
+        {
+          "a": "traumatologo surco",
+          "b": "traumatologia surco",
+          "urls": [
+            "clinicatraumatologicalima.com/surco",
+            "clinicavistaalegre.com.pe/especialidades/traumatologia",
+            "doctoralia.pe/traumatologo-y-ortopedista/surco",
+            "drperalestraumatologo.com/category/traumatologo-en-surco",
+            "drperalestraumatologo.com/traumatologo-en-surco",
+            "facebook.com/p/MB-Traumatolog%C3%ADa-61564676522668"
+          ]
+        },
+        {
+          "a": "traumatologo surco",
+          "b": "traumatologia y ortopedia surco",
+          "urls": [
+            "clinicatraumatologicalima.com/surco",
+            "clinicavistaalegre.com.pe/especialidades/traumatologia",
+            "doctoralia.pe/tratamientos-servicios/consulta-especialista-de-traumatologia/surco",
+            "doctoralia.pe/traumatologo-y-ortopedista/surco",
+            "drperalestraumatologo.com/traumatologo-en-surco"
+          ]
+        },
+        {
+          "a": "traumatologo",
+          "b": "mejor clinica de traumatologia en lima",
+          "urls": [
+            "clinicainternacional.com.pe/especialidad/traumatologia",
+            "clinicalima.sanjuandedios.pe",
+            "clinicarthromeds.pe/mejor-traumatologo-en-lima-peru",
+            "crp.com.pe/especialidades/traumatologia"
+          ]
+        },
+        {
+          "a": "traumatologo",
+          "b": "traumatologia",
+          "urls": [
+            "clinicainternacional.com.pe/especialidad/traumatologia",
+            "clinicalima.sanjuandedios.pe",
+            "crp.com.pe/especialidades/traumatologia",
+            "stellamaris.com.pe/especialidad/ortopedia-y-traumatologia"
+          ]
+        },
+        {
+          "a": "traumatologo",
+          "b": "traumatologia cerca de mi",
+          "urls": [
+            "clinicainternacional.com.pe/especialidad/traumatologia",
+            "clinicalima.sanjuandedios.pe",
+            "crp.com.pe/especialidades/traumatologia",
+            "doctoralia.pe/traumatologo-y-ortopedista/lima",
+            "stellamaris.com.pe/especialidad/ortopedia-y-traumatologia"
+          ]
+        },
+        {
+          "a": "traumatologo",
+          "b": "traumatologia lima",
+          "urls": [
+            "clinicainternacional.com.pe/especialidad/traumatologia",
+            "clinicalima.sanjuandedios.pe",
+            "clinicarthromeds.pe/mejor-traumatologo-en-lima-peru",
+            "doctoralia.pe/traumatologo-y-ortopedista/lima",
+            "drperalestraumatologo.com/traumatologo",
+            "stellamaris.com.pe/especialidad/ortopedia-y-traumatologia"
+          ]
+        },
+        {
+          "a": "traumatologo",
+          "b": "traumatologia san isidro",
+          "urls": [
+            "auna.org/pe/especialidades/ortopedia-y-traumatologia",
+            "clinicainternacional.com.pe/especialidad/traumatologia",
+            "clinicalima.sanjuandedios.pe"
+          ]
+        },
+        {
+          "a": "traumatologo",
+          "b": "traumatologia y ortopedia",
+          "urls": [
+            "auna.org/pe/especialidades/ortopedia-y-traumatologia",
+            "clinicainternacional.com.pe/especialidad/traumatologia",
+            "doctoralia.pe/traumatologo-y-ortopedista/lima",
+            "stellamaris.com.pe/especialidad/ortopedia-y-traumatologia"
+          ]
+        },
+        {
+          "a": "traumatologo",
+          "b": "traumatologia y ortopedia cerca de mi",
+          "urls": [
+            "clinicainternacional.com.pe/especialidad/traumatologia",
+            "clinicalima.sanjuandedios.pe",
+            "doctoralia.pe/traumatologo-y-ortopedista/lima",
+            "stellamaris.com.pe/especialidad/ortopedia-y-traumatologia"
+          ]
+        },
+        {
+          "a": "traumatologo",
+          "b": "traumatologia y ortopedia lima",
+          "urls": [
+            "auna.org/pe/especialidades/ortopedia-y-traumatologia",
+            "clinicainternacional.com.pe/especialidad/traumatologia",
+            "doctoralia.pe/traumatologo-y-ortopedista/lima",
+            "stellamaris.com.pe/especialidad/ortopedia-y-traumatologia"
+          ]
+        },
+        {
+          "a": "traumatologo",
+          "b": "traumatologia y ortopedia san isidro",
+          "urls": [
+            "auna.org/pe/especialidades/ortopedia-y-traumatologia",
+            "clinicainternacional.com.pe/especialidad/traumatologia",
+            "clinicalima.sanjuandedios.pe"
+          ]
+        },
+        {
+          "a": "traumatologo",
+          "b": "traumatologo cerca de mi",
+          "urls": [
+            "clinicainternacional.com.pe/especialidad/traumatologia",
+            "clinicalima.sanjuandedios.pe",
+            "crp.com.pe/especialidades/traumatologia",
+            "drperalestraumatologo.com/traumatologo",
+            "stellamaris.com.pe/especialidad/ortopedia-y-traumatologia"
+          ]
+        },
+        {
+          "a": "traumatologo",
+          "b": "traumatologo lima",
+          "urls": [
+            "clinicainternacional.com.pe/especialidad/traumatologia",
+            "clinicalima.sanjuandedios.pe",
+            "clinicarthromeds.pe/mejor-traumatologo-en-lima-peru",
+            "doctoralia.pe/traumatologo-y-ortopedista/lima",
+            "drperalestraumatologo.com/traumatologo",
+            "stellamaris.com.pe/especialidad/ortopedia-y-traumatologia"
+          ]
+        },
+        {
+          "a": "traumatologo",
+          "b": "traumatologo san isidro",
+          "urls": [
+            "clinicainternacional.com.pe/especialidad/traumatologia",
+            "clinicalima.sanjuandedios.pe",
+            "clinicarthromeds.pe/mejor-traumatologo-en-lima-peru",
+            "crp.com.pe/especialidades/traumatologia",
+            "doctoralia.pe/traumatologo-y-ortopedista/lima",
+            "drperalestraumatologo.com/traumatologo",
+            "stellamaris.com.pe/especialidad/ortopedia-y-traumatologia"
+          ]
+        }
+      ],
+      "tipoDePagina": "pagina-de-servicio",
+      "repartoDeTipos": {
+        "directorio": 1,
+        "pagina-de-servicio": 6,
+        "otro": 2
+      },
+      "topResult": "https://clinicarthromeds.pe/traumatologia-pedriatica-infantil-y-ortopedia-lima-peru/",
+      "keywords": 939,
+      "validadasPorSerp": 41,
+      "inferidasPorTexto": 898
+    },
+    {
+      "id": "escoliosis",
+      "nombre": "escoliosis",
+      "rango": 1,
+      "familia": "condiciones-nucleo",
+      "cabezas": [
+        "escoliosis",
+        "escoliosis y deformidades de columna"
+      ],
+      "uniones": [
+        {
+          "a": "escoliosis",
+          "b": "escoliosis y deformidades de columna",
+          "urls": [
+            "clinicasanfelipe.com/blog/escoliosis-sintomas-y-tratamientos-",
+            "cun.es/enfermedades-tratamientos/enfermedades/escoliosis",
+            "mayoclinic.org/es/diseases-conditions/scoliosis/symptoms-causes/syc-20350716",
+            "medlineplus.gov/spanish/ency/article/001241.htm"
+          ]
+        }
+      ],
+      "tipoDePagina": "contenido-internacional",
+      "repartoDeTipos": {
+        "red-social": 1,
+        "contenido-internacional": 5,
+        "guia": 1
+      },
+      "topResult": "https://medlineplus.gov/spanish/ency/article/001241.htm",
+      "keywords": 44,
+      "validadasPorSerp": 2,
+      "inferidasPorTexto": 42
+    },
+    {
+      "id": "estenosis-espinal",
+      "nombre": "estenosis espinal",
+      "rango": 1,
+      "familia": "condiciones-nucleo",
+      "cabezas": [
+        "estenosis espinal",
+        "estenosis de canal"
+      ],
+      "uniones": [
+        {
+          "a": "estenosis espinal",
+          "b": "estenosis de canal",
+          "urls": [
+            "elsevier.es/es-revista-revista-espanola-cirugia-ortopedicatraumatologia-129-articulo-estenosis-canal-lumbar-13037553",
+            "mayoclinic.org/es/diseases-conditions/spinal-stenosis/symptoms-causes/syc-20352961",
+            "medlineplus.gov/spanish/ency/article/000441.htm"
+          ]
+        }
+      ],
+      "tipoDePagina": "contenido-internacional",
+      "repartoDeTipos": {
+        "contenido-internacional": 8
+      },
+      "topResult": "https://www.mayoclinic.org/es/diseases-conditions/spinal-stenosis/symptoms-causes/syc-20352961",
+      "keywords": 45,
+      "validadasPorSerp": 2,
+      "inferidasPorTexto": 43
+    },
+    {
+      "id": "hernia-discal",
+      "nombre": "hernia discal",
+      "rango": 1,
+      "familia": "condiciones-nucleo",
+      "cabezas": [
+        "hernia discal",
+        "hernia discal lumbar y cervical"
+      ],
+      "uniones": [
+        {
+          "a": "hernia discal",
+          "b": "hernia discal lumbar y cervical",
+          "urls": [
+            "mayoclinic.org/es/diseases-conditions/herniated-disk/symptoms-causes/syc-20354095",
+            "medlineplus.gov/spanish/ency/article/000442.htm",
+            "quironsalud.com/blogs/es/lesiones-cuidamos/conoce-sintomas-caracteristicos-hernia-discal-disminuirlos"
+          ]
+        }
+      ],
+      "tipoDePagina": "contenido-internacional",
+      "repartoDeTipos": {
+        "contenido-internacional": 6,
+        "pagina-de-servicio": 1
+      },
+      "topResult": "https://www.mayoclinic.org/es/diseases-conditions/herniated-disk/symptoms-causes/syc-20354095",
+      "keywords": 638,
+      "validadasPorSerp": 2,
+      "inferidasPorTexto": 636
+    },
+    {
+      "id": "artrodesis-en-varios-niveles",
+      "nombre": "artrodesis en varios niveles",
+      "rango": 2,
+      "familia": "especialidad-y-procedimientos",
+      "cabezas": [
+        "artrodesis en varios niveles",
+        "artrodesis en varios niveles en lima"
+      ],
+      "uniones": [
+        {
+          "a": "artrodesis en varios niveles",
+          "b": "artrodesis en varios niveles en lima",
+          "urls": [
+            "columna.com/artrodesis-que-es-utilidad-cirugia",
+            "doctorjuanalvarezdemon.es/artrodesis-lumbar-posterior-dr-juan-alvarez-de-mon",
+            "medlineplus.gov/spanish/ency/article/002968.htm"
+          ]
+        }
+      ],
+      "tipoDePagina": "contenido-internacional",
+      "repartoDeTipos": {
+        "contenido-internacional": 8
+      },
+      "topResult": "https://medlineplus.gov/spanish/ency/article/002968.htm",
+      "keywords": 7,
+      "validadasPorSerp": 2,
+      "inferidasPorTexto": 5
+    },
+    {
+      "id": "artrosis",
+      "nombre": "artrosis",
+      "rango": 2,
+      "familia": "especialidad-y-procedimientos",
+      "cabezas": [
+        "artrosis"
+      ],
+      "uniones": [],
+      "tipoDePagina": "guia",
+      "repartoDeTipos": {
+        "contenido-internacional": 3,
+        "guia": 3,
+        "otro": 1
+      },
+      "topResult": "https://inforeuma.com/enfermedades-reumaticas/artrosis/",
+      "keywords": 224,
+      "validadasPorSerp": 1,
+      "inferidasPorTexto": 223
+    },
+    {
+      "id": "ciatica",
+      "nombre": "ciática",
+      "rango": 2,
+      "familia": "especialidad-y-procedimientos",
+      "cabezas": [
+        "ciatica"
+      ],
+      "uniones": [],
+      "tipoDePagina": "contenido-internacional",
+      "repartoDeTipos": {
+        "contenido-internacional": 4,
+        "otro": 3
+      },
+      "topResult": "https://www.mayoclinic.org/es/diseases-conditions/sciatica/symptoms-causes/syc-20377435",
+      "keywords": 101,
+      "validadasPorSerp": 1,
+      "inferidasPorTexto": 100
+    },
+    {
+      "id": "cifosis",
+      "nombre": "cifosis",
+      "rango": 2,
+      "familia": "especialidad-y-procedimientos",
+      "cabezas": [
+        "cifosis"
+      ],
+      "uniones": [],
+      "tipoDePagina": "otro",
+      "repartoDeTipos": {
+        "contenido-internacional": 2,
+        "pagina-de-servicio": 1,
+        "otro": 4
+      },
+      "topResult": "https://medlineplus.gov/spanish/ency/article/001240.htm",
+      "keywords": 72,
+      "validadasPorSerp": 1,
+      "inferidasPorTexto": 71
+    },
+    {
+      "id": "cirugia-convencional",
+      "nombre": "cirugía convencional",
+      "rango": 2,
+      "familia": "especialidad-y-procedimientos",
+      "cabezas": [
+        "cirugia convencional"
+      ],
+      "uniones": [],
+      "tipoDePagina": "contenido-internacional",
+      "repartoDeTipos": {
+        "directorio": 1,
+        "contenido-internacional": 4,
+        "guia": 1,
+        "pagina-de-servicio": 1
+      },
+      "topResult": "https://clinicainternacional.com.pe/blog-educativo/diferencias-cirugia-convencional-robotica/",
+      "keywords": 15,
+      "validadasPorSerp": 1,
+      "inferidasPorTexto": 14
+    },
+    {
+      "id": "cirugia-de-columna",
+      "nombre": "cirugía de columna",
+      "rango": 2,
+      "familia": "especialidad-y-procedimientos",
+      "cabezas": [
+        "cirugia de columna"
+      ],
+      "uniones": [],
+      "tipoDePagina": "contenido-internacional",
+      "repartoDeTipos": {
+        "contenido-internacional": 7
+      },
+      "topResult": "https://www.traumadrid.es/cirugia-ortopedica-madrid/operacion-columna/",
+      "keywords": 29,
+      "validadasPorSerp": 1,
+      "inferidasPorTexto": 28
+    },
+    {
+      "id": "cirugia-endoscopica-de-columna",
+      "nombre": "cirugía endoscópica de columna",
+      "rango": 2,
+      "familia": "especialidad-y-procedimientos",
+      "cabezas": [
+        "cirugia endoscopica de columna"
+      ],
+      "uniones": [],
+      "tipoDePagina": "contenido-internacional",
+      "repartoDeTipos": {
+        "contenido-internacional": 3,
+        "pagina-de-servicio": 3,
+        "otro": 1
+      },
+      "topResult": "https://www.quironsalud.com/es/comunicacion/contenidos-salud/cirugia-endoscopica-columna-respuesta-cada-vez-eficiente-di",
+      "keywords": 6,
+      "validadasPorSerp": 1,
+      "inferidasPorTexto": 5
+    },
+    {
+      "id": "cirugia-minimamente-invasiva",
+      "nombre": "cirugía mínimamente invasiva",
+      "rango": 2,
+      "familia": "especialidad-y-procedimientos",
+      "cabezas": [
+        "cirugia minimamente invasiva"
+      ],
+      "uniones": [],
+      "tipoDePagina": "contenido-internacional",
+      "repartoDeTipos": {
+        "contenido-internacional": 3,
+        "pagina-de-servicio": 3,
+        "otro": 1
+      },
+      "topResult": "https://www.mayoclinic.org/es/tests-procedures/minimally-invasive-surgery/about/pac-20384771",
+      "keywords": 23,
+      "validadasPorSerp": 1,
+      "inferidasPorTexto": 22
+    },
+    {
+      "id": "desgarro-muscular",
+      "nombre": "desgarro muscular",
+      "rango": 2,
+      "familia": "especialidad-y-procedimientos",
+      "cabezas": [
+        "desgarro muscular",
+        "como curar desgarro muscular",
+        "como se cura un desgarro muscular",
+        "desgarro muscular tratamiento",
+        "desgarro muscular tratamientos",
+        "tratamientos para desgarro muscular"
+      ],
+      "uniones": [
+        {
+          "a": "como curar desgarro muscular",
+          "b": "como se cura un desgarro muscular",
+          "urls": [
+            "actimove.es/blog/lesiones/que-es-desgarro-muscular-y-tratamiento",
+            "blog.auna.pe/tratamiento-del-desgarro-muscular",
+            "clinicadelesionesdeportivas.com/salud/que-es-un-desgarro-muscular",
+            "clinicaelgeadi.com/desgarro-muscular-tratamiento-recuperacion-rotura-fibras-musculares",
+            "copac.com.pa/blog/desgarro-muscular-muslo",
+            "palma.fisio-clinics.com/que-es-un-desgarro-muscular-y-cual-es-su-tratamiento-en-fisioterapia-fisioclinics-palma"
+          ]
+        },
+        {
+          "a": "como curar desgarro muscular",
+          "b": "tratamientos para desgarro muscular",
+          "urls": [
+            "actimove.es/blog/lesiones/que-es-desgarro-muscular-y-tratamiento",
+            "blog.auna.pe/tratamiento-del-desgarro-muscular",
+            "clinicaelgeadi.com/desgarro-muscular-tratamiento-recuperacion-rotura-fibras-musculares",
+            "palma.fisio-clinics.com/que-es-un-desgarro-muscular-y-cual-es-su-tratamiento-en-fisioterapia-fisioclinics-palma"
+          ]
+        },
+        {
+          "a": "como se cura un desgarro muscular",
+          "b": "tratamientos para desgarro muscular",
+          "urls": [
+            "actimove.es/blog/lesiones/que-es-desgarro-muscular-y-tratamiento",
+            "blog.auna.pe/tratamiento-del-desgarro-muscular",
+            "clinicaelgeadi.com/desgarro-muscular-tratamiento-recuperacion-rotura-fibras-musculares",
+            "medlineplus.gov/spanish/ency/article/002116.htm",
+            "palma.fisio-clinics.com/que-es-un-desgarro-muscular-y-cual-es-su-tratamiento-en-fisioterapia-fisioclinics-palma"
+          ]
+        },
+        {
+          "a": "desgarro muscular tratamiento",
+          "b": "como curar desgarro muscular",
+          "urls": [
+            "actimove.es/blog/lesiones/que-es-desgarro-muscular-y-tratamiento",
+            "blog.auna.pe/tratamiento-del-desgarro-muscular",
+            "clinicaelgeadi.com/desgarro-muscular-tratamiento-recuperacion-rotura-fibras-musculares",
+            "copac.com.pa/blog/desgarro-muscular-muslo",
+            "palma.fisio-clinics.com/que-es-un-desgarro-muscular-y-cual-es-su-tratamiento-en-fisioterapia-fisioclinics-palma"
+          ]
+        },
+        {
+          "a": "desgarro muscular tratamiento",
+          "b": "como se cura un desgarro muscular",
+          "urls": [
+            "actimove.es/blog/lesiones/que-es-desgarro-muscular-y-tratamiento",
+            "blog.auna.pe/tratamiento-del-desgarro-muscular",
+            "clinicaelgeadi.com/desgarro-muscular-tratamiento-recuperacion-rotura-fibras-musculares",
+            "copac.com.pa/blog/desgarro-muscular-muslo",
+            "medlineplus.gov/spanish/ency/article/002116.htm",
+            "palma.fisio-clinics.com/que-es-un-desgarro-muscular-y-cual-es-su-tratamiento-en-fisioterapia-fisioclinics-palma"
+          ]
+        },
+        {
+          "a": "desgarro muscular tratamiento",
+          "b": "desgarro muscular tratamientos",
+          "urls": [
+            "actimove.es/blog/lesiones/que-es-desgarro-muscular-y-tratamiento",
+            "blog.auna.pe/tratamiento-del-desgarro-muscular",
+            "clinicaelgeadi.com/desgarro-muscular-tratamiento-recuperacion-rotura-fibras-musculares",
+            "copac.com.pa/blog/desgarro-muscular-muslo",
+            "medlineplus.gov/spanish/ency/article/002116.htm",
+            "palma.fisio-clinics.com/que-es-un-desgarro-muscular-y-cual-es-su-tratamiento-en-fisioterapia-fisioclinics-palma"
+          ]
+        },
+        {
+          "a": "desgarro muscular tratamientos",
+          "b": "como curar desgarro muscular",
+          "urls": [
+            "actimove.es/blog/lesiones/que-es-desgarro-muscular-y-tratamiento",
+            "blog.auna.pe/tratamiento-del-desgarro-muscular",
+            "bupasalud.com/salud/desgarro-muscular",
+            "clinicaelgeadi.com/desgarro-muscular-tratamiento-recuperacion-rotura-fibras-musculares",
+            "copac.com.pa/blog/desgarro-muscular-muslo",
+            "palma.fisio-clinics.com/que-es-un-desgarro-muscular-y-cual-es-su-tratamiento-en-fisioterapia-fisioclinics-palma",
+            "quironsalud.com/blogs/es/blogs-quironsalud/consejos-dr-elgeadi-traumatologia/desgarro-muscular-tratamiento-integral-recuperar-funcionali"
+          ]
+        },
+        {
+          "a": "desgarro muscular tratamientos",
+          "b": "como se cura un desgarro muscular",
+          "urls": [
+            "actimove.es/blog/lesiones/que-es-desgarro-muscular-y-tratamiento",
+            "blog.auna.pe/tratamiento-del-desgarro-muscular",
+            "clinicaelgeadi.com/desgarro-muscular-tratamiento-recuperacion-rotura-fibras-musculares",
+            "copac.com.pa/blog/desgarro-muscular-muslo",
+            "medlineplus.gov/spanish/ency/article/002116.htm",
+            "palma.fisio-clinics.com/que-es-un-desgarro-muscular-y-cual-es-su-tratamiento-en-fisioterapia-fisioclinics-palma"
+          ]
+        },
+        {
+          "a": "desgarro muscular tratamientos",
+          "b": "tratamientos para desgarro muscular",
+          "urls": [
+            "actimove.es/blog/lesiones/que-es-desgarro-muscular-y-tratamiento",
+            "blog.auna.pe/tratamiento-del-desgarro-muscular",
+            "clinicaelgeadi.com/desgarro-muscular-tratamiento-recuperacion-rotura-fibras-musculares",
+            "medlineplus.gov/spanish/ency/article/002116.htm",
+            "palma.fisio-clinics.com/que-es-un-desgarro-muscular-y-cual-es-su-tratamiento-en-fisioterapia-fisioclinics-palma"
+          ]
+        },
+        {
+          "a": "desgarro muscular tratamiento",
+          "b": "tratamientos para desgarro muscular",
+          "urls": [
+            "actimove.es/blog/lesiones/que-es-desgarro-muscular-y-tratamiento",
+            "blog.auna.pe/tratamiento-del-desgarro-muscular",
+            "clinicaelgeadi.com/desgarro-muscular-tratamiento-recuperacion-rotura-fibras-musculares",
+            "elsevier.es/es-revista-revista-iberoamericana-fisioterapia-kinesiologia-176-articulo-la-ruptura-fibrilar-tratamiento-fisioterapico-13010373",
+            "medlineplus.gov/spanish/ency/article/002116.htm",
+            "palma.fisio-clinics.com/que-es-un-desgarro-muscular-y-cual-es-su-tratamiento-en-fisioterapia-fisioclinics-palma"
+          ]
+        },
+        {
+          "a": "desgarro muscular",
+          "b": "como curar desgarro muscular",
+          "urls": [
+            "actimove.es/blog/lesiones/que-es-desgarro-muscular-y-tratamiento",
+            "clinicaelgeadi.com/desgarro-muscular-tratamiento-recuperacion-rotura-fibras-musculares",
+            "copac.com.pa/blog/desgarro-muscular-muslo",
+            "palma.fisio-clinics.com/que-es-un-desgarro-muscular-y-cual-es-su-tratamiento-en-fisioterapia-fisioclinics-palma"
+          ]
+        },
+        {
+          "a": "desgarro muscular",
+          "b": "como se cura un desgarro muscular",
+          "urls": [
+            "actimove.es/blog/lesiones/que-es-desgarro-muscular-y-tratamiento",
+            "clinicaelgeadi.com/desgarro-muscular-tratamiento-recuperacion-rotura-fibras-musculares",
+            "copac.com.pa/blog/desgarro-muscular-muslo",
+            "palma.fisio-clinics.com/que-es-un-desgarro-muscular-y-cual-es-su-tratamiento-en-fisioterapia-fisioclinics-palma"
+          ]
+        },
+        {
+          "a": "desgarro muscular",
+          "b": "desgarro muscular tratamiento",
+          "urls": [
+            "actimove.es/blog/lesiones/que-es-desgarro-muscular-y-tratamiento",
+            "clinicaelgeadi.com/desgarro-muscular-tratamiento-recuperacion-rotura-fibras-musculares",
+            "copac.com.pa/blog/desgarro-muscular-muslo",
+            "palma.fisio-clinics.com/que-es-un-desgarro-muscular-y-cual-es-su-tratamiento-en-fisioterapia-fisioclinics-palma"
+          ]
+        },
+        {
+          "a": "desgarro muscular",
+          "b": "desgarro muscular tratamientos",
+          "urls": [
+            "actimove.es/blog/lesiones/que-es-desgarro-muscular-y-tratamiento",
+            "clinicaelgeadi.com/desgarro-muscular-tratamiento-recuperacion-rotura-fibras-musculares",
+            "copac.com.pa/blog/desgarro-muscular-muslo",
+            "palma.fisio-clinics.com/que-es-un-desgarro-muscular-y-cual-es-su-tratamiento-en-fisioterapia-fisioclinics-palma"
+          ]
+        },
+        {
+          "a": "desgarro muscular",
+          "b": "tratamientos para desgarro muscular",
+          "urls": [
+            "actimove.es/blog/lesiones/que-es-desgarro-muscular-y-tratamiento",
+            "clinicaelgeadi.com/desgarro-muscular-tratamiento-recuperacion-rotura-fibras-musculares",
+            "palma.fisio-clinics.com/que-es-un-desgarro-muscular-y-cual-es-su-tratamiento-en-fisioterapia-fisioclinics-palma"
+          ]
+        }
+      ],
+      "tipoDePagina": "contenido-internacional",
+      "repartoDeTipos": {
+        "contenido-internacional": 5,
+        "guia": 2,
+        "ficha-de-clinica": 1
+      },
+      "topResult": "https://palma.fisio-clinics.com/que-es-un-desgarro-muscular-y-cual-es-su-tratamiento-en-fisioterapia-fisioclinics-palma",
+      "keywords": 181,
+      "validadasPorSerp": 6,
+      "inferidasPorTexto": 175
+    },
+    {
+      "id": "endoscopia-espinal",
+      "nombre": "endoscopía espinal",
+      "rango": 2,
+      "familia": "especialidad-y-procedimientos",
+      "cabezas": [
+        "endoscopia espinal"
+      ],
+      "uniones": [],
+      "tipoDePagina": "pagina-de-servicio",
+      "repartoDeTipos": {
+        "directorio": 1,
+        "contenido-internacional": 2,
+        "pagina-de-servicio": 5
+      },
+      "topResult": "https://www.topdoctors.es/diccionario-medico/endoscopia-espinal/",
+      "keywords": 6,
+      "validadasPorSerp": 1,
+      "inferidasPorTexto": 5
+    },
+    {
+      "id": "lumbalgia",
+      "nombre": "lumbalgia",
+      "rango": 2,
+      "familia": "especialidad-y-procedimientos",
+      "cabezas": [
+        "lumbalgia"
+      ],
+      "uniones": [],
+      "tipoDePagina": "contenido-internacional",
+      "repartoDeTipos": {
+        "contenido-internacional": 5,
+        "guia": 2
+      },
+      "topResult": "https://www.who.int/es/news-room/fact-sheets/detail/low-back-pain",
+      "keywords": 15,
+      "validadasPorSerp": 1,
+      "inferidasPorTexto": 14
+    },
+    {
+      "id": "cirugia-convencional-en-lima",
+      "nombre": "cirugía convencional en lima",
+      "rango": 3,
+      "familia": "geo-de-lima",
+      "cabezas": [
+        "cirugia convencional en lima"
+      ],
+      "uniones": [],
+      "tipoDePagina": "otro",
+      "repartoDeTipos": {
+        "red-social": 2,
+        "directorio": 1,
+        "pagina-de-servicio": 2,
+        "ficha-de-clinica": 1,
+        "otro": 3
+      },
+      "topResult": "https://cirugia24horas.com/",
+      "keywords": 1,
+      "validadasPorSerp": 1,
+      "inferidasPorTexto": 0
+    },
+    {
+      "id": "cirugia-de-columna-la-molina",
+      "nombre": "cirugía de columna la molina",
+      "rango": 3,
+      "familia": "geo-de-lima",
+      "cabezas": [
+        "cirugia de columna la molina",
+        "cirujano de columna la molina",
+        "ortopedia infantil la molina",
+        "traumatologia la molina",
+        "traumatologia y ortopedia la molina",
+        "traumatologo la molina"
+      ],
+      "uniones": [
+        {
+          "a": "cirujano de columna la molina",
+          "b": "cirugia de columna la molina",
+          "urls": [
+            "centromedicoosi.com/sedes/la-molina",
+            "cerfid.com.pe",
+            "doctoralia.pe/enfermedades/hernia-discal/la-molina"
+          ]
+        },
+        {
+          "a": "cirujano de columna la molina",
+          "b": "traumatologia la molina",
+          "urls": [
+            "clinicaangloamericana.pe/sede-la-molina/traumatologiacirugia-de-hombro-la-molina",
+            "clinicasanfelipe.com/sedelamolina",
+            "doctoralia.pe/traumatologo-y-ortopedista/la-molina",
+            "facebook.com/ClinicaMontefiori/posts/te-presentamos-al-dr-r%C3%A1mig-aranda-especialista-en-traumatolog%C3%ADa-enfocado-en-el-d/1352257766932627",
+            "sanna.pe/red-sanna/centros-clinicos/la-molina-lima"
+          ]
+        },
+        {
+          "a": "cirujano de columna la molina",
+          "b": "traumatologo la molina",
+          "urls": [
+            "clinicaangloamericana.pe/sede-la-molina/traumatologiacirugia-de-hombro-la-molina",
+            "doctoralia.pe/traumatologo-y-ortopedista/la-molina",
+            "doctoralia.pe/traumatologo-y-ortopedista/la-molina/la-molina",
+            "facebook.com/ClinicaMontefiori/posts/te-presentamos-al-dr-r%C3%A1mig-aranda-especialista-en-traumatolog%C3%ADa-enfocado-en-el-d/1352257766932627"
+          ]
+        },
+        {
+          "a": "ortopedia infantil la molina",
+          "b": "traumatologia la molina",
+          "urls": [
+            "clinicasanfelipe.com/sedes/la-molina",
+            "doctoralia.pe/clinicas/ortopedia-y-traumatologia/la-molina",
+            "doctoralia.pe/traumatologo-y-ortopedista/la-molina"
+          ]
+        },
+        {
+          "a": "ortopedia infantil la molina",
+          "b": "traumatologia y ortopedia la molina",
+          "urls": [
+            "clinicasanfelipe.com/sedes/la-molina",
+            "corpusetvita.org",
+            "doctoralia.pe/clinicas/ortopedia-y-traumatologia/la-molina",
+            "doctoralia.pe/traumatologo-y-ortopedista/la-molina",
+            "facebook.com/61557163853762/videos/ortopedia-la-molina-av-los-constructores-1335-urb-covima-la-molina-lima-per%C3%BA-zap/1468230381201769",
+            "facebook.com/p/Ortopedia-La-Molina-Los-Constructores-1335-61557163853762",
+            "instagram.com/ortopedialamolinaconstructores?hl=es",
+            "instagram.com/reel/DRw56AjEcft",
+            "paginasamarillas.com.pe/la-molina/servicios/ortopedias"
+          ]
+        },
+        {
+          "a": "ortopedia infantil la molina",
+          "b": "traumatologo la molina",
+          "urls": [
+            "clinicasanfelipe.com/sedes/la-molina",
+            "corpusetvita.org",
+            "doctoralia.pe/clinicas/ortopedia-y-traumatologia/la-molina",
+            "doctoralia.pe/traumatologo-y-ortopedista/la-molina"
+          ]
+        },
+        {
+          "a": "traumatologia la molina",
+          "b": "traumatologia y ortopedia la molina",
+          "urls": [
+            "clinicaangloamericana.pe/sede-la-molina/traumatologiacirugia-de-hombro-la-molina",
+            "clinicasanfelipe.com/sedes/la-molina",
+            "doctoralia.pe/clinicas/ortopedia-y-traumatologia/la-molina",
+            "doctoralia.pe/traumatologo-y-ortopedista/la-molina"
+          ]
+        },
+        {
+          "a": "traumatologo la molina",
+          "b": "traumatologia la molina",
+          "urls": [
+            "clinicaangloamericana.pe/sede-la-molina/traumatologiacirugia-de-hombro-la-molina",
+            "clinicasanfelipe.com/sedes/la-molina",
+            "doctoralia.pe/clinicas/ortopedia-y-traumatologia/la-molina",
+            "doctoralia.pe/traumatologo-y-ortopedista/la-molina",
+            "facebook.com/ClinicaMontefiori/posts/te-presentamos-al-dr-r%C3%A1mig-aranda-especialista-en-traumatolog%C3%ADa-enfocado-en-el-d/1352257766932627",
+            "facebook.com/clinicasanfelipe/posts/conoce-los-servicios-que-tenemos-para-ti-en-nuestra-sede-la-molina-en-cada-servi/887290823429012"
+          ]
+        },
+        {
+          "a": "traumatologo la molina",
+          "b": "traumatologia y ortopedia la molina",
+          "urls": [
+            "clinicaangloamericana.pe/sede-la-molina/traumatologiacirugia-de-hombro-la-molina",
+            "clinicasanfelipe.com/sedes/la-molina",
+            "corpusetvita.org",
+            "doctoralia.pe/clinicas/ortopedia-y-traumatologia/la-molina",
+            "doctoralia.pe/traumatologo-y-ortopedista/la-molina"
+          ]
+        }
+      ],
+      "tipoDePagina": "directorio",
+      "repartoDeTipos": {
+        "red-social": 2,
+        "directorio": 2,
+        "pagina-de-servicio": 2,
+        "ficha-de-clinica": 2,
+        "otro": 1
+      },
+      "topResult": "https://www.doctoralia.pe/enfermedades/dolor-en-la-espalda/la-molina",
+      "keywords": 6,
+      "validadasPorSerp": 6,
+      "inferidasPorTexto": 0
+    },
+    {
+      "id": "cirugia-minimamente-invasiva-en-lima",
+      "nombre": "cirugía mínimamente invasiva en lima",
+      "rango": 3,
+      "familia": "geo-de-lima",
+      "cabezas": [
+        "cirugia minimamente invasiva en lima"
+      ],
+      "uniones": [],
+      "tipoDePagina": "pagina-de-servicio",
+      "repartoDeTipos": {
+        "red-social": 2,
+        "contenido-internacional": 1,
+        "guia": 1,
+        "pagina-de-servicio": 4,
+        "otro": 1
+      },
+      "topResult": "https://clinicaangloamericana.pe/cirugia-minimamente-invasiva-en-peru-tecnologia-que-mejora-la-experiencia-quirurgica-new/",
+      "keywords": 1,
+      "validadasPorSerp": 1,
+      "inferidasPorTexto": 0
+    },
+    {
+      "id": "estenosis-de-canal-en-lima",
+      "nombre": "estenosis de canal en lima",
+      "rango": 3,
+      "familia": "geo-de-lima",
+      "cabezas": [
+        "estenosis de canal en lima"
+      ],
+      "uniones": [],
+      "tipoDePagina": "contenido-internacional",
+      "repartoDeTipos": {
+        "contenido-internacional": 4,
+        "pagina-de-servicio": 3,
+        "otro": 1
+      },
+      "topResult": "https://discalcentro.com/estenosis-de-canal/",
+      "keywords": 1,
+      "validadasPorSerp": 1,
+      "inferidasPorTexto": 0
+    },
+    {
+      "id": "hernia-discal-lumbar-y-cervical-en-lima",
+      "nombre": "hernia discal lumbar y cervical en lima",
+      "rango": 3,
+      "familia": "geo-de-lima",
+      "cabezas": [
+        "hernia discal lumbar y cervical en lima"
+      ],
+      "uniones": [],
+      "tipoDePagina": "pagina-de-servicio",
+      "repartoDeTipos": {
+        "red-social": 1,
+        "directorio": 1,
+        "guia": 1,
+        "pagina-de-servicio": 4,
+        "otro": 1
+      },
+      "topResult": "https://cirugiaendoscopicaperu.com/?q=node/186",
+      "keywords": 1,
+      "validadasPorSerp": 1,
+      "inferidasPorTexto": 0
+    },
+    {
+      "id": "neurocirujano-la-molina",
+      "nombre": "neurocirujano la molina",
+      "rango": 3,
+      "familia": "geo-de-lima",
+      "cabezas": [
+        "neurocirujano la molina"
+      ],
+      "uniones": [],
+      "tipoDePagina": "directorio",
+      "repartoDeTipos": {
+        "red-social": 3,
+        "directorio": 3,
+        "pagina-de-servicio": 1,
+        "ficha-de-clinica": 1,
+        "otro": 1
+      },
+      "topResult": "https://www.doctoralia.pe/neurocirujano/la-molina",
+      "keywords": 1,
+      "validadasPorSerp": 1,
+      "inferidasPorTexto": 0
+    },
+    {
+      "id": "neurocirujano-san-isidro",
+      "nombre": "neurocirujano san isidro",
+      "rango": 3,
+      "familia": "geo-de-lima",
+      "cabezas": [
+        "neurocirujano san isidro"
+      ],
+      "uniones": [],
+      "tipoDePagina": "directorio",
+      "repartoDeTipos": {
+        "red-social": 1,
+        "directorio": 4,
+        "pagina-de-servicio": 2,
+        "otro": 2
+      },
+      "topResult": "https://www.doctoralia.pe/neurocirujano/san-isidro",
+      "keywords": 1,
+      "validadasPorSerp": 1,
+      "inferidasPorTexto": 0
+    },
+    {
+      "id": "neurocirujano-surco",
+      "nombre": "neurocirujano surco",
+      "rango": 3,
+      "familia": "geo-de-lima",
+      "cabezas": [
+        "neurocirujano surco"
+      ],
+      "uniones": [],
+      "tipoDePagina": "directorio",
+      "repartoDeTipos": {
+        "red-social": 2,
+        "directorio": 3,
+        "pagina-de-servicio": 1,
+        "otro": 3
+      },
+      "topResult": "https://www.doctoralia.pe/neurocirujano/surco",
+      "keywords": 1,
+      "validadasPorSerp": 1,
+      "inferidasPorTexto": 0
+    },
+    {
+      "id": "cirujano-de-columna-clinica-ricardo-palma",
+      "nombre": "cirujano de columna clínica ricardo palma",
+      "rango": 4,
+      "familia": "sedes",
+      "cabezas": [
+        "cirujano de columna clinica ricardo palma",
+        "ortopedia infantil clinica ricardo palma",
+        "traumatologo clinica ricardo palma"
+      ],
+      "uniones": [
+        {
+          "a": "cirujano de columna clinica ricardo palma",
+          "b": "ortopedia infantil clinica ricardo palma",
+          "urls": [
+            "crp.com.pe/especialidades/traumatologia",
+            "crp.com.pe/medicos",
+            "doctoralia.pe/traumatologo-y-ortopedista/lima/seguro-clinica-ricardo-palma",
+            "ipot-crp.pe/staff"
+          ]
+        },
+        {
+          "a": "cirujano de columna clinica ricardo palma",
+          "b": "traumatologo clinica ricardo palma",
+          "urls": [
+            "crp.com.pe/especialidades/traumatologia",
+            "crp.com.pe/medicos",
+            "doctoralia.pe/traumatologo-y-ortopedista/lima/seguro-clinica-ricardo-palma",
+            "ipot-crp.pe/staff",
+            "youtube.com/watch?v=KRGbwmI15Gs"
+          ]
+        },
+        {
+          "a": "traumatologo clinica ricardo palma",
+          "b": "ortopedia infantil clinica ricardo palma",
+          "urls": [
+            "crp.com.pe",
+            "crp.com.pe/especialidades/traumatologia",
+            "crp.com.pe/medicos",
+            "doctoralia.pe/traumatologo-y-ortopedista/lima/seguro-clinica-ricardo-palma",
+            "ipot-crp.pe",
+            "ipot-crp.pe/staff"
+          ]
+        }
+      ],
+      "tipoDePagina": "pagina-de-servicio",
+      "repartoDeTipos": {
+        "red-social": 1,
+        "directorio": 1,
+        "pagina-de-servicio": 4,
+        "ficha-de-clinica": 1,
+        "otro": 1
+      },
+      "topResult": "https://www.crp.com.pe/especialidades/traumatologia/",
+      "keywords": 15,
+      "validadasPorSerp": 3,
+      "inferidasPorTexto": 12
+    },
+    {
+      "id": "cirujano-de-columna-clinica-sanna",
+      "nombre": "cirujano de columna clínica sanna",
+      "rango": 4,
+      "familia": "sedes",
+      "cabezas": [
+        "cirujano de columna clinica sanna",
+        "ortopedia infantil clinica sanna",
+        "traumatologo clinica sanna"
+      ],
+      "uniones": [
+        {
+          "a": "cirujano de columna clinica sanna",
+          "b": "ortopedia infantil clinica sanna",
+          "urls": [
+            "facebook.com/sannasalud/posts/cuando-sufres-una-lesi%C3%B3n-compleja-necesitas-un-especialista-que-conozca-a-fondo-/1351196987043381",
+            "sanna.pe",
+            "sanna.pe/medicos",
+            "sanna.pe/medicos?lugar=2"
+          ]
+        },
+        {
+          "a": "cirujano de columna clinica sanna",
+          "b": "traumatologo clinica sanna",
+          "urls": [
+            "doctoralia.pe/clinicas/sanna-clinica-san-borja",
+            "sanna.pe",
+            "sanna.pe/medicos",
+            "sanna.pe/medicos?lugar=2",
+            "sanna.pe/red-sanna/centros-clinicos/los-olivos-lima",
+            "tiktok.com/@sannasalud/video/7419344255350525189"
+          ]
+        },
+        {
+          "a": "traumatologo clinica sanna",
+          "b": "ortopedia infantil clinica sanna",
+          "urls": [
+            "sanna.pe",
+            "sanna.pe/medicos",
+            "sanna.pe/medicos?lugar=2"
+          ]
+        }
+      ],
+      "tipoDePagina": "red-social",
+      "repartoDeTipos": {
+        "red-social": 4,
+        "directorio": 1,
+        "pagina-de-servicio": 1,
+        "ficha-de-clinica": 3,
+        "otro": 1
+      },
+      "topResult": "https://www.sanna.pe/medicos/",
+      "keywords": 13,
+      "validadasPorSerp": 3,
+      "inferidasPorTexto": 10
+    },
+    {
+      "id": "cirujano-de-columna-clinica-tezza",
+      "nombre": "cirujano de columna clínica tezza",
+      "rango": 4,
+      "familia": "sedes",
+      "cabezas": [
+        "cirujano de columna clinica tezza",
+        "ortopedia infantil clinica tezza",
+        "traumatologo clinica tezza"
+      ],
+      "uniones": [
+        {
+          "a": "cirujano de columna clinica tezza",
+          "b": "ortopedia infantil clinica tezza",
+          "urls": [
+            "clinicatezza.com.pe",
+            "clinicatezza.com.pe/servicios/rehabilitacion",
+            "clinicatezza.com.pe/staff-medico/especialidad/ortopedia-y-traumatologia",
+            "facebook.com/clinicatezza/posts/algunos-de-nuestros-profesionales-m%C3%A9dicos-del-servicio-de-ortopedia-y-traumatolo/1117640418436805"
+          ]
+        },
+        {
+          "a": "cirujano de columna clinica tezza",
+          "b": "traumatologo clinica tezza",
+          "urls": [
+            "clinicatezza.com.pe",
+            "clinicatezza.com.pe/staff-medico/especialidad/ortopedia-y-traumatologia",
+            "doctoralia.pe/traumatologo-y-ortopedista/surco",
+            "facebook.com/clinicatezza/posts/algunos-de-nuestros-profesionales-m%C3%A9dicos-del-servicio-de-ortopedia-y-traumatolo/1117640418436805"
+          ]
+        },
+        {
+          "a": "traumatologo clinica tezza",
+          "b": "ortopedia infantil clinica tezza",
+          "urls": [
+            "clinicatezza.com.pe",
+            "clinicatezza.com.pe/staff-medico/especialidad/ortopedia-y-traumatologia",
+            "facebook.com/clinicatezza/posts/algunos-de-nuestros-profesionales-m%C3%A9dicos-del-servicio-de-ortopedia-y-traumatolo/1117640418436805",
+            "instagram.com/clinica_tezza?hl=es"
+          ]
+        }
+      ],
+      "tipoDePagina": "directorio",
+      "repartoDeTipos": {
+        "red-social": 2,
+        "directorio": 3,
+        "pagina-de-servicio": 2,
+        "ficha-de-clinica": 1,
+        "otro": 1
+      },
+      "topResult": "https://clinicatezza.com.pe/staff-medico/especialidad/ortopedia-y-traumatologia/",
+      "keywords": 7,
+      "validadasPorSerp": 3,
+      "inferidasPorTexto": 4
+    },
+    {
+      "id": "ciatica-tratamientos",
+      "nombre": "ciática: tratamientos",
+      "rango": 5,
+      "familia": "resto-comercial",
+      "cabezas": [
+        "ciatica tratamientos"
+      ],
+      "uniones": [],
+      "tipoDePagina": "guia",
+      "repartoDeTipos": {
+        "red-social": 1,
+        "contenido-internacional": 2,
+        "guia": 3,
+        "pagina-de-servicio": 1,
+        "ficha-de-clinica": 2
+      },
+      "topResult": "https://www.mayoclinic.org/es/diseases-conditions/sciatica/diagnosis-treatment/drc-20377441",
+      "keywords": 5,
+      "validadasPorSerp": 1,
+      "inferidasPorTexto": 4
+    },
+    {
+      "id": "cual-es-la-diferencia-entre-artritis-y-artrosis",
+      "nombre": "cual es la diferencia entre artritis y artrosis",
+      "rango": 5,
+      "familia": "resto-comercial",
+      "cabezas": [
+        "cual es la diferencia entre artritis y artrosis"
+      ],
+      "uniones": [],
+      "tipoDePagina": "contenido-internacional",
+      "repartoDeTipos": {
+        "contenido-internacional": 5,
+        "guia": 1,
+        "otro": 2
+      },
+      "topResult": "https://www.clinicauandes.cl/noticia/artritis-y-artrosis-conoce-sus-principales-diferencias",
+      "keywords": 10,
+      "validadasPorSerp": 1,
+      "inferidasPorTexto": 9
+    },
+    {
+      "id": "fisioterapia-traumatologia",
+      "nombre": "fisioterapia traumatología",
+      "rango": 5,
+      "familia": "resto-comercial",
+      "cabezas": [
+        "fisioterapia traumatologia"
+      ],
+      "uniones": [],
+      "tipoDePagina": "pagina-de-servicio",
+      "repartoDeTipos": {
+        "red-social": 1,
+        "contenido-internacional": 3,
+        "pagina-de-servicio": 4,
+        "otro": 1
+      },
+      "topResult": "https://www.martinvasco.es/que-es-la-fisioterapia-traumatologica-talavera/",
+      "keywords": 20,
+      "validadasPorSerp": 1,
+      "inferidasPorTexto": 19
+    },
+    {
+      "id": "las-mejores-pastillas-para-la-ciatica",
+      "nombre": "las mejores pastillas para la ciática",
+      "rango": 5,
+      "familia": "resto-comercial",
+      "cabezas": [
+        "las mejores pastillas para la ciatica"
+      ],
+      "uniones": [],
+      "tipoDePagina": "guia",
+      "repartoDeTipos": {
+        "red-social": 1,
+        "contenido-internacional": 3,
+        "guia": 3,
+        "otro": 1
+      },
+      "topResult": "https://mejorconsalud.as.com/salud/medicamentos/medicamentos-dolor-nervio-ciatico/",
+      "keywords": 4,
+      "validadasPorSerp": 1,
+      "inferidasPorTexto": 3
+    },
+    {
+      "id": "reumatologo-o-traumatologo",
+      "nombre": "reumatólogo o traumatólogo",
+      "rango": 5,
+      "familia": "resto-comercial",
+      "cabezas": [
+        "reumatologo o traumatologo"
+      ],
+      "uniones": [],
+      "tipoDePagina": "contenido-internacional",
+      "repartoDeTipos": {
+        "contenido-internacional": 4,
+        "guia": 2,
+        "pagina-de-servicio": 1
+      },
+      "topResult": "https://clinicainternacional.com.pe/blog-educativo/traumatologia-reumatologia-especialidades/",
+      "keywords": 7,
+      "validadasPorSerp": 1,
+      "inferidasPorTexto": 6
+    }
+  ]
+}
