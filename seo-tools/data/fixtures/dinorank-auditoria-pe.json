@@ -1,0 +1,297 @@
+{
+  "_probe": {
+    "endpoint": "auditoria",
+    "url": "https://api.dinorank.com/api/v1/auditoria",
+    "request": {
+      "domain": "drangulocolumna.com",
+      "country": "pe",
+      "language": "es",
+      "tipo": "summary",
+      "project_id": "138969"
+    },
+    "fetchedAt": "2026-08-11T00:03:09.928Z",
+    "httpStatus": 200,
+    "outcome": "ok",
+    "arreglosRecortados": [],
+    "seudonimizada": true,
+    "nota": "Respuesta real grabada por dino:probe. Las claves de aspecto credencial se reemplazan por un marcador y el comando aborta si el valor de la clave aparece en el cuerpo. Los dominios, URLs, textos e identificadores estan seudonimizados de forma estable: el proyecto sondeado pertenece a otro cliente y de esta respuesta solo se conserva la forma."
+  },
+  "response": {
+    "ok": true,
+    "data": {
+      "source": "auditoria",
+      "site": {
+        "id": 900000001,
+        "domain": "ejemplo-de-proyecto.com",
+        "country": "PE",
+        "language": "es"
+      },
+      "tipo": "summary",
+      "subtipo": null,
+      "url": null,
+      "mode": "summary",
+      "data": {
+        "mode": "summary",
+        "titles": {
+          "duplicados": {
+            "Texto de ejemplo 1": [
+              {
+                "0": "900000002",
+                "1": "http://ejemplo-de-proyecto.com/pagina-1",
+                "2": "Texto de ejemplo 1",
+                "id": "900000002",
+                "url": "http://ejemplo-de-proyecto.com/pagina-1",
+                "title": "Texto de ejemplo 1"
+              },
+              {
+                "0": "900000003",
+                "1": "https://ejemplo-de-proyecto.com/pagina-2",
+                "2": "Texto de ejemplo 1",
+                "id": "900000003",
+                "url": "https://ejemplo-de-proyecto.com/pagina-2",
+                "title": "Texto de ejemplo 1"
+              }
+            ]
+          }
+        },
+        "h1": {
+          "duplicados": {
+            "Texto de ejemplo 2": [
+              {
+                "0": "900000002",
+                "1": "http://ejemplo-de-proyecto.com/pagina-1",
+                "2": "Texto de ejemplo 2",
+                "id": "900000002",
+                "url": "http://ejemplo-de-proyecto.com/pagina-1",
+                "h1": "Texto de ejemplo 2"
+              },
+              {
+                "0": "900000003",
+                "1": "https://ejemplo-de-proyecto.com/pagina-2",
+                "2": "Texto de ejemplo 2",
+                "id": "900000003",
+                "url": "https://ejemplo-de-proyecto.com/pagina-2",
+                "h1": "Texto de ejemplo 2"
+              }
+            ]
+          }
+        },
+        "meta": {
+          "duplicados": {
+            "Texto de ejemplo 3": [
+              {
+                "0": "900000002",
+                "1": "http://ejemplo-de-proyecto.com/pagina-1",
+                "2": "Texto de ejemplo 3",
+                "id": "900000002",
+                "url": "http://ejemplo-de-proyecto.com/pagina-1",
+                "metadescription": "Texto de ejemplo 3"
+              },
+              {
+                "0": "900000003",
+                "1": "https://ejemplo-de-proyecto.com/pagina-2",
+                "2": "Texto de ejemplo 3",
+                "id": "900000003",
+                "url": "https://ejemplo-de-proyecto.com/pagina-2",
+                "metadescription": "Texto de ejemplo 3"
+              }
+            ]
+          }
+        },
+        "noindex": [],
+        "urls_lentas": [
+          {
+            "url": "http://ejemplo-de-proyecto.com/pagina-1",
+            "title": "Texto de ejemplo 1",
+            "id": "900000002",
+            "segundos": "2.395216"
+          },
+          {
+            "url": "http://ejemplo-de-proyecto.com/pagina-3",
+            "title": "",
+            "id": "900000004",
+            "segundos": "1.360935"
+          },
+          {
+            "url": "https://ejemplo-de-proyecto.com/pagina-4",
+            "title": "Texto de ejemplo 4",
+            "id": "900000005",
+            "segundos": "1.107726"
+          },
+          {
+            "url": "https://ejemplo-de-proyecto.com/pagina-5",
+            "title": "",
+            "id": "900000006",
+            "segundos": "1.103835"
+          },
+          {
+            "url": "https://ejemplo-de-proyecto.com/pagina-6",
+            "title": "Texto de ejemplo 5",
+            "id": "900000007",
+            "segundos": "1.023599"
+          },
+          {
+            "url": "https://ejemplo-de-proyecto.com/pagina-7",
+            "title": "Texto de ejemplo 6",
+            "id": "900000008",
+            "segundos": "1.012522"
+          },
+          {
+            "url": "https://ejemplo-de-proyecto.com/pagina-8",
+            "title": "Texto de ejemplo 7",
+            "id": "900000009",
+            "segundos": "1.002817"
+          }
+        ],
+        "http_vs_https": {
+          "HTTP": [
+            {
+              "0": "900000002",
+              "1": "http://ejemplo-de-proyecto.com/pagina-1",
+              "2": "Texto de ejemplo 1",
+              "id": "900000002",
+              "url": "http://ejemplo-de-proyecto.com/pagina-1",
+              "title": "Texto de ejemplo 1"
+            }
+          ],
+          "HTTPS": [
+            {
+              "0": "900000003",
+              "1": "https://ejemplo-de-proyecto.com/pagina-2",
+              "2": "Texto de ejemplo 1",
+              "id": "900000003",
+              "url": "https://ejemplo-de-proyecto.com/pagina-2",
+              "title": "Texto de ejemplo 1"
+            },
+            {
+              "0": "900000009",
+              "1": "https://ejemplo-de-proyecto.com/pagina-8",
+              "2": "Texto de ejemplo 7",
+              "id": "900000009",
+              "url": "https://ejemplo-de-proyecto.com/pagina-8",
+              "title": "Texto de ejemplo 7"
+            },
+            {
+              "0": "900000010",
+              "1": "https://ejemplo-de-proyecto.com/pagina-9",
+              "2": "Texto de ejemplo 8",
+              "id": "900000010",
+              "url": "https://ejemplo-de-proyecto.com/pagina-9",
+              "title": "Texto de ejemplo 8"
+            },
+            {
+              "0": "900000011",
+              "1": "https://ejemplo-de-proyecto.com/pagina-10",
+              "2": "Texto de ejemplo 9",
+              "id": "900000011",
+              "url": "https://ejemplo-de-proyecto.com/pagina-10",
+              "title": "Texto de ejemplo 9"
+            },
+            {
+              "0": "900000012",
+              "1": "https://ejemplo-de-proyecto.com/pagina-11",
+              "2": "Texto de ejemplo 10",
+              "id": "900000012",
+              "url": "https://ejemplo-de-proyecto.com/pagina-11",
+              "title": "Texto de ejemplo 10"
+            },
+            {
+              "0": "900000013",
+              "1": "https://ejemplo-de-proyecto.com/pagina-12",
+              "2": "Texto de ejemplo 11",
+              "id": "900000013",
+              "url": "https://ejemplo-de-proyecto.com/pagina-12",
+              "title": "Texto de ejemplo 11"
+            },
+            {
+              "0": "900000007",
+              "1": "https://ejemplo-de-proyecto.com/pagina-6",
+              "2": "Texto de ejemplo 5",
+              "id": "900000007",
+              "url": "https://ejemplo-de-proyecto.com/pagina-6",
+              "title": "Texto de ejemplo 5"
+            },
+            {
+              "0": "900000005",
+              "1": "https://ejemplo-de-proyecto.com/pagina-4",
+              "2": "Texto de ejemplo 4",
+              "id": "900000005",
+              "url": "https://ejemplo-de-proyecto.com/pagina-4",
+              "title": "Texto de ejemplo 4"
+            },
+            {
+              "0": "900000008",
+              "1": "https://ejemplo-de-proyecto.com/pagina-7",
+              "2": "Texto de ejemplo 6",
+              "id": "900000008",
+              "url": "https://ejemplo-de-proyecto.com/pagina-7",
+              "title": "Texto de ejemplo 6"
+            },
+            {
+              "0": "900000014",
+              "1": "https://ejemplo-de-proyecto.com/pagina-13",
+              "2": "Texto de ejemplo 12",
+              "id": "900000014",
+              "url": "https://ejemplo-de-proyecto.com/pagina-13",
+              "title": "Texto de ejemplo 12"
+            },
+            {
+              "0": "900000015",
+              "1": "https://ejemplo-de-proyecto.com/pagina-14",
+              "2": "Texto de ejemplo 13",
+              "id": "900000015",
+              "url": "https://ejemplo-de-proyecto.com/pagina-14",
+              "title": "Texto de ejemplo 13"
+            },
+            {
+              "0": "900000016",
+              "1": "https://ejemplo-de-proyecto.com/pagina-15",
+              "2": "Texto de ejemplo 14",
+              "id": "900000016",
+              "url": "https://ejemplo-de-proyecto.com/pagina-15",
+              "title": "Texto de ejemplo 14"
+            },
+            {
+              "0": "900000017",
+              "1": "https://ejemplo-de-proyecto.com/pagina-16",
+              "2": "Texto de ejemplo 15",
+              "id": "900000017",
+              "url": "https://ejemplo-de-proyecto.com/pagina-16",
+              "title": "Texto de ejemplo 15"
+            },
+            {
+              "0": "900000018",
+              "1": "https://ejemplo-de-proyecto.com/pagina-17",
+              "2": "Texto de ejemplo 16",
+              "id": "900000018",
+              "url": "https://ejemplo-de-proyecto.com/pagina-17",
+              "title": "Texto de ejemplo 16"
+            },
+            {
+              "0": "900000019",
+              "1": "https://ejemplo-de-proyecto.com/pagina-18",
+              "2": "Texto de ejemplo 17",
+              "id": "900000019",
+              "url": "https://ejemplo-de-proyecto.com/pagina-18",
+              "title": "Texto de ejemplo 17"
+            }
+          ]
+        },
+        "urls_espejo": [],
+        "ilinks": []
+      },
+      "summary": {
+        "urls_total": 0,
+        "titles_duplicados": 1,
+        "h1_duplicados": 1,
+        "meta_duplicados": 1,
+        "noindex": 0,
+        "urls_lentas": 7,
+        "http": 1,
+        "https": 15,
+        "urls_espejo": 0,
+        "payload_mode": "summary"
+      }
+    }
+  }
+}
