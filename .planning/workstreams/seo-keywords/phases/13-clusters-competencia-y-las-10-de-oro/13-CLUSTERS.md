@@ -42,7 +42,7 @@ que URL responde a que.
 
 | Cluster | Tipo de pagina | Cabeza | Cabezas | Keywords | Validadas |
 |---|---|---|---|---|---|
-| traumatólogo ortopedia infantil | pagina de servicio | traumatologo ortopedia infantil | 41 | 939 | 41 |
+| especialista en columna y trauma en Lima | pagina de servicio | traumatologo ortopedia infantil | 41 | 939 | 41 |
 | escoliosis | contenido internacional | escoliosis | 2 | 44 | 2 |
 | estenosis espinal | contenido internacional | estenosis espinal | 2 | 45 | 2 |
 | hernia discal | contenido internacional | hernia discal | 2 | 638 | 2 |

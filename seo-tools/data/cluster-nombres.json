@@ -1,0 +1,13 @@
+{
+  "schema": 1,
+  "//": "Renombres EXPLICITOS de cluster. La regla automatica de src/phase13/cluster.ts nombra cada cluster con su cabeza de mayor valor de negocio, y esa regla NO se toca: es la que hace que dos corridas produzcan el mismo nombre. Este archivo es la excepcion declarada, con su motivo y su fecha, para los casos en que la regla produce un nombre que no describe el cluster. Se busca por la CLAVE NORMALIZADA de la cabeza principal, que es lo unico estable entre corridas.",
+  "//procedencia": "El nombre renombrado viaja al Sheet en la columna `Cluster` de las filas del cluster, asi que es lo que Juan lee. Renombrar no cuesta ninguna busqueda de SerpApi: los clusters se recomputan desde la cache.",
+  "nombres": {
+    "traumatologo ortopedia infantil": {
+      "nombre": "especialista en columna y trauma en Lima",
+      "plan": "13-04",
+      "decididoEl": "2026-08-11",
+      "motivo": "Es el cluster de 41 cabezas, sostenido por 129 uniones sobre URLs reales compartidas. La regla lo nombro `traumatologo ortopedia infantil` porque esa cabeza quedo con rango 0 al ser la que Juan agrego en la revision del checkpoint; su rango automatico era 5. El nombre describia una subespecialidad pediatrica cuando el cluster en realidad es la demanda generica de Lima por un especialista de columna o trauma: agrupa `traumatologo lima`, `cirujano de columna surco`, `neurocirujano san isidro` y trece modificadores de distrito, que en la SERP de Lima son la misma intencion."
+    }
+  }
+}
