@@ -194,7 +194,17 @@ export function paramsDeDominio(etiqueta: EtiquetaEndpoint, dominio: string): Re
   const target = normalizarDominio(dominio);
   const base: Record<string, unknown> = {
     target,
-    mode: "domain",
+    // "subdomains", no "domain". La documentacion de los tres endpoints de site-explorer lo
+    // dice literal: "When analyzing a domain name, you must use mode=subdomains. Using
+    // mode=domain can exclude www and other subdomains."
+    //
+    // Medido en vivo sobre drcarranzacolumna.com el 2026-08-11, y por eso esto no es una
+    // preferencia de estilo:
+    //   mode=domain      -> org_keywords 0,  org_traffic 0,  top3 0
+    //   mode=subdomains  -> org_keywords 14, org_traffic 14, top3 5
+    // Con "domain" las 24 consultas de COMP-01 habrian devuelto ceros para los cinco
+    // competidores, y el perfil de competencia entero habria sido un artefacto de medicion.
+    mode: "subdomains",
     protocol: "both",
     date: FECHA_DE_MEDICION,
   };
