@@ -1,0 +1,1018 @@
+{
+  "schema": 1,
+  "generadoPor": "plan 13-05, seo-tools/src/phase13/golden-run.ts",
+  "requisito": "KWR-06",
+  "keywords": [
+    {
+      "puesto": 1,
+      "keyword": "escoliosis",
+      "keywordKey": "escoliosis",
+      "cluster": "escoliosis",
+      "tipoDePagina": "contenido-internacional",
+      "categoria": "cirugia-de-columna",
+      "intent": "informacional",
+      "stage": "diagnostico",
+      "volumenDinorank": null,
+      "volumenAhrefs": 18000,
+      "keywordDifficulty": 12,
+      "keywordDifficultyFuente": "ahrefs",
+      "trafficPotential": 3400,
+      "trafficPotentialFuente": "ahrefs",
+      "nivelDeAlcance": "bajo",
+      "disputables": 1,
+      "posicionesMedidas": 7,
+      "primeraDisputable": 3,
+      "ocupanTop10": [
+        "medlineplus.gov",
+        "mayoclinic.org",
+        "facebook.com",
+        "cun.es",
+        "niams.nih.gov",
+        "clinicasanfelipe.com",
+        "cigna.com"
+      ],
+      "competidoresEnTop": [],
+      "valorDeNegocio": 56,
+      "componentesDeValor": [
+        {
+          "nombre": "demanda",
+          "puntos": 30,
+          "detalle": "3400 (ahrefs:traffic_potential)"
+        },
+        {
+          "nombre": "localidad",
+          "puntos": 0,
+          "detalle": "sin marca geografica"
+        },
+        {
+          "nombre": "diferenciacion",
+          "puntos": 0,
+          "detalle": "categoria con competencia directa perfilada"
+        },
+        {
+          "nombre": "pagina publicada",
+          "puntos": 10,
+          "detalle": "escoliosis"
+        },
+        {
+          "nombre": "rango",
+          "puntos": 16,
+          "detalle": "rango 1 de la lista de candidatas"
+        }
+      ],
+      "justificacion": "Es materia del consultorio: \"correccion de escoliosis y deformidades\" sale de services.ts:procedureApproaches[].examples, dentro de Cirugia de columna. Volumen 18000 (ahrefs) con potencial de trafico 3400: la demanda esta en el termino, y Ahrefs estima que la pagina ganadora se lleva una parte y no el total. Su cluster es escoliosis y la SERP premia ahi contenido-internacional. Hoy su top 10 lo encabezan medlineplus.gov, mayoclinic.org, facebook.com (6 barreras): 1 de 7 posiciones medidas son disputables y la primera libre es la 3. KD 12 declarado por Ahrefs. Ningun competidor perfilado aparece en este top 10. Candidata a ganarla: /servicios/escoliosis-y-deformidades (planificada, crear).",
+      "motivoDeCluster": "primera cabeza de su cluster",
+      "urlCandidata": {
+        "url": "/servicios/escoliosis-y-deformidades",
+        "estado": "planificada",
+        "accion": "crear"
+      }
+    },
+    {
+      "puesto": 2,
+      "keyword": "ortopedia infantil lima",
+      "keywordKey": "ortopedia infantil lima",
+      "cluster": "especialista-en-columna-y-trauma-en-lima",
+      "tipoDePagina": "pagina-de-servicio",
+      "categoria": "ortopedia-infantil",
+      "intent": "transaccional",
+      "stage": "decision",
+      "volumenDinorank": 0,
+      "volumenAhrefs": 10,
+      "keywordDifficulty": null,
+      "keywordDifficultyFuente": "ahrefs_sin_dato",
+      "trafficPotential": null,
+      "trafficPotentialFuente": "ahrefs_sin_dato",
+      "nivelDeAlcance": "alto",
+      "disputables": 6,
+      "posicionesMedidas": 9,
+      "primeraDisputable": 1,
+      "ocupanTop10": [
+        "clinicarthromeds.pe",
+        "stellamaris.com.pe",
+        "doctoralia.pe",
+        "clinicaangloamericana.pe",
+        "instagram.com",
+        "ipot-crp.pe",
+        "drabeltrantraumatologia.com",
+        "clinicalima.sanjuandedios.pe",
+        "facebook.com"
+      ],
+      "competidoresEnTop": [
+        {
+          "domain": "clinicarthromeds.pe",
+          "domainRating": 1.1
+        }
+      ],
+      "valorDeNegocio": 53,
+      "componentesDeValor": [
+        {
+          "nombre": "demanda",
+          "puntos": 8,
+          "detalle": "10 (ahrefs)"
+        },
+        {
+          "nombre": "localidad",
+          "puntos": 15,
+          "detalle": "lima"
+        },
+        {
+          "nombre": "diferenciacion",
+          "puntos": 12,
+          "detalle": "sin competencia directa en ortopedia-infantil"
+        },
+        {
+          "nombre": "pagina publicada",
+          "puntos": 10,
+          "detalle": "ortopedia infantil"
+        },
+        {
+          "nombre": "rango",
+          "puntos": 8,
+          "detalle": "rango 3 de la lista de candidatas"
+        }
+      ],
+      "justificacion": "Es un servicio declarado del consultorio: \"ortopedia infantil\" sale de services.ts:serviceCategories[].name, dentro de Ortopedia infantil. Volumen 10 segun ahrefs. Su cluster es especialista-en-columna-y-trauma-en-lima y la SERP premia ahi pagina-de-servicio. Hoy su top 10 lo encabezan clinicarthromeds.pe, stellamaris.com.pe, doctoralia.pe (3 barreras): 6 de 9 posiciones medidas son disputables y la primera libre es la 1. Sin KD: Ahrefs no devolvio dificultad para esta cabeza (ahrefs_sin_dato), y no se inventa. Competidores perfilados presentes: clinicarthromeds.pe (DR 1.1). La linea de base propia es DR 0 y en este nicho eso no es la barrera: sus paginas interiores rankean con cero dominios de referencia. Candidata a ganarla: /servicios/ortopedia-infantil (planificada, crear).",
+      "motivoDeCluster": "primera cabeza de su cluster",
+      "urlCandidata": {
+        "url": "/servicios/ortopedia-infantil",
+        "estado": "planificada",
+        "accion": "crear"
+      }
+    },
+    {
+      "puesto": 3,
+      "keyword": "hernia discal lumbar y cervical en lima",
+      "keywordKey": "hernia discal lumbar y cervical en lima",
+      "cluster": "hernia-discal-lumbar-y-cervical-en-lima",
+      "tipoDePagina": "pagina-de-servicio",
+      "categoria": "cirugia-de-columna",
+      "intent": "transaccional",
+      "stage": "decision",
+      "volumenDinorank": null,
+      "volumenAhrefs": null,
+      "keywordDifficulty": null,
+      "keywordDifficultyFuente": "no_consultado",
+      "trafficPotential": null,
+      "trafficPotentialFuente": "no_consultado",
+      "nivelDeAlcance": "alto",
+      "disputables": 7,
+      "posicionesMedidas": 8,
+      "primeraDisputable": 1,
+      "ocupanTop10": [
+        "cirugiaendoscopicaperu.com",
+        "doctoralia.pe",
+        "centromedicoosi.com",
+        "clinicamontesinai.pe",
+        "auna.org",
+        "clinicarthromeds.pe",
+        "facebook.com",
+        "drperalestraumatologo.com"
+      ],
+      "competidoresEnTop": [
+        {
+          "domain": "clinicarthromeds.pe",
+          "domainRating": 1.1
+        }
+      ],
+      "valorDeNegocio": 48,
+      "componentesDeValor": [
+        {
+          "nombre": "demanda",
+          "puntos": 15,
+          "detalle": "sin dato (sin_datos)"
+        },
+        {
+          "nombre": "localidad",
+          "puntos": 15,
+          "detalle": "lima"
+        },
+        {
+          "nombre": "diferenciacion",
+          "puntos": 0,
+          "detalle": "categoria con competencia directa perfilada"
+        },
+        {
+          "nombre": "pagina publicada",
+          "puntos": 10,
+          "detalle": "hernia discal"
+        },
+        {
+          "nombre": "rango",
+          "puntos": 8,
+          "detalle": "rango 3 de la lista de candidatas"
+        }
+      ],
+      "justificacion": "Es un servicio declarado del consultorio: \"hernia discal lumbar y cervical\" sale de services.ts:procedureApproaches[].examples, dentro de Cirugia de columna. Sin volumen medido, que no es sin mercado: DinoRank trunca las relacionadas en 900 y no devuelve la keyword consultada. El hueco es de la fuente y esta documentado. Su cluster es hernia-discal-lumbar-y-cervical-en-lima y la SERP premia ahi pagina-de-servicio. Hoy su top 10 lo encabezan cirugiaendoscopicaperu.com, doctoralia.pe, centromedicoosi.com (1 barrera): 7 de 8 posiciones medidas son disputables y la primera libre es la 1. Sin KD: Ahrefs no devolvio dificultad para esta cabeza (no_consultado), y no se inventa. Competidores perfilados presentes: clinicarthromeds.pe (DR 1.1). La linea de base propia es DR 0 y en este nicho eso no es la barrera: sus paginas interiores rankean con cero dominios de referencia. Candidata a ganarla: /servicios/hernia-discal (planificada, crear).",
+      "motivoDeCluster": "primera cabeza de su cluster",
+      "urlCandidata": {
+        "url": "/servicios/hernia-discal",
+        "estado": "planificada",
+        "accion": "crear"
+      }
+    },
+    {
+      "puesto": 4,
+      "keyword": "estenosis de canal en lima",
+      "keywordKey": "estenosis de canal en lima",
+      "cluster": "estenosis-de-canal-en-lima",
+      "tipoDePagina": "contenido-internacional",
+      "categoria": "cirugia-de-columna",
+      "intent": "transaccional",
+      "stage": "decision",
+      "volumenDinorank": null,
+      "volumenAhrefs": null,
+      "keywordDifficulty": null,
+      "keywordDifficultyFuente": "no_consultado",
+      "trafficPotential": null,
+      "trafficPotentialFuente": "no_consultado",
+      "nivelDeAlcance": "medio",
+      "disputables": 4,
+      "posicionesMedidas": 8,
+      "primeraDisputable": 1,
+      "ocupanTop10": [
+        "discalcentro.com",
+        "cirugiaendoscopicaperu.com",
+        "cun.es",
+        "copac.com.pa",
+        "medilaserperu.com.pe",
+        "especialistadecolumna.com",
+        "quironsalud.com",
+        "institutoclavel.com"
+      ],
+      "competidoresEnTop": [],
+      "valorDeNegocio": 48,
+      "componentesDeValor": [
+        {
+          "nombre": "demanda",
+          "puntos": 15,
+          "detalle": "sin dato (sin_datos)"
+        },
+        {
+          "nombre": "localidad",
+          "puntos": 15,
+          "detalle": "lima"
+        },
+        {
+          "nombre": "diferenciacion",
+          "puntos": 0,
+          "detalle": "categoria con competencia directa perfilada"
+        },
+        {
+          "nombre": "pagina publicada",
+          "puntos": 10,
+          "detalle": "estenosis de canal"
+        },
+        {
+          "nombre": "rango",
+          "puntos": 8,
+          "detalle": "rango 3 de la lista de candidatas"
+        }
+      ],
+      "justificacion": "Es un servicio declarado del consultorio: \"estenosis de canal\" sale de services.ts:procedureApproaches[].examples, dentro de Cirugia de columna. Sin volumen medido, que no es sin mercado: DinoRank trunca las relacionadas en 900 y no devuelve la keyword consultada. El hueco es de la fuente y esta documentado. Su cluster es estenosis-de-canal-en-lima y la SERP premia ahi contenido-internacional. Hoy su top 10 lo encabezan discalcentro.com, cirugiaendoscopicaperu.com, cun.es (4 barreras): 4 de 8 posiciones medidas son disputables y la primera libre es la 1. Sin KD: Ahrefs no devolvio dificultad para esta cabeza (no_consultado), y no se inventa. Ningun competidor perfilado aparece en este top 10. Candidata a ganarla: /servicios/estenosis-espinal (planificada, crear).",
+      "motivoDeCluster": "primera cabeza de su cluster",
+      "urlCandidata": {
+        "url": "/servicios/estenosis-espinal",
+        "estado": "planificada",
+        "accion": "crear"
+      }
+    },
+    {
+      "puesto": 5,
+      "keyword": "traumatología lima",
+      "keywordKey": "traumatologia lima",
+      "cluster": "especialista-en-columna-y-trauma-en-lima",
+      "tipoDePagina": "pagina-de-servicio",
+      "categoria": "traumatologia-y-ortopedia",
+      "intent": "transaccional",
+      "stage": "decision",
+      "volumenDinorank": 880,
+      "volumenAhrefs": 50,
+      "keywordDifficulty": null,
+      "keywordDifficultyFuente": "ahrefs_sin_dato",
+      "trafficPotential": null,
+      "trafficPotentialFuente": "ahrefs_sin_dato",
+      "nivelDeAlcance": "alto",
+      "disputables": 7,
+      "posicionesMedidas": 9,
+      "primeraDisputable": 3,
+      "ocupanTop10": [
+        "clinicainternacional.com.pe",
+        "clinicalima.sanjuandedios.pe",
+        "traumamedical.com.pe",
+        "doctoralia.pe",
+        "clinicalaluz.pe",
+        "sportsmedicinelima.com",
+        "drperalestraumatologo.com",
+        "stellamaris.com.pe",
+        "clinicarthromeds.pe"
+      ],
+      "competidoresEnTop": [
+        {
+          "domain": "clinicarthromeds.pe",
+          "domainRating": 1.1
+        }
+      ],
+      "valorDeNegocio": 45,
+      "componentesDeValor": [
+        {
+          "nombre": "demanda",
+          "puntos": 22,
+          "detalle": "880 (dinorank)"
+        },
+        {
+          "nombre": "localidad",
+          "puntos": 15,
+          "detalle": "lima"
+        },
+        {
+          "nombre": "diferenciacion",
+          "puntos": 0,
+          "detalle": "categoria con competencia directa perfilada"
+        },
+        {
+          "nombre": "pagina publicada",
+          "puntos": 0,
+          "detalle": "no cae sobre una pagina de servicio comprometida a nivel Lima"
+        },
+        {
+          "nombre": "rango",
+          "puntos": 8,
+          "detalle": "rango 3 de la lista de candidatas"
+        }
+      ],
+      "justificacion": "Es un servicio declarado del consultorio: \"traumatologia\" sale de cv.ts:education/experience, dentro de Traumatologia y ortopedia. Volumen 880 segun dinorank. Su cluster es especialista-en-columna-y-trauma-en-lima y la SERP premia ahi pagina-de-servicio. Hoy su top 10 lo encabezan clinicainternacional.com.pe, clinicalima.sanjuandedios.pe, traumamedical.com.pe (2 barreras): 7 de 9 posiciones medidas son disputables y la primera libre es la 3. Sin KD: Ahrefs no devolvio dificultad para esta cabeza (ahrefs_sin_dato), y no se inventa. Competidores perfilados presentes: clinicarthromeds.pe (DR 1.1). La linea de base propia es DR 0 y en este nicho eso no es la barrera: sus paginas interiores rankean con cero dominios de referencia. Candidata a ganarla: / (existente, reescribir).",
+      "motivoDeCluster": "Comparte cluster (especialista-en-columna-y-trauma-en-lima) con una cabeza ya elegida, pero entra igual por dos hechos medidos: es de otra categoria de servicio (traumatologia-y-ortopedia), asi que la fase 14 le va a dar otra URL, y su top 10 comparte solape medido 0 con ella. El cluster se formo por transitividad, no porque estas dos sean la misma SERP.",
+      "urlCandidata": {
+        "url": "/",
+        "estado": "existente",
+        "accion": "reescribir"
+      }
+    },
+    {
+      "puesto": 6,
+      "keyword": "artrosis",
+      "keywordKey": "artrosis",
+      "cluster": "artrosis",
+      "tipoDePagina": "guia",
+      "categoria": "traumatologia-y-ortopedia",
+      "intent": "informacional",
+      "stage": "diagnostico",
+      "volumenDinorank": null,
+      "volumenAhrefs": 11000,
+      "keywordDifficulty": 26,
+      "keywordDifficultyFuente": "ahrefs",
+      "trafficPotential": 1800,
+      "trafficPotentialFuente": "ahrefs",
+      "nivelDeAlcance": "medio",
+      "disputables": 4,
+      "posicionesMedidas": 7,
+      "primeraDisputable": 1,
+      "ocupanTop10": [
+        "inforeuma.com",
+        "cun.es",
+        "who.int",
+        "msdmanuals.com",
+        "elsevier.es",
+        "oafifoundation.com",
+        "es.wikipedia.org"
+      ],
+      "competidoresEnTop": [],
+      "valorDeNegocio": 42,
+      "componentesDeValor": [
+        {
+          "nombre": "demanda",
+          "puntos": 30,
+          "detalle": "1800 (ahrefs:traffic_potential)"
+        },
+        {
+          "nombre": "localidad",
+          "puntos": 0,
+          "detalle": "sin marca geografica"
+        },
+        {
+          "nombre": "diferenciacion",
+          "puntos": 0,
+          "detalle": "categoria con competencia directa perfilada"
+        },
+        {
+          "nombre": "pagina publicada",
+          "puntos": 0,
+          "detalle": "no cae sobre una pagina de servicio comprometida a nivel Lima"
+        },
+        {
+          "nombre": "rango",
+          "puntos": 12,
+          "detalle": "rango 2 de la lista de candidatas"
+        }
+      ],
+      "justificacion": "Es un servicio declarado del consultorio: \"artrosis\" sale de services.ts:serviceCategories[].conditions, dentro de Traumatologia y ortopedia. Volumen 11000 (ahrefs) con potencial de trafico 1800: la demanda esta en el termino, y Ahrefs estima que la pagina ganadora se lleva una parte y no el total. Su cluster es artrosis y la SERP premia ahi guia. Hoy su top 10 lo encabezan inforeuma.com, cun.es, who.int (3 barreras): 4 de 7 posiciones medidas son disputables y la primera libre es la 1. KD 26 declarado por Ahrefs. Ningun competidor perfilado aparece en este top 10. Candidata a ganarla: /blog/artrosis (inexistente, crear).",
+      "motivoDeCluster": "primera cabeza de su cluster",
+      "urlCandidata": {
+        "url": "/blog/artrosis",
+        "estado": "inexistente",
+        "accion": "crear"
+      }
+    },
+    {
+      "puesto": 7,
+      "keyword": "ciática",
+      "keywordKey": "ciatica",
+      "cluster": "ciatica",
+      "tipoDePagina": "contenido-internacional",
+      "categoria": "cirugia-de-columna",
+      "intent": "informacional",
+      "stage": "diagnostico",
+      "volumenDinorank": 8100,
+      "volumenAhrefs": 900,
+      "keywordDifficulty": 19,
+      "keywordDifficultyFuente": "ahrefs",
+      "trafficPotential": 1800,
+      "trafficPotentialFuente": "ahrefs",
+      "nivelDeAlcance": "bajo",
+      "disputables": 3,
+      "posicionesMedidas": 7,
+      "primeraDisputable": 3,
+      "ocupanTop10": [
+        "mayoclinic.org",
+        "medlineplus.gov",
+        "fesemi.org",
+        "cinfasalud.cinfa.com",
+        "quironsalud.com",
+        "spine-health.com",
+        "cigna.com"
+      ],
+      "competidoresEnTop": [],
+      "valorDeNegocio": 42,
+      "componentesDeValor": [
+        {
+          "nombre": "demanda",
+          "puntos": 30,
+          "detalle": "1800 (ahrefs:traffic_potential)"
+        },
+        {
+          "nombre": "localidad",
+          "puntos": 0,
+          "detalle": "sin marca geografica"
+        },
+        {
+          "nombre": "diferenciacion",
+          "puntos": 0,
+          "detalle": "categoria con competencia directa perfilada"
+        },
+        {
+          "nombre": "pagina publicada",
+          "puntos": 0,
+          "detalle": "no cae sobre una pagina de servicio comprometida a nivel Lima"
+        },
+        {
+          "nombre": "rango",
+          "puntos": 12,
+          "detalle": "rango 2 de la lista de candidatas"
+        }
+      ],
+      "justificacion": "Es materia del consultorio: \"lumbalgia y ciatica\" sale de services.ts:serviceCategories[].conditions, dentro de Cirugia de columna. Potencial de trafico 1800 contra un volumen propio de 900 (ahrefs): la pagina que la gane captura mas que el termino en si, y por eso ordenar por volumen la dejaria abajo. Su cluster es ciatica y la SERP premia ahi contenido-internacional. Hoy su top 10 lo encabezan mayoclinic.org, medlineplus.gov, fesemi.org (4 barreras): 3 de 7 posiciones medidas son disputables y la primera libre es la 3. KD 19 declarado por Ahrefs. Ningun competidor perfilado aparece en este top 10. Candidata a ganarla: /blog/ciatica (inexistente, crear).",
+      "motivoDeCluster": "primera cabeza de su cluster",
+      "urlCandidata": {
+        "url": "/blog/ciatica",
+        "estado": "inexistente",
+        "accion": "crear"
+      }
+    },
+    {
+      "puesto": 8,
+      "keyword": "lumbalgia",
+      "keywordKey": "lumbalgia",
+      "cluster": "lumbalgia",
+      "tipoDePagina": "contenido-internacional",
+      "categoria": "cirugia-de-columna",
+      "intent": "informacional",
+      "stage": "diagnostico",
+      "volumenDinorank": null,
+      "volumenAhrefs": 12000,
+      "keywordDifficulty": 16,
+      "keywordDifficultyFuente": "ahrefs",
+      "trafficPotential": 1800,
+      "trafficPotentialFuente": "ahrefs",
+      "nivelDeAlcance": "bajo",
+      "disputables": 1,
+      "posicionesMedidas": 7,
+      "primeraDisputable": 2,
+      "ocupanTop10": [
+        "who.int",
+        "inforeuma.com",
+        "cigna.com",
+        "elsevier.es",
+        "institutoclavel.com",
+        "quironsalud.com",
+        "blog.auna.pe"
+      ],
+      "competidoresEnTop": [],
+      "valorDeNegocio": 42,
+      "componentesDeValor": [
+        {
+          "nombre": "demanda",
+          "puntos": 30,
+          "detalle": "1800 (ahrefs:traffic_potential)"
+        },
+        {
+          "nombre": "localidad",
+          "puntos": 0,
+          "detalle": "sin marca geografica"
+        },
+        {
+          "nombre": "diferenciacion",
+          "puntos": 0,
+          "detalle": "categoria con competencia directa perfilada"
+        },
+        {
+          "nombre": "pagina publicada",
+          "puntos": 0,
+          "detalle": "no cae sobre una pagina de servicio comprometida a nivel Lima"
+        },
+        {
+          "nombre": "rango",
+          "puntos": 12,
+          "detalle": "rango 2 de la lista de candidatas"
+        }
+      ],
+      "justificacion": "Es materia del consultorio: \"lumbalgia y ciatica\" sale de services.ts:serviceCategories[].conditions, dentro de Cirugia de columna. Volumen 12000 (ahrefs) con potencial de trafico 1800: la demanda esta en el termino, y Ahrefs estima que la pagina ganadora se lleva una parte y no el total. Su cluster es lumbalgia y la SERP premia ahi contenido-internacional. Hoy su top 10 lo encabezan who.int, inforeuma.com, cigna.com (6 barreras): 1 de 7 posiciones medidas son disputables y la primera libre es la 2. KD 16 declarado por Ahrefs. Ningun competidor perfilado aparece en este top 10. Candidata a ganarla: /blog/lumbalgia (inexistente, crear).",
+      "motivoDeCluster": "primera cabeza de su cluster",
+      "urlCandidata": {
+        "url": "/blog/lumbalgia",
+        "estado": "inexistente",
+        "accion": "crear"
+      }
+    },
+    {
+      "puesto": 9,
+      "keyword": "cirujano de columna lima",
+      "keywordKey": "cirujano de columna lima",
+      "cluster": "especialista-en-columna-y-trauma-en-lima",
+      "tipoDePagina": "pagina-de-servicio",
+      "categoria": "cirugia-de-columna",
+      "intent": "transaccional",
+      "stage": "decision",
+      "volumenDinorank": null,
+      "volumenAhrefs": null,
+      "keywordDifficulty": null,
+      "keywordDifficultyFuente": "no_consultado",
+      "trafficPotential": null,
+      "trafficPotentialFuente": "no_consultado",
+      "nivelDeAlcance": "alto",
+      "disputables": 7,
+      "posicionesMedidas": 9,
+      "primeraDisputable": 1,
+      "ocupanTop10": [
+        "cirujanocolumna-elaos.com",
+        "doctoralia.pe",
+        "drcarranzacolumna.com",
+        "ineurocienciaslima.com.pe",
+        "clinicainternacional.com.pe",
+        "clinicarthromeds.pe",
+        "cirugiacerebroalmenara.com",
+        "clinicasanfelipe.com",
+        "ineurocienciaslima.com.pe"
+      ],
+      "competidoresEnTop": [
+        {
+          "domain": "drcarranzacolumna.com",
+          "domainRating": 0
+        },
+        {
+          "domain": "cirujanocolumna-elaos.com",
+          "domainRating": 0
+        },
+        {
+          "domain": "clinicarthromeds.pe",
+          "domainRating": 1.1
+        }
+      ],
+      "valorDeNegocio": 38,
+      "componentesDeValor": [
+        {
+          "nombre": "demanda",
+          "puntos": 15,
+          "detalle": "sin dato (sin_datos)"
+        },
+        {
+          "nombre": "localidad",
+          "puntos": 15,
+          "detalle": "lima"
+        },
+        {
+          "nombre": "diferenciacion",
+          "puntos": 0,
+          "detalle": "categoria con competencia directa perfilada"
+        },
+        {
+          "nombre": "pagina publicada",
+          "puntos": 0,
+          "detalle": "no cae sobre una pagina de servicio comprometida a nivel Lima"
+        },
+        {
+          "nombre": "rango",
+          "puntos": 8,
+          "detalle": "rango 3 de la lista de candidatas"
+        }
+      ],
+      "justificacion": "Es un servicio declarado del consultorio: \"cirujano de columna\" sale de cv.ts:education/experience, dentro de Cirugia de columna. Sin volumen medido, que no es sin mercado: DinoRank trunca las relacionadas en 900 y no devuelve la keyword consultada. El hueco es de la fuente y esta documentado. Su cluster es especialista-en-columna-y-trauma-en-lima y la SERP premia ahi pagina-de-servicio. Hoy su top 10 lo encabezan cirujanocolumna-elaos.com, doctoralia.pe, drcarranzacolumna.com (2 barreras): 7 de 9 posiciones medidas son disputables y la primera libre es la 1. Sin KD: Ahrefs no devolvio dificultad para esta cabeza (no_consultado), y no se inventa. Competidores perfilados presentes: drcarranzacolumna.com (DR 0), cirujanocolumna-elaos.com (DR 0), clinicarthromeds.pe (DR 1.1). La linea de base propia es DR 0 y en este nicho eso no es la barrera: sus paginas interiores rankean con cero dominios de referencia. Candidata a ganarla: /servicios (existente, reescribir).",
+      "motivoDeCluster": "Comparte cluster (especialista-en-columna-y-trauma-en-lima) con una cabeza ya elegida, pero entra igual por dos hechos medidos: es de otra categoria de servicio (cirugia-de-columna), asi que la fase 14 le va a dar otra URL, y su top 10 comparte solape medido 0 con ella. El cluster se formo por transitividad, no porque estas dos sean la misma SERP.",
+      "urlCandidata": {
+        "url": "/servicios",
+        "estado": "existente",
+        "accion": "reescribir"
+      }
+    },
+    {
+      "puesto": 10,
+      "keyword": "artrodesis en varios niveles en lima",
+      "keywordKey": "artrodesis en varios niveles en lima",
+      "cluster": "artrodesis-en-varios-niveles",
+      "tipoDePagina": "contenido-internacional",
+      "categoria": "cirugia-de-columna",
+      "intent": "transaccional",
+      "stage": "decision",
+      "volumenDinorank": null,
+      "volumenAhrefs": null,
+      "keywordDifficulty": null,
+      "keywordDifficultyFuente": "no_consultado",
+      "trafficPotential": null,
+      "trafficPotentialFuente": "no_consultado",
+      "nivelDeAlcance": "alto",
+      "disputables": 6,
+      "posicionesMedidas": 9,
+      "primeraDisputable": 1,
+      "ocupanTop10": [
+        "doctoralia.pe",
+        "youtube.com",
+        "columna.com",
+        "instagram.com",
+        "institutamoros.com",
+        "medlineplus.gov",
+        "doctorjuanalvarezdemon.es",
+        "facebook.com",
+        "drtafurneurocirugia.com"
+      ],
+      "competidoresEnTop": [],
+      "valorDeNegocio": 38,
+      "componentesDeValor": [
+        {
+          "nombre": "demanda",
+          "puntos": 15,
+          "detalle": "sin dato (sin_datos)"
+        },
+        {
+          "nombre": "localidad",
+          "puntos": 15,
+          "detalle": "lima"
+        },
+        {
+          "nombre": "diferenciacion",
+          "puntos": 0,
+          "detalle": "categoria con competencia directa perfilada"
+        },
+        {
+          "nombre": "pagina publicada",
+          "puntos": 0,
+          "detalle": "no cae sobre una pagina de servicio comprometida a nivel Lima"
+        },
+        {
+          "nombre": "rango",
+          "puntos": 8,
+          "detalle": "rango 3 de la lista de candidatas"
+        }
+      ],
+      "justificacion": "Es un servicio declarado del consultorio: \"artrodesis en varios niveles\" sale de services.ts:procedureApproaches[].examples, dentro de Cirugia de columna. Sin volumen medido, que no es sin mercado: DinoRank trunca las relacionadas en 900 y no devuelve la keyword consultada. El hueco es de la fuente y esta documentado. Su cluster es artrodesis-en-varios-niveles y la SERP premia ahi contenido-internacional. Hoy su top 10 lo encabezan doctoralia.pe, youtube.com, columna.com (3 barreras): 6 de 9 posiciones medidas son disputables y la primera libre es la 1. Sin KD: Ahrefs no devolvio dificultad para esta cabeza (no_consultado), y no se inventa. Ningun competidor perfilado aparece en este top 10. Candidata a ganarla: /servicios (existente, reescribir).",
+      "motivoDeCluster": "primera cabeza de su cluster",
+      "urlCandidata": {
+        "url": "/servicios",
+        "estado": "existente",
+        "accion": "reescribir"
+      }
+    }
+  ],
+  "descartadasDeMayorVolumen": [
+    {
+      "keyword": "tendinitis",
+      "keywordKey": "tendinitis",
+      "volumen": 14800,
+      "volumenFuente": "dinorank",
+      "motivo": "Es de alcance objetivo pero NUNCA se le midio la SERP: no fue una de las 91 cabezas capturadas con SerpApi, asi que no hay evidencia de si se puede ganar. Quedo fuera por limite de presupuesto de medicion, no por un juicio de negocio."
+    },
+    {
+      "keyword": "fracturas",
+      "keywordKey": "fracturas",
+      "volumen": 6600,
+      "volumenFuente": "dinorank",
+      "motivo": "Es de alcance objetivo pero NUNCA se le midio la SERP: no fue una de las 91 cabezas capturadas con SerpApi, asi que no hay evidencia de si se puede ganar. Quedo fuera por limite de presupuesto de medicion, no por un juicio de negocio."
+    },
+    {
+      "keyword": "desgarro muscular",
+      "keywordKey": "desgarro muscular",
+      "volumen": 5400,
+      "volumenFuente": "dinorank",
+      "motivo": "Quedo fuera del corte de 10 con 34 puntos de valor de negocio."
+    },
+    {
+      "keyword": "cifosis",
+      "keywordKey": "cifosis",
+      "volumen": 3600,
+      "volumenFuente": "dinorank",
+      "motivo": "No nombra ningun servicio que el consultorio declare. Su semilla salio del perfil de un competidor (COMPETITORS.md) y no del codigo del sitio, asi que perseguirla seria reclamar algo que el doctor no publica que haga."
+    },
+    {
+      "keyword": "artrosis cie 10",
+      "keywordKey": "artrosis cie 10",
+      "volumen": 2400,
+      "volumenFuente": "dinorank",
+      "motivo": "Es un CODIGO CIE-10. Lo busca personal administrativo facturando, no un paciente con dolor. Encabeza cualquier orden por volumen y por eso queda escrito aca."
+    },
+    {
+      "keyword": "artrosis cie-10",
+      "keywordKey": "artrosis cie-10",
+      "volumen": 2400,
+      "volumenFuente": "dinorank",
+      "motivo": "Es un CODIGO CIE-10. Lo busca personal administrativo facturando, no un paciente con dolor. Encabeza cualquier orden por volumen y por eso queda escrito aca."
+    },
+    {
+      "keyword": "clínica san bernardo especialistas en traumatología",
+      "keywordKey": "clinica san bernardo especialistas en traumatologia",
+      "volumen": 2400,
+      "volumenFuente": "dinorank",
+      "motivo": "Es MARCA DE UN COMPETIDOR. Se lee como inteligencia y no se persigue nunca: quien la busca ya eligio otra clinica, y posicionar sobre la marca ajena no trae ese paciente."
+    },
+    {
+      "keyword": "cie 10 hernia discal",
+      "keywordKey": "cie 10 hernia discal",
+      "volumen": 1600,
+      "volumenFuente": "dinorank",
+      "motivo": "Es un CODIGO CIE-10. Lo busca personal administrativo facturando, no un paciente con dolor. Encabeza cualquier orden por volumen y por eso queda escrito aca."
+    },
+    {
+      "keyword": "cie-10 hernia discal",
+      "keywordKey": "cie-10 hernia discal",
+      "volumen": 1600,
+      "volumenFuente": "dinorank",
+      "motivo": "Es un CODIGO CIE-10. Lo busca personal administrativo facturando, no un paciente con dolor. Encabeza cualquier orden por volumen y por eso queda escrito aca."
+    },
+    {
+      "keyword": "clínica de traumatología arthrosalud",
+      "keywordKey": "clinica de traumatologia arthrosalud",
+      "volumen": 1600,
+      "volumenFuente": "dinorank",
+      "motivo": "Es MARCA DE UN COMPETIDOR. Se lee como inteligencia y no se persigue nunca: quien la busca ya eligio otra clinica, y posicionar sobre la marca ajena no trae ese paciente."
+    },
+    {
+      "keyword": "ortopedia zapatos",
+      "keywordKey": "ortopedia zapatos",
+      "volumen": 1600,
+      "volumenFuente": "dinorank",
+      "motivo": "Es RETAIL ortopedico: quien busca quiere comprar un producto, no consultar a un traumatologo."
+    },
+    {
+      "keyword": "tipos de fracturas",
+      "keywordKey": "tipos de fracturas",
+      "volumen": 1600,
+      "volumenFuente": "dinorank",
+      "motivo": "Es de alcance objetivo pero NUNCA se le midio la SERP: no fue una de las 91 cabezas capturadas con SerpApi, asi que no hay evidencia de si se puede ganar. Quedo fuera por limite de presupuesto de medicion, no por un juicio de negocio."
+    },
+    {
+      "keyword": "desgarro muscular cie 10",
+      "keywordKey": "desgarro muscular cie 10",
+      "volumen": 880,
+      "volumenFuente": "dinorank",
+      "motivo": "Es un CODIGO CIE-10. Lo busca personal administrativo facturando, no un paciente con dolor. Encabeza cualquier orden por volumen y por eso queda escrito aca."
+    },
+    {
+      "keyword": "desgarro muscular cie-10",
+      "keywordKey": "desgarro muscular cie-10",
+      "volumen": 880,
+      "volumenFuente": "dinorank",
+      "motivo": "Es un CODIGO CIE-10. Lo busca personal administrativo facturando, no un paciente con dolor. Encabeza cualquier orden por volumen y por eso queda escrito aca."
+    },
+    {
+      "keyword": "ejercicios para escoliosis",
+      "keywordKey": "ejercicios para escoliosis",
+      "volumen": 880,
+      "volumenFuente": "dinorank",
+      "motivo": "Es de alcance objetivo pero NUNCA se le midio la SERP: no fue una de las 91 cabezas capturadas con SerpApi, asi que no hay evidencia de si se puede ganar. Quedo fuera por limite de presupuesto de medicion, no por un juicio de negocio."
+    },
+    {
+      "keyword": "hiper cifosis",
+      "keywordKey": "hiper cifosis",
+      "volumen": 880,
+      "volumenFuente": "dinorank",
+      "motivo": "Es de alcance objetivo pero NUNCA se le midio la SERP: no fue una de las 91 cabezas capturadas con SerpApi, asi que no hay evidencia de si se puede ganar. Quedo fuera por limite de presupuesto de medicion, no por un juicio de negocio."
+    },
+    {
+      "keyword": "ortopedia glinsa",
+      "keywordKey": "ortopedia glinsa",
+      "volumen": 880,
+      "volumenFuente": "dinorank",
+      "motivo": "Es de alcance objetivo pero NUNCA se le midio la SERP: no fue una de las 91 cabezas capturadas con SerpApi, asi que no hay evidencia de si se puede ganar. Quedo fuera por limite de presupuesto de medicion, no por un juicio de negocio."
+    },
+    {
+      "keyword": "cifosis y lordosis",
+      "keywordKey": "cifosis y lordosis",
+      "volumen": 720,
+      "volumenFuente": "dinorank",
+      "motivo": "Es de alcance objetivo pero NUNCA se le midio la SERP: no fue una de las 91 cabezas capturadas con SerpApi, asi que no hay evidencia de si se puede ganar. Quedo fuera por limite de presupuesto de medicion, no por un juicio de negocio."
+    },
+    {
+      "keyword": "ejercicios para lumbalgia",
+      "keywordKey": "ejercicios para lumbalgia",
+      "volumen": 720,
+      "volumenFuente": "dinorank",
+      "motivo": "Es de alcance objetivo pero NUNCA se le midio la SERP: no fue una de las 91 cabezas capturadas con SerpApi, asi que no hay evidencia de si se puede ganar. Quedo fuera por limite de presupuesto de medicion, no por un juicio de negocio."
+    },
+    {
+      "keyword": "lesiones de rodilla",
+      "keywordKey": "lesiones de rodilla",
+      "volumen": 720,
+      "volumenFuente": "dinorank",
+      "motivo": "Es de alcance objetivo pero NUNCA se le midio la SERP: no fue una de las 91 cabezas capturadas con SerpApi, asi que no hay evidencia de si se puede ganar. Quedo fuera por limite de presupuesto de medicion, no por un juicio de negocio."
+    }
+  ],
+  "casiElegidas": [
+    {
+      "keyword": "traumatólogo ortopedia infantil",
+      "keywordKey": "traumatologo ortopedia infantil",
+      "cluster": "especialista-en-columna-y-trauma-en-lima",
+      "motivo": "Mismo cluster (especialista-en-columna-y-trauma-en-lima) y misma categoria de servicio (ortopedia-infantil) que \"ortopedia infantil lima\", que ya entro con mas valor de negocio. Serian la misma pagina."
+    },
+    {
+      "keyword": "ortopedia infantil",
+      "keywordKey": "ortopedia infantil",
+      "cluster": "especialista-en-columna-y-trauma-en-lima",
+      "motivo": "Mismo cluster (especialista-en-columna-y-trauma-en-lima) y misma categoria de servicio (ortopedia-infantil) que \"ortopedia infantil lima\", que ya entro con mas valor de negocio. Serian la misma pagina."
+    },
+    {
+      "keyword": "traumatología y ortopedia",
+      "keywordKey": "traumatologia y ortopedia",
+      "cluster": "especialista-en-columna-y-trauma-en-lima",
+      "motivo": "Mismo cluster (especialista-en-columna-y-trauma-en-lima) y misma categoria de servicio (traumatologia-y-ortopedia) que \"traumatología lima\", que ya entro con mas valor de negocio. Serian la misma pagina."
+    },
+    {
+      "keyword": "traumatología",
+      "keywordKey": "traumatologia",
+      "cluster": "especialista-en-columna-y-trauma-en-lima",
+      "motivo": "Mismo cluster (especialista-en-columna-y-trauma-en-lima) y misma categoria de servicio (traumatologia-y-ortopedia) que \"traumatología lima\", que ya entro con mas valor de negocio. Serian la misma pagina."
+    },
+    {
+      "keyword": "cirugía de columna lima",
+      "keywordKey": "cirugia de columna lima",
+      "cluster": "especialista-en-columna-y-trauma-en-lima",
+      "motivo": "Quedo fuera del corte de 10 con 38 puntos de valor de negocio."
+    },
+    {
+      "keyword": "cirugía mínimamente invasiva en lima",
+      "keywordKey": "cirugia minimamente invasiva en lima",
+      "cluster": "cirugia-minimamente-invasiva-en-lima",
+      "motivo": "Quedo fuera del corte de 10 con 38 puntos de valor de negocio."
+    },
+    {
+      "keyword": "traumatología y ortopedia lima",
+      "keywordKey": "traumatologia y ortopedia lima",
+      "cluster": "especialista-en-columna-y-trauma-en-lima",
+      "motivo": "Quedo fuera del corte de 10 con 38 puntos de valor de negocio."
+    },
+    {
+      "keyword": "hernia discal lumbar y cervical",
+      "keywordKey": "hernia discal lumbar y cervical",
+      "cluster": "hernia-discal",
+      "motivo": "Quedo fuera del corte de 10 con 37 puntos de valor de negocio."
+    },
+    {
+      "keyword": "desgarro muscular",
+      "keywordKey": "desgarro muscular",
+      "cluster": "desgarro-muscular",
+      "motivo": "Quedo fuera del corte de 10 con 34 puntos de valor de negocio."
+    },
+    {
+      "keyword": "traumatólogo lima",
+      "keywordKey": "traumatologo lima",
+      "cluster": "especialista-en-columna-y-trauma-en-lima",
+      "motivo": "Quedo fuera del corte de 10 con 31 puntos de valor de negocio."
+    },
+    {
+      "keyword": "como se cura un desgarro muscular",
+      "keywordKey": "como se cura un desgarro muscular",
+      "cluster": "desgarro-muscular",
+      "motivo": "Quedo fuera del corte de 10 con 30 puntos de valor de negocio."
+    },
+    {
+      "keyword": "mejor clínica de traumatología en lima",
+      "keywordKey": "mejor clinica de traumatologia en lima",
+      "cluster": "especialista-en-columna-y-trauma-en-lima",
+      "motivo": "Quedo fuera del corte de 10 con 30 puntos de valor de negocio."
+    }
+  ],
+  "sedes": [
+    {
+      "sede": "clinica ricardo palma",
+      "keyword": "cirujano de columna clínica ricardo palma",
+      "keywordKey": "cirujano de columna clinica ricardo palma",
+      "valor": 27,
+      "nivelDeAlcance": "bajo",
+      "disputables": 3,
+      "posicionesMedidas": 8,
+      "primeraDisputable": 4,
+      "motivo": "Se quedo fuera con 27 puntos de valor de negocio: ninguna de sus cabezas tiene volumen medido y su top 10 deja 3 de 8 posiciones disputables, con la primera libre en la 4."
+    },
+    {
+      "sede": "clinica sanna",
+      "keyword": "cirujano de columna clínica sanna",
+      "keywordKey": "cirujano de columna clinica sanna",
+      "valor": 27,
+      "nivelDeAlcance": "alto",
+      "disputables": 6,
+      "posicionesMedidas": 10,
+      "primeraDisputable": 2,
+      "motivo": "Se quedo fuera con 27 puntos de valor de negocio: ninguna de sus cabezas tiene volumen medido y su top 10 deja 6 de 10 posiciones disputables, con la primera libre en la 2."
+    },
+    {
+      "sede": "clinica tezza",
+      "keyword": "ortopedia infantil clínica tezza",
+      "keywordKey": "ortopedia infantil clinica tezza",
+      "valor": 27,
+      "nivelDeAlcance": "alto",
+      "disputables": 6,
+      "posicionesMedidas": 9,
+      "primeraDisputable": 3,
+      "motivo": "Se quedo fuera con 27 puntos de valor de negocio: ninguna de sus cabezas tiene volumen medido y su top 10 deja 6 de 9 posiciones disputables, con la primera libre en la 3."
+    },
+    {
+      "sede": "la molina",
+      "keyword": "ortopedia infantil la molina",
+      "keywordKey": "ortopedia infantil la molina",
+      "valor": 27,
+      "nivelDeAlcance": "alto",
+      "disputables": 8,
+      "posicionesMedidas": 9,
+      "primeraDisputable": 1,
+      "motivo": "Se quedo fuera con 27 puntos de valor de negocio: ninguna de sus cabezas tiene volumen medido y su top 10 deja 8 de 9 posiciones disputables, con la primera libre en la 1."
+    },
+    {
+      "sede": "san isidro",
+      "keyword": "cirugía de columna san isidro",
+      "keywordKey": "cirugia de columna san isidro",
+      "valor": 27,
+      "nivelDeAlcance": "alto",
+      "disputables": 7,
+      "posicionesMedidas": 9,
+      "primeraDisputable": 1,
+      "motivo": "Se quedo fuera con 27 puntos de valor de negocio: ninguna de sus cabezas tiene volumen medido y su top 10 deja 7 de 9 posiciones disputables, con la primera libre en la 1."
+    },
+    {
+      "sede": "surco",
+      "keyword": "cirugía de columna surco",
+      "keywordKey": "cirugia de columna surco",
+      "valor": 27,
+      "nivelDeAlcance": "alto",
+      "disputables": 9,
+      "posicionesMedidas": 9,
+      "primeraDisputable": 1,
+      "motivo": "Se quedo fuera con 27 puntos de valor de negocio: ninguna de sus cabezas tiene volumen medido y su top 10 deja 9 de 9 posiciones disputables, con la primera libre en la 1."
+    },
+    {
+      "sede": "clinica padre luis tezza",
+      "keyword": null,
+      "keywordKey": null,
+      "valor": null,
+      "nivelDeAlcance": null,
+      "disputables": null,
+      "posicionesMedidas": null,
+      "primeraDisputable": null,
+      "motivo": "Ninguna cabeza con SERP medida nombra esta sede."
+    },
+    {
+      "sede": "sanna la molina",
+      "keyword": null,
+      "keywordKey": null,
+      "valor": null,
+      "nivelDeAlcance": null,
+      "disputables": null,
+      "posicionesMedidas": null,
+      "primeraDisputable": null,
+      "motivo": "Ninguna cabeza con SERP medida nombra esta sede."
+    },
+    {
+      "sede": "santiago de surco",
+      "keyword": null,
+      "keywordKey": null,
+      "valor": null,
+      "nivelDeAlcance": null,
+      "disputables": null,
+      "posicionesMedidas": null,
+      "primeraDisputable": null,
+      "motivo": "Ninguna cabeza con SERP medida nombra esta sede."
+    }
+  ],
+  "advertencias": [
+    "El universo de 5.716 keywords es una **muestra truncada**, no un censo de lo que se busca en Lima. DinoRank corta las relacionadas en 900 por consulta y nunca devuelve la keyword consultada dentro de su propio arreglo. Leer esta lista como 'las diez mejores de Lima' seria leerla mal: son las diez mejores de lo que se pudo medir.",
+    "De las 114 busquedas de SerpApi disponibles se gastaron 96 midiendo la SERP de 91 cabezas. **Quedan 4.675 keywords del universo objetivo sin una sola SERP medida**, y ninguna de ellas pudo ser candidata a esta lista. Dos de las cinco keywords de mayor volumen del universo —'tendinitis' con 14.800 y 'fracturas' con 6.600— quedaron fuera por eso y no por un juicio de negocio.",
+    "**Ahrefs y DinoRank discrepan fuerte** en volumen para las condiciones nucleo y las dos cifras se publican sin promediar: 'cifosis' da 2.300 en Ahrefs y 3.600 en DinoRank; 'ciatica' da 900 en Ahrefs y 8.100 en DinoRank; 'hernia discal' da 6.000 en Ahrefs y 0 en DataForSEO via DinoRank. Cuando las dos aparecen, las dos se leen.",
+    "El punto dulce se midio contra la **calidad del contenido** del top 10 y no contra el perfil de enlaces, porque la medicion del 2026-08-11 mostro que en los cinco competidores la home concentra todos los dominios de referencia y las paginas interiores que traen el trafico tienen cero. Si esa lectura cambiara, la mitad de alcanzabilidad de esta lista habria que recalcularla."
+  ]
+}

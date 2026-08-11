@@ -233,6 +233,28 @@ test("comportamiento 4b: sin dato y cero medido no se puntuan igual", () => {
 });
 
 // ---------------------------------------------------------------------------
+// Los bonos de pagina se pagan una sola vez
+// ---------------------------------------------------------------------------
+
+test("los bonos de categoria y de pagina publicada solo los cobra la cabeza canonica, no cada variante geo", () => {
+  const canonica = cabeza({ keywordKey: "ortopedia infantil lima", semilla: "Ortopedia infantil", rango: 3 });
+  const distrito = cabeza({ keywordKey: "ortopedia infantil surco", semilla: "Ortopedia infantil", rango: 3 });
+  const clinica = cabeza({ keywordKey: "ortopedia infantil clinica tezza", semilla: "Ortopedia infantil", rango: 3 });
+
+  const propio = { como: "semilla", termino: "ortopedia infantil", procedencia: "services.ts:serviceCategories[].name" } as const;
+  const bono = (c: CabezaEntrada): number => {
+    const v = valorDeNegocio(c, CRITERIO, propio);
+    const dif = v.componentes.find((x) => x.nombre === "diferenciacion")?.puntos ?? 0;
+    const pag = v.componentes.find((x) => x.nombre === "pagina publicada")?.puntos ?? 0;
+    return dif + pag;
+  };
+
+  assert.ok(bono(canonica) > 0, "la cabeza a nivel Lima si cobra: la pagina de servicio es una para toda Lima");
+  assert.equal(bono(distrito), 0, "una variante de distrito no vuelve a cobrar la misma pagina");
+  assert.equal(bono(clinica), 0, "una variante de clinica tampoco: a esa la sirve una pagina de sede");
+});
+
+// ---------------------------------------------------------------------------
 // comportamiento 5: la justificacion nombra el dato concreto
 // ---------------------------------------------------------------------------
 
@@ -293,7 +315,9 @@ test("comportamiento 6: el bloque de descartadas trae las de mayor volumen del u
 
   const marca = d.filter((x) => /marca/i.test(x.motivo));
   assert.equal(marca.length, 2, "las dos de marca ajena van con su motivo explicito");
-  const cie = d.filter((x) => /cie|codificacion|administrativ/i.test(x.motivo));
+  // Ojo con el regex: un `/cie/i` suelto tambien casa dentro de "paciente", que aparece en el
+  // motivo de marca ajena. Se pide el codigo entero o la frase entera.
+  const cie = d.filter((x) => /CIE-10|codificacion clinica|personal administrativo/i.test(x.motivo));
   assert.equal(cie.length, 2, "las dos de codificacion clinica tambien");
 
   assert.equal(d[0]?.keywordKey, "tendinitis", "van ordenadas por volumen, que es el orden que dispara la pregunta");
