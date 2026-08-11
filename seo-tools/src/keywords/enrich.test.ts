@@ -117,6 +117,21 @@ test("pendientesDeMetricas puede acotarse a las de alcance objetivo, que es dond
   assert.equal(soloObjetivo[0]?.keywordKey, "hernia discal lumbar");
 });
 
+test("pendientesDeMetricas puede acotarse por largo, que es donde la fuente rinde", () => {
+  // Medido sobre la cache real: las consultas de una a tres palabras resuelven en un 14% y las
+  // de cuatro o mas en cero. La fuente resuelve terminos cabecera, no frases.
+  const universo = [
+    registro("neurocirujano"),
+    registro("cirugia de columna"),
+    registro("cuanto dura la recuperacion de una hernia discal operada"),
+  ];
+
+  const cabeceras = pendientesDeMetricas(universo, { maxPalabras: 3 });
+
+  assert.deepEqual(cabeceras.map((r) => r.keyword), ["neurocirujano", "cirugia de columna"]);
+  assert.equal(pendientesDeMetricas(universo).length, 3);
+});
+
 test("comportamiento 6: el enriquecimiento respeta el tope de concurrencia", async () => {
   const universo = Array.from({ length: 12 }, (_, i) => registro(`keyword ${i}`));
   let enVuelo = 0;
@@ -137,6 +152,36 @@ test("comportamiento 6: el enriquecimiento respeta el tope de concurrencia", asy
   assert.ok(pico <= 3, `nunca puede haber mas de 3 llamadas en vuelo, y el pico fue ${pico}`);
   assert.ok(pico > 1, "con tope 3 y 12 pendientes tiene que haber paralelismo real");
   assert.equal(resultado.consultas, 12);
+});
+
+test("antes de gastar se cosecha la cache: una respuesta ya pagada resuelve a quien la nombre", async () => {
+  const cacheDir = await cacheTemporal();
+
+  // Se paga UNA consulta por "dolor lumbar", cuya respuesta nombra ademas a "lumbalgia".
+  await enriquecer([registro("dolor lumbar")], {
+    cacheDir,
+    concurrency: 1,
+    llamada: async () => ({
+      httpStatus: 200,
+      body: RESPUESTA([
+        { key: "dolor lumbar", sv: 90, cpc: 0.2, comp: 0.1 },
+        { key: "lumbalgia", sv: 700, cpc: 0.3, comp: 0.2 },
+      ]),
+    }),
+  });
+
+  // "lumbalgia" nunca se consulto, pero su metrica ya esta pagada y en disco.
+  const segunda = await enriquecer([registro("lumbalgia")], {
+    cacheDir,
+    concurrency: 1,
+    consultar: async () => {
+      assert.fail("no puede consultarse algo que la cache ya responde");
+    },
+  });
+
+  assert.equal(segunda.registros[0]?.metricas.searchVolume, 700);
+  assert.equal(segunda.consultas, 0);
+  assert.equal(segunda.cosechadasDeCache, 1);
 });
 
 test("comportamiento 7: una interrupcion no obliga a repetir lo ya consultado", async () => {
