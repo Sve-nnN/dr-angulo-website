@@ -19,9 +19,12 @@ import {
   SERPAPI_ENDPOINT,
   SERPAPI_FUENTE,
   busquedaGeolocalizada,
+  normalizarDominio,
   parametrosBusqueda,
   parseBusqueda,
+  parseSerpCompleta,
   parseSugerencias,
+  serpCompleta,
 } from "./serpapi.js";
 
 const temporales: string[] = [];
@@ -116,6 +119,61 @@ test("en modo offline una consulta ausente falla nombrando fuente, endpoint y cl
       return true;
     },
   );
+});
+
+// --- Lectura completa de la SERP (fase 13, KWR-04 y COMP-03 sobre la misma captura) ---
+
+test("la clave de cache de serpCompleta es la MISMA que la de busquedaGeolocalizada", async () => {
+  // Es la prueba que decide si las 12 capturas de Lima de la fase 12 siguen valiendo. Si un
+  // parametro cambiara, la segunda lectura no encontraria nada y moriria por modo offline.
+  const cacheDir = await cacheTemporal();
+  let llamadas = 0;
+
+  await busquedaGeolocalizada("hernia discal", {
+    cacheDir,
+    llamada: async (): Promise<NetworkResult> => {
+      llamadas += 1;
+      return { httpStatus: 200, body: RESPUESTA_BUSQUEDA };
+    },
+  });
+  assert.equal(llamadas, 1);
+
+  // Sin permiso de red y sin credencial: solo resuelve si la clave calculada es identica.
+  const serp = await serpCompleta("hernia discal", { cacheDir, offline: true });
+
+  assert.equal(llamadas, 1);
+  assert.equal(serp.keyword, "hernia discal");
+  assert.equal(serp.organicos.length, 1);
+  assert.equal(serp.organicos[0]?.dominio, "cirujanocolumna-elaos.com");
+});
+
+test("serpCompleta reusa parametrosBusqueda sin agregar ni quitar un parametro", () => {
+  // Redundante con la anterior a proposito: esta falla con un mensaje que dice QUE cambio.
+  assert.deepEqual(parametrosBusqueda("hernia discal"), {
+    engine: "google",
+    q: "hernia discal",
+    location: "Lima, Peru",
+    google_domain: "google.com.pe",
+    gl: "pe",
+    hl: "es",
+  });
+});
+
+test("normalizarDominio baja a minusculas, quita el prefijo de web y descarta lo que no parsea", () => {
+  assert.equal(normalizarDominio("https://WWW.MayoClinic.org/es/x"), "mayoclinic.org");
+  assert.equal(normalizarDominio("https://pe.linkedin.com/company/clinica-tezza"), "pe.linkedin.com");
+  assert.equal(normalizarDominio("no-es-una-url"), null);
+  assert.equal(normalizarDominio(""), null);
+});
+
+test("parseSerpCompleta tolera la ausencia de cada bloque opcional", () => {
+  const vacia = parseSerpCompleta("sin nada", {});
+  assert.deepEqual(vacia.organicos, []);
+  assert.deepEqual(vacia.packLocal, []);
+  assert.equal(vacia.destacado, null);
+  assert.equal(vacia.resumenIa, false);
+  assert.equal(vacia.videos, false);
+  assert.equal(vacia.capturadaEn, null);
 });
 
 // --- La prueba que sostiene la frontera del Pattern 3 ---
