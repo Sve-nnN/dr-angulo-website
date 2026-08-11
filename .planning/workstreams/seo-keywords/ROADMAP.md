@@ -91,10 +91,17 @@ Plans:
 **Success Criteria** (qué debe ser TRUE):
   1. Cada keyword pertenece a un cluster formado por solape de resultados en la SERP: dos keywords escritas distinto pero con los mismos resultados en Google caen juntas, y dos keywords parecidas con SERP distinta quedan separadas.
   2. Cada cluster tiene su SERP de Lima capturada con SerpApi y anotado qué tipo de página premia Google ahí (guía, página de servicio, ficha de clínica, directorio).
-  3. Está marcado el punto dulce: las keywords cuya dificultad orgánica es alcanzable con el perfil de enlaces real del dominio, separadas de las de volumen alto que hoy están fuera de alcance. *(Pendiente de decidir al discutir esta fase: con Ahrefs fuera desde el 2026-08-10, la dificultad se mide con un proxy leído de la SERP de Lima con SerpApi (quién ocupa el top 10 de cada cluster), o se reincorpora Ahrefs solo para este cálculo. La captura de SERP ya es requisito de COMP-03, así que el proxy reutiliza datos que la fase igual tiene que traer.)*
+  3. Está marcado el punto dulce: las keywords cuya dificultad orgánica es alcanzable con el perfil de enlaces real del dominio, separadas de las de volumen alto que hoy están fuera de alcance. *(Decidido al discutir la fase, 2026-08-10: **las dos cosas a la vez**. Ahrefs se reincorpora acotado a las ~90 cabezas, con el `select` recortado a dificultad y potencial de tráfico, y ese KD se cruza con quién ocupa realmente el top 10 leído de la SERP de Lima. Ninguno de los dos alcanza solo: el KD es un promedio de mercado y no sabe que la posición 3 es una clínica con marca; la SERP sola no dice cuánto esfuerzo de enlaces hace falta.)*
   4. Existen las "10 de Oro" con su justificación de negocio, y Juan puede leer por qué esas diez y no simplemente las diez de mayor volumen.
-  5. En el Sheet, el tab `Keyword Research` muestra el universo con métricas, cluster, intención, H1 sugerido y top result; el tab `Competitor Analysis` muestra los cinco competidores de Lima con DR, referring domains, tráfico orgánico estimado, keywords en top 100, presencia de blog, gap de keywords, featured snippets y páginas más enlazadas.
-**Plans**: TBD
+  5. En el Sheet, el tab `Keyword Research` muestra el universo con métricas, cluster, intención, H1 sugerido y top result; el tab `Competitor Analysis` muestra los cinco competidores de Lima con DR, referring domains, tráfico orgánico estimado, keywords en top 100, presencia de blog, gap de keywords, featured snippets y páginas más enlazadas. *(Alcance real de la fase 13, 2026-08-11: `Cluster`, `Top Result`, `Keyword Difficulty` y `Traffic Potential`. `Suggested H1` es contenido de ONPAGE-02 y lo escribe la fase 15, tal como declara el propio modelo del documento.)*
+**Plans**: 5 plans
+
+Plans:
+- [ ] 13-01-PLAN.md — Fundación de la fase: SERP completa desde caché, tipo de página y el modelo del Sheet (tracer, coste cero de cuota)
+- [ ] 13-02-PLAN.md — Candidatas, captura presupuestada de 90 búsquedas y clusters por solape de SERP
+- [ ] 13-03-PLAN.md — Los cinco competidores con Ahrefs y el tab transpuesto `Competitor Analysis`
+- [ ] 13-04-PLAN.md — Dificultad, punto dulce, gap de keywords y la carga del universo al Sheet
+- [ ] 13-05-PLAN.md — Las 10 de Oro con su justificación, y la aprobación de Juan
 
 **Notas de ejecución**
 - COMP-01, COMP-02 y COMP-04 solo necesitan el tooling de la fase 12: se pueden ejecutar en paralelo a la expansión de keywords si conviene por cuota o por tiempo de espera de las APIs. Lo que sí depende del universo es COMP-03, porque la captura de SERP se hace por cluster.
@@ -154,8 +161,13 @@ Plans:
 ## Progress
 
 **Execution Order:**
-Las fases corren en orden numérico: 12 → 13 → 14 → 15. Dentro de la fase 13, el bloque de
-competencia (COMP-01, COMP-02, COMP-04) puede adelantarse en paralelo apenas cierre la fase 12.
+Las fases corren en orden numérico: 12 → 13 → 14 → 15.
+
+Dentro de la fase 13, cuatro waves: 13-01 sola en la wave 1 (funda la fase sin gastar cuota),
+13-02 y **13-03 en paralelo** en la wave 2 —el bloque de competencia de dominio, COMP-01 y COMP-04,
+no necesita clusters ni capturas nuevas—, 13-04 en la wave 3 y 13-05 en la wave 4. COMP-02 sí
+depende de la captura de SERP, así que cae en la wave 3 y no en el bloque paralelo.
+
 Dentro de la fase 14, MAP-03 va primero para desbloquear la fase 8 de v1.1 cuanto antes.
 
 **Cruce con v1.1:** la fase 8 de v1.1 espera a que cierre la fase 14 (MAP-03). Las fases 7, 9,
@@ -165,7 +177,7 @@ paquete de la fase 15 para su contenido y su metadata.
 | Phase | Milestone | Plans Complete | Status | Completed |
 |-------|-----------|----------------|--------|-----------|
 | 12. Instrumentación de datos y universo de keywords | v1.2 | 5/5 | Complete | 2026-08-11 |
-| 13. Clusters, competencia y las 10 de Oro | v1.2 | 0/TBD | Not started | - |
+| 13. Clusters, competencia y las 10 de Oro | v1.2 | 0/5 | Planned | - |
 | 14. Mapa keyword → URL y matriz de enlazado | v1.2 | 0/TBD | Not started | - |
 | 15. Paquete on-page por URL | v1.2 | 0/TBD | Not started | - |
 
