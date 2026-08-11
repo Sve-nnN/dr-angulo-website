@@ -62,18 +62,28 @@ Ricardo Palma, Sanna La Molina, Padre Luis Tezza), más el hub `/servicios` refo
 
 - [x] **INFRA-01**: Un script del repo escribe celdas en el Sheet del cliente con la
   service account de Google, sin intervención manual
-- [ ] **INFRA-02**: Un cliente de la API de DinoRank consulta `/keyword-research`,
+- [x] **INFRA-02**: Un cliente de la API de DinoRank consulta `/keyword-research`,
   `/tfidf`, `/auditoria` y `/canibalizaciones` con la clave fuera del control de versiones
-- [ ] **INFRA-03**: Toda respuesta cruda de DinoRank, Ahrefs y SerpApi queda cacheada en
+  <br>*Cerrado en el plan 12-05. Los cuatro endpoints implementados y probados contra fixtures
+  reales de Perú, con las pruebas corriendo sin clave. `/auditoria` y `/canibalizaciones`
+  exigen además que el dominio esté dado de alta como proyecto en el panel de DinoRank, y el
+  segundo que tenga Search Console conectado: es requisito del proveedor, no del cliente.*
+- [x] **INFRA-03**: Toda respuesta cruda de DinoRank, Ahrefs y SerpApi queda cacheada en
   disco, de modo que reprocesar el análisis no vuelva a consumir cuota de API
+  <br>*Entregado por el plan 12-01 y verificado en la fuente más cara por el 12-05: reprocesar
+  las 5716 keywords del universo cuesta cero llamadas de red.*
 
 ### Investigación de keywords (KWR)
 
 - [x] **KWR-01**: Existe un universo de 400 o más keywords del negocio del doctor,
   expandido desde semillas por condición, procedimiento, síntoma, especialidad y sede
-- [ ] **KWR-02**: Cada keyword del universo trae volumen, CPC y competencia de DinoRank
+- [x] **KWR-02**: Cada keyword del universo trae volumen, CPC y competencia de DinoRank
   para Perú en español, con la fuente marcada por columna. Las columnas de KD y traffic
   potential existen en el dataset y en el Sheet, pero quedan con valor `no_consultado`
+  <br>*Cerrado en el plan 12-05. La procedencia del volumen está resuelta en el 100 % de las
+  5716 líneas: 5087 con `dinorank` y 629 con `sin_datos`. La marca `sin_datos` no es un
+  pendiente, es un valor declarado: la fuente fue consultada o no conoce la keyword, y la celda
+  del Sheet queda vacía y no en cero para no afirmar un volumen que nadie midió.*
   <br>*Enmendado dos veces el 2026-08-10, decisión de Juan. Redacción original: KD, traffic
   potential y referring domains de Ahrefs para **cada** keyword. Primera enmienda: solo para
   una shortlist de 40 a 60. Segunda y vigente: **Ahrefs queda fuera de la fase 12 por
@@ -177,10 +187,10 @@ Mapeada por `ROADMAP.md` del workstream `seo-keywords` el 2026-08-10.
 | Requisito | Fase | Estado |
 |-----------|------|--------|
 | INFRA-01 | Fase 12 | Completo (12-02) |
-| INFRA-02 | Fase 12 | Pendiente |
-| INFRA-03 | Fase 12 | Pendiente |
+| INFRA-02 | Fase 12 | Completo (12-05) |
+| INFRA-03 | Fase 12 | Completo (12-01, verificado en 12-05) |
 | KWR-01 | Fase 12 | Completo (12-03, 12-04) |
-| KWR-02 | Fase 12 | Pendiente |
+| KWR-02 | Fase 12 | Completo (12-05) |
 | KWR-03 | Fase 12 | Completo (12-04) |
 | KWR-04 | Fase 13 | Pendiente |
 | KWR-05 | Fase 13 | Pendiente |

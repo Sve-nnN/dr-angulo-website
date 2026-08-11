@@ -48,7 +48,7 @@ tabs `Keyword Research`, `Content Model`, `Competitor Analysis`, `Canonical Audi
 
 ## Phases
 
-- [ ] **Phase 12: Instrumentación de datos y universo de keywords** - Las tres fuentes conectadas y cacheadas, escritura automática en el Sheet y 400+ keywords con métricas e intención
+- [x] **Phase 12: Instrumentación de datos y universo de keywords** - Las tres fuentes conectadas y cacheadas, escritura automática en el Sheet y 400+ keywords con métricas e intención
 - [ ] **Phase 13: Clusters, competencia y las 10 de Oro** - El universo plano se vuelve clusters por solape de SERP, con los cinco competidores perfilados y la lista corta de keywords alcanzables
 - [ ] **Phase 14: Mapa keyword → URL y matriz de enlazado** - Una keyword primaria por URL sin canibalización, tipo de página exigido por la SERP y enlazado interno entre clusters (handoff bloqueante para la fase 8 de v1.1)
 - [ ] **Phase 15: Paquete on-page por URL** - Title, meta, H1, jerarquía, entidades TF-IDF y copy clínico humanizado, listos para que v1.1 los implemente sin decidir nada
@@ -65,18 +65,19 @@ tabs `Keyword Research`, `Content Model`, `Competitor Analysis`, `Canonical Audi
   3. El universo tiene 400 keywords o más del negocio del doctor, expandido desde semillas por condición, procedimiento, síntoma, especialidad y sede.
   4. Cada keyword trae volumen, CPC y competencia de DinoRank para Perú en español, con una columna que indica de qué fuente salió cada dato. Las columnas de KD y traffic potential existen pero quedan en `no_consultado`. *(Enmendado el 2026-08-10 por decisión de Juan: Ahrefs queda fuera de la fase 12 por completo y su enriquecimiento se difiere. Ver la nota bajo KWR-02 en `REQUIREMENTS.md`.)*
   5. Cada keyword está clasificada por intención (informacional, comercial, transaccional, navegacional) y por etapa del paciente (síntoma, diagnóstico, decisión), y ejecutar la carga dos veces seguidas deja el mismo número de filas en el Sheet.
-**Plans**: 4/5 plans executed
+**Plans**: 5/5 plans executed — **fase completa**
 
 Plans:
 - [x] 12-01-PLAN.md — Guardarraíl de build, paquete `seo-tools`, seam de caché y sondeo del Sheet (wave 1)
 - [x] 12-02-PLAN.md — Aprobación de columnas y escritor idempotente del Sheet (wave 2)
 - [x] 12-03-PLAN.md — Semillas, permutación y expansión con datos reales de Google (wave 2) — 5716 keywords, 12 búsquedas de SerpApi gastadas
 - [x] 12-04-PLAN.md — Clasificación determinista, dataset consolidado y primera carga (wave 3) — 5716 keywords clasificadas y cargadas, SHEET-06 cerrado contra el documento real
-- [ ] 12-05-PLAN.md — Cliente de DinoRank, enriquecimiento del universo y recarga (wave 4)
+- [x] 12-05-PLAN.md — Cliente de DinoRank, enriquecimiento del universo y recarga (wave 4) — los cuatro endpoints con fixtures reales, 5087 de 5716 keywords con métricas, 147 llamadas gastadas
 
 **Notas de ejecución**
 - Esta fase no escribe en `src/`. El código de tooling vive fuera de la aplicación (scripts y caché), no dentro del sitio que v1.1 está desplegando.
-- Dependencia humana antes de arrancar: Juan tiene que proveer la clave de la API de DinoRank y el JSON de la service account de Google con permiso de edición sobre el Sheet. Sin eso, INFRA-01 e INFRA-02 quedan bloqueados aunque el resto de la fase avance.
+- Dependencia humana antes de arrancar: Juan tiene que proveer la clave de la API de DinoRank y el JSON de la service account de Google con permiso de edición sobre el Sheet. Sin eso, INFRA-01 e INFRA-02 quedan bloqueados aunque el resto de la fase avance. **Resuelto el 2026-08-10**: la tercera clave de DinoRank funciona y las dos credenciales están en `.secrets/.env`.
+- **Pendiente que hereda la fase 14, y no depende de este workstream:** `/auditoria` y `/canibalizaciones` sólo resuelven contra un dominio dado de alta como proyecto en el panel de DinoRank, y el segundo necesita además Search Console conectado. Hay que dar de alta `drangulocolumna.com` antes de MAP-02 y ONPAGE-05. Ninguno de los dos endpoints consume cuota, así que resondear es gratis.
 - Ahrefs y SerpApi ya están disponibles como MCP en el entorno de trabajo; DinoRank y Google Sheets son los que necesitan credencial propia.
 - El caché de INFRA-03 es lo que hace barata cada iteración posterior. Conviene resolverlo antes de la primera consulta masiva, no después de haber quemado cuota.
 - SHEET-06 (idempotencia) es propiedad del escritor, no de un tab: se verifica cargando el universo dos veces y comparando el conteo de filas.
@@ -163,7 +164,7 @@ paquete de la fase 15 para su contenido y su metadata.
 
 | Phase | Milestone | Plans Complete | Status | Completed |
 |-------|-----------|----------------|--------|-----------|
-| 12. Instrumentación de datos y universo de keywords | v1.2 | 4/5 | In Progress | - |
+| 12. Instrumentación de datos y universo de keywords | v1.2 | 5/5 | Complete | 2026-08-11 |
 | 13. Clusters, competencia y las 10 de Oro | v1.2 | 0/TBD | Not started | - |
 | 14. Mapa keyword → URL y matriz de enlazado | v1.2 | 0/TBD | Not started | - |
 | 15. Paquete on-page por URL | v1.2 | 0/TBD | Not started | - |

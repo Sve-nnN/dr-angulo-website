@@ -4,16 +4,16 @@ milestone: v1.2
 milestone_name: "SEO semantico: keyword research y optimizacion on-page"
 current_phase: 12
 current_phase_name: Instrumentación de datos y universo de keywords
-status: executing
-stopped_at: "Completado 12-04-PLAN.md: universo clasificado, dataset consolidado y carga real en el Sheet del cliente. SHEET-06 cerrado"
-last_updated: "2026-08-10T23:53:12.244Z"
-last_activity: "2026-08-10, cerrado el plan 12-04: universo de 5716 keywords clasificado y cargado en el Sheet del cliente"
+status: phase_complete
+stopped_at: "Completado 12-05-PLAN.md y con él la fase 12 entera: los cuatro endpoints de DinoRank con fixtures reales, universo enriquecido y Sheet recargado. INFRA-02, INFRA-03 y KWR-02 cerrados"
+last_updated: "2026-08-11T00:35:00.000Z"
+last_activity: "2026-08-11, cerrada la fase 12: 5087 de 5716 keywords con métricas y el contrato de los cuatro endpoints documentado con respuestas reales"
 progress:
   total_phases: 4
-  completed_phases: 0
+  completed_phases: 1
   total_plans: 5
-  completed_plans: 4
-  percent: 80
+  completed_plans: 5
+  percent: 100
 ---
 
 # Project State
@@ -23,16 +23,16 @@ progress:
 See: .planning/PROJECT.md (updated 2026-08-10)
 
 **Core value:** Que un paciente que busca traumatólogo/cirujano de columna en Lima encuentre el sitio y agende cita por WhatsApp en menos de 2 clics, con todo evento rastreado.
-**Current focus:** Fase 12. Conectar DinoRank, Ahrefs, SerpApi y el Sheet del cliente, y levantar el universo de 400+ keywords del negocio del doctor.
+**Current focus:** Fase 12 cerrada. Sigue la fase 13: clusters por solape de SERP, cinco competidores perfilados y las 10 de Oro.
 
 ## Current Position
 
-Phase: 12 de 15 (Instrumentación de datos y universo de keywords), primera de las 4 fases de v1.2
-Plan: 12-01 a 12-04 cerrados. Sigue 12-05 (enriquecimiento de las 724 keywords sin métricas)
-Status: Ejecutando la fase 12. El universo está clasificado y cargado en el Sheet del cliente, y SHEET-06 quedó probado contra el documento real
-Last activity: 2026-08-10, cerrado el plan 12-04: clasificación determinista, dataset consolidado y primera carga real
+Phase: 12 de 15 cerrada (Instrumentación de datos y universo de keywords), primera de las 4 fases de v1.2
+Plan: los cinco planes de la fase 12 están cerrados. Sigue la fase 13, que todavía no tiene planes
+Status: Fase 12 completa. Los siete requisitos de la fase cerrados: INFRA-01 a INFRA-03, KWR-01 a KWR-03 y SHEET-06
+Last activity: 2026-08-11, cerrado el plan 12-05: los cuatro endpoints de DinoRank con fixtures reales de Perú, universo con 5087 de 5716 keywords con métricas y Sheet recargado sin mover una fila
 
-Progress: [████████░░] 80% de v1.2
+Progress: [██████████] 100% de la fase 12 · 1 de 4 fases de v1.2
 
 ## Roadmap v1.2
 
@@ -67,10 +67,13 @@ Los dos milestones corren a la vez sobre el mismo repositorio.
 - **[Fase 12, plan 04] Tercer eje de alcance:** la clasificación agrega un eje ortogonal a intención y etapa que separa la deriva del universo real (veterinaria, académica, retail, CIE-10, geografía ajena, sector público, marca ajena, otra especialidad). 950 de 5716 keywords, el 16,6 %, no son demanda de este consultorio. Vive en el dataset y NO agrega columna al Sheet: no roza J-3.
 - **[Fase 12, plan 04] La etapa por defecto es `diagnostico`:** una keyword pelada como `hernia discal` es alguien que ya tiene el nombre de lo que le pasa.
 - **[Fase 12, plan 04] Las anulaciones registran solo lo que difiere de las reglas:** 38 sobre un residuo de 747. Una anulación redundante congela un no-cambio y le prohíbe a la fase 13 mejorar la regla que la produjo.
+- **[Fase 12, plan 05] `/keyword-research` descubre, no consulta:** medido sobre 70 respuestas, la keyword consultada **nunca** aparece en su propio `keywords[]`, y su bloque `datos` trae el valor real sólo en 10 de 70 y a veces con la clave de **otra** keyword. La única forma barata de que una keyword tenga métricas es aparecer como relacionada de otra, así que el enriquecimiento barre la caché antes de gastar.
+- **[Fase 12, plan 05] No se gasta cuota en keywords de cuatro o más palabras:** dos muestras acotadas midieron rendimiento cero y el plan 12-03 ya lo había visto en 15 de sus 40 semillas. La regla vive en el código como bandera `--max-words`, no como criterio de una corrida. Se ahorraron 499 llamadas.
+- **[Fase 12, plan 05] Las fixtures de `/auditoria` y `/canibalizaciones` se commitean seudonimizadas:** esos dos endpoints sólo resuelven contra un proyecto dado de alta y el único de la cuenta de DinoRank es de otro cliente. Se conserva la forma y nada del contenido, con reemplazo estable para que la relación de duplicidad sobreviva.
 
 ### Pending Todos
 
-- **Credenciales para la fase 12 (bloqueante):** clave de la API de DinoRank y JSON de la service account de Google con permiso de edición sobre el Sheet `1aowectbAJhyyZWhwQ6N_re-ENeSENvNN-5DebqCIls0`. Ahrefs y SerpApi ya están disponibles como MCP en el entorno.
+- **Dar de alta `drangulocolumna.com` como proyecto en DinoRank y conectarle Search Console (bloqueante para la fase 14).** `/auditoria` responde HTTP 500 con un dominio que no es proyecto de la cuenta, y `/canibalizaciones` devuelve `has_data: false` sin Search Console conectado. MAP-02 y ONPAGE-05 dependen de esto y no lo puede resolver el tooling. Ninguno de los dos endpoints consume cuota, así que resondear después es gratis.
 - **Dos competidores por definir:** de los cinco de COMP-01 hay tres ya investigados en `.planning/research/COMPETITORS.md` (drcarranzacolumna.com, drciezatraumatologia.com, cirujanocolumna-elaos.com). Candidatos del local pack según la auditoría del 2026-08-10: Centro de Columna Vertebral y Clínica De La Columna.
 - **Aprobación del doctor sobre el copy clínico (fase 15):** ONPAGE-04 entrega el texto marcado como pendiente. Conviene agrupar toda la revisión en una sola ronda.
 
@@ -83,8 +86,8 @@ Los dos milestones corren a la vez sobre el mismo repositorio.
 
 ## Session Continuity
 
-Last session: 2026-08-10T23:53:12.237Z
-Stopped at: Completado 12-04-PLAN.md: universo clasificado, dataset consolidado y carga real en el Sheet del cliente. SHEET-06 cerrado
+Last session: 2026-08-11T00:35:00.000Z
+Stopped at: Completado 12-05-PLAN.md y con él la fase 12 entera. Sigue la fase 13, que necesita discuss y planning
 Resume file: None
 
 ## Performance Metrics
@@ -93,3 +96,14 @@ Resume file: None
 |------|----------|-------|-------|
 | Phase 12 P02 | 1h | 3 tasks | 7 files |
 | Phase 12 P04 | 3h | 3 tasks | 6 files |
+| Phase 12 P05 | 3h | 3 tasks | 12 files |
+
+## Presupuesto de fuentes externas al cerrar la fase 12
+
+| Fuente | Consumido | Disponible |
+|--------|-----------|------------|
+| SerpApi | 12 búsquedas | **115 hasta el 2026-08-21**, intactas desde el plan 12-03 |
+| DinoRank | 187 llamadas (40 del plan 03, 147 del plan 05) | Sin techo documentado; el proveedor no expone endpoint de saldo. El control es el libro de cuota persistido en `seo-tools/.cache/_quota.json` |
+
+186 respuestas de DinoRank y 12 capturas de SERP quedan en caché: reprocesar el universo
+completo cuesta **cero llamadas**, verificado sobre las 5716 keywords.
