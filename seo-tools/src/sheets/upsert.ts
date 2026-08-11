@@ -207,6 +207,28 @@ export interface UpsertOptions {
   readonly addMissingColumns?: boolean;
   readonly dryRun?: boolean;
   readonly maxCellsPerRequest?: number;
+  /**
+   * Cuando el registro NO trae el campo de una columna, no escribir esa celda en vez de
+   * escribirla vacia.
+   *
+   * POR QUE EXISTE, Y ES UNA TRAMPA QUE YA CASI DESTRUYE DATOS.
+   *
+   * Por defecto, un campo ausente resuelve a cadena vacia y la celda se BORRA. Mientras las
+   * columnas propias fueron todas de la fase 12 eso era correcto: el dataset las traia todas.
+   * Dejo de serlo cuando el plan 13-01 habilito `Cluster` y `Top Result` como columnas de
+   * fase 13: `data/keywords.jsonl` no tiene el campo `cluster`, asi que una carga de ese
+   * dataset escribiria cadena vacia en las 5.716 filas y borraria lo recien escrito SIN LANZAR
+   * NADA. La solucion de fondo del dataset es unirlo antes de empujar —eso hace
+   * `build-dataset.ts`—, y esta opcion es la red de seguridad para que el mismo error no se
+   * pueda repetir desde otro punto de entrada.
+   *
+   * La celda se omite PARTIENDO EL RANGO, no mandando un valor especial: los tramos de fila y
+   * de columna se recalculan segun que campos trae cada registro, asi que la celda omitida
+   * queda literalmente fuera de toda peticion. Depender de que la API interprete un valor nulo
+   * como "no tocar" seria confiar en un detalle del proveedor para no destruir datos del
+   * cliente.
+   */
+  readonly omitirCamposAusentes?: boolean;
 }
 
 export interface DuplicadoPreexistente {
@@ -338,15 +360,23 @@ export async function upsertRows(
   const inserciones: FilaObjetivo[] = [];
   let proximaLibre = ultimaOcupada + 1;
 
+  const omitir = options.omitirCamposAusentes === true;
+
   for (const [clave, record] of deseados) {
     const cells = new Map<number, string | number>();
     for (const column of propias) {
-      const value =
-        column.literal !== undefined
-          ? column.literal
-          : column.source === null
-            ? ""
-            : readFieldPath(record, column.source);
+      if (column.literal !== undefined) {
+        cells.set(column.index, sanitizeCell(column.literal));
+        continue;
+      }
+      if (column.source === null) {
+        // Una columna declarada sin origen no tiene nada que escribir. Con la opcion activa se
+        // deja intacta; sin ella se limpia, que es el comportamiento historico.
+        if (!omitir) cells.set(column.index, sanitizeCell(""));
+        continue;
+      }
+      const value = readFieldPath(record, column.source);
+      if (omitir && value === undefined) continue;
       cells.set(column.index, sanitizeCell(value));
     }
 
@@ -383,12 +413,22 @@ export async function upsertRows(
   const objetivos = [...actualizaciones, ...inserciones].sort((a, b) => a.row - b.row);
   const updates: ValueUpdate[] = [];
 
+  // Firma de las columnas que una fila SI escribe. Dos filas solo pueden ir en el mismo rango
+  // si escriben exactamente las mismas columnas; de otro modo la celda omitida de una viajaria
+  // dentro del rectangulo de la otra y se borraria igual.
+  const firma = (fila: FilaObjetivo): string => [...fila.cells.keys()].sort((a, b) => a - b).join(",");
+
   let bloque: FilaObjetivo[] = [];
   const emitir = (): void => {
     if (bloque.length === 0) return;
     const primera = (bloque[0] as FilaObjetivo).row;
     const ultima = (bloque[bloque.length - 1] as FilaObjetivo).row;
-    for (const run of runs) {
+    // Con la opcion activa los tramos salen de las columnas que este bloque escribe de verdad;
+    // sin ella, de todas las propias, que es el comportamiento historico bit a bit.
+    const tramos = omitir
+      ? columnRuns([...(bloque[0] as FilaObjetivo).cells.keys()])
+      : runs;
+    for (const run of tramos) {
       updates.push({
         range: rangeFor(tab.sheetTitle, run, primera, ultima),
         values: bloque.map((fila) => {
@@ -403,7 +443,9 @@ export async function upsertRows(
 
   for (const objetivo of objetivos) {
     const previa = bloque[bloque.length - 1];
-    if (previa !== undefined && objetivo.row !== previa.row + 1) emitir();
+    if (previa !== undefined && (objetivo.row !== previa.row + 1 || (omitir && firma(objetivo) !== firma(previa)))) {
+      emitir();
+    }
     bloque.push(objetivo);
   }
   emitir();
