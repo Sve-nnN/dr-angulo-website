@@ -357,9 +357,19 @@ test("comportamiento 5: un limite de tasa no se persiste y se reintenta con retr
     });
     assert.equal(resultado.httpStatus, 200);
     assert.equal(intentos, 3, "tiene que reintentar dos veces antes de resolver");
+    // Se asserta el minimo teorico de cada espera, no el crecimiento relativo entre las dos.
+    // El planificador solo puede SUMAR demora, nunca restarla, asi que un limite inferior es
+    // estable; comparar dos mediciones ruidosas entre si no lo es. Con backoffMs 20 las esperas
+    // teoricas son 20 y 40, y una corrida real llego a medir [46, 42]: el retroceso funcionaba
+    // y la prueba fallaba igual, 1 de cada 5 corridas.
+    const margen = 0.8; // tolera el redondeo de milisegundos del temporizador
     assert.ok(
-      (esperas[1] ?? 0) > (esperas[0] ?? 0),
-      `el retroceso tiene que crecer entre intentos, y midio ${JSON.stringify(esperas)}`,
+      (esperas[0] ?? 0) >= 20 * margen,
+      `la primera espera tiene que acercarse a 20ms, y midio ${JSON.stringify(esperas)}`,
+    );
+    assert.ok(
+      (esperas[1] ?? 0) >= 40 * margen,
+      `la segunda espera tiene que acercarse a 40ms por el retroceso exponencial, y midio ${JSON.stringify(esperas)}`,
     );
   } finally {
     globalThis.fetch = original;
