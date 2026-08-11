@@ -460,6 +460,45 @@ export function parsearTopPages(cuerpo: unknown): PaginaDeCompetidor[] {
   });
 }
 
+export interface FilaDeOverview {
+  readonly keyword: string | null;
+  readonly keywordDifficulty: number | null;
+  readonly trafficPotential: number | null;
+  readonly volume: number | null;
+  readonly cpc: number | null;
+}
+
+/**
+ * `keywords-explorer/overview`. Lo consume el plan 13-04 para KWR-05.
+ *
+ * Vive aca, junto a los otros cuatro parsers, y no en `ahrefs-keywords.ts`, para que
+ * `parsearPorEndpoint` pueda cablearlo sin importar el modulo de keywords. Si estuviera alla,
+ * `ahrefs-ingest.ts` imprimiria AVISO de contrato roto en cada ingesta de keyword, que es
+ * exactamente la senal que existe para detectar una deriva REAL de la fuente.
+ *
+ * Devuelve null en cada campo que la respuesta no trajo. Nunca cero por defecto.
+ */
+export function parsearKeywordsOverview(cuerpo: unknown): FilaDeOverview[] {
+  if (cuerpo === null || typeof cuerpo !== "object") return [];
+  const crudo = (cuerpo as Record<string, unknown>)["keywords"];
+  if (!Array.isArray(crudo)) return [];
+
+  const filas: FilaDeOverview[] = [];
+  for (const entrada of crudo) {
+    if (entrada === null || typeof entrada !== "object" || Array.isArray(entrada)) continue;
+    const r = entrada as Record<string, unknown>;
+    const keyword = r["keyword"];
+    filas.push({
+      keyword: typeof keyword === "string" && keyword.trim() !== "" ? keyword : null,
+      keywordDifficulty: numeroPorNombre(r, "difficulty"),
+      trafficPotential: numeroPorNombre(r, "traffic_potential"),
+      volume: numeroPorNombre(r, "volume"),
+      cpc: numeroPorNombre(r, "cpc"),
+    });
+  }
+  return filas;
+}
+
 // ---------------------------------------------------------------------------
 // Unidades
 // ---------------------------------------------------------------------------
@@ -936,8 +975,9 @@ export function parsearPorEndpoint(etiqueta: string, cuerpo: unknown): unknown {
       return parsearMetrics(cuerpo);
     case ENDPOINTS.topPages:
       return parsearTopPages(cuerpo);
+    case ENDPOINTS.keywordsOverview:
+      return parsearKeywordsOverview(cuerpo);
     default:
-      // `keywords-explorer/overview` la parsea el plan 13-04, que es el que la consume.
       return null;
   }
 }

@@ -19,11 +19,15 @@
  *   ./node_modules/.bin/tsx src/phase13/ahrefs-plan.ts --domains drcarranzacolumna.com
  *   ./node_modules/.bin/tsx src/phase13/ahrefs-plan.ts --domains a.com,b.com --json
  *   ./node_modules/.bin/tsx src/phase13/ahrefs-plan.ts --keywords "hernia discal,escoliosis"
+ *   ./node_modules/.bin/tsx src/phase13/ahrefs-plan.ts --keywords-file data/serp-candidates.json --pendientes
  *   ./node_modules/.bin/tsx src/phase13/ahrefs-plan.ts --domains a.com --pendientes
  *   ./node_modules/.bin/tsx src/phase13/ahrefs-plan.ts --domains a.com --registrar 13-03
  */
 
-import { CliError } from "../config.js";
+import { readFileSync } from "node:fs";
+import path from "node:path";
+
+import { CliError, SEO_TOOLS_ROOT, resolveFromRepoRoot } from "../config.js";
 import {
   contarPorEndpoint,
   planDeDominios,
@@ -67,17 +71,46 @@ function imprimirLegible(consultas: readonly ConsultaPlanificada[]): void {
   }
 }
 
+/**
+ * Cabezas leidas de `data/serp-candidates.json`.
+ *
+ * Existe porque el alcance de keywords de esta fase son 91 cabezas y meterlas todas en una
+ * bandera separada por comas no es una linea de comandos que nadie vaya a escribir bien.
+ * Se lee el TEXTO ORIGINAL de cada cabeza, con tildes: es lo que el proveedor recibe y de lo
+ * que sale la clave de cache.
+ */
+function cabezasDeArchivo(ruta: string | undefined): string[] {
+  if (ruta === undefined) return [];
+  const candidatas = [resolveFromRepoRoot(ruta), path.resolve(SEO_TOOLS_ROOT, ruta)];
+  for (const candidata of candidatas) {
+    try {
+      const archivo = JSON.parse(readFileSync(candidata, "utf8")) as {
+        candidatas?: { keyword: string }[];
+      };
+      if (Array.isArray(archivo.candidatas)) return archivo.candidatas.map((c) => c.keyword);
+    } catch {
+      // Se prueba la siguiente.
+    }
+  }
+  throw new CliError(
+    `No se pudo leer las cabezas de --keywords-file.\n` +
+      `  Rutas probadas:\n${[...new Set(candidatas)].map((c) => `    - ${c}`).join("\n")}\n` +
+      `  Se espera un JSON con el arreglo "candidatas", como data/serp-candidates.json.`,
+  );
+}
+
 async function main(): Promise<number> {
   const banderas = parseBanderas(process.argv.slice(2));
   const dominios = lista(texto(banderas, "domains"));
-  const keywords = lista(texto(banderas, "keywords"));
+  const keywords = [...lista(texto(banderas, "keywords")), ...cabezasDeArchivo(texto(banderas, "keywords-file"))];
   const cacheDir = texto(banderas, "cache-dir");
 
   if (dominios.length === 0 && keywords.length === 0) {
     throw new CliError(
-      "ahrefs-plan necesita --domains o --keywords.\n" +
+      "ahrefs-plan necesita --domains, --keywords o --keywords-file.\n" +
         "  Ejemplo: --domains drcarranzacolumna.com,doctormunguia.com\n" +
-        '  Ejemplo: --keywords "hernia discal,escoliosis"',
+        '  Ejemplo: --keywords "hernia discal,escoliosis"\n' +
+        "  Ejemplo: --keywords-file data/serp-candidates.json",
     );
   }
 
