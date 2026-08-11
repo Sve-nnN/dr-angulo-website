@@ -1,0 +1,40 @@
+{
+  "_probe": {
+    "endpoint": "canibalizaciones",
+    "url": "https://api.dinorank.com/api/v1/canibalizaciones",
+    "request": {
+      "domain": "drangulocolumna.com",
+      "country": "pe",
+      "language": "es",
+      "consejos": false,
+      "project_id": "138969"
+    },
+    "fetchedAt": "2026-08-11T00:03:59.151Z",
+    "httpStatus": 200,
+    "outcome": "ok",
+    "arreglosRecortados": [],
+    "seudonimizada": true,
+    "nota": "Respuesta real grabada por dino:probe. Las claves de aspecto credencial se reemplazan por un marcador y el comando aborta si el valor de la clave aparece en el cuerpo. Los dominios, URLs, textos e identificadores estan seudonimizados de forma estable: el proyecto sondeado pertenece a otro cliente y de esta respuesta solo se conserva la forma."
+  },
+  "response": {
+    "ok": true,
+    "data": {
+      "source": "canibalizaciones",
+      "site": {
+        "id": 900000001,
+        "domain": "ejemplo-de-proyecto.com",
+        "country": "PE",
+        "language": "es"
+      },
+      "include_advice": false,
+      "last_searchconsole_date": null,
+      "arrayKeywords": [],
+      "arrayCanibaliza": [],
+      "summary": {
+        "keywords": 0,
+        "clusters": 0,
+        "has_data": false
+      }
+    }
+  }
+}

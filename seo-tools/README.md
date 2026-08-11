@@ -256,3 +256,129 @@ segundo cubre las ciudades del Peru fuera de Lima y tambien Espana, Mexico y el 
 region, porque la fuente de expansion resuelve el long tail en espanol con un backend global.
 La comparacion es **por palabra completa y no por subcadena**: `ciatica` contiene `ica` y no
 es la ciudad de Ica.
+
+## 7. Contrato real de los cuatro endpoints de DinoRank (`dino:probe`)
+
+El proveedor lista los parametros de sus endpoints pero **no publica ni un solo ejemplo de
+respuesta**, no expone OpenAPI en ninguna de las rutas habituales y describe el bloque de datos
+solo como "el analisis". Por eso existe `dino:probe`: sondea, imprime un inventario de la
+respuesta y graba la respuesta real en `data/fixtures/`. **Las fixtures son la unica
+documentacion del contrato que existe**, y las pruebas del parser corren sobre ellas sin
+necesitar la clave.
+
+```bash
+npm run cli -- dino:probe --endpoint keyword-research --country pe --max-items 25
+npm run cli -- dino:probe --endpoint tfidf --country pe --url https://drangulocolumna.com/
+npm run cli -- dino:probe --endpoint auditoria --country pe --project-id <id> --anonymize
+npm run cli -- dino:probe --endpoint canibalizaciones --country pe --project-id <id> --anonymize
+```
+
+**Solo se sondea con `--country pe`, y el comando aborta si le piden otro.** Espana y Mexico los
+resuelve el servidor de visibilidad propio del proveedor y el resto de los paises pasa por
+DataForSEO: una fixture del pais equivocado produce un parser que falla en produccion.
+
+Ninguna fixture puede contener la credencial. El comando borra las claves de aspecto credencial
+y **aborta sin escribir** si el valor de la clave aparece en el cuerpo de la respuesta.
+
+### `POST /keyword-research` — volumen, CPC y competencia
+
+Fixture: `data/fixtures/dinorank-keyword-research-pe.json` (recortada a 25 de 899 relacionadas).
+
+```
+{ ok, data: { source, country, language, keyword,
+              data: { keyword, pais, idioma, datos, keywords, id } } }
+```
+
+| Metrica de KWR-02 | Campo, tal como llega | Tipo |
+|---|---|---|
+| Volumen de busqueda | `data.data.keywords[].search_volume` | `number` |
+| CPC | `data.data.keywords[].cpc` | `number` |
+| Competencia | `data.data.keywords[].competition` | `number` |
+
+Cada entrada de `keywords[]` trae ademas `key`, `position`, `etv`, `url`, `relative_url` e
+`history`, que son doce objetos `{month: "YYYYMM", search_volume}`. `data.data.datos` tiene la
+misma forma pero corresponde a la keyword consultada y **vuelve siempre en cero**: es la trampa
+numero uno de la seccion anterior.
+
+### `POST /tfidf` — entidades semanticas por URL (ONPAGE-03, fase 15)
+
+Fixture: `data/fixtures/dinorank-tfidf-pe.json`.
+
+```
+{ ok, data: { keyword, country, language, url, site_id,
+              analysis: { prominencia, absolutos, wdfdf, df, veces, numPalabras, global, id } } }
+```
+
+**Dos hallazgos que condicionan a ONPAGE-03:**
+
+1. **Sin `url` el endpoint no devuelve nada util para Peru.** Con solo `keyword` y `country`,
+   `analysis.absolutos` y `analysis.numPalabras` vuelven como arreglos vacios,
+   `analysis.df` como `null` y `analysis.global.totalUrls` en cero.
+2. **Con `url` si devuelve el analisis on-page de esa URL, pero el corpus de comparacion
+   sigue vacio.** `analysis.global.totalUrls` es cero tambien en ese caso: no hay competidores
+   con los que comparar, asi que **el TF-IDF comparativo no esta disponible para Peru**. Lo que
+   si llega, y es aprovechable, es la extraccion de la URL propia dentro de `urlCompara`:
+   `analysis.absolutos.urlCompara.encabezados` con `title` y el arbol de `h` como
+   `{tipo, texto, subencabezados}`, `analysis.numPalabras.urlCompara` con el conteo de palabras,
+   `analysis.veces.urlCompara.vecesKeyword` con las repeticiones por termino,
+   `analysis.prominencia.urlCompara` y `analysis.global.codigo.urlCompara` con el texto plano.
+
+`data.site_id` es el identificador interno del proyecto por defecto de la cuenta, un entero
+opaco que el proveedor devuelve aunque la consulta no nombre ningun proyecto.
+
+### `POST /auditoria` — titles, H1 y metas duplicados (ONPAGE-05, fase 15)
+
+Fixture: `data/fixtures/dinorank-auditoria-pe.json`, **seudonimizada**.
+
+**Requiere un proyecto dado de alta en la cuenta de DinoRank.** Con `domain` suelto y sin
+`project_id` responde HTTP 500, no un error de validacion. `drangulocolumna.com` todavia no es
+un proyecto de la cuenta, asi que el contrato se descubrio sondeando el unico proyecto que la
+cuenta tiene cargado, que es de otro cliente. De esa respuesta se conserva **solo la forma**:
+dominios, URLs, titulos e identificadores estan reemplazados por seudonimos estables, de modo
+que la relacion de duplicidad, que es lo que ONPAGE-05 tiene que detectar, se preserva.
+
+```
+{ ok, data: { source, site: {id, domain, country, language}, tipo, subtipo, url, mode,
+              data: { mode, titles, h1, meta, noindex, urls_lentas, http_vs_https,
+                      urls_espejo, ilinks },
+              summary: { urls_total, titles_duplicados, h1_duplicados, meta_duplicados,
+                         noindex, urls_lentas, http, https, urls_espejo, payload_mode } } }
+```
+
+`data.data.titles.duplicados`, `.h1.duplicados` y `.meta.duplicados` son **objetos indexados por
+el texto duplicado**, y su valor es el arreglo de URLs que lo repiten. `http_vs_https` reparte
+las URLs en dos arreglos, `HTTP` y `HTTPS`.
+
+**Trampa del contrato:** cada fila viene por duplicado dentro del mismo objeto, una vez con
+claves posicionales `"0"`, `"1"`, `"2"` y otra con claves nombradas `id`, `url`, `title`. Es el
+artefacto tipico de un `fetch_array` de PHP. Un parser que recorra la fila con
+`Object.entries` procesa cada valor dos veces: **hay que leer por nombre y nunca iterar**.
+
+### `POST /canibalizaciones` — canibalizacion sobre lo indexado (MAP-02, fase 14)
+
+Fixture: `data/fixtures/dinorank-canibalizaciones-pe.json`, **seudonimizada**.
+
+```
+{ ok, data: { source, site: {id, domain, country, language}, include_advice,
+              last_searchconsole_date, arrayKeywords, arrayCanibaliza,
+              summary: { keywords, clusters, has_data } } }
+```
+
+Mismo requisito de proyecto que `/auditoria`, y uno mas: **los datos salen de Search Console**,
+asi que sin la propiedad conectada al proyecto la respuesta llega con `ok: true`,
+`last_searchconsole_date: null`, los dos arreglos vacios y `summary.has_data: false`. Ese
+booleano es la senal correcta para distinguir "no hay canibalizacion" de "no hay datos": la
+fase 14 tiene que ramificar sobre el y no sobre el largo de `arrayCanibaliza`.
+
+**Lo que sigue sin conocerse:** la forma de las filas de `arrayKeywords` y `arrayCanibaliza`,
+porque el proyecto sondeado no tiene Search Console conectado y los dos arreglos llegaron
+vacios. MAP-02 tendra que volver a sondear cuando exista un proyecto con datos.
+
+### Que hace falta para que estos dos endpoints sirvan de verdad
+
+1. Dar de alta `drangulocolumna.com` como proyecto en el panel de DinoRank.
+2. Conectarle la propiedad de Search Console y esperar a que acumule historial.
+3. Volver a correr `dino:probe` sobre los dos endpoints, esta vez sin `--anonymize` y sin
+   `--project-id`, para grabar las fixtures definitivas del proyecto propio.
+
+Ninguno de los dos consume cuota, segun la doc del proveedor, asi que resondear es gratis.

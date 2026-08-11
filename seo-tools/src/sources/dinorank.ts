@@ -1,5 +1,5 @@
 /**
- * Fuente DinoRank: `/keyword-research`.
+ * Fuente DinoRank: los cuatro endpoints que exige INFRA-02.
  *
  * Es el motor de expansion del universo desde la enmienda del 2026-08-10. Una sola llamada
  * devuelve cientos de keywords relacionadas para Peru, cada una con volumen, CPC y
@@ -21,13 +21,38 @@
  * de peticiones del plan 01 y por el seam de cache.
  */
 
-import { fetchThroughCache, type NetworkCall, type NetworkResult, type RunCounters } from "../cache.js";
+import {
+  fetchThroughCache,
+  type CacheEnvelope,
+  type NetworkCall,
+  type NetworkResult,
+  type RunCounters,
+} from "../cache.js";
 import { CliError, describeSecret } from "../config.js";
 import { requestJson } from "../http.js";
 import type { QuotaBook } from "../quota.js";
 
 export const DINORANK_FUENTE = "dinorank";
-export const DINORANK_ENDPOINT = "https://api.dinorank.com/api/v1/keyword-research";
+export const DINORANK_BASE = "https://api.dinorank.com/api/v1";
+
+/** Los cuatro endpoints que INFRA-02 exige. Dos los consume esta fase; los otros dos los
+ *  necesitan MAP-02 en la fase 14 y ONPAGE-03 y ONPAGE-05 en la fase 15. */
+export const ENDPOINTS_DINORANK = [
+  "keyword-research",
+  "tfidf",
+  "auditoria",
+  "canibalizaciones",
+] as const;
+
+export type EndpointDinorank = (typeof ENDPOINTS_DINORANK)[number];
+
+export function urlEndpoint(endpoint: EndpointDinorank): string {
+  return `${DINORANK_BASE}/${endpoint}`;
+}
+
+/** Se conserva con este nombre porque es parte de la clave de cache ya grabada por el plan 03:
+ *  cambiarlo invalidaria las 40 respuestas que ya estan en disco y costaria cuota de verdad. */
+export const DINORANK_ENDPOINT = urlEndpoint("keyword-research");
 
 /** Peru y espanol, fijos: la fuente resuelve este pais por un backend distinto del de Espana
  *  y dejar el mercado al azar produciria un universo de otro pais. */
@@ -113,19 +138,24 @@ function leerClave(): string {
 }
 
 /**
- * Una consulta de keyword research. Pasa siempre por el seam de cache: la segunda ejecucion
- * de la misma consulta no llama a la red.
+ * Consulta generica de cualquiera de los cuatro endpoints, siempre a traves del seam de cache
+ * del plan 01. Es el UNICO camino a la red de este modulo: ninguna funcion de aca llama a
+ * `fetch` por su cuenta.
+ *
+ * Devuelve el envelope entero y no el cuerpo parseado a proposito: `dino:probe` necesita la
+ * respuesta cruda para grabar la fixture, y los parsers de arriba se aplican sobre eso mismo.
  */
-export async function keywordResearch(
-  keyword: string,
-  opciones: OpcionesConsulta,
-): Promise<DinoKeyword[]> {
-  const parametros = parametrosKeywordResearch(keyword);
+export async function consultarDinorank(
+  endpoint: EndpointDinorank,
+  parametros: Record<string, unknown>,
+  opciones: OpcionesConsulta & { etiqueta?: string | undefined; isEmpty?: ((cuerpo: unknown) => boolean) | undefined },
+): Promise<CacheEnvelope> {
+  const url = urlEndpoint(endpoint);
 
   const llamada: NetworkCall =
     opciones.llamada ??
     (async (): Promise<NetworkResult> =>
-      requestJson(DINORANK_ENDPOINT, {
+      requestJson(url, {
         init: {
           method: "POST",
           headers: {
@@ -136,11 +166,11 @@ export async function keywordResearch(
         },
       }));
 
-  const envelope = await fetchThroughCache(
+  return fetchThroughCache(
     {
       cacheDir: opciones.cacheDir,
       source: DINORANK_FUENTE,
-      endpoint: DINORANK_ENDPOINT,
+      endpoint: url,
       params: parametros,
       offline: opciones.offline,
       refresh: opciones.refresh,
@@ -148,11 +178,26 @@ export async function keywordResearch(
       maxPerRun: opciones.maxPerRun,
       pending: opciones.pending,
       stats: opciones.stats,
-      label: `${DINORANK_FUENTE}:${keyword}`,
-      isEmpty: (cuerpo) => parseKeywordResearch(cuerpo).length === 0,
+      label: opciones.etiqueta ?? `${DINORANK_FUENTE}:${endpoint}`,
+      ...(opciones.isEmpty !== undefined ? { isEmpty: opciones.isEmpty } : {}),
     },
     llamada,
   );
+}
+
+/**
+ * Una consulta de keyword research. Pasa siempre por el seam de cache: la segunda ejecucion
+ * de la misma consulta no llama a la red.
+ */
+export async function keywordResearch(
+  keyword: string,
+  opciones: OpcionesConsulta,
+): Promise<DinoKeyword[]> {
+  const envelope = await consultarDinorank("keyword-research", parametrosKeywordResearch(keyword), {
+    ...opciones,
+    etiqueta: `${DINORANK_FUENTE}:${keyword}`,
+    isEmpty: (cuerpo) => parseKeywordResearch(cuerpo).length === 0,
+  });
 
   return parseKeywordResearch(envelope.response);
 }
