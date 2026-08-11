@@ -1,0 +1,63 @@
+{
+  "//": "Los cinco competidores de Lima son una DECISION CERRADA (D-11, Juan, 2026-08-10), no un parametro de la corrida. Viven en un archivo de datos y el modulo no acepta otros: si manana hay que cambiar uno, se edita aca y queda en el historial de git con su fecha, en vez de perderse en la bandera de una corrida que nadie volvio a mirar.",
+  "decision": "D-11",
+  "fijadoEl": "2026-08-10",
+  "//lineaDeBase": "El propio dominio del doctor entra como sexta columna. Sin la linea de base, DR 5 contra DR 30 no dice nada; con ella, es exactamente la distancia que el punto dulce tiene que respetar. Se compro el 2026-08-09, asi que es esperable que Ahrefs no lo conozca todavia: eso tambien es un dato y se registra como tal.",
+  "lineaDeBase": {
+    "domain": "drangulocolumna.com",
+    "name": "Dr. Angulo",
+    "quien": "Dr. Juan Carlos Angulo, el dominio propio. Comprado el 2026-08-09, historial casi nulo.",
+    "origen": "linea de base del proyecto"
+  },
+  "competidores": [
+    {
+      "domain": "drcarranzacolumna.com",
+      "name": "Dr. Paul Carranza",
+      "quien": "Neurocirujano, cirugia endoscopica y minimamente invasiva de columna. Av. Republica de Panama 3609, Lima.",
+      "origen": "investigacion v1.0 (2026-07-31)"
+    },
+    {
+      "domain": "drciezatraumatologia.com",
+      "name": "Dr. Ramiro Cieza",
+      "quien": "Traumatologia de columna. Av. Jorge Basadre 255 Of 303, San Isidro. Reservas via Doctoralia.",
+      "origen": "investigacion v1.0 (2026-07-31)"
+    },
+    {
+      "domain": "cirujanocolumna-elaos.com",
+      "name": "Dr. Eduardo Laos",
+      "quien": "Neurocirujano. +2000 cirugias declaradas. Unico de los tres de v1.0 con blog propio.",
+      "origen": "investigacion v1.0 (2026-07-31)"
+    },
+    {
+      "domain": "doctormunguia.com",
+      "name": "Dr. Gunter Munguia",
+      "quien": "Neurocirujano endoscopista de columna, Surco. Pack local posicion 2, 4.8 con 24 resenas.",
+      "origen": "validacion de SerpApi (2026-08-10)"
+    },
+    {
+      "domain": "clinicarthromeds.pe",
+      "name": "Clinica Arthromeds",
+      "quien": "Organico posicion 5, con la URL construida exactamente sobre la keyword geo: /traumatologo-especialista-en-columna-lima-peru/. Es el patron que este proyecto quiere replicar.",
+      "origen": "validacion de SerpApi (2026-08-10)"
+    }
+  ],
+  "//resenasDelPackLocal": "Medido en la captura de SerpApi del 2026-08-10. Es insumo para GBP-03 del workstream milestone, no de esta fase.",
+  "resenasDelPackLocal": [
+    { "nombre": "Clinica De La Columna", "calificacion": 3.5, "resenas": 34 },
+    { "nombre": "Dr. Gunter Munguia", "calificacion": 4.8, "resenas": 24 },
+    { "nombre": "Centro de Columna Vertebral", "calificacion": 5.0, "resenas": 13 },
+    { "nombre": "Dr. Angulo", "calificacion": 5.0, "resenas": 6 }
+  ],
+  "//rutasDeBlog": "Fragmentos de ruta que cuentan como evidencia de blog. Se comparan en minusculas contra el path de cada pagina del top por enlaces. Encontrar uno afirma que el competidor tiene blog; NO encontrar ninguno no afirma lo contrario, porque el top por enlaces es una muestra y no un mapa del sitio.",
+  "rutasDeBlog": [
+    "/blog",
+    "/articulo",
+    "/articulos",
+    "/noticias",
+    "/novedades",
+    "/actualidad",
+    "/publicaciones",
+    "/consejos",
+    "/post"
+  ]
+}

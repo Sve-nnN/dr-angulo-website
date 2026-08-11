@@ -1,0 +1,433 @@
+{
+  "decision": "D-11",
+  "fijadoEl": "2026-08-10",
+  "fuenteDeLasMetricas": "Ahrefs API v3 via servidor MCP, ingerido con src/phase13/ahrefs-ingest.ts. Este modulo lee SOLO de la cache y no consulta nada.",
+  "resenasDelPackLocal": [
+    {
+      "nombre": "Clinica De La Columna",
+      "calificacion": 3.5,
+      "resenas": 34
+    },
+    {
+      "nombre": "Dr. Gunter Munguia",
+      "calificacion": 4.8,
+      "resenas": 24
+    },
+    {
+      "nombre": "Centro de Columna Vertebral",
+      "calificacion": 5,
+      "resenas": 13
+    },
+    {
+      "nombre": "Dr. Angulo",
+      "calificacion": 5,
+      "resenas": 6
+    }
+  ],
+  "competidores": [
+    {
+      "domain": "drcarranzacolumna.com",
+      "name": "Dr. Paul Carranza",
+      "quien": "Neurocirujano, cirugia endoscopica y minimamente invasiva de columna. Av. Republica de Panama 3609, Lima.",
+      "origen": "investigacion v1.0 (2026-07-31)",
+      "esLineaDeBase": false,
+      "domainRating": null,
+      "domainRatingFuente": "no_consultado",
+      "ahrefsRank": null,
+      "ahrefsRankFuente": "no_consultado",
+      "referringDomains": null,
+      "referringDomainsFuente": "no_consultado",
+      "organicTraffic": null,
+      "organicTrafficFuente": "no_consultado",
+      "organicKeywords": null,
+      "organicKeywordsFuente": "no_consultado",
+      "blog": null,
+      "blogFuente": "no_consultado",
+      "blogEvidencia": null,
+      "paginasMasEnlazadas": [],
+      "procedencia": {
+        "site-explorer/domain-rating": {
+          "clave": "929dba63a19371d6cb7c284c1b0954c1698cb95843f13c507f56e5c21e21f407",
+          "estado": "no-consultado",
+          "capturadaEn": null,
+          "resultado": null
+        },
+        "site-explorer/backlinks-stats": {
+          "clave": "d1385a4d6610fc179cca7fd59ae9f06feea0a12e3ae6b1de4a46524b039fdf72",
+          "estado": "no-consultado",
+          "capturadaEn": null,
+          "resultado": null
+        },
+        "site-explorer/metrics": {
+          "clave": "fa058da5324c12fd2beeebc6f9d1a446b26fda6d827d2a703e160bc3db1596c0",
+          "estado": "no-consultado",
+          "capturadaEn": null,
+          "resultado": null
+        },
+        "site-explorer/top-pages": {
+          "clave": "8cdf53595e4801f365509d76581d23dc734dd7f642ad770f768e61b9de88c47e",
+          "estado": "no-consultado",
+          "capturadaEn": null,
+          "resultado": null
+        }
+      }
+    },
+    {
+      "domain": "drciezatraumatologia.com",
+      "name": "Dr. Ramiro Cieza",
+      "quien": "Traumatologia de columna. Av. Jorge Basadre 255 Of 303, San Isidro. Reservas via Doctoralia.",
+      "origen": "investigacion v1.0 (2026-07-31)",
+      "esLineaDeBase": false,
+      "domainRating": null,
+      "domainRatingFuente": "no_consultado",
+      "ahrefsRank": null,
+      "ahrefsRankFuente": "no_consultado",
+      "referringDomains": null,
+      "referringDomainsFuente": "no_consultado",
+      "organicTraffic": null,
+      "organicTrafficFuente": "no_consultado",
+      "organicKeywords": null,
+      "organicKeywordsFuente": "no_consultado",
+      "blog": null,
+      "blogFuente": "no_consultado",
+      "blogEvidencia": null,
+      "paginasMasEnlazadas": [],
+      "procedencia": {
+        "site-explorer/domain-rating": {
+          "clave": "8a974e66e20a7bacf85a284d6756b9351bf0f22b150af577eb4ec6a033655c03",
+          "estado": "no-consultado",
+          "capturadaEn": null,
+          "resultado": null
+        },
+        "site-explorer/backlinks-stats": {
+          "clave": "d5f8460c07d5dc413760f14331e736a25b909e96ebf899c9b2ef61d6b8389942",
+          "estado": "no-consultado",
+          "capturadaEn": null,
+          "resultado": null
+        },
+        "site-explorer/metrics": {
+          "clave": "d5f0eb3559a000b5e900e9b46bb510ce84e6079058d6d53c58646a05dbfaf697",
+          "estado": "no-consultado",
+          "capturadaEn": null,
+          "resultado": null
+        },
+        "site-explorer/top-pages": {
+          "clave": "ee838cfb4577facfe87fa26b2ede21afb0ee14b29e030d6012df4b0e5e43bcc2",
+          "estado": "no-consultado",
+          "capturadaEn": null,
+          "resultado": null
+        }
+      }
+    },
+    {
+      "domain": "cirujanocolumna-elaos.com",
+      "name": "Dr. Eduardo Laos",
+      "quien": "Neurocirujano. +2000 cirugias declaradas. Unico de los tres de v1.0 con blog propio.",
+      "origen": "investigacion v1.0 (2026-07-31)",
+      "esLineaDeBase": false,
+      "domainRating": null,
+      "domainRatingFuente": "no_consultado",
+      "ahrefsRank": null,
+      "ahrefsRankFuente": "no_consultado",
+      "referringDomains": null,
+      "referringDomainsFuente": "no_consultado",
+      "organicTraffic": null,
+      "organicTrafficFuente": "no_consultado",
+      "organicKeywords": null,
+      "organicKeywordsFuente": "no_consultado",
+      "blog": null,
+      "blogFuente": "no_consultado",
+      "blogEvidencia": null,
+      "paginasMasEnlazadas": [],
+      "procedencia": {
+        "site-explorer/domain-rating": {
+          "clave": "84c0c58980deac2638196b97bd7c9619e75ee67b3995ac72b78b7240dcd420b4",
+          "estado": "no-consultado",
+          "capturadaEn": null,
+          "resultado": null
+        },
+        "site-explorer/backlinks-stats": {
+          "clave": "4fcd23e34bf9b19c3a5fd29f8fa7cce9eb73eec4853afa1b8f91c653fb115765",
+          "estado": "no-consultado",
+          "capturadaEn": null,
+          "resultado": null
+        },
+        "site-explorer/metrics": {
+          "clave": "037dfdfc66d0968d039532c4d653b2d889d4889b330abbccb973348d435a493a",
+          "estado": "no-consultado",
+          "capturadaEn": null,
+          "resultado": null
+        },
+        "site-explorer/top-pages": {
+          "clave": "1faef11da928cf2a12e45313d68e99903e4605bf0d2c0c6944dc322de1a8286b",
+          "estado": "no-consultado",
+          "capturadaEn": null,
+          "resultado": null
+        }
+      }
+    },
+    {
+      "domain": "doctormunguia.com",
+      "name": "Dr. Gunter Munguia",
+      "quien": "Neurocirujano endoscopista de columna, Surco. Pack local posicion 2, 4.8 con 24 resenas.",
+      "origen": "validacion de SerpApi (2026-08-10)",
+      "esLineaDeBase": false,
+      "domainRating": null,
+      "domainRatingFuente": "no_consultado",
+      "ahrefsRank": null,
+      "ahrefsRankFuente": "no_consultado",
+      "referringDomains": null,
+      "referringDomainsFuente": "no_consultado",
+      "organicTraffic": null,
+      "organicTrafficFuente": "no_consultado",
+      "organicKeywords": null,
+      "organicKeywordsFuente": "no_consultado",
+      "blog": null,
+      "blogFuente": "no_consultado",
+      "blogEvidencia": null,
+      "paginasMasEnlazadas": [],
+      "procedencia": {
+        "site-explorer/domain-rating": {
+          "clave": "16381ae72dde5702ae1cfb299dad28294dde93ebdce64ff801f350239884e43a",
+          "estado": "no-consultado",
+          "capturadaEn": null,
+          "resultado": null
+        },
+        "site-explorer/backlinks-stats": {
+          "clave": "991ba13afcba9979c703845220ba07698cc272aad21aa590f34cde3c9d145f51",
+          "estado": "no-consultado",
+          "capturadaEn": null,
+          "resultado": null
+        },
+        "site-explorer/metrics": {
+          "clave": "a235f83be4c2d5a9db4727da58ac47ce0d6d066ab2b4f7d7f6421dd91959c385",
+          "estado": "no-consultado",
+          "capturadaEn": null,
+          "resultado": null
+        },
+        "site-explorer/top-pages": {
+          "clave": "0e9e905aa28cc016ac37dbedaa285545dd1ab63d3c459240d92d73b98c0e81fe",
+          "estado": "no-consultado",
+          "capturadaEn": null,
+          "resultado": null
+        }
+      }
+    },
+    {
+      "domain": "clinicarthromeds.pe",
+      "name": "Clinica Arthromeds",
+      "quien": "Organico posicion 5, con la URL construida exactamente sobre la keyword geo: /traumatologo-especialista-en-columna-lima-peru/. Es el patron que este proyecto quiere replicar.",
+      "origen": "validacion de SerpApi (2026-08-10)",
+      "esLineaDeBase": false,
+      "domainRating": null,
+      "domainRatingFuente": "no_consultado",
+      "ahrefsRank": null,
+      "ahrefsRankFuente": "no_consultado",
+      "referringDomains": null,
+      "referringDomainsFuente": "no_consultado",
+      "organicTraffic": null,
+      "organicTrafficFuente": "no_consultado",
+      "organicKeywords": null,
+      "organicKeywordsFuente": "no_consultado",
+      "blog": null,
+      "blogFuente": "no_consultado",
+      "blogEvidencia": null,
+      "paginasMasEnlazadas": [],
+      "procedencia": {
+        "site-explorer/domain-rating": {
+          "clave": "0da30648d8ce30a9da94247328a4c7a944efe2d7c160dfde8e3080e26c4d19d7",
+          "estado": "no-consultado",
+          "capturadaEn": null,
+          "resultado": null
+        },
+        "site-explorer/backlinks-stats": {
+          "clave": "db64812055d1d3c11fc39b53fd0a50c1995ca361e57a26fcebc7622d6625857a",
+          "estado": "no-consultado",
+          "capturadaEn": null,
+          "resultado": null
+        },
+        "site-explorer/metrics": {
+          "clave": "9a6ef00abe559df9c3a3850f11e78b46a3eb504d1c6de4068bdb71a17852762a",
+          "estado": "no-consultado",
+          "capturadaEn": null,
+          "resultado": null
+        },
+        "site-explorer/top-pages": {
+          "clave": "58e50237c7bf4d8e6e27163739a7ec048532e681ca105e7ca848c68c2c6a1285",
+          "estado": "no-consultado",
+          "capturadaEn": null,
+          "resultado": null
+        }
+      }
+    },
+    {
+      "domain": "drangulocolumna.com",
+      "name": "Dr. Angulo",
+      "quien": "Dr. Juan Carlos Angulo, el dominio propio. Comprado el 2026-08-09, historial casi nulo.",
+      "origen": "linea de base del proyecto",
+      "esLineaDeBase": true,
+      "domainRating": null,
+      "domainRatingFuente": "no_consultado",
+      "ahrefsRank": null,
+      "ahrefsRankFuente": "no_consultado",
+      "referringDomains": null,
+      "referringDomainsFuente": "no_consultado",
+      "organicTraffic": null,
+      "organicTrafficFuente": "no_consultado",
+      "organicKeywords": null,
+      "organicKeywordsFuente": "no_consultado",
+      "blog": null,
+      "blogFuente": "no_consultado",
+      "blogEvidencia": null,
+      "paginasMasEnlazadas": [],
+      "procedencia": {
+        "site-explorer/domain-rating": {
+          "clave": "b7899806125b86792985bfaf501173452fef4061ce7b4a0f6d2d222db2271dae",
+          "estado": "no-consultado",
+          "capturadaEn": null,
+          "resultado": null
+        },
+        "site-explorer/backlinks-stats": {
+          "clave": "1b681b8d49a2d9ed5590a91ddf041854dbd34a1a56a42f7e7cabfd0ea9d0cd4e",
+          "estado": "no-consultado",
+          "capturadaEn": null,
+          "resultado": null
+        },
+        "site-explorer/metrics": {
+          "clave": "5b1fa76c23e3bbee6984ca4da830b1431b8d23b34279b7e7941b83acd6b486c0",
+          "estado": "no-consultado",
+          "capturadaEn": null,
+          "resultado": null
+        },
+        "site-explorer/top-pages": {
+          "clave": "013a2a0b92597c84417f8bfb9090ac5f955d31f89b740b67824a2c7aeae960ae",
+          "estado": "no-consultado",
+          "capturadaEn": null,
+          "resultado": null
+        }
+      }
+    }
+  ],
+  "consultasPendientes": [
+    {
+      "domain": "drcarranzacolumna.com",
+      "endpoint": "site-explorer/domain-rating",
+      "clave": "929dba63a19371d6cb7c284c1b0954c1698cb95843f13c507f56e5c21e21f407"
+    },
+    {
+      "domain": "drcarranzacolumna.com",
+      "endpoint": "site-explorer/backlinks-stats",
+      "clave": "d1385a4d6610fc179cca7fd59ae9f06feea0a12e3ae6b1de4a46524b039fdf72"
+    },
+    {
+      "domain": "drcarranzacolumna.com",
+      "endpoint": "site-explorer/metrics",
+      "clave": "fa058da5324c12fd2beeebc6f9d1a446b26fda6d827d2a703e160bc3db1596c0"
+    },
+    {
+      "domain": "drcarranzacolumna.com",
+      "endpoint": "site-explorer/top-pages",
+      "clave": "8cdf53595e4801f365509d76581d23dc734dd7f642ad770f768e61b9de88c47e"
+    },
+    {
+      "domain": "drciezatraumatologia.com",
+      "endpoint": "site-explorer/domain-rating",
+      "clave": "8a974e66e20a7bacf85a284d6756b9351bf0f22b150af577eb4ec6a033655c03"
+    },
+    {
+      "domain": "drciezatraumatologia.com",
+      "endpoint": "site-explorer/backlinks-stats",
+      "clave": "d5f8460c07d5dc413760f14331e736a25b909e96ebf899c9b2ef61d6b8389942"
+    },
+    {
+      "domain": "drciezatraumatologia.com",
+      "endpoint": "site-explorer/metrics",
+      "clave": "d5f0eb3559a000b5e900e9b46bb510ce84e6079058d6d53c58646a05dbfaf697"
+    },
+    {
+      "domain": "drciezatraumatologia.com",
+      "endpoint": "site-explorer/top-pages",
+      "clave": "ee838cfb4577facfe87fa26b2ede21afb0ee14b29e030d6012df4b0e5e43bcc2"
+    },
+    {
+      "domain": "cirujanocolumna-elaos.com",
+      "endpoint": "site-explorer/domain-rating",
+      "clave": "84c0c58980deac2638196b97bd7c9619e75ee67b3995ac72b78b7240dcd420b4"
+    },
+    {
+      "domain": "cirujanocolumna-elaos.com",
+      "endpoint": "site-explorer/backlinks-stats",
+      "clave": "4fcd23e34bf9b19c3a5fd29f8fa7cce9eb73eec4853afa1b8f91c653fb115765"
+    },
+    {
+      "domain": "cirujanocolumna-elaos.com",
+      "endpoint": "site-explorer/metrics",
+      "clave": "037dfdfc66d0968d039532c4d653b2d889d4889b330abbccb973348d435a493a"
+    },
+    {
+      "domain": "cirujanocolumna-elaos.com",
+      "endpoint": "site-explorer/top-pages",
+      "clave": "1faef11da928cf2a12e45313d68e99903e4605bf0d2c0c6944dc322de1a8286b"
+    },
+    {
+      "domain": "doctormunguia.com",
+      "endpoint": "site-explorer/domain-rating",
+      "clave": "16381ae72dde5702ae1cfb299dad28294dde93ebdce64ff801f350239884e43a"
+    },
+    {
+      "domain": "doctormunguia.com",
+      "endpoint": "site-explorer/backlinks-stats",
+      "clave": "991ba13afcba9979c703845220ba07698cc272aad21aa590f34cde3c9d145f51"
+    },
+    {
+      "domain": "doctormunguia.com",
+      "endpoint": "site-explorer/metrics",
+      "clave": "a235f83be4c2d5a9db4727da58ac47ce0d6d066ab2b4f7d7f6421dd91959c385"
+    },
+    {
+      "domain": "doctormunguia.com",
+      "endpoint": "site-explorer/top-pages",
+      "clave": "0e9e905aa28cc016ac37dbedaa285545dd1ab63d3c459240d92d73b98c0e81fe"
+    },
+    {
+      "domain": "clinicarthromeds.pe",
+      "endpoint": "site-explorer/domain-rating",
+      "clave": "0da30648d8ce30a9da94247328a4c7a944efe2d7c160dfde8e3080e26c4d19d7"
+    },
+    {
+      "domain": "clinicarthromeds.pe",
+      "endpoint": "site-explorer/backlinks-stats",
+      "clave": "db64812055d1d3c11fc39b53fd0a50c1995ca361e57a26fcebc7622d6625857a"
+    },
+    {
+      "domain": "clinicarthromeds.pe",
+      "endpoint": "site-explorer/metrics",
+      "clave": "9a6ef00abe559df9c3a3850f11e78b46a3eb504d1c6de4068bdb71a17852762a"
+    },
+    {
+      "domain": "clinicarthromeds.pe",
+      "endpoint": "site-explorer/top-pages",
+      "clave": "58e50237c7bf4d8e6e27163739a7ec048532e681ca105e7ca848c68c2c6a1285"
+    },
+    {
+      "domain": "drangulocolumna.com",
+      "endpoint": "site-explorer/domain-rating",
+      "clave": "b7899806125b86792985bfaf501173452fef4061ce7b4a0f6d2d222db2271dae"
+    },
+    {
+      "domain": "drangulocolumna.com",
+      "endpoint": "site-explorer/backlinks-stats",
+      "clave": "1b681b8d49a2d9ed5590a91ddf041854dbd34a1a56a42f7e7cabfd0ea9d0cd4e"
+    },
+    {
+      "domain": "drangulocolumna.com",
+      "endpoint": "site-explorer/metrics",
+      "clave": "5b1fa76c23e3bbee6984ca4da830b1431b8d23b34279b7e7941b83acd6b486c0"
+    },
+    {
+      "domain": "drangulocolumna.com",
+      "endpoint": "site-explorer/top-pages",
+      "clave": "013a2a0b92597c84417f8bfb9090ac5f955d31f89b740b67824a2c7aeae960ae"
+    }
+  ]
+}
