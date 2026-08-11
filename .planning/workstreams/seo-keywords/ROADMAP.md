@@ -135,7 +135,14 @@ Plans:
   4. Cada asignación declara qué tipo de página exige la SERP y qué hay que hacer con la URL: dejarla como está, reescribirla o crearla.
   5. Los tabs `Content Model`, `Canonical Audit` e `Internal Linking Audit` tienen una fila por URL con keyword, intención, tipo, cluster, métricas, acción recomendada, canonical propuesto y hasta ocho enlaces salientes con su anchor; recargarlos no duplica filas.
 
-**Plans**: TBD
+**Plans**: 4 plans
+
+Plans:
+
+- [ ] 14-01-PLAN.md — Inventario medido de URLs, solape par a par y tracer de una URL hasta `Content Model` (wave 1, cero cuota)
+- [ ] 14-02-PLAN.md — MAP-03: las nueve URLs del handoff asignadas, aprobadas por Juan y publicadas, con el aviso de desbloqueo a v1.1 (wave 2)
+- [ ] 14-03-PLAN.md — Auditoría de las URLs vivas, canibalización por cruce del mapa contra sí mismo y `Content Model` completo (wave 3)
+- [ ] 14-04-PLAN.md — Canonicals, matriz de enlazado interno y los tabs `Canonical Audit` e `Internal Linking Audit` (wave 4)
 
 > **HANDOFF BLOQUEANTE — MAP-03.**
 > La fase 8 de v1.1 (silo clínico: páginas por servicio) **no debe empezar a escribir páginas
@@ -188,7 +195,11 @@ Dentro de la fase 13, cuatro waves: 13-01 sola en la wave 1 (funda la fase sin g
 no necesita clusters ni capturas nuevas—, 13-04 en la wave 3 y 13-05 en la wave 4. COMP-02 sí
 depende de la captura de SERP, así que cae en la wave 3 y no en el bloque paralelo.
 
-Dentro de la fase 14, MAP-03 va primero para desbloquear la fase 8 de v1.1 cuanto antes.
+Dentro de la fase 14, MAP-03 va primero para desbloquear la fase 8 de v1.1 cuanto antes: cuatro
+waves en serie, 14-01 → 14-02 → 14-03 → 14-04, porque los cuatro planes escriben sobre el mismo
+`url-map.jsonl` y sobre los mismos tabs del documento del cliente. El desbloqueo de v1.1 llega al
+cerrar 14-02, no al cerrar la fase entera. La fase completa se ejecuta con cero búsquedas de
+SerpApi: MAP-04 sale de las 96 capturas ya cacheadas.
 
 **Cruce con v1.1:** la fase 8 de v1.1 espera a que cierre la fase 14 (MAP-03). Las fases 7, 9,
 10 y 11 de v1.1 no dependen de este workstream para arrancar, aunque las 8 y 10 consumen el
@@ -198,7 +209,7 @@ paquete de la fase 15 para su contenido y su metadata.
 |-------|-----------|----------------|--------|-----------|
 | 12. Instrumentación de datos y universo de keywords | v1.2 | 5/5 | Complete | 2026-08-11 |
 | 13. Clusters, competencia y las 10 de Oro | v1.2 | 5/5 | In Progress|  |
-| 14. Mapa keyword → URL y matriz de enlazado | v1.2 | 0/TBD | Not started | - |
+| 14. Mapa keyword → URL y matriz de enlazado | v1.2 | 0/4 | Planned | - |
 | 15. Paquete on-page por URL | v1.2 | 0/TBD | Not started | - |
 
 ## Cobertura de requisitos
