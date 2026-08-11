@@ -105,7 +105,7 @@ Ricardo Palma, Sanna La Molina, Padre Luis Tezza), más el hub `/servicios` refo
 - [x] **KWR-04**: Las keywords están agrupadas en clusters por solape de SERP, no por
   parecido de texto
 
-- [ ] **KWR-05**: Está identificado el "punto dulce": las keywords cuyo KD es alcanzable
+- [x] **KWR-05**: Está identificado el "punto dulce": las keywords cuyo KD es alcanzable
   con el perfil de enlaces real del dominio, no las de mayor volumen
 
 - [x] **KWR-06**: Están seleccionadas las "10 de Oro" — las keywords que mueven la aguja
@@ -113,16 +113,16 @@ Ricardo Palma, Sanna La Molina, Padre Luis Tezza), más el hub `/servicios` refo
 
 ### Análisis de competencia (COMP)
 
-- [ ] **COMP-01**: Cinco competidores de Lima están perfilados con DR, referring domains,
+- [x] **COMP-01**: Cinco competidores de Lima están perfilados con DR, referring domains,
   tráfico orgánico estimado, cantidad de keywords en top 100 y presencia de blog
 
-- [ ] **COMP-02**: Está el gap de keywords: los términos por los que los competidores
+- [x] **COMP-02**: Está el gap de keywords: los términos por los que los competidores
   posicionan y el doctor no
 
 - [x] **COMP-03**: Para cada cluster está registrada la SERP real de Lima capturada con
   SerpApi, con el tipo de página que Google premia en cada una
 
-- [ ] **COMP-04**: Están registrados los featured snippets y las páginas más enlazadas
+- [x] **COMP-04**: Están registrados los featured snippets y las páginas más enlazadas
   de cada competidor
 
 ### Mapa keyword → URL (MAP)
@@ -164,13 +164,13 @@ Ricardo Palma, Sanna La Molina, Padre Luis Tezza), más el hub `/servicios` refo
 
 ### Entrega en el Sheet (SHEET)
 
-- [ ] **SHEET-01**: El tab `Keyword Research` está lleno con el universo de keywords y
+- [x] **SHEET-01**: El tab `Keyword Research` está lleno con el universo de keywords y
   todas sus columnas de métricas, cluster, intención, H1 sugerido y top result
 
 - [ ] **SHEET-02**: El tab `Content Model` tiene una fila por URL con keyword, intención,
   tipo, cluster, métricas y la acción recomendada (dejar, actualizar o eliminar)
 
-- [ ] **SHEET-03**: El tab `Competitor Analysis` tiene los cinco competidores con sus
+- [x] **SHEET-03**: El tab `Competitor Analysis` tiene los cinco competidores con sus
   stats, keywords, snippets, páginas principales y contenido más enlazado
 
 - [ ] **SHEET-04**: El tab `Canonical Audit` tiene una fila por URL con su keyword,
