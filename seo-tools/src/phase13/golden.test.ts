@@ -360,6 +360,21 @@ test("puerta de servicio propio: una cabeza sembrada desde el perfil de un compe
   assert.match(rechazadas[0]?.motivo ?? "", /servicio propio|COMPETITORS|declara/i);
 });
 
+test("puerta de servicio propio: una confirmacion explicita del cliente levanta la puerta y queda firmada", () => {
+  // `cifosis` se sembro desde COMPETITORS.md, asi que la puerta automatica la dejaba fuera. Juan
+  // confirmo el 2026-08-11 que el doctor la opera, y esa confirmacion vive en el archivo de
+  // criterio con su fecha. Lo que la habilita es el dato corregido, no un parecido clinico.
+  const cifosis = cabeza({ keywordKey: "cifosis", semilla: "Neurocirujano" });
+  const p = servicioPropio(cifosis, TERMINOS, CRITERIO, SEMILLAS);
+  assert.ok(p, "una excepcion confirmada tiene que abrir la puerta");
+  assert.equal(p.como, "confirmacion");
+  assert.match(p.procedencia, /confirmado por .+ el \d{4}-\d{2}-\d{2}/, "la firma y la fecha quedan a la vista");
+
+  // Y no abre la puerta para cualquier deformidad de columna que nadie confirmo.
+  const noConfirmada = cabeza({ keywordKey: "discopatia degenerativa", semilla: "Neurocirujano" });
+  assert.equal(servicioPropio(noConfirmada, TERMINOS, CRITERIO, SEMILLAS), null);
+});
+
 test("puerta de servicio propio: un distrito no abre la puerta, porque un distrito no es un servicio", () => {
   const soloGeo = cabeza({ keywordKey: "neurocirujano san isidro", semilla: "Neurocirujano" });
   assert.equal(

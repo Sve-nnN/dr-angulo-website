@@ -13,7 +13,19 @@
     "motivo": "Una keyword de oro tiene que nombrar algo que el consultorio DECLARA que hace. El universo se sembro desde dos lugares distintos: el codigo del propio sitio y el perfil de los competidores. Una semilla que salio de COMPETITORS.md describe lo que hace OTRO. Perseguir 'neurocirujano' seria reclamar una credencial que el doctor no tiene, y PROJECT.md lo prohibe explicitamente: no inventar credenciales medicas.",
     "fuentesPropias": ["services.ts", "service-pages.ts", "cv.ts"],
     "tiposDeServicio": ["condicion", "especialidad", "procedimiento"],
-    "notaTipos": "Las semillas de tipo 'sede' (lima, san isidro, la molina, santiago de surco, los tres nombres de clinica) NO abren esta puerta. Un distrito no es un servicio: si contara, cualquier keyword geo pasaria sin nombrar nada que el doctor haga. La localidad se puntua aparte, mas abajo."
+    "notaTipos": "Las semillas de tipo 'sede' (lima, san isidro, la molina, santiago de surco, los tres nombres de clinica) NO abren esta puerta. Un distrito no es un servicio: si contara, cualquier keyword geo pasaria sin nombrar nada que el doctor haga. La localidad se puntua aparte, mas abajo.",
+    "excepcionesConfirmadas": {
+      "nota": "La puerta se apoya en lo que el CODIGO del sitio declara, que es la unica fuente que un script puede leer. Cuando el cliente confirma que el doctor hace algo que el codigo todavia no publica, la puerta se levanta para esa keyword y queda escrito quien lo confirmo y cuando. Es una confirmacion explicita, NO una inferencia del parecido clinico: 'cifosis' es una deformidad de columna y eso solo no alcanzaba para dejarla pasar, porque el mismo argumento habria colado media docena de condiciones que nadie confirmo.",
+      "keywords": [
+        {
+          "keywordKey": "cifosis",
+          "confirmadaPor": "Juan",
+          "fecha": "2026-08-11",
+          "motivo": "Juan confirmo que el doctor SI opera cifosis. La semilla venia de COMPETITORS.md y no de services.ts, asi que la puerta automatica la habia dejado fuera: lo que la habilita es la confirmacion del cliente sobre el alcance quirurgico real, no un juicio del script. Sus numeros medidos son de los mejores del universo: KD 3 y 5 de 7 posiciones disputables.",
+          "paginaQueLaSirve": "/servicios/escoliosis-y-deformidades"
+        }
+      ]
+    }
   },
 
   "minimoDisputables": {
@@ -108,6 +120,14 @@
   },
 
   "vetos": [
+    {
+      "keywordKey": "artrodesis en varios niveles en lima",
+      "motivo": "Sale por INTENCION EQUIVOCADA, decision de Juan del 2026-08-11 sobre el argumento del informe del checkpoint. Es un procedimiento que el doctor si realiza y sus numeros de SERP son buenos (6 de 9 disputables, alcance alto), pero 'artrodesis' es como le dice un cirujano a la operacion, no como la busca un paciente. El paciente que va a operarse busca por su condicion o por su miedo, y ese miedo lo cubre 'cirugia minimamente invasiva'. Sigue siendo contenido valido dentro de una pagina de servicio; lo que no es, es una keyword por la que se pelee primero."
+    },
+    {
+      "keywordKey": "artrodesis en varios niveles",
+      "motivo": "Misma razon que su forma geo: la busca quien ya sabe como se llama la operacion."
+    },
     {
       "keywordKey": "cirugia convencional en lima",
       "motivo": "Su top 10 medido es de cirugia GENERAL, no de columna: cirugia24horas.com, cirugiasperu.com, cjp.pe, novoclinic.com.pe, cirugiaendoscopicaperu.com. La keyword nombra una tecnica que el doctor si realiza, pero su SERP responde a otra intencion. 8 de 9 posiciones disputables no sirven de nada si el que busca no es su paciente."

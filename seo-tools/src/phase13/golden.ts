@@ -80,9 +80,18 @@ export interface UrlCandidata {
   readonly accion: string;
 }
 
+export interface ExcepcionConfirmada {
+  readonly keywordKey: string;
+  readonly confirmadaPor: string;
+  readonly fecha: string;
+  readonly motivo: string;
+  readonly paginaQueLaSirve?: string;
+}
+
 export interface Criterio {
   readonly fuentesPropias: readonly string[];
   readonly tiposDeServicio: readonly string[];
+  readonly excepcionesConfirmadas: readonly ExcepcionConfirmada[];
   readonly minimoDisputables: number;
   readonly minimoDisputablesMotivo: string;
   readonly cortesDeDemanda: readonly CorteDeDemanda[];
@@ -141,6 +150,9 @@ export function cargarCriterio(ruta: string = RUTA_CRITERIO): Criterio {
   return {
     fuentesPropias: (puerta["fuentesPropias"] as unknown as string[]) ?? [],
     tiposDeServicio: (puerta["tiposDeServicio"] as unknown as string[]) ?? [],
+    excepcionesConfirmadas:
+      ((puerta["excepcionesConfirmadas"] as unknown as { keywords?: ExcepcionConfirmada[] } | undefined)
+        ?.keywords) ?? [],
     minimoDisputables: (minimo["valor"] as unknown as number) ?? 1,
     minimoDisputablesMotivo: (minimo["motivo"] as unknown as string) ?? "",
     cortesDeDemanda: (demanda["cortes"] as unknown as CorteDeDemanda[]) ?? [],
@@ -270,7 +282,7 @@ export function terminosDeServicioPropio(
 }
 
 export interface Procedencia {
-  readonly como: "semilla" | "texto";
+  readonly como: "semilla" | "texto" | "confirmacion";
   readonly termino: string;
   readonly procedencia: string;
 }
@@ -289,6 +301,20 @@ export function servicioPropio(
   criterio: Criterio,
   semillas?: readonly Semilla[],
 ): Procedencia | null {
+  // Excepcion confirmada por el cliente. Va PRIMERO porque su razon de ser es justamente que la
+  // puerta automatica —que solo sabe leer el codigo del sitio— la habia dejado fuera. No es una
+  // inferencia por parecido clinico: es alguien que sabe, diciendo que el doctor lo hace.
+  const excepcion = criterio.excepcionesConfirmadas.find(
+    (e) => normalizar(e.keywordKey) === normalizar(cabeza.keywordKey),
+  );
+  if (excepcion !== undefined) {
+    return {
+      como: "confirmacion",
+      termino: excepcion.keywordKey,
+      procedencia: `confirmado por ${excepcion.confirmadaPor} el ${excepcion.fecha}`,
+    };
+  }
+
   if (semillas !== undefined && cabeza.semilla !== null) {
     const s = semillas.find((x) => x.keyword === cabeza.semilla);
     if (s !== undefined && criterio.fuentesPropias.includes(fuenteDe(s.procedencia)) && criterio.tiposDeServicio.includes(s.tipo)) {
@@ -442,7 +468,13 @@ export function valorDeNegocio(cabeza: CabezaEntrada, criterio: Criterio, propio
   if (dif !== undefined) razones.push(`Categoria sin competencia directa: ${dif.motivo}`);
 
   // --- Pagina publicada: el trabajo de contenido ya esta presupuestado en v1.1 ---
-  const publicada = esCanonica ? criterio.paginasPublicadasTerminos.find((t) => h.includes(normalizar(t))) : undefined;
+  const excepcionConPagina = criterio.excepcionesConfirmadas.find(
+    (e) => normalizar(e.keywordKey) === h && e.paginaQueLaSirve !== undefined,
+  );
+  const publicada = !esCanonica
+    ? undefined
+    : (criterio.paginasPublicadasTerminos.find((t) => h.includes(normalizar(t))) ??
+      (excepcionConPagina === undefined ? undefined : excepcionConPagina.keywordKey));
   componentes.push({
     nombre: "pagina publicada",
     puntos: publicada === undefined ? 0 : criterio.paginasPublicadasPuntos,
@@ -708,10 +740,18 @@ export function justificacion(elegida: Elegida, criterio: Criterio): string {
   const partes: string[] = [];
 
   const cat = criterio.categorias.find((x) => x.id === elegida.categoria);
-  partes.push(
-    `Es ${elegida.propio.como === "semilla" ? "un servicio declarado" : "materia"} del consultorio: ` +
-      `"${elegida.propio.termino}" sale de ${elegida.propio.procedencia}, dentro de ${cat?.nombre ?? elegida.categoria}.`,
-  );
+  if (elegida.propio.como === "confirmacion") {
+    partes.push(
+      `El doctor la opera y lo confirmo el cliente: "${elegida.propio.termino}" entra por ` +
+        `${elegida.propio.procedencia}, no por lo que el codigo del sitio publica hoy. Cae dentro de ` +
+        `${cat?.nombre ?? elegida.categoria}.`,
+    );
+  } else {
+    partes.push(
+      `Es ${elegida.propio.como === "semilla" ? "un servicio declarado" : "materia"} del consultorio: ` +
+        `"${elegida.propio.termino}" sale de ${elegida.propio.procedencia}, dentro de ${cat?.nombre ?? elegida.categoria}.`,
+    );
+  }
 
   const d = elegida.valor.demanda;
   if (d.fuente === "ahrefs:traffic_potential" && d.cifra !== null) {
@@ -1174,6 +1214,25 @@ export function documento(golden: Golden, criterio: Criterio): string {
       `esta verificada y hoy no la responde ninguna URL del sitio—, pero el techo realista es la`,
       `posicion 4 y no la 1.`,
     );
+    l.push("");
+  }
+
+  const dentro = new Set(golden.keywords.map((k) => normalizar(k.keywordKey)));
+  const confirmadasAfuera = criterio.excepcionesConfirmadas.filter((e) => !dentro.has(normalizar(e.keywordKey)));
+  if (confirmadasAfuera.length > 0) {
+    l.push(`### Confirmadas por el cliente que el criterio igual dejo fuera`);
+    l.push("");
+    l.push(
+      `Esto se escribe aparte porque es lo unico que el criterio decidio EN CONTRA de una indicacion`,
+      `explicita. La puerta de servicio propio se levanto —el dato estaba mal y quedo corregido—, pero`,
+      `el puntaje se calculo igual que para todas las demas y no alcanzo. Editarlo a mano en el ultimo`,
+      `paso habria dado una lista que no sobrevive a su propio criterio.`,
+    );
+    l.push("");
+    for (const e of confirmadasAfuera) {
+      const c = golden.casiElegidas.find((x) => normalizar(x.keywordKey) === normalizar(e.keywordKey));
+      l.push(`- **${e.keywordKey}** — confirmada por ${e.confirmadaPor} el ${e.fecha}. ${c?.motivo ?? "Fuera del corte."}`);
+    }
     l.push("");
   }
 

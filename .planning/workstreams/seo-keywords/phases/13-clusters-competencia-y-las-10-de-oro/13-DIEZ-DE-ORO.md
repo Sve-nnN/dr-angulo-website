@@ -23,7 +23,7 @@ cabezas con SERP de Lima medida, sobre un universo objetivo de 4.766.
 | 7 | **ciática** | ciatica | contenido-internacional | informacional | 900 | 8100 | 19 | 1800 | bajo | 3/7 |
 | 8 | **lumbalgia** | lumbalgia | contenido-internacional | informacional | 12000 | sin datos | 16 | 1800 | bajo | 1/7 |
 | 9 | **cirujano de columna lima** | especialista-en-columna-y-trauma-en-lima | pagina-de-servicio | transaccional | sin datos | sin datos | sin datos | sin datos | alto | 7/9 |
-| 10 | **artrodesis en varios niveles en lima** | artrodesis-en-varios-niveles | contenido-internacional | transaccional | sin datos | sin datos | sin datos | sin datos | alto | 6/9 |
+| 10 | **cirugía mínimamente invasiva en lima** | cirugia-minimamente-invasiva-en-lima | pagina-de-servicio | transaccional | sin datos | sin datos | sin datos | sin datos | medio | 5/9 |
 
 Donde dice `sin datos` es que la fuente no lo devolvio. **No es cero**, y la distincion
 importa: DinoRank trunca las relacionadas en 900 y nunca devuelve la keyword consultada, asi
@@ -38,9 +38,9 @@ sola pagina disfrazada de diez.
 | Cluster | Keywords de oro | Tipo de pagina que premia la SERP |
 |---|---|---|
 | especialista-en-columna-y-trauma-en-lima | ortopedia infantil lima, traumatología lima, cirujano de columna lima | pagina-de-servicio |
-| artrodesis-en-varios-niveles | artrodesis en varios niveles en lima | contenido-internacional |
 | artrosis | artrosis | guia |
 | ciatica | ciática | contenido-internacional |
+| cirugia-minimamente-invasiva-en-lima | cirugía mínimamente invasiva en lima | pagina-de-servicio |
 | escoliosis | escoliosis | contenido-internacional |
 | estenosis-de-canal-en-lima | estenosis de canal en lima | contenido-internacional |
 | hernia-discal-lumbar-y-cervical-en-lima | hernia discal lumbar y cervical en lima | pagina-de-servicio |
@@ -161,15 +161,15 @@ Es un servicio declarado del consultorio: "cirujano de columna" sale de cv.ts:ed
 
 **URL candidata:** `/servicios` — existente, hay que **reescribir**.
 
-### 10. artrodesis en varios niveles en lima
+### 10. cirugía mínimamente invasiva en lima
 
-Es un servicio declarado del consultorio: "artrodesis en varios niveles" sale de services.ts:procedureApproaches[].examples, dentro de Cirugia de columna. Sin volumen medido, que no es sin mercado: DinoRank trunca las relacionadas en 900 y no devuelve la keyword consultada. El hueco es de la fuente y esta documentado. Su cluster es artrodesis-en-varios-niveles y la SERP premia ahi contenido-internacional. Hoy su top 10 lo encabezan doctoralia.pe, youtube.com, columna.com (3 barreras): 6 de 9 posiciones medidas son disputables y la primera libre es la 1. Sin KD: Ahrefs no devolvio dificultad para esta cabeza (no_consultado), y no se inventa. Ningun competidor perfilado aparece en este top 10. Candidata a ganarla: /servicios (existente, reescribir).
+Es un servicio declarado del consultorio: "cirugia minimamente invasiva" sale de services.ts:procedureApproaches[].name, dentro de Cirugia de columna. Sin volumen medido, que no es sin mercado: DinoRank trunca las relacionadas en 900 y no devuelve la keyword consultada. El hueco es de la fuente y esta documentado. Su cluster es cirugia-minimamente-invasiva-en-lima y la SERP premia ahi pagina-de-servicio. Hoy su top 10 lo encabezan clinicaangloamericana.pe, cirugiaendoscopicaperu.com, facebook.com (4 barreras): 5 de 9 posiciones medidas son disputables y la primera libre es la 2. Sin KD: Ahrefs no devolvio dificultad para esta cabeza (no_consultado), y no se inventa. Ningun competidor perfilado aparece en este top 10. Candidata a ganarla: /servicios (existente, reescribir).
 
 | Cluster | Tipo de pagina | Intencion y etapa | Ahrefs | DinoRank | KD | Potencial | Disputables | Primera libre |
 |---|---|---|---:|---:|---:|---:|---:|---:|
-| artrodesis-en-varios-niveles | contenido-internacional | transaccional / decision | sin datos | sin datos | sin datos | sin datos | 6/9 | 1 |
+| cirugia-minimamente-invasiva-en-lima | pagina-de-servicio | transaccional / decision | sin datos | sin datos | sin datos | sin datos | 5/9 | 2 |
 
-**Quien ocupa hoy su top 10:** doctoralia.pe, youtube.com, columna.com, instagram.com, institutamoros.com, medlineplus.gov, doctorjuanalvarezdemon.es, facebook.com, drtafurneurocirugia.com.
+**Quien ocupa hoy su top 10:** clinicaangloamericana.pe, cirugiaendoscopicaperu.com, facebook.com, essalud.gob.pe, clinicainternacional.com.pe, facebook.com, clinicaangloamericana.pe, centromedicoabc.com, mayoclinic.org.
 
 **URL candidata:** `/servicios` — existente, hay que **reescribir**.
 
@@ -183,7 +183,7 @@ ellas. Sin esta seccion la lista no se puede discutir.
 | 14800 | tendinitis | Es de alcance objetivo pero NUNCA se le midio la SERP: no fue una de las 91 cabezas capturadas con SerpApi, asi que no hay evidencia de si se puede ganar. Quedo fuera por limite de presupuesto de medicion, no por un juicio de negocio. |
 | 6600 | fracturas | Es de alcance objetivo pero NUNCA se le midio la SERP: no fue una de las 91 cabezas capturadas con SerpApi, asi que no hay evidencia de si se puede ganar. Quedo fuera por limite de presupuesto de medicion, no por un juicio de negocio. |
 | 5400 | desgarro muscular | Quedo fuera del corte de 10 con 34 puntos de valor de negocio. |
-| 3600 | cifosis | No nombra ningun servicio que el consultorio declare. Su semilla salio del perfil de un competidor (COMPETITORS.md) y no del codigo del sitio, asi que perseguirla seria reclamar algo que el doctor no publica que haga. |
+| 3600 | cifosis | Quedo fuera del corte de 10 con 37 puntos de valor de negocio. |
 | 2400 | artrosis cie 10 | Es un CODIGO CIE-10. Lo busca personal administrativo facturando, no un paciente con dolor. Encabeza cualquier orden por volumen y por eso queda escrito aca. |
 | 2400 | artrosis cie-10 | Es un CODIGO CIE-10. Lo busca personal administrativo facturando, no un paciente con dolor. Encabeza cualquier orden por volumen y por eso queda escrito aca. |
 | 2400 | clínica san bernardo especialistas en traumatología | Es MARCA DE UN COMPETIDOR. Se lee como inteligencia y no se persigue nunca: quien la busca ya eligio otra clinica, y posicionar sobre la marca ajena no trae ese paciente. |
@@ -211,9 +211,9 @@ Pasaron las tres puertas y quedaron fuera del corte. Es donde Juan puede decir "
 | ortopedia infantil | especialista-en-columna-y-trauma-en-lima | Mismo cluster (especialista-en-columna-y-trauma-en-lima) y misma categoria de servicio (ortopedia-infantil) que "ortopedia infantil lima", que ya entro con mas valor de negocio. Serian la misma pagina. |
 | traumatología y ortopedia | especialista-en-columna-y-trauma-en-lima | Mismo cluster (especialista-en-columna-y-trauma-en-lima) y misma categoria de servicio (traumatologia-y-ortopedia) que "traumatología lima", que ya entro con mas valor de negocio. Serian la misma pagina. |
 | traumatología | especialista-en-columna-y-trauma-en-lima | Mismo cluster (especialista-en-columna-y-trauma-en-lima) y misma categoria de servicio (traumatologia-y-ortopedia) que "traumatología lima", que ya entro con mas valor de negocio. Serian la misma pagina. |
-| cirugía de columna lima | especialista-en-columna-y-trauma-en-lima | Quedo fuera del corte de 10 con 38 puntos de valor de negocio. |
-| cirugía mínimamente invasiva en lima | cirugia-minimamente-invasiva-en-lima | Quedo fuera del corte de 10 con 38 puntos de valor de negocio. |
+| cirugía de columna lima | especialista-en-columna-y-trauma-en-lima | Mismo cluster (especialista-en-columna-y-trauma-en-lima) y misma categoria de servicio (cirugia-de-columna) que "cirujano de columna lima", que ya entro con mas valor de negocio. Serian la misma pagina. |
 | traumatología y ortopedia lima | especialista-en-columna-y-trauma-en-lima | Quedo fuera del corte de 10 con 38 puntos de valor de negocio. |
+| cifosis | cifosis | Quedo fuera del corte de 10 con 37 puntos de valor de negocio. |
 | hernia discal lumbar y cervical | hernia-discal | Quedo fuera del corte de 10 con 37 puntos de valor de negocio. |
 | desgarro muscular | desgarro-muscular | Quedo fuera del corte de 10 con 34 puntos de valor de negocio. |
 | traumatólogo lima | especialista-en-columna-y-trauma-en-lima | Quedo fuera del corte de 10 con 31 puntos de valor de negocio. |
@@ -245,10 +245,21 @@ escribirla igual —la related search "traumatologo especialista en columna clin
 esta verificada y hoy no la responde ninguna URL del sitio—, pero el techo realista es la
 posicion 4 y no la 1.
 
+### Confirmadas por el cliente que el criterio igual dejo fuera
+
+Esto se escribe aparte porque es lo unico que el criterio decidio EN CONTRA de una indicacion
+explicita. La puerta de servicio propio se levanto —el dato estaba mal y quedo corregido—, pero
+el puntaje se calculo igual que para todas las demas y no alcanzo. Editarlo a mano en el ultimo
+paso habria dado una lista que no sobrevive a su propio criterio.
+
+- **cifosis** — confirmada por Juan el 2026-08-11. Quedo fuera del corte de 10 con 37 puntos de valor de negocio.
+
 ### Vetadas a mano, con su motivo
 
 Estas no las saco un umbral: estan escritas en `data/golden-criterio.json` con su razon.
 
+- **artrodesis en varios niveles en lima** — Sale por INTENCION EQUIVOCADA, decision de Juan del 2026-08-11 sobre el argumento del informe del checkpoint. Es un procedimiento que el doctor si realiza y sus numeros de SERP son buenos (6 de 9 disputables, alcance alto), pero 'artrodesis' es como le dice un cirujano a la operacion, no como la busca un paciente. El paciente que va a operarse busca por su condicion o por su miedo, y ese miedo lo cubre 'cirugia minimamente invasiva'. Sigue siendo contenido valido dentro de una pagina de servicio; lo que no es, es una keyword por la que se pelee primero.
+- **artrodesis en varios niveles** — Misma razon que su forma geo: la busca quien ya sabe como se llama la operacion.
 - **cirugia convencional en lima** — Su top 10 medido es de cirugia GENERAL, no de columna: cirugia24horas.com, cirugiasperu.com, cjp.pe, novoclinic.com.pe, cirugiaendoscopicaperu.com. La keyword nombra una tecnica que el doctor si realiza, pero su SERP responde a otra intencion. 8 de 9 posiciones disputables no sirven de nada si el que busca no es su paciente.
 - **cirugia convencional** — Misma razon que su forma geo: la SERP es de cirugia general y de contenido internacional (revespcardiol.org, mayoclinic.org, icatme.com).
 - **las mejores pastillas para la ciatica** — Juan la conservo el 2026-08-11 como contenido educativo de tope de embudo y EXPLICITAMENTE no transaccional. Informa la estrategia de contenido; mapearla como si el que busca estuviera por operarse seria leer mal su propia decision.
