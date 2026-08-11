@@ -1,0 +1,1557 @@
+{
+  "schema": 1,
+  "umbralDeConfianza": {
+    "alta": 0.7,
+    "media": 0.4
+  },
+  "cabezas": [
+    {
+      "keyword": "traumatólogo ortopedia infantil",
+      "keywordKey": "traumatologo ortopedia infantil",
+      "tipoDePagina": "pagina-de-servicio",
+      "repartoDeTipos": {
+        "directorio": 1,
+        "pagina-de-servicio": 6,
+        "otro": 2
+      },
+      "posicionesMedidas": 9,
+      "posicionesTipificadas": 7,
+      "confianza": "alta",
+      "topResult": "https://clinicarthromeds.pe/traumatologia-pedriatica-infantil-y-ortopedia-lima-peru/",
+      "topDominio": "clinicarthromeds.pe",
+      "topTipo": "pagina-de-servicio"
+    },
+    {
+      "keyword": "hernia discal",
+      "keywordKey": "hernia discal",
+      "tipoDePagina": "contenido-internacional",
+      "repartoDeTipos": {
+        "contenido-internacional": 6,
+        "pagina-de-servicio": 1
+      },
+      "posicionesMedidas": 7,
+      "posicionesTipificadas": 7,
+      "confianza": "alta",
+      "topResult": "https://www.mayoclinic.org/es/diseases-conditions/herniated-disk/symptoms-causes/syc-20354095",
+      "topDominio": "mayoclinic.org",
+      "topTipo": "contenido-internacional"
+    },
+    {
+      "keyword": "estenosis espinal",
+      "keywordKey": "estenosis espinal",
+      "tipoDePagina": "contenido-internacional",
+      "repartoDeTipos": {
+        "contenido-internacional": 8
+      },
+      "posicionesMedidas": 8,
+      "posicionesTipificadas": 8,
+      "confianza": "alta",
+      "topResult": "https://www.mayoclinic.org/es/diseases-conditions/spinal-stenosis/symptoms-causes/syc-20352961",
+      "topDominio": "mayoclinic.org",
+      "topTipo": "contenido-internacional"
+    },
+    {
+      "keyword": "escoliosis",
+      "keywordKey": "escoliosis",
+      "tipoDePagina": "contenido-internacional",
+      "repartoDeTipos": {
+        "red-social": 1,
+        "contenido-internacional": 5,
+        "guia": 1
+      },
+      "posicionesMedidas": 7,
+      "posicionesTipificadas": 7,
+      "confianza": "alta",
+      "topResult": "https://medlineplus.gov/spanish/ency/article/001241.htm",
+      "topDominio": "medlineplus.gov",
+      "topTipo": "contenido-internacional"
+    },
+    {
+      "keyword": "ortopedia infantil",
+      "keywordKey": "ortopedia infantil",
+      "tipoDePagina": "pagina-de-servicio",
+      "repartoDeTipos": {
+        "red-social": 1,
+        "directorio": 1,
+        "contenido-internacional": 1,
+        "pagina-de-servicio": 5
+      },
+      "posicionesMedidas": 8,
+      "posicionesTipificadas": 8,
+      "confianza": "alta",
+      "topResult": "https://www.doctoralia.pe/tratamientos-servicios/ortopedia-infantil/lima",
+      "topDominio": "doctoralia.pe",
+      "topTipo": "directorio"
+    },
+    {
+      "keyword": "cirujano de columna",
+      "keywordKey": "cirujano de columna",
+      "tipoDePagina": "otro",
+      "repartoDeTipos": {
+        "directorio": 1,
+        "contenido-internacional": 2,
+        "pagina-de-servicio": 2,
+        "otro": 3
+      },
+      "posicionesMedidas": 8,
+      "posicionesTipificadas": 5,
+      "confianza": "media",
+      "topResult": "https://www.cirujanocolumna-elaos.com/",
+      "topDominio": "cirujanocolumna-elaos.com",
+      "topTipo": "otro"
+    },
+    {
+      "keyword": "traumatólogo de columna",
+      "keywordKey": "traumatologo de columna",
+      "tipoDePagina": "pagina-de-servicio",
+      "repartoDeTipos": {
+        "directorio": 1,
+        "contenido-internacional": 2,
+        "pagina-de-servicio": 5,
+        "otro": 1
+      },
+      "posicionesMedidas": 9,
+      "posicionesTipificadas": 8,
+      "confianza": "alta",
+      "topResult": "https://www.doctoralia.pe/tratamientos-servicios/consultas-especialista-de-columna/lima",
+      "topDominio": "doctoralia.pe",
+      "topTipo": "directorio"
+    },
+    {
+      "keyword": "cirugía de columna",
+      "keywordKey": "cirugia de columna",
+      "tipoDePagina": "contenido-internacional",
+      "repartoDeTipos": {
+        "contenido-internacional": 7
+      },
+      "posicionesMedidas": 7,
+      "posicionesTipificadas": 7,
+      "confianza": "alta",
+      "topResult": "https://www.traumadrid.es/cirugia-ortopedica-madrid/operacion-columna/",
+      "topDominio": "traumadrid.es",
+      "topTipo": "contenido-internacional"
+    },
+    {
+      "keyword": "cirugía endoscópica de columna",
+      "keywordKey": "cirugia endoscopica de columna",
+      "tipoDePagina": "contenido-internacional",
+      "repartoDeTipos": {
+        "contenido-internacional": 3,
+        "pagina-de-servicio": 3,
+        "otro": 1
+      },
+      "posicionesMedidas": 7,
+      "posicionesTipificadas": 6,
+      "confianza": "alta",
+      "topResult": "https://www.quironsalud.com/es/comunicacion/contenidos-salud/cirugia-endoscopica-columna-respuesta-cada-vez-eficiente-di",
+      "topDominio": "quironsalud.com",
+      "topTipo": "contenido-internacional"
+    },
+    {
+      "keyword": "escoliosis y deformidades de columna",
+      "keywordKey": "escoliosis y deformidades de columna",
+      "tipoDePagina": "contenido-internacional",
+      "repartoDeTipos": {
+        "contenido-internacional": 7,
+        "guia": 1
+      },
+      "posicionesMedidas": 8,
+      "posicionesTipificadas": 8,
+      "confianza": "alta",
+      "topResult": "https://medlineplus.gov/spanish/ency/article/001241.htm",
+      "topDominio": "medlineplus.gov",
+      "topTipo": "contenido-internacional"
+    },
+    {
+      "keyword": "artrodesis en varios niveles",
+      "keywordKey": "artrodesis en varios niveles",
+      "tipoDePagina": "contenido-internacional",
+      "repartoDeTipos": {
+        "contenido-internacional": 8
+      },
+      "posicionesMedidas": 8,
+      "posicionesTipificadas": 8,
+      "confianza": "alta",
+      "topResult": "https://medlineplus.gov/spanish/ency/article/002968.htm",
+      "topDominio": "medlineplus.gov",
+      "topTipo": "contenido-internacional"
+    },
+    {
+      "keyword": "hernia discal lumbar y cervical",
+      "keywordKey": "hernia discal lumbar y cervical",
+      "tipoDePagina": "contenido-internacional",
+      "repartoDeTipos": {
+        "contenido-internacional": 6,
+        "guia": 1,
+        "pagina-de-servicio": 1
+      },
+      "posicionesMedidas": 8,
+      "posicionesTipificadas": 8,
+      "confianza": "alta",
+      "topResult": "https://medlineplus.gov/spanish/ency/article/000442.htm",
+      "topDominio": "medlineplus.gov",
+      "topTipo": "contenido-internacional"
+    },
+    {
+      "keyword": "estenosis de canal",
+      "keywordKey": "estenosis de canal",
+      "tipoDePagina": "contenido-internacional",
+      "repartoDeTipos": {
+        "red-social": 1,
+        "contenido-internacional": 5,
+        "pagina-de-servicio": 1
+      },
+      "posicionesMedidas": 7,
+      "posicionesTipificadas": 7,
+      "confianza": "alta",
+      "topResult": "https://www.cun.es/enfermedades-tratamientos/enfermedades/estenosis-canal",
+      "topDominio": "cun.es",
+      "topTipo": "contenido-internacional"
+    },
+    {
+      "keyword": "endoscopía espinal",
+      "keywordKey": "endoscopia espinal",
+      "tipoDePagina": "pagina-de-servicio",
+      "repartoDeTipos": {
+        "directorio": 1,
+        "contenido-internacional": 2,
+        "pagina-de-servicio": 5
+      },
+      "posicionesMedidas": 8,
+      "posicionesTipificadas": 8,
+      "confianza": "alta",
+      "topResult": "https://www.topdoctors.es/diccionario-medico/endoscopia-espinal/",
+      "topDominio": "topdoctors.es",
+      "topTipo": "directorio"
+    },
+    {
+      "keyword": "cirugía mínimamente invasiva",
+      "keywordKey": "cirugia minimamente invasiva",
+      "tipoDePagina": "contenido-internacional",
+      "repartoDeTipos": {
+        "contenido-internacional": 3,
+        "pagina-de-servicio": 3,
+        "otro": 1
+      },
+      "posicionesMedidas": 7,
+      "posicionesTipificadas": 6,
+      "confianza": "alta",
+      "topResult": "https://www.mayoclinic.org/es/tests-procedures/minimally-invasive-surgery/about/pac-20384771",
+      "topDominio": "mayoclinic.org",
+      "topTipo": "contenido-internacional"
+    },
+    {
+      "keyword": "cirugía convencional",
+      "keywordKey": "cirugia convencional",
+      "tipoDePagina": "contenido-internacional",
+      "repartoDeTipos": {
+        "directorio": 1,
+        "contenido-internacional": 4,
+        "guia": 1,
+        "pagina-de-servicio": 1
+      },
+      "posicionesMedidas": 7,
+      "posicionesTipificadas": 7,
+      "confianza": "alta",
+      "topResult": "https://clinicainternacional.com.pe/blog-educativo/diferencias-cirugia-convencional-robotica/",
+      "topDominio": "clinicainternacional.com.pe",
+      "topTipo": "guia"
+    },
+    {
+      "keyword": "lumbalgia",
+      "keywordKey": "lumbalgia",
+      "tipoDePagina": "contenido-internacional",
+      "repartoDeTipos": {
+        "contenido-internacional": 5,
+        "guia": 2
+      },
+      "posicionesMedidas": 7,
+      "posicionesTipificadas": 7,
+      "confianza": "alta",
+      "topResult": "https://www.who.int/es/news-room/fact-sheets/detail/low-back-pain",
+      "topDominio": "who.int",
+      "topTipo": "contenido-internacional"
+    },
+    {
+      "keyword": "ciática",
+      "keywordKey": "ciatica",
+      "tipoDePagina": "contenido-internacional",
+      "repartoDeTipos": {
+        "contenido-internacional": 4,
+        "otro": 3
+      },
+      "posicionesMedidas": 7,
+      "posicionesTipificadas": 4,
+      "confianza": "media",
+      "topResult": "https://www.mayoclinic.org/es/diseases-conditions/sciatica/symptoms-causes/syc-20377435",
+      "topDominio": "mayoclinic.org",
+      "topTipo": "contenido-internacional"
+    },
+    {
+      "keyword": "cifosis",
+      "keywordKey": "cifosis",
+      "tipoDePagina": "otro",
+      "repartoDeTipos": {
+        "contenido-internacional": 2,
+        "pagina-de-servicio": 1,
+        "otro": 4
+      },
+      "posicionesMedidas": 7,
+      "posicionesTipificadas": 3,
+      "confianza": "media",
+      "topResult": "https://medlineplus.gov/spanish/ency/article/001240.htm",
+      "topDominio": "medlineplus.gov",
+      "topTipo": "contenido-internacional"
+    },
+    {
+      "keyword": "artrosis",
+      "keywordKey": "artrosis",
+      "tipoDePagina": "guia",
+      "repartoDeTipos": {
+        "contenido-internacional": 3,
+        "guia": 3,
+        "otro": 1
+      },
+      "posicionesMedidas": 7,
+      "posicionesTipificadas": 6,
+      "confianza": "alta",
+      "topResult": "https://inforeuma.com/enfermedades-reumaticas/artrosis/",
+      "topDominio": "inforeuma.com",
+      "topTipo": "guia"
+    },
+    {
+      "keyword": "desgarro muscular",
+      "keywordKey": "desgarro muscular",
+      "tipoDePagina": "contenido-internacional",
+      "repartoDeTipos": {
+        "contenido-internacional": 5,
+        "guia": 2,
+        "ficha-de-clinica": 1
+      },
+      "posicionesMedidas": 8,
+      "posicionesTipificadas": 8,
+      "confianza": "alta",
+      "topResult": "https://palma.fisio-clinics.com/que-es-un-desgarro-muscular-y-cual-es-su-tratamiento-en-fisioterapia-fisioclinics-palma",
+      "topDominio": "palma.fisio-clinics.com",
+      "topTipo": "guia"
+    },
+    {
+      "keyword": "traumatólogo",
+      "keywordKey": "traumatologo",
+      "tipoDePagina": "pagina-de-servicio",
+      "repartoDeTipos": {
+        "directorio": 1,
+        "pagina-de-servicio": 6,
+        "ficha-de-clinica": 1
+      },
+      "posicionesMedidas": 8,
+      "posicionesTipificadas": 8,
+      "confianza": "alta",
+      "topResult": "https://clinicainternacional.com.pe/especialidad/traumatologia/",
+      "topDominio": "clinicainternacional.com.pe",
+      "topTipo": "pagina-de-servicio"
+    },
+    {
+      "keyword": "traumatología",
+      "keywordKey": "traumatologia",
+      "tipoDePagina": "pagina-de-servicio",
+      "repartoDeTipos": {
+        "pagina-de-servicio": 6,
+        "ficha-de-clinica": 1
+      },
+      "posicionesMedidas": 7,
+      "posicionesTipificadas": 7,
+      "confianza": "alta",
+      "topResult": "https://clinicainternacional.com.pe/especialidad/traumatologia/",
+      "topDominio": "clinicainternacional.com.pe",
+      "topTipo": "pagina-de-servicio"
+    },
+    {
+      "keyword": "neurocirujano",
+      "keywordKey": "neurocirujano",
+      "tipoDePagina": "pagina-de-servicio",
+      "repartoDeTipos": {
+        "directorio": 1,
+        "contenido-internacional": 1,
+        "guia": 1,
+        "pagina-de-servicio": 3,
+        "otro": 3
+      },
+      "posicionesMedidas": 9,
+      "posicionesTipificadas": 6,
+      "confianza": "media",
+      "topResult": "https://www.doctoralia.pe/neurocirujano/lima",
+      "topDominio": "doctoralia.pe",
+      "topTipo": "directorio"
+    },
+    {
+      "keyword": "traumatología y ortopedia",
+      "keywordKey": "traumatologia y ortopedia",
+      "tipoDePagina": "pagina-de-servicio",
+      "repartoDeTipos": {
+        "directorio": 1,
+        "contenido-internacional": 1,
+        "guia": 1,
+        "pagina-de-servicio": 6
+      },
+      "posicionesMedidas": 9,
+      "posicionesTipificadas": 9,
+      "confianza": "alta",
+      "topResult": "https://clinicainternacional.com.pe/especialidad/traumatologia/",
+      "topDominio": "clinicainternacional.com.pe",
+      "topTipo": "pagina-de-servicio"
+    },
+    {
+      "keyword": "ortopedia infantil lima",
+      "keywordKey": "ortopedia infantil lima",
+      "tipoDePagina": "pagina-de-servicio",
+      "repartoDeTipos": {
+        "red-social": 2,
+        "directorio": 1,
+        "pagina-de-servicio": 5,
+        "otro": 1
+      },
+      "posicionesMedidas": 9,
+      "posicionesTipificadas": 8,
+      "confianza": "alta",
+      "topResult": "https://clinicarthromeds.pe/traumatologia-pedriatica-infantil-y-ortopedia-lima-peru/",
+      "topDominio": "clinicarthromeds.pe",
+      "topTipo": "pagina-de-servicio"
+    },
+    {
+      "keyword": "ortopedia infantil surco",
+      "keywordKey": "ortopedia infantil surco",
+      "tipoDePagina": "pagina-de-servicio",
+      "repartoDeTipos": {
+        "red-social": 2,
+        "directorio": 3,
+        "pagina-de-servicio": 4
+      },
+      "posicionesMedidas": 9,
+      "posicionesTipificadas": 9,
+      "confianza": "alta",
+      "topResult": "https://www.doctoralia.pe/tratamientos-servicios/ortopedia-infantil/surco",
+      "topDominio": "doctoralia.pe",
+      "topTipo": "directorio"
+    },
+    {
+      "keyword": "ortopedia infantil san isidro",
+      "keywordKey": "ortopedia infantil san isidro",
+      "tipoDePagina": "directorio",
+      "repartoDeTipos": {
+        "red-social": 1,
+        "directorio": 3,
+        "contenido-internacional": 1,
+        "pagina-de-servicio": 3,
+        "otro": 1
+      },
+      "posicionesMedidas": 9,
+      "posicionesTipificadas": 8,
+      "confianza": "alta",
+      "topResult": "https://www.doctoralia.pe/tratamientos-servicios/ortopedia-infantil/san-isidro",
+      "topDominio": "doctoralia.pe",
+      "topTipo": "directorio"
+    },
+    {
+      "keyword": "ortopedia infantil la molina",
+      "keywordKey": "ortopedia infantil la molina",
+      "tipoDePagina": "red-social",
+      "repartoDeTipos": {
+        "red-social": 4,
+        "directorio": 3,
+        "ficha-de-clinica": 1,
+        "otro": 1
+      },
+      "posicionesMedidas": 9,
+      "posicionesTipificadas": 8,
+      "confianza": "alta",
+      "topResult": "https://www.doctoralia.pe/traumatologo-y-ortopedista/la-molina",
+      "topDominio": "doctoralia.pe",
+      "topTipo": "directorio"
+    },
+    {
+      "keyword": "ortopedia infantil cerca de mí",
+      "keywordKey": "ortopedia infantil cerca de mi",
+      "tipoDePagina": "pagina-de-servicio",
+      "repartoDeTipos": {
+        "red-social": 2,
+        "directorio": 2,
+        "pagina-de-servicio": 4,
+        "otro": 2
+      },
+      "posicionesMedidas": 10,
+      "posicionesTipificadas": 8,
+      "confianza": "alta",
+      "topResult": "https://www.instagram.com/ortopediainfantilperu/",
+      "topDominio": "instagram.com",
+      "topTipo": "red-social"
+    },
+    {
+      "keyword": "cirujano de columna lima",
+      "keywordKey": "cirujano de columna lima",
+      "tipoDePagina": "pagina-de-servicio",
+      "repartoDeTipos": {
+        "directorio": 1,
+        "pagina-de-servicio": 5,
+        "otro": 3
+      },
+      "posicionesMedidas": 9,
+      "posicionesTipificadas": 6,
+      "confianza": "media",
+      "topResult": "https://www.cirujanocolumna-elaos.com/",
+      "topDominio": "cirujanocolumna-elaos.com",
+      "topTipo": "otro"
+    },
+    {
+      "keyword": "cirujano de columna surco",
+      "keywordKey": "cirujano de columna surco",
+      "tipoDePagina": "directorio",
+      "repartoDeTipos": {
+        "red-social": 2,
+        "directorio": 2,
+        "pagina-de-servicio": 2,
+        "ficha-de-clinica": 1,
+        "otro": 2
+      },
+      "posicionesMedidas": 9,
+      "posicionesTipificadas": 7,
+      "confianza": "alta",
+      "topResult": "https://www.doctoralia.pe/enfermedades/hernia-discal/surco",
+      "topDominio": "doctoralia.pe",
+      "topTipo": "directorio"
+    },
+    {
+      "keyword": "cirujano de columna san isidro",
+      "keywordKey": "cirujano de columna san isidro",
+      "tipoDePagina": "pagina-de-servicio",
+      "repartoDeTipos": {
+        "red-social": 1,
+        "directorio": 2,
+        "contenido-internacional": 1,
+        "pagina-de-servicio": 3,
+        "otro": 2
+      },
+      "posicionesMedidas": 9,
+      "posicionesTipificadas": 7,
+      "confianza": "alta",
+      "topResult": "https://www.doctoralia.pe/traumatologo-y-ortopedista/san-isidro",
+      "topDominio": "doctoralia.pe",
+      "topTipo": "directorio"
+    },
+    {
+      "keyword": "cirujano de columna la molina",
+      "keywordKey": "cirujano de columna la molina",
+      "tipoDePagina": "directorio",
+      "repartoDeTipos": {
+        "red-social": 1,
+        "directorio": 3,
+        "pagina-de-servicio": 1,
+        "ficha-de-clinica": 3,
+        "otro": 1
+      },
+      "posicionesMedidas": 9,
+      "posicionesTipificadas": 8,
+      "confianza": "alta",
+      "topResult": "https://www.doctoralia.pe/traumatologo-y-ortopedista/la-molina",
+      "topDominio": "doctoralia.pe",
+      "topTipo": "directorio"
+    },
+    {
+      "keyword": "cirujano de columna cerca de mí",
+      "keywordKey": "cirujano de columna cerca de mi",
+      "tipoDePagina": "otro",
+      "repartoDeTipos": {
+        "red-social": 1,
+        "directorio": 1,
+        "pagina-de-servicio": 3,
+        "otro": 4
+      },
+      "posicionesMedidas": 9,
+      "posicionesTipificadas": 5,
+      "confianza": "media",
+      "topResult": "https://clinicarthromeds.pe/traumatologo-especialista-en-columna-lima-peru/",
+      "topDominio": "clinicarthromeds.pe",
+      "topTipo": "pagina-de-servicio"
+    },
+    {
+      "keyword": "cirugía de columna lima",
+      "keywordKey": "cirugia de columna lima",
+      "tipoDePagina": "pagina-de-servicio",
+      "repartoDeTipos": {
+        "red-social": 1,
+        "pagina-de-servicio": 4,
+        "otro": 3
+      },
+      "posicionesMedidas": 8,
+      "posicionesTipificadas": 5,
+      "confianza": "media",
+      "topResult": "https://www.cirujanocolumna-elaos.com/",
+      "topDominio": "cirujanocolumna-elaos.com",
+      "topTipo": "otro"
+    },
+    {
+      "keyword": "cirugía de columna surco",
+      "keywordKey": "cirugia de columna surco",
+      "tipoDePagina": "otro",
+      "repartoDeTipos": {
+        "red-social": 3,
+        "directorio": 1,
+        "pagina-de-servicio": 1,
+        "ficha-de-clinica": 1,
+        "otro": 3
+      },
+      "posicionesMedidas": 9,
+      "posicionesTipificadas": 6,
+      "confianza": "media",
+      "topResult": "https://discalcentro.com/",
+      "topDominio": "discalcentro.com",
+      "topTipo": "otro"
+    },
+    {
+      "keyword": "cirugía de columna san isidro",
+      "keywordKey": "cirugia de columna san isidro",
+      "tipoDePagina": "pagina-de-servicio",
+      "repartoDeTipos": {
+        "red-social": 3,
+        "directorio": 1,
+        "pagina-de-servicio": 3,
+        "otro": 2
+      },
+      "posicionesMedidas": 9,
+      "posicionesTipificadas": 7,
+      "confianza": "alta",
+      "topResult": "https://www.drciezatraumatologia.com/",
+      "topDominio": "drciezatraumatologia.com",
+      "topTipo": "otro"
+    },
+    {
+      "keyword": "cirugía de columna la molina",
+      "keywordKey": "cirugia de columna la molina",
+      "tipoDePagina": "directorio",
+      "repartoDeTipos": {
+        "red-social": 2,
+        "directorio": 2,
+        "pagina-de-servicio": 2,
+        "ficha-de-clinica": 2,
+        "otro": 1
+      },
+      "posicionesMedidas": 9,
+      "posicionesTipificadas": 8,
+      "confianza": "alta",
+      "topResult": "https://www.doctoralia.pe/enfermedades/dolor-en-la-espalda/la-molina",
+      "topDominio": "doctoralia.pe",
+      "topTipo": "directorio"
+    },
+    {
+      "keyword": "cirugía de columna cerca de mí",
+      "keywordKey": "cirugia de columna cerca de mi",
+      "tipoDePagina": "red-social",
+      "repartoDeTipos": {
+        "red-social": 3,
+        "pagina-de-servicio": 3,
+        "otro": 3
+      },
+      "posicionesMedidas": 9,
+      "posicionesTipificadas": 6,
+      "confianza": "media",
+      "topResult": "https://www.facebook.com/drblacksclinicadelacolumna/?locale=es_LA",
+      "topDominio": "facebook.com",
+      "topTipo": "red-social"
+    },
+    {
+      "keyword": "cirugía endoscópica de columna en lima",
+      "keywordKey": "cirugia endoscopica de columna en lima",
+      "tipoDePagina": "otro",
+      "repartoDeTipos": {
+        "guia": 1,
+        "pagina-de-servicio": 2,
+        "otro": 5
+      },
+      "posicionesMedidas": 8,
+      "posicionesTipificadas": 3,
+      "confianza": "baja",
+      "topResult": "https://www.cirugiaendoscopicaperu.com/",
+      "topDominio": "cirugiaendoscopicaperu.com",
+      "topTipo": "otro"
+    },
+    {
+      "keyword": "artrodesis en varios niveles en lima",
+      "keywordKey": "artrodesis en varios niveles en lima",
+      "tipoDePagina": "red-social",
+      "repartoDeTipos": {
+        "red-social": 3,
+        "directorio": 1,
+        "contenido-internacional": 3,
+        "pagina-de-servicio": 2
+      },
+      "posicionesMedidas": 9,
+      "posicionesTipificadas": 9,
+      "confianza": "alta",
+      "topResult": "https://www.doctoralia.pe/tratamientos-servicios/artrodesis/lima",
+      "topDominio": "doctoralia.pe",
+      "topTipo": "directorio"
+    },
+    {
+      "keyword": "hernia discal lumbar y cervical en lima",
+      "keywordKey": "hernia discal lumbar y cervical en lima",
+      "tipoDePagina": "pagina-de-servicio",
+      "repartoDeTipos": {
+        "red-social": 1,
+        "directorio": 1,
+        "guia": 1,
+        "pagina-de-servicio": 4,
+        "otro": 1
+      },
+      "posicionesMedidas": 8,
+      "posicionesTipificadas": 7,
+      "confianza": "alta",
+      "topResult": "https://cirugiaendoscopicaperu.com/?q=node/186",
+      "topDominio": "cirugiaendoscopicaperu.com",
+      "topTipo": "otro"
+    },
+    {
+      "keyword": "estenosis de canal en lima",
+      "keywordKey": "estenosis de canal en lima",
+      "tipoDePagina": "contenido-internacional",
+      "repartoDeTipos": {
+        "contenido-internacional": 4,
+        "pagina-de-servicio": 3,
+        "otro": 1
+      },
+      "posicionesMedidas": 8,
+      "posicionesTipificadas": 7,
+      "confianza": "alta",
+      "topResult": "https://discalcentro.com/estenosis-de-canal/",
+      "topDominio": "discalcentro.com",
+      "topTipo": "pagina-de-servicio"
+    },
+    {
+      "keyword": "endoscopía espinal en lima",
+      "keywordKey": "endoscopia espinal en lima",
+      "tipoDePagina": "otro",
+      "repartoDeTipos": {
+        "red-social": 1,
+        "contenido-internacional": 1,
+        "pagina-de-servicio": 1,
+        "otro": 6
+      },
+      "posicionesMedidas": 9,
+      "posicionesTipificadas": 3,
+      "confianza": "baja",
+      "topResult": "https://cirugiaendoscopicaperu.com/?q=node/185",
+      "topDominio": "cirugiaendoscopicaperu.com",
+      "topTipo": "otro"
+    },
+    {
+      "keyword": "cirugía mínimamente invasiva en lima",
+      "keywordKey": "cirugia minimamente invasiva en lima",
+      "tipoDePagina": "pagina-de-servicio",
+      "repartoDeTipos": {
+        "red-social": 2,
+        "contenido-internacional": 1,
+        "guia": 1,
+        "pagina-de-servicio": 4,
+        "otro": 1
+      },
+      "posicionesMedidas": 9,
+      "posicionesTipificadas": 8,
+      "confianza": "alta",
+      "topResult": "https://clinicaangloamericana.pe/cirugia-minimamente-invasiva-en-peru-tecnologia-que-mejora-la-experiencia-quirurgica-new/",
+      "topDominio": "clinicaangloamericana.pe",
+      "topTipo": "pagina-de-servicio"
+    },
+    {
+      "keyword": "cirugía convencional en lima",
+      "keywordKey": "cirugia convencional en lima",
+      "tipoDePagina": "otro",
+      "repartoDeTipos": {
+        "red-social": 2,
+        "directorio": 1,
+        "pagina-de-servicio": 2,
+        "ficha-de-clinica": 1,
+        "otro": 3
+      },
+      "posicionesMedidas": 9,
+      "posicionesTipificadas": 6,
+      "confianza": "media",
+      "topResult": "https://cirugia24horas.com/",
+      "topDominio": "cirugia24horas.com",
+      "topTipo": "otro"
+    },
+    {
+      "keyword": "traumatólogo lima",
+      "keywordKey": "traumatologo lima",
+      "tipoDePagina": "pagina-de-servicio",
+      "repartoDeTipos": {
+        "directorio": 1,
+        "pagina-de-servicio": 5,
+        "ficha-de-clinica": 1,
+        "otro": 1
+      },
+      "posicionesMedidas": 8,
+      "posicionesTipificadas": 7,
+      "confianza": "alta",
+      "topResult": "https://clinicainternacional.com.pe/especialidad/traumatologia/",
+      "topDominio": "clinicainternacional.com.pe",
+      "topTipo": "pagina-de-servicio"
+    },
+    {
+      "keyword": "traumatólogo surco",
+      "keywordKey": "traumatologo surco",
+      "tipoDePagina": "pagina-de-servicio",
+      "repartoDeTipos": {
+        "red-social": 1,
+        "directorio": 3,
+        "pagina-de-servicio": 3,
+        "ficha-de-clinica": 2
+      },
+      "posicionesMedidas": 9,
+      "posicionesTipificadas": 9,
+      "confianza": "alta",
+      "topResult": "https://drperalestraumatologo.com/traumatologo-en-surco/",
+      "topDominio": "drperalestraumatologo.com",
+      "topTipo": "pagina-de-servicio"
+    },
+    {
+      "keyword": "traumatólogo san isidro",
+      "keywordKey": "traumatologo san isidro",
+      "tipoDePagina": "pagina-de-servicio",
+      "repartoDeTipos": {
+        "directorio": 1,
+        "pagina-de-servicio": 6,
+        "ficha-de-clinica": 1
+      },
+      "posicionesMedidas": 8,
+      "posicionesTipificadas": 8,
+      "confianza": "alta",
+      "topResult": "https://clinicainternacional.com.pe/especialidad/traumatologia/",
+      "topDominio": "clinicainternacional.com.pe",
+      "topTipo": "pagina-de-servicio"
+    },
+    {
+      "keyword": "traumatólogo la molina",
+      "keywordKey": "traumatologo la molina",
+      "tipoDePagina": "directorio",
+      "repartoDeTipos": {
+        "red-social": 3,
+        "directorio": 3,
+        "pagina-de-servicio": 1,
+        "ficha-de-clinica": 1,
+        "otro": 1
+      },
+      "posicionesMedidas": 9,
+      "posicionesTipificadas": 8,
+      "confianza": "alta",
+      "topResult": "https://www.doctoralia.pe/traumatologo-y-ortopedista/la-molina",
+      "topDominio": "doctoralia.pe",
+      "topTipo": "directorio"
+    },
+    {
+      "keyword": "traumatólogo cerca de mí",
+      "keywordKey": "traumatologo cerca de mi",
+      "tipoDePagina": "pagina-de-servicio",
+      "repartoDeTipos": {
+        "directorio": 1,
+        "pagina-de-servicio": 5,
+        "ficha-de-clinica": 2,
+        "otro": 1
+      },
+      "posicionesMedidas": 9,
+      "posicionesTipificadas": 8,
+      "confianza": "alta",
+      "topResult": "https://clinicalima.sanjuandedios.pe/",
+      "topDominio": "clinicalima.sanjuandedios.pe",
+      "topTipo": "ficha-de-clinica"
+    },
+    {
+      "keyword": "traumatología lima",
+      "keywordKey": "traumatologia lima",
+      "tipoDePagina": "pagina-de-servicio",
+      "repartoDeTipos": {
+        "directorio": 1,
+        "pagina-de-servicio": 6,
+        "ficha-de-clinica": 1,
+        "otro": 1
+      },
+      "posicionesMedidas": 9,
+      "posicionesTipificadas": 8,
+      "confianza": "alta",
+      "topResult": "https://clinicainternacional.com.pe/especialidad/traumatologia/",
+      "topDominio": "clinicainternacional.com.pe",
+      "topTipo": "pagina-de-servicio"
+    },
+    {
+      "keyword": "traumatología surco",
+      "keywordKey": "traumatologia surco",
+      "tipoDePagina": "pagina-de-servicio",
+      "repartoDeTipos": {
+        "red-social": 2,
+        "directorio": 2,
+        "pagina-de-servicio": 4,
+        "ficha-de-clinica": 1
+      },
+      "posicionesMedidas": 9,
+      "posicionesTipificadas": 9,
+      "confianza": "alta",
+      "topResult": "https://drperalestraumatologo.com/traumatologo-en-surco/",
+      "topDominio": "drperalestraumatologo.com",
+      "topTipo": "pagina-de-servicio"
+    },
+    {
+      "keyword": "traumatología san isidro",
+      "keywordKey": "traumatologia san isidro",
+      "tipoDePagina": "directorio",
+      "repartoDeTipos": {
+        "red-social": 1,
+        "directorio": 2,
+        "contenido-internacional": 1,
+        "pagina-de-servicio": 2,
+        "ficha-de-clinica": 2,
+        "otro": 1
+      },
+      "posicionesMedidas": 9,
+      "posicionesTipificadas": 8,
+      "confianza": "alta",
+      "topResult": "https://www.doctoralia.pe/traumatologo-y-ortopedista/san-isidro",
+      "topDominio": "doctoralia.pe",
+      "topTipo": "directorio"
+    },
+    {
+      "keyword": "traumatología la molina",
+      "keywordKey": "traumatologia la molina",
+      "tipoDePagina": "ficha-de-clinica",
+      "repartoDeTipos": {
+        "red-social": 2,
+        "directorio": 2,
+        "pagina-de-servicio": 1,
+        "ficha-de-clinica": 4
+      },
+      "posicionesMedidas": 9,
+      "posicionesTipificadas": 9,
+      "confianza": "alta",
+      "topResult": "https://www.clinicasanfelipe.com/sedes/la-molina",
+      "topDominio": "clinicasanfelipe.com",
+      "topTipo": "ficha-de-clinica"
+    },
+    {
+      "keyword": "traumatología cerca de mí",
+      "keywordKey": "traumatologia cerca de mi",
+      "tipoDePagina": "pagina-de-servicio",
+      "repartoDeTipos": {
+        "directorio": 1,
+        "pagina-de-servicio": 4,
+        "ficha-de-clinica": 3,
+        "otro": 1
+      },
+      "posicionesMedidas": 9,
+      "posicionesTipificadas": 8,
+      "confianza": "alta",
+      "topResult": "https://clinicalima.sanjuandedios.pe/",
+      "topDominio": "clinicalima.sanjuandedios.pe",
+      "topTipo": "ficha-de-clinica"
+    },
+    {
+      "keyword": "neurocirujano lima",
+      "keywordKey": "neurocirujano lima",
+      "tipoDePagina": "otro",
+      "repartoDeTipos": {
+        "directorio": 1,
+        "pagina-de-servicio": 2,
+        "otro": 6
+      },
+      "posicionesMedidas": 9,
+      "posicionesTipificadas": 3,
+      "confianza": "baja",
+      "topResult": "https://www.doctoralia.pe/neurocirujano/lima",
+      "topDominio": "doctoralia.pe",
+      "topTipo": "directorio"
+    },
+    {
+      "keyword": "neurocirujano surco",
+      "keywordKey": "neurocirujano surco",
+      "tipoDePagina": "directorio",
+      "repartoDeTipos": {
+        "red-social": 2,
+        "directorio": 3,
+        "pagina-de-servicio": 1,
+        "otro": 3
+      },
+      "posicionesMedidas": 9,
+      "posicionesTipificadas": 6,
+      "confianza": "media",
+      "topResult": "https://www.doctoralia.pe/neurocirujano/surco",
+      "topDominio": "doctoralia.pe",
+      "topTipo": "directorio"
+    },
+    {
+      "keyword": "neurocirujano san isidro",
+      "keywordKey": "neurocirujano san isidro",
+      "tipoDePagina": "directorio",
+      "repartoDeTipos": {
+        "red-social": 1,
+        "directorio": 4,
+        "pagina-de-servicio": 2,
+        "otro": 2
+      },
+      "posicionesMedidas": 9,
+      "posicionesTipificadas": 7,
+      "confianza": "alta",
+      "topResult": "https://www.doctoralia.pe/neurocirujano/san-isidro",
+      "topDominio": "doctoralia.pe",
+      "topTipo": "directorio"
+    },
+    {
+      "keyword": "neurocirujano la molina",
+      "keywordKey": "neurocirujano la molina",
+      "tipoDePagina": "directorio",
+      "repartoDeTipos": {
+        "red-social": 3,
+        "directorio": 3,
+        "pagina-de-servicio": 1,
+        "ficha-de-clinica": 1,
+        "otro": 1
+      },
+      "posicionesMedidas": 9,
+      "posicionesTipificadas": 8,
+      "confianza": "alta",
+      "topResult": "https://www.doctoralia.pe/neurocirujano/la-molina",
+      "topDominio": "doctoralia.pe",
+      "topTipo": "directorio"
+    },
+    {
+      "keyword": "neurocirujano cerca de mí",
+      "keywordKey": "neurocirujano cerca de mi",
+      "tipoDePagina": "otro",
+      "repartoDeTipos": {
+        "red-social": 1,
+        "directorio": 1,
+        "pagina-de-servicio": 3,
+        "otro": 4
+      },
+      "posicionesMedidas": 9,
+      "posicionesTipificadas": 5,
+      "confianza": "media",
+      "topResult": "https://www.doctoralia.pe/neurocirujano/lima",
+      "topDominio": "doctoralia.pe",
+      "topTipo": "directorio"
+    },
+    {
+      "keyword": "traumatología y ortopedia lima",
+      "keywordKey": "traumatologia y ortopedia lima",
+      "tipoDePagina": "pagina-de-servicio",
+      "repartoDeTipos": {
+        "red-social": 1,
+        "directorio": 1,
+        "pagina-de-servicio": 5,
+        "ficha-de-clinica": 1,
+        "otro": 1
+      },
+      "posicionesMedidas": 9,
+      "posicionesTipificadas": 8,
+      "confianza": "alta",
+      "topResult": "https://clinicainternacional.com.pe/especialidad/traumatologia/",
+      "topDominio": "clinicainternacional.com.pe",
+      "topTipo": "pagina-de-servicio"
+    },
+    {
+      "keyword": "traumatología y ortopedia surco",
+      "keywordKey": "traumatologia y ortopedia surco",
+      "tipoDePagina": "directorio",
+      "repartoDeTipos": {
+        "red-social": 2,
+        "directorio": 3,
+        "pagina-de-servicio": 2,
+        "ficha-de-clinica": 1,
+        "otro": 1
+      },
+      "posicionesMedidas": 9,
+      "posicionesTipificadas": 8,
+      "confianza": "alta",
+      "topResult": "https://www.doctoralia.pe/clinicas/ortopedia-y-traumatologia/surco",
+      "topDominio": "doctoralia.pe",
+      "topTipo": "directorio"
+    },
+    {
+      "keyword": "traumatología y ortopedia san isidro",
+      "keywordKey": "traumatologia y ortopedia san isidro",
+      "tipoDePagina": "red-social",
+      "repartoDeTipos": {
+        "red-social": 2,
+        "directorio": 2,
+        "contenido-internacional": 1,
+        "pagina-de-servicio": 2,
+        "ficha-de-clinica": 1,
+        "otro": 1
+      },
+      "posicionesMedidas": 9,
+      "posicionesTipificadas": 8,
+      "confianza": "alta",
+      "topResult": "https://www.facebook.com/InstitutoPeruanoOrtopediaTraumatologia/?locale=es_LA",
+      "topDominio": "facebook.com",
+      "topTipo": "red-social"
+    },
+    {
+      "keyword": "traumatología y ortopedia la molina",
+      "keywordKey": "traumatologia y ortopedia la molina",
+      "tipoDePagina": "red-social",
+      "repartoDeTipos": {
+        "red-social": 4,
+        "directorio": 3,
+        "pagina-de-servicio": 1,
+        "ficha-de-clinica": 1,
+        "otro": 1
+      },
+      "posicionesMedidas": 10,
+      "posicionesTipificadas": 9,
+      "confianza": "alta",
+      "topResult": "https://www.doctoralia.pe/traumatologo-y-ortopedista/la-molina",
+      "topDominio": "doctoralia.pe",
+      "topTipo": "directorio"
+    },
+    {
+      "keyword": "traumatología y ortopedia cerca de mí",
+      "keywordKey": "traumatologia y ortopedia cerca de mi",
+      "tipoDePagina": "ficha-de-clinica",
+      "repartoDeTipos": {
+        "directorio": 1,
+        "pagina-de-servicio": 2,
+        "ficha-de-clinica": 4,
+        "otro": 2
+      },
+      "posicionesMedidas": 9,
+      "posicionesTipificadas": 7,
+      "confianza": "alta",
+      "topResult": "https://clinicainternacional.com.pe/especialidad/traumatologia/",
+      "topDominio": "clinicainternacional.com.pe",
+      "topTipo": "pagina-de-servicio"
+    },
+    {
+      "keyword": "cirujano de columna clínica ricardo palma",
+      "keywordKey": "cirujano de columna clinica ricardo palma",
+      "tipoDePagina": "pagina-de-servicio",
+      "repartoDeTipos": {
+        "red-social": 1,
+        "directorio": 1,
+        "pagina-de-servicio": 4,
+        "ficha-de-clinica": 1,
+        "otro": 1
+      },
+      "posicionesMedidas": 8,
+      "posicionesTipificadas": 7,
+      "confianza": "alta",
+      "topResult": "https://www.crp.com.pe/especialidades/traumatologia/",
+      "topDominio": "crp.com.pe",
+      "topTipo": "pagina-de-servicio"
+    },
+    {
+      "keyword": "cirujano de columna clínica sanna",
+      "keywordKey": "cirujano de columna clinica sanna",
+      "tipoDePagina": "red-social",
+      "repartoDeTipos": {
+        "red-social": 4,
+        "directorio": 1,
+        "pagina-de-servicio": 1,
+        "ficha-de-clinica": 3,
+        "otro": 1
+      },
+      "posicionesMedidas": 10,
+      "posicionesTipificadas": 9,
+      "confianza": "alta",
+      "topResult": "https://www.sanna.pe/medicos/",
+      "topDominio": "sanna.pe",
+      "topTipo": "pagina-de-servicio"
+    },
+    {
+      "keyword": "cirujano de columna clínica tezza",
+      "keywordKey": "cirujano de columna clinica tezza",
+      "tipoDePagina": "directorio",
+      "repartoDeTipos": {
+        "red-social": 2,
+        "directorio": 3,
+        "pagina-de-servicio": 2,
+        "ficha-de-clinica": 1,
+        "otro": 1
+      },
+      "posicionesMedidas": 9,
+      "posicionesTipificadas": 8,
+      "confianza": "alta",
+      "topResult": "https://clinicatezza.com.pe/staff-medico/especialidad/ortopedia-y-traumatologia/",
+      "topDominio": "clinicatezza.com.pe",
+      "topTipo": "directorio"
+    },
+    {
+      "keyword": "traumatólogo clínica ricardo palma",
+      "keywordKey": "traumatologo clinica ricardo palma",
+      "tipoDePagina": "pagina-de-servicio",
+      "repartoDeTipos": {
+        "red-social": 2,
+        "directorio": 1,
+        "pagina-de-servicio": 3,
+        "ficha-de-clinica": 1,
+        "otro": 2
+      },
+      "posicionesMedidas": 9,
+      "posicionesTipificadas": 7,
+      "confianza": "alta",
+      "topResult": "https://www.crp.com.pe/especialidades/traumatologia/",
+      "topDominio": "crp.com.pe",
+      "topTipo": "pagina-de-servicio"
+    },
+    {
+      "keyword": "traumatólogo clínica sanna",
+      "keywordKey": "traumatologo clinica sanna",
+      "tipoDePagina": "ficha-de-clinica",
+      "repartoDeTipos": {
+        "red-social": 2,
+        "directorio": 1,
+        "pagina-de-servicio": 1,
+        "ficha-de-clinica": 4
+      },
+      "posicionesMedidas": 8,
+      "posicionesTipificadas": 8,
+      "confianza": "alta",
+      "topResult": "https://www.sanna.pe/medicos/",
+      "topDominio": "sanna.pe",
+      "topTipo": "pagina-de-servicio"
+    },
+    {
+      "keyword": "traumatólogo clínica tezza",
+      "keywordKey": "traumatologo clinica tezza",
+      "tipoDePagina": "directorio",
+      "repartoDeTipos": {
+        "red-social": 2,
+        "directorio": 4,
+        "pagina-de-servicio": 1,
+        "ficha-de-clinica": 2
+      },
+      "posicionesMedidas": 9,
+      "posicionesTipificadas": 9,
+      "confianza": "alta",
+      "topResult": "https://clinicatezza.com.pe/staff-medico/especialidad/ortopedia-y-traumatologia/",
+      "topDominio": "clinicatezza.com.pe",
+      "topTipo": "directorio"
+    },
+    {
+      "keyword": "ortopedia infantil clínica ricardo palma",
+      "keywordKey": "ortopedia infantil clinica ricardo palma",
+      "tipoDePagina": "pagina-de-servicio",
+      "repartoDeTipos": {
+        "red-social": 1,
+        "directorio": 1,
+        "pagina-de-servicio": 3,
+        "ficha-de-clinica": 1,
+        "otro": 3
+      },
+      "posicionesMedidas": 9,
+      "posicionesTipificadas": 6,
+      "confianza": "media",
+      "topResult": "https://www.crp.com.pe/medicos/",
+      "topDominio": "crp.com.pe",
+      "topTipo": "pagina-de-servicio"
+    },
+    {
+      "keyword": "ortopedia infantil clínica sanna",
+      "keywordKey": "ortopedia infantil clinica sanna",
+      "tipoDePagina": "ficha-de-clinica",
+      "repartoDeTipos": {
+        "red-social": 3,
+        "directorio": 1,
+        "pagina-de-servicio": 2,
+        "ficha-de-clinica": 3
+      },
+      "posicionesMedidas": 9,
+      "posicionesTipificadas": 9,
+      "confianza": "alta",
+      "topResult": "https://www.sanna.pe/medicos/",
+      "topDominio": "sanna.pe",
+      "topTipo": "pagina-de-servicio"
+    },
+    {
+      "keyword": "ortopedia infantil clínica tezza",
+      "keywordKey": "ortopedia infantil clinica tezza",
+      "tipoDePagina": "pagina-de-servicio",
+      "repartoDeTipos": {
+        "red-social": 2,
+        "directorio": 1,
+        "pagina-de-servicio": 3,
+        "ficha-de-clinica": 1,
+        "otro": 2
+      },
+      "posicionesMedidas": 9,
+      "posicionesTipificadas": 7,
+      "confianza": "alta",
+      "topResult": "https://clinicatezza.com.pe/staff-medico/especialidad/ortopedia-y-traumatologia/",
+      "topDominio": "clinicatezza.com.pe",
+      "topTipo": "directorio"
+    },
+    {
+      "keyword": "ciática: tratamientos",
+      "keywordKey": "ciatica tratamientos",
+      "tipoDePagina": "guia",
+      "repartoDeTipos": {
+        "red-social": 1,
+        "contenido-internacional": 2,
+        "guia": 3,
+        "pagina-de-servicio": 1,
+        "ficha-de-clinica": 2
+      },
+      "posicionesMedidas": 9,
+      "posicionesTipificadas": 9,
+      "confianza": "alta",
+      "topResult": "https://www.mayoclinic.org/es/diseases-conditions/sciatica/diagnosis-treatment/drc-20377441",
+      "topDominio": "mayoclinic.org",
+      "topTipo": "contenido-internacional"
+    },
+    {
+      "keyword": "desgarro muscular tratamiento",
+      "keywordKey": "desgarro muscular tratamiento",
+      "tipoDePagina": "contenido-internacional",
+      "repartoDeTipos": {
+        "contenido-internacional": 4,
+        "guia": 2,
+        "ficha-de-clinica": 1
+      },
+      "posicionesMedidas": 7,
+      "posicionesTipificadas": 7,
+      "confianza": "alta",
+      "topResult": "https://palma.fisio-clinics.com/que-es-un-desgarro-muscular-y-cual-es-su-tratamiento-en-fisioterapia-fisioclinics-palma",
+      "topDominio": "palma.fisio-clinics.com",
+      "topTipo": "guia"
+    },
+    {
+      "keyword": "desgarro muscular tratamientos",
+      "keywordKey": "desgarro muscular tratamientos",
+      "tipoDePagina": "contenido-internacional",
+      "repartoDeTipos": {
+        "contenido-internacional": 5,
+        "guia": 2,
+        "ficha-de-clinica": 1
+      },
+      "posicionesMedidas": 8,
+      "posicionesTipificadas": 8,
+      "confianza": "alta",
+      "topResult": "https://palma.fisio-clinics.com/que-es-un-desgarro-muscular-y-cual-es-su-tratamiento-en-fisioterapia-fisioclinics-palma",
+      "topDominio": "palma.fisio-clinics.com",
+      "topTipo": "guia"
+    },
+    {
+      "keyword": "que es un neurocirujano",
+      "keywordKey": "que es un neurocirujano",
+      "tipoDePagina": "guia",
+      "repartoDeTipos": {
+        "contenido-internacional": 1,
+        "guia": 2,
+        "pagina-de-servicio": 2,
+        "ficha-de-clinica": 1,
+        "otro": 2
+      },
+      "posicionesMedidas": 8,
+      "posicionesTipificadas": 6,
+      "confianza": "alta",
+      "topResult": "https://centromedicoabc.com/revista-digital/neurocirujano/",
+      "topDominio": "centromedicoabc.com",
+      "topTipo": "guia"
+    },
+    {
+      "keyword": "las mejores pastillas para la ciática",
+      "keywordKey": "las mejores pastillas para la ciatica",
+      "tipoDePagina": "guia",
+      "repartoDeTipos": {
+        "red-social": 1,
+        "contenido-internacional": 3,
+        "guia": 3,
+        "otro": 1
+      },
+      "posicionesMedidas": 8,
+      "posicionesTipificadas": 7,
+      "confianza": "alta",
+      "topResult": "https://mejorconsalud.as.com/salud/medicamentos/medicamentos-dolor-nervio-ciatico/",
+      "topDominio": "mejorconsalud.as.com",
+      "topTipo": "guia"
+    },
+    {
+      "keyword": "reumatólogo o traumatólogo",
+      "keywordKey": "reumatologo o traumatologo",
+      "tipoDePagina": "contenido-internacional",
+      "repartoDeTipos": {
+        "contenido-internacional": 4,
+        "guia": 2,
+        "pagina-de-servicio": 1
+      },
+      "posicionesMedidas": 7,
+      "posicionesTipificadas": 7,
+      "confianza": "alta",
+      "topResult": "https://clinicainternacional.com.pe/blog-educativo/traumatologia-reumatologia-especialidades/",
+      "topDominio": "clinicainternacional.com.pe",
+      "topTipo": "guia"
+    },
+    {
+      "keyword": "mejor clínica de traumatología en lima",
+      "keywordKey": "mejor clinica de traumatologia en lima",
+      "tipoDePagina": "pagina-de-servicio",
+      "repartoDeTipos": {
+        "pagina-de-servicio": 5,
+        "ficha-de-clinica": 2,
+        "otro": 1
+      },
+      "posicionesMedidas": 8,
+      "posicionesTipificadas": 7,
+      "confianza": "alta",
+      "topResult": "https://clinicalima.sanjuandedios.pe/",
+      "topDominio": "clinicalima.sanjuandedios.pe",
+      "topTipo": "ficha-de-clinica"
+    },
+    {
+      "keyword": "ortopedia surco",
+      "keywordKey": "ortopedia surco",
+      "tipoDePagina": "otro",
+      "repartoDeTipos": {
+        "red-social": 3,
+        "directorio": 2,
+        "otro": 4
+      },
+      "posicionesMedidas": 9,
+      "posicionesTipificadas": 5,
+      "confianza": "media",
+      "topResult": "https://www.ventasortopediawong.pe/",
+      "topDominio": "ventasortopediawong.pe",
+      "topTipo": "otro"
+    },
+    {
+      "keyword": "cual es la diferencia entre artritis y artrosis",
+      "keywordKey": "cual es la diferencia entre artritis y artrosis",
+      "tipoDePagina": "contenido-internacional",
+      "repartoDeTipos": {
+        "contenido-internacional": 5,
+        "guia": 1,
+        "otro": 2
+      },
+      "posicionesMedidas": 8,
+      "posicionesTipificadas": 6,
+      "confianza": "alta",
+      "topResult": "https://www.clinicauandes.cl/noticia/artritis-y-artrosis-conoce-sus-principales-diferencias",
+      "topDominio": "clinicauandes.cl",
+      "topTipo": "contenido-internacional"
+    },
+    {
+      "keyword": "como curar desgarro muscular",
+      "keywordKey": "como curar desgarro muscular",
+      "tipoDePagina": "contenido-internacional",
+      "repartoDeTipos": {
+        "contenido-internacional": 4,
+        "guia": 3,
+        "ficha-de-clinica": 1
+      },
+      "posicionesMedidas": 8,
+      "posicionesTipificadas": 8,
+      "confianza": "alta",
+      "topResult": "https://palma.fisio-clinics.com/que-es-un-desgarro-muscular-y-cual-es-su-tratamiento-en-fisioterapia-fisioclinics-palma",
+      "topDominio": "palma.fisio-clinics.com",
+      "topTipo": "guia"
+    },
+    {
+      "keyword": "como se cura un desgarro muscular",
+      "keywordKey": "como se cura un desgarro muscular",
+      "tipoDePagina": "guia",
+      "repartoDeTipos": {
+        "contenido-internacional": 3,
+        "guia": 3,
+        "ficha-de-clinica": 1,
+        "otro": 1
+      },
+      "posicionesMedidas": 8,
+      "posicionesTipificadas": 7,
+      "confianza": "alta",
+      "topResult": "https://palma.fisio-clinics.com/que-es-un-desgarro-muscular-y-cual-es-su-tratamiento-en-fisioterapia-fisioclinics-palma",
+      "topDominio": "palma.fisio-clinics.com",
+      "topTipo": "guia"
+    },
+    {
+      "keyword": "tratamientos para desgarro muscular",
+      "keywordKey": "tratamientos para desgarro muscular",
+      "tipoDePagina": "contenido-internacional",
+      "repartoDeTipos": {
+        "contenido-internacional": 3,
+        "guia": 2,
+        "pagina-de-servicio": 1,
+        "ficha-de-clinica": 1
+      },
+      "posicionesMedidas": 7,
+      "posicionesTipificadas": 7,
+      "confianza": "alta",
+      "topResult": "https://palma.fisio-clinics.com/que-es-un-desgarro-muscular-y-cual-es-su-tratamiento-en-fisioterapia-fisioclinics-palma",
+      "topDominio": "palma.fisio-clinics.com",
+      "topTipo": "guia"
+    },
+    {
+      "keyword": "traumatología especialista en columna",
+      "keywordKey": "traumatologia especialista en columna",
+      "tipoDePagina": "pagina-de-servicio",
+      "repartoDeTipos": {
+        "directorio": 1,
+        "contenido-internacional": 1,
+        "pagina-de-servicio": 5,
+        "otro": 2
+      },
+      "posicionesMedidas": 9,
+      "posicionesTipificadas": 7,
+      "confianza": "alta",
+      "topResult": "https://www.doctoralia.pe/tratamientos-servicios/consultas-especialista-de-columna/lima",
+      "topDominio": "doctoralia.pe",
+      "topTipo": "directorio"
+    },
+    {
+      "keyword": "fisioterapia traumatología",
+      "keywordKey": "fisioterapia traumatologia",
+      "tipoDePagina": "pagina-de-servicio",
+      "repartoDeTipos": {
+        "red-social": 1,
+        "contenido-internacional": 3,
+        "pagina-de-servicio": 4,
+        "otro": 1
+      },
+      "posicionesMedidas": 9,
+      "posicionesTipificadas": 8,
+      "confianza": "alta",
+      "topResult": "https://www.martinvasco.es/que-es-la-fisioterapia-traumatologica-talavera/",
+      "topDominio": "martinvasco.es",
+      "topTipo": "contenido-internacional"
+    },
+    {
+      "keyword": "mejor neurocirujano de columna lima",
+      "keywordKey": "mejor neurocirujano de columna lima",
+      "tipoDePagina": "otro",
+      "repartoDeTipos": {
+        "directorio": 1,
+        "pagina-de-servicio": 2,
+        "otro": 6
+      },
+      "posicionesMedidas": 9,
+      "posicionesTipificadas": 3,
+      "confianza": "baja",
+      "topResult": "https://www.doctoralia.pe/neurocirujano/lima",
+      "topDominio": "doctoralia.pe",
+      "topTipo": "directorio"
+    }
+  ],
+  "sinCaptura": [],
+  "resumen": {
+    "candidatas": 91,
+    "tipificadas": 91,
+    "sinCaptura": 0,
+    "porTipoDominante": {
+      "red-social": 6,
+      "directorio": 12,
+      "contenido-internacional": 21,
+      "guia": 5,
+      "pagina-de-servicio": 32,
+      "ficha-de-clinica": 4,
+      "otro": 11
+    },
+    "porConfianza": {
+      "alta": 73,
+      "media": 14,
+      "baja": 4
+    }
+  }
+}
