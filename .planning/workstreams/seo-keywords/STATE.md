@@ -2,17 +2,17 @@
 gsd_state_version: 1.0
 milestone: v1.2
 milestone_name: "SEO semantico: keyword research y optimizacion on-page"
-current_phase: 13
-current_phase_name: Clusters, competencia y las 10 de Oro
+current_phase: 14
+current_phase_name: "Mapa keyword → URL y matriz de enlazado"
 status: in_progress
-stopped_at: Completado 13-05-PLAN.md y con el la fase 13
-last_updated: "2026-08-11T19:25:41.638Z"
-last_activity: "2026-08-11, cerrado el plan 13-02: 84 búsquedas emitidas en un solo disparo bajo techo acumulado (libro en 96 de 102), 31 clusters y las 4.766 filas de alcance objetivo con su procedencia marcada"
+stopped_at: Completed 14-01-PLAN.md
+last_updated: "2026-08-11T21:38:14.568Z"
+last_activity: "2026-08-11, cerrado el plan 14-01 con cero cuota gastada: el sitio mide 22 URLs y no 19, las 91 cabezas ya declaran qué formato exige su SERP, y el veredicto de fusión par a par quedó blindado contra fusionar por pertenencia a cluster"
 progress:
   total_phases: 4
   completed_phases: 2
-  total_plans: 10
-  completed_plans: 10
+  total_plans: 14
+  completed_plans: 11
   percent: 50
 ---
 
@@ -23,16 +23,16 @@ progress:
 See: .planning/PROJECT.md (updated 2026-08-10)
 
 **Core value:** Que un paciente que busca traumatólogo/cirujano de columna en Lima encuentre el sitio y agende cita por WhatsApp en menos de 2 clics, con todo evento rastreado.
-**Current focus:** Fase 13 en curso. La captura de SERP y el clustering ya están cerrados. Hallazgo que reordena la estrategia: los cinco competidores rankean **sin enlaces** en sus paginas interiores, asi que el contenido es la palanca y no el linkbuilding. Ver `data/lectura-competencia-2026-08-11.md`. Segundo hallazgo, del clustering: 41 de las 91 cabezas comparten SERP en Lima, así que el geo de especialidad es **una sola página** y no 41.
+**Current focus:** Fase 14 en curso. El inventario del sitio, el tipo de página exigido por la SERP y el guardarraíl de fusión ya están cerrados, sin gastar cuota. Hallazgo que reordena el plan 14-02: **tres de las cuatro páginas de servicio que v1.1 ya publicó enfrentan una SERP de contenido internacional, no de página de servicio** —`estenosis espinal` es 8 de 8—, así que el formato publicado no es el que Google premia. Se arrastra de la fase 13: los cinco competidores rankean **sin enlaces** en sus páginas interiores, así que el contenido es la palanca y no el linkbuilding.
 
 ## Current Position
 
-Phase: 13 de 15 en curso (Clusters, competencia y las 10 de Oro), segunda de las 4 fases de v1.2
-Plan: 13-01, 13-02 y 13-03 cerrados (waves 1 y 2). Siguen 13-04 y 13-05
-Status: KWR-04 y COMP-03 cerrados por el plan 13-02. SHEET-01 y SHEET-03 siguen habilitados, no completos. Quedan **30 búsquedas de SerpApi** hasta el reset del 2026-08-21
-Last activity: 2026-08-11, cerrado el plan 13-02: 84 búsquedas emitidas en un solo disparo bajo techo acumulado (libro en 96 de 102), 31 clusters y las 4.766 filas de alcance objetivo con su procedencia marcada
+Phase: 14 de 15 en curso (Mapa keyword → URL y matriz de enlazado), tercera de las 4 fases de v1.2
+Plan: 14-01 cerrado (wave 1). Sigue 14-02, que abre con el checkpoint de decisiones para Juan
+Status: MAP-01, MAP-04 y SHEET-02 habilitados, ninguno completo: el mapa cubre 1 de 21 URLs y el Sheet del cliente sigue sin recibir una sola fila. Quedan **30 búsquedas de SerpApi** hasta el reset del 2026-08-21
+Last activity: 2026-08-11, cerrado el plan 14-01 con cero cuota gastada: el sitio mide 22 URLs y no 19, las 91 cabezas ya declaran qué formato exige su SERP, y el veredicto de fusión par a par quedó blindado contra fusionar por pertenencia a cluster
 
-Progress: [██████████] 100% de la fase 13 (3 de 5 planes) · 1 de 4 fases de v1.2 cerradas
+Progress: [██░░░░░░░░] 25% de la fase 14 (1 de 4 planes) · 2 de 4 fases de v1.2 cerradas
 
 ## Roadmap v1.2
 
@@ -80,6 +80,9 @@ Los dos milestones corren a la vez sobre el mismo repositorio.
 - [Phase ?]: Las 10 de Oro se eligen con tres puertas de evidencia (alcance, servicio propio, piso de disputables) y despues valor de negocio; la alcanzabilidad solo desempata
 - [Phase ?]: Una keyword de oro tiene que nombrar un servicio que el sitio declara: lo sembrado desde COMPETITORS.md describe lo que hace un competidor
 - [Phase ?]: Cifosis entra al universo de candidatas por confirmacion explicita de Juan del 2026-08-11, y aun asi el criterio la dejo en el puesto 11 con 37 puntos contra 38
+- [Fase 14, plan 01]: El inventario mide 22 URLs y 21 mapeables, no las 19 y 18 del roadmap. La diferencia se registra nominalmente en vez de ajustarse a la expectativa.
+- [Fase 14, plan 01]: El slug publicado es /servicios/escoliosis. El mapa se emite contra la URL que existe; renombrarla a /servicios/escoliosis-y-deformidades arrastra redirecciones y es decision de Juan en el checkpoint de 14-02.
+- [Fase 14, plan 01]: La pertenencia a un cluster no es parametro de veredictoDeFusion: solo decide el solape par a par del top 10 contra un umbral de 3.
 
 ### Pending Todos
 
@@ -93,11 +96,12 @@ Los dos milestones corren a la vez sobre el mismo repositorio.
 - Las diez URLs existentes ya compiten entre sí sin que nadie lo haya decidido. La canibalización de MAP-02 no es hipotética: hay que medirla antes de asignar.
 - La fase 8 de v1.1 es la siguiente en su roadmap y depende de la fase 14 de este. Si v1.2 se demora, v1.1 se detiene o escribe páginas que después habrá que reoptimizar.
 - Contenido YMYL: nada de credenciales, cifras de cirugías ni resultados inventados. Solo lo verificado o lo que el doctor confirme por escrito.
+- El criterio del tracer pedia actualizadas: 1 en ensayo sin escribir en el Sheet, y las dos cosas se excluyen. Se respeto la restriccion: el Sheet sigue intacto y la primera escritura real es de 14-02, tras la aprobacion de Juan.
 
 ## Session Continuity
 
-Last session: 2026-08-11T19:25:28.099Z
-Stopped at: Completado 13-05-PLAN.md y con el la fase 13
+Last session: 2026-08-11T21:36:30.153Z
+Stopped at: Completed 14-01-PLAN.md
 Resume file: None
 
 ## Performance Metrics
@@ -110,6 +114,7 @@ Resume file: None
 | Phase 13 P01 | 1h 50min | 3 tasks | 16 files |
 | Phase 13 P02 | ~1h 15min | 2 tasks | 9 files |
 | Phase 13 P05 | ~2h | 2 tasks | 6 files |
+| Phase 14 P01 | 50m | 3 tasks | 12 files |
 
 ## Presupuesto de fuentes externas al cerrar la fase 12
 
