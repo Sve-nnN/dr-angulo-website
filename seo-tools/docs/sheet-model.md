@@ -55,6 +55,43 @@ entera.
 explica la forma real y dice que el modo orientado a columnas lo implementa la fase 13. Un
 error claro es preferible a un tab corrompido.
 
+#### La forma exacta del tab transpuesto, medida el 2026-08-11
+
+El plan 13-01 bajó el rectángulo completo `A1:U36` en solo lectura y volcó el resultado en
+`.planning/workstreams/seo-keywords/data/competitor-tab-recon-2026-08-11.md`. Tres cosas
+salieron distintas de lo que el reconocimiento del 2026-08-10 había dejado suponer:
+
+**1. Hay exactamente cinco slots de competidor, y no son columnas contiguas.** Corren con paso
+4 desde la columna B: `B`, `F`, `J`, `N`, `R`. La fila 2 lleva el nombre y la fila 3 el dominio.
+Cinco slots es justo lo que pide COMP-01. El de más a la izquierda lo ocupa hoy el residuo de
+plantilla, así que al limpiarlo quedan los cinco libres.
+
+**2. La columna B hace doble tarea, y ahí está el peligro.** No es una columna de etiquetas:
+es el **primer slot de competidor** y, encima de sus valores, carga también los títulos de
+sección en las filas 1, 4, 11, 17, 23, 25 y 31. Un escritor que vuelque una columna entera
+sobre el slot B borraría esos títulos **sin lanzar ninguna excepción**. Por eso el modelo
+declara `row` métrica por métrica y el escritor de 13-03 toca esas filas y ninguna otra.
+
+**3. La etiqueta de la fila 25 tiene 108 espacios finales.** Mide 139 caracteres y 31 después
+de recortar. Comparar sin `trim()` no la encuentra jamás.
+
+Los seis bloques de métricas, derivados de los títulos de la columna B:
+
+| Fila del título | Título | Filas | Qué contiene |
+|---|---|---|---|
+| 4 | `Key Stats ` | 5–10 | DR, AR, referring domains, tráfico, rankings, blog |
+| 11 | `Traffic Breakdown by Country ` | 12–16 | `Country 1` a `Country 5` |
+| 17 | `Keywords` | 18–22 | `Keyword 1` a `Keyword 5` |
+| 23 | `Featured Snippets ` | 24 | `Number of featured snippets` |
+| 25 | `Páginas principales (#10)` | 26–30 | `Top page 1` a `Top page 5` |
+| 31 | `Most Linked Content (#11)` | 32–36 | `Most linked content 1` a `5` |
+
+Dentro del bloque de 4 columnas de cada slot, el desplazamiento `+2` lleva un porcentaje, y
+solo en el bloque de países: medido `B12 = "United States"` con `D12 = "20%"`.
+
+El residuo de plantilla vive en `B2` (`pera`), `B3` (`pera.com`), `B5` (DR 20), `B6` (AR 13),
+`B12` (`United States`), `D12` (`20%`) y `B24` (`6`).
+
 ---
 
 ## Inventario real de los cinco tabs del alcance
@@ -242,6 +279,32 @@ produce `kw:classify`; el escritor solo transcribe lo que trae el dataset.
 
 La ruta al dataset sale del campo `source` del modelo, no del código. Si el dataset cambia de
 forma, se corrige este JSON y nada más.
+
+---
+
+## Las dos columnas que habilitó la fase 13
+
+| Encabezado | Columna real | Campo | Estado | Antes |
+|---|---|---|---|---|
+| `Cluster` | B | `cluster` | `fase-13` | declarada y vacía |
+| `Top Result` | M | `topResult` | `fase-13` | **`fase-15`** |
+
+`Top Result` se reasignó de la fase 15 a la 13, y el motivo es que es **dato de SERP**: es el
+resultado que Google pone primero, y la SERP la captura esta fase. Dejarla en la 15 habría
+obligado a volver a leer la misma captura dos fases después, con una cuota de SerpApi que no
+se repone hasta el 21 de agosto.
+
+**`URL` sigue en la fase 14 y `Suggested H1` en la 15. Ninguna de las dos se movió.** Eso no es
+una nota de estilo: el escritor coalesce índices contiguos en rangos, así que una columna ajena
+que quedara en medio de dos propias se sobreescribiría sin lanzar nada. En el documento real
+`URL` es la columna C, entre `Cluster` (B) y `Search Volume` (D), y `Suggested H1` es la L,
+entre `Referring Domains Needed ` (K) y `Top Result` (M). Las dos están **exactamente** en el
+lugar donde un filtro mal ampliado las pisaría, y por eso hay pruebas nombradas que afirman que
+ningún rango escrito las alcanza.
+
+Con esto, `REQUIRED_STATUSES` incorpora `fase-13`: si alguien renombra `Cluster` o `Top Result`
+en el documento del cliente, la carga falla ruidosa en vez de saltarse la columna en silencio y
+reportar filas actualizadas que nunca llegaron a ninguna celda.
 
 ---
 

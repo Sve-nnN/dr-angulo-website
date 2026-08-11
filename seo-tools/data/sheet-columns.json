@@ -48,7 +48,13 @@
     "note": "Unico tab que escribe la fase 12. La clave de idempotencia se deriva normalizando el texto leido de la columna A: la normalizacion produce la clave, nunca el valor visible.",
     "columns": [
       { "header": "Suggested Keyword", "field": "keyword", "source": "keyword", "status": "fase-12", "note": "El texto ORIGINAL, con tildes y enie. La clave de idempotencia sale de normalizarlo, y el normalizado nunca se escribe." },
-      { "header": "Cluster", "field": null, "status": "fase-13" },
+      {
+        "header": "Cluster",
+        "field": "cluster",
+        "source": "cluster",
+        "status": "fase-13",
+        "note": "Habilitada por el plan 13-01. Lleva el nombre del cluster al que pertenece la keyword. Las filas agrupadas por texto y no por solape de SERP se distinguen por el campo del dataset, no por esta celda: el Sheet muestra el cluster, la procedencia vive en keywords.jsonl (J-3)."
+      },
       { "header": "URL", "field": null, "status": "fase-14" },
       { "header": "Search Volume", "field": "volume", "source": "metricas.searchVolume", "status": "fase-12", "note": "Volumen de DinoRank. El encabezado no nombra ninguna herramienta, asi que no hay dato mal etiquetado." },
       { "header": "Traffic Potential", "field": null, "status": "no-consultado", "literal": "no_consultado" },
@@ -61,7 +67,13 @@
       { "header": "Keyword Difficulty", "field": null, "status": "no-consultado", "literal": "no_consultado" },
       { "header": "Referring Domains Needed ", "field": null, "status": "no-consultado", "literal": "no_consultado", "note": "Lleva espacio final en el documento." },
       { "header": "Suggested H1", "field": null, "status": "fase-15" },
-      { "header": "Top Result", "field": null, "status": "fase-15" },
+      {
+        "header": "Top Result",
+        "field": "topResult",
+        "source": "topResult",
+        "status": "fase-13",
+        "note": "REASIGNADA de la fase 15 a la 13 por el plan 13-01, con fundamento: es el resultado que Google pone primero, o sea dato de SERP, y la SERP la captura esta fase. Mantenerla en la 15 habria obligado a volver a leer la misma captura dos fases despues. `Suggested H1` sigue siendo de la 15 y `URL` de la 14: ninguna de las dos se mueve."
+      },
       { "header": "Internal Approval ", "field": null, "status": "sin-uso", "note": "Lleva espacio final en el documento." },
       { "header": "Client Approval ", "field": null, "status": "sin-uso", "note": "Lleva espacio final en el documento." },
       { "header": "Notes", "field": null, "status": "sin-uso" },
@@ -178,7 +190,71 @@
     "keyField": "domain",
     "keyHeader": null,
     "writtenBy": 13,
-    "note": "Tab TRANSPUESTO: los competidores corren a lo ancho, una columna por competidor, y las metricas a lo alto con sus etiquetas en la columna A. No tiene fila de encabezados, asi que el modelo de una fila por registro no aplica. El escritor orientado a filas se niega a tocarlo. El modo orientado a columnas lo implementa la fase 13, que es la que escribe este tab.",
-    "columns": []
+    "note": "Tab TRANSPUESTO: los competidores corren a lo ancho, una columna por competidor, y las metricas a lo alto con sus etiquetas en la columna A. No tiene fila de encabezados, asi que el modelo de una fila por registro no aplica. El escritor orientado a filas se niega a tocarlo. El modo orientado a columnas lo implementa el plan 13-03. La clave de idempotencia es el DOMINIO, que vive en la fila 3.",
+    "medidoEl": "2026-08-11",
+    "origenDeLaMedicion": ".planning/workstreams/seo-keywords/data/competitor-tab-recon-2026-08-11.md",
+
+    "//slots": "Los competidores no ocupan columnas contiguas: van con paso 4 desde la columna B. Cinco slots, que es exactamente lo que pide COMP-01. El primero lo ocupa hoy el residuo de plantilla (`pera` en B2, `pera.com` en B3, DR 20 en B5, AR 13 en B6, `United States` en B12, 6 en B24 y 20% en D12); al limpiarlo quedan los cinco libres.",
+    "slots": {
+      "primeraColumnaIndice": 1,
+      "paso": 4,
+      "cantidad": 5,
+      "letras": ["B", "F", "J", "N", "R"],
+      "//offsetPorcentaje": "Dentro del bloque de 4 columnas de cada slot, el desplazamiento +2 lleva un porcentaje. Medido: B12 = 'United States' y D12 = '20%'. Solo aplica al bloque de trafico por pais.",
+      "offsetPorcentaje": 2
+    },
+
+    "//peligro": "La columna B NO es una columna de etiquetas: es el PRIMER SLOT de competidor y ADEMAS carga los titulos de seccion en las filas 4, 11, 17, 23, 25 y 31. Volcar una columna entera sobre el slot B borraria esos titulos sin lanzar ninguna excepcion. Por eso cada metrica declara su fila y el escritor toca esa fila y ninguna otra.",
+
+    "//columns": "En un tab transpuesto cada entrada describe una FILA de metrica, no una columna: `row` es su fila real base 1 y `header` su etiqueta literal en la columna A, con los espacios tal como estan en el documento. La fila 2 no tiene etiqueta en la columna A porque es la fila de nombres de slot.",
+    "columns": [
+      { "row": 2, "header": "", "field": "name", "status": "fase-13", "note": "Fila de nombres de slot. No tiene etiqueta en la columna A: la celda esta vacia y eso es un hecho medido, no un dato faltante. Aca va el nombre legible del competidor." },
+      { "row": 3, "header": "Website", "field": "domain", "status": "fase-13", "note": "CLAVE DE IDEMPOTENCIA. Un competidor que ya esta en un slot se actualiza en ese slot; solo uno que no esta ocupa un slot libre." },
+
+      { "row": 5, "header": "Domain Rating (DR)", "field": "domainRating", "status": "fase-13", "note": "D-12: sale de Ahrefs, cinco dominios. Hoy tiene el residuo 20 en el slot B." },
+      { "row": 6, "header": "Ahrefs Rank (AR)", "field": "ahrefsRank", "status": "fase-13", "note": "Viene en la misma llamada que el DR, asi que no cuesta unidades extra. Hoy tiene el residuo 13 en el slot B." },
+      { "row": 7, "header": "Referring Domains", "field": "referringDomains", "status": "fase-13", "note": "COMP-01 lo pide explicitamente. Misma llamada que DR y AR." },
+      { "row": 8, "header": "Estimated Monthly Search Traffic", "field": null, "status": "no-consultado", "literal": "no_consultado", "note": "Queda fuera del select recortado de D-07, que se limita a lo que COMP-01 exige. Pedirlo ampliaria el consumo sin que ningun requisito lo use." },
+      { "row": 9, "header": "Estimated Top 100 Keyword Rankings", "field": null, "status": "no-consultado", "literal": "no_consultado", "note": "Mismo motivo que la fila 8." },
+      { "row": 10, "header": "Do they have a blog?", "field": null, "status": "no-consultado", "literal": "no_consultado", "note": "Exige visitar cada sitio competidor, que no es alcance de esta fase. Se deja declarado y sin llenar en vez de inventarlo." },
+
+      { "row": 12, "header": "Country 1", "field": null, "status": "no-consultado", "literal": "no_consultado", "note": "El reparto de trafico por pais es metrica de Ahrefs fuera del select de D-07. Hoy tiene el residuo 'United States' con 20% en D12." },
+      { "row": 13, "header": "Country 2", "field": null, "status": "no-consultado", "literal": "no_consultado" },
+      { "row": 14, "header": "Country 3", "field": null, "status": "no-consultado", "literal": "no_consultado" },
+      { "row": 15, "header": "Country 4", "field": null, "status": "no-consultado", "literal": "no_consultado" },
+      { "row": 16, "header": "Country 5", "field": null, "status": "no-consultado", "literal": "no_consultado" },
+
+      { "row": 18, "header": "Keyword 1", "field": "keyword1", "status": "fase-13", "note": "COMP-02. Se deriva de las SERP ya capturadas, con coste adicional cero (D-13): donde aparece el competidor y el doctor no. Las de marca ajena son inteligencia y nunca objetivo (D-14)." },
+      { "row": 19, "header": "Keyword 2", "field": "keyword2", "status": "fase-13" },
+      { "row": 20, "header": "Keyword 3", "field": "keyword3", "status": "fase-13" },
+      { "row": 21, "header": "Keyword 4", "field": "keyword4", "status": "fase-13" },
+      { "row": 22, "header": "Keyword 5", "field": "keyword5", "status": "fase-13" },
+
+      { "row": 24, "header": "Number of featured snippets", "field": "featuredSnippets", "status": "fase-13", "note": "Se cuenta sobre las capturas propias sin pedir nada nuevo. Dato medido el 2026-08-11: las 12 capturas de la fase 12 traen CERO bloque destacado, asi que un 0 aca sera un 0 real y no un dato ausente. Hoy tiene el residuo 6 en el slot B." },
+
+      { "row": 26, "header": "Top page 1", "field": null, "status": "no-consultado", "literal": "no_consultado", "note": "Las paginas principales por trafico salen de un endpoint de Ahrefs que queda fuera del select recortado de D-07." },
+      { "row": 27, "header": "Top page 2", "field": null, "status": "no-consultado", "literal": "no_consultado" },
+      { "row": 28, "header": "Top page 3", "field": null, "status": "no-consultado", "literal": "no_consultado" },
+      { "row": 29, "header": "Top page 4", "field": null, "status": "no-consultado", "literal": "no_consultado" },
+      { "row": 30, "header": "Top page 5", "field": null, "status": "no-consultado", "literal": "no_consultado" },
+
+      { "row": 32, "header": "Most linked content 1", "field": null, "status": "no-consultado", "literal": "no_consultado", "note": "El contenido mas enlazado sale de otro endpoint de Ahrefs, tambien fuera del select de D-07." },
+      { "row": 33, "header": "Most linked content 2", "field": null, "status": "no-consultado", "literal": "no_consultado" },
+      { "row": 34, "header": "Most linked content 3", "field": null, "status": "no-consultado", "literal": "no_consultado" },
+      { "row": 35, "header": "Most linked content 4", "field": null, "status": "no-consultado", "literal": "no_consultado" },
+      { "row": 36, "header": "Most linked content 5", "field": null, "status": "no-consultado", "literal": "no_consultado" }
+    ],
+
+    "//filasQueNoSeTocan": "Titulos de seccion en la columna B. El escritor de 13-03 NO puede escribir en estas filas del slot B.",
+    "filasDeTitulo": [
+      { "row": 1, "titulo": "Competitor Analysis " },
+      { "row": 4, "titulo": "Key Stats " },
+      { "row": 11, "titulo": "Traffic Breakdown by Country " },
+      { "row": 17, "titulo": "Keywords" },
+      { "row": 23, "titulo": "Featured Snippets " },
+      { "row": 25, "titulo": "Páginas principales (#10)" },
+      { "row": 31, "titulo": "Most Linked Content (#11)" }
+    ],
+    "//fila25": "La etiqueta de la columna A de la fila 25 mide 139 caracteres y solo 31 despues de recortar: son 108 espacios finales. Comparar sin recortar no la encuentra nunca."
   }
 }

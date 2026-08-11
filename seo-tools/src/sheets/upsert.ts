@@ -305,8 +305,18 @@ export async function upsertRows(
     .map(([clave, filas]) => ({ clave, filas }));
 
   // Columnas que esta fase escribe. El resto del tab no se toca ni con un valor vacio.
+  //
+  // `fase-13` entra desde el plan 13-01: es lo que habilita `Cluster` y `Top Result`. Lo que
+  // NO puede entrar nunca es `fase-14` (`URL`) ni `fase-15` (`Suggested H1`); ampliar esta
+  // lista de mas haria que la carga pise columnas de fases que todavia no corrieron, y como
+  // el escritor coalesce indices contiguos en rangos, bastaria con que una columna ajena
+  // quedara en medio de dos propias para que se sobreescribiera sin lanzar nada (T-13-02).
   const propias = [...schema.byHeader.values()].filter(
-    (c) => c.status === "fase-12" || c.status === "no-consultado" || c.status === "nueva",
+    (c) =>
+      c.status === "fase-12" ||
+      c.status === "no-consultado" ||
+      c.status === "nueva" ||
+      c.status === "fase-13",
   );
   const runs = columnRuns(propias.map((c) => c.index));
 
