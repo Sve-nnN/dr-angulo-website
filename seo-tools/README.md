@@ -148,23 +148,50 @@ su valor.
 El orden importa: la deduplicacion conserva la primera aparicion, asi que el conteo por capa
 dice cuanto aporto **de nuevo** cada fuente pagada sobre lo que la permutacion ya tenia.
 
-### Tres trampas medidas de la respuesta de DinoRank
+### Cinco trampas medidas de la respuesta de DinoRank
 
 Verificadas en vivo el 2026-08-10. Estan en el codigo y tienen prueba propia:
 
-1. **La keyword consultada siempre vuelve con `search_volume: 0`** en el bloque `datos`, junto
-   con el CPC, la competencia y los doce meses de historia. El volumen se lee de `keywords[]`;
-   si hace falta el de la propia semilla, se la busca dentro de ese arreglo por `key`. Un
-   parser que lea `datos` saca el universo entero en cero **y el fallo es silencioso, porque
-   cero es un valor valido**.
+1. **El bloque `datos`, que corresponde a la keyword consultada, suele volver entero en cero**:
+   volumen, CPC, competencia y los doce meses de historia. Un parser que lo lea de plano saca
+   el universo en cero **y el fallo es silencioso, porque cero es un valor valido**.
+
+   **Correccion del 2026-08-10, posterior:** ese "siempre" era una generalizacion de tres
+   consultas. Auditadas las 70 respuestas que habia en cache, `datos` viene en cero en 60 y
+   **trae el valor real en 10**: `ciatica` con 8100, `desgarro muscular` con 5400,
+   `cifosis` con 3600. Descartarlo de plano tira dato bueno. La lectura correcta exige las dos
+   condiciones de las trampas 4 y 5.
 2. **Solo una fraccion de las relacionadas trae volumen medible.** El filtro de calidad no
    puede ser "tiene volumen" o el universo se derrumba y se pierde justo el long tail
    geolocalizado. Las keywords sin volumen se conservan marcadas `sin_datos`.
 3. **La respuesta anida `data.data`.** No es un error de transcripcion.
 
-Ademas, el rendimiento depende del largo de la semilla: los terminos cabecera de una o dos
-palabras rinden cientos de relacionadas y las frases de cuatro o cinco palabras devuelven
-cero. Por eso el presupuesto de semillas de esta fuente es holgado.
+4. **`datos.key` no siempre es la keyword consultada.** Consultar `casos de revision` devuelve
+   `datos.key` igual a `tiempo actual de revision de casos nvc`, con volumen 10: la fuente
+   sustituye por una sugerencia y no avisa. Leer `datos` sin comparar la clave le cuelga a una
+   keyword la metrica de otra. **Se compara la clave normalizada, siempre.**
+
+5. **La keyword consultada NO aparece dentro de su propio `keywords[]`.** Medido sobre las 70
+   respuestas cacheadas: cero de 70 se incluyen a si mismas. O sea que `keywords[]` es
+   descubrimiento y `datos` es consulta, y son dos cosas distintas. Buscar la propia keyword
+   dentro del arreglo de relacionadas no la encuentra nunca.
+
+Ademas, el rendimiento depende del largo de la keyword: los terminos cabecera de una a tres
+palabras resuelven en un tercio de los casos y las frases de cuatro o mas palabras **devuelven
+cero**. Por eso `kw:enrich` tiene la bandera `--max-words`: gastar cuota en frases largas es
+gasto sin retorno medible, y esto se midio, no se supuso.
+
+### Como leer las metricas de UNA keyword, entonces
+
+`parseMetricasDeConsulta` es la unica lectura que no inventa ceros ni tira dato bueno:
+
+1. Mira `data.data.datos` y lo acepta **solo si** `datos.key` normaliza igual que la keyword
+   consultada **y** el registro no es degenerado. Degenerado significa volumen, CPC y
+   competencia en cero **y** los doce meses de historia en cero, todo junto: cuando la fuente
+   tiene el dato, la historia se mueve.
+2. Si `datos` no pasa esas dos condiciones, busca la keyword dentro de `keywords[]`.
+3. Si tampoco esta, la marca `sin_datos`. Que no es un dato faltante: para la fase 13 una
+   keyword geolocalizada sin volumen medible es senal de oportunidad.
 
 ### Presupuesto y orden de gasto
 
@@ -297,8 +324,14 @@ Fixture: `data/fixtures/dinorank-keyword-research-pe.json` (recortada a 25 de 89
 
 Cada entrada de `keywords[]` trae ademas `key`, `position`, `etv`, `url`, `relative_url` e
 `history`, que son doce objetos `{month: "YYYYMM", search_volume}`. `data.data.datos` tiene la
-misma forma pero corresponde a la keyword consultada y **vuelve siempre en cero**: es la trampa
-numero uno de la seccion anterior.
+misma forma pero corresponde a la keyword consultada, y se lee con las dos condiciones de las
+trampas 1, 4 y 5 de la seccion anterior.
+
+**Este endpoint descubre, no consulta.** Es la conclusion practica de la trampa 5, y es lo que
+redimensiono a `kw:enrich`: la unica forma barata de que una keyword tenga metricas es que
+aparezca como relacionada de OTRA. Por eso el enriquecimiento barre la cache entera antes de
+emitir una sola consulta nueva: una respuesta pagada por una keyword suele traer contestadas a
+muchas otras, y sin ese barrido se paga dos veces por el mismo dato.
 
 ### `POST /tfidf` — entidades semanticas por URL (ONPAGE-03, fase 15)
 

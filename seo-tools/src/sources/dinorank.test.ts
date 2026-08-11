@@ -27,6 +27,7 @@ import {
   parseAuditoria,
   parseCanibalizaciones,
   parseKeywordResearch,
+  parseMetricasDeConsulta,
   parseMetricasDeKeyword,
   parseTfidf,
   urlEndpoint,
@@ -203,6 +204,75 @@ test("comportamiento 3b: un volumen ausente no se confunde con un volumen cero",
   assert.equal(ausente.searchVolumeFuente, "sin_datos");
   assert.equal(cero.searchVolumeFuente, "dinorank", "cero es un volumen medido, no un dato faltante");
   assert.equal(cero.searchVolume, 0);
+});
+
+// --- El bloque `datos`, que resulto no ser lo que decia el contrato del 2026-08-10 ----------
+//
+// El contrato grabado antes de esta tarea afirmaba que la keyword consultada vuelve SIEMPRE
+// con volumen cero. Auditadas las 70 respuestas cacheadas, eso es cierto en 60 y falso en 10:
+// `ciatica` vuelve con 8100 y `cirugia minimamente invasiva` con 30. Descartar `datos` de
+// plano tira dato bueno; leerlo de plano inventa ceros. Estas cuatro pruebas fijan la unica
+// lectura que no hace ninguna de las dos cosas.
+
+const datosDe = (datos: Record<string, unknown>, relacionadas: unknown[] = []): unknown => ({
+  ok: true,
+  data: { data: { datos, keywords: relacionadas } },
+});
+
+const HISTORIA_VACIA = Array.from({ length: 12 }, () => ({ month: "202606", search_volume: 0 }));
+const HISTORIA_CON_DATOS = Array.from({ length: 12 }, () => ({ month: "202606", search_volume: 90 }));
+
+test("el bloque datos se usa cuando la fuente si resolvio la keyword consultada", () => {
+  const m = parseMetricasDeConsulta(
+    datosDe({ key: "ciatica", search_volume: 8100, cpc: 0.3, competition: 0.01, history: HISTORIA_CON_DATOS }),
+    "ciatica",
+  );
+
+  assert.equal(m.searchVolume, 8100);
+  assert.equal(m.searchVolumeFuente, "dinorank");
+  assert.equal(m.cpc, 0.3);
+  assert.equal(m.competition, 0.01);
+});
+
+test("un bloque datos degenerado no se lee: seria un cero inventado", () => {
+  // Es el caso de `hernia discal`, que tiene volumen de sobra y vuelve entero en cero.
+  const m = parseMetricasDeConsulta(
+    datosDe({ key: "hernia discal", search_volume: 0, cpc: 0, competition: 0, history: HISTORIA_VACIA }),
+    "hernia discal",
+  );
+
+  assert.equal(m.searchVolumeFuente, "sin_datos");
+  assert.equal(m.searchVolume, null);
+});
+
+test("el bloque datos se rechaza si la clave devuelta no es la keyword consultada", () => {
+  // Medido: consultar `casos de revision` devuelve datos.key
+  // "tiempo actual de revision de casos nvc" con volumen 10. Atribuirle ese 10 a la keyword
+  // consultada seria colgarle a una keyword la metrica de otra.
+  const m = parseMetricasDeConsulta(
+    datosDe({
+      key: "tiempo actual de revision de casos nvc",
+      search_volume: 10,
+      cpc: 0,
+      competition: 0,
+      history: HISTORIA_CON_DATOS,
+    }),
+    "casos de revision",
+  );
+
+  assert.equal(m.searchVolumeFuente, "sin_datos");
+});
+
+test("si el bloque datos no sirve se cae al arreglo de relacionadas", () => {
+  const m = parseMetricasDeConsulta(
+    datosDe({ key: "dolor lumbar", search_volume: 0, cpc: 0, competition: 0, history: HISTORIA_VACIA }, [
+      { key: "dolor lumbar", search_volume: 480, cpc: 0.2, competition: 0.3 },
+    ]),
+    "dolor lumbar",
+  );
+
+  assert.equal(m.searchVolume, 480);
+  assert.equal(m.searchVolumeFuente, "dinorank");
 });
 
 test("comportamiento 4: un rechazo de credencial da mensaje accionable y NO deja nada en cache", async () => {
