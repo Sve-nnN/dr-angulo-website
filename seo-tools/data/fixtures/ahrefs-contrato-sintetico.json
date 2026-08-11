@@ -1,0 +1,92 @@
+{
+  "_ADVERTENCIA": "FIXTURE SINTETICA. Ninguno de estos numeros es una medicion. El dominio objetivo es 'ejemplo-sintetico.test', un TLD reservado por la RFC 2606 que no existe y no puede confundirse con un competidor real. Sirve UNICAMENTE para probar la forma del contrato: nombres de campo, envoltorios y ramas de borde. Las fixtures de respuestas REALES son data/fixtures/ahrefs-domain-overview.json y data/fixtures/ahrefs-top-pages.json, y las escribe ahrefs-ingest.ts --fixture con el cuerpo capturado por el servidor MCP.",
+  "_porQueExiste": "Ahrefs no tiene credencial en .secrets/.env y su unico camino de acceso es el servidor MCP, que vive en la sesion del agente y no en el proceso de Node. Los parsers se escribieron contra la referencia publica de la API v3, y esta fixture congela esa forma para que la suite corra sin credenciales y sin red. Cuando el cuerpo real entre por ahrefs-ingest.ts, el propio comando imprime que campos llegaron y avisa si el parser no encontro ninguno.",
+  "_origenDelContrato": [
+    "https://docs.ahrefs.com/en/api/reference/site-explorer/get-domain-rating",
+    "https://docs.ahrefs.com/en/api/reference/site-explorer/get-backlinks-stats",
+    "https://docs.ahrefs.com/en/api/reference/site-explorer/get-metrics",
+    "https://docs.ahrefs.com/en/api/reference/site-explorer/get-top-pages"
+  ],
+  "site-explorer/domain-rating": {
+    "domain_rating": {
+      "ahrefs_rank": 4820371,
+      "domain_rating": 12.5
+    }
+  },
+  "site-explorer/backlinks-stats": {
+    "metrics": {
+      "all_time": 901,
+      "all_time_refdomains": 77,
+      "live": 612,
+      "live_refdomains": 43
+    }
+  },
+  "site-explorer/metrics": {
+    "metrics": {
+      "org_cost": 41200,
+      "org_keywords": 318,
+      "org_keywords_1_3": 12,
+      "org_traffic": 540,
+      "paid_cost": null,
+      "paid_keywords": 0,
+      "paid_pages": 0,
+      "paid_traffic": 0
+    }
+  },
+  "site-explorer/top-pages": {
+    "pages": [
+      {
+        "keywords": 12,
+        "referring_domains": 4,
+        "sum_traffic": 61,
+        "top_keyword": "contacto del consultorio sintetico",
+        "url": "https://ejemplo-sintetico.test/contacto"
+      },
+      {
+        "keywords": 88,
+        "referring_domains": 31,
+        "sum_traffic": 402,
+        "top_keyword": "consultorio sintetico de prueba",
+        "url": "https://ejemplo-sintetico.test/"
+      },
+      {
+        "keywords": 45,
+        "referring_domains": 17,
+        "sum_traffic": 210,
+        "top_keyword": "que es una hernia sintetica",
+        "url": "https://ejemplo-sintetico.test/blog/hernia-sintetica"
+      }
+    ]
+  },
+  "_sinBlog": {
+    "pages": [
+      {
+        "keywords": 88,
+        "referring_domains": 31,
+        "sum_traffic": 402,
+        "top_keyword": "consultorio sintetico de prueba",
+        "url": "https://ejemplo-sintetico.test/"
+      },
+      {
+        "keywords": 12,
+        "referring_domains": 4,
+        "sum_traffic": 61,
+        "top_keyword": "contacto del consultorio sintetico",
+        "url": "https://ejemplo-sintetico.test/contacto"
+      }
+    ]
+  },
+  "_vacia": {
+    "pages": []
+  },
+  "_camposParciales": {
+    "domain_rating": {
+      "ahrefs_rank": 4820371
+    }
+  },
+  "_contratoRoto": {
+    "resultado": {
+      "puntaje": 12.5
+    }
+  }
+}
