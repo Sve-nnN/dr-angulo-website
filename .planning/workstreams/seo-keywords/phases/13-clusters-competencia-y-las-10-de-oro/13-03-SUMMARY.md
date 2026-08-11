@@ -472,6 +472,27 @@ estimadas** sobre las ~66.000 libres de la cuenta Lite: **el 3,5%**. El grueso l
 - **Archivos:** `seo-tools/src/phase13/ahrefs.test.ts`
 - **Commit:** `37f98ee`
 
+**6. [Incidente - índice compartido] El commit del SUMMARY arrastró trabajo en curso del plan 13-02.**
+- **Qué pasó:** el commit `6ddf6f1` incluye, además de los dos archivos de este plan,
+  `13-CANDIDATAS.md`, `data/candidate-rules.json`, `data/serp-candidates.json`,
+  `src/phase13/candidates.ts` y `src/phase13/candidates.test.ts`, que son del plan 13-02.
+- **Causa:** `git add` sumó solo los dos archivos propios, pero **el índice ya tenía preparados
+  los del 13-02**, puestos ahí por la sesión que corre ese plan en paralelo. El índice es uno
+  solo por repositorio y no se reparte por sesión. Las comprobaciones de este plan miraban el
+  diff preparado contra las rutas **prohibidas** —`src/`, `STATE.md`, el workstream `milestone`—
+  y esas rutas seguían en cero; `src/phase13/candidates.ts` no está en ninguna lista prohibida
+  porque pertenece al mismo workstream.
+- **Impacto:** ninguno sobre el contenido. Nada se borró, el árbol de trabajo quedó limpio y los
+  cambios del 13-02 están íntegros en el historial. Lo único incorrecto es el mensaje del commit,
+  que los atribuye a este plan.
+- **Por qué NO se corrigió reescribiendo el commit:** hay otra sesión trabajando sobre esta misma
+  rama en este momento. Un `git reset` sobre historia compartida para "arreglarlo" es
+  exactamente la operación que puede destruir trabajo concurrente, y el riesgo es mucho mayor que
+  el de un mensaje de commit mal atribuido. Queda anotado en vez de deshecho.
+- **Qué debería hacer distinto el próximo plan que corra en paralelo:** comparar el diff
+  preparado contra **la lista de archivos propios**, no solo contra la de prohibidos:
+  `git diff --cached --name-only | grep -v -F -f <lista-propia>` tiene que salir vacío.
+
 ### Ampliaciones deliberadas sobre lo que pedía el plan
 
 - **`data/competitors-fijos.json`** no está en la lista de archivos del plan, pero el bloque de
