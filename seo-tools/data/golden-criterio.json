@@ -52,6 +52,23 @@
     ]
   },
 
+  "diferenciacion": {
+    "nota": "Hay valor de negocio que ninguna metrica de volumen ve: una categoria donde el consultorio no tiene competencia directa vale mas que su demanda medida. Esto no sale de un calculo, sale de la investigacion de competencia de v1.0 (.planning/research/COMPETITORS.md) y por eso vive aca declarado, con su fuente al lado, en vez de escondido en una formula.",
+    "porCategoria": [
+      {
+        "categoria": "ortopedia-infantil",
+        "puntos": 12,
+        "motivo": "Ninguno de los tres competidores directos de v1.0 —drcarranzacolumna.com, drciezatraumatologia.com y cirujanocolumna-elaos.com— cubre ortopedia infantil: los tres son cirujanos de columna. Es la unica categoria del consultorio sin competencia directa perfilada. Su volumen medido es bajo (40 en Ahrefs para 'ortopedia infantil', 10 para 'ortopedia infantil lima') y aun asi entra, porque en una categoria sin competencia la posicion 1 se toma con una pagina decente y cada consulta pediatrica es un paciente que vuelve durante anos de seguimiento."
+      }
+    ]
+  },
+
+  "paginasPublicadas": {
+    "nota": "Las cuatro paginas de servicio que v1.1 tiene como requisito activo en PROJECT.md. Una keyword de oro que cae sobre una pagina que el otro workstream ya se comprometio a escribir convierte antes y cuesta menos que una que exige inventar una URL nueva: el trabajo de contenido ya esta presupuestado. Es valor de negocio real, no una preferencia de arquitectura.",
+    "puntos": 10,
+    "terminos": ["hernia discal", "estenosis espinal", "estenosis de canal", "escoliosis", "ortopedia infantil"]
+  },
+
   "pesoDeRango": {
     "factor": 4,
     "base": 5,
