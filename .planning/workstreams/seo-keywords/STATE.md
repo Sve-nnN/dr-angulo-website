@@ -5,15 +5,15 @@ milestone_name: "SEO semantico: keyword research y optimizacion on-page"
 current_phase: 13
 current_phase_name: Clusters, competencia y las 10 de Oro
 status: in_progress
-stopped_at: "Completado 13-01-PLAN.md, el tracer de coste cero: SERP completa desde caché, 95 orgánicos tipificados, Cluster y Top Result habilitados y el tab transpuesto medido en vivo. Sigue la wave 2: 13-02 y 13-03 en paralelo"
+stopped_at: "Cerrados 13-01, 13-03 y las tareas 1 y 2 de 13-02. El perfil de los cinco competidores esta completo con datos reales de Ahrefs y las 91 cabezas estan aprobadas por Juan. Queda disparar las 84 busquedas de SerpApi (tarea 3 de 13-02) y formar los clusters (tarea 4)"
 last_updated: "2026-08-11T16:20:00.000Z"
-last_activity: "2026-08-11, cerrado el plan 13-01 sin gastar ni una búsqueda de SerpApi: el contador sigue en 12"
+last_activity: "2026-08-11, COMP-01 cerrado con 24 consultas a Ahrefs. SerpApi sigue intacto en 12: tres executors se detuvieron antes de disparar y ninguno gasto una busqueda"
 progress:
   total_phases: 4
   completed_phases: 1
   total_plans: 5
-  completed_plans: 1
-  percent: 20
+  completed_plans: 3
+  percent: 40
 ---
 
 # Project State
@@ -23,7 +23,7 @@ progress:
 See: .planning/PROJECT.md (updated 2026-08-10)
 
 **Core value:** Que un paciente que busca traumatólogo/cirujano de columna en Lima encuentre el sitio y agende cita por WhatsApp en menos de 2 clics, con todo evento rastreado.
-**Current focus:** Fase 13 en curso. El plan 13-01 dejó probado el camino de la SERP con coste cero; sigue la wave 2, que es la que gasta las 90 búsquedas aprobadas.
+**Current focus:** Fase 13 en curso. Falta unicamente la captura de SERP y el clustering. Hallazgo que reordena la estrategia: los cinco competidores rankean **sin enlaces** en sus paginas interiores, asi que el contenido es la palanca y no el linkbuilding. Ver `data/lectura-competencia-2026-08-11.md`.
 
 ## Current Position
 
