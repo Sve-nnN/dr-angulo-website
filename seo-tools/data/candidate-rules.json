@@ -1,0 +1,268 @@
+{
+  "schema": 1,
+  "//": "Criterios de eleccion de las cabezas de cluster de la fase 13 (D-03). Viven en un archivo de datos y NO incrustados en el codigo, siguiendo el patron que establecio intent-rules.json en la fase 12: afinar el corte no obliga a tocar logica ni pruebas. TODOS los patrones se escriben SIN TILDES y en minusculas porque se evaluan contra la salida de normalizeKeyword, que las quita; un patron acentuado no calzaria nunca y hay una prueba que lo impide.",
+  "presupuesto": 90,
+  "objetivoDeCabezas": 95,
+  "presupuestoNota": "90 busquedas de SerpApi aprobadas por Juan el 2026-08-10 (D-01), con 24 de reserva sobre las 114 que quedan hasta el reset del 2026-08-21. Lo ya cacheado NO consume presupuesto.",
+
+  "rangos": [
+    {
+      "rango": 1,
+      "familia": "condiciones-nucleo",
+      "etiqueta": "Las cuatro condiciones nucleo del negocio",
+      "motivo": "Condicion nucleo: es una de las cuatro paginas que v1.1 ya publico y una de las cuatro del handoff MAP-03. Entra por regla de negocio y no por metrica, porque su volumen esta vacio por el techo de 900 de DinoRank y no por falta de demanda.",
+      "claves": [
+        "hernia discal",
+        "estenosis espinal",
+        "escoliosis",
+        "ortopedia infantil"
+      ]
+    },
+    {
+      "rango": 2,
+      "familia": "especialidad-y-procedimientos",
+      "etiqueta": "Terminos cabecera de especialidad y de procedimiento",
+      "motivo": "Es el negocio del doctor: el termino que nombra lo que opera o la especialidad con la que lo buscan.",
+      "//claves": "El orden es el de valor de negocio y NO alfabetico ni por volumen. `cirujano de columna` va primero porque es ademas la consulta cuyo top 10 trae a los cinco competidores (validacion del 2026-08-10) y no esta en cache. `ortopedia` a secas quedo DELIBERADAMENTE FUERA: en Peru 'ortopedia <lugar>' nombra a la tienda de insumos ortopedicos y no a la especialidad, y con el se colaban las once variantes de `ortopedia viza`. La especialidad real del doctor entra como `ortopedia infantil`, que si es inequivoca.",
+      "claves": [
+        "cirujano de columna",
+        "traumatologo de columna",
+        "cirugia de columna",
+        "cirugia endoscopica de columna",
+        "escoliosis y deformidades de columna",
+        "artrodesis en varios niveles",
+        "hernia discal lumbar y cervical",
+        "estenosis de canal",
+        "endoscopia espinal",
+        "cirugia minimamente invasiva",
+        "cirugia convencional",
+        "lumbalgia",
+        "ciatica",
+        "cifosis",
+        "artrosis",
+        "desgarro muscular",
+        "traumatologo",
+        "traumatologia",
+        "neurocirujano",
+        "traumatologia y ortopedia"
+      ]
+    },
+    {
+      "rango": 3,
+      "familia": "geo-de-lima",
+      "etiqueta": "El geo de Lima montado sobre los rangos 1 y 2",
+      "motivo": "Es el terreno que Ahrefs no cubre y donde un dominio nuevo puede ganar: la condicion o la especialidad mas el distrito donde el doctor atiende.",
+      "//sufijos": "Solo los cuatro ambitos donde el consultorio existe de verdad, mas la consulta movil. Un distrito sin sede seria una busqueda irrecuperable gastada en terreno que el negocio no puede atender.",
+      "sufijos": ["lima", "surco", "san isidro", "la molina", "cerca de mi"],
+      "//bases": "Vacio significa: todas las claves de los rangos 1 y 2.",
+      "bases": []
+    },
+    {
+      "rango": 4,
+      "familia": "sedes",
+      "etiqueta": "Las cuatro sedes donde atiende el doctor",
+      "motivo": "Alimenta las cuatro URLs de sede de la fase 14. La related search `traumatologo especialista en columna clinica ricardo palma` ya esta verificada en la SERP de Lima y hoy no la responde ninguna URL del sitio.",
+      "sufijos": [
+        "clinica ricardo palma",
+        "clinica sanna",
+        "clinica tezza",
+        "clinica montefiori"
+      ],
+      "//bases": "Tres bases y no las veinticuatro posibles. Cuatro sedes por cada base del rango 2 serian 80 busquedas para alimentar cuatro URLs, que es una asignacion mala del presupuesto. Se quedan las tres formas con las que un paciente escribe el nombre de una clinica al lado de lo que busca.",
+      "bases": ["cirujano de columna", "traumatologo", "ortopedia infantil"],
+      "claves": []
+    },
+    {
+      "rango": 5,
+      "familia": "resto-comercial",
+      "etiqueta": "El resto del universo objetivo con intencion de contratar",
+      "motivo": "Criterio literal de D-03: alcance objetivo, intencion comercial o transaccional y volumen medible mayor que cero, ordenado por volumen.",
+      "intenciones": ["comercial", "transaccional"],
+      "volumenMinimo": 1,
+      "claves": [],
+      "sufijos": [],
+      "bases": []
+    }
+  ],
+
+  "//exclusiones": "Se aplican ANTES de rankear y sacan la keyword del universo de cabezas. Solo lo que el plan autoriza a excluir: marca de establecimiento ajena, tienda, y lo que no es una consulta de paciente. Todo lo demas entra y, si huele mal, se MARCA en `sospechas` en vez de esconderse.",
+  "exclusiones": [
+    {
+      "regla": "tienda-ortopedica",
+      "motivo": "Nombra una tienda de insumos ortopedicos y no un servicio medico. La clasificacion de alcance de la fase 12 no la atrapo porque el texto contiene un termino del dominio.",
+      "contiene": [
+        "ortopedia viza",
+        "ortopedia vigil",
+        "ortopedia y rehabilitacion amv",
+        "ortopedia amv",
+        "ortopedia jesus maria",
+        "ortopedia lince",
+        "ortopedia emancipacion",
+        "ortopedia pueblo libre",
+        "ortopedia puente piedra",
+        "ortopedia callao",
+        "ortopedia comas",
+        "ortopedia san juan de lurigancho",
+        "ortopedia los olivos",
+        "ortopedia ate",
+        "ortopedia brena",
+        "casa ortopedica",
+        "tienda ortopedica",
+        "insumos ortopedicos",
+        "productos ortopedicos"
+      ],
+      "terminaEn": []
+    },
+    {
+      "regla": "efemeride",
+      "motivo": "Es una fecha conmemorativa. Quien la busca no esta buscando atencion medica.",
+      "contiene": [
+        "dia del traumatologo",
+        "dia de la traumatologia",
+        "dia del neurocirujano",
+        "dia del ortopedista",
+        "dia del medico",
+        "dia mundial",
+        "dia internacional",
+        "feliz dia"
+      ],
+      "terminaEn": []
+    },
+    {
+      "regla": "profesional-ajeno",
+      "motivo": "Nombra a otro profesional. Se lee como inteligencia y jamas se persigue (D-14).",
+      "contiene": [
+        "dr jorge gomez tello",
+        "jorge gomez tello",
+        "dr carranza",
+        "dr cieza",
+        "dr munguia",
+        "gunter munguia",
+        "el aos",
+        "dr elaos",
+        "dr beltran",
+        "dr rojas",
+        "dr sanchez"
+      ],
+      "terminaEn": []
+    },
+    {
+      "regla": "lexico-o-traduccion",
+      "motivo": "Es una consulta de diccionario y no de paciente: no hay servicio que ofrecerle.",
+      "contiene": [
+        "en ingles",
+        "en italiano",
+        "en portugues",
+        "significado de",
+        "como se escribe",
+        "sinonimo de",
+        "que significa",
+        "etimologia"
+      ],
+      "terminaEn": []
+    },
+    {
+      "regla": "fuera-del-terreno-local",
+      "motivo": "Superlativo global o de otro pais: no lo puede ganar un consultorio de Lima ni le sirve si lo ganara.",
+      "contiene": [
+        "del mundo",
+        "en el mundo",
+        "a nivel mundial",
+        "de latinoamerica",
+        "de sudamerica"
+      ],
+      "terminaEn": []
+    }
+  ],
+
+  "//sospechas": "NO excluyen: marcan. Una candidata sospechosa entra a la lista y aparece declarada en su propio bloque para que la revision la pueda sacar a mano. El plan pide explicitamente que lo que huele a ruido se declare y no se esconda entre las demas.",
+  "sospechas": [
+    {
+      "regla": "farmacologico",
+      "motivo": "Busca un farmaco o un remedio y no una operacion. La practica es quirurgica: la conversion es dudosa.",
+      "contiene": [
+        "pastillas",
+        "pastilla",
+        "antiinflamatorio",
+        "analgesico",
+        "crema para",
+        "pomada",
+        "colageno",
+        "vitamina",
+        "remedio casero",
+        "remedios caseros",
+        "inyeccion para"
+      ]
+    },
+    {
+      "regla": "definicional",
+      "motivo": "Es una consulta de enciclopedia. Trae trafico pero rara vez paciente.",
+      "contiene": [
+        "que es un",
+        "que es una",
+        "cual es la diferencia",
+        "diferencia entre",
+        "cuanto gana",
+        "sueldo de",
+        "donde estudiar",
+        "carrera de"
+      ]
+    },
+    {
+      "regla": "comparativa-de-especialidad",
+      "motivo": "Compara dos especialidades entre si. Sirve de contenido, no de pagina de servicio.",
+      "contiene": [
+        "o reumatologo",
+        "o traumatologo",
+        "o neurologo",
+        "o neurocirujano",
+        "o fisioterapeuta"
+      ]
+    },
+    {
+      "regla": "geo-fuera-del-area",
+      "motivo": "Nombra un distrito o una ciudad donde el doctor no tiene sede. Puede rankear, pero no puede atender.",
+      "contiene": [
+        "lima norte",
+        "lima sur",
+        "lima este",
+        "san miguel",
+        "los olivos",
+        "callao",
+        "comas",
+        "ate",
+        "chorrillos",
+        "villa el salvador",
+        "san juan de lurigancho",
+        "puente piedra",
+        "pueblo libre",
+        "jesus maria",
+        "lince"
+      ]
+    },
+    {
+      "regla": "tienda-o-especialidad",
+      "motivo": "`ortopedia` a secas mas un lugar es ambiguo en Peru: nombra igual a la especialidad que a la tienda de insumos ortopedicos. Entra porque el distrito si es de los que el doctor atiende, pero conviene mirarla: la de mayor volumen de esa forma es `ortopedia viza surco`, que es la tienda.",
+      "//empiezaCon": "Anclado al principio a proposito. Como patron de `contiene`, `ortopedia surco` marcaba tambien `traumatologia y ortopedia surco`, que es el par de especialidades y no la tienda.",
+      "contiene": [],
+      "empiezaCon": [
+        "ortopedia lima",
+        "ortopedia surco",
+        "ortopedia san isidro",
+        "ortopedia la molina",
+        "ortopedia cerca de mi"
+      ]
+    },
+    {
+      "regla": "empleo",
+      "motivo": "Busca trabajo y no tratamiento.",
+      "contiene": [
+        "trabajo de",
+        "empleo",
+        "convocatoria",
+        "vacantes",
+        "practicas pre profesionales"
+      ]
+    }
+  ]
+}

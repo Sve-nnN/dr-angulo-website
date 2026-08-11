@@ -287,6 +287,49 @@ test("comportamiento 8: una candidata que huele a ruido se marca en vez de escon
   assert.ok(marcadas.includes("las mejores pastillas para la ciatica"));
 });
 
+test("dos cabezas aceptadas que solo se diferencian en un plural quedan declaradas como duplicado probable", () => {
+  // Medido sobre el universo real: las dos existen, las dos tienen 590 y las dos entran.
+  const resultado = seleccion([
+    ...NUCLEO,
+    kw({ keyword: "desgarro muscular tratamiento", volumen: 590 }),
+    kw({ keyword: "desgarro muscular tratamientos", volumen: 590 }),
+  ]);
+
+  // Las dos SIGUEN en la lista: quitar una es decision de la revision, no de una heuristica.
+  const dentro = claves(resultado.candidatas);
+  assert.ok(dentro.includes("desgarro muscular tratamiento"));
+  assert.ok(dentro.includes("desgarro muscular tratamientos"));
+
+  assert.equal(resultado.duplicadosProbables.length, 1);
+  assert.equal(resultado.duplicadosProbables[0]?.keywordKey, "desgarro muscular tratamientos");
+  assert.equal(resultado.duplicadosProbables[0]?.duplicaA, "desgarro muscular tratamiento");
+});
+
+test("el detector de plurales no junta dos condiciones distintas que terminan en `sis`", () => {
+  const resultado = seleccion([
+    ...NUCLEO,
+    kw({ keyword: "artrosis", intent: "informacional" }),
+    kw({ keyword: "cifosis", intent: "informacional" }),
+    kw({ keyword: "lumbalgia", intent: "informacional" }),
+  ]);
+
+  assert.deepEqual(resultado.duplicadosProbables, []);
+});
+
+test("la sospecha de tienda ortopedica esta anclada al principio y no marca al par de especialidades", () => {
+  // Falso positivo medido el 2026-08-11 sobre la lista real: `ortopedia surco` como patron de
+  // `contiene` marcaba tambien `traumatologia y ortopedia surco`, que es la especialidad.
+  const resultado = seleccion([
+    ...NUCLEO,
+    kw({ keyword: "ortopedia surco", volumen: 210, intent: "transaccional" }),
+    kw({ keyword: "traumatología y ortopedia surco", intent: "transaccional" }),
+  ]);
+
+  const porClave = new Map(resultado.candidatas.map((c) => [c.keywordKey, c]));
+  assert.equal(porClave.get("ortopedia surco")?.posibleRuido, "tienda-o-especialidad");
+  assert.equal(porClave.get("traumatologia y ortopedia surco")?.posibleRuido, null);
+});
+
 test("el bloque de posibles ruidos existe aunque este vacio: declararlo vacio es informacion", () => {
   const resultado = seleccion([...NUCLEO]);
   assert.ok(Array.isArray(resultado.posiblesRuido));
@@ -413,7 +456,7 @@ test("todos los patrones del archivo de reglas estan escritos sin tildes", () =>
   const textos: string[] = [];
   for (const r of REGLAS.rangos) textos.push(...r.claves, ...r.sufijos, ...r.bases);
   for (const e of REGLAS.exclusiones) textos.push(...e.contiene, ...e.terminaEn);
-  for (const s of REGLAS.sospechas) textos.push(...s.contiene);
+  for (const s of REGLAS.sospechas) textos.push(...s.contiene, ...s.empiezaCon);
 
   for (const t of textos) {
     assert.equal(t, normalizeKeyword(t), `patron con tilde o mayuscula: "${t}"`);
