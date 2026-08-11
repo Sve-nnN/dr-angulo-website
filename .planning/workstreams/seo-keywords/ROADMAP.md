@@ -102,15 +102,15 @@ Plans:
   4. Existen las "10 de Oro" con su justificación de negocio, y Juan puede leer por qué esas diez y no simplemente las diez de mayor volumen.
   5. En el Sheet, el tab `Keyword Research` muestra el universo con métricas, cluster, intención, H1 sugerido y top result; el tab `Competitor Analysis` muestra los cinco competidores de Lima con DR, referring domains, tráfico orgánico estimado, keywords en top 100, presencia de blog, gap de keywords, featured snippets y páginas más enlazadas. *(Alcance real de la fase 13, 2026-08-11: `Cluster`, `Top Result`, `Keyword Difficulty` y `Traffic Potential`. `Suggested H1` es contenido de ONPAGE-02 y lo escribe la fase 15, tal como declara el propio modelo del documento.)*
 
-**Plans**: 3/5 plans executed
+**Plans**: 5/5 plans executed
 
 Plans:
 
 - [x] 13-01-PLAN.md — Fundación de la fase: SERP completa desde caché, tipo de página y el modelo del Sheet (tracer, coste cero de cuota) *(2026-08-11: 95 orgánicos tipificados, `Cluster` y `Top Result` habilitados, tab transpuesto medido en vivo. Cero búsquedas gastadas)*
 - [x] 13-02-PLAN.md — Candidatas con aprobación de Juan antes de gastar, captura presupuestada de 90 búsquedas y clusters por solape de SERP
 - [x] 13-03-PLAN.md — Los cinco competidores con Ahrefs y el tab transpuesto `Competitor Analysis`
-- [ ] 13-04-PLAN.md — Dificultad, punto dulce, gap de keywords y la carga del universo al Sheet
-- [ ] 13-05-PLAN.md — Las 10 de Oro con su justificación, y la aprobación de Juan
+- [x] 13-04-PLAN.md — Dificultad, punto dulce, gap de keywords y la carga del universo al Sheet
+- [x] 13-05-PLAN.md — Las 10 de Oro con su justificación, y la aprobación de Juan
 
 **Notas de ejecución**
 
@@ -197,7 +197,7 @@ paquete de la fase 15 para su contenido y su metadata.
 | Phase | Milestone | Plans Complete | Status | Completed |
 |-------|-----------|----------------|--------|-----------|
 | 12. Instrumentación de datos y universo de keywords | v1.2 | 5/5 | Complete | 2026-08-11 |
-| 13. Clusters, competencia y las 10 de Oro | v1.2 | 3/5 | In Progress|  |
+| 13. Clusters, competencia y las 10 de Oro | v1.2 | 5/5 | In Progress|  |
 | 14. Mapa keyword → URL y matriz de enlazado | v1.2 | 0/TBD | Not started | - |
 | 15. Paquete on-page por URL | v1.2 | 0/TBD | Not started | - |
 

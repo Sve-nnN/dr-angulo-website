@@ -108,7 +108,7 @@ Ricardo Palma, Sanna La Molina, Padre Luis Tezza), más el hub `/servicios` refo
 - [ ] **KWR-05**: Está identificado el "punto dulce": las keywords cuyo KD es alcanzable
   con el perfil de enlaces real del dominio, no las de mayor volumen
 
-- [ ] **KWR-06**: Están seleccionadas las "10 de Oro" — las keywords que mueven la aguja
+- [x] **KWR-06**: Están seleccionadas las "10 de Oro" — las keywords que mueven la aguja
   del negocio primero, con su justificación
 
 ### Análisis de competencia (COMP)

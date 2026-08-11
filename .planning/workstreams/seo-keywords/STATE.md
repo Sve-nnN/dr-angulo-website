@@ -5,15 +5,15 @@ milestone_name: "SEO semantico: keyword research y optimizacion on-page"
 current_phase: 13
 current_phase_name: Clusters, competencia y las 10 de Oro
 status: in_progress
-stopped_at: Completado 13-02-PLAN.md (tareas 3 y 4)
-last_updated: "2026-08-11T17:19:34.390Z"
+stopped_at: Completado 13-05-PLAN.md y con el la fase 13
+last_updated: "2026-08-11T19:25:41.638Z"
 last_activity: "2026-08-11, cerrado el plan 13-02: 84 búsquedas emitidas en un solo disparo bajo techo acumulado (libro en 96 de 102), 31 clusters y las 4.766 filas de alcance objetivo con su procedencia marcada"
 progress:
   total_phases: 4
-  completed_phases: 1
+  completed_phases: 2
   total_plans: 10
-  completed_plans: 8
-  percent: 25
+  completed_plans: 10
+  percent: 50
 ---
 
 # Project State
@@ -32,7 +32,7 @@ Plan: 13-01, 13-02 y 13-03 cerrados (waves 1 y 2). Siguen 13-04 y 13-05
 Status: KWR-04 y COMP-03 cerrados por el plan 13-02. SHEET-01 y SHEET-03 siguen habilitados, no completos. Quedan **30 búsquedas de SerpApi** hasta el reset del 2026-08-21
 Last activity: 2026-08-11, cerrado el plan 13-02: 84 búsquedas emitidas en un solo disparo bajo techo acumulado (libro en 96 de 102), 31 clusters y las 4.766 filas de alcance objetivo con su procedencia marcada
 
-Progress: [██████░░░░] 60% de la fase 13 (3 de 5 planes) · 1 de 4 fases de v1.2 cerradas
+Progress: [██████████] 100% de la fase 13 (3 de 5 planes) · 1 de 4 fases de v1.2 cerradas
 
 ## Roadmap v1.2
 
@@ -77,6 +77,9 @@ Los dos milestones corren a la vez sobre el mismo repositorio.
 - **[Fase 13, plan 01] Los ejecutables de la fase son puntos de entrada propios bajo `src/phase13/`:** `src/cli.ts` llama a `main()` al cargarse, así que importarlo desde otro punto de entrada ejecuta el despachador con los argumentos equivocados. Por eso existe `src/phase13/args.ts`, que es copia funcional y no importación.
 - [Phase ?]: El techo acumulado de cuota vive en capture.ts y no en quota.ts: quota.ts esta cerrado desde la fase 12 y el techo es una regla de esta fase
 - [Phase ?]: Umbral de similitud de la cola en 0,5 mas termino clinico compartido obligatorio; el geo se quita antes de medir porque es terreno y no tema
+- [Phase ?]: Las 10 de Oro se eligen con tres puertas de evidencia (alcance, servicio propio, piso de disputables) y despues valor de negocio; la alcanzabilidad solo desempata
+- [Phase ?]: Una keyword de oro tiene que nombrar un servicio que el sitio declara: lo sembrado desde COMPETITORS.md describe lo que hace un competidor
+- [Phase ?]: Cifosis entra al universo de candidatas por confirmacion explicita de Juan del 2026-08-11, y aun asi el criterio la dejo en el puesto 11 con 37 puntos contra 38
 
 ### Pending Todos
 
@@ -93,8 +96,8 @@ Los dos milestones corren a la vez sobre el mismo repositorio.
 
 ## Session Continuity
 
-Last session: 2026-08-11T17:18:53.567Z
-Stopped at: Completado 13-02-PLAN.md (tareas 3 y 4)
+Last session: 2026-08-11T19:25:28.099Z
+Stopped at: Completado 13-05-PLAN.md y con el la fase 13
 Resume file: None
 
 ## Performance Metrics
@@ -106,6 +109,7 @@ Resume file: None
 | Phase 12 P05 | 3h | 3 tasks | 12 files |
 | Phase 13 P01 | 1h 50min | 3 tasks | 16 files |
 | Phase 13 P02 | ~1h 15min | 2 tasks | 9 files |
+| Phase 13 P05 | ~2h | 2 tasks | 6 files |
 
 ## Presupuesto de fuentes externas al cerrar la fase 12
 
