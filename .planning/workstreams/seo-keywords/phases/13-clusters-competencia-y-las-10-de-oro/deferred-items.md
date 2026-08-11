@@ -19,3 +19,6 @@ encontró. No se arreglan ahí: se anotan acá.
   con sus propias pruebas.
 - **Cuándo tocaría:** si vuelve a fallar y bloquea una verificación, o cuando algún plan tenga
   que tocar `src/http.ts` por otro motivo.
+- **Reincidencia el 2026-08-11 (plan 13-03):** volvió a fallar 1 de 4 corridas de la suite
+  completa, con las otras 3 en verde y sin ningún cambio de por medio. Confirma el diagnóstico:
+  es el reloj bajo carga y no una regresión. Sigue diferido.

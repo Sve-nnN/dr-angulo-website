@@ -73,6 +73,14 @@ export interface ReglaDeExclusion {
   readonly motivo: string;
   readonly contiene: readonly string[];
   readonly terminaEn: readonly string[];
+  /**
+   * Claves que la regla NO saca, aunque calcen con su patron.
+   *
+   * Existe porque una decision de negocio puede contradecir a una regla y tiene que poder
+   * quedar escrita al lado de la regla que contradice, no en la cabeza de nadie. Hoy tiene
+   * una sola entrada, puesta por Juan el 2026-08-11.
+   */
+  readonly excepciones: readonly string[];
 }
 
 export interface ReglaDeSospecha {
@@ -183,6 +191,7 @@ export function cargarReglasDeCandidatas(
         motivo: e["motivo"],
         contiene: listaDeTextos(e["contiene"]),
         terminaEn: listaDeTextos(e["terminaEn"]),
+        excepciones: listaDeTextos(e["excepciones"]),
       };
     },
   );
@@ -336,6 +345,8 @@ function contiene(clave: string, patron: string): boolean {
 }
 
 function calzaExclusion(clave: string, regla: ReglaDeExclusion): boolean {
+  // La excepcion se consulta ANTES que el patron: una decision de negocio le gana a la regla.
+  if (regla.excepciones.includes(clave)) return false;
   for (const p of regla.contiene) if (contiene(clave, p)) return true;
   for (const p of regla.terminaEn) if (clave === p || clave.endsWith(` ${p}`)) return true;
   return false;

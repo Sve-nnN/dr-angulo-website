@@ -40,13 +40,29 @@ entre las que subieron estaba `cual es el mejor colageno para la artrosis`, que 
 familia de farmacia que Juan acababa de rechazar.
 
 Se topó la lista en 91 cabezas para que las cinco que salieron no se reemplacen por keywords que
-nadie revisó. El comando que produjo el archivo final:
+nadie revisó.
+
+**La familia de farmacia quedó escrita como regla, no como exclusión a mano.** Depender del techo
+de cabezas era frágil: bastaba con que alguien corriera el comando sin `--heads` para que volviera
+a subir. Ahora `candidate-rules.json` tiene la regla `producto-farmaceutico`, que saca las
+consultas de superlativo más producto. Atrapó 15 keywords del universo, entre ellas las dos que
+Juan quitó a mano y el colágeno que se había colado solo. La excepción de la ciática vive al lado
+de la regla que contradice, con su motivo escrito.
+
+Un efecto secundario que salió bien: la excepción es una clave exacta, así que
+`las mejores pastillas para la ciática` entra pero sus variantes de compra no
+(`... en farmacias similares`, `... naturista`, `... precio`).
+
+El comando que produjo el archivo final:
 
 ```
 ./node_modules/.bin/tsx src/phase13/serp-candidates.ts --budget 90 --heads 91 \
-  --exclude "cirujano de columna clínica montefiori,traumatólogo clínica montefiori,ortopedia infantil clínica montefiori,cuál es el mejor antiinflamatorio para desgarro muscular,cual es el mejor antiinflamatorio para la artrosis" \
+  --exclude "cirujano de columna clínica montefiori,traumatólogo clínica montefiori,ortopedia infantil clínica montefiori" \
   --include "traumatólogo ortopedia infantil"
 ```
+
+Las dos de farmacia ya no hacen falta en `--exclude`: las saca la regla. Lo único que queda como
+decisión de negocio en la línea de comando son las tres de Montefiori, que es donde corresponde.
 
 ### Cómo quedaron los números
 

@@ -1402,21 +1402,6 @@
       "motivoRuido": null
     },
     {
-      "keyword": "cual es el mejor colageno para la artrosis",
-      "keywordKey": "cual es el mejor colageno para la artrosis",
-      "rango": 5,
-      "familia": "resto-comercial",
-      "etiqueta": "El resto del universo objetivo con intencion de contratar",
-      "motivo": "Criterio literal de D-03: alcance objetivo, intencion comercial o transaccional y volumen medible mayor que cero, ordenado por volumen. (volumen 70)",
-      "volumen": 70,
-      "volumenFuente": "dinorank",
-      "intent": "comercial",
-      "alcance": "objetivo",
-      "enCache": false,
-      "posibleRuido": "farmacologico",
-      "motivoRuido": "Busca un farmaco o un remedio y no una operacion. La practica es quirurgica: la conversion es dudosa."
-    },
-    {
       "keyword": "el mejor neurocirujano de perú",
       "keywordKey": "el mejor neurocirujano de peru",
       "rango": 5,
@@ -1507,8 +1492,8 @@
       "motivoRuido": null
     },
     {
-      "keyword": "cuál es la mejor vitamina para la artrosis",
-      "keywordKey": "cual es la mejor vitamina para la artrosis",
+      "keyword": "hernia discal lumbosacra tratamiento",
+      "keywordKey": "hernia discal lumbosacra tratamiento",
       "rango": 5,
       "familia": "resto-comercial",
       "etiqueta": "El resto del universo objetivo con intencion de contratar",
@@ -1518,8 +1503,23 @@
       "intent": "comercial",
       "alcance": "objetivo",
       "enCache": false,
-      "posibleRuido": "farmacologico",
-      "motivoRuido": "Busca un farmaco o un remedio y no una operacion. La practica es quirurgica: la conversion es dudosa."
+      "posibleRuido": null,
+      "motivoRuido": null
+    },
+    {
+      "keyword": "que es traumatólogo en medicina",
+      "keywordKey": "que es traumatologo en medicina",
+      "rango": 5,
+      "familia": "resto-comercial",
+      "etiqueta": "El resto del universo objetivo con intencion de contratar",
+      "motivo": "Criterio literal de D-03: alcance objetivo, intencion comercial o transaccional y volumen medible mayor que cero, ordenado por volumen. (volumen 50)",
+      "volumen": 50,
+      "volumenFuente": "dinorank",
+      "intent": "comercial",
+      "alcance": "objetivo",
+      "enCache": false,
+      "posibleRuido": null,
+      "motivoRuido": null
     }
   ],
   "posiblesRuido": [
@@ -1702,16 +1702,51 @@
     {
       "keyword": "cuál es el mejor antiinflamatorio para desgarro muscular",
       "keywordKey": "cual es el mejor antiinflamatorio para desgarro muscular",
-      "regla": "quitada-en-la-revision",
-      "motivo": "Juan la saco de la lista en el checkpoint de aprobacion.",
+      "regla": "producto-farmaceutico",
+      "motivo": "Busca que producto tomarse y no a quien operarse. Esas SERP las dominan farmacias y portales de salud, un cirujano no las gana, y aunque las ganara traeria a alguien que busca automedicarse. Regla aprobada por Juan el 2026-08-11 despues de revisar la lista de candidatas.",
       "volumen": 110
     },
     {
       "keyword": "cual es el mejor antiinflamatorio para la artrosis",
       "keywordKey": "cual es el mejor antiinflamatorio para la artrosis",
-      "regla": "quitada-en-la-revision",
-      "motivo": "Juan la saco de la lista en el checkpoint de aprobacion.",
+      "regla": "producto-farmaceutico",
+      "motivo": "Busca que producto tomarse y no a quien operarse. Esas SERP las dominan farmacias y portales de salud, un cirujano no las gana, y aunque las ganara traeria a alguien que busca automedicarse. Regla aprobada por Juan el 2026-08-11 despues de revisar la lista de candidatas.",
       "volumen": 110
+    },
+    {
+      "keyword": "cual es el mejor antiinflamatorio para la artrosis natural",
+      "keywordKey": "cual es el mejor antiinflamatorio para la artrosis natural",
+      "regla": "producto-farmaceutico",
+      "motivo": "Busca que producto tomarse y no a quien operarse. Esas SERP las dominan farmacias y portales de salud, un cirujano no las gana, y aunque las ganara traeria a alguien que busca automedicarse. Regla aprobada por Juan el 2026-08-11 despues de revisar la lista de candidatas.",
+      "volumen": 10
+    },
+    {
+      "keyword": "cual es el mejor calcio para la artrosis",
+      "keywordKey": "cual es el mejor calcio para la artrosis",
+      "regla": "producto-farmaceutico",
+      "motivo": "Busca que producto tomarse y no a quien operarse. Esas SERP las dominan farmacias y portales de salud, un cirujano no las gana, y aunque las ganara traeria a alguien que busca automedicarse. Regla aprobada por Juan el 2026-08-11 despues de revisar la lista de candidatas.",
+      "volumen": 10
+    },
+    {
+      "keyword": "cual es el mejor colageno para la artrosis",
+      "keywordKey": "cual es el mejor colageno para la artrosis",
+      "regla": "producto-farmaceutico",
+      "motivo": "Busca que producto tomarse y no a quien operarse. Esas SERP las dominan farmacias y portales de salud, un cirujano no las gana, y aunque las ganara traeria a alguien que busca automedicarse. Regla aprobada por Juan el 2026-08-11 despues de revisar la lista de candidatas.",
+      "volumen": 70
+    },
+    {
+      "keyword": "cuál es el mejor colágeno para la artrosis de cadera",
+      "keywordKey": "cual es el mejor colageno para la artrosis de cadera",
+      "regla": "producto-farmaceutico",
+      "motivo": "Busca que producto tomarse y no a quien operarse. Esas SERP las dominan farmacias y portales de salud, un cirujano no las gana, y aunque las ganara traeria a alguien que busca automedicarse. Regla aprobada por Juan el 2026-08-11 despues de revisar la lista de candidatas.",
+      "volumen": 20
+    },
+    {
+      "keyword": "cual es el mejor magnesio para la artrosis",
+      "keywordKey": "cual es el mejor magnesio para la artrosis",
+      "regla": "producto-farmaceutico",
+      "motivo": "Busca que producto tomarse y no a quien operarse. Esas SERP las dominan farmacias y portales de salud, un cirujano no las gana, y aunque las ganara traeria a alguien que busca automedicarse. Regla aprobada por Juan el 2026-08-11 despues de revisar la lista de candidatas.",
+      "volumen": 10
     },
     {
       "keyword": "cual es el mejor neurocirujano del mundo",
@@ -1719,6 +1754,20 @@
       "regla": "fuera-del-terreno-local",
       "motivo": "Superlativo global o de otro pais: no lo puede ganar un consultorio de Lima ni le sirve si lo ganara.",
       "volumen": 10
+    },
+    {
+      "keyword": "cuál es la mejor crema para desgarro muscular",
+      "keywordKey": "cual es la mejor crema para desgarro muscular",
+      "regla": "producto-farmaceutico",
+      "motivo": "Busca que producto tomarse y no a quien operarse. Esas SERP las dominan farmacias y portales de salud, un cirujano no las gana, y aunque las ganara traeria a alguien que busca automedicarse. Regla aprobada por Juan el 2026-08-11 despues de revisar la lista de candidatas.",
+      "volumen": 10
+    },
+    {
+      "keyword": "cuál es la mejor vitamina para la artrosis",
+      "keywordKey": "cual es la mejor vitamina para la artrosis",
+      "regla": "producto-farmaceutico",
+      "motivo": "Busca que producto tomarse y no a quien operarse. Esas SERP las dominan farmacias y portales de salud, un cirujano no las gana, y aunque las ganara traeria a alguien que busca automedicarse. Regla aprobada por Juan el 2026-08-11 despues de revisar la lista de candidatas.",
+      "volumen": 50
     },
     {
       "keyword": "desgarro muscular en inglés",
@@ -1859,6 +1908,48 @@
       "regla": "lexico-o-traduccion",
       "motivo": "Es una consulta de diccionario y no de paciente: no hay servicio que ofrecerle.",
       "volumen": 20
+    },
+    {
+      "keyword": "la mejor crema para la artrosis",
+      "keywordKey": "la mejor crema para la artrosis",
+      "regla": "producto-farmaceutico",
+      "motivo": "Busca que producto tomarse y no a quien operarse. Esas SERP las dominan farmacias y portales de salud, un cirujano no las gana, y aunque las ganara traeria a alguien que busca automedicarse. Regla aprobada por Juan el 2026-08-11 despues de revisar la lista de candidatas.",
+      "volumen": 40
+    },
+    {
+      "keyword": "las mejores pastillas para la ciática en farmacias similares",
+      "keywordKey": "las mejores pastillas para la ciatica en farmacias similares",
+      "regla": "producto-farmaceutico",
+      "motivo": "Busca que producto tomarse y no a quien operarse. Esas SERP las dominan farmacias y portales de salud, un cirujano no las gana, y aunque las ganara traeria a alguien que busca automedicarse. Regla aprobada por Juan el 2026-08-11 despues de revisar la lista de candidatas.",
+      "volumen": 10
+    },
+    {
+      "keyword": "las mejores pastillas para la ciática naturista",
+      "keywordKey": "las mejores pastillas para la ciatica naturista",
+      "regla": "producto-farmaceutico",
+      "motivo": "Busca que producto tomarse y no a quien operarse. Esas SERP las dominan farmacias y portales de salud, un cirujano no las gana, y aunque las ganara traeria a alguien que busca automedicarse. Regla aprobada por Juan el 2026-08-11 despues de revisar la lista de candidatas.",
+      "volumen": 10
+    },
+    {
+      "keyword": "las mejores pastillas para la ciática precio",
+      "keywordKey": "las mejores pastillas para la ciatica precio",
+      "regla": "producto-farmaceutico",
+      "motivo": "Busca que producto tomarse y no a quien operarse. Esas SERP las dominan farmacias y portales de salud, un cirujano no las gana, y aunque las ganara traeria a alguien que busca automedicarse. Regla aprobada por Juan el 2026-08-11 despues de revisar la lista de candidatas.",
+      "volumen": 10
+    },
+    {
+      "keyword": "las mejores vitaminas para la ciática",
+      "keywordKey": "las mejores vitaminas para la ciatica",
+      "regla": "producto-farmaceutico",
+      "motivo": "Busca que producto tomarse y no a quien operarse. Esas SERP las dominan farmacias y portales de salud, un cirujano no las gana, y aunque las ganara traeria a alguien que busca automedicarse. Regla aprobada por Juan el 2026-08-11 despues de revisar la lista de candidatas.",
+      "volumen": 10
+    },
+    {
+      "keyword": "mejor colageno para la artrosis",
+      "keywordKey": "mejor colageno para la artrosis",
+      "regla": "producto-farmaceutico",
+      "motivo": "Busca que producto tomarse y no a quien operarse. Esas SERP las dominan farmacias y portales de salud, un cirujano no las gana, y aunque las ganara traeria a alguien que busca automedicarse. Regla aprobada por Juan el 2026-08-11 despues de revisar la lista de candidatas.",
+      "volumen": 10
     },
     {
       "keyword": "mejor neurocirujano del mundo",
@@ -2200,7 +2291,7 @@
     "posiblesRuido": 5,
     "duplicadosProbables": 1,
     "cercaDelCorte": 10,
-    "excluidas": 75,
+    "excluidas": 88,
     "absorbidas": 8,
     "evaluadas": 4766
   }

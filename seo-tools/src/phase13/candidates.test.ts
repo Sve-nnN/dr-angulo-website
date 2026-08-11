@@ -330,6 +330,34 @@ test("la sospecha de tienda ortopedica esta anclada al principio y no marca al p
   assert.equal(porClave.get("traumatologia y ortopedia surco")?.posibleRuido, null);
 });
 
+test("las consultas de producto farmaceutico quedan fuera, y la excepcion de Juan sobrevive a su propia regla", () => {
+  // Regla aprobada por Juan el 2026-08-11 al revisar la lista. La excepcion es unica y
+  // deliberada: la ciatica si es condicion que el doctor trata.
+  const resultado = seleccion([
+    ...NUCLEO,
+    kw({ keyword: "cuál es el mejor antiinflamatorio para desgarro muscular", volumen: 110 }),
+    kw({ keyword: "cual es el mejor colageno para la artrosis", volumen: 70 }),
+    kw({ keyword: "la mejor crema para la artrosis", volumen: 40 }),
+    kw({ keyword: "las mejores pastillas para la ciática", volumen: 390 }),
+  ]);
+
+  const dentro = new Set(claves(resultado.candidatas));
+  assert.ok(!dentro.has("cual es el mejor antiinflamatorio para desgarro muscular"));
+  assert.ok(!dentro.has("cual es el mejor colageno para la artrosis"));
+  assert.ok(!dentro.has("la mejor crema para la artrosis"));
+
+  // La excepcion entra igual, y entra marcada, para que la fase 14 la mapee como contenido de
+  // captacion y no como pagina de servicio.
+  const ciatica = resultado.candidatas.find(
+    (c) => c.keywordKey === "las mejores pastillas para la ciatica",
+  );
+  assert.ok(ciatica !== undefined, "la excepcion de Juan tiene que sobrevivir a la regla");
+  assert.equal(ciatica.posibleRuido, "farmacologico");
+
+  const reglas = resultado.excluidas.map((e) => e.regla);
+  assert.ok(reglas.includes("producto-farmaceutico"));
+});
+
 test("el bloque de posibles ruidos existe aunque este vacio: declararlo vacio es informacion", () => {
   const resultado = seleccion([...NUCLEO]);
   assert.ok(Array.isArray(resultado.posiblesRuido));
@@ -455,7 +483,9 @@ test("todos los patrones del archivo de reglas estan escritos sin tildes", () =>
   // calzaria jamas y fallaria en silencio.
   const textos: string[] = [];
   for (const r of REGLAS.rangos) textos.push(...r.claves, ...r.sufijos, ...r.bases);
-  for (const e of REGLAS.exclusiones) textos.push(...e.contiene, ...e.terminaEn);
+  for (const e of REGLAS.exclusiones) {
+    textos.push(...e.contiene, ...e.terminaEn, ...e.excepciones);
+  }
   for (const s of REGLAS.sospechas) textos.push(...s.contiene, ...s.empiezaCon);
 
   for (const t of textos) {
