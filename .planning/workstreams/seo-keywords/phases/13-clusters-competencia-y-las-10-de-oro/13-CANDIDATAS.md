@@ -376,3 +376,25 @@ Tres salidas, y se pueden combinar:
 No hace falta reordenar nada: el orden lo fija el rango de valor de negocio.
 
 **Mientras esto no se responda, el contador de SerpApi sigue en 12.**
+
+---
+
+## Nota de procedencia de los commits
+
+La regla `producto-farmaceutico` y sus cuatro archivos quedaron dentro del commit `6ddf6f1`,
+que lleva mensaje de 13-03. No fue intencional: las dos sesiones trabajan sobre la misma rama y
+13-03 commiteó mientras estos archivos estaban en el índice.
+
+No se reescribió la historia a propósito. Tocar un commit ajeno en una rama con otra sesión activa
+destruye trabajo concurrente, que es exactamente el riesgo que estas notas existen para evitar. El
+contenido está intacto y verificado: 325 pruebas en verde, 91 cabezas, 84 búsquedas nuevas.
+
+Los archivos afectados y su commit real:
+
+| Archivo | Commit que lo contiene | Mensaje que le corresponde |
+|---|---|---|
+| `candidate-rules.json` (regla de farmacia) | `6ddf6f1` | 13-02 |
+| `candidates.ts` (campo de excepciones) | `6ddf6f1` | 13-02 |
+| `candidates.test.ts` (prueba de la regla) | `6ddf6f1` | 13-02 |
+| `serp-candidates.json` (lista de 91) | `6ddf6f1` | 13-02 |
+| `13-CANDIDATAS.md` (parte de la nota de la regla) | `6ddf6f1` | 13-02 |
