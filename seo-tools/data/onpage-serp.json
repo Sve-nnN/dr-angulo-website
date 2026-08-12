@@ -1,0 +1,5653 @@
+{
+  "schema": 1,
+  "umbrales": {
+    "porDefecto": 0.4,
+    "minimo": 0.2,
+    "minimoDeTerminos": 8,
+    "maximoDeTerminos": 20
+  },
+  "urls": [
+    {
+      "url": "/",
+      "keywordPrimaria": "traumatología lima",
+      "keywordPrimariaKey": "traumatologia lima",
+      "formato": "pagina-de-servicio",
+      "minimoDePalabras": 600,
+      "posicionesMedidas": 9,
+      "jerarquia": [
+        {
+          "nivel": 2,
+          "texto": "Qué se atiende",
+          "origen": "esqueleto",
+          "literal": null,
+          "seccion": "que-se-atiende"
+        },
+        {
+          "nivel": 3,
+          "texto": "¿Cuál es el mejor traumatólogo de Lima?",
+          "origen": "pregunta-serp",
+          "literal": "¿Cuál es el mejor traumatólogo de Lima?",
+          "seccion": "que-se-atiende"
+        },
+        {
+          "nivel": 3,
+          "texto": "¿Cuánto cobra un traumatólogo en Perú?",
+          "origen": "pregunta-serp",
+          "literal": "¿Cuánto cobra un traumatólogo en Perú?",
+          "seccion": "que-se-atiende"
+        },
+        {
+          "nivel": 3,
+          "texto": "¿Qué casos trata un traumatólogo?",
+          "origen": "pregunta-serp",
+          "literal": "¿Qué casos trata un traumatólogo?",
+          "seccion": "que-se-atiende"
+        },
+        {
+          "nivel": 3,
+          "texto": "Traumatología especialista en columna",
+          "origen": "secundaria-del-mapa",
+          "literal": "traumatología especialista en columna",
+          "seccion": "que-se-atiende"
+        },
+        {
+          "nivel": 3,
+          "texto": "Traumatólogo ortopedia infantil",
+          "origen": "secundaria-del-mapa",
+          "literal": "traumatólogo ortopedia infantil",
+          "seccion": "que-se-atiende"
+        },
+        {
+          "nivel": 3,
+          "texto": "Traumatología y ortopedia cerca de mí",
+          "origen": "secundaria-del-mapa",
+          "literal": "traumatología y ortopedia cerca de mí",
+          "seccion": "que-se-atiende"
+        },
+        {
+          "nivel": 3,
+          "texto": "Traumatólogo cerca de mí",
+          "origen": "secundaria-del-mapa",
+          "literal": "traumatólogo cerca de mí",
+          "seccion": "que-se-atiende"
+        },
+        {
+          "nivel": 3,
+          "texto": "Hospital de traumatología en Lima",
+          "origen": "busqueda-relacionada",
+          "literal": "Hospital de traumatología en Lima",
+          "seccion": "que-se-atiende"
+        },
+        {
+          "nivel": 3,
+          "texto": "Traumatólogo especialista en rodilla Lima Perú",
+          "origen": "busqueda-relacionada",
+          "literal": "Traumatólogo especialista en rodilla Lima Perú",
+          "seccion": "que-se-atiende"
+        },
+        {
+          "nivel": 3,
+          "texto": "Traumatología Solidaridad",
+          "origen": "busqueda-relacionada",
+          "literal": "Traumatología Solidaridad",
+          "seccion": "que-se-atiende"
+        },
+        {
+          "nivel": 3,
+          "texto": "Traumatólogo en Los Olivos",
+          "origen": "busqueda-relacionada",
+          "literal": "Traumatólogo en Los Olivos",
+          "seccion": "que-se-atiende"
+        },
+        {
+          "nivel": 3,
+          "texto": "Traumatólogo especialista en mano Lima",
+          "origen": "busqueda-relacionada",
+          "literal": "Traumatólogo especialista en mano Lima",
+          "seccion": "que-se-atiende"
+        },
+        {
+          "nivel": 3,
+          "texto": "Traumatólogo especialista en pie y tobillo en Lima",
+          "origen": "busqueda-relacionada",
+          "literal": "Traumatólogo especialista en pie y tobillo en Lima",
+          "seccion": "que-se-atiende"
+        },
+        {
+          "nivel": 2,
+          "texto": "Cómo es la consulta",
+          "origen": "esqueleto",
+          "literal": null,
+          "seccion": "como-es-la-consulta"
+        },
+        {
+          "nivel": 2,
+          "texto": "Qué condiciones se tratan",
+          "origen": "esqueleto",
+          "literal": null,
+          "seccion": "condiciones"
+        },
+        {
+          "nivel": 3,
+          "texto": "¿Qué es la traumatología de la rodilla?",
+          "origen": "pregunta-serp",
+          "literal": "¿Qué es la traumatología de la rodilla?",
+          "seccion": "condiciones"
+        },
+        {
+          "nivel": 2,
+          "texto": "Dónde se atiende",
+          "origen": "esqueleto",
+          "literal": null,
+          "seccion": "donde-se-atiende"
+        },
+        {
+          "nivel": 3,
+          "texto": "Mejor clínica de traumatología en lima",
+          "origen": "secundaria-del-mapa",
+          "literal": "mejor clínica de traumatología en lima",
+          "seccion": "donde-se-atiende"
+        },
+        {
+          "nivel": 3,
+          "texto": "Traumatología Clínica Internacional",
+          "origen": "busqueda-relacionada",
+          "literal": "Traumatología Clínica Internacional",
+          "seccion": "donde-se-atiende"
+        },
+        {
+          "nivel": 2,
+          "texto": "Cómo agendar una cita",
+          "origen": "esqueleto",
+          "literal": null,
+          "seccion": "como-agendar"
+        }
+      ],
+      "entidades": [
+        {
+          "termino": "lima",
+          "documentos": 8,
+          "de": 9,
+          "posiciones": [
+            1,
+            2,
+            3,
+            4,
+            6,
+            7,
+            8,
+            9
+          ],
+          "clase": "generica"
+        },
+        {
+          "termino": "traumatologia",
+          "documentos": 5,
+          "de": 9,
+          "posiciones": [
+            1,
+            2,
+            3,
+            5,
+            6
+          ],
+          "clase": "generica"
+        },
+        {
+          "termino": "lesiones",
+          "documentos": 4,
+          "de": 9,
+          "posiciones": [
+            1,
+            5,
+            6,
+            7
+          ],
+          "clase": "generica"
+        },
+        {
+          "termino": "traumatologo",
+          "documentos": 3,
+          "de": 9,
+          "posiciones": [
+            7,
+            8,
+            9
+          ],
+          "clase": "generica"
+        },
+        {
+          "termino": "consulta",
+          "documentos": 2,
+          "de": 9,
+          "posiciones": [
+            1,
+            4
+          ],
+          "clase": "procedimiento"
+        },
+        {
+          "termino": "medicos",
+          "documentos": 2,
+          "de": 9,
+          "posiciones": [
+            1,
+            5
+          ],
+          "clase": "generica"
+        },
+        {
+          "termino": "especialistas",
+          "documentos": 2,
+          "de": 9,
+          "posiciones": [
+            3,
+            8
+          ],
+          "clase": "generica"
+        },
+        {
+          "termino": "medico",
+          "documentos": 2,
+          "de": 9,
+          "posiciones": [
+            3,
+            5
+          ],
+          "clase": "generica"
+        },
+        {
+          "termino": "traumatologia en lima",
+          "documentos": 2,
+          "de": 9,
+          "posiciones": [
+            3,
+            6
+          ],
+          "clase": "generica"
+        },
+        {
+          "termino": "articulaciones",
+          "documentos": 2,
+          "de": 9,
+          "posiciones": [
+            6,
+            8
+          ],
+          "clase": "anatomica"
+        },
+        {
+          "termino": "huesos",
+          "documentos": 2,
+          "de": 9,
+          "posiciones": [
+            6,
+            8
+          ],
+          "clase": "anatomica"
+        },
+        {
+          "termino": "huesos articulaciones",
+          "documentos": 2,
+          "de": 9,
+          "posiciones": [
+            6,
+            8
+          ],
+          "clase": "anatomica"
+        },
+        {
+          "termino": "tratamiento",
+          "documentos": 2,
+          "de": 9,
+          "posiciones": [
+            6,
+            7
+          ],
+          "clase": "procedimiento"
+        },
+        {
+          "termino": "experiencia",
+          "documentos": 2,
+          "de": 9,
+          "posiciones": [
+            7,
+            9
+          ],
+          "clase": "generica"
+        },
+        {
+          "termino": "rodilla",
+          "documentos": 2,
+          "de": 9,
+          "posiciones": [
+            7,
+            8
+          ],
+          "clase": "anatomica"
+        },
+        {
+          "termino": "traumatologo en lima",
+          "documentos": 2,
+          "de": 9,
+          "posiciones": [
+            7,
+            9
+          ],
+          "clase": "generica"
+        }
+      ],
+      "entidadesInsuficientes": false,
+      "umbralAplicado": 0.2,
+      "coberturaDeSecundarias": [
+        {
+          "keyword": "mejor clínica de traumatología en lima",
+          "cubiertaPor": "Mejor clínica de traumatología en lima"
+        },
+        {
+          "keyword": "traumatología especialista en columna",
+          "cubiertaPor": "Traumatología especialista en columna"
+        },
+        {
+          "keyword": "traumatólogo ortopedia infantil",
+          "cubiertaPor": "Traumatólogo ortopedia infantil"
+        },
+        {
+          "keyword": "traumatología y ortopedia cerca de mí",
+          "cubiertaPor": "Traumatología y ortopedia cerca de mí"
+        },
+        {
+          "keyword": "traumatólogo cerca de mí",
+          "cubiertaPor": "Traumatólogo cerca de mí"
+        }
+      ],
+      "coberturaDeRelacionadas": [
+        {
+          "busqueda": "Hospital de traumatología en Lima",
+          "cubiertaPor": "Hospital de traumatología en Lima"
+        },
+        {
+          "busqueda": "Mejor clínica de traumatología en Lima",
+          "cubiertaPor": "Mejor clínica de traumatología en lima"
+        },
+        {
+          "busqueda": "Traumatólogo especialista en rodilla Lima Perú",
+          "cubiertaPor": "Traumatólogo especialista en rodilla Lima Perú"
+        },
+        {
+          "busqueda": "Traumatología Solidaridad",
+          "cubiertaPor": "Traumatología Solidaridad"
+        },
+        {
+          "busqueda": "Traumatólogo en Los Olivos",
+          "cubiertaPor": "Traumatólogo en Los Olivos"
+        },
+        {
+          "busqueda": "Traumatólogo especialista en mano Lima",
+          "cubiertaPor": "Traumatólogo especialista en mano Lima"
+        },
+        {
+          "busqueda": "Traumatólogo especialista en pie y tobillo en Lima",
+          "cubiertaPor": "Traumatólogo especialista en pie y tobillo en Lima"
+        },
+        {
+          "busqueda": "Traumatología Clínica Internacional",
+          "cubiertaPor": "Traumatología Clínica Internacional"
+        }
+      ],
+      "preguntasSinUsar": [],
+      "fuente": {
+        "keyword": "traumatología lima",
+        "organicos": 9,
+        "preguntas": 4,
+        "relacionadas": 8,
+        "capturadaEn": "2026-08-11T17:03:21.440Z"
+      }
+    },
+    {
+      "url": "/blog/5-sintomas-de-columna-que-no-debes-ignorar",
+      "keywordPrimaria": "ciática",
+      "keywordPrimariaKey": "ciatica",
+      "formato": "guia-clinica",
+      "minimoDePalabras": 900,
+      "posicionesMedidas": 7,
+      "jerarquia": [
+        {
+          "nivel": 2,
+          "texto": "Qué es la ciática",
+          "origen": "esqueleto",
+          "literal": null,
+          "seccion": "que-es"
+        },
+        {
+          "nivel": 3,
+          "texto": "Ciática lumbar",
+          "origen": "busqueda-relacionada",
+          "literal": "Ciática lumbar",
+          "seccion": "que-es"
+        },
+        {
+          "nivel": 2,
+          "texto": "Qué síntomas produce",
+          "origen": "esqueleto",
+          "literal": null,
+          "seccion": "sintomas"
+        },
+        {
+          "nivel": 3,
+          "texto": "Espina ciática",
+          "origen": "secundaria-del-mapa",
+          "literal": "espina ciática",
+          "seccion": "sintomas"
+        },
+        {
+          "nivel": 3,
+          "texto": "Diferencia entre ciática y lumbalgia",
+          "origen": "secundaria-del-mapa",
+          "literal": "ciática o lumbalgia",
+          "seccion": "sintomas"
+        },
+        {
+          "nivel": 3,
+          "texto": "Donde duele la ciática",
+          "origen": "secundaria-del-mapa",
+          "literal": "donde duele la ciática",
+          "seccion": "sintomas"
+        },
+        {
+          "nivel": 3,
+          "texto": "Falsa ciática",
+          "origen": "secundaria-del-mapa",
+          "literal": "falsa ciática",
+          "seccion": "sintomas"
+        },
+        {
+          "nivel": 3,
+          "texto": "Como Quitar el dolor de ciática rápido",
+          "origen": "busqueda-relacionada",
+          "literal": "Como Quitar el dolor de ciática rápido",
+          "seccion": "sintomas"
+        },
+        {
+          "nivel": 3,
+          "texto": "Como aliviar el dolor de la ciática en 2 minutos",
+          "origen": "busqueda-relacionada",
+          "literal": "Como aliviar el dolor de la ciática en 2 minutos",
+          "seccion": "sintomas"
+        },
+        {
+          "nivel": 3,
+          "texto": "Como quitar el dolor de ciática en 3 minutos",
+          "origen": "busqueda-relacionada",
+          "literal": "Como quitar el dolor de ciática en 3 minutos",
+          "seccion": "sintomas"
+        },
+        {
+          "nivel": 2,
+          "texto": "Por qué aparece",
+          "origen": "esqueleto",
+          "literal": null,
+          "seccion": "causas"
+        },
+        {
+          "nivel": 3,
+          "texto": "¿Qué es lo que provoca la ciática?",
+          "origen": "pregunta-serp",
+          "literal": "¿Qué es lo que provoca la ciática?",
+          "seccion": "causas"
+        },
+        {
+          "nivel": 3,
+          "texto": "Causas de la ciática en mujeres",
+          "origen": "busqueda-relacionada",
+          "literal": "Causas de la ciática en mujeres",
+          "seccion": "causas"
+        },
+        {
+          "nivel": 2,
+          "texto": "Cómo se confirma el diagnóstico",
+          "origen": "esqueleto",
+          "literal": null,
+          "seccion": "diagnostico"
+        },
+        {
+          "nivel": 2,
+          "texto": "Qué se puede hacer sin operar",
+          "origen": "esqueleto",
+          "literal": null,
+          "seccion": "sin-operar"
+        },
+        {
+          "nivel": 3,
+          "texto": "Medicamento para la ciática",
+          "origen": "secundaria-del-mapa",
+          "literal": "ciática medicamento",
+          "seccion": "sin-operar"
+        },
+        {
+          "nivel": 3,
+          "texto": "Las mejores pastillas para la ciática",
+          "origen": "busqueda-relacionada",
+          "literal": "Las mejores pastillas para la ciática",
+          "seccion": "sin-operar"
+        },
+        {
+          "nivel": 2,
+          "texto": "Cuándo hace falta operar",
+          "origen": "esqueleto",
+          "literal": null,
+          "seccion": "cirugia"
+        },
+        {
+          "nivel": 2,
+          "texto": "Preguntas frecuentes",
+          "origen": "esqueleto",
+          "literal": null,
+          "seccion": "preguntas-frecuentes"
+        },
+        {
+          "nivel": 3,
+          "texto": "¿Cómo se quita la ciática?",
+          "origen": "pregunta-serp",
+          "literal": "¿Cómo se quita la ciática?",
+          "seccion": "preguntas-frecuentes"
+        },
+        {
+          "nivel": 3,
+          "texto": "¿Qué no debes hacer si tienes ciática?",
+          "origen": "pregunta-serp",
+          "literal": "¿Qué no debes hacer si tienes ciática?",
+          "seccion": "preguntas-frecuentes"
+        },
+        {
+          "nivel": 3,
+          "texto": "¿Cuánto tiempo te dura la ciática?",
+          "origen": "pregunta-serp",
+          "literal": "¿Cuánto tiempo te dura la ciática?",
+          "seccion": "preguntas-frecuentes"
+        },
+        {
+          "nivel": 2,
+          "texto": "Cuándo consultar",
+          "origen": "esqueleto",
+          "literal": null,
+          "seccion": "cuando-consultar"
+        }
+      ],
+      "entidades": [
+        {
+          "termino": "ciatica",
+          "documentos": 7,
+          "de": 7,
+          "posiciones": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "clase": "clinica"
+        },
+        {
+          "termino": "ciatico",
+          "documentos": 6,
+          "de": 7,
+          "posiciones": [
+            1,
+            2,
+            3,
+            5,
+            6,
+            7
+          ],
+          "clase": "clinica"
+        },
+        {
+          "termino": "nervio",
+          "documentos": 6,
+          "de": 7,
+          "posiciones": [
+            1,
+            2,
+            3,
+            5,
+            6,
+            7
+          ],
+          "clase": "anatomica"
+        },
+        {
+          "termino": "nervio ciatico",
+          "documentos": 6,
+          "de": 7,
+          "posiciones": [
+            1,
+            2,
+            3,
+            5,
+            6,
+            7
+          ],
+          "clase": "clinica"
+        },
+        {
+          "termino": "dolor",
+          "documentos": 5,
+          "de": 7,
+          "posiciones": [
+            1,
+            4,
+            5,
+            6,
+            7
+          ],
+          "clase": "clinica"
+        },
+        {
+          "termino": "ciatico el nervio",
+          "documentos": 2,
+          "de": 7,
+          "posiciones": [
+            1,
+            7
+          ],
+          "clase": "clinica"
+        },
+        {
+          "termino": "ciatico el nervio ciatico",
+          "documentos": 2,
+          "de": 7,
+          "posiciones": [
+            1,
+            7
+          ],
+          "clase": "clinica"
+        },
+        {
+          "termino": "extiende",
+          "documentos": 2,
+          "de": 7,
+          "posiciones": [
+            1,
+            5
+          ],
+          "clase": "generica"
+        },
+        {
+          "termino": "nervio ciatico el nervio",
+          "documentos": 2,
+          "de": 7,
+          "posiciones": [
+            1,
+            7
+          ],
+          "clase": "clinica"
+        },
+        {
+          "termino": "lumbar",
+          "documentos": 2,
+          "de": 7,
+          "posiciones": [
+            2,
+            4
+          ],
+          "clase": "anatomica"
+        },
+        {
+          "termino": "pierna",
+          "documentos": 2,
+          "de": 7,
+          "posiciones": [
+            2,
+            6
+          ],
+          "clase": "anatomica"
+        },
+        {
+          "termino": "region",
+          "documentos": 2,
+          "de": 7,
+          "posiciones": [
+            2,
+            4
+          ],
+          "clase": "generica"
+        },
+        {
+          "termino": "region lumbar",
+          "documentos": 2,
+          "de": 7,
+          "posiciones": [
+            2,
+            4
+          ],
+          "clase": "anatomica"
+        },
+        {
+          "termino": "raices",
+          "documentos": 2,
+          "de": 7,
+          "posiciones": [
+            3,
+            7
+          ],
+          "clase": "anatomica"
+        },
+        {
+          "termino": "ciatica es un dolor",
+          "documentos": 2,
+          "de": 7,
+          "posiciones": [
+            4,
+            5
+          ],
+          "clase": "clinica"
+        },
+        {
+          "termino": "irritacion",
+          "documentos": 2,
+          "de": 7,
+          "posiciones": [
+            6,
+            7
+          ],
+          "clase": "generica"
+        }
+      ],
+      "entidadesInsuficientes": false,
+      "umbralAplicado": 0.2,
+      "coberturaDeSecundarias": [
+        {
+          "keyword": "espina ciática",
+          "cubiertaPor": "Espina ciática"
+        },
+        {
+          "keyword": "ciática o lumbalgia",
+          "cubiertaPor": "Diferencia entre ciática y lumbalgia"
+        },
+        {
+          "keyword": "donde duele la ciática",
+          "cubiertaPor": "Donde duele la ciática"
+        },
+        {
+          "keyword": "falsa ciática",
+          "cubiertaPor": "Falsa ciática"
+        },
+        {
+          "keyword": "ciática medicamento",
+          "cubiertaPor": "Medicamento para la ciática"
+        }
+      ],
+      "coberturaDeRelacionadas": [
+        {
+          "busqueda": "Como Quitar el dolor de ciática rápido",
+          "cubiertaPor": "Como Quitar el dolor de ciática rápido"
+        },
+        {
+          "busqueda": "Ciática tratamiento",
+          "cubiertaPor": "Qué se puede hacer sin operar"
+        },
+        {
+          "busqueda": "Como aliviar el dolor de la ciática en 2 minutos",
+          "cubiertaPor": "Como aliviar el dolor de la ciática en 2 minutos"
+        },
+        {
+          "busqueda": "Causas de la ciática en mujeres",
+          "cubiertaPor": "Causas de la ciática en mujeres"
+        },
+        {
+          "busqueda": "Ciática lumbar",
+          "cubiertaPor": "Ciática lumbar"
+        },
+        {
+          "busqueda": "Las mejores pastillas para la ciática",
+          "cubiertaPor": "Las mejores pastillas para la ciática"
+        },
+        {
+          "busqueda": "Síntomas de ciática",
+          "cubiertaPor": "Qué síntomas produce"
+        },
+        {
+          "busqueda": "Como quitar el dolor de ciática en 3 minutos",
+          "cubiertaPor": "Como quitar el dolor de ciática en 3 minutos"
+        }
+      ],
+      "preguntasSinUsar": [],
+      "fuente": {
+        "keyword": "ciática",
+        "organicos": 7,
+        "preguntas": 4,
+        "relacionadas": 8,
+        "capturadaEn": "2026-08-11T16:56:58.965Z"
+      }
+    },
+    {
+      "url": "/blog/artrosis",
+      "keywordPrimaria": "artrosis",
+      "keywordPrimariaKey": "artrosis",
+      "formato": "guia-clinica",
+      "minimoDePalabras": 900,
+      "posicionesMedidas": 7,
+      "jerarquia": [
+        {
+          "nivel": 2,
+          "texto": "Qué es la artrosis",
+          "origen": "esqueleto",
+          "literal": null,
+          "seccion": "que-es"
+        },
+        {
+          "nivel": 3,
+          "texto": "Que es bueno para la artrosis",
+          "origen": "secundaria-del-mapa",
+          "literal": "que es bueno para la artrosis",
+          "seccion": "que-es"
+        },
+        {
+          "nivel": 3,
+          "texto": "Artrosis lumbosacro",
+          "origen": "secundaria-del-mapa",
+          "literal": "artrosis lumbosacro",
+          "seccion": "que-es"
+        },
+        {
+          "nivel": 3,
+          "texto": "Diferencia entre osteoporosis y artrosis",
+          "origen": "secundaria-del-mapa",
+          "literal": "osteoporosis o artrosis",
+          "seccion": "que-es"
+        },
+        {
+          "nivel": 3,
+          "texto": "Artrosis de rodilla",
+          "origen": "busqueda-relacionada",
+          "literal": "Artrosis de rodilla",
+          "seccion": "que-es"
+        },
+        {
+          "nivel": 3,
+          "texto": "Artrosis mano",
+          "origen": "busqueda-relacionada",
+          "literal": "Artrosis mano",
+          "seccion": "que-es"
+        },
+        {
+          "nivel": 3,
+          "texto": "Artrosis y artritis",
+          "origen": "busqueda-relacionada",
+          "literal": "Artrosis y artritis",
+          "seccion": "que-es"
+        },
+        {
+          "nivel": 2,
+          "texto": "Qué síntomas produce",
+          "origen": "esqueleto",
+          "literal": null,
+          "seccion": "sintomas"
+        },
+        {
+          "nivel": 2,
+          "texto": "Por qué aparece",
+          "origen": "esqueleto",
+          "literal": null,
+          "seccion": "causas"
+        },
+        {
+          "nivel": 3,
+          "texto": "¿Qué es la artrosis y qué lo provoca?",
+          "origen": "pregunta-serp",
+          "literal": "¿Qué es la artrosis y qué lo provoca?",
+          "seccion": "causas"
+        },
+        {
+          "nivel": 3,
+          "texto": "¿Qué hacer para frenar la artrosis?",
+          "origen": "pregunta-serp",
+          "literal": "¿Qué hacer para frenar la artrosis?",
+          "seccion": "causas"
+        },
+        {
+          "nivel": 3,
+          "texto": "Como frenar la artrosis",
+          "origen": "secundaria-del-mapa",
+          "literal": "como frenar la artrosis",
+          "seccion": "causas"
+        },
+        {
+          "nivel": 2,
+          "texto": "Cómo se confirma el diagnóstico",
+          "origen": "esqueleto",
+          "literal": null,
+          "seccion": "diagnostico"
+        },
+        {
+          "nivel": 2,
+          "texto": "Qué se puede hacer sin operar",
+          "origen": "esqueleto",
+          "literal": null,
+          "seccion": "sin-operar"
+        },
+        {
+          "nivel": 3,
+          "texto": "¿Qué es la artrosis y se cura?",
+          "origen": "pregunta-serp",
+          "literal": "¿Qué es la artrosis y se cura?",
+          "seccion": "sin-operar"
+        },
+        {
+          "nivel": 3,
+          "texto": "Pastillas para la artrosis",
+          "origen": "secundaria-del-mapa",
+          "literal": "pastillas para la artrosis",
+          "seccion": "sin-operar"
+        },
+        {
+          "nivel": 2,
+          "texto": "Cuándo hace falta operar",
+          "origen": "esqueleto",
+          "literal": null,
+          "seccion": "cirugia"
+        },
+        {
+          "nivel": 2,
+          "texto": "Preguntas frecuentes",
+          "origen": "esqueleto",
+          "literal": null,
+          "seccion": "preguntas-frecuentes"
+        },
+        {
+          "nivel": 3,
+          "texto": "¿Cuál es la mejor vitamina para la artrosis?",
+          "origen": "pregunta-serp",
+          "literal": "¿Cuál es la mejor vitamina para la artrosis?",
+          "seccion": "preguntas-frecuentes"
+        },
+        {
+          "nivel": 2,
+          "texto": "Cuándo consultar",
+          "origen": "esqueleto",
+          "literal": null,
+          "seccion": "cuando-consultar"
+        }
+      ],
+      "entidades": [
+        {
+          "termino": "artrosis",
+          "documentos": 7,
+          "de": 7,
+          "posiciones": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "clase": "clinica"
+        },
+        {
+          "termino": "articular",
+          "documentos": 5,
+          "de": 7,
+          "posiciones": [
+            1,
+            2,
+            3,
+            5,
+            6
+          ],
+          "clase": "generica"
+        },
+        {
+          "termino": "cartilago",
+          "documentos": 5,
+          "de": 7,
+          "posiciones": [
+            1,
+            2,
+            4,
+            5,
+            6
+          ],
+          "clase": "generica"
+        },
+        {
+          "termino": "enfermedad",
+          "documentos": 5,
+          "de": 7,
+          "posiciones": [
+            1,
+            2,
+            3,
+            6,
+            7
+          ],
+          "clase": "generica"
+        },
+        {
+          "termino": "degenerativa",
+          "documentos": 5,
+          "de": 7,
+          "posiciones": [
+            2,
+            3,
+            5,
+            6,
+            7
+          ],
+          "clase": "clinica"
+        },
+        {
+          "termino": "artrosis es una enfermedad",
+          "documentos": 3,
+          "de": 7,
+          "posiciones": [
+            1,
+            2,
+            3
+          ],
+          "clase": "clinica"
+        },
+        {
+          "termino": "dolor",
+          "documentos": 3,
+          "de": 7,
+          "posiciones": [
+            1,
+            3,
+            4
+          ],
+          "clase": "clinica"
+        },
+        {
+          "termino": "rigidez",
+          "documentos": 3,
+          "de": 7,
+          "posiciones": [
+            1,
+            3,
+            4
+          ],
+          "clase": "clinica"
+        },
+        {
+          "termino": "afecta",
+          "documentos": 3,
+          "de": 7,
+          "posiciones": [
+            3,
+            6,
+            7
+          ],
+          "clase": "generica"
+        },
+        {
+          "termino": "articulaciones",
+          "documentos": 3,
+          "de": 7,
+          "posiciones": [
+            4,
+            5,
+            7
+          ],
+          "clase": "anatomica"
+        }
+      ],
+      "entidadesInsuficientes": false,
+      "umbralAplicado": 0.4,
+      "coberturaDeSecundarias": [
+        {
+          "keyword": "que es bueno para la artrosis",
+          "cubiertaPor": "Que es bueno para la artrosis"
+        },
+        {
+          "keyword": "artrosis lumbosacro",
+          "cubiertaPor": "Artrosis lumbosacro"
+        },
+        {
+          "keyword": "como frenar la artrosis",
+          "cubiertaPor": "Como frenar la artrosis"
+        },
+        {
+          "keyword": "pastillas para la artrosis",
+          "cubiertaPor": "Pastillas para la artrosis"
+        },
+        {
+          "keyword": "osteoporosis o artrosis",
+          "cubiertaPor": "Diferencia entre osteoporosis y artrosis"
+        }
+      ],
+      "coberturaDeRelacionadas": [
+        {
+          "busqueda": "Como frenar la artrosis",
+          "cubiertaPor": "Como frenar la artrosis"
+        },
+        {
+          "busqueda": "Artrosis de rodilla",
+          "cubiertaPor": "Artrosis de rodilla"
+        },
+        {
+          "busqueda": "Artrosis causas",
+          "cubiertaPor": "Por qué aparece"
+        },
+        {
+          "busqueda": "Artrosis mano",
+          "cubiertaPor": "Artrosis mano"
+        },
+        {
+          "busqueda": "Artrosis síntomas",
+          "cubiertaPor": "Qué síntomas produce"
+        },
+        {
+          "busqueda": "Artrosis y artritis",
+          "cubiertaPor": "Artrosis y artritis"
+        },
+        {
+          "busqueda": "Tipos de artrosis",
+          "cubiertaPor": "Qué es la artrosis"
+        },
+        {
+          "busqueda": "Artrosis PDF",
+          "cubiertaPor": "Qué es la artrosis"
+        }
+      ],
+      "preguntasSinUsar": [],
+      "fuente": {
+        "keyword": "artrosis",
+        "organicos": 7,
+        "preguntas": 4,
+        "relacionadas": 8,
+        "capturadaEn": "2026-08-11T16:57:25.382Z"
+      }
+    },
+    {
+      "url": "/blog/lumbalgia",
+      "keywordPrimaria": "lumbalgia",
+      "keywordPrimariaKey": "lumbalgia",
+      "formato": "guia-clinica",
+      "minimoDePalabras": 900,
+      "posicionesMedidas": 7,
+      "jerarquia": [
+        {
+          "nivel": 2,
+          "texto": "Qué es la lumbalgia",
+          "origen": "esqueleto",
+          "literal": null,
+          "seccion": "que-es"
+        },
+        {
+          "nivel": 3,
+          "texto": "Tipos de lumbalgia",
+          "origen": "secundaria-del-mapa",
+          "literal": "tipos de lumbalgia",
+          "seccion": "que-es"
+        },
+        {
+          "nivel": 3,
+          "texto": "Lumbalgia aguda",
+          "origen": "busqueda-relacionada",
+          "literal": "Lumbalgia aguda",
+          "seccion": "que-es"
+        },
+        {
+          "nivel": 3,
+          "texto": "Lumbalgia crónica",
+          "origen": "busqueda-relacionada",
+          "literal": "Lumbalgia crónica",
+          "seccion": "que-es"
+        },
+        {
+          "nivel": 2,
+          "texto": "Qué síntomas produce",
+          "origen": "esqueleto",
+          "literal": null,
+          "seccion": "sintomas"
+        },
+        {
+          "nivel": 3,
+          "texto": "¿Cómo se quita un dolor de lumbalgia?",
+          "origen": "pregunta-serp",
+          "literal": "¿Cómo se quita un dolor de lumbalgia?",
+          "seccion": "sintomas"
+        },
+        {
+          "nivel": 2,
+          "texto": "Por qué aparece",
+          "origen": "esqueleto",
+          "literal": null,
+          "seccion": "causas"
+        },
+        {
+          "nivel": 3,
+          "texto": "Causas de la lumbalgia",
+          "origen": "secundaria-del-mapa",
+          "literal": "causas de lumbalgia",
+          "seccion": "causas"
+        },
+        {
+          "nivel": 2,
+          "texto": "Cómo se confirma el diagnóstico",
+          "origen": "esqueleto",
+          "literal": null,
+          "seccion": "diagnostico"
+        },
+        {
+          "nivel": 2,
+          "texto": "Qué se puede hacer sin operar",
+          "origen": "esqueleto",
+          "literal": null,
+          "seccion": "sin-operar"
+        },
+        {
+          "nivel": 3,
+          "texto": "¿Qué es la lumbalgia y cómo se cura?",
+          "origen": "pregunta-serp",
+          "literal": "¿Qué es la lumbalgia y cómo se cura?",
+          "seccion": "sin-operar"
+        },
+        {
+          "nivel": 3,
+          "texto": "Ejercicios para la lumbalgia",
+          "origen": "secundaria-del-mapa",
+          "literal": "ejercicios para lumbalgia",
+          "seccion": "sin-operar"
+        },
+        {
+          "nivel": 2,
+          "texto": "Cuándo hace falta operar",
+          "origen": "esqueleto",
+          "literal": null,
+          "seccion": "cirugia"
+        },
+        {
+          "nivel": 3,
+          "texto": "Lumbalgia se opera",
+          "origen": "secundaria-del-mapa",
+          "literal": "lumbalgia se opera",
+          "seccion": "cirugia"
+        },
+        {
+          "nivel": 2,
+          "texto": "Preguntas frecuentes",
+          "origen": "esqueleto",
+          "literal": null,
+          "seccion": "preguntas-frecuentes"
+        },
+        {
+          "nivel": 3,
+          "texto": "¿Qué es la lumbalgia y qué la ocasiona?",
+          "origen": "pregunta-serp",
+          "literal": "¿Qué es la lumbalgia y qué la ocasiona?",
+          "seccion": "preguntas-frecuentes"
+        },
+        {
+          "nivel": 3,
+          "texto": "¿Cuánto dura una lumbalgia?",
+          "origen": "pregunta-serp",
+          "literal": "¿Cuánto dura una lumbalgia?",
+          "seccion": "preguntas-frecuentes"
+        },
+        {
+          "nivel": 2,
+          "texto": "Cuándo consultar",
+          "origen": "esqueleto",
+          "literal": null,
+          "seccion": "cuando-consultar"
+        },
+        {
+          "nivel": 3,
+          "texto": "Especialista en lumbalgia",
+          "origen": "secundaria-del-mapa",
+          "literal": "especialista en lumbalgia",
+          "seccion": "cuando-consultar"
+        }
+      ],
+      "entidades": [
+        {
+          "termino": "dolor",
+          "documentos": 7,
+          "de": 7,
+          "posiciones": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "clase": "clinica"
+        },
+        {
+          "termino": "lumbalgia",
+          "documentos": 7,
+          "de": 7,
+          "posiciones": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "clase": "clinica"
+        },
+        {
+          "termino": "lumbar",
+          "documentos": 4,
+          "de": 7,
+          "posiciones": [
+            1,
+            2,
+            6,
+            7
+          ],
+          "clase": "anatomica"
+        },
+        {
+          "termino": "zona",
+          "documentos": 4,
+          "de": 7,
+          "posiciones": [
+            2,
+            4,
+            6,
+            7
+          ],
+          "clase": "generica"
+        },
+        {
+          "termino": "costillas",
+          "documentos": 2,
+          "de": 7,
+          "posiciones": [
+            1,
+            7
+          ],
+          "clase": "generica"
+        },
+        {
+          "termino": "baja",
+          "documentos": 2,
+          "de": 7,
+          "posiciones": [
+            2,
+            7
+          ],
+          "clase": "generica"
+        },
+        {
+          "termino": "baja de la espalda",
+          "documentos": 2,
+          "de": 7,
+          "posiciones": [
+            2,
+            7
+          ],
+          "clase": "anatomica"
+        },
+        {
+          "termino": "espalda",
+          "documentos": 2,
+          "de": 7,
+          "posiciones": [
+            2,
+            7
+          ],
+          "clase": "anatomica"
+        },
+        {
+          "termino": "lumbago",
+          "documentos": 2,
+          "de": 7,
+          "posiciones": [
+            2,
+            6
+          ],
+          "clase": "clinica"
+        },
+        {
+          "termino": "lumbalgia es el dolor",
+          "documentos": 2,
+          "de": 7,
+          "posiciones": [
+            2,
+            7
+          ],
+          "clase": "clinica"
+        },
+        {
+          "termino": "zona lumbar",
+          "documentos": 2,
+          "de": 7,
+          "posiciones": [
+            6,
+            7
+          ],
+          "clase": "anatomica"
+        }
+      ],
+      "entidadesInsuficientes": false,
+      "umbralAplicado": 0.2,
+      "coberturaDeSecundarias": [
+        {
+          "keyword": "ejercicios para lumbalgia",
+          "cubiertaPor": "Ejercicios para la lumbalgia"
+        },
+        {
+          "keyword": "tipos de lumbalgia",
+          "cubiertaPor": "Tipos de lumbalgia"
+        },
+        {
+          "keyword": "lumbalgia se opera",
+          "cubiertaPor": "Lumbalgia se opera"
+        },
+        {
+          "keyword": "causas de lumbalgia",
+          "cubiertaPor": "Causas de la lumbalgia"
+        },
+        {
+          "keyword": "especialista en lumbalgia",
+          "cubiertaPor": "Especialista en lumbalgia"
+        }
+      ],
+      "coberturaDeRelacionadas": [
+        {
+          "busqueda": "Lumbalgia tratamiento",
+          "cubiertaPor": "Qué se puede hacer sin operar"
+        },
+        {
+          "busqueda": "Lumbalgia causas",
+          "cubiertaPor": "Causas de la lumbalgia"
+        },
+        {
+          "busqueda": "Tipos de lumbalgia",
+          "cubiertaPor": "Tipos de lumbalgia"
+        },
+        {
+          "busqueda": "Lumbalgia síntomas",
+          "cubiertaPor": "Qué síntomas produce"
+        },
+        {
+          "busqueda": "Lumbalgia aguda",
+          "cubiertaPor": "Lumbalgia aguda"
+        },
+        {
+          "busqueda": "Lumbalgia ejercicios",
+          "cubiertaPor": "Ejercicios para la lumbalgia"
+        },
+        {
+          "busqueda": "Lumbalgia crónica",
+          "cubiertaPor": "Lumbalgia crónica"
+        },
+        {
+          "busqueda": "Lumbalgia PDF",
+          "cubiertaPor": "Qué es la lumbalgia"
+        }
+      ],
+      "preguntasSinUsar": [],
+      "fuente": {
+        "keyword": "lumbalgia",
+        "organicos": 7,
+        "preguntas": 4,
+        "relacionadas": 8,
+        "capturadaEn": "2026-08-11T16:56:35.504Z"
+      }
+    },
+    {
+      "url": "/blog/miedo-a-operarte-de-la-columna-5-cosas-que-debes-saber",
+      "keywordPrimaria": "cirugía de columna",
+      "keywordPrimariaKey": "cirugia de columna",
+      "formato": "guia-clinica",
+      "minimoDePalabras": 900,
+      "posicionesMedidas": 7,
+      "jerarquia": [
+        {
+          "nivel": 2,
+          "texto": "Qué es la cirugía de columna",
+          "origen": "esqueleto",
+          "literal": null,
+          "seccion": "que-es"
+        },
+        {
+          "nivel": 3,
+          "texto": "Cirugía de la columna cervical",
+          "origen": "secundaria-del-mapa",
+          "literal": "cirugía de columna cervical",
+          "seccion": "que-es"
+        },
+        {
+          "nivel": 3,
+          "texto": "Cirugía de la columna escoliosis",
+          "origen": "secundaria-del-mapa",
+          "literal": "cirugía de columna escoliosis",
+          "seccion": "que-es"
+        },
+        {
+          "nivel": 3,
+          "texto": "Cirugía de la columna lumbar",
+          "origen": "secundaria-del-mapa",
+          "literal": "cirugía de columna lumbar",
+          "seccion": "que-es"
+        },
+        {
+          "nivel": 3,
+          "texto": "Caminar después de cirugía de columna",
+          "origen": "busqueda-relacionada",
+          "literal": "Caminar después de cirugía de columna",
+          "seccion": "que-es"
+        },
+        {
+          "nivel": 3,
+          "texto": "Cirugía de la columna precio",
+          "origen": "busqueda-relacionada",
+          "literal": "Cirugía de columna precio",
+          "seccion": "que-es"
+        },
+        {
+          "nivel": 3,
+          "texto": "Secuelas de cirugía de columna lumbar",
+          "origen": "busqueda-relacionada",
+          "literal": "Secuelas de cirugía de columna lumbar",
+          "seccion": "que-es"
+        },
+        {
+          "nivel": 3,
+          "texto": "Cirugía de la columna lumbar con tornillos",
+          "origen": "busqueda-relacionada",
+          "literal": "Cirugía de columna lumbar con tornillos",
+          "seccion": "que-es"
+        },
+        {
+          "nivel": 2,
+          "texto": "Qué síntomas produce",
+          "origen": "esqueleto",
+          "literal": null,
+          "seccion": "sintomas"
+        },
+        {
+          "nivel": 2,
+          "texto": "Por qué aparece",
+          "origen": "esqueleto",
+          "literal": null,
+          "seccion": "causas"
+        },
+        {
+          "nivel": 2,
+          "texto": "Cómo se confirma el diagnóstico",
+          "origen": "esqueleto",
+          "literal": null,
+          "seccion": "diagnostico"
+        },
+        {
+          "nivel": 2,
+          "texto": "Qué se puede hacer sin operar",
+          "origen": "esqueleto",
+          "literal": null,
+          "seccion": "sin-operar"
+        },
+        {
+          "nivel": 2,
+          "texto": "Cuándo hace falta operar",
+          "origen": "esqueleto",
+          "literal": null,
+          "seccion": "cirugia"
+        },
+        {
+          "nivel": 3,
+          "texto": "¿Qué tan riesgosa es una operación en la columna?",
+          "origen": "pregunta-serp",
+          "literal": "¿Qué tan riesgosa es una operación en la columna?",
+          "seccion": "cirugia"
+        },
+        {
+          "nivel": 3,
+          "texto": "¿Cuál es el costo de una operación de columna?",
+          "origen": "pregunta-serp",
+          "literal": "¿Cuál es el costo de una operación de columna?",
+          "seccion": "cirugia"
+        },
+        {
+          "nivel": 3,
+          "texto": "Como dormir después de una cirugía de columna",
+          "origen": "secundaria-del-mapa",
+          "literal": "como dormir después de una cirugía de columna",
+          "seccion": "cirugia"
+        },
+        {
+          "nivel": 2,
+          "texto": "Preguntas frecuentes",
+          "origen": "esqueleto",
+          "literal": null,
+          "seccion": "preguntas-frecuentes"
+        },
+        {
+          "nivel": 3,
+          "texto": "¿Cuánto tiempo tarda en recuperarse de una cirugía de columna?",
+          "origen": "pregunta-serp",
+          "literal": "¿Cuánto tiempo tarda en recuperarse de una cirugía de columna?",
+          "seccion": "preguntas-frecuentes"
+        },
+        {
+          "nivel": 3,
+          "texto": "¿Cuáles son las cirugías de columna?",
+          "origen": "pregunta-serp",
+          "literal": "¿Cuáles son las cirugías de columna?",
+          "seccion": "preguntas-frecuentes"
+        },
+        {
+          "nivel": 2,
+          "texto": "Cuándo consultar",
+          "origen": "esqueleto",
+          "literal": null,
+          "seccion": "cuando-consultar"
+        }
+      ],
+      "entidades": [
+        {
+          "termino": "cirugia",
+          "documentos": 7,
+          "de": 7,
+          "posiciones": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "clase": "procedimiento"
+        },
+        {
+          "termino": "columna",
+          "documentos": 7,
+          "de": 7,
+          "posiciones": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "clase": "anatomica"
+        },
+        {
+          "termino": "cirugia de columna",
+          "documentos": 5,
+          "de": 7,
+          "posiciones": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "clase": "procedimiento"
+        },
+        {
+          "termino": "columna vertebral",
+          "documentos": 3,
+          "de": 7,
+          "posiciones": [
+            1,
+            6,
+            7
+          ],
+          "clase": "anatomica"
+        },
+        {
+          "termino": "nervios",
+          "documentos": 3,
+          "de": 7,
+          "posiciones": [
+            1,
+            3,
+            5
+          ],
+          "clase": "anatomica"
+        },
+        {
+          "termino": "presion",
+          "documentos": 3,
+          "de": 7,
+          "posiciones": [
+            1,
+            5,
+            6
+          ],
+          "clase": "generica"
+        },
+        {
+          "termino": "vertebral",
+          "documentos": 3,
+          "de": 7,
+          "posiciones": [
+            1,
+            6,
+            7
+          ],
+          "clase": "anatomica"
+        },
+        {
+          "termino": "lumbar",
+          "documentos": 3,
+          "de": 7,
+          "posiciones": [
+            2,
+            3,
+            4
+          ],
+          "clase": "anatomica"
+        }
+      ],
+      "entidadesInsuficientes": false,
+      "umbralAplicado": 0.4,
+      "coberturaDeSecundarias": [
+        {
+          "keyword": "como dormir después de una cirugía de columna",
+          "cubiertaPor": "Como dormir después de una cirugía de columna"
+        },
+        {
+          "keyword": "videos de cirugía de columna",
+          "cubiertaPor": "Qué es la cirugía de columna"
+        },
+        {
+          "keyword": "cirugía de columna cervical",
+          "cubiertaPor": "Cirugía de la columna cervical"
+        },
+        {
+          "keyword": "cirugía de columna escoliosis",
+          "cubiertaPor": "Cirugía de la columna escoliosis"
+        },
+        {
+          "keyword": "cirugía de columna lumbar",
+          "cubiertaPor": "Cirugía de la columna lumbar"
+        }
+      ],
+      "coberturaDeRelacionadas": [
+        {
+          "busqueda": "Videos de cirugía de columna",
+          "cubiertaPor": "Qué es la cirugía de columna"
+        },
+        {
+          "busqueda": "Caminar después de cirugía de columna",
+          "cubiertaPor": "Caminar después de cirugía de columna"
+        },
+        {
+          "busqueda": "Cirugía de columna precio",
+          "cubiertaPor": "Cirugía de la columna precio"
+        },
+        {
+          "busqueda": "La cirugía de columna es peligrosa",
+          "cubiertaPor": "Qué es la cirugía de columna"
+        },
+        {
+          "busqueda": "Secuelas de cirugía de columna lumbar",
+          "cubiertaPor": "Secuelas de cirugía de columna lumbar"
+        },
+        {
+          "busqueda": "Tipos de cirugía de columna",
+          "cubiertaPor": "Qué es la cirugía de columna"
+        },
+        {
+          "busqueda": "Cirugía de columna lumbar con tornillos",
+          "cubiertaPor": "Cirugía de la columna lumbar con tornillos"
+        },
+        {
+          "busqueda": "Después de una cirugía de columna",
+          "cubiertaPor": "Como dormir después de una cirugía de columna"
+        }
+      ],
+      "preguntasSinUsar": [],
+      "fuente": {
+        "keyword": "cirugía de columna",
+        "organicos": 7,
+        "preguntas": 4,
+        "relacionadas": 8,
+        "capturadaEn": "2026-08-10T22:16:22.452Z"
+      }
+    },
+    {
+      "url": "/preguntas-frecuentes",
+      "keywordPrimaria": "reumatólogo o traumatólogo",
+      "keywordPrimariaKey": "reumatologo o traumatologo",
+      "formato": "guia-clinica",
+      "minimoDePalabras": 800,
+      "posicionesMedidas": 7,
+      "jerarquia": [
+        {
+          "nivel": 2,
+          "texto": "Qué es el reumatólogo o traumatólogo",
+          "origen": "esqueleto",
+          "literal": null,
+          "seccion": "que-es"
+        },
+        {
+          "nivel": 3,
+          "texto": "Diferencia entre artrosis traumatologo y reumatologo",
+          "origen": "secundaria-del-mapa",
+          "literal": "artrosis traumatologo o reumatologo",
+          "seccion": "que-es"
+        },
+        {
+          "nivel": 3,
+          "texto": "Traumatólogo y reumatólogo es lo mismo",
+          "origen": "secundaria-del-mapa",
+          "literal": "traumatólogo y reumatólogo es lo mismo",
+          "seccion": "que-es"
+        },
+        {
+          "nivel": 2,
+          "texto": "Qué síntomas produce",
+          "origen": "esqueleto",
+          "literal": null,
+          "seccion": "sintomas"
+        },
+        {
+          "nivel": 2,
+          "texto": "Por qué aparece",
+          "origen": "esqueleto",
+          "literal": null,
+          "seccion": "causas"
+        },
+        {
+          "nivel": 2,
+          "texto": "Cómo se confirma el diagnóstico",
+          "origen": "esqueleto",
+          "literal": null,
+          "seccion": "diagnostico"
+        },
+        {
+          "nivel": 2,
+          "texto": "Qué se puede hacer sin operar",
+          "origen": "esqueleto",
+          "literal": null,
+          "seccion": "sin-operar"
+        },
+        {
+          "nivel": 2,
+          "texto": "Cuándo hace falta operar",
+          "origen": "esqueleto",
+          "literal": null,
+          "seccion": "cirugia"
+        },
+        {
+          "nivel": 2,
+          "texto": "Preguntas frecuentes",
+          "origen": "esqueleto",
+          "literal": null,
+          "seccion": "preguntas-frecuentes"
+        },
+        {
+          "nivel": 3,
+          "texto": "¿Qué diferencia hay entre un traumatólogo y un reumatólogo?",
+          "origen": "pregunta-serp",
+          "literal": "¿Qué diferencia hay entre un traumatólogo y un reumatólogo?",
+          "seccion": "preguntas-frecuentes"
+        },
+        {
+          "nivel": 3,
+          "texto": "¿Cuándo ir al traumatólogo o al reumatólogo?",
+          "origen": "pregunta-serp",
+          "literal": "¿Cuándo ir al traumatólogo o al reumatólogo?",
+          "seccion": "preguntas-frecuentes"
+        },
+        {
+          "nivel": 3,
+          "texto": "¿Qué enfermedades trata un reumatólogo?",
+          "origen": "pregunta-serp",
+          "literal": "¿Qué enfermedades trata un reumatólogo?",
+          "seccion": "preguntas-frecuentes"
+        },
+        {
+          "nivel": 3,
+          "texto": "¿Qué enfermedades ve el traumatólogo?",
+          "origen": "pregunta-serp",
+          "literal": "¿Qué enfermedades ve el traumatólogo?",
+          "seccion": "preguntas-frecuentes"
+        },
+        {
+          "nivel": 2,
+          "texto": "Cuándo consultar",
+          "origen": "esqueleto",
+          "literal": null,
+          "seccion": "cuando-consultar"
+        },
+        {
+          "nivel": 3,
+          "texto": "Como se llama el médico especialista en huesos articulaciones y músculos",
+          "origen": "busqueda-relacionada",
+          "literal": "Como se llama el médico especialista en huesos articulaciones y músculos",
+          "seccion": "cuando-consultar"
+        },
+        {
+          "nivel": 3,
+          "texto": "Reumatólogo especialista en artrosis",
+          "origen": "busqueda-relacionada",
+          "literal": "Reumatólogo especialista en artrosis",
+          "seccion": "cuando-consultar"
+        },
+        {
+          "nivel": 3,
+          "texto": "Médico especialista en dolores musculares",
+          "origen": "busqueda-relacionada",
+          "literal": "Médico especialista en dolores musculares",
+          "seccion": "cuando-consultar"
+        },
+        {
+          "nivel": 3,
+          "texto": "Especialista en tendones y nervios",
+          "origen": "busqueda-relacionada",
+          "literal": "Especialista en tendones y nervios",
+          "seccion": "cuando-consultar"
+        },
+        {
+          "nivel": 3,
+          "texto": "Cuando acudir al traumatólogo",
+          "origen": "busqueda-relacionada",
+          "literal": "Cuando acudir al traumatólogo",
+          "seccion": "cuando-consultar"
+        }
+      ],
+      "entidades": [
+        {
+          "termino": "reumatologo",
+          "documentos": 7,
+          "de": 7,
+          "posiciones": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "clase": "generica"
+        },
+        {
+          "termino": "traumatologo",
+          "documentos": 6,
+          "de": 7,
+          "posiciones": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "clase": "generica"
+        },
+        {
+          "termino": "aparato",
+          "documentos": 4,
+          "de": 7,
+          "posiciones": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "clase": "generica"
+        },
+        {
+          "termino": "aparato locomotor",
+          "documentos": 4,
+          "de": 7,
+          "posiciones": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "clase": "generica"
+        },
+        {
+          "termino": "locomotor",
+          "documentos": 4,
+          "de": 7,
+          "posiciones": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "clase": "generica"
+        },
+        {
+          "termino": "reumatologo y traumatologo",
+          "documentos": 4,
+          "de": 7,
+          "posiciones": [
+            2,
+            3,
+            5,
+            6
+          ],
+          "clase": "generica"
+        },
+        {
+          "termino": "medico",
+          "documentos": 3,
+          "de": 7,
+          "posiciones": [
+            2,
+            3,
+            4
+          ],
+          "clase": "generica"
+        },
+        {
+          "termino": "diagnosticar",
+          "documentos": 2,
+          "de": 7,
+          "posiciones": [
+            1,
+            7
+          ],
+          "clase": "generica"
+        },
+        {
+          "termino": "especialista",
+          "documentos": 2,
+          "de": 7,
+          "posiciones": [
+            1,
+            2
+          ],
+          "clase": "generica"
+        },
+        {
+          "termino": "reumatologo es el especialista",
+          "documentos": 2,
+          "de": 7,
+          "posiciones": [
+            1,
+            2
+          ],
+          "clase": "generica"
+        },
+        {
+          "termino": "tratar",
+          "documentos": 2,
+          "de": 7,
+          "posiciones": [
+            1,
+            7
+          ],
+          "clase": "generica"
+        },
+        {
+          "termino": "diferencia",
+          "documentos": 2,
+          "de": 7,
+          "posiciones": [
+            2,
+            3
+          ],
+          "clase": "generica"
+        },
+        {
+          "termino": "tratamiento",
+          "documentos": 2,
+          "de": 7,
+          "posiciones": [
+            2,
+            5
+          ],
+          "clase": "procedimiento"
+        },
+        {
+          "termino": "cirujano",
+          "documentos": 2,
+          "de": 7,
+          "posiciones": [
+            3,
+            4
+          ],
+          "clase": "generica"
+        },
+        {
+          "termino": "reumatologo es el medico",
+          "documentos": 2,
+          "de": 7,
+          "posiciones": [
+            3,
+            4
+          ],
+          "clase": "generica"
+        },
+        {
+          "termino": "sencilla",
+          "documentos": 2,
+          "de": 7,
+          "posiciones": [
+            3,
+            4
+          ],
+          "clase": "generica"
+        },
+        {
+          "termino": "sencilla el reumatologo",
+          "documentos": 2,
+          "de": 7,
+          "posiciones": [
+            3,
+            4
+          ],
+          "clase": "generica"
+        },
+        {
+          "termino": "sencilla el reumatologo es el medico",
+          "documentos": 2,
+          "de": 7,
+          "posiciones": [
+            3,
+            4
+          ],
+          "clase": "generica"
+        },
+        {
+          "termino": "traumatologo es el cirujano",
+          "documentos": 2,
+          "de": 7,
+          "posiciones": [
+            3,
+            4
+          ],
+          "clase": "generica"
+        },
+        {
+          "termino": "acudir",
+          "documentos": 2,
+          "de": 7,
+          "posiciones": [
+            4,
+            6
+          ],
+          "clase": "generica"
+        }
+      ],
+      "entidadesInsuficientes": false,
+      "umbralAplicado": 0.2,
+      "coberturaDeSecundarias": [
+        {
+          "keyword": "artrosis traumatologo o reumatologo",
+          "cubiertaPor": "Diferencia entre artrosis traumatologo y reumatologo"
+        },
+        {
+          "keyword": "cuando ir al traumatólogo o al reumatólogo",
+          "cubiertaPor": "Cuándo hace falta operar"
+        },
+        {
+          "keyword": "traumatólogo y reumatólogo es lo mismo",
+          "cubiertaPor": "Traumatólogo y reumatólogo es lo mismo"
+        }
+      ],
+      "coberturaDeRelacionadas": [
+        {
+          "busqueda": "Cuando ir al reumatólogo",
+          "cubiertaPor": "Cuándo hace falta operar"
+        },
+        {
+          "busqueda": "Como se llama el médico especialista en huesos articulaciones y músculos",
+          "cubiertaPor": "Como se llama el médico especialista en huesos articulaciones y músculos"
+        },
+        {
+          "busqueda": "Reumatólogo que trata",
+          "cubiertaPor": "¿Qué enfermedades trata un reumatólogo?"
+        },
+        {
+          "busqueda": "Reumatólogo",
+          "cubiertaPor": "Qué es el reumatólogo o traumatólogo"
+        },
+        {
+          "busqueda": "Reumatólogo especialista en artrosis",
+          "cubiertaPor": "Reumatólogo especialista en artrosis"
+        },
+        {
+          "busqueda": "Médico especialista en dolores musculares",
+          "cubiertaPor": "Médico especialista en dolores musculares"
+        },
+        {
+          "busqueda": "Especialista en tendones y nervios",
+          "cubiertaPor": "Especialista en tendones y nervios"
+        },
+        {
+          "busqueda": "Cuando acudir al traumatólogo",
+          "cubiertaPor": "Cuando acudir al traumatólogo"
+        }
+      ],
+      "preguntasSinUsar": [],
+      "fuente": {
+        "keyword": "reumatólogo o traumatólogo",
+        "organicos": 7,
+        "preguntas": 4,
+        "relacionadas": 8,
+        "capturadaEn": "2026-08-11T17:06:42.332Z"
+      }
+    },
+    {
+      "url": "/sedes/clinica-ricardo-palma",
+      "keywordPrimaria": "cirujano de columna clínica ricardo palma",
+      "keywordPrimariaKey": "cirujano de columna clinica ricardo palma",
+      "formato": "ficha-de-sede",
+      "minimoDePalabras": 500,
+      "posicionesMedidas": 8,
+      "jerarquia": [
+        {
+          "nivel": 2,
+          "texto": "Dónde queda",
+          "origen": "esqueleto",
+          "literal": null,
+          "seccion": "donde-queda"
+        },
+        {
+          "nivel": 3,
+          "texto": "Cirugía de la columna san isidro",
+          "origen": "secundaria-del-mapa",
+          "literal": "cirugía de columna san isidro",
+          "seccion": "donde-queda"
+        },
+        {
+          "nivel": 2,
+          "texto": "Cómo llegar",
+          "origen": "esqueleto",
+          "literal": null,
+          "seccion": "como-llegar"
+        },
+        {
+          "nivel": 2,
+          "texto": "Qué se atiende ahí",
+          "origen": "esqueleto",
+          "literal": null,
+          "seccion": "que-se-atiende"
+        },
+        {
+          "nivel": 3,
+          "texto": "¿Cómo se llama el cirujano que opera columna?",
+          "origen": "pregunta-serp",
+          "literal": "¿Cómo se llama el cirujano que opera columna?",
+          "seccion": "que-se-atiende"
+        },
+        {
+          "nivel": 3,
+          "texto": "¿Quién es el mejor traumatologo de la clínica Rícardo Palma?",
+          "origen": "pregunta-serp",
+          "literal": "¿Quién es el mejor traumatologo de la clínica Rícardo Palma?",
+          "seccion": "que-se-atiende"
+        },
+        {
+          "nivel": 3,
+          "texto": "¿Quiénes son los mejores neurocirujanos en Lima?",
+          "origen": "pregunta-serp",
+          "literal": "¿Quiénes son los mejores neurocirujanos en Lima?",
+          "seccion": "que-se-atiende"
+        },
+        {
+          "nivel": 3,
+          "texto": "Ortopedia infantil clínica ricardo palma",
+          "origen": "secundaria-del-mapa",
+          "literal": "ortopedia infantil clínica ricardo palma",
+          "seccion": "que-se-atiende"
+        },
+        {
+          "nivel": 3,
+          "texto": "Clínica ricardo palma traumatología",
+          "origen": "secundaria-del-mapa",
+          "literal": "clínica ricardo palma traumatología",
+          "seccion": "que-se-atiende"
+        },
+        {
+          "nivel": 3,
+          "texto": "Clínica ricardo palma staff médico",
+          "origen": "busqueda-relacionada",
+          "literal": "Clínica ricardo palma staff médico",
+          "seccion": "que-se-atiende"
+        },
+        {
+          "nivel": 3,
+          "texto": "Clínica ricardo Palma staff médico Traumatología",
+          "origen": "busqueda-relacionada",
+          "literal": "Clínica ricardo Palma staff médico Traumatología",
+          "seccion": "que-se-atiende"
+        },
+        {
+          "nivel": 3,
+          "texto": "Clínica Ricardo Palma staff médico Oftalmología",
+          "origen": "busqueda-relacionada",
+          "literal": "Clínica Ricardo Palma staff médico Oftalmología",
+          "seccion": "que-se-atiende"
+        },
+        {
+          "nivel": 3,
+          "texto": "Plantel médico clínica ricardo palma",
+          "origen": "busqueda-relacionada",
+          "literal": "Plantel médico clínica ricardo palma",
+          "seccion": "que-se-atiende"
+        },
+        {
+          "nivel": 3,
+          "texto": "Neurólogo Clínica Ricardo Palma",
+          "origen": "busqueda-relacionada",
+          "literal": "Neurólogo Clínica Ricardo Palma",
+          "seccion": "que-se-atiende"
+        },
+        {
+          "nivel": 2,
+          "texto": "Horarios de atención",
+          "origen": "esqueleto",
+          "literal": null,
+          "seccion": "horarios"
+        },
+        {
+          "nivel": 2,
+          "texto": "Cómo agendar una cita",
+          "origen": "esqueleto",
+          "literal": null,
+          "seccion": "como-agendar"
+        }
+      ],
+      "entidades": [
+        {
+          "termino": "palma",
+          "documentos": 5,
+          "de": 8,
+          "posiciones": [
+            1,
+            4,
+            5,
+            7,
+            8
+          ],
+          "clase": "generica"
+        },
+        {
+          "termino": "ricardo",
+          "documentos": 5,
+          "de": 8,
+          "posiciones": [
+            1,
+            4,
+            5,
+            7,
+            8
+          ],
+          "clase": "generica"
+        },
+        {
+          "termino": "ricardo palma",
+          "documentos": 5,
+          "de": 8,
+          "posiciones": [
+            1,
+            4,
+            5,
+            7,
+            8
+          ],
+          "clase": "generica"
+        },
+        {
+          "termino": "especialidad",
+          "documentos": 3,
+          "de": 8,
+          "posiciones": [
+            1,
+            5,
+            6
+          ],
+          "clase": "generica"
+        },
+        {
+          "termino": "manejo",
+          "documentos": 3,
+          "de": 8,
+          "posiciones": [
+            1,
+            3,
+            6
+          ],
+          "clase": "generica"
+        },
+        {
+          "termino": "tratamiento",
+          "documentos": 3,
+          "de": 8,
+          "posiciones": [
+            1,
+            3,
+            6
+          ],
+          "clase": "procedimiento"
+        },
+        {
+          "termino": "traumatologia",
+          "documentos": 3,
+          "de": 8,
+          "posiciones": [
+            1,
+            4,
+            5
+          ],
+          "clase": "generica"
+        },
+        {
+          "termino": "columna",
+          "documentos": 3,
+          "de": 8,
+          "posiciones": [
+            3,
+            6,
+            8
+          ],
+          "clase": "anatomica"
+        },
+        {
+          "termino": "traumatologo",
+          "documentos": 3,
+          "de": 8,
+          "posiciones": [
+            4,
+            7,
+            8
+          ],
+          "clase": "generica"
+        }
+      ],
+      "entidadesInsuficientes": false,
+      "umbralAplicado": 0.3,
+      "coberturaDeSecundarias": [
+        {
+          "keyword": "ortopedia infantil clínica ricardo palma",
+          "cubiertaPor": "Ortopedia infantil clínica ricardo palma"
+        },
+        {
+          "keyword": "traumatólogo clínica ricardo palma",
+          "cubiertaPor": "¿Quién es el mejor traumatologo de la clínica Rícardo Palma?"
+        },
+        {
+          "keyword": "clínica ricardo palma traumatología",
+          "cubiertaPor": "Clínica ricardo palma traumatología"
+        },
+        {
+          "keyword": "mejor traumatólogo de la clínica ricardo palma",
+          "cubiertaPor": "¿Quién es el mejor traumatologo de la clínica Rícardo Palma?"
+        },
+        {
+          "keyword": "cirugía de columna san isidro",
+          "cubiertaPor": "Cirugía de la columna san isidro"
+        }
+      ],
+      "coberturaDeRelacionadas": [
+        {
+          "busqueda": "Mejor traumatólogo de la clínica ricardo palma",
+          "cubiertaPor": "¿Quién es el mejor traumatologo de la clínica Rícardo Palma?"
+        },
+        {
+          "busqueda": "Clínica ricardo palma staff médico",
+          "cubiertaPor": "Clínica ricardo palma staff médico"
+        },
+        {
+          "busqueda": "Clínica ricardo Palma staff médico Traumatología",
+          "cubiertaPor": "Clínica ricardo Palma staff médico Traumatología"
+        },
+        {
+          "busqueda": "Clínica ricardo palma especialidades",
+          "cubiertaPor": "Qué se atiende ahí"
+        },
+        {
+          "busqueda": "Clínica Ricardo Palma staff médico Oftalmología",
+          "cubiertaPor": "Clínica Ricardo Palma staff médico Oftalmología"
+        },
+        {
+          "busqueda": "Plantel médico clínica ricardo palma",
+          "cubiertaPor": "Plantel médico clínica ricardo palma"
+        },
+        {
+          "busqueda": "Clínica ricardo palma citas",
+          "cubiertaPor": "Cómo agendar una cita"
+        },
+        {
+          "busqueda": "Neurólogo Clínica Ricardo Palma",
+          "cubiertaPor": "Neurólogo Clínica Ricardo Palma"
+        }
+      ],
+      "preguntasSinUsar": [
+        {
+          "pregunta": "¿Quién es el cirujano de columna?",
+          "motivo": "Pregunta por quien, que no es tema de ninguna seccion del molde de ficha-de-sede, y este molde no abre bloque de preguntas frecuentes. Forzarla inventaria una seccion que la SERP no pidio."
+        }
+      ],
+      "fuente": {
+        "keyword": "cirujano de columna clínica ricardo palma",
+        "organicos": 8,
+        "preguntas": 4,
+        "relacionadas": 8,
+        "capturadaEn": "2026-08-11T17:04:49.667Z"
+      }
+    },
+    {
+      "url": "/sedes/clinica-tezza",
+      "keywordPrimaria": "ortopedia infantil clínica tezza",
+      "keywordPrimariaKey": "ortopedia infantil clinica tezza",
+      "formato": "ficha-de-sede",
+      "minimoDePalabras": 500,
+      "posicionesMedidas": 9,
+      "jerarquia": [
+        {
+          "nivel": 2,
+          "texto": "Dónde queda",
+          "origen": "esqueleto",
+          "literal": null,
+          "seccion": "donde-queda"
+        },
+        {
+          "nivel": 2,
+          "texto": "Cómo llegar",
+          "origen": "esqueleto",
+          "literal": null,
+          "seccion": "como-llegar"
+        },
+        {
+          "nivel": 2,
+          "texto": "Qué se atiende ahí",
+          "origen": "esqueleto",
+          "literal": null,
+          "seccion": "que-se-atiende"
+        },
+        {
+          "nivel": 3,
+          "texto": "¿Qué especialidades ofrece la Clínica Tezza?",
+          "origen": "pregunta-serp",
+          "literal": "¿Qué especialidades ofrece la Clínica Tezza?",
+          "seccion": "que-se-atiende"
+        },
+        {
+          "nivel": 3,
+          "texto": "¿Qué es un ortopedista infantil?",
+          "origen": "pregunta-serp",
+          "literal": "¿Qué es un ortopedista infantil?",
+          "seccion": "que-se-atiende"
+        },
+        {
+          "nivel": 3,
+          "texto": "¿Cuáles son los planes de salud que ofrece Clinica Tezza?",
+          "origen": "pregunta-serp",
+          "literal": "¿Cuáles son los planes de salud que ofrece Clinica Tezza?",
+          "seccion": "que-se-atiende"
+        },
+        {
+          "nivel": 3,
+          "texto": "Cirujano de columna clínica tezza",
+          "origen": "secundaria-del-mapa",
+          "literal": "cirujano de columna clínica tezza",
+          "seccion": "que-se-atiende"
+        },
+        {
+          "nivel": 3,
+          "texto": "Traumatólogo clínica tezza",
+          "origen": "secundaria-del-mapa",
+          "literal": "traumatólogo clínica tezza",
+          "seccion": "que-se-atiende"
+        },
+        {
+          "nivel": 3,
+          "texto": "Neurocirujano clínica tezza",
+          "origen": "secundaria-del-mapa",
+          "literal": "neurocirujano clínica tezza",
+          "seccion": "que-se-atiende"
+        },
+        {
+          "nivel": 3,
+          "texto": "Cirugía de la columna clínica tezza",
+          "origen": "secundaria-del-mapa",
+          "literal": "cirugía de columna clínica tezza",
+          "seccion": "que-se-atiende"
+        },
+        {
+          "nivel": 3,
+          "texto": "Telefono Clínica Tezza",
+          "origen": "busqueda-relacionada",
+          "literal": "Telefono Clínica Tezza",
+          "seccion": "que-se-atiende"
+        },
+        {
+          "nivel": 3,
+          "texto": "Servicios que ofrece clínica padre luis tezza",
+          "origen": "busqueda-relacionada",
+          "literal": "Servicios que ofrece clínica padre luis tezza",
+          "seccion": "que-se-atiende"
+        },
+        {
+          "nivel": 3,
+          "texto": "Clínica Tezza maternidad",
+          "origen": "busqueda-relacionada",
+          "literal": "Clínica Tezza maternidad",
+          "seccion": "que-se-atiende"
+        },
+        {
+          "nivel": 2,
+          "texto": "Horarios de atención",
+          "origen": "esqueleto",
+          "literal": null,
+          "seccion": "horarios"
+        },
+        {
+          "nivel": 2,
+          "texto": "Cómo agendar una cita",
+          "origen": "esqueleto",
+          "literal": null,
+          "seccion": "como-agendar"
+        },
+        {
+          "nivel": 3,
+          "texto": "¿Cómo puedo programar una cita en la Clínica Tezza?",
+          "origen": "pregunta-serp",
+          "literal": "¿Cómo puedo programar una cita en la Clínica Tezza?",
+          "seccion": "como-agendar"
+        }
+      ],
+      "entidades": [
+        {
+          "termino": "traumatologia",
+          "documentos": 6,
+          "de": 9,
+          "posiciones": [
+            1,
+            3,
+            5,
+            6,
+            8,
+            9
+          ],
+          "clase": "generica"
+        },
+        {
+          "termino": "ortopedia",
+          "documentos": 5,
+          "de": 9,
+          "posiciones": [
+            1,
+            5,
+            6,
+            8,
+            9
+          ],
+          "clase": "generica"
+        },
+        {
+          "termino": "ortopedia y traumatologia",
+          "documentos": 4,
+          "de": 9,
+          "posiciones": [
+            1,
+            5,
+            6,
+            9
+          ],
+          "clase": "generica"
+        },
+        {
+          "termino": "tezza",
+          "documentos": 4,
+          "de": 9,
+          "posiciones": [
+            2,
+            6,
+            7,
+            9
+          ],
+          "clase": "generica"
+        },
+        {
+          "termino": "especialidad",
+          "documentos": 3,
+          "de": 9,
+          "posiciones": [
+            1,
+            5,
+            6
+          ],
+          "clase": "generica"
+        },
+        {
+          "termino": "especialistas",
+          "documentos": 3,
+          "de": 9,
+          "posiciones": [
+            2,
+            5,
+            8
+          ],
+          "clase": "generica"
+        },
+        {
+          "termino": "luis",
+          "documentos": 2,
+          "de": 9,
+          "posiciones": [
+            1,
+            9
+          ],
+          "clase": "generica"
+        },
+        {
+          "termino": "cuida",
+          "documentos": 2,
+          "de": 9,
+          "posiciones": [
+            2,
+            7
+          ],
+          "clase": "generica"
+        },
+        {
+          "termino": "cuidamos",
+          "documentos": 2,
+          "de": 9,
+          "posiciones": [
+            2,
+            7
+          ],
+          "clase": "generica"
+        },
+        {
+          "termino": "cuidamos al enfermo",
+          "documentos": 2,
+          "de": 9,
+          "posiciones": [
+            2,
+            7
+          ],
+          "clase": "generica"
+        },
+        {
+          "termino": "cuidamos al enfermo como una madre",
+          "documentos": 2,
+          "de": 9,
+          "posiciones": [
+            2,
+            7
+          ],
+          "clase": "generica"
+        },
+        {
+          "termino": "enfermo",
+          "documentos": 2,
+          "de": 9,
+          "posiciones": [
+            2,
+            7
+          ],
+          "clase": "generica"
+        },
+        {
+          "termino": "enfermo como una madre",
+          "documentos": 2,
+          "de": 9,
+          "posiciones": [
+            2,
+            7
+          ],
+          "clase": "generica"
+        },
+        {
+          "termino": "enfermo como una madre cuida",
+          "documentos": 2,
+          "de": 9,
+          "posiciones": [
+            2,
+            7
+          ],
+          "clase": "generica"
+        },
+        {
+          "termino": "madre",
+          "documentos": 2,
+          "de": 9,
+          "posiciones": [
+            2,
+            7
+          ],
+          "clase": "generica"
+        },
+        {
+          "termino": "madre cuida",
+          "documentos": 2,
+          "de": 9,
+          "posiciones": [
+            2,
+            7
+          ],
+          "clase": "generica"
+        },
+        {
+          "termino": "medico",
+          "documentos": 2,
+          "de": 9,
+          "posiciones": [
+            2,
+            6
+          ],
+          "clase": "generica"
+        },
+        {
+          "termino": "nuestros",
+          "documentos": 2,
+          "de": 9,
+          "posiciones": [
+            2,
+            3
+          ],
+          "clase": "generica"
+        },
+        {
+          "termino": "pediatria",
+          "documentos": 2,
+          "de": 9,
+          "posiciones": [
+            2,
+            9
+          ],
+          "clase": "generica"
+        },
+        {
+          "termino": "fracturas",
+          "documentos": 2,
+          "de": 9,
+          "posiciones": [
+            3,
+            5
+          ],
+          "clase": "generica"
+        }
+      ],
+      "entidadesInsuficientes": false,
+      "umbralAplicado": 0.2,
+      "coberturaDeSecundarias": [
+        {
+          "keyword": "cirujano de columna clínica tezza",
+          "cubiertaPor": "Cirujano de columna clínica tezza"
+        },
+        {
+          "keyword": "traumatólogo clínica tezza",
+          "cubiertaPor": "Traumatólogo clínica tezza"
+        },
+        {
+          "keyword": "neurocirujano clínica tezza",
+          "cubiertaPor": "Neurocirujano clínica tezza"
+        },
+        {
+          "keyword": "cirugía de columna clínica tezza",
+          "cubiertaPor": "Cirugía de la columna clínica tezza"
+        },
+        {
+          "keyword": "ortopedia clínica tezza",
+          "cubiertaPor": "Qué se atiende ahí"
+        }
+      ],
+      "coberturaDeRelacionadas": [
+        {
+          "busqueda": "Clínica Tezza citas online",
+          "cubiertaPor": "Cómo agendar una cita"
+        },
+        {
+          "busqueda": "Clínica Tezza",
+          "cubiertaPor": "Qué se atiende ahí"
+        },
+        {
+          "busqueda": "Clínica Tezza Staff",
+          "cubiertaPor": "Qué se atiende ahí"
+        },
+        {
+          "busqueda": "Telefono Clínica Tezza",
+          "cubiertaPor": "Telefono Clínica Tezza"
+        },
+        {
+          "busqueda": "Clínica Tezza citas WhatsApp",
+          "cubiertaPor": "Cómo agendar una cita"
+        },
+        {
+          "busqueda": "Servicios que ofrece clínica padre luis tezza",
+          "cubiertaPor": "Servicios que ofrece clínica padre luis tezza"
+        },
+        {
+          "busqueda": "Clínica Tezza pago de Citas",
+          "cubiertaPor": "Cómo agendar una cita"
+        },
+        {
+          "busqueda": "Clínica Tezza maternidad",
+          "cubiertaPor": "Clínica Tezza maternidad"
+        }
+      ],
+      "preguntasSinUsar": [],
+      "fuente": {
+        "keyword": "ortopedia infantil clínica tezza",
+        "organicos": 9,
+        "preguntas": 4,
+        "relacionadas": 8,
+        "capturadaEn": "2026-08-11T17:06:12.371Z"
+      }
+    },
+    {
+      "url": "/sedes/consultorio-privado",
+      "keywordPrimaria": "cirugía de columna surco",
+      "keywordPrimariaKey": "cirugia de columna surco",
+      "formato": "ficha-de-sede",
+      "minimoDePalabras": 500,
+      "posicionesMedidas": 9,
+      "jerarquia": [
+        {
+          "nivel": 2,
+          "texto": "Dónde queda",
+          "origen": "esqueleto",
+          "literal": null,
+          "seccion": "donde-queda"
+        },
+        {
+          "nivel": 2,
+          "texto": "Cómo llegar",
+          "origen": "esqueleto",
+          "literal": null,
+          "seccion": "como-llegar"
+        },
+        {
+          "nivel": 2,
+          "texto": "Qué se atiende ahí",
+          "origen": "esqueleto",
+          "literal": null,
+          "seccion": "que-se-atiende"
+        },
+        {
+          "nivel": 3,
+          "texto": "¿Quiénes son los mejores neurocirujanos en Lima?",
+          "origen": "pregunta-serp",
+          "literal": "¿Quiénes son los mejores neurocirujanos en Lima?",
+          "seccion": "que-se-atiende"
+        },
+        {
+          "nivel": 3,
+          "texto": "Ortopedia surco",
+          "origen": "secundaria-del-mapa",
+          "literal": "ortopedia surco",
+          "seccion": "que-se-atiende"
+        },
+        {
+          "nivel": 3,
+          "texto": "Cirujano de columna surco",
+          "origen": "secundaria-del-mapa",
+          "literal": "cirujano de columna surco",
+          "seccion": "que-se-atiende"
+        },
+        {
+          "nivel": 3,
+          "texto": "Neurocirujano surco",
+          "origen": "secundaria-del-mapa",
+          "literal": "neurocirujano surco",
+          "seccion": "que-se-atiende"
+        },
+        {
+          "nivel": 3,
+          "texto": "Ortopedia infantil surco",
+          "origen": "secundaria-del-mapa",
+          "literal": "ortopedia infantil surco",
+          "seccion": "que-se-atiende"
+        },
+        {
+          "nivel": 3,
+          "texto": "Traumatología surco",
+          "origen": "secundaria-del-mapa",
+          "literal": "traumatología surco",
+          "seccion": "que-se-atiende"
+        },
+        {
+          "nivel": 3,
+          "texto": "Clínica de la columna hernias discales sin cirugías",
+          "origen": "busqueda-relacionada",
+          "literal": "Clínica de la columna hernias discales sin cirugías",
+          "seccion": "que-se-atiende"
+        },
+        {
+          "nivel": 3,
+          "texto": "Mejores especialistas columna vertebral Lima Perú",
+          "origen": "busqueda-relacionada",
+          "literal": "Mejores especialistas columna vertebral Lima Perú",
+          "seccion": "que-se-atiende"
+        },
+        {
+          "nivel": 3,
+          "texto": "Clínica de la Columna Chacarilla",
+          "origen": "busqueda-relacionada",
+          "literal": "Clínica de la Columna Chacarilla",
+          "seccion": "que-se-atiende"
+        },
+        {
+          "nivel": 3,
+          "texto": "Life Clínica de la columna",
+          "origen": "busqueda-relacionada",
+          "literal": "Life Clínica de la columna",
+          "seccion": "que-se-atiende"
+        },
+        {
+          "nivel": 3,
+          "texto": "Clínica de la columna Lima",
+          "origen": "busqueda-relacionada",
+          "literal": "Clínica de la columna Lima",
+          "seccion": "que-se-atiende"
+        },
+        {
+          "nivel": 3,
+          "texto": "Opiniones de Clínica de la Columna hernias discales sin CIRUGÍAS",
+          "origen": "busqueda-relacionada",
+          "literal": "Opiniones de Clínica de la Columna hernias discales sin CIRUGÍAS",
+          "seccion": "que-se-atiende"
+        },
+        {
+          "nivel": 2,
+          "texto": "Horarios de atención",
+          "origen": "esqueleto",
+          "literal": null,
+          "seccion": "horarios"
+        },
+        {
+          "nivel": 2,
+          "texto": "Cómo agendar una cita",
+          "origen": "esqueleto",
+          "literal": null,
+          "seccion": "como-agendar"
+        },
+        {
+          "nivel": 3,
+          "texto": "¿Cuánto cobran por una operación de columna?",
+          "origen": "pregunta-serp",
+          "literal": "¿Cuánto cobran por una operación de columna?",
+          "seccion": "como-agendar"
+        },
+        {
+          "nivel": 3,
+          "texto": "¿Cuánto cuesta una cirugía de columna en Perú?",
+          "origen": "pregunta-serp",
+          "literal": "¿Cuánto cuesta una cirugía de columna en Perú?",
+          "seccion": "como-agendar"
+        },
+        {
+          "nivel": 3,
+          "texto": "¿Cuánto puede valer una operación de columna?",
+          "origen": "pregunta-serp",
+          "literal": "¿Cuánto puede valer una operación de columna?",
+          "seccion": "como-agendar"
+        }
+      ],
+      "entidades": [
+        {
+          "termino": "columna",
+          "documentos": 6,
+          "de": 9,
+          "posiciones": [
+            1,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "clase": "anatomica"
+        },
+        {
+          "termino": "surco",
+          "documentos": 5,
+          "de": 9,
+          "posiciones": [
+            2,
+            3,
+            6,
+            8,
+            9
+          ],
+          "clase": "generica"
+        },
+        {
+          "termino": "cirugia",
+          "documentos": 3,
+          "de": 9,
+          "posiciones": [
+            1,
+            7,
+            8
+          ],
+          "clase": "procedimiento"
+        },
+        {
+          "termino": "somos",
+          "documentos": 3,
+          "de": 9,
+          "posiciones": [
+            1,
+            4,
+            9
+          ],
+          "clase": "generica"
+        },
+        {
+          "termino": "cirugia de columna",
+          "documentos": 2,
+          "de": 9,
+          "posiciones": [
+            1,
+            7
+          ],
+          "clase": "procedimiento"
+        },
+        {
+          "termino": "columna vertebral",
+          "documentos": 2,
+          "de": 9,
+          "posiciones": [
+            1,
+            4
+          ],
+          "clase": "anatomica"
+        },
+        {
+          "termino": "discal",
+          "documentos": 2,
+          "de": 9,
+          "posiciones": [
+            1,
+            2
+          ],
+          "clase": "clinica"
+        },
+        {
+          "termino": "experiencia",
+          "documentos": 2,
+          "de": 9,
+          "posiciones": [
+            1,
+            5
+          ],
+          "clase": "generica"
+        },
+        {
+          "termino": "vertebral",
+          "documentos": 2,
+          "de": 9,
+          "posiciones": [
+            1,
+            4
+          ],
+          "clase": "anatomica"
+        },
+        {
+          "termino": "especialistas",
+          "documentos": 2,
+          "de": 9,
+          "posiciones": [
+            2,
+            9
+          ],
+          "clase": "generica"
+        },
+        {
+          "termino": "estamos",
+          "documentos": 2,
+          "de": 9,
+          "posiciones": [
+            3,
+            6
+          ],
+          "clase": "generica"
+        },
+        {
+          "termino": "preguntan",
+          "documentos": 2,
+          "de": 9,
+          "posiciones": [
+            3,
+            6
+          ],
+          "clase": "generica"
+        },
+        {
+          "termino": "tratamientos",
+          "documentos": 2,
+          "de": 9,
+          "posiciones": [
+            4,
+            7
+          ],
+          "clase": "procedimiento"
+        },
+        {
+          "termino": "contamos",
+          "documentos": 2,
+          "de": 9,
+          "posiciones": [
+            5,
+            6
+          ],
+          "clase": "generica"
+        },
+        {
+          "termino": "lima",
+          "documentos": 2,
+          "de": 9,
+          "posiciones": [
+            5,
+            7
+          ],
+          "clase": "generica"
+        },
+        {
+          "termino": "dolor",
+          "documentos": 2,
+          "de": 9,
+          "posiciones": [
+            6,
+            7
+          ],
+          "clase": "clinica"
+        }
+      ],
+      "entidadesInsuficientes": false,
+      "umbralAplicado": 0.2,
+      "coberturaDeSecundarias": [
+        {
+          "keyword": "ortopedia surco",
+          "cubiertaPor": "Ortopedia surco"
+        },
+        {
+          "keyword": "cirujano de columna surco",
+          "cubiertaPor": "Cirujano de columna surco"
+        },
+        {
+          "keyword": "neurocirujano surco",
+          "cubiertaPor": "Neurocirujano surco"
+        },
+        {
+          "keyword": "ortopedia infantil surco",
+          "cubiertaPor": "Ortopedia infantil surco"
+        },
+        {
+          "keyword": "traumatología surco",
+          "cubiertaPor": "Traumatología surco"
+        }
+      ],
+      "coberturaDeRelacionadas": [
+        {
+          "busqueda": "Clínica de la columna hernias discales sin cirugías",
+          "cubiertaPor": "Clínica de la columna hernias discales sin cirugías"
+        },
+        {
+          "busqueda": "Clínica de la columna Surco",
+          "cubiertaPor": "Clínica de la columna hernias discales sin cirugías"
+        },
+        {
+          "busqueda": "Mejores especialistas columna vertebral Lima Perú",
+          "cubiertaPor": "Mejores especialistas columna vertebral Lima Perú"
+        },
+        {
+          "busqueda": "Clínica de la Columna Chacarilla",
+          "cubiertaPor": "Clínica de la Columna Chacarilla"
+        },
+        {
+          "busqueda": "Life Clínica de la columna",
+          "cubiertaPor": "Life Clínica de la columna"
+        },
+        {
+          "busqueda": "Clínica de la columna Lima",
+          "cubiertaPor": "Clínica de la columna Lima"
+        },
+        {
+          "busqueda": "Clínica de la Columna hernias discales sin cirugías fotos",
+          "cubiertaPor": "Clínica de la columna hernias discales sin cirugías"
+        },
+        {
+          "busqueda": "Opiniones de Clínica de la Columna hernias discales sin CIRUGÍAS",
+          "cubiertaPor": "Opiniones de Clínica de la Columna hernias discales sin CIRUGÍAS"
+        }
+      ],
+      "preguntasSinUsar": [],
+      "fuente": {
+        "keyword": "cirugía de columna surco",
+        "organicos": 9,
+        "preguntas": 4,
+        "relacionadas": 8,
+        "capturadaEn": "2026-08-11T17:00:15.455Z"
+      }
+    },
+    {
+      "url": "/sedes/sanna-la-molina",
+      "keywordPrimaria": "cirujano de columna clínica sanna",
+      "keywordPrimariaKey": "cirujano de columna clinica sanna",
+      "formato": "ficha-de-sede",
+      "minimoDePalabras": 500,
+      "posicionesMedidas": 10,
+      "jerarquia": [
+        {
+          "nivel": 2,
+          "texto": "Dónde queda",
+          "origen": "esqueleto",
+          "literal": null,
+          "seccion": "donde-queda"
+        },
+        {
+          "nivel": 3,
+          "texto": "Cirugía de la columna la molina",
+          "origen": "secundaria-del-mapa",
+          "literal": "cirugía de columna la molina",
+          "seccion": "donde-queda"
+        },
+        {
+          "nivel": 3,
+          "texto": "Clínica San Borja staff médico",
+          "origen": "busqueda-relacionada",
+          "literal": "Clínica San Borja staff médico",
+          "seccion": "donde-queda"
+        },
+        {
+          "nivel": 2,
+          "texto": "Cómo llegar",
+          "origen": "esqueleto",
+          "literal": null,
+          "seccion": "como-llegar"
+        },
+        {
+          "nivel": 2,
+          "texto": "Qué se atiende ahí",
+          "origen": "esqueleto",
+          "literal": null,
+          "seccion": "que-se-atiende"
+        },
+        {
+          "nivel": 3,
+          "texto": "¿Quiénes son los médicos del staff de la Clínica SANNA?",
+          "origen": "pregunta-serp",
+          "literal": "¿Quiénes son los médicos del staff de la Clínica SANNA?",
+          "seccion": "que-se-atiende"
+        },
+        {
+          "nivel": 3,
+          "texto": "¿Qué especialidades médicas ofrece SANNA San Borja?",
+          "origen": "pregunta-serp",
+          "literal": "¿Qué especialidades médicas ofrece SANNA San Borja?",
+          "seccion": "que-se-atiende"
+        },
+        {
+          "nivel": 3,
+          "texto": "¿Hay un traumatólogo en SANNA Trujillo?",
+          "origen": "pregunta-serp",
+          "literal": "¿Hay un traumatólogo en SANNA Trujillo?",
+          "seccion": "que-se-atiende"
+        },
+        {
+          "nivel": 3,
+          "texto": "Ortopedia infantil clínica sanna",
+          "origen": "secundaria-del-mapa",
+          "literal": "ortopedia infantil clínica sanna",
+          "seccion": "que-se-atiende"
+        },
+        {
+          "nivel": 3,
+          "texto": "Cirugía de la columna clínica sanna",
+          "origen": "secundaria-del-mapa",
+          "literal": "cirugía de columna clínica sanna",
+          "seccion": "que-se-atiende"
+        },
+        {
+          "nivel": 3,
+          "texto": "Neurocirujano clínica sanna",
+          "origen": "secundaria-del-mapa",
+          "literal": "neurocirujano clínica sanna",
+          "seccion": "que-se-atiende"
+        },
+        {
+          "nivel": 3,
+          "texto": "SANNA staff médico",
+          "origen": "busqueda-relacionada",
+          "literal": "SANNA staff médico",
+          "seccion": "que-se-atiende"
+        },
+        {
+          "nivel": 3,
+          "texto": "Clínica SANNA Arequipa teléfono",
+          "origen": "busqueda-relacionada",
+          "literal": "Clínica SANNA Arequipa teléfono",
+          "seccion": "que-se-atiende"
+        },
+        {
+          "nivel": 3,
+          "texto": "Servicios que ofrece SANNA Clínica San Borja",
+          "origen": "busqueda-relacionada",
+          "literal": "Servicios que ofrece SANNA Clínica San Borja",
+          "seccion": "que-se-atiende"
+        },
+        {
+          "nivel": 3,
+          "texto": "SANNA clínica el golf consultorios",
+          "origen": "busqueda-relacionada",
+          "literal": "SANNA clínica el golf consultorios",
+          "seccion": "que-se-atiende"
+        },
+        {
+          "nivel": 3,
+          "texto": "Sanna Trujillo staff médico",
+          "origen": "busqueda-relacionada",
+          "literal": "Sanna Trujillo staff médico",
+          "seccion": "que-se-atiende"
+        },
+        {
+          "nivel": 2,
+          "texto": "Horarios de atención",
+          "origen": "esqueleto",
+          "literal": null,
+          "seccion": "horarios"
+        },
+        {
+          "nivel": 2,
+          "texto": "Cómo agendar una cita",
+          "origen": "esqueleto",
+          "literal": null,
+          "seccion": "como-agendar"
+        },
+        {
+          "nivel": 3,
+          "texto": "¿Cuánto cuesta una consulta en Sanna, San Borja?",
+          "origen": "pregunta-serp",
+          "literal": "¿Cuánto cuesta una consulta en Sanna, San Borja?",
+          "seccion": "como-agendar"
+        },
+        {
+          "nivel": 3,
+          "texto": "SANNA teléfono citas",
+          "origen": "busqueda-relacionada",
+          "literal": "SANNA teléfono citas",
+          "seccion": "como-agendar"
+        }
+      ],
+      "entidades": [
+        {
+          "termino": "san",
+          "documentos": 4,
+          "de": 10,
+          "posiciones": [
+            3,
+            5,
+            7,
+            8
+          ],
+          "clase": "generica"
+        },
+        {
+          "termino": "medicos",
+          "documentos": 3,
+          "de": 10,
+          "posiciones": [
+            1,
+            4,
+            9
+          ],
+          "clase": "generica"
+        },
+        {
+          "termino": "peru",
+          "documentos": 3,
+          "de": 10,
+          "posiciones": [
+            1,
+            4,
+            5
+          ],
+          "clase": "generica"
+        },
+        {
+          "termino": "red",
+          "documentos": 3,
+          "de": 10,
+          "posiciones": [
+            1,
+            4,
+            9
+          ],
+          "clase": "generica"
+        },
+        {
+          "termino": "borja",
+          "documentos": 3,
+          "de": 10,
+          "posiciones": [
+            3,
+            7,
+            8
+          ],
+          "clase": "generica"
+        },
+        {
+          "termino": "san borja",
+          "documentos": 3,
+          "de": 10,
+          "posiciones": [
+            3,
+            7,
+            8
+          ],
+          "clase": "generica"
+        },
+        {
+          "termino": "nuestro",
+          "documentos": 3,
+          "de": 10,
+          "posiciones": [
+            6,
+            7,
+            8
+          ],
+          "clase": "generica"
+        },
+        {
+          "termino": "rodriguez",
+          "documentos": 3,
+          "de": 10,
+          "posiciones": [
+            6,
+            7,
+            8
+          ],
+          "clase": "generica"
+        }
+      ],
+      "entidadesInsuficientes": false,
+      "umbralAplicado": 0.3,
+      "coberturaDeSecundarias": [
+        {
+          "keyword": "ortopedia infantil clínica sanna",
+          "cubiertaPor": "Ortopedia infantil clínica sanna"
+        },
+        {
+          "keyword": "traumatólogo clínica sanna",
+          "cubiertaPor": "¿Hay un traumatólogo en SANNA Trujillo?"
+        },
+        {
+          "keyword": "cirugía de columna clínica sanna",
+          "cubiertaPor": "Cirugía de la columna clínica sanna"
+        },
+        {
+          "keyword": "neurocirujano clínica sanna",
+          "cubiertaPor": "Neurocirujano clínica sanna"
+        },
+        {
+          "keyword": "cirugía de columna la molina",
+          "cubiertaPor": "Cirugía de la columna la molina"
+        }
+      ],
+      "coberturaDeRelacionadas": [
+        {
+          "busqueda": "SANNA staff médico",
+          "cubiertaPor": "SANNA staff médico"
+        },
+        {
+          "busqueda": "SANNA especialidades",
+          "cubiertaPor": "¿Qué especialidades médicas ofrece SANNA San Borja?"
+        },
+        {
+          "busqueda": "SANNA teléfono citas",
+          "cubiertaPor": "SANNA teléfono citas"
+        },
+        {
+          "busqueda": "Clínica San Borja staff médico",
+          "cubiertaPor": "Clínica San Borja staff médico"
+        },
+        {
+          "busqueda": "Clínica SANNA Arequipa teléfono",
+          "cubiertaPor": "Clínica SANNA Arequipa teléfono"
+        },
+        {
+          "busqueda": "Servicios que ofrece SANNA Clínica San Borja",
+          "cubiertaPor": "Servicios que ofrece SANNA Clínica San Borja"
+        },
+        {
+          "busqueda": "SANNA clínica el golf consultorios",
+          "cubiertaPor": "SANNA clínica el golf consultorios"
+        },
+        {
+          "busqueda": "Sanna Trujillo staff médico",
+          "cubiertaPor": "Sanna Trujillo staff médico"
+        }
+      ],
+      "preguntasSinUsar": [],
+      "fuente": {
+        "keyword": "cirujano de columna clínica sanna",
+        "organicos": 10,
+        "preguntas": 4,
+        "relacionadas": 8,
+        "capturadaEn": "2026-08-11T17:04:56.084Z"
+      }
+    },
+    {
+      "url": "/servicios",
+      "keywordPrimaria": "cirujano de columna lima",
+      "keywordPrimariaKey": "cirujano de columna lima",
+      "formato": "pagina-de-servicio",
+      "minimoDePalabras": 700,
+      "posicionesMedidas": 9,
+      "jerarquia": [
+        {
+          "nivel": 2,
+          "texto": "Qué se atiende",
+          "origen": "esqueleto",
+          "literal": null,
+          "seccion": "que-se-atiende"
+        },
+        {
+          "nivel": 3,
+          "texto": "¿Cómo se llama el cirujano que opera la columna?",
+          "origen": "pregunta-serp",
+          "literal": "¿Cómo se llama el cirujano que opera la columna?",
+          "seccion": "que-se-atiende"
+        },
+        {
+          "nivel": 3,
+          "texto": "¿Quién es el mejor neurocirujano del Perú?",
+          "origen": "pregunta-serp",
+          "literal": "¿Quién es el mejor neurocirujano del Perú?",
+          "seccion": "que-se-atiende"
+        },
+        {
+          "nivel": 3,
+          "texto": "¿Quién es el mejor traumatólogo en Lima, Perú?",
+          "origen": "pregunta-serp",
+          "literal": "¿Quién es el mejor traumatólogo en Lima, Perú?",
+          "seccion": "que-se-atiende"
+        },
+        {
+          "nivel": 3,
+          "texto": "Traumatología especialista en columna",
+          "origen": "secundaria-del-mapa",
+          "literal": "traumatología especialista en columna",
+          "seccion": "que-se-atiende"
+        },
+        {
+          "nivel": 3,
+          "texto": "Cirujano de columna cerca de mí",
+          "origen": "secundaria-del-mapa",
+          "literal": "cirujano de columna cerca de mí",
+          "seccion": "que-se-atiende"
+        },
+        {
+          "nivel": 3,
+          "texto": "Cirugía de la columna cerca de mí",
+          "origen": "secundaria-del-mapa",
+          "literal": "cirugía de columna cerca de mí",
+          "seccion": "que-se-atiende"
+        },
+        {
+          "nivel": 3,
+          "texto": "Neurocirujanos del Hospital Rebagliati",
+          "origen": "busqueda-relacionada",
+          "literal": "Neurocirujanos del Hospital Rebagliati",
+          "seccion": "que-se-atiende"
+        },
+        {
+          "nivel": 3,
+          "texto": "Dr Marco Gonzales-Portillo",
+          "origen": "busqueda-relacionada",
+          "literal": "Dr Marco Gonzales-Portillo",
+          "seccion": "que-se-atiende"
+        },
+        {
+          "nivel": 3,
+          "texto": "Dr Paul Carranza",
+          "origen": "busqueda-relacionada",
+          "literal": "Dr Paul Carranza",
+          "seccion": "que-se-atiende"
+        },
+        {
+          "nivel": 3,
+          "texto": "Dr eduardo Laos Plasier",
+          "origen": "busqueda-relacionada",
+          "literal": "Dr eduardo Laos Plasier",
+          "seccion": "que-se-atiende"
+        },
+        {
+          "nivel": 2,
+          "texto": "Cómo es la consulta",
+          "origen": "esqueleto",
+          "literal": null,
+          "seccion": "como-es-la-consulta"
+        },
+        {
+          "nivel": 2,
+          "texto": "Qué condiciones se tratan",
+          "origen": "esqueleto",
+          "literal": null,
+          "seccion": "condiciones"
+        },
+        {
+          "nivel": 2,
+          "texto": "Dónde se atiende",
+          "origen": "esqueleto",
+          "literal": null,
+          "seccion": "donde-se-atiende"
+        },
+        {
+          "nivel": 2,
+          "texto": "Cómo agendar una cita",
+          "origen": "esqueleto",
+          "literal": null,
+          "seccion": "como-agendar"
+        },
+        {
+          "nivel": 3,
+          "texto": "¿Cuánto cuesta una cirugía de columna en Perú?",
+          "origen": "pregunta-serp",
+          "literal": "¿Cuánto cuesta una cirugía de columna en Perú?",
+          "seccion": "como-agendar"
+        }
+      ],
+      "entidades": [
+        {
+          "termino": "columna",
+          "documentos": 8,
+          "de": 9,
+          "posiciones": [
+            1,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9
+          ],
+          "clase": "anatomica"
+        },
+        {
+          "termino": "especialista",
+          "documentos": 4,
+          "de": 9,
+          "posiciones": [
+            1,
+            3,
+            4,
+            6
+          ],
+          "clase": "generica"
+        },
+        {
+          "termino": "lima",
+          "documentos": 4,
+          "de": 9,
+          "posiciones": [
+            1,
+            2,
+            3,
+            6
+          ],
+          "clase": "generica"
+        },
+        {
+          "termino": "neurocirujano",
+          "documentos": 4,
+          "de": 9,
+          "posiciones": [
+            1,
+            2,
+            4,
+            9
+          ],
+          "clase": "generica"
+        },
+        {
+          "termino": "enfermedades",
+          "documentos": 3,
+          "de": 9,
+          "posiciones": [
+            1,
+            5,
+            8
+          ],
+          "clase": "generica"
+        },
+        {
+          "termino": "especialista en columna",
+          "documentos": 3,
+          "de": 9,
+          "posiciones": [
+            1,
+            3,
+            6
+          ],
+          "clase": "anatomica"
+        },
+        {
+          "termino": "tratamiento",
+          "documentos": 3,
+          "de": 9,
+          "posiciones": [
+            1,
+            3,
+            8
+          ],
+          "clase": "procedimiento"
+        },
+        {
+          "termino": "columna vertebral",
+          "documentos": 3,
+          "de": 9,
+          "posiciones": [
+            3,
+            4,
+            8
+          ],
+          "clase": "anatomica"
+        },
+        {
+          "termino": "vertebral",
+          "documentos": 3,
+          "de": 9,
+          "posiciones": [
+            3,
+            4,
+            8
+          ],
+          "clase": "anatomica"
+        },
+        {
+          "termino": "cerebro",
+          "documentos": 3,
+          "de": 9,
+          "posiciones": [
+            5,
+            8,
+            9
+          ],
+          "clase": "generica"
+        },
+        {
+          "termino": "neurocirugia",
+          "documentos": 3,
+          "de": 9,
+          "posiciones": [
+            5,
+            8,
+            9
+          ],
+          "clase": "generica"
+        }
+      ],
+      "entidadesInsuficientes": false,
+      "umbralAplicado": 0.3,
+      "coberturaDeSecundarias": [
+        {
+          "keyword": "traumatología especialista en columna",
+          "cubiertaPor": "Traumatología especialista en columna"
+        },
+        {
+          "keyword": "mejor neurocirujano de columna lima",
+          "cubiertaPor": "¿Quién es el mejor neurocirujano del Perú?"
+        },
+        {
+          "keyword": "cirujano de columna cerca de mí",
+          "cubiertaPor": "Cirujano de columna cerca de mí"
+        },
+        {
+          "keyword": "traumatólogo de columna",
+          "cubiertaPor": "¿Quién es el mejor traumatólogo en Lima, Perú?"
+        },
+        {
+          "keyword": "cirugía de columna cerca de mí",
+          "cubiertaPor": "Cirugía de la columna cerca de mí"
+        }
+      ],
+      "coberturaDeRelacionadas": [
+        {
+          "busqueda": "Mejor Neurocirujano de columna Lima",
+          "cubiertaPor": "¿Quién es el mejor neurocirujano del Perú?"
+        },
+        {
+          "busqueda": "Neurocirujano especialista en columna en lima",
+          "cubiertaPor": "Qué se atiende"
+        },
+        {
+          "busqueda": "Mejor Neurocirujano en Lima Perú",
+          "cubiertaPor": "¿Quién es el mejor neurocirujano del Perú?"
+        },
+        {
+          "busqueda": "Neurocirujanos del Hospital Rebagliati",
+          "cubiertaPor": "Neurocirujanos del Hospital Rebagliati"
+        },
+        {
+          "busqueda": "El mejor neurocirujano del Perú",
+          "cubiertaPor": "¿Quién es el mejor neurocirujano del Perú?"
+        },
+        {
+          "busqueda": "Dr Marco Gonzales-Portillo",
+          "cubiertaPor": "Dr Marco Gonzales-Portillo"
+        },
+        {
+          "busqueda": "Dr Paul Carranza",
+          "cubiertaPor": "Dr Paul Carranza"
+        },
+        {
+          "busqueda": "Dr eduardo Laos Plasier",
+          "cubiertaPor": "Dr eduardo Laos Plasier"
+        }
+      ],
+      "preguntasSinUsar": [],
+      "fuente": {
+        "keyword": "cirujano de columna lima",
+        "organicos": 9,
+        "preguntas": 4,
+        "relacionadas": 8,
+        "capturadaEn": "2026-08-11T16:59:32.426Z"
+      }
+    },
+    {
+      "url": "/servicios/cirugia-minimamente-invasiva",
+      "keywordPrimaria": "cirugía mínimamente invasiva en lima",
+      "keywordPrimariaKey": "cirugia minimamente invasiva en lima",
+      "formato": "pagina-de-servicio",
+      "minimoDePalabras": 700,
+      "posicionesMedidas": 9,
+      "jerarquia": [
+        {
+          "nivel": 2,
+          "texto": "Qué se atiende",
+          "origen": "esqueleto",
+          "literal": null,
+          "seccion": "que-se-atiende"
+        },
+        {
+          "nivel": 3,
+          "texto": "¿Qué es una cirugía mínima invasiva?",
+          "origen": "pregunta-serp",
+          "literal": "¿Qué es una cirugía mínima invasiva?",
+          "seccion": "que-se-atiende"
+        },
+        {
+          "nivel": 3,
+          "texto": "Cirugía endoscópica de columna",
+          "origen": "secundaria-del-mapa",
+          "literal": "cirugía endoscópica de columna",
+          "seccion": "que-se-atiende"
+        },
+        {
+          "nivel": 3,
+          "texto": "Endoscopía espinal",
+          "origen": "secundaria-del-mapa",
+          "literal": "endoscopía espinal",
+          "seccion": "que-se-atiende"
+        },
+        {
+          "nivel": 3,
+          "texto": "Cirugía robótica Da Vinci",
+          "origen": "busqueda-relacionada",
+          "literal": "Cirugía robótica Da Vinci",
+          "seccion": "que-se-atiende"
+        },
+        {
+          "nivel": 3,
+          "texto": "Mejores especialistas columna vertebral Lima Perú",
+          "origen": "busqueda-relacionada",
+          "literal": "Mejores especialistas columna vertebral Lima Perú",
+          "seccion": "que-se-atiende"
+        },
+        {
+          "nivel": 3,
+          "texto": "Hospital Rebagliati",
+          "origen": "busqueda-relacionada",
+          "literal": "Hospital Rebagliati",
+          "seccion": "que-se-atiende"
+        },
+        {
+          "nivel": 2,
+          "texto": "Cómo es la consulta",
+          "origen": "esqueleto",
+          "literal": null,
+          "seccion": "como-es-la-consulta"
+        },
+        {
+          "nivel": 3,
+          "texto": "¿Cuáles son las desventajas de la cirugía mínimamente invasiva?",
+          "origen": "pregunta-serp",
+          "literal": "¿Cuáles son las desventajas de la cirugía mínimamente invasiva?",
+          "seccion": "como-es-la-consulta"
+        },
+        {
+          "nivel": 3,
+          "texto": "Cirugía robótica ventajas y desventajas",
+          "origen": "busqueda-relacionada",
+          "literal": "Cirugía robótica ventajas y desventajas",
+          "seccion": "como-es-la-consulta"
+        },
+        {
+          "nivel": 2,
+          "texto": "Qué condiciones se tratan",
+          "origen": "esqueleto",
+          "literal": null,
+          "seccion": "condiciones"
+        },
+        {
+          "nivel": 3,
+          "texto": "Cirugía láser hernia discal lumbar precio Perú",
+          "origen": "busqueda-relacionada",
+          "literal": "Cirugía láser hernia discal lumbar precio Perú",
+          "seccion": "condiciones"
+        },
+        {
+          "nivel": 2,
+          "texto": "Dónde se atiende",
+          "origen": "esqueleto",
+          "literal": null,
+          "seccion": "donde-se-atiende"
+        },
+        {
+          "nivel": 3,
+          "texto": "¿Se utiliza el robot Da Vinci en Perú?",
+          "origen": "pregunta-serp",
+          "literal": "¿Se utiliza el robot Da Vinci en Perú?",
+          "seccion": "donde-se-atiende"
+        },
+        {
+          "nivel": 3,
+          "texto": "Operación de columna lumbar precio Perú",
+          "origen": "busqueda-relacionada",
+          "literal": "Operación de columna lumbar precio Perú",
+          "seccion": "donde-se-atiende"
+        },
+        {
+          "nivel": 3,
+          "texto": "Cirugía robótica en Perú",
+          "origen": "busqueda-relacionada",
+          "literal": "Cirugía robótica en Perú",
+          "seccion": "donde-se-atiende"
+        },
+        {
+          "nivel": 2,
+          "texto": "Cómo agendar una cita",
+          "origen": "esqueleto",
+          "literal": null,
+          "seccion": "como-agendar"
+        },
+        {
+          "nivel": 3,
+          "texto": "¿Cuánto cuesta una cirugía mínima invasiva?",
+          "origen": "pregunta-serp",
+          "literal": "¿Cuánto cuesta una cirugía mínima invasiva?",
+          "seccion": "como-agendar"
+        }
+      ],
+      "entidades": [
+        {
+          "termino": "cirugia",
+          "documentos": 9,
+          "de": 9,
+          "posiciones": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9
+          ],
+          "clase": "procedimiento"
+        },
+        {
+          "termino": "invasiva",
+          "documentos": 9,
+          "de": 9,
+          "posiciones": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9
+          ],
+          "clase": "procedimiento"
+        },
+        {
+          "termino": "minimamente",
+          "documentos": 8,
+          "de": 9,
+          "posiciones": [
+            1,
+            2,
+            3,
+            4,
+            6,
+            7,
+            8,
+            9
+          ],
+          "clase": "generica"
+        },
+        {
+          "termino": "minimamente invasiva",
+          "documentos": 8,
+          "de": 9,
+          "posiciones": [
+            1,
+            2,
+            3,
+            4,
+            6,
+            7,
+            8,
+            9
+          ],
+          "clase": "procedimiento"
+        },
+        {
+          "termino": "cirugia minimamente",
+          "documentos": 5,
+          "de": 9,
+          "posiciones": [
+            1,
+            4,
+            7,
+            8,
+            9
+          ],
+          "clase": "procedimiento"
+        },
+        {
+          "termino": "cirugia minimamente invasiva",
+          "documentos": 5,
+          "de": 9,
+          "posiciones": [
+            1,
+            4,
+            7,
+            8,
+            9
+          ],
+          "clase": "procedimiento"
+        },
+        {
+          "termino": "robotica",
+          "documentos": 5,
+          "de": 9,
+          "posiciones": [
+            1,
+            3,
+            5,
+            6,
+            7
+          ],
+          "clase": "generica"
+        },
+        {
+          "termino": "cirugia robotica",
+          "documentos": 4,
+          "de": 9,
+          "posiciones": [
+            3,
+            5,
+            6,
+            7
+          ],
+          "clase": "procedimiento"
+        }
+      ],
+      "entidadesInsuficientes": false,
+      "umbralAplicado": 0.4,
+      "coberturaDeSecundarias": [
+        {
+          "keyword": "cirugía endoscópica de columna",
+          "cubiertaPor": "Cirugía endoscópica de columna"
+        },
+        {
+          "keyword": "endoscopía espinal",
+          "cubiertaPor": "Endoscopía espinal"
+        },
+        {
+          "keyword": "cirugía mínimamente invasiva",
+          "cubiertaPor": "Qué se atiende"
+        },
+        {
+          "keyword": "cirugía no invasiva",
+          "cubiertaPor": "Qué se atiende"
+        }
+      ],
+      "coberturaDeRelacionadas": [
+        {
+          "busqueda": "Robot Da Vinci Perú",
+          "cubiertaPor": "¿Se utiliza el robot Da Vinci en Perú?"
+        },
+        {
+          "busqueda": "Operación de columna lumbar precio Perú",
+          "cubiertaPor": "Operación de columna lumbar precio Perú"
+        },
+        {
+          "busqueda": "Cirugía robótica Da Vinci",
+          "cubiertaPor": "Cirugía robótica Da Vinci"
+        },
+        {
+          "busqueda": "Cirugía robótica en Perú",
+          "cubiertaPor": "Cirugía robótica en Perú"
+        },
+        {
+          "busqueda": "Mejores especialistas columna vertebral Lima Perú",
+          "cubiertaPor": "Mejores especialistas columna vertebral Lima Perú"
+        },
+        {
+          "busqueda": "Cirugía robótica ventajas y desventajas",
+          "cubiertaPor": "Cirugía robótica ventajas y desventajas"
+        },
+        {
+          "busqueda": "Hospital Rebagliati",
+          "cubiertaPor": "Hospital Rebagliati"
+        },
+        {
+          "busqueda": "Cirugía láser hernia discal lumbar precio Perú",
+          "cubiertaPor": "Cirugía láser hernia discal lumbar precio Perú"
+        }
+      ],
+      "preguntasSinUsar": [],
+      "fuente": {
+        "keyword": "cirugía mínimamente invasiva en lima",
+        "organicos": 9,
+        "preguntas": 4,
+        "relacionadas": 8,
+        "capturadaEn": "2026-08-11T17:02:29.938Z"
+      }
+    },
+    {
+      "url": "/servicios/escoliosis-y-deformidades",
+      "keywordPrimaria": "escoliosis",
+      "keywordPrimariaKey": "escoliosis",
+      "formato": "guia-clinica",
+      "minimoDePalabras": 1200,
+      "posicionesMedidas": 7,
+      "jerarquia": [
+        {
+          "nivel": 2,
+          "texto": "Qué es la escoliosis",
+          "origen": "esqueleto",
+          "literal": null,
+          "seccion": "que-es"
+        },
+        {
+          "nivel": 3,
+          "texto": "Escoliosis y deformidades de columna",
+          "origen": "secundaria-del-mapa",
+          "literal": "escoliosis y deformidades de columna",
+          "seccion": "que-es"
+        },
+        {
+          "nivel": 3,
+          "texto": "Escoliosis dorsal",
+          "origen": "secundaria-del-mapa",
+          "literal": "escoliosis dorsal",
+          "seccion": "que-es"
+        },
+        {
+          "nivel": 3,
+          "texto": "Escoliosis lumbar",
+          "origen": "secundaria-del-mapa",
+          "literal": "escoliosis lumbar",
+          "seccion": "que-es"
+        },
+        {
+          "nivel": 3,
+          "texto": "Escoliosis leve",
+          "origen": "busqueda-relacionada",
+          "literal": "Escoliosis leve",
+          "seccion": "que-es"
+        },
+        {
+          "nivel": 3,
+          "texto": "Se puede corregir la escoliosis en adultos",
+          "origen": "busqueda-relacionada",
+          "literal": "Se puede corregir la escoliosis en adultos",
+          "seccion": "que-es"
+        },
+        {
+          "nivel": 2,
+          "texto": "Qué síntomas produce",
+          "origen": "esqueleto",
+          "literal": null,
+          "seccion": "sintomas"
+        },
+        {
+          "nivel": 2,
+          "texto": "Por qué aparece",
+          "origen": "esqueleto",
+          "literal": null,
+          "seccion": "causas"
+        },
+        {
+          "nivel": 3,
+          "texto": "¿Qué es la escoliosis y qué lo causa?",
+          "origen": "pregunta-serp",
+          "literal": "¿Qué es la escoliosis y qué lo causa?",
+          "seccion": "causas"
+        },
+        {
+          "nivel": 2,
+          "texto": "Cómo se confirma el diagnóstico",
+          "origen": "esqueleto",
+          "literal": null,
+          "seccion": "diagnostico"
+        },
+        {
+          "nivel": 2,
+          "texto": "Qué se puede hacer sin operar",
+          "origen": "esqueleto",
+          "literal": null,
+          "seccion": "sin-operar"
+        },
+        {
+          "nivel": 3,
+          "texto": "Ejercicios para la escoliosis",
+          "origen": "secundaria-del-mapa",
+          "literal": "ejercicios para escoliosis",
+          "seccion": "sin-operar"
+        },
+        {
+          "nivel": 2,
+          "texto": "Cuándo hace falta operar",
+          "origen": "esqueleto",
+          "literal": null,
+          "seccion": "cirugia"
+        },
+        {
+          "nivel": 3,
+          "texto": "Cirugía de la escoliosis",
+          "origen": "secundaria-del-mapa",
+          "literal": "cirugía de escoliosis",
+          "seccion": "cirugia"
+        },
+        {
+          "nivel": 2,
+          "texto": "Preguntas frecuentes",
+          "origen": "esqueleto",
+          "literal": null,
+          "seccion": "preguntas-frecuentes"
+        },
+        {
+          "nivel": 3,
+          "texto": "¿Cómo se corrige la escoliosis?",
+          "origen": "pregunta-serp",
+          "literal": "¿Cómo se corrige la escoliosis?",
+          "seccion": "preguntas-frecuentes"
+        },
+        {
+          "nivel": 3,
+          "texto": "¿Qué se debe hacer si tienes escoliosis?",
+          "origen": "pregunta-serp",
+          "literal": "¿Qué se debe hacer si tienes escoliosis?",
+          "seccion": "preguntas-frecuentes"
+        },
+        {
+          "nivel": 3,
+          "texto": "¿Qué no se debe hacer cuando tienes escoliosis?",
+          "origen": "pregunta-serp",
+          "literal": "¿Qué no se debe hacer cuando tienes escoliosis?",
+          "seccion": "preguntas-frecuentes"
+        },
+        {
+          "nivel": 2,
+          "texto": "Cuándo consultar",
+          "origen": "esqueleto",
+          "literal": null,
+          "seccion": "cuando-consultar"
+        }
+      ],
+      "entidades": [
+        {
+          "termino": "columna",
+          "documentos": 7,
+          "de": 7,
+          "posiciones": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "clase": "anatomica"
+        },
+        {
+          "termino": "escoliosis",
+          "documentos": 7,
+          "de": 7,
+          "posiciones": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "clase": "clinica"
+        },
+        {
+          "termino": "columna vertebral",
+          "documentos": 5,
+          "de": 7,
+          "posiciones": [
+            2,
+            4,
+            5,
+            6,
+            7
+          ],
+          "clase": "anatomica"
+        },
+        {
+          "termino": "vertebral",
+          "documentos": 5,
+          "de": 7,
+          "posiciones": [
+            2,
+            4,
+            5,
+            6,
+            7
+          ],
+          "clase": "anatomica"
+        },
+        {
+          "termino": "sintomas",
+          "documentos": 4,
+          "de": 7,
+          "posiciones": [
+            1,
+            2,
+            4,
+            6
+          ],
+          "clase": "clinica"
+        },
+        {
+          "termino": "escoliosis sintomas",
+          "documentos": 3,
+          "de": 7,
+          "posiciones": [
+            2,
+            4,
+            6
+          ],
+          "clase": "clinica"
+        },
+        {
+          "termino": "afecta",
+          "documentos": 2,
+          "de": 7,
+          "posiciones": [
+            3,
+            6
+          ],
+          "clase": "generica"
+        },
+        {
+          "termino": "enfermedad",
+          "documentos": 2,
+          "de": 7,
+          "posiciones": [
+            3,
+            6
+          ],
+          "clase": "generica"
+        },
+        {
+          "termino": "desviacion",
+          "documentos": 2,
+          "de": 7,
+          "posiciones": [
+            4,
+            6
+          ],
+          "clase": "generica"
+        },
+        {
+          "termino": "lateral",
+          "documentos": 2,
+          "de": 7,
+          "posiciones": [
+            4,
+            5
+          ],
+          "clase": "generica"
+        }
+      ],
+      "entidadesInsuficientes": false,
+      "umbralAplicado": 0.2,
+      "coberturaDeSecundarias": [
+        {
+          "keyword": "escoliosis y deformidades de columna",
+          "cubiertaPor": "Escoliosis y deformidades de columna"
+        },
+        {
+          "keyword": "ejercicios para escoliosis",
+          "cubiertaPor": "Ejercicios para la escoliosis"
+        },
+        {
+          "keyword": "cirugía de escoliosis",
+          "cubiertaPor": "Cirugía de la escoliosis"
+        },
+        {
+          "keyword": "escoliosis dorsal",
+          "cubiertaPor": "Escoliosis dorsal"
+        },
+        {
+          "keyword": "escoliosis lumbar",
+          "cubiertaPor": "Escoliosis lumbar"
+        }
+      ],
+      "coberturaDeRelacionadas": [
+        {
+          "busqueda": "Escoliosis lumbar",
+          "cubiertaPor": "Escoliosis lumbar"
+        },
+        {
+          "busqueda": "Escoliosis tratamiento",
+          "cubiertaPor": "Qué se puede hacer sin operar"
+        },
+        {
+          "busqueda": "Escoliosis dorsal",
+          "cubiertaPor": "Escoliosis dorsal"
+        },
+        {
+          "busqueda": "Escoliosis leve",
+          "cubiertaPor": "Escoliosis leve"
+        },
+        {
+          "busqueda": "Escoliosis síntomas",
+          "cubiertaPor": "Qué síntomas produce"
+        },
+        {
+          "busqueda": "Se puede corregir la escoliosis en adultos",
+          "cubiertaPor": "Se puede corregir la escoliosis en adultos"
+        },
+        {
+          "busqueda": "Escoliosis ejercicios",
+          "cubiertaPor": "Ejercicios para la escoliosis"
+        },
+        {
+          "busqueda": "Escoliosis causas",
+          "cubiertaPor": "Por qué aparece"
+        }
+      ],
+      "preguntasSinUsar": [],
+      "fuente": {
+        "keyword": "escoliosis",
+        "organicos": 7,
+        "preguntas": 4,
+        "relacionadas": 8,
+        "capturadaEn": "2026-08-11T16:55:12.485Z"
+      }
+    },
+    {
+      "url": "/servicios/estenosis-espinal",
+      "keywordPrimaria": "estenosis espinal",
+      "keywordPrimariaKey": "estenosis espinal",
+      "formato": "guia-clinica",
+      "minimoDePalabras": 1400,
+      "posicionesMedidas": 8,
+      "jerarquia": [
+        {
+          "nivel": 2,
+          "texto": "Qué es la estenosis espinal",
+          "origen": "esqueleto",
+          "literal": null,
+          "seccion": "que-es"
+        },
+        {
+          "nivel": 3,
+          "texto": "¿Qué tan peligrosa es la estenosis?",
+          "origen": "pregunta-serp",
+          "literal": "¿Qué tan peligrosa es la estenosis?",
+          "seccion": "que-es"
+        },
+        {
+          "nivel": 3,
+          "texto": "Estenosis de canal",
+          "origen": "secundaria-del-mapa",
+          "literal": "estenosis de canal",
+          "seccion": "que-es"
+        },
+        {
+          "nivel": 2,
+          "texto": "Qué síntomas produce",
+          "origen": "esqueleto",
+          "literal": null,
+          "seccion": "sintomas"
+        },
+        {
+          "nivel": 3,
+          "texto": "¿Qué tan grave es una estenosis lumbar?",
+          "origen": "pregunta-serp",
+          "literal": "¿Qué tan grave es una estenosis lumbar?",
+          "seccion": "sintomas"
+        },
+        {
+          "nivel": 2,
+          "texto": "Por qué aparece",
+          "origen": "esqueleto",
+          "literal": null,
+          "seccion": "causas"
+        },
+        {
+          "nivel": 2,
+          "texto": "Cómo se confirma el diagnóstico",
+          "origen": "esqueleto",
+          "literal": null,
+          "seccion": "diagnostico"
+        },
+        {
+          "nivel": 2,
+          "texto": "Qué se puede hacer sin operar",
+          "origen": "esqueleto",
+          "literal": null,
+          "seccion": "sin-operar"
+        },
+        {
+          "nivel": 3,
+          "texto": "¿Cómo se cura la estenosis espinal?",
+          "origen": "pregunta-serp",
+          "literal": "¿Cómo se cura la estenosis espinal?",
+          "seccion": "sin-operar"
+        },
+        {
+          "nivel": 3,
+          "texto": "Tratamientos de la estenosis espinal",
+          "origen": "secundaria-del-mapa",
+          "literal": "estenosis espinal: tratamientos",
+          "seccion": "sin-operar"
+        },
+        {
+          "nivel": 3,
+          "texto": "Estenosis espinal cuidado personal",
+          "origen": "secundaria-del-mapa",
+          "literal": "estenosis espinal cuidado personal",
+          "seccion": "sin-operar"
+        },
+        {
+          "nivel": 3,
+          "texto": "Medicamentos para la estenosis espinal",
+          "origen": "secundaria-del-mapa",
+          "literal": "estenosis espinal medicamentos",
+          "seccion": "sin-operar"
+        },
+        {
+          "nivel": 3,
+          "texto": "Estenosis espinal antiinflamatorio no esteroideo",
+          "origen": "secundaria-del-mapa",
+          "literal": "estenosis espinal antiinflamatorio no esteroideo",
+          "seccion": "sin-operar"
+        },
+        {
+          "nivel": 3,
+          "texto": "Estenosis espinal tiene cura",
+          "origen": "busqueda-relacionada",
+          "literal": "Estenosis espinal tiene cura",
+          "seccion": "sin-operar"
+        },
+        {
+          "nivel": 2,
+          "texto": "Cuándo hace falta operar",
+          "origen": "esqueleto",
+          "literal": null,
+          "seccion": "cirugia"
+        },
+        {
+          "nivel": 2,
+          "texto": "Preguntas frecuentes",
+          "origen": "esqueleto",
+          "literal": null,
+          "seccion": "preguntas-frecuentes"
+        },
+        {
+          "nivel": 3,
+          "texto": "¿Cómo se corrige la estenosis?",
+          "origen": "pregunta-serp",
+          "literal": "¿Cómo se corrige la estenosis?",
+          "seccion": "preguntas-frecuentes"
+        },
+        {
+          "nivel": 2,
+          "texto": "Cuándo consultar",
+          "origen": "esqueleto",
+          "literal": null,
+          "seccion": "cuando-consultar"
+        }
+      ],
+      "entidades": [
+        {
+          "termino": "estenosis",
+          "documentos": 8,
+          "de": 8,
+          "posiciones": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          "clase": "clinica"
+        },
+        {
+          "termino": "espinal",
+          "documentos": 7,
+          "de": 8,
+          "posiciones": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            7,
+            8
+          ],
+          "clase": "anatomica"
+        },
+        {
+          "termino": "estenosis espinal",
+          "documentos": 5,
+          "de": 8,
+          "posiciones": [
+            1,
+            2,
+            4,
+            5,
+            8
+          ],
+          "clase": "clinica"
+        },
+        {
+          "termino": "medula",
+          "documentos": 5,
+          "de": 8,
+          "posiciones": [
+            1,
+            2,
+            3,
+            4,
+            7
+          ],
+          "clase": "anatomica"
+        },
+        {
+          "termino": "presion",
+          "documentos": 5,
+          "de": 8,
+          "posiciones": [
+            1,
+            2,
+            3,
+            4,
+            7
+          ],
+          "clase": "generica"
+        },
+        {
+          "termino": "columna",
+          "documentos": 4,
+          "de": 8,
+          "posiciones": [
+            1,
+            2,
+            3,
+            8
+          ],
+          "clase": "anatomica"
+        },
+        {
+          "termino": "medula espinal",
+          "documentos": 4,
+          "de": 8,
+          "posiciones": [
+            2,
+            3,
+            4,
+            7
+          ],
+          "clase": "anatomica"
+        },
+        {
+          "termino": "lumbar",
+          "documentos": 4,
+          "de": 8,
+          "posiciones": [
+            5,
+            6,
+            7,
+            8
+          ],
+          "clase": "anatomica"
+        }
+      ],
+      "entidadesInsuficientes": false,
+      "umbralAplicado": 0.4,
+      "coberturaDeSecundarias": [
+        {
+          "keyword": "estenosis de canal",
+          "cubiertaPor": "Estenosis de canal"
+        },
+        {
+          "keyword": "estenosis espinal: tratamientos",
+          "cubiertaPor": "Tratamientos de la estenosis espinal"
+        },
+        {
+          "keyword": "estenosis espinal cuidado personal",
+          "cubiertaPor": "Estenosis espinal cuidado personal"
+        },
+        {
+          "keyword": "estenosis espinal medicamentos",
+          "cubiertaPor": "Medicamentos para la estenosis espinal"
+        },
+        {
+          "keyword": "estenosis espinal antiinflamatorio no esteroideo",
+          "cubiertaPor": "Estenosis espinal antiinflamatorio no esteroideo"
+        }
+      ],
+      "coberturaDeRelacionadas": [
+        {
+          "busqueda": "Estenosis espinal tiene cura",
+          "cubiertaPor": "Estenosis espinal tiene cura"
+        },
+        {
+          "busqueda": "Estenosis espinal síntomas",
+          "cubiertaPor": "Qué síntomas produce"
+        },
+        {
+          "busqueda": "Estenosis espinal tratamiento",
+          "cubiertaPor": "Qué se puede hacer sin operar"
+        },
+        {
+          "busqueda": "Estenosis espinal lumbar",
+          "cubiertaPor": "¿Qué tan grave es una estenosis lumbar?"
+        },
+        {
+          "busqueda": "Estenosis espinal PDF",
+          "cubiertaPor": "Qué es la estenosis espinal"
+        },
+        {
+          "busqueda": "Estenosis espinal ejercicios",
+          "cubiertaPor": "Qué se puede hacer sin operar"
+        },
+        {
+          "busqueda": "Estenosis espinal causas",
+          "cubiertaPor": "Por qué aparece"
+        },
+        {
+          "busqueda": "Estenosis espinal cirugía",
+          "cubiertaPor": "Cuándo hace falta operar"
+        }
+      ],
+      "preguntasSinUsar": [],
+      "fuente": {
+        "keyword": "estenosis espinal",
+        "organicos": 8,
+        "preguntas": 4,
+        "relacionadas": 8,
+        "capturadaEn": "2026-08-10T22:14:23.463Z"
+      }
+    },
+    {
+      "url": "/servicios/hernia-discal",
+      "keywordPrimaria": "hernia discal",
+      "keywordPrimariaKey": "hernia discal",
+      "formato": "guia-clinica",
+      "minimoDePalabras": 1400,
+      "posicionesMedidas": 7,
+      "jerarquia": [
+        {
+          "nivel": 2,
+          "texto": "Qué es la hernia discal",
+          "origen": "esqueleto",
+          "literal": null,
+          "seccion": "que-es"
+        },
+        {
+          "nivel": 3,
+          "texto": "¿Qué pasa cuando una persona tiene una hernia discal?",
+          "origen": "pregunta-serp",
+          "literal": "¿Qué pasa cuando una persona tiene una hernia discal?",
+          "seccion": "que-es"
+        },
+        {
+          "nivel": 3,
+          "texto": "Hernia discal lumbar y cervical",
+          "origen": "secundaria-del-mapa",
+          "literal": "hernia discal lumbar y cervical",
+          "seccion": "que-es"
+        },
+        {
+          "nivel": 2,
+          "texto": "Qué síntomas produce",
+          "origen": "esqueleto",
+          "literal": null,
+          "seccion": "sintomas"
+        },
+        {
+          "nivel": 3,
+          "texto": "¿Cuáles son los síntomas de una hernia de disco?",
+          "origen": "pregunta-serp",
+          "literal": "¿Cuáles son los síntomas de una hernia de disco?",
+          "seccion": "sintomas"
+        },
+        {
+          "nivel": 3,
+          "texto": "Diferencia entre ciatica y hernia discal",
+          "origen": "secundaria-del-mapa",
+          "literal": "ciatica o hernia discal",
+          "seccion": "sintomas"
+        },
+        {
+          "nivel": 3,
+          "texto": "Diferencia entre lumbalgia y hernia discal",
+          "origen": "secundaria-del-mapa",
+          "literal": "lumbalgia o hernia discal",
+          "seccion": "sintomas"
+        },
+        {
+          "nivel": 3,
+          "texto": "Síntomas de la hernia discal lumbar",
+          "origen": "busqueda-relacionada",
+          "literal": "Hernia discal lumbar síntomas",
+          "seccion": "sintomas"
+        },
+        {
+          "nivel": 2,
+          "texto": "Por qué aparece",
+          "origen": "esqueleto",
+          "literal": null,
+          "seccion": "causas"
+        },
+        {
+          "nivel": 2,
+          "texto": "Cómo se confirma el diagnóstico",
+          "origen": "esqueleto",
+          "literal": null,
+          "seccion": "diagnostico"
+        },
+        {
+          "nivel": 3,
+          "texto": "Hernia discal en la tomografía",
+          "origen": "secundaria-del-mapa",
+          "literal": "hernia discal tomografía",
+          "seccion": "diagnostico"
+        },
+        {
+          "nivel": 2,
+          "texto": "Qué se puede hacer sin operar",
+          "origen": "esqueleto",
+          "literal": null,
+          "seccion": "sin-operar"
+        },
+        {
+          "nivel": 3,
+          "texto": "¿Cómo se cura la hernia discal?",
+          "origen": "pregunta-serp",
+          "literal": "¿Cómo se cura la hernia discal?",
+          "seccion": "sin-operar"
+        },
+        {
+          "nivel": 3,
+          "texto": "Tratamiento de la hernia discal lumbosacra",
+          "origen": "secundaria-del-mapa",
+          "literal": "hernia discal lumbosacra tratamiento",
+          "seccion": "sin-operar"
+        },
+        {
+          "nivel": 3,
+          "texto": "Como desinflamar hernia discal",
+          "origen": "busqueda-relacionada",
+          "literal": "Como desinflamar hernia discal",
+          "seccion": "sin-operar"
+        },
+        {
+          "nivel": 3,
+          "texto": "Medicamento para desinflamar hernia discal",
+          "origen": "busqueda-relacionada",
+          "literal": "Medicamento para desinflamar hernia discal",
+          "seccion": "sin-operar"
+        },
+        {
+          "nivel": 2,
+          "texto": "Cuándo hace falta operar",
+          "origen": "esqueleto",
+          "literal": null,
+          "seccion": "cirugia"
+        },
+        {
+          "nivel": 2,
+          "texto": "Preguntas frecuentes",
+          "origen": "esqueleto",
+          "literal": null,
+          "seccion": "preguntas-frecuentes"
+        },
+        {
+          "nivel": 3,
+          "texto": "¿Qué no se debe hacer cuando tienes hernia discal?",
+          "origen": "pregunta-serp",
+          "literal": "¿Qué no se debe hacer cuando tienes hernia discal?",
+          "seccion": "preguntas-frecuentes"
+        },
+        {
+          "nivel": 2,
+          "texto": "Cuándo consultar",
+          "origen": "esqueleto",
+          "literal": null,
+          "seccion": "cuando-consultar"
+        }
+      ],
+      "entidades": [
+        {
+          "termino": "hernia",
+          "documentos": 7,
+          "de": 7,
+          "posiciones": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "clase": "clinica"
+        },
+        {
+          "termino": "discal",
+          "documentos": 6,
+          "de": 7,
+          "posiciones": [
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "clase": "clinica"
+        },
+        {
+          "termino": "hernia discal",
+          "documentos": 5,
+          "de": 7,
+          "posiciones": [
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "clase": "clinica"
+        },
+        {
+          "termino": "disco",
+          "documentos": 4,
+          "de": 7,
+          "posiciones": [
+            1,
+            2,
+            4,
+            7
+          ],
+          "clase": "anatomica"
+        },
+        {
+          "termino": "desplaza",
+          "documentos": 3,
+          "de": 7,
+          "posiciones": [
+            1,
+            4,
+            5
+          ],
+          "clase": "generica"
+        },
+        {
+          "termino": "lumbar",
+          "documentos": 3,
+          "de": 7,
+          "posiciones": [
+            3,
+            6,
+            7
+          ],
+          "clase": "anatomica"
+        },
+        {
+          "termino": "causas",
+          "documentos": 2,
+          "de": 7,
+          "posiciones": [
+            1,
+            6
+          ],
+          "clase": "generica"
+        },
+        {
+          "termino": "sintomas",
+          "documentos": 2,
+          "de": 7,
+          "posiciones": [
+            1,
+            4
+          ],
+          "clase": "clinica"
+        },
+        {
+          "termino": "columna",
+          "documentos": 2,
+          "de": 7,
+          "posiciones": [
+            2,
+            5
+          ],
+          "clase": "anatomica"
+        },
+        {
+          "termino": "discal lumbar",
+          "documentos": 2,
+          "de": 7,
+          "posiciones": [
+            3,
+            6
+          ],
+          "clase": "clinica"
+        },
+        {
+          "termino": "hernia discal lumbar",
+          "documentos": 2,
+          "de": 7,
+          "posiciones": [
+            3,
+            6
+          ],
+          "clase": "clinica"
+        },
+        {
+          "termino": "nucleo",
+          "documentos": 2,
+          "de": 7,
+          "posiciones": [
+            3,
+            4
+          ],
+          "clase": "anatomica"
+        },
+        {
+          "termino": "nucleo pulposo",
+          "documentos": 2,
+          "de": 7,
+          "posiciones": [
+            3,
+            4
+          ],
+          "clase": "anatomica"
+        },
+        {
+          "termino": "pulposo",
+          "documentos": 2,
+          "de": 7,
+          "posiciones": [
+            3,
+            4
+          ],
+          "clase": "anatomica"
+        }
+      ],
+      "entidadesInsuficientes": false,
+      "umbralAplicado": 0.2,
+      "coberturaDeSecundarias": [
+        {
+          "keyword": "hernia discal lumbar y cervical",
+          "cubiertaPor": "Hernia discal lumbar y cervical"
+        },
+        {
+          "keyword": "hernia discal lumbosacra tratamiento",
+          "cubiertaPor": "Tratamiento de la hernia discal lumbosacra"
+        },
+        {
+          "keyword": "ciatica o hernia discal",
+          "cubiertaPor": "Diferencia entre ciatica y hernia discal"
+        },
+        {
+          "keyword": "hernia discal tomografía",
+          "cubiertaPor": "Hernia discal en la tomografía"
+        },
+        {
+          "keyword": "lumbalgia o hernia discal",
+          "cubiertaPor": "Diferencia entre lumbalgia y hernia discal"
+        }
+      ],
+      "coberturaDeRelacionadas": [
+        {
+          "busqueda": "Como desinflamar hernia discal",
+          "cubiertaPor": "Como desinflamar hernia discal"
+        },
+        {
+          "busqueda": "Hernia discal lumbar",
+          "cubiertaPor": "Hernia discal lumbar y cervical"
+        },
+        {
+          "busqueda": "Hernia discal tratamiento",
+          "cubiertaPor": "Tratamiento de la hernia discal lumbosacra"
+        },
+        {
+          "busqueda": "Hernia discal síntomas",
+          "cubiertaPor": "Qué síntomas produce"
+        },
+        {
+          "busqueda": "Hernia discal: síntomas graves",
+          "cubiertaPor": "Qué síntomas produce"
+        },
+        {
+          "busqueda": "Hernia discal lumbar síntomas",
+          "cubiertaPor": "Síntomas de la hernia discal lumbar"
+        },
+        {
+          "busqueda": "Hernia discal causas",
+          "cubiertaPor": "Por qué aparece"
+        },
+        {
+          "busqueda": "Medicamento para desinflamar hernia discal",
+          "cubiertaPor": "Medicamento para desinflamar hernia discal"
+        }
+      ],
+      "preguntasSinUsar": [],
+      "fuente": {
+        "keyword": "hernia discal",
+        "organicos": 7,
+        "preguntas": 4,
+        "relacionadas": 8,
+        "capturadaEn": "2026-08-10T22:15:03.914Z"
+      }
+    },
+    {
+      "url": "/servicios/ortopedia-infantil",
+      "keywordPrimaria": "ortopedia infantil lima",
+      "keywordPrimariaKey": "ortopedia infantil lima",
+      "formato": "pagina-de-servicio",
+      "minimoDePalabras": 700,
+      "posicionesMedidas": 9,
+      "jerarquia": [
+        {
+          "nivel": 2,
+          "texto": "Qué se atiende",
+          "origen": "esqueleto",
+          "literal": null,
+          "seccion": "que-se-atiende"
+        },
+        {
+          "nivel": 3,
+          "texto": "¿Cuándo llevar a un niño al ortopedista?",
+          "origen": "pregunta-serp",
+          "literal": "¿Cuándo llevar a un niño al ortopedista?",
+          "seccion": "que-se-atiende"
+        },
+        {
+          "nivel": 3,
+          "texto": "¿Cómo se le llama al ortopedista de niños?",
+          "origen": "pregunta-serp",
+          "literal": "¿Cómo se le llama al ortopedista de niños?",
+          "seccion": "que-se-atiende"
+        },
+        {
+          "nivel": 3,
+          "texto": "¿Qué ve el ortopedista infantil?",
+          "origen": "pregunta-serp",
+          "literal": "¿Qué ve el ortopedista infantil?",
+          "seccion": "que-se-atiende"
+        },
+        {
+          "nivel": 3,
+          "texto": "¿Qué especialidades hay en el ortopédico infantil?",
+          "origen": "pregunta-serp",
+          "literal": "¿Qué especialidades hay en el ortopédico infantil?",
+          "seccion": "que-se-atiende"
+        },
+        {
+          "nivel": 3,
+          "texto": "Traumatólogo ortopedia infantil",
+          "origen": "secundaria-del-mapa",
+          "literal": "traumatólogo ortopedia infantil",
+          "seccion": "que-se-atiende"
+        },
+        {
+          "nivel": 3,
+          "texto": "Ortopedia infantil cerca de mí",
+          "origen": "secundaria-del-mapa",
+          "literal": "ortopedia infantil cerca de mí",
+          "seccion": "que-se-atiende"
+        },
+        {
+          "nivel": 3,
+          "texto": "Medico ortopedia infantil",
+          "origen": "secundaria-del-mapa",
+          "literal": "medico ortopedia infantil",
+          "seccion": "que-se-atiende"
+        },
+        {
+          "nivel": 3,
+          "texto": "Mejor traumatólogo pediatra en Lima",
+          "origen": "busqueda-relacionada",
+          "literal": "Mejor traumatólogo pediatra en Lima",
+          "seccion": "que-se-atiende"
+        },
+        {
+          "nivel": 3,
+          "texto": "Traumatologo pediatra Hospital del niño",
+          "origen": "busqueda-relacionada",
+          "literal": "Traumatologo pediatra Hospital del niño",
+          "seccion": "que-se-atiende"
+        },
+        {
+          "nivel": 3,
+          "texto": "Traumatología pediátrica Los Olivos",
+          "origen": "busqueda-relacionada",
+          "literal": "Traumatología pediátrica Los Olivos",
+          "seccion": "que-se-atiende"
+        },
+        {
+          "nivel": 3,
+          "texto": "Traumatología pediátrica Clínica Internacional",
+          "origen": "busqueda-relacionada",
+          "literal": "Traumatología pediátrica Clínica Internacional",
+          "seccion": "que-se-atiende"
+        },
+        {
+          "nivel": 3,
+          "texto": "Traumatología pediátrica Arequipa",
+          "origen": "busqueda-relacionada",
+          "literal": "Traumatología pediátrica Arequipa",
+          "seccion": "que-se-atiende"
+        },
+        {
+          "nivel": 3,
+          "texto": "Ortopedista infantil en Trujillo",
+          "origen": "busqueda-relacionada",
+          "literal": "Ortopedista infantil en Trujillo",
+          "seccion": "que-se-atiende"
+        },
+        {
+          "nivel": 2,
+          "texto": "Cómo es la consulta",
+          "origen": "esqueleto",
+          "literal": null,
+          "seccion": "como-es-la-consulta"
+        },
+        {
+          "nivel": 2,
+          "texto": "Qué condiciones se tratan",
+          "origen": "esqueleto",
+          "literal": null,
+          "seccion": "condiciones"
+        },
+        {
+          "nivel": 3,
+          "texto": "Pediatria ortopedia infantil",
+          "origen": "secundaria-del-mapa",
+          "literal": "pediatria ortopedia infantil",
+          "seccion": "condiciones"
+        },
+        {
+          "nivel": 2,
+          "texto": "Dónde se atiende",
+          "origen": "esqueleto",
+          "literal": null,
+          "seccion": "donde-se-atiende"
+        },
+        {
+          "nivel": 3,
+          "texto": "Ortopedia infantil perú",
+          "origen": "secundaria-del-mapa",
+          "literal": "ortopedia infantil perú",
+          "seccion": "donde-se-atiende"
+        },
+        {
+          "nivel": 2,
+          "texto": "Cómo agendar una cita",
+          "origen": "esqueleto",
+          "literal": null,
+          "seccion": "como-agendar"
+        }
+      ],
+      "entidades": [
+        {
+          "termino": "lima",
+          "documentos": 8,
+          "de": 9,
+          "posiciones": [
+            1,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9
+          ],
+          "clase": "generica"
+        },
+        {
+          "termino": "ortopedia",
+          "documentos": 7,
+          "de": 9,
+          "posiciones": [
+            1,
+            2,
+            3,
+            4,
+            6,
+            7,
+            9
+          ],
+          "clase": "generica"
+        },
+        {
+          "termino": "traumatologia",
+          "documentos": 7,
+          "de": 9,
+          "posiciones": [
+            1,
+            2,
+            4,
+            6,
+            7,
+            8,
+            9
+          ],
+          "clase": "generica"
+        },
+        {
+          "termino": "infantil",
+          "documentos": 5,
+          "de": 9,
+          "posiciones": [
+            1,
+            3,
+            5,
+            7,
+            9
+          ],
+          "clase": "generica"
+        },
+        {
+          "termino": "ninos",
+          "documentos": 4,
+          "de": 9,
+          "posiciones": [
+            1,
+            2,
+            7,
+            8
+          ],
+          "clase": "generica"
+        },
+        {
+          "termino": "especialistas",
+          "documentos": 3,
+          "de": 9,
+          "posiciones": [
+            1,
+            2,
+            3
+          ],
+          "clase": "generica"
+        },
+        {
+          "termino": "ortopedia infantil",
+          "documentos": 3,
+          "de": 9,
+          "posiciones": [
+            1,
+            3,
+            7
+          ],
+          "clase": "generica"
+        },
+        {
+          "termino": "peru",
+          "documentos": 3,
+          "de": 9,
+          "posiciones": [
+            1,
+            4,
+            5
+          ],
+          "clase": "generica"
+        },
+        {
+          "termino": "traumatologo",
+          "documentos": 3,
+          "de": 9,
+          "posiciones": [
+            1,
+            5,
+            9
+          ],
+          "clase": "generica"
+        },
+        {
+          "termino": "ortopedia y traumatologia",
+          "documentos": 3,
+          "de": 9,
+          "posiciones": [
+            2,
+            6,
+            9
+          ],
+          "clase": "generica"
+        },
+        {
+          "termino": "pediatrica",
+          "documentos": 3,
+          "de": 9,
+          "posiciones": [
+            2,
+            4,
+            8
+          ],
+          "clase": "generica"
+        }
+      ],
+      "entidadesInsuficientes": false,
+      "umbralAplicado": 0.3,
+      "coberturaDeSecundarias": [
+        {
+          "keyword": "traumatólogo ortopedia infantil",
+          "cubiertaPor": "Traumatólogo ortopedia infantil"
+        },
+        {
+          "keyword": "ortopedia infantil cerca de mí",
+          "cubiertaPor": "Ortopedia infantil cerca de mí"
+        },
+        {
+          "keyword": "ortopedia infantil perú",
+          "cubiertaPor": "Ortopedia infantil perú"
+        },
+        {
+          "keyword": "pediatria ortopedia infantil",
+          "cubiertaPor": "Pediatria ortopedia infantil"
+        },
+        {
+          "keyword": "medico ortopedia infantil",
+          "cubiertaPor": "Medico ortopedia infantil"
+        }
+      ],
+      "coberturaDeRelacionadas": [
+        {
+          "busqueda": "Mejor traumatólogo pediatra en Lima",
+          "cubiertaPor": "Mejor traumatólogo pediatra en Lima"
+        },
+        {
+          "busqueda": "Traumatologo pediatra Hospital del niño",
+          "cubiertaPor": "Traumatologo pediatra Hospital del niño"
+        },
+        {
+          "busqueda": "Traumatología pediátrica Los Olivos",
+          "cubiertaPor": "Traumatología pediátrica Los Olivos"
+        },
+        {
+          "busqueda": "Clínica Ortopedia Infantil",
+          "cubiertaPor": "Dónde se atiende"
+        },
+        {
+          "busqueda": "Traumatología y Ortopedia pediátrica",
+          "cubiertaPor": "Traumatología pediátrica Los Olivos"
+        },
+        {
+          "busqueda": "Traumatología pediátrica Clínica Internacional",
+          "cubiertaPor": "Traumatología pediátrica Clínica Internacional"
+        },
+        {
+          "busqueda": "Traumatología pediátrica Arequipa",
+          "cubiertaPor": "Traumatología pediátrica Arequipa"
+        },
+        {
+          "busqueda": "Ortopedista infantil en Trujillo",
+          "cubiertaPor": "Ortopedista infantil en Trujillo"
+        }
+      ],
+      "preguntasSinUsar": [],
+      "fuente": {
+        "keyword": "ortopedia infantil lima",
+        "organicos": 9,
+        "preguntas": 4,
+        "relacionadas": 8,
+        "capturadaEn": "2026-08-11T16:58:26.988Z"
+      }
+    }
+  ],
+  "sinCaptura": [],
+  "resumen": {
+    "urls": 16,
+    "porFormato": {
+      "guia-clinica": 8,
+      "pagina-de-servicio": 4,
+      "ficha-de-sede": 4
+    },
+    "entidadesInsuficientes": 0,
+    "secundariasSinCubrir": 0,
+    "preguntasSinUsar": 1
+  }
+}
