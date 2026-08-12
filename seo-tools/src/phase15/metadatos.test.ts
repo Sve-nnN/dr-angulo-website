@@ -5,6 +5,7 @@ import {
   LARGO_DE_META,
   LARGO_DE_TITLE,
   construirOnPage,
+  copyRedactado,
   extraerH1,
   filaDeOnPage,
   primariasDelMapa,
@@ -214,7 +215,7 @@ test("metadatos: el generador es determinista y dos corridas dan el mismo datase
 test("metadatos: title, meta y H1 no divergen de lo que ya esta redactado en copy-guias.json", () => {
   // Los dos datasets se escriben por separado y v1.1 lee los dos. Si divergen, la auditoria
   // del plan 15-07 daria limpia sobre uno de ellos y el sitio publicaria el otro.
-  const copy = DATASET.copyRedactado;
+  const copy = copyRedactado();
   assert.ok(copy.length > 0, "no hay ninguna URL redactada para cruzar");
   for (const pagina of copy) {
     const fila = FILAS.find((f) => f.url === pagina.url);
