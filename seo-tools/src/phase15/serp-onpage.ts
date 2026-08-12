@@ -350,6 +350,25 @@ const INFINITIVOS = new Set([
   "frenar", "mejorar", "fortalecer", "estirar", "caminar", "levantar", "detectar", "quitar",
 ]);
 
+const ARTICULOS = new Set(["el", "la", "los", "las", "un", "una", "unos", "unas"]);
+
+/**
+ * Formato de archivo pedido en la busqueda, que no es un subtema de la pagina.
+ *
+ * "artrosis pdf" no pide que la pagina hable de otra cosa: pide un archivo. Sin este filtro
+ * sale un encabezado que dice "Artrosis PDF" en una guia clinica publicada.
+ */
+const RUIDO_DE_FORMATO = new Set([
+  "pdf", "ppt", "doc", "docx", "descargar", "video", "videos", "foto", "fotos", "imagenes",
+  "gratis", "online", "wikipedia", "slideshare", "scielo", "pubmed",
+]);
+
+/** El articulo que le falta a una cola, o nada si ya lo trae o si abre con un infinitivo. */
+function articuloPara(cola: string, primerToken: string): string {
+  if (ARTICULOS.has(primerToken) || INFINITIVOS.has(primerToken)) return "";
+  return `${articuloDe(cola)} `;
+}
+
 /** Palabras que, al frente o al final de una keyword, dicen que clase de seccion pide. */
 const MODIFICADORES_DE = new Set([
   "tratamiento", "tratamientos", "sintomas", "causas", "cirugia", "diagnostico", "riesgos",
@@ -388,10 +407,10 @@ export function encabezadoDesdeKeyword(keyword: string): string {
     return `${mayuscula(resto)} en la ${minuscula(crudas[crudas.length - 1] as string)}`;
   }
   if (resto !== "" && MODIFICADORES_DE.has(ultima)) {
-    return `${cabeza} de ${articuloDe(resto)} ${resto}`;
+    return `${cabeza} de ${articuloPara(resto, normales[0] as string)}${resto}`;
   }
   if (resto !== "" && MODIFICADORES_PARA.has(ultima)) {
-    return `${cabeza} para ${articuloDe(resto)} ${resto}`;
+    return `${cabeza} para ${articuloPara(resto, normales[0] as string)}${resto}`;
   }
 
   const primera = normales[0] as string;
@@ -402,18 +421,19 @@ export function encabezadoDesdeKeyword(keyword: string): string {
     (MODIFICADORES_DE.has(primera) || MODIFICADORES_PARA.has(primera))
   ) {
     const cola = minuscula(crudas.slice(2).join(" "));
-    const articulo = INFINITIVOS.has(normales[2] as string) ? "" : `${articuloDe(cola)} `;
+    const articulo = articuloPara(cola, normales[2] as string);
     return `${mayuscula(crudas[0] as string)} ${enlace} ${articulo}${cola}`;
   }
 
   return mayuscula(crudas.join(" "));
 }
 
-/** Palabras de una frase que aportan tema, sin las de la primaria ni las vacias. */
+/** Palabras de una frase que aportan tema, sin las de la primaria ni el formato pedido. */
 function residuo(frase: string, primaria: ReadonlySet<string>): string[] {
   const fuera = new Set<string>();
   return tokenizar(frase).filter((t) => {
     if (primaria.has(t) || fuera.has(t) || t.length < 3) return false;
+    if (RUIDO_DE_FORMATO.has(t)) return false;
     fuera.add(t);
     return true;
   });
