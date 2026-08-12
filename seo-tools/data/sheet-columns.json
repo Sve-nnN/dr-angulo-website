@@ -35,7 +35,6 @@
       "sin-uso": "Existe en la plantilla y ninguna fase del milestone la escribe. Se deja intacta."
     }
   },
-
   "Keyword Research": {
     "sheetTitle": "Keyword Research",
     "sheetId": 407303476,
@@ -47,7 +46,13 @@
     "writtenBy": 12,
     "note": "Unico tab que escribe la fase 12. La clave de idempotencia se deriva normalizando el texto leido de la columna A: la normalizacion produce la clave, nunca el valor visible.",
     "columns": [
-      { "header": "Suggested Keyword", "field": "keyword", "source": "keyword", "status": "fase-12", "note": "El texto ORIGINAL, con tildes y enie. La clave de idempotencia sale de normalizarlo, y el normalizado nunca se escribe." },
+      {
+        "header": "Suggested Keyword",
+        "field": "keyword",
+        "source": "keyword",
+        "status": "fase-12",
+        "note": "El texto ORIGINAL, con tildes y enie. La clave de idempotencia sale de normalizarlo, y el normalizado nunca se escribe."
+      },
       {
         "header": "Cluster",
         "field": "cluster",
@@ -55,18 +60,78 @@
         "status": "fase-13",
         "note": "Habilitada por el plan 13-01. Lleva el nombre del cluster al que pertenece la keyword. Las filas agrupadas por texto y no por solape de SERP se distinguen por el campo del dataset, no por esta celda: el Sheet muestra el cluster, la procedencia vive en keywords.jsonl (J-3)."
       },
-      { "header": "URL", "field": null, "status": "fase-14" },
-      { "header": "Search Volume", "field": "volume", "source": "metricas.searchVolume", "status": "fase-12", "note": "Volumen de DinoRank. El encabezado no nombra ninguna herramienta, asi que no hay dato mal etiquetado." },
-      { "header": "Traffic Potential", "field": "trafficPotential", "source": "trafficPotential", "status": "fase-13", "note": "HABILITADA POR EL PLAN 13-04. Deja de ser literal fijo y pasa a campo del registro: el traffic potential de Ahrefs cuando existe, y el literal `no_consultado` que trae el propio registro en todas las demas. El literal NO desaparece del Sheet, cambia de lugar: antes lo ponia el modelo y ahora viaja en el dato, que es lo que permite que una cabeza medida muestre su numero mientras las 5.625 restantes siguen diciendo que nadie las consulto. `build-dataset.ts` se niega a escribir la vista si una sola linea pierde ese valor (T-13-30)." },
-      { "header": "Search Intent ", "field": "intent", "source": "intent", "status": "fase-12", "note": "Lleva espacio final en el documento." },
-      { "header": "CVR", "field": null, "status": "eliminar", "note": "J-4: columna muerta de la plantilla SaaS." },
-      { "header": "Highest Achievable Position", "field": null, "status": "sin-uso" },
-      { "header": "CTR", "field": null, "status": "sin-uso" },
-      { "header": "Real Traffic Potential", "field": null, "status": "sin-uso" },
-      { "header": "Lead or Conversion Potential ", "field": null, "status": "eliminar", "note": "J-4: columna muerta de la plantilla SaaS. Lleva espacio final en el documento." },
-      { "header": "Keyword Difficulty", "field": "keywordDifficulty", "source": "keywordDifficulty", "status": "fase-13", "note": "HABILITADA POR EL PLAN 13-04, con el mismo mecanismo y la misma guarda que `Traffic Potential`. Es la mitad declarada del punto dulce de KWR-05; la otra mitad, quien ocupa el top 10, vive en data/sweet-spot.jsonl y en 13-PUNTO-DULCE.md." },
-      { "header": "Referring Domains Needed ", "field": null, "status": "no-consultado", "literal": "no_consultado", "note": "Lleva espacio final en el documento." },
-      { "header": "Suggested H1", "field": null, "status": "fase-15" },
+      {
+        "header": "URL",
+        "field": null,
+        "status": "fase-14"
+      },
+      {
+        "header": "Search Volume",
+        "field": "volume",
+        "source": "metricas.searchVolume",
+        "status": "fase-12",
+        "note": "Volumen de DinoRank. El encabezado no nombra ninguna herramienta, asi que no hay dato mal etiquetado."
+      },
+      {
+        "header": "Traffic Potential",
+        "field": "trafficPotential",
+        "source": "trafficPotential",
+        "status": "fase-13",
+        "note": "HABILITADA POR EL PLAN 13-04. Deja de ser literal fijo y pasa a campo del registro: el traffic potential de Ahrefs cuando existe, y el literal `no_consultado` que trae el propio registro en todas las demas. El literal NO desaparece del Sheet, cambia de lugar: antes lo ponia el modelo y ahora viaja en el dato, que es lo que permite que una cabeza medida muestre su numero mientras las 5.625 restantes siguen diciendo que nadie las consulto. `build-dataset.ts` se niega a escribir la vista si una sola linea pierde ese valor (T-13-30)."
+      },
+      {
+        "header": "Search Intent ",
+        "field": "intent",
+        "source": "intent",
+        "status": "fase-12",
+        "note": "Lleva espacio final en el documento."
+      },
+      {
+        "header": "CVR",
+        "field": null,
+        "status": "eliminar",
+        "note": "J-4: columna muerta de la plantilla SaaS."
+      },
+      {
+        "header": "Highest Achievable Position",
+        "field": null,
+        "status": "sin-uso"
+      },
+      {
+        "header": "CTR",
+        "field": null,
+        "status": "sin-uso"
+      },
+      {
+        "header": "Real Traffic Potential",
+        "field": null,
+        "status": "sin-uso"
+      },
+      {
+        "header": "Lead or Conversion Potential ",
+        "field": null,
+        "status": "eliminar",
+        "note": "J-4: columna muerta de la plantilla SaaS. Lleva espacio final en el documento."
+      },
+      {
+        "header": "Keyword Difficulty",
+        "field": "keywordDifficulty",
+        "source": "keywordDifficulty",
+        "status": "fase-13",
+        "note": "HABILITADA POR EL PLAN 13-04, con el mismo mecanismo y la misma guarda que `Traffic Potential`. Es la mitad declarada del punto dulce de KWR-05; la otra mitad, quien ocupa el top 10, vive en data/sweet-spot.jsonl y en 13-PUNTO-DULCE.md."
+      },
+      {
+        "header": "Referring Domains Needed ",
+        "field": null,
+        "status": "no-consultado",
+        "literal": "no_consultado",
+        "note": "Lleva espacio final en el documento."
+      },
+      {
+        "header": "Suggested H1",
+        "field": null,
+        "status": "fase-15"
+      },
       {
         "header": "Top Result",
         "field": "topResult",
@@ -74,15 +139,46 @@
         "status": "fase-13",
         "note": "REASIGNADA de la fase 15 a la 13 por el plan 13-01, con fundamento: es el resultado que Google pone primero, o sea dato de SERP, y la SERP la captura esta fase. Mantenerla en la 15 habria obligado a volver a leer la misma captura dos fases despues. `Suggested H1` sigue siendo de la 15 y `URL` de la 14: ninguna de las dos se mueve."
       },
-      { "header": "Internal Approval ", "field": null, "status": "sin-uso", "note": "Lleva espacio final en el documento." },
-      { "header": "Client Approval ", "field": null, "status": "sin-uso", "note": "Lleva espacio final en el documento." },
-      { "header": "Notes", "field": null, "status": "sin-uso" },
-      { "header": "CPC", "field": "cpc", "source": "metricas.cpc", "status": "nueva", "note": "J-2. Numero, en la moneda que devuelva la consulta para el pais configurado." },
-      { "header": "Competition", "field": "competition", "source": "metricas.competition", "status": "nueva", "note": "J-2. Indice de competencia comercial entre 0 y 1, no dificultad organica." },
-      { "header": "Patient Stage", "field": "stage", "source": "stage", "status": "nueva", "note": "J-5. Etapa del paciente de KWR-03. Encabezado en ingles como el resto de la plantilla, valores en espanol para que el doctor los lea: sintoma, diagnostico, decision. El vocabulario lo produce kw:classify en la fase 12; el escritor solo transcribe lo que trae el dataset." }
+      {
+        "header": "Internal Approval ",
+        "field": null,
+        "status": "sin-uso",
+        "note": "Lleva espacio final en el documento."
+      },
+      {
+        "header": "Client Approval ",
+        "field": null,
+        "status": "sin-uso",
+        "note": "Lleva espacio final en el documento."
+      },
+      {
+        "header": "Notes",
+        "field": null,
+        "status": "sin-uso"
+      },
+      {
+        "header": "CPC",
+        "field": "cpc",
+        "source": "metricas.cpc",
+        "status": "nueva",
+        "note": "J-2. Numero, en la moneda que devuelva la consulta para el pais configurado."
+      },
+      {
+        "header": "Competition",
+        "field": "competition",
+        "source": "metricas.competition",
+        "status": "nueva",
+        "note": "J-2. Indice de competencia comercial entre 0 y 1, no dificultad organica."
+      },
+      {
+        "header": "Patient Stage",
+        "field": "stage",
+        "source": "stage",
+        "status": "nueva",
+        "note": "J-5. Etapa del paciente de KWR-03. Encabezado en ingles como el resto de la plantilla, valores en espanol para que el doctor los lea: sintoma, diagnostico, decision. El vocabulario lo produce kw:classify en la fase 12; el escritor solo transcribe lo que trae el dataset."
+      }
     ]
   },
-
   "Content Model": {
     "sheetTitle": "Content Model",
     "sheetId": 814545527,
@@ -94,28 +190,108 @@
     "writtenBy": 14,
     "note": "El mapeo de campo a columna lo abrio el plan 14-01. Los campos NO son los del mapa crudo: `cm-push.ts` proyecta cada AsignacionDeUrl a la fila que este tab espera, y los nombres de aca son los de esa proyeccion. Las tres columnas (Ahrefs) y las de GSC siguen sin campo por J-1, y las dos de Free Trial siguen marcadas para borrar por J-4.",
     "columns": [
-      { "header": "URL", "field": "url", "status": "fase-14" },
-      { "header": "SEO Page?", "field": "esPaginaSeo", "status": "fase-14" },
-      { "header": "Keyword", "field": "keywordPrimaria", "status": "fase-14" },
-      { "header": "Intent", "field": "intent", "status": "fase-14" },
-      { "header": "Type", "field": "tipoDePagina", "status": "fase-14" },
-      { "header": "New/Existing", "field": "nuevaOExistente", "status": "fase-14" },
-      { "header": "Cluster", "field": "cluster", "status": "fase-14" },
-      { "header": "Organic Clicks (GSC)", "field": null, "status": "sin-uso" },
-      { "header": "Organic Impressions (GSC)", "field": null, "status": "sin-uso" },
-      { "header": "Volume (Ahrefs)", "field": null, "status": "sin-uso", "note": "J-1: queda vacia. El encabezado nombra una herramienta que el milestone no consulta, asi que escribir aca un volumen de otra procedencia seria entregar informacion falsa. No se renombra ni se borra." },
-      { "header": "Traffic Potential (Ahrefs)", "field": null, "status": "sin-uso", "note": "J-1: queda vacia por el mismo motivo." },
-      { "header": "KD Difficulty (Ahrefs)", "field": null, "status": "sin-uso", "note": "J-1: queda vacia por el mismo motivo." },
-      { "header": "Position", "field": null, "status": "sin-uso" },
-      { "header": "Free Trial CVR", "field": null, "status": "eliminar", "note": "J-4: columna muerta de la plantilla SaaS." },
-      { "header": "Free Trial Potential", "field": null, "status": "eliminar", "note": "J-4: columna muerta de la plantilla SaaS." },
-      { "header": "Action", "field": "accion", "status": "fase-14" },
-      { "header": "Notes/Ideas", "field": null, "status": "sin-uso" },
-      { "header": "Leave, Update, or Bin?", "field": "dejarActualizarEliminar", "status": "fase-14" },
-      { "header": "Client's Feedback/Notes", "field": null, "status": "sin-uso" }
+      {
+        "header": "URL",
+        "field": "url",
+        "status": "fase-14"
+      },
+      {
+        "header": "SEO Page?",
+        "field": "esPaginaSeo",
+        "status": "fase-14"
+      },
+      {
+        "header": "Keyword",
+        "field": "keywordPrimaria",
+        "status": "fase-14"
+      },
+      {
+        "header": "Intent",
+        "field": "intent",
+        "status": "fase-14"
+      },
+      {
+        "header": "Type",
+        "field": "tipoDePagina",
+        "status": "fase-14"
+      },
+      {
+        "header": "New/Existing",
+        "field": "nuevaOExistente",
+        "status": "fase-14"
+      },
+      {
+        "header": "Cluster",
+        "field": "cluster",
+        "status": "fase-14"
+      },
+      {
+        "header": "Organic Clicks (GSC)",
+        "field": null,
+        "status": "sin-uso"
+      },
+      {
+        "header": "Organic Impressions (GSC)",
+        "field": null,
+        "status": "sin-uso"
+      },
+      {
+        "header": "Volume (Ahrefs)",
+        "field": "volumenAhrefs",
+        "status": "fase-14",
+        "note": "J-1 revisada en el plan 14-05: la columna se llena SOLO donde la procedencia registrada es literalmente `ahrefs`. Las celdas cuya fuente es `ahrefs_sin_dato` o `no_consultado` quedan vacias. J-1 prohibia escribir un dato de OTRA herramienta bajo este encabezado, no prohibia escribir el de Ahrefs cuando existe."
+      },
+      {
+        "header": "Traffic Potential (Ahrefs)",
+        "field": "trafficPotentialAhrefs",
+        "status": "fase-14",
+        "note": "J-1 revisada en el plan 14-05: la columna se llena SOLO donde la procedencia registrada es literalmente `ahrefs`. Las celdas cuya fuente es `ahrefs_sin_dato` o `no_consultado` quedan vacias. J-1 prohibia escribir un dato de OTRA herramienta bajo este encabezado, no prohibia escribir el de Ahrefs cuando existe."
+      },
+      {
+        "header": "KD Difficulty (Ahrefs)",
+        "field": "kdAhrefs",
+        "status": "fase-14",
+        "note": "J-1 revisada en el plan 14-05: la columna se llena SOLO donde la procedencia registrada es literalmente `ahrefs`. Las celdas cuya fuente es `ahrefs_sin_dato` o `no_consultado` quedan vacias. J-1 prohibia escribir un dato de OTRA herramienta bajo este encabezado, no prohibia escribir el de Ahrefs cuando existe."
+      },
+      {
+        "header": "Position",
+        "field": null,
+        "status": "sin-uso"
+      },
+      {
+        "header": "Free Trial CVR",
+        "field": null,
+        "status": "eliminar",
+        "note": "J-4: columna muerta de la plantilla SaaS."
+      },
+      {
+        "header": "Free Trial Potential",
+        "field": null,
+        "status": "eliminar",
+        "note": "J-4: columna muerta de la plantilla SaaS."
+      },
+      {
+        "header": "Action",
+        "field": "accion",
+        "status": "fase-14"
+      },
+      {
+        "header": "Notes/Ideas",
+        "field": null,
+        "status": "sin-uso"
+      },
+      {
+        "header": "Leave, Update, or Bin?",
+        "field": "dejarActualizarEliminar",
+        "status": "fase-14"
+      },
+      {
+        "header": "Client's Feedback/Notes",
+        "field": null,
+        "status": "sin-uso"
+      }
     ]
   },
-
   "Canonical Audit": {
     "sheetTitle": "Canonical Audit",
     "sheetId": 1259097992,
@@ -127,15 +303,42 @@
     "writtenBy": 14,
     "note": "El nombre real del tab es este. 'Canonicalization Audit' es el texto del banner de la fila 1 y pedirlo a la API devuelve 400. Calza exacto con SHEET-04, sin columnas de sobra ni faltantes. El plan 14-04 ato las cinco columnas que quedaban sin campo: los nombres son los de la proyeccion de `ca-push.ts`, no los del dataset crudo.",
     "columns": [
-      { "header": "URL", "field": "url", "status": "fase-14" },
-      { "header": "Keyword", "field": "keyword", "status": "fase-14", "note": "La primaria con tildes. Una URL que declaro no competir escribe la decision en la celda, nunca un blanco: en el documento del cliente una celda vacia se lee como olvido." },
-      { "header": "Topic", "field": "topic", "status": "fase-14", "note": "El tema del sitio al que pertenece la URL, que es el campo `topic` del mapa. NO es el nombre del cluster: el cluster mayor se formo por transitividad y publicarlo aca agruparia bajo un mismo tema cuatro URLs que comparten CERO URLs del top 10 (D-05)." },
-      { "header": "Canonical", "field": "canonical", "status": "fase-14" },
-      { "header": "Approved?", "field": "aprobado", "status": "fase-14", "note": "Seguimiento del cliente. El cargador la SIEMBRA una sola vez, cuando la celda esta vacia, y de ahi en adelante no la vuelve a tocar: es la columna donde Juan responde." },
-      { "header": "Implemented?", "field": "implementado", "status": "fase-14", "note": "Mismo trato que `Approved?`: se siembra vacia una vez y despues queda bajo control del cliente y de v1.1." }
+      {
+        "header": "URL",
+        "field": "url",
+        "status": "fase-14"
+      },
+      {
+        "header": "Keyword",
+        "field": "keyword",
+        "status": "fase-14",
+        "note": "La primaria con tildes. Una URL que declaro no competir escribe la decision en la celda, nunca un blanco: en el documento del cliente una celda vacia se lee como olvido."
+      },
+      {
+        "header": "Topic",
+        "field": "topic",
+        "status": "fase-14",
+        "note": "El tema del sitio al que pertenece la URL, que es el campo `topic` del mapa. NO es el nombre del cluster: el cluster mayor se formo por transitividad y publicarlo aca agruparia bajo un mismo tema cuatro URLs que comparten CERO URLs del top 10 (D-05)."
+      },
+      {
+        "header": "Canonical",
+        "field": "canonical",
+        "status": "fase-14"
+      },
+      {
+        "header": "Approved?",
+        "field": "aprobado",
+        "status": "fase-14",
+        "note": "Seguimiento del cliente. El cargador la SIEMBRA una sola vez, cuando la celda esta vacia, y de ahi en adelante no la vuelve a tocar: es la columna donde Juan responde."
+      },
+      {
+        "header": "Implemented?",
+        "field": "implementado",
+        "status": "fase-14",
+        "note": "Mismo trato que `Approved?`: se siembra vacia una vez y despues queda bajo control del cliente y de v1.1."
+      }
     ]
   },
-
   "Internal Linking Audit": {
     "sheetTitle": "Internal Linking Audit",
     "sheetId": 1398984258,
@@ -147,40 +350,164 @@
     "writtenBy": 14,
     "note": "El encabezado 'Title with Link' se repite ocho veces, asi que el mapeo por nombre es ambiguo y este tab se mapea POR POSICION. Cada bloque de tres columnas es un enlace saliente: Link N, Anchor N y su titulo.",
     "columns": [
-      { "header": "URL", "field": "url", "status": "fase-14" },
-      { "header": "Title", "field": "title", "status": "fase-14" },
-      { "header": "Code", "field": "code", "status": "fase-14" },
-      { "header": "Action", "field": "action", "status": "fase-14" },
-      { "header": "Cluster", "field": "cluster", "status": "fase-14" },
-      { "header": "Link 1", "field": "link1", "status": "fase-14" },
-      { "header": "Anchor 1", "field": "anchor1", "status": "fase-14" },
-      { "header": "Title with Link", "field": "titleWithLink1", "status": "fase-14" },
-      { "header": "Link 2", "field": "link2", "status": "fase-14" },
-      { "header": "Anchor 2", "field": "anchor2", "status": "fase-14" },
-      { "header": "Title with Link", "field": "titleWithLink2", "status": "fase-14" },
-      { "header": "Link 3", "field": "link3", "status": "fase-14" },
-      { "header": "Anchor 3", "field": "anchor3", "status": "fase-14" },
-      { "header": "Title with Link", "field": "titleWithLink3", "status": "fase-14" },
-      { "header": "Link 4", "field": "link4", "status": "fase-14" },
-      { "header": "Anchor 4", "field": "anchor4", "status": "fase-14" },
-      { "header": "Title with Link", "field": "titleWithLink4", "status": "fase-14" },
-      { "header": "Link 5", "field": "link5", "status": "fase-14" },
-      { "header": "Anchor 5", "field": "anchor5", "status": "fase-14" },
-      { "header": "Title with Link", "field": "titleWithLink5", "status": "fase-14" },
-      { "header": "Link 6", "field": "link6", "status": "fase-14" },
-      { "header": "Anchor 6", "field": "anchor6", "status": "fase-14" },
-      { "header": "Title with Link", "field": "titleWithLink6", "status": "fase-14" },
-      { "header": "Link 7", "field": "link7", "status": "fase-14" },
-      { "header": "Anchor 7", "field": "anchor7", "status": "fase-14" },
-      { "header": "Title with Link", "field": "titleWithLink7", "status": "fase-14" },
-      { "header": "Link 8", "field": "link8", "status": "fase-14" },
-      { "header": "Anchor 8 ", "field": "anchor8", "status": "fase-14", "note": "Lleva espacio final en el documento, a diferencia de los otros siete." },
-      { "header": "Title with Link", "field": "titleWithLink8", "status": "fase-14" },
-      { "header": "Done", "field": "done", "status": "fase-14" },
-      { "header": "Notas", "field": "notas", "status": "sin-uso" }
+      {
+        "header": "URL",
+        "field": "url",
+        "status": "fase-14"
+      },
+      {
+        "header": "Title",
+        "field": "title",
+        "status": "fase-14"
+      },
+      {
+        "header": "Code",
+        "field": "code",
+        "status": "fase-14"
+      },
+      {
+        "header": "Action",
+        "field": "action",
+        "status": "fase-14"
+      },
+      {
+        "header": "Cluster",
+        "field": "cluster",
+        "status": "fase-14"
+      },
+      {
+        "header": "Link 1",
+        "field": "link1",
+        "status": "fase-14"
+      },
+      {
+        "header": "Anchor 1",
+        "field": "anchor1",
+        "status": "fase-14"
+      },
+      {
+        "header": "Title with Link",
+        "field": "titleWithLink1",
+        "status": "fase-14"
+      },
+      {
+        "header": "Link 2",
+        "field": "link2",
+        "status": "fase-14"
+      },
+      {
+        "header": "Anchor 2",
+        "field": "anchor2",
+        "status": "fase-14"
+      },
+      {
+        "header": "Title with Link",
+        "field": "titleWithLink2",
+        "status": "fase-14"
+      },
+      {
+        "header": "Link 3",
+        "field": "link3",
+        "status": "fase-14"
+      },
+      {
+        "header": "Anchor 3",
+        "field": "anchor3",
+        "status": "fase-14"
+      },
+      {
+        "header": "Title with Link",
+        "field": "titleWithLink3",
+        "status": "fase-14"
+      },
+      {
+        "header": "Link 4",
+        "field": "link4",
+        "status": "fase-14"
+      },
+      {
+        "header": "Anchor 4",
+        "field": "anchor4",
+        "status": "fase-14"
+      },
+      {
+        "header": "Title with Link",
+        "field": "titleWithLink4",
+        "status": "fase-14"
+      },
+      {
+        "header": "Link 5",
+        "field": "link5",
+        "status": "fase-14"
+      },
+      {
+        "header": "Anchor 5",
+        "field": "anchor5",
+        "status": "fase-14"
+      },
+      {
+        "header": "Title with Link",
+        "field": "titleWithLink5",
+        "status": "fase-14"
+      },
+      {
+        "header": "Link 6",
+        "field": "link6",
+        "status": "fase-14"
+      },
+      {
+        "header": "Anchor 6",
+        "field": "anchor6",
+        "status": "fase-14"
+      },
+      {
+        "header": "Title with Link",
+        "field": "titleWithLink6",
+        "status": "fase-14"
+      },
+      {
+        "header": "Link 7",
+        "field": "link7",
+        "status": "fase-14"
+      },
+      {
+        "header": "Anchor 7",
+        "field": "anchor7",
+        "status": "fase-14"
+      },
+      {
+        "header": "Title with Link",
+        "field": "titleWithLink7",
+        "status": "fase-14"
+      },
+      {
+        "header": "Link 8",
+        "field": "link8",
+        "status": "fase-14"
+      },
+      {
+        "header": "Anchor 8 ",
+        "field": "anchor8",
+        "status": "fase-14",
+        "note": "Lleva espacio final en el documento, a diferencia de los otros siete."
+      },
+      {
+        "header": "Title with Link",
+        "field": "titleWithLink8",
+        "status": "fase-14"
+      },
+      {
+        "header": "Done",
+        "field": "done",
+        "status": "fase-14"
+      },
+      {
+        "header": "Notas",
+        "field": "notas",
+        "status": "sin-uso"
+      }
     ]
   },
-
   "Competitor Analysis": {
     "sheetTitle": "Competitor Analysis",
     "sheetId": 333897514,
@@ -193,67 +520,247 @@
     "note": "Tab TRANSPUESTO: los competidores corren a lo ancho, una columna por competidor, y las metricas a lo alto con sus etiquetas en la columna A. No tiene fila de encabezados, asi que el modelo de una fila por registro no aplica. El escritor orientado a filas se niega a tocarlo. El modo orientado a columnas lo implementa el plan 13-03. La clave de idempotencia es el DOMINIO, que vive en la fila 3.",
     "medidoEl": "2026-08-11",
     "origenDeLaMedicion": ".planning/workstreams/seo-keywords/data/competitor-tab-recon-2026-08-11.md",
-
     "//slots": "Los competidores no ocupan columnas contiguas: van con paso 4 desde la columna B. Cinco slots, que es exactamente lo que pide COMP-01. El primero lo ocupa hoy el residuo de plantilla (`pera` en B2, `pera.com` en B3, DR 20 en B5, AR 13 en B6, `United States` en B12, 6 en B24 y 20% en D12); al limpiarlo quedan los cinco libres.",
     "slots": {
       "primeraColumnaIndice": 1,
       "paso": 4,
       "cantidad": 5,
-      "letras": ["B", "F", "J", "N", "R"],
+      "letras": [
+        "B",
+        "F",
+        "J",
+        "N",
+        "R"
+      ],
       "//offsetPorcentaje": "Dentro del bloque de 4 columnas de cada slot, el desplazamiento +2 lleva un porcentaje. Medido: B12 = 'United States' y D12 = '20%'. Solo aplica al bloque de trafico por pais.",
       "offsetPorcentaje": 2
     },
-
     "//peligro": "La columna B NO es una columna de etiquetas: es el PRIMER SLOT de competidor y ADEMAS carga los titulos de seccion en las filas 4, 11, 17, 23, 25 y 31. Volcar una columna entera sobre el slot B borraria esos titulos sin lanzar ninguna excepcion. Por eso cada metrica declara su fila y el escritor toca esa fila y ninguna otra.",
-
     "//columns": "En un tab transpuesto cada entrada describe una FILA de metrica, no una columna: `row` es su fila real base 1 y `header` su etiqueta literal en la columna A, con los espacios tal como estan en el documento. La fila 2 no tiene etiqueta en la columna A porque es la fila de nombres de slot.",
     "columns": [
-      { "row": 2, "header": "", "field": "name", "status": "fase-13", "note": "Fila de nombres de slot. No tiene etiqueta en la columna A: la celda esta vacia y eso es un hecho medido, no un dato faltante. Aca va el nombre legible del competidor." },
-      { "row": 3, "header": "Website", "field": "domain", "status": "fase-13", "note": "CLAVE DE IDEMPOTENCIA. Un competidor que ya esta en un slot se actualiza en ese slot; solo uno que no esta ocupa un slot libre." },
-
-      { "row": 5, "header": "Domain Rating (DR)", "field": "domainRating", "status": "fase-13", "note": "D-12: sale de Ahrefs, cinco dominios. Hoy tiene el residuo 20 en el slot B." },
-      { "row": 6, "header": "Ahrefs Rank (AR)", "field": "ahrefsRank", "status": "fase-13", "note": "Viene en la misma llamada que el DR, asi que no cuesta unidades extra. Hoy tiene el residuo 13 en el slot B." },
-      { "row": 7, "header": "Referring Domains", "field": "referringDomains", "status": "fase-13", "note": "COMP-01 lo pide explicitamente. Misma llamada que DR y AR." },
-      { "row": 8, "header": "Estimated Monthly Search Traffic", "field": "organicTraffic", "status": "fase-13", "note": "HABILITADA POR EL PLAN 13-04. El plan 13-01 la dejo en no_consultado suponiendo que quedaba fuera del select de D-07; no quedo fuera: `site-explorer/metrics` la trajo en la misma consulta que las keywords organicas, y el dato ya esta en la cache. Dejar el literal aqui seria declarar como no consultado algo que si se consulto. Un cero con procedencia `ahrefs` es un cero REAL: tres de los cinco competidores no tienen trafico organico." },
-      { "row": 9, "header": "Estimated Top 100 Keyword Rankings", "field": "organicKeywords", "status": "fase-13", "note": "Mismo caso que la fila 8: viene de `site-explorer/metrics`, ya esta en cache." },
-      { "row": 10, "header": "Do they have a blog?", "field": "blogTexto", "status": "fase-13", "note": "Se deduce del top por enlaces, sin visitar ningun sitio. La ausencia de evidencia NO niega: cuando no se encuentra una ruta de blog la celda dice \"sin evidencia en el top por enlaces\" y nunca \"no\". El top por enlaces son diez paginas, no un mapa del sitio." },
-
-      { "row": 12, "header": "Country 1", "field": null, "status": "no-consultado", "literal": "no_consultado", "note": "El reparto de trafico por pais es metrica de Ahrefs fuera del select de D-07. Hoy tiene el residuo 'United States' con 20% en D12." },
-      { "row": 13, "header": "Country 2", "field": null, "status": "no-consultado", "literal": "no_consultado" },
-      { "row": 14, "header": "Country 3", "field": null, "status": "no-consultado", "literal": "no_consultado" },
-      { "row": 15, "header": "Country 4", "field": null, "status": "no-consultado", "literal": "no_consultado" },
-      { "row": 16, "header": "Country 5", "field": null, "status": "no-consultado", "literal": "no_consultado" },
-
-      { "row": 18, "header": "Keyword 1", "field": "keyword1", "status": "fase-13", "note": "COMP-02. Se deriva de las SERP ya capturadas, con coste adicional cero (D-13): donde aparece el competidor y el doctor no. Las de marca ajena son inteligencia y nunca objetivo (D-14)." },
-      { "row": 19, "header": "Keyword 2", "field": "keyword2", "status": "fase-13" },
-      { "row": 20, "header": "Keyword 3", "field": "keyword3", "status": "fase-13" },
-      { "row": 21, "header": "Keyword 4", "field": "keyword4", "status": "fase-13" },
-      { "row": 22, "header": "Keyword 5", "field": "keyword5", "status": "fase-13" },
-
-      { "row": 24, "header": "Number of featured snippets", "field": "featuredSnippets", "status": "fase-13", "note": "Se cuenta sobre las capturas propias sin pedir nada nuevo. Dato medido el 2026-08-11: las 12 capturas de la fase 12 traen CERO bloque destacado, asi que un 0 aca sera un 0 real y no un dato ausente. Hoy tiene el residuo 6 en el slot B." },
-
-      { "row": 26, "header": "Top page 1", "field": "topPage1", "status": "fase-13", "note": "HABILITADA POR EL PLAN 13-04. Salen de `site-explorer/top-pages`, que el plan 13-03 si consulto. Van ordenadas por TRAFICO, que en este nicho da un orden OPUESTO al de la seccion de abajo: la home concentra los enlaces y las interiores traen el trafico." },
-      { "row": 27, "header": "Top page 2", "field": "topPage2", "status": "fase-13" },
-      { "row": 28, "header": "Top page 3", "field": "topPage3", "status": "fase-13" },
-      { "row": 29, "header": "Top page 4", "field": "topPage4", "status": "fase-13" },
-      { "row": 30, "header": "Top page 5", "field": "topPage5", "status": "fase-13" },
-
-      { "row": 32, "header": "Most linked content 1", "field": "mostLinked1", "status": "fase-13", "note": "Misma consulta que las filas 26 a 30, ordenada por DOMINIOS DE REFERENCIA. Medido el 2026-08-11: en los cinco competidores la home se lleva todos los dominios de referencia y las interiores tienen cero." },
-      { "row": 33, "header": "Most linked content 2", "field": "mostLinked2", "status": "fase-13" },
-      { "row": 34, "header": "Most linked content 3", "field": "mostLinked3", "status": "fase-13" },
-      { "row": 35, "header": "Most linked content 4", "field": "mostLinked4", "status": "fase-13" },
-      { "row": 36, "header": "Most linked content 5", "field": "mostLinked5", "status": "fase-13" }
+      {
+        "row": 2,
+        "header": "",
+        "field": "name",
+        "status": "fase-13",
+        "note": "Fila de nombres de slot. No tiene etiqueta en la columna A: la celda esta vacia y eso es un hecho medido, no un dato faltante. Aca va el nombre legible del competidor."
+      },
+      {
+        "row": 3,
+        "header": "Website",
+        "field": "domain",
+        "status": "fase-13",
+        "note": "CLAVE DE IDEMPOTENCIA. Un competidor que ya esta en un slot se actualiza en ese slot; solo uno que no esta ocupa un slot libre."
+      },
+      {
+        "row": 5,
+        "header": "Domain Rating (DR)",
+        "field": "domainRating",
+        "status": "fase-13",
+        "note": "D-12: sale de Ahrefs, cinco dominios. Hoy tiene el residuo 20 en el slot B."
+      },
+      {
+        "row": 6,
+        "header": "Ahrefs Rank (AR)",
+        "field": "ahrefsRank",
+        "status": "fase-13",
+        "note": "Viene en la misma llamada que el DR, asi que no cuesta unidades extra. Hoy tiene el residuo 13 en el slot B."
+      },
+      {
+        "row": 7,
+        "header": "Referring Domains",
+        "field": "referringDomains",
+        "status": "fase-13",
+        "note": "COMP-01 lo pide explicitamente. Misma llamada que DR y AR."
+      },
+      {
+        "row": 8,
+        "header": "Estimated Monthly Search Traffic",
+        "field": "organicTraffic",
+        "status": "fase-13",
+        "note": "HABILITADA POR EL PLAN 13-04. El plan 13-01 la dejo en no_consultado suponiendo que quedaba fuera del select de D-07; no quedo fuera: `site-explorer/metrics` la trajo en la misma consulta que las keywords organicas, y el dato ya esta en la cache. Dejar el literal aqui seria declarar como no consultado algo que si se consulto. Un cero con procedencia `ahrefs` es un cero REAL: tres de los cinco competidores no tienen trafico organico."
+      },
+      {
+        "row": 9,
+        "header": "Estimated Top 100 Keyword Rankings",
+        "field": "organicKeywords",
+        "status": "fase-13",
+        "note": "Mismo caso que la fila 8: viene de `site-explorer/metrics`, ya esta en cache."
+      },
+      {
+        "row": 10,
+        "header": "Do they have a blog?",
+        "field": "blogTexto",
+        "status": "fase-13",
+        "note": "Se deduce del top por enlaces, sin visitar ningun sitio. La ausencia de evidencia NO niega: cuando no se encuentra una ruta de blog la celda dice \"sin evidencia en el top por enlaces\" y nunca \"no\". El top por enlaces son diez paginas, no un mapa del sitio."
+      },
+      {
+        "row": 12,
+        "header": "Country 1",
+        "field": null,
+        "status": "no-consultado",
+        "literal": "no_consultado",
+        "note": "El reparto de trafico por pais es metrica de Ahrefs fuera del select de D-07. Hoy tiene el residuo 'United States' con 20% en D12."
+      },
+      {
+        "row": 13,
+        "header": "Country 2",
+        "field": null,
+        "status": "no-consultado",
+        "literal": "no_consultado"
+      },
+      {
+        "row": 14,
+        "header": "Country 3",
+        "field": null,
+        "status": "no-consultado",
+        "literal": "no_consultado"
+      },
+      {
+        "row": 15,
+        "header": "Country 4",
+        "field": null,
+        "status": "no-consultado",
+        "literal": "no_consultado"
+      },
+      {
+        "row": 16,
+        "header": "Country 5",
+        "field": null,
+        "status": "no-consultado",
+        "literal": "no_consultado"
+      },
+      {
+        "row": 18,
+        "header": "Keyword 1",
+        "field": "keyword1",
+        "status": "fase-13",
+        "note": "COMP-02. Se deriva de las SERP ya capturadas, con coste adicional cero (D-13): donde aparece el competidor y el doctor no. Las de marca ajena son inteligencia y nunca objetivo (D-14)."
+      },
+      {
+        "row": 19,
+        "header": "Keyword 2",
+        "field": "keyword2",
+        "status": "fase-13"
+      },
+      {
+        "row": 20,
+        "header": "Keyword 3",
+        "field": "keyword3",
+        "status": "fase-13"
+      },
+      {
+        "row": 21,
+        "header": "Keyword 4",
+        "field": "keyword4",
+        "status": "fase-13"
+      },
+      {
+        "row": 22,
+        "header": "Keyword 5",
+        "field": "keyword5",
+        "status": "fase-13"
+      },
+      {
+        "row": 24,
+        "header": "Number of featured snippets",
+        "field": "featuredSnippets",
+        "status": "fase-13",
+        "note": "Se cuenta sobre las capturas propias sin pedir nada nuevo. Dato medido el 2026-08-11: las 12 capturas de la fase 12 traen CERO bloque destacado, asi que un 0 aca sera un 0 real y no un dato ausente. Hoy tiene el residuo 6 en el slot B."
+      },
+      {
+        "row": 26,
+        "header": "Top page 1",
+        "field": "topPage1",
+        "status": "fase-13",
+        "note": "HABILITADA POR EL PLAN 13-04. Salen de `site-explorer/top-pages`, que el plan 13-03 si consulto. Van ordenadas por TRAFICO, que en este nicho da un orden OPUESTO al de la seccion de abajo: la home concentra los enlaces y las interiores traen el trafico."
+      },
+      {
+        "row": 27,
+        "header": "Top page 2",
+        "field": "topPage2",
+        "status": "fase-13"
+      },
+      {
+        "row": 28,
+        "header": "Top page 3",
+        "field": "topPage3",
+        "status": "fase-13"
+      },
+      {
+        "row": 29,
+        "header": "Top page 4",
+        "field": "topPage4",
+        "status": "fase-13"
+      },
+      {
+        "row": 30,
+        "header": "Top page 5",
+        "field": "topPage5",
+        "status": "fase-13"
+      },
+      {
+        "row": 32,
+        "header": "Most linked content 1",
+        "field": "mostLinked1",
+        "status": "fase-13",
+        "note": "Misma consulta que las filas 26 a 30, ordenada por DOMINIOS DE REFERENCIA. Medido el 2026-08-11: en los cinco competidores la home se lleva todos los dominios de referencia y las interiores tienen cero."
+      },
+      {
+        "row": 33,
+        "header": "Most linked content 2",
+        "field": "mostLinked2",
+        "status": "fase-13"
+      },
+      {
+        "row": 34,
+        "header": "Most linked content 3",
+        "field": "mostLinked3",
+        "status": "fase-13"
+      },
+      {
+        "row": 35,
+        "header": "Most linked content 4",
+        "field": "mostLinked4",
+        "status": "fase-13"
+      },
+      {
+        "row": 36,
+        "header": "Most linked content 5",
+        "field": "mostLinked5",
+        "status": "fase-13"
+      }
     ],
-
     "//filasQueNoSeTocan": "Titulos de seccion en la columna B. El escritor de 13-03 NO puede escribir en estas filas del slot B.",
     "filasDeTitulo": [
-      { "row": 1, "titulo": "Competitor Analysis " },
-      { "row": 4, "titulo": "Key Stats " },
-      { "row": 11, "titulo": "Traffic Breakdown by Country " },
-      { "row": 17, "titulo": "Keywords" },
-      { "row": 23, "titulo": "Featured Snippets " },
-      { "row": 25, "titulo": "Páginas principales (#10)" },
-      { "row": 31, "titulo": "Most Linked Content (#11)" }
+      {
+        "row": 1,
+        "titulo": "Competitor Analysis "
+      },
+      {
+        "row": 4,
+        "titulo": "Key Stats "
+      },
+      {
+        "row": 11,
+        "titulo": "Traffic Breakdown by Country "
+      },
+      {
+        "row": 17,
+        "titulo": "Keywords"
+      },
+      {
+        "row": 23,
+        "titulo": "Featured Snippets "
+      },
+      {
+        "row": 25,
+        "titulo": "Páginas principales (#10)"
+      },
+      {
+        "row": 31,
+        "titulo": "Most Linked Content (#11)"
+      }
     ],
     "//fila25": "La etiqueta de la columna A de la fila 25 mide 139 caracteres y solo 31 despues de recortar: son 108 espacios finales. Comparar sin recortar no la encuentra nunca."
   }
