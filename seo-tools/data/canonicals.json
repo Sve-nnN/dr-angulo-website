@@ -1,0 +1,254 @@
+{
+  "schema": 1,
+  "generadoPor": "src/phase14/canonical.ts",
+  "requisito": "SHEET-04",
+  "origen": "https://drangulocolumna.com",
+  "filas": [
+    {
+      "url": "/",
+      "keyword": "traumatología lima",
+      "topic": "home",
+      "canonical": "https://drangulocolumna.com/",
+      "aprobado": "No",
+      "implementado": "No",
+      "esPaginaSeo": true,
+      "motivoSinPrimaria": null
+    },
+    {
+      "url": "/agendar",
+      "keyword": null,
+      "topic": "conversion",
+      "canonical": "https://drangulocolumna.com/agendar",
+      "aprobado": "No",
+      "implementado": "No",
+      "esPaginaSeo": false,
+      "motivoSinPrimaria": "Es el final del embudo y no tiene cabeza medida propia. Las tres transaccionales que podria tomar se funden por SERP con la primaria de la home: `traumatologo lima` comparte 8 URLs del top 10 con `traumatologia lima`, `traumatologia cerca de mi` comparte 6 y `traumatologo cerca de mi` comparte 5, todas muy por encima del umbral de 3. Asignarle cualquiera de ellas montaria la canibalizacion que MAP-02 existe para atrapar, y con la home como victima. Recibe el trafico por enlace interno desde la home, las guias y las sedes, que es como trabaja una pagina de conversion."
+    },
+    {
+      "url": "/blog",
+      "keyword": null,
+      "topic": "blog",
+      "canonical": "https://drangulocolumna.com/blog",
+      "aprobado": "No",
+      "implementado": "No",
+      "esPaginaSeo": false,
+      "motivoSinPrimaria": "Es el indice del silo informativo y no tiene contenido propio: darle una keyword lo pondria a competir contra los mismos articulos que lista, que es la forma mas facil de canibalizar un blog. La unica cabeza generica que le calzaria, `traumatologia`, comparte 3 URLs del top 10 con `traumatologia lima` de la home y esta en el umbral de fusion. Nodo de navegacion, con la misma logica con la que Juan resolvio `/sedes`."
+    },
+    {
+      "url": "/blog/5-sintomas-de-columna-que-no-debes-ignorar",
+      "keyword": "ciática",
+      "topic": "ciatica",
+      "canonical": "https://drangulocolumna.com/blog/5-sintomas-de-columna-que-no-debes-ignorar",
+      "aprobado": "No",
+      "implementado": "No",
+      "esPaginaSeo": true,
+      "motivoSinPrimaria": null
+    },
+    {
+      "url": "/blog/artrosis",
+      "keyword": "artrosis",
+      "topic": "artrosis",
+      "canonical": "https://drangulocolumna.com/blog/artrosis",
+      "aprobado": "No",
+      "implementado": "No",
+      "esPaginaSeo": true,
+      "motivoSinPrimaria": null
+    },
+    {
+      "url": "/blog/estenosis-espinal-que-es",
+      "keyword": null,
+      "topic": "estenosis-espinal",
+      "canonical": "https://drangulocolumna.com/blog/estenosis-espinal-que-es",
+      "aprobado": "No",
+      "implementado": "No",
+      "esPaginaSeo": false,
+      "motivoSinPrimaria": "Se funde con la guia de estenosis espinal y redirige, asi que no pelea ninguna consulta. El post no compite con la guia: la anticipa, y lo dice el propio texto publicado dos veces (`src/content/blog.ts:291` y `:309` remiten a la guia completa)."
+    },
+    {
+      "url": "/blog/hernia-discal-o-dolor-de-espalda-como-diferenciarlos",
+      "keyword": null,
+      "topic": "hernia-discal",
+      "canonical": "https://drangulocolumna.com/blog/hernia-discal-o-dolor-de-espalda-como-diferenciarlos",
+      "aprobado": "No",
+      "implementado": "No",
+      "esPaginaSeo": false,
+      "motivoSinPrimaria": "Se funde con la guia de hernia discal y redirige. Su angulo —el diferencial entre contractura y hernia— ya vive dentro de la guia, que lleva `ciatica o hernia discal` y `lumbalgia o hernia discal` de secundarias desde el plan 14-02. Ademas no hay cabeza medida que el post pudiera tomar: `dolor de espalda` esta en el universo de la fase 13 pero no entre las 91 cabezas con SERP medida, asi que una primaria suya no tendria tipo exigido y seria inferencia disfrazada de medicion."
+    },
+    {
+      "url": "/blog/lumbalgia",
+      "keyword": "lumbalgia",
+      "topic": "lumbalgia",
+      "canonical": "https://drangulocolumna.com/blog/lumbalgia",
+      "aprobado": "No",
+      "implementado": "No",
+      "esPaginaSeo": true,
+      "motivoSinPrimaria": null
+    },
+    {
+      "url": "/blog/miedo-a-operarte-de-la-columna-5-cosas-que-debes-saber",
+      "keyword": "cirugía de columna",
+      "topic": "cirugia-de-columna",
+      "canonical": "https://drangulocolumna.com/blog/miedo-a-operarte-de-la-columna-5-cosas-que-debes-saber",
+      "aprobado": "No",
+      "implementado": "No",
+      "esPaginaSeo": true,
+      "motivoSinPrimaria": null
+    },
+    {
+      "url": "/contacto",
+      "keyword": null,
+      "topic": "conversion",
+      "canonical": "https://drangulocolumna.com/contacto",
+      "aprobado": "No",
+      "implementado": "No",
+      "esPaginaSeo": false,
+      "motivoSinPrimaria": "Mismo caso que `/agendar` y agravado: comparte con ella el temario de sedes, asi que cualquier keyword que tomara chocaria dos veces, contra la home y contra `/agendar`. Las dos cabezas de cercania que le calzarian, `traumatologia cerca de mi` y `traumatologo cerca de mi`, comparten 6 URLs del top 10 entre si y 6 y 5 con `traumatologia lima`. No compite: convierte."
+    },
+    {
+      "url": "/preguntas-frecuentes",
+      "keyword": "reumatólogo o traumatólogo",
+      "topic": "preguntas",
+      "canonical": "https://drangulocolumna.com/preguntas-frecuentes",
+      "aprobado": "No",
+      "implementado": "No",
+      "esPaginaSeo": true,
+      "motivoSinPrimaria": null
+    },
+    {
+      "url": "/sedes",
+      "keyword": null,
+      "topic": "sedes",
+      "canonical": "https://drangulocolumna.com/sedes",
+      "aprobado": "No",
+      "implementado": "No",
+      "esPaginaSeo": false,
+      "motivoSinPrimaria": "Decision de Juan del 2026-08-11: queda como hub de navegacion hacia las cuatro sedes, sin pelear ningun termino, precisamente para dejar de canibalizarlas. Los nombres de clinica formaron cluster propio y limpio en la fase 13 y la senal tiene que concentrarse ahi, no repartirse entre el hub y cada sede. Es una decision registrada, no una omision."
+    },
+    {
+      "url": "/sedes/clinica-ricardo-palma",
+      "keyword": "cirujano de columna clínica ricardo palma",
+      "topic": "sedes",
+      "canonical": "https://drangulocolumna.com/sedes/clinica-ricardo-palma",
+      "aprobado": "No",
+      "implementado": "No",
+      "esPaginaSeo": true,
+      "motivoSinPrimaria": null
+    },
+    {
+      "url": "/sedes/clinica-tezza",
+      "keyword": "ortopedia infantil clínica tezza",
+      "topic": "sedes",
+      "canonical": "https://drangulocolumna.com/sedes/clinica-tezza",
+      "aprobado": "No",
+      "implementado": "No",
+      "esPaginaSeo": true,
+      "motivoSinPrimaria": null
+    },
+    {
+      "url": "/sedes/consultorio-privado",
+      "keyword": "cirugía de columna surco",
+      "topic": "sedes",
+      "canonical": "https://drangulocolumna.com/sedes/consultorio-privado",
+      "aprobado": "No",
+      "implementado": "No",
+      "esPaginaSeo": true,
+      "motivoSinPrimaria": null
+    },
+    {
+      "url": "/sedes/sanna-la-molina",
+      "keyword": "cirujano de columna clínica sanna",
+      "topic": "sedes",
+      "canonical": "https://drangulocolumna.com/sedes/sanna-la-molina",
+      "aprobado": "No",
+      "implementado": "No",
+      "esPaginaSeo": true,
+      "motivoSinPrimaria": null
+    },
+    {
+      "url": "/servicios",
+      "keyword": "cirujano de columna lima",
+      "topic": "servicios",
+      "canonical": "https://drangulocolumna.com/servicios",
+      "aprobado": "No",
+      "implementado": "No",
+      "esPaginaSeo": true,
+      "motivoSinPrimaria": null
+    },
+    {
+      "url": "/servicios/cirugia-minimamente-invasiva",
+      "keyword": "cirugía mínimamente invasiva en lima",
+      "topic": "cirugia-minimamente-invasiva",
+      "canonical": "https://drangulocolumna.com/servicios/cirugia-minimamente-invasiva",
+      "aprobado": "No",
+      "implementado": "No",
+      "esPaginaSeo": true,
+      "motivoSinPrimaria": null
+    },
+    {
+      "url": "/servicios/escoliosis-y-deformidades",
+      "keyword": "escoliosis",
+      "topic": "escoliosis",
+      "canonical": "https://drangulocolumna.com/servicios/escoliosis-y-deformidades",
+      "aprobado": "No",
+      "implementado": "No",
+      "esPaginaSeo": true,
+      "motivoSinPrimaria": null
+    },
+    {
+      "url": "/servicios/estenosis-espinal",
+      "keyword": "estenosis espinal",
+      "topic": "estenosis-espinal",
+      "canonical": "https://drangulocolumna.com/servicios/estenosis-espinal",
+      "aprobado": "No",
+      "implementado": "No",
+      "esPaginaSeo": true,
+      "motivoSinPrimaria": null
+    },
+    {
+      "url": "/servicios/hernia-discal",
+      "keyword": "hernia discal",
+      "topic": "hernia-discal",
+      "canonical": "https://drangulocolumna.com/servicios/hernia-discal",
+      "aprobado": "No",
+      "implementado": "No",
+      "esPaginaSeo": true,
+      "motivoSinPrimaria": null
+    },
+    {
+      "url": "/servicios/ortopedia-infantil",
+      "keyword": "ortopedia infantil lima",
+      "topic": "ortopedia-infantil",
+      "canonical": "https://drangulocolumna.com/servicios/ortopedia-infantil",
+      "aprobado": "No",
+      "implementado": "No",
+      "esPaginaSeo": true,
+      "motivoSinPrimaria": null
+    },
+    {
+      "url": "/sobre-el-doctor",
+      "keyword": null,
+      "topic": "autoridad",
+      "canonical": "https://drangulocolumna.com/sobre-el-doctor",
+      "aprobado": "No",
+      "implementado": "No",
+      "esPaginaSeo": false,
+      "motivoSinPrimaria": "Su consulta real es el nombre propio del doctor, y el universo de la fase 13 se construyo desde semillas de condicion y de especialidad: no hay una sola cabeza de marca medida contra la cual asignarla. Las dos genericas que podria tomar se funden con primarias existentes: `traumatologo` comparte 6 URLs del top 10 con `traumatologia lima` de la home y `cirujano de columna` comparte 3 con `cirujano de columna lima` de `/servicios`. Queda anotada como deuda con fecha: medir la SERP de marca cuando se reponga la cuota de SerpApi el 2026-08-21."
+    },
+    {
+      "url": "/testimonios",
+      "keyword": null,
+      "topic": "autoridad",
+      "canonical": "https://drangulocolumna.com/testimonios",
+      "aprobado": "No",
+      "implementado": "No",
+      "esPaginaSeo": false,
+      "motivoSinPrimaria": "Ninguna de las 91 cabezas medidas es una consulta de resenas de un medico concreto, asi que no hay dato con el cual asignarle una primaria. Y bajo la restriccion YMYL del proyecto una pagina de testimonios no es el lugar donde perseguir volumen clinico: sostiene la conversion desde la prueba social y recibe enlaces, no consultas de busqueda."
+    }
+  ],
+  "resumen": {
+    "urls": 24,
+    "conKeyword": 16,
+    "sinKeyword": 8,
+    "canonicalesUnicos": 24
+  }
+}
