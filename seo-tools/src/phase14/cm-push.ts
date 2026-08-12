@@ -36,6 +36,7 @@ import { booleana, ejecutar, parseBanderas, texto } from "../phase13/args.js";
 import { getSheetsSession } from "../sheets/client.js";
 import { loadSheetModel, loadTabSchema, trimHeader, type TabModel } from "../sheets/schema.js";
 import { createGoogleWriteGateway, upsertRows, type WriteGateway } from "../sheets/upsert.js";
+import { normalizeKeyword } from "../keywords/normalize.js";
 import { validarAsignacion, type AsignacionDeUrl } from "./model.js";
 
 const TAB = "Content Model";
@@ -46,6 +47,28 @@ const ESTADO_PROPIO = "fase-14" as const;
 
 /** Lo que se escribe en la columna `Keyword` de una URL que declara que no compite. */
 export const SIN_PRIMARIA = "Sin keyword primaria (decisión)";
+
+/** Dominio canonico del sitio. Solo lo usa la home, por el motivo de abajo. */
+const SITIO = "https://drangulocolumna.com";
+
+/**
+ * Lo que va en la columna `URL`, que ademas es la CLAVE del upsert.
+ *
+ * LA HOME ES UN CASO ESPECIAL Y NO ES UN CAPRICHO. El upsert normaliza la celda clave con
+ * `normalizeKeyword`, que quita la puntuacion: `"/servicios"` queda `"servicios"`, pero `"/"`
+ * queda en CADENA VACIA, y `upsertRows` saltea las claves vacias. La home entonces no se
+ * insertaba ni se actualizaba: desaparecia en silencio, y el resumen decia "insertadas: 14" sin
+ * mencionar que la URL mas importante del sitio no habia llegado a ninguna celda. Es el mismo
+ * modo de falla que la defensa 4 atrapa para las columnas, sobre las filas.
+ *
+ * Por eso la home viaja como su URL canonica absoluta, que normaliza a algo estable y no vacio, y
+ * que ademas es exactamente lo que un lector entiende por "la home". Las demas siguen como ruta
+ * relativa, que es como las escribio el plan 14-02 y como estan hoy en el documento del cliente:
+ * cambiarlas volveria a insertar las nueve filas que ya existen.
+ */
+export function claveDeUrl(a: AsignacionDeUrl): string {
+  return a.url === "/" ? `${SITIO}/` : a.url;
+}
 
 /**
  * Proyeccion del mapa a la fila que el tab espera.
@@ -63,7 +86,7 @@ export const SIN_PRIMARIA = "Sin keyword primaria (decisión)";
 export function filaDeContentModel(a: AsignacionDeUrl): Record<string, unknown> {
   const capitalizar = (valor: string): string => valor.charAt(0).toUpperCase() + valor.slice(1);
   return {
-    url: a.url,
+    url: claveDeUrl(a),
     esPaginaSeo: a.esPaginaSeo ? "Sí" : "No",
     // Una URL sin primaria escribe la DECISION en la celda y no la deja en blanco. En el
     // documento del cliente una celda vacia se lee como un olvido —y `/sedes` es justamente lo
@@ -164,7 +187,28 @@ async function cargar(
     );
   }
 
-  const resumen = await upsertRows(gateway, tab, asignaciones.map(filaDeContentModel), {
+  // Defensa 5: ninguna fila puede tener clave vacia despues de normalizar.
+  //
+  // `upsertRows` saltea en silencio las claves que normalizan a cadena vacia, y con razon: en la
+  // hoja son filas en blanco. Pero una fila del DATASET con clave vacia no es una fila en blanco,
+  // es una URL que no va a llegar nunca al documento y cuyo resumen igual va a decir que la carga
+  // salio bien. Se comprueba aca, antes de escribir, y se nombra cual.
+  const filas = asignaciones.map(filaDeContentModel);
+  const sinClave = filas
+    .map((f, i) => ({ url: asignaciones[i]?.url ?? "?", clave: normalizeKeyword(String(f["url"] ?? "")) }))
+    .filter((x) => x.clave === "");
+  if (sinClave.length > 0) {
+    throw new CliError(
+      `Estas URLs quedan con clave vacia al normalizar y el upsert las saltearia en silencio: ` +
+        `${sinClave.map((x) => JSON.stringify(x.url)).join(", ")}.\n` +
+        `  La carga se detiene sin escribir nada.\n` +
+        `  Una fila salteada no aparece en el resumen: diria "insertadas" de menos y nadie lo\n` +
+        `  notaria hasta que el cliente preguntara por que falta esa URL.\n` +
+        `  Accion: darle a esa URL una forma de clave estable en claveDeUrl().`,
+    );
+  }
+
+  const resumen = await upsertRows(gateway, tab, filas, {
     dryRun: ensayo,
     addMissingColumns: false,
     omitirCamposAusentes: true,
