@@ -135,13 +135,13 @@ Plans:
   4. Cada asignación declara qué tipo de página exige la SERP y qué hay que hacer con la URL: dejarla como está, reescribirla o crearla.
   5. Los tabs `Content Model`, `Canonical Audit` e `Internal Linking Audit` tienen una fila por URL con keyword, intención, tipo, cluster, métricas, acción recomendada, canonical propuesto y hasta ocho enlaces salientes con su anchor; recargarlos no duplica filas.
 
-**Plans**: 1/4 plans executed
+**Plans**: 3/4 plans executed
 
 Plans:
 
 - [x] 14-01-PLAN.md — Inventario medido de URLs, solape par a par y tracer de una URL hasta `Content Model` (wave 1, cero cuota)
 - [x] 14-02-PLAN.md — MAP-03: las nueve URLs del handoff asignadas, aprobadas por Juan y publicadas, con el aviso de desbloqueo a v1.1 (wave 2)
-- [ ] 14-03-PLAN.md — Auditoría de las URLs vivas, canibalización por cruce del mapa contra sí mismo y `Content Model` completo (wave 3)
+- [x] 14-03-PLAN.md — Auditoría de las URLs vivas, canibalización por cruce del mapa contra sí mismo y `Content Model` completo (wave 3)
 - [ ] 14-04-PLAN.md — Canonicals, matriz de enlazado interno y los tabs `Canonical Audit` e `Internal Linking Audit` (wave 4)
 
 > **HANDOFF BLOQUEANTE — MAP-03.**
@@ -209,7 +209,7 @@ paquete de la fase 15 para su contenido y su metadata.
 |-------|-----------|----------------|--------|-----------|
 | 12. Instrumentación de datos y universo de keywords | v1.2 | 5/5 | Complete | 2026-08-11 |
 | 13. Clusters, competencia y las 10 de Oro | v1.2 | 5/5 | In Progress|  |
-| 14. Mapa keyword → URL y matriz de enlazado | v1.2 | 2/4 | In Progress| MAP-03 cerrado, v1.1 desbloqueada |
+| 14. Mapa keyword → URL y matriz de enlazado | v1.2 | 3/4 | In Progress|  |
 | 15. Paquete on-page por URL | v1.2 | 0/TBD | Not started | - |
 
 ## Cobertura de requisitos

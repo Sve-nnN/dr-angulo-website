@@ -5,14 +5,14 @@ milestone_name: "SEO semantico: keyword research y optimizacion on-page"
 current_phase: 14
 current_phase_name: Mapa keyword → URL y matriz de enlazado
 status: in_progress
-stopped_at: Completed 14-01-PLAN.md
-last_updated: "2026-08-12T01:03:10.255Z"
-last_activity: "2026-08-11, cerrado el plan 14-01 con cero cuota gastada: el sitio mide 22 URLs y no 19, las 91 cabezas ya declaran qué formato exige su SERP, y el veredicto de fusión par a par quedó blindado contra fusionar por pertenencia a cluster"
+stopped_at: Completed 14-03-PLAN.md
+last_updated: "2026-08-12T01:46:40.083Z"
+last_activity: "2026-08-11, cerrado el plan 14-03 con cero cuota gastada: el mapa cubre las 20 URLs mapeables, ocho de ellas declarando por escrito por que no compiten; el cruce de 120 pares da cero canibalizacion; dos posts del blog se funden con su guia y redirigen; y se atrapo que la home nunca habia llegado al documento del cliente porque su clave normalizaba a cadena vacia"
 progress:
   total_phases: 4
   completed_phases: 2
   total_plans: 14
-  completed_plans: 12
+  completed_plans: 13
   percent: 50
 ---
 
@@ -32,7 +32,7 @@ Plan: 14-01 y 14-02 cerrados. Sigue 14-03, que completa el resto del mapa y cruz
 Status: **MAP-03 cerrado y v1.1 desbloqueada.** MAP-01, MAP-04 y SHEET-02 satisfechos para las nueve del handoff: el mapa cubre 9 de 21 URLs y el Sheet del cliente ya tiene nueve filas vivas en `Content Model`, con idempotencia probada. Quedan **30 búsquedas de SerpApi** hasta el reset del 2026-08-21
 Last activity: 2026-08-11, cerrado el plan 14-02 con cero cuota gastada: las nueve URLs del handoff estan asignadas y publicadas, existe `14-HANDOFF-V11.md` para la fase 8 de v1.1, y la intencion de cada URL pasa a salir del top 10 medido en vez de la familia de la URL (tres paginas de servicio cambiaron a informacional)
 
-Progress: [█████░░░░░] 50% de la fase 14 (2 de 4 planes) · 2 de 4 fases de v1.2 cerradas
+Progress: [█████████░] 93% de la fase 14 (3 de 4 planes) · 2 de 4 fases de v1.2 cerradas
 
 ## Roadmap v1.2
 
@@ -103,8 +103,8 @@ Los dos milestones corren a la vez sobre el mismo repositorio.
 
 ## Session Continuity
 
-Last session: 2026-08-11T21:36:30.153Z
-Stopped at: Completed 14-01-PLAN.md
+Last session: 2026-08-12T01:46:40.075Z
+Stopped at: Completed 14-03-PLAN.md
 Resume file: None
 
 ## Performance Metrics
@@ -118,6 +118,7 @@ Resume file: None
 | Phase 13 P02 | ~1h 15min | 2 tasks | 9 files |
 | Phase 13 P05 | ~2h | 2 tasks | 6 files |
 | Phase 14 P01 | 50m | 3 tasks | 12 files |
+| Phase 14 P03 | ~2 h | 3 tasks | 19 files |
 
 ## Presupuesto de fuentes externas al cerrar la fase 12
 

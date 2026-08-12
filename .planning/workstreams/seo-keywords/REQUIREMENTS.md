@@ -127,16 +127,16 @@ Ricardo Palma, Sanna La Molina, Padre Luis Tezza), más el hub `/servicios` refo
 
 ### Mapa keyword → URL (MAP)
 
-- [ ] **MAP-01**: Cada una de las 18 URLs mapeables tiene exactamente una keyword primaria
+- [x] **MAP-01**: Cada una de las 18 URLs mapeables tiene exactamente una keyword primaria
   asignada y de tres a cinco secundarias
 
-- [ ] **MAP-02**: Ninguna keyword primaria está asignada a dos URLs — la canibalización
+- [x] **MAP-02**: Ninguna keyword primaria está asignada a dos URLs — la canibalización
   está detectada y resuelta antes de asignar
 
 - [x] **MAP-03**: Las nueve URLs que aún no existen (servicios y sedes de v1.1) tienen su
   keyword asignada antes de que la fase 8 las escriba
 
-- [ ] **MAP-04**: Cada asignación declara el tipo de página que la SERP exige y si la URL
+- [x] **MAP-04**: Cada asignación declara el tipo de página que la SERP exige y si la URL
   actual lo cumple, la hay que reescribir o hay que crearla
 
 - [ ] **MAP-05**: Está definida la matriz de enlazado interno entre clusters: qué URL
@@ -167,7 +167,7 @@ Ricardo Palma, Sanna La Molina, Padre Luis Tezza), más el hub `/servicios` refo
 - [x] **SHEET-01**: El tab `Keyword Research` está lleno con el universo de keywords y
   todas sus columnas de métricas, cluster, intención, H1 sugerido y top result
 
-- [ ] **SHEET-02**: El tab `Content Model` tiene una fila por URL con keyword, intención,
+- [x] **SHEET-02**: El tab `Content Model` tiene una fila por URL con keyword, intención,
   tipo, cluster, métricas y la acción recomendada (dejar, actualizar o eliminar)
 
 - [x] **SHEET-03**: El tab `Competitor Analysis` tiene los cinco competidores con sus
