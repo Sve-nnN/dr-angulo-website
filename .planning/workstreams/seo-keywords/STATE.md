@@ -3,16 +3,16 @@ gsd_state_version: 1.0
 milestone: v1.2
 milestone_name: "SEO semantico: keyword research y optimizacion on-page"
 current_phase: 14
-current_phase_name: "Mapa keyword → URL y matriz de enlazado"
+current_phase_name: Mapa keyword → URL y matriz de enlazado
 status: in_progress
 stopped_at: Completed 14-01-PLAN.md
-last_updated: "2026-08-11T21:38:14.568Z"
+last_updated: "2026-08-12T01:03:10.255Z"
 last_activity: "2026-08-11, cerrado el plan 14-01 con cero cuota gastada: el sitio mide 22 URLs y no 19, las 91 cabezas ya declaran qué formato exige su SERP, y el veredicto de fusión par a par quedó blindado contra fusionar por pertenencia a cluster"
 progress:
   total_phases: 4
   completed_phases: 2
   total_plans: 14
-  completed_plans: 11
+  completed_plans: 12
   percent: 50
 ---
 
@@ -28,11 +28,11 @@ See: .planning/PROJECT.md (updated 2026-08-10)
 ## Current Position
 
 Phase: 14 de 15 en curso (Mapa keyword → URL y matriz de enlazado), tercera de las 4 fases de v1.2
-Plan: 14-01 cerrado (wave 1). Sigue 14-02, que abre con el checkpoint de decisiones para Juan
-Status: MAP-01, MAP-04 y SHEET-02 habilitados, ninguno completo: el mapa cubre 1 de 21 URLs y el Sheet del cliente sigue sin recibir una sola fila. Quedan **30 búsquedas de SerpApi** hasta el reset del 2026-08-21
-Last activity: 2026-08-11, cerrado el plan 14-01 con cero cuota gastada: el sitio mide 22 URLs y no 19, las 91 cabezas ya declaran qué formato exige su SERP, y el veredicto de fusión par a par quedó blindado contra fusionar por pertenencia a cluster
+Plan: 14-01 y 14-02 cerrados. Sigue 14-03, que completa el resto del mapa y cruza la canibalizacion
+Status: **MAP-03 cerrado y v1.1 desbloqueada.** MAP-01, MAP-04 y SHEET-02 satisfechos para las nueve del handoff: el mapa cubre 9 de 21 URLs y el Sheet del cliente ya tiene nueve filas vivas en `Content Model`, con idempotencia probada. Quedan **30 búsquedas de SerpApi** hasta el reset del 2026-08-21
+Last activity: 2026-08-11, cerrado el plan 14-02 con cero cuota gastada: las nueve URLs del handoff estan asignadas y publicadas, existe `14-HANDOFF-V11.md` para la fase 8 de v1.1, y la intencion de cada URL pasa a salir del top 10 medido en vez de la familia de la URL (tres paginas de servicio cambiaron a informacional)
 
-Progress: [██░░░░░░░░] 25% de la fase 14 (1 de 4 planes) · 2 de 4 fases de v1.2 cerradas
+Progress: [█████░░░░░] 50% de la fase 14 (2 de 4 planes) · 2 de 4 fases de v1.2 cerradas
 
 ## Roadmap v1.2
 
@@ -48,7 +48,7 @@ Progress: [██░░░░░░░░] 25% de la fase 14 (1 de 4 planes) · 
 Los dos milestones corren a la vez sobre el mismo repositorio.
 
 - **v1.2 manda en keywords y textos; v1.1 manda en código.** Ninguna fase de v1.2 escribe en `src/`.
-- **Handoff bloqueante — MAP-03 (fase 14):** la fase 8 de v1.1 no debe escribir páginas de servicio hasta que la fase 14 cierre. Las nueve URLs nuevas (cuatro de servicio, cuatro de sede y el hub `/servicios`) necesitan su keyword antes de existir. Al cerrar la fase 14 hay que avisar al otro workstream.
+- **Handoff bloqueante — MAP-03 (fase 14): RESUELTO el 2026-08-11.** Las nueve URLs (cuatro de servicio, cuatro de sede y el hub `/servicios`) tienen keyword asignada y publicada. El aviso autocontenido para la fase 8 de v1.1 es `.planning/workstreams/seo-keywords/phases/14-mapa-keyword-url-y-matriz-de-enlazado/14-HANDOFF-V11.md`, e incluye el renombre de `/servicios/escoliosis` a `/servicios/escoliosis-y-deformidades`, que arrastra 301, sitemap y enlaces internos.
 - **Handoff de contenido — ONPAGE-06 (fase 15):** el paquete por URL es lo que implementan las fases 8 y 10 de v1.1.
 - Dentro de la fase 14, resolver MAP-03 primero para desbloquear la fase 8 lo antes posible.
 - Nunca escribir en `.planning/STATE.md`, `.planning/ROADMAP.md`, `.planning/REQUIREMENTS.md` ni bajo `.planning/workstreams/milestone/`.
@@ -56,6 +56,9 @@ Los dos milestones corren a la vez sobre el mismo repositorio.
 ## Accumulated Context
 
 ### Decisions
+
+- **La intención de una URL se mide en la SERP, no se deduce de la carpeta (2026-08-11, plan 14-02):** el reparto entero del top 10 decide informacional, comercial o transaccional. `estenosis espinal` vive en `/servicios/`, suena a operación y tiene 8 de 8 resultados informativos. Cuando la SERP no resuelve, la fila declara que la intención es inferida y no medida.
+- **Las tres decisiones de Juan del 2026-08-11** quedan en `data/decisiones-checkpoint-14-2026-08-11.md`: las páginas de servicio se reescriben como guía clínica en la fase 15, `/servicios/escoliosis` se renombra a `/servicios/escoliosis-y-deformidades`, y `/sedes` queda como hub sin keyword primaria a propósito.
 
 - **Reparto v1.1 / v1.2 (2026-08-10):** v1.2 entrega el mapa de keywords y el copy optimizado; las fases 8, 9 y 10 de v1.1 los implementan. Evita conflictos de merge entre dos milestones paralelos.
 - **Fuentes de datos (2026-08-10):** DinoRank como primaria (volumen, CPC, competencia, TF-IDF, canibalizaciones, auditoría on-page), Ahrefs para KD, traffic potential y referring domains needed, SerpApi para validar la SERP real geolocalizada en Lima.

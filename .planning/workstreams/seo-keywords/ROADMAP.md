@@ -43,7 +43,7 @@ tabs `Keyword Research`, `Content Model`, `Competitor Analysis`, `Canonical Audi
 
 | Handoff | Sale de | Entra a | Naturaleza |
 |---------|---------|---------|------------|
-| **MAP-03** — keyword asignada a las 9 URLs nuevas | Fase 14 | Fase 8 de v1.1 | **BLOQUEANTE.** La fase 8 no debe escribir páginas de servicio antes de que la fase 14 cierre |
+| **MAP-03** — keyword asignada a las 9 URLs nuevas | Fase 14 | Fase 8 de v1.1 | **ENTREGADO el 2026-08-11** en `14-HANDOFF-V11.md`. La fase 8 ya puede arrancar |
 | **ONPAGE-06** — paquete de implementación por URL | Fase 15 | Fases 8 y 10 de v1.1 | De contenido. La fase 8 implementa el copy; la fase 10, titles, metas y jerarquía |
 
 ## Phases
@@ -140,7 +140,7 @@ Plans:
 Plans:
 
 - [x] 14-01-PLAN.md — Inventario medido de URLs, solape par a par y tracer de una URL hasta `Content Model` (wave 1, cero cuota)
-- [ ] 14-02-PLAN.md — MAP-03: las nueve URLs del handoff asignadas, aprobadas por Juan y publicadas, con el aviso de desbloqueo a v1.1 (wave 2)
+- [x] 14-02-PLAN.md — MAP-03: las nueve URLs del handoff asignadas, aprobadas por Juan y publicadas, con el aviso de desbloqueo a v1.1 (wave 2)
 - [ ] 14-03-PLAN.md — Auditoría de las URLs vivas, canibalización por cruce del mapa contra sí mismo y `Content Model` completo (wave 3)
 - [ ] 14-04-PLAN.md — Canonicals, matriz de enlazado interno y los tabs `Canonical Audit` e `Internal Linking Audit` (wave 4)
 
@@ -209,7 +209,7 @@ paquete de la fase 15 para su contenido y su metadata.
 |-------|-----------|----------------|--------|-----------|
 | 12. Instrumentación de datos y universo de keywords | v1.2 | 5/5 | Complete | 2026-08-11 |
 | 13. Clusters, competencia y las 10 de Oro | v1.2 | 5/5 | In Progress|  |
-| 14. Mapa keyword → URL y matriz de enlazado | v1.2 | 1/4 | In Progress|  |
+| 14. Mapa keyword → URL y matriz de enlazado | v1.2 | 2/4 | In Progress| MAP-03 cerrado, v1.1 desbloqueada |
 | 15. Paquete on-page por URL | v1.2 | 0/TBD | Not started | - |
 
 ## Cobertura de requisitos

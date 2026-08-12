@@ -133,7 +133,7 @@ Ricardo Palma, Sanna La Molina, Padre Luis Tezza), más el hub `/servicios` refo
 - [ ] **MAP-02**: Ninguna keyword primaria está asignada a dos URLs — la canibalización
   está detectada y resuelta antes de asignar
 
-- [ ] **MAP-03**: Las nueve URLs que aún no existen (servicios y sedes de v1.1) tienen su
+- [x] **MAP-03**: Las nueve URLs que aún no existen (servicios y sedes de v1.1) tienen su
   keyword asignada antes de que la fase 8 las escriba
 
 - [ ] **MAP-04**: Cada asignación declara el tipo de página que la SERP exige y si la URL
@@ -232,10 +232,10 @@ Mapeada por `ROADMAP.md` del workstream `seo-keywords` el 2026-08-10.
 | COMP-02 | Fase 13 | Pendiente |
 | COMP-03 | Fase 13 | Pendiente |
 | COMP-04 | Fase 13 | Pendiente |
-| MAP-01 | Fase 14 | Pendiente |
+| MAP-01 | Fase 14 | Parcial — 9 de 21 URLs (plan 14-02). `/sedes` sin primaria por decisión de Juan |
 | MAP-02 | Fase 14 | Pendiente |
-| MAP-03 | Fase 14 | Pendiente — **handoff bloqueante** para la fase 8 de v1.1 |
-| MAP-04 | Fase 14 | Pendiente |
+| MAP-03 | Fase 14 | **Completo** (plan 14-02) — handoff entregado en `14-HANDOFF-V11.md` |
+| MAP-04 | Fase 14 | Parcial — 9 de 21 URLs (plan 14-02) |
 | MAP-05 | Fase 14 | Pendiente |
 | ONPAGE-01 | Fase 15 | Pendiente |
 | ONPAGE-02 | Fase 15 | Pendiente |
@@ -244,7 +244,7 @@ Mapeada por `ROADMAP.md` del workstream `seo-keywords` el 2026-08-10.
 | ONPAGE-05 | Fase 15 | Pendiente |
 | ONPAGE-06 | Fase 15 | Pendiente — handoff de contenido para las fases 8 y 10 de v1.1 |
 | SHEET-01 | Fase 13 | Pendiente |
-| SHEET-02 | Fase 14 | Pendiente |
+| SHEET-02 | Fase 14 | Parcial — 9 filas vivas en `Content Model`, idempotencia probada (plan 14-02) |
 | SHEET-03 | Fase 13 | Pendiente |
 | SHEET-04 | Fase 14 | Pendiente |
 | SHEET-05 | Fase 14 | Pendiente |
