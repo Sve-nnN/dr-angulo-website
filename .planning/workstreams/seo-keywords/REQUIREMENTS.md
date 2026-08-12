@@ -155,8 +155,15 @@ Ricardo Palma, Sanna La Molina, Padre Luis Tezza), más el hub `/servicios` refo
 - [ ] **ONPAGE-02**: Cada URL tiene H1 propuesto y jerarquía H2/H3 derivada de las
   preguntas reales de la SERP
 
-- [ ] **ONPAGE-03**: Cada URL trae su lista de entidades y términos semánticos obligatorios
+- [x] **ONPAGE-03**: Cada URL trae su lista de entidades y términos semánticos obligatorios
   del TF-IDF de DinoRank contra los que ya posicionan
+  <br>_Cumplido con otra fuente, no con la que dice el enunciado (D-02 de `15-CONTEXT.md`).
+  El `/tfidf` de DinoRank sí lee nuestra URL pero su corpus de comparación vino vacío el
+  2026-08-12 (`totalUrls: 0`, `wdfdf.media: []`, `df: null`): analiza la página aislada, que
+  es lo contrario de lo que el requisito pide. Los términos salen de la frecuencia documental
+  sobre los títulos y fragmentos del top 10 ya capturado, que sí son los que posicionan, y
+  cada uno viaja con su procedencia. 196 términos sobre las 16 URLs, en
+  `seo-tools/data/onpage-serp.json`._
 
 - [ ] **ONPAGE-04**: El copy clínico nuevo o reescrito está redactado, humanizado y marcado
   como pendiente de aprobación del doctor antes de que v1.1 lo publique

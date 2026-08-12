@@ -4,16 +4,17 @@ milestone: v1.2
 milestone_name: "SEO semantico: keyword research y optimizacion on-page"
 current_phase: 15
 current_phase_name: Paquete on-page por URL
-status: in_progress
-stopped_at: Completed 14-04-PLAN.md — fase 14 cerrada
-last_updated: "2026-08-12T03:30:00.000Z"
-last_activity: "2026-08-12, cerrado el plan 14-04 y con el la fase 14 entera, sin gastar cuota: los 135 enlaces de la matriz y los 24 canonicals estan publicados, y el mapeo posicional del tab Internal Linking Audit quedo verificado contra el documento vivo comparando el primer bloque de enlace contra el octavo"
+status: executing
+stopped_at: Completed 15-01-PLAN.md — paquete de muestra aprobado por Juan
+last_updated: "2026-08-12T20:21:09.249Z"
+last_activity: 2026-08-12
+last_activity_desc: "2026-08-12, cerrado el plan 15-01 sin gastar cuota: la tuberia entera corrio sobre /servicios/hernia-discal y salio un paquete Markdown de 2483 palabras que Juan aprobo como molde de las quince guias restantes, mas la jerarquia H2/H3 y las 196 entidades obligatorias de las 16 URLs con keyword primaria, todo desde las 96 capturas ya pagadas"
 progress:
   total_phases: 4
   completed_phases: 3
-  total_plans: 14
-  completed_plans: 14
-  percent: 75
+  total_plans: 21
+  completed_plans: 15
+  percent: 71
 ---
 
 # Project State
@@ -23,16 +24,16 @@ progress:
 See: .planning/PROJECT.md (updated 2026-08-10)
 
 **Core value:** Que un paciente que busca traumatólogo/cirujano de columna en Lima encuentre el sitio y agende cita por WhatsApp en menos de 2 clics, con todo evento rastreado.
-**Current focus:** Fase 14 cerrada; arranca la fase 15, la última de v1.2. El mapa entero está publicado y sostenido: 24 URLs con keyword o con su motivo escrito de por qué no compiten, 24 canonicals y 135 enlaces internos. Lo que gobierna la fase 15 sigue viniendo de la 13 y la 14: **los cinco competidores rankean sin enlaces en sus páginas interiores**, así que el contenido es la palanca; y **tres de las cuatro páginas de servicio que v1.1 ya publicó enfrentan una SERP de contenido internacional, no de página de servicio** —`estenosis espinal` es 8 de 8—, así que la fase 15 las reescribe como guía clínica en vez de retocarles las metas.
+**Current focus:** Fase 15, la última de v1.2, en ejecución. El plan 15-01 fundó la tubería y el molde: un paquete completo por URL, generado desde el dataset y no editado a mano, con el copy clínico sellado como pendiente del doctor. Lo que gobierna lo que falta sigue viniendo de la 13 y la 14: **los cinco competidores rankean sin enlaces en sus páginas interiores**, así que el contenido es la palanca; y **tres de las cuatro páginas de servicio que v1.1 ya publicó enfrentan una SERP de contenido informativo, no de página de servicio** —`estenosis espinal` es 8 de 8—, así que se reescriben como guía clínica en vez de retocarles las metas.
 
 ## Current Position
 
-Phase: 15 de 15 por arrancar (Paquete on-page por URL), la última de las 4 fases de v1.2
-Plan: ninguno todavía. La fase 14 cerró con sus 4 planes
-Status: **Fase 14 completa.** MAP-01 a MAP-05, SHEET-02, SHEET-04 y SHEET-05 cerrados. Los tres tabs de la fase están llenos en el documento del cliente y una segunda carga de los tres no inserta ni agrega nada. Quedan **96 de 102 búsquedas de SerpApi** hasta el reset del 2026-08-21
-Last activity: 2026-08-12, cerrado el plan 14-04 con cero cuota gastada: 135 enlaces entre 22 URLs sin ninguna huérfana y sin anchors ambiguos, 24 canonicals sin repetir, y el mapeo posicional verificado leyendo el documento vivo — un mapeo por nombre habría escrito el mismo valor en los ocho bloques de enlace sin lanzar ninguna excepción
+Phase: 15 (Paquete on-page por URL) — EJECUTANDO, la última de las 4 fases de v1.2
+Plan: 2 de 7. El 15-01 cerró con el checkpoint de Juan resuelto
+Status: **Plan 15-01 completo.** ONPAGE-03 cerrado. ONPAGE-02 y ONPAGE-06 avanzados pero abiertos a propósito: el primero pide H1 por URL y hay uno de dieciséis, el segundo pide el paquete de las dieciséis y hay uno. Siguen quedando **96 de 102 búsquedas de SerpApi** hasta el reset del 2026-08-21, porque la fase no gastó ninguna
+Last activity: 2026-08-12 — cerrado el plan 15-01 con cero cuota gastada. Juan aprobó tono, formato y extensión sobre `/servicios/hernia-discal`, y las 2483 palabras de esa guía quedan como referencia de las quince que faltan
 
-Progress: [███████░░░] 75% de v1.2 · 3 de 4 fases cerradas
+Progress: [███████░░░] 71% de v1.2 · 3 de 4 fases cerradas
 
 ## Roadmap v1.2
 
@@ -91,6 +92,11 @@ Los dos milestones corren a la vez sobre el mismo repositorio.
 - **[Fase 14, plan 04] El canonical de una URL que va a redirigir es el suyo propio, no el destino del 301.** Son dos implementaciones distintas: apuntar al destino le pediria a v1.1 una etiqueta en el `<head>` de una pagina que en la misma fase se apaga. El destino de la fusion viaja en `redirigeA` y en la columna `Action`, que es donde se lee como orden.
 - **[Fase 14, plan 04] Las columnas que responde el cliente se siembran una sola vez.** `Approved?`, `Implemented?` y `Done` reciben su valor inicial en la primera carga y despues no se pisan. Un cargador que las reescribiera borraria la respuesta de Juan en cada corrida.
 - **[Fase 14, plan 04] Un criterio de aceptacion no justifica romper una decision anterior:** el criterio pedia keyword en las 24 filas y ocho no la tienen a proposito. Se estrecho el criterio a las 16 que compiten en vez de inventarles keyword a `/agendar`, `/contacto` o `/sedes`.
+- **[Fase 15, plan 01] Las preguntas de la SERP van como H3 debajo de la seccion que las responde, no como H2.** Al nivel de las secciones el indice de una guia clinica queda como una columna de interrogantes y se pierde el recorrido del paciente, que es lo que el checkpoint venia a juzgar. El plan pedia nivel 2 y Juan aprobo el nivel 3 sobre el documento real el 2026-08-12.
+- **[Fase 15, plan 01] Las entidades obligatorias salen de la frecuencia documental sobre titulos y fragmentos del top 10, no de un TF-IDF.** La captura NO trae el cuerpo de las paginas que rankean, asi que llamarlo TF-IDF venderia una medicion que no se hizo. Cada termino viaja con numerador, denominador y las posiciones concretas donde aparecio, y el umbral aplicado se registra en la fila aunque no se haya bajado.
+- **[Fase 15, plan 01] El formato de pagina lo decide la SERP salvo el prefijo `/sedes/`.** El top 10 de "cirujano de columna clinica ricardo palma" no distingue una ficha de sede de una pagina de servicio porque los dos moldes rankean igual ahi. Donde la SERP si resuelve, manda ella.
+- **[Fase 15, plan 01] El copy de referencia quedo en 2483 palabras contra un minimo de 1400**, y Juan lo confirmo como la extension objetivo de las guias restantes el 2026-08-12. El minimo por URL de `onpage-serp.json` no baja.
+- **[Fase 15, plan 01] Un plan cierra solo los requisitos que cumplio entero.** El plan declaraba ONPAGE-02, ONPAGE-03 y ONPAGE-06 y se marco ONPAGE-03: los otros dos piden algo por cada una de las 16 URLs y hay una. Marcarlos dejaria en verde la matriz de trazabilidad que el plan 15-07 tiene que auditar.
 
 ### Pending Todos
 
@@ -109,8 +115,8 @@ Los dos milestones corren a la vez sobre el mismo repositorio.
 
 ## Session Continuity
 
-Last session: 2026-08-12T03:30:00.000Z
-Stopped at: Completed 14-04-PLAN.md — fase 14 cerrada, lista para planificar la fase 15
+Last session: 2026-08-12T20:20:50.080Z
+Stopped at: Completed 15-01-PLAN.md — paquete de muestra aprobado por Juan
 Resume file: None
 
 ## Performance Metrics
@@ -126,6 +132,7 @@ Resume file: None
 | Phase 14 P01 | 50m | 3 tasks | 12 files |
 | Phase 14 P03 | ~2 h | 3 tasks | 19 files |
 | Phase 14 P04 | ~2 h | 3 tasks | 14 files |
+| Phase 15 P01 | ~2h 15min | 3 tasks | 12 files |
 
 ## Presupuesto de fuentes externas al cerrar la fase 14
 

@@ -180,11 +180,11 @@ Plans:
   4. La auditoría de DinoRank sobre el mapa propuesto devuelve cero titles duplicados, cero H1 duplicados y cero metas faltantes.
   5. Existe un paquete por URL que quien ejecute las fases 8 y 10 de v1.1 puede abrir e implementar de corrido, sin volver a este workstream a preguntar.
 
-**Plans**: 7 plans
+**Plans**: 1/7 plans executed
 
 Plans:
 
-- [ ] 15-01-PLAN.md — Jerarquía H2/H3 y entidades obligatorias de las 16 URLs desde caché, más el tracer de una página completa hasta su paquete (wave 1, checkpoint de tono con Juan)
+- [x] 15-01-PLAN.md — Jerarquía H2/H3 y entidades obligatorias de las 16 URLs desde caché, más el tracer de una página completa hasta su paquete (wave 1, checkpoint de tono con Juan)
 - [ ] 15-02-PLAN.md — Title, meta y H1 de las 24 filas, auditoría local de duplicados y las compuertas ejecutables de YMYL y humanización (wave 2)
 - [ ] 15-03-PLAN.md — Las tres guías clínicas de columna y preguntas frecuentes, con la absorción de los dos posts que se apagan (wave 3)
 - [ ] 15-04-PLAN.md — La home, el hub de servicios, ortopedia infantil y cirugía mínimamente invasiva (wave 3)
@@ -236,7 +236,7 @@ paquete de la fase 15 para su contenido y su metadata.
 | 12. Instrumentación de datos y universo de keywords | v1.2 | 5/5 | Complete | 2026-08-11 |
 | 13. Clusters, competencia y las 10 de Oro | v1.2 | 5/5 | In Progress|  |
 | 14. Mapa keyword → URL y matriz de enlazado | v1.2 | 4/4 | In Progress|  |
-| 15. Paquete on-page por URL | v1.2 | 0/7 | Planned | - |
+| 15. Paquete on-page por URL | v1.2 | 1/7 | In Progress|  |
 
 ## Cobertura de requisitos
 
