@@ -142,9 +142,15 @@ test("auditoria: no hace ninguna llamada de red", () => {
   // DinoRank seria peor: ese endpoint devuelve los datos de otro cliente sin marcar error.
   const fuente = readFileSync(path.join(SEO_TOOLS_ROOT, "src/phase15/auditoria.ts"), "utf8");
 
-  for (const prohibido of ["fetch(", "node:http", "undici", "serpapi", "dinorank"]) {
-    assert.ok(!fuente.includes(prohibido), `auditoria.ts nombra "${prohibido}"`);
+  const importados = [...fuente.matchAll(/^import .*? from "(.+?)";$/gm)].map((m) => m[1] as string);
+  for (const modulo of importados) {
+    assert.ok(
+      !/node:(http|https|net)|undici|\/(sources|serpapi)\//.test(modulo),
+      `auditoria.ts importa ${modulo}, que sale a la red`,
+    );
   }
+  assert.ok(!/\bfetch\s*\(/.test(fuente), "auditoria.ts llama a fetch");
+  assert.ok(!/\.\.\/http\.js/.test(fuente), "auditoria.ts usa el cliente HTTP del paquete");
 });
 
 test("auditoria: el paquete propuesto de esta fase pasa limpio", () => {

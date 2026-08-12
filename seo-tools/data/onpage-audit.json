@@ -1,0 +1,26 @@
+{
+  "schema": 1,
+  "titlesDuplicados": [],
+  "h1Duplicados": [],
+  "metasFaltantes": [],
+  "titlesFueraDeRango": [],
+  "metasFueraDeRango": [],
+  "keywordNoAlFrente": [],
+  "alcance": {
+    "auditadas": 22,
+    "fuera": [
+      {
+        "url": "/blog/estenosis-espinal-que-es",
+        "motivo": "Se apaga con un 301 hacia /servicios/estenosis-espinal, asi que no lleva title, meta ni H1 propios y no puede duplicar los de nadie. Queda nombrada y no borrada para que su ausencia del reporte no se lea como un olvido (D-07)."
+      },
+      {
+        "url": "/blog/hernia-discal-o-dolor-de-espalda-como-diferenciarlos",
+        "motivo": "Se apaga con un 301 hacia /servicios/hernia-discal, asi que no lleva title, meta ni H1 propios y no puede duplicar los de nadie. Queda nombrada y no borrada para que su ausencia del reporte no se lea como un olvido (D-07)."
+      }
+    ]
+  },
+  "resumen": {
+    "hallazgos": 0,
+    "limpia": true
+  }
+}
