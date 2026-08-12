@@ -125,14 +125,14 @@
     "keyField": "url",
     "keyHeader": "URL",
     "writtenBy": 14,
-    "note": "El nombre real del tab es este. 'Canonicalization Audit' es el texto del banner de la fila 1 y pedirlo a la API devuelve 400. Calza exacto con SHEET-04, sin columnas de sobra ni faltantes.",
+    "note": "El nombre real del tab es este. 'Canonicalization Audit' es el texto del banner de la fila 1 y pedirlo a la API devuelve 400. Calza exacto con SHEET-04, sin columnas de sobra ni faltantes. El plan 14-04 ato las cinco columnas que quedaban sin campo: los nombres son los de la proyeccion de `ca-push.ts`, no los del dataset crudo.",
     "columns": [
       { "header": "URL", "field": "url", "status": "fase-14" },
-      { "header": "Keyword", "field": null, "status": "fase-14" },
-      { "header": "Topic", "field": null, "status": "fase-14" },
-      { "header": "Canonical", "field": null, "status": "fase-14" },
-      { "header": "Approved?", "field": null, "status": "fase-14" },
-      { "header": "Implemented?", "field": null, "status": "fase-14" }
+      { "header": "Keyword", "field": "keyword", "status": "fase-14", "note": "La primaria con tildes. Una URL que declaro no competir escribe la decision en la celda, nunca un blanco: en el documento del cliente una celda vacia se lee como olvido." },
+      { "header": "Topic", "field": "topic", "status": "fase-14", "note": "El tema del sitio al que pertenece la URL, que es el campo `topic` del mapa. NO es el nombre del cluster: el cluster mayor se formo por transitividad y publicarlo aca agruparia bajo un mismo tema cuatro URLs que comparten CERO URLs del top 10 (D-05)." },
+      { "header": "Canonical", "field": "canonical", "status": "fase-14" },
+      { "header": "Approved?", "field": "aprobado", "status": "fase-14", "note": "Seguimiento del cliente. El cargador la SIEMBRA una sola vez, cuando la celda esta vacia, y de ahi en adelante no la vuelve a tocar: es la columna donde Juan responde." },
+      { "header": "Implemented?", "field": "implementado", "status": "fase-14", "note": "Mismo trato que `Approved?`: se siembra vacia una vez y despues queda bajo control del cliente y de v1.1." }
     ]
   },
 
