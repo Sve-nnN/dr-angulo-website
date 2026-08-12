@@ -34,7 +34,7 @@ export type EstadoDeUrl = "viva" | "planificada";
  * fase asignara keywords, asi que una pagina viva puede estar bien hecha y aun asi competir
  * por la keyword equivocada.
  */
-export type AccionDeUrl = "dejar" | "reescribir" | "crear";
+export type AccionDeUrl = "dejar" | "reescribir" | "crear" | "redirigir";
 
 /** Veredicto de inventario que el documento del cliente pide en su propia columna. */
 export type DisposicionDeUrl = "dejar" | "actualizar" | "eliminar";
@@ -55,10 +55,18 @@ export interface AsignacionDeUrl {
   readonly origen: string;
   /** Si la URL pelea por una keyword o si existe por otra razon (legal, conversion, tecnica). */
   readonly esPaginaSeo: boolean;
-  /** Texto tal como se busca. Va al documento del cliente. */
-  readonly keywordPrimaria: string;
+  /**
+   * Texto tal como se busca. Va al documento del cliente.
+   *
+   * `null` SOLO cuando `esPaginaSeo` es falso y la fila declara en `motivoSinPrimaria` por que
+   * esta URL no compite. Es la forma de meter al mapa una URL que existe y NO pelea ninguna
+   * keyword —el hub `/sedes` por decision de Juan del 2026-08-11, una URL a punto de redirigir—
+   * sin inventarle una primaria de relleno para que el conteo cierre. Un hueco declarado con su
+   * motivo es auditable; un hueco con una keyword inventada encima no se ve nunca mas.
+   */
+  readonly keywordPrimaria: string | null;
   /** Forma normalizada. Solo para deduplicar y para el upsert. NUNCA se escribe al cliente. */
-  readonly keywordPrimariaKey: string;
+  readonly keywordPrimariaKey: string | null;
   readonly secundarias: readonly string[];
   readonly intent: string;
   /** Lo que la URL es. */
@@ -68,6 +76,18 @@ export interface AsignacionDeUrl {
   readonly cluster: string | null;
   readonly clusterFuente: FuenteDeCluster | null;
   readonly accion: AccionDeUrl;
+  /**
+   * Por que ESA accion y no otra, citando lo que se leyo del contenido publicado.
+   *
+   * Obligatorio siempre y con prosa minima cuando la accion mueve contenido (`reescribir`,
+   * `redirigir`): una orden de reescritura sin motivo escrito es una orden que la fase 15 va a
+   * ejecutar sin poder discutirla.
+   */
+  readonly motivoDeAccion: string;
+  /** Por que esta URL no pelea ninguna keyword. Obligatorio cuando no hay primaria. */
+  readonly motivoSinPrimaria: string | null;
+  /** URL destino del 301. Obligatorio cuando la accion es `redirigir`. */
+  readonly redirigeA: string | null;
   readonly dejarActualizarEliminar: DisposicionDeUrl;
   /** URL canonica absoluta. */
   readonly canonical: string;
@@ -78,7 +98,15 @@ export interface AsignacionDeUrl {
 }
 
 const ESTADOS: ReadonlySet<string> = new Set<EstadoDeUrl>(["viva", "planificada"]);
-const ACCIONES: ReadonlySet<string> = new Set<AccionDeUrl>(["dejar", "reescribir", "crear"]);
+const ACCIONES: ReadonlySet<string> = new Set<AccionDeUrl>([
+  "dejar",
+  "reescribir",
+  "crear",
+  "redirigir",
+]);
+
+/** Prosa minima de un motivo para que sea auditable y no una etiqueta. */
+export const MINIMO_DE_MOTIVO = 30;
 const DISPOSICIONES: ReadonlySet<string> = new Set<DisposicionDeUrl>([
   "dejar",
   "actualizar",
@@ -150,16 +178,52 @@ export function validarAsignacion(registro: unknown, donde: string): AsignacionD
     }
     return valor;
   });
-  if (secundarias.length < MIN_SECUNDARIAS || secundarias.length > MAX_SECUNDARIAS) {
+  const esPaginaSeo = r["esPaginaSeo"];
+  if (typeof esPaginaSeo !== "boolean") {
+    throw new AsignacionInvalida(`${donde} (${url}): "esPaginaSeo" tiene que ser booleano.`);
+  }
+
+  // La primaria puede faltar, y SOLO en un caso: la URL declara que no es objetivo de
+  // posicionamiento y escribe por que. Todo lo demas sigue igual de exigido que antes.
+  const primaria = texto(r["keywordPrimaria"]);
+  const primariaKey = texto(r["keywordPrimariaKey"]);
+  const motivoSinPrimaria = texto(r["motivoSinPrimaria"]);
+
+  if (primaria === null || primariaKey === null) {
+    if (primaria !== null || primariaKey !== null) {
+      throw new AsignacionInvalida(
+        `${donde} (${url}): "keywordPrimaria" y "keywordPrimariaKey" van las dos o no va ninguna. ` +
+          `Una sola de las dos deja una fila que se deduplica por una clave que no corresponde a ` +
+          `ningun texto, o que le escribe al cliente un texto que el mapa no puede rastrear.`,
+      );
+    }
+    if (esPaginaSeo) {
+      throw new AsignacionInvalida(
+        `${donde} (${url}): declara "esPaginaSeo": true y no trae keyword primaria. Una pagina ` +
+          `que es objetivo de posicionamiento y no dice por que keyword pelea es exactamente la ` +
+          `fila que canibaliza sin que nadie lo note. Si la URL no compite, marcarla ` +
+          `"esPaginaSeo": false y escribir "motivoSinPrimaria".`,
+      );
+    }
+    if (motivoSinPrimaria === null || motivoSinPrimaria.trim().length < MINIMO_DE_MOTIVO) {
+      throw new AsignacionInvalida(
+        `${donde} (${url}): sin keyword primaria hace falta "motivoSinPrimaria" con al menos ` +
+          `${MINIMO_DE_MOTIVO} caracteres de prosa. Un hueco declarado con su motivo es una ` +
+          `decision auditable; un hueco a secas se lee como un olvido en la verificacion de fase.`,
+      );
+    }
+    if (secundarias.length > 0) {
+      throw new AsignacionInvalida(
+        `${donde} (${url}): no tiene primaria y trae ${secundarias.length} secundarias. Las ` +
+          `secundarias salen del cluster de la primaria: sin primaria no hay de donde sacarlas y ` +
+          `lo que quedaria es una lista de keywords que la URL no pelea.`,
+      );
+    }
+  } else if (secundarias.length < MIN_SECUNDARIAS || secundarias.length > MAX_SECUNDARIAS) {
     throw new AsignacionInvalida(
       `${donde} (${url}): trae ${secundarias.length} secundarias y MAP-01 exige de ` +
         `${MIN_SECUNDARIAS} a ${MAX_SECUNDARIAS}.`,
     );
-  }
-
-  const esPaginaSeo = r["esPaginaSeo"];
-  if (typeof esPaginaSeo !== "boolean") {
-    throw new AsignacionInvalida(`${donde} (${url}): "esPaginaSeo" tiene que ser booleano.`);
   }
 
   const tipoExigido = r["tipoExigidoPorSerp"];
@@ -172,21 +236,52 @@ export function validarAsignacion(registro: unknown, donde: string): AsignacionD
     );
   }
 
+  const accion = exigirEnum("accion", ACCIONES) as AccionDeUrl;
+  const motivoDeAccion = exigirTexto("motivoDeAccion");
+  if (
+    (accion === "reescribir" || accion === "redirigir") &&
+    motivoDeAccion.trim().length < MINIMO_DE_MOTIVO
+  ) {
+    throw new AsignacionInvalida(
+      `${donde} (${url}): la accion "${accion}" mueve contenido publicado y su ` +
+        `"motivoDeAccion" trae ${motivoDeAccion.trim().length} caracteres, por debajo de ` +
+        `${MINIMO_DE_MOTIVO}. La fase 15 ejecuta esta orden: sin el motivo escrito no puede ` +
+        `discutirla ni verificarla contra el contenido del que salio.`,
+    );
+  }
+
+  const redirigeA = texto(r["redirigeA"]);
+  if (accion === "redirigir" && (redirigeA === null || !redirigeA.startsWith("/"))) {
+    throw new AsignacionInvalida(
+      `${donde} (${url}): la accion "redirigir" exige "redirigeA" con la ruta destino del 301. ` +
+        `Un redirect sin destino escrito es una URL que se apaga y no llega a ningun lado.`,
+    );
+  }
+  if (accion !== "redirigir" && redirigeA !== null) {
+    throw new AsignacionInvalida(
+      `${donde} (${url}): trae "redirigeA" y su accion es "${accion}". El destino de un 301 solo ` +
+        `tiene sentido cuando hay 301.`,
+    );
+  }
+
   return {
     url,
     titulo: exigirTexto("titulo"),
     estado: exigirEnum("estado", ESTADOS) as EstadoDeUrl,
     origen: exigirTexto("origen"),
     esPaginaSeo,
-    keywordPrimaria: exigirTexto("keywordPrimaria"),
-    keywordPrimariaKey: exigirTexto("keywordPrimariaKey"),
+    keywordPrimaria: primaria,
+    keywordPrimariaKey: primariaKey,
     secundarias,
     intent: exigirTexto("intent"),
     tipoDePagina: exigirTexto("tipoDePagina"),
     tipoExigidoPorSerp: texto(tipoExigido),
     cluster: texto(cluster),
     clusterFuente: clusterFuente === null ? null : (String(clusterFuente) as FuenteDeCluster),
-    accion: exigirEnum("accion", ACCIONES) as AccionDeUrl,
+    accion,
+    motivoDeAccion,
+    motivoSinPrimaria,
+    redirigeA,
     dejarActualizarEliminar: exigirEnum(
       "dejarActualizarEliminar",
       DISPOSICIONES,

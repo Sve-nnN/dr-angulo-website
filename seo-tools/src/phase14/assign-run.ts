@@ -24,6 +24,16 @@ import { booleana, ejecutar, parseBanderas, texto } from "../phase13/args.js";
 import { cargarIndiceDeSerp } from "./overlap.js";
 import { validarAsignacion, type AsignacionDeUrl } from "./model.js";
 import {
+  RESTO,
+  entraAlMapa,
+  filasSinPrimaria,
+  resolverAccion,
+  temaPublicadoDe,
+  verificarCandidataAlcanzable,
+  verificarPostDeCaptacion,
+  verificarUrlDeConversion,
+} from "./audit.js";
+import {
   asignar,
   type EspecificacionDeUrl,
   type KeywordDeOro,
@@ -268,9 +278,12 @@ async function main(): Promise<number> {
   const banderas = parseBanderas(process.argv.slice(2));
   const scope = texto(banderas, "scope") ?? "handoff";
   const destino = texto(banderas, "out") ?? "data/url-map.jsonl";
-  if (scope !== "handoff") {
-    throw new CliError(`--scope solo admite "handoff" en el plan 14-02, y llego "${scope}".`);
+  if (scope !== "handoff" && scope !== "resto") {
+    throw new CliError(
+      `--scope admite "handoff" (plan 14-02) y "resto" (plan 14-03), y llego "${scope}".`,
+    );
   }
+  const lote = scope === "handoff" ? HANDOFF : RESTO;
 
   const universo = leerJsonl<RegistroDeKeyword>("keywords-13.jsonl");
   const puntoDulce = leerJsonl<RegistroDePuntoDulce>("sweet-spot.jsonl");
@@ -278,15 +291,35 @@ async function main(): Promise<number> {
   const tipos = leerJson<ArchivoDeTipos>("page-type-map.json");
   const inventario = leerJson<ArchivoDeInventario>("url-inventory.json");
 
+  // Los tres guardarrailes de la auditoria corren ANTES de asignar, no despues: una URL de
+  // conversion con keyword de captacion o una URL sin candidata tienen que romper la corrida
+  // antes de que nada llegue al archivo que despues se carga al documento del cliente.
+  for (const spec of lote) {
+    if (!entraAlMapa(spec.url)) {
+      throw new CliError(`${spec.url} esta declarada fuera del mapa y aparece en el lote "${scope}".`);
+    }
+    verificarCandidataAlcanzable(spec.url, spec.candidatas);
+    for (const clave of spec.candidatas) {
+      const k = universo.find((x) => x.keywordKey === clave);
+      verificarUrlDeConversion(spec.url, spec.familia, k?.keyword ?? clave);
+      verificarPostDeCaptacion(
+        spec.url,
+        spec.familia,
+        k?.keyword ?? clave,
+        tipos.cabezas.find((c) => c.keywordKey === clave)?.tipoDePagina ?? null,
+      );
+    }
+  }
+
   // Solo se indexan las cabezas que participan del veredicto: las primarias del lote. Cargar
   // las 91 seria pagar lecturas de cache que ningun par de este plan va a comparar.
-  const primarias = HANDOFF.flatMap((s) => s.candidatas);
+  const primarias = lote.flatMap((s) => s.candidatas);
   const indice = await cargarIndiceDeSerp(
     primarias.map((clave) => universo.find((k) => k.keywordKey === clave)?.keyword ?? clave),
   );
 
   const resultado = asignar({
-    especificaciones: HANDOFF,
+    especificaciones: lote,
     universo,
     oro: oro.keywords,
     sedesDeOro: oro.sedes,
@@ -307,12 +340,43 @@ async function main(): Promise<number> {
     existentes = [];
   }
 
-  const fundidas = fundir(existentes, resultado.asignaciones);
+  // La accion la reescribe la auditoria cuando hay contenido publicado que citar: `assign.ts`
+  // deduce `dejar` o `reescribir` de los campos del mapa, y la auditoria ademas trae la frase
+  // textual del archivo del que salio. Donde no se audito contenido —las nueve del handoff— se
+  // conserva el motivo del asignador tal cual.
+  const auditadas = resultado.asignaciones.map((a) => {
+    const tema = temaPublicadoDe(a.url);
+    if (tema === null) return a;
+    const spec = lote.find((s) => s.url === a.url);
+    const { accion, motivoDeAccion, redirigeA } = resolverAccion({
+      url: a.url,
+      existe: a.estado === "viva",
+      familia: spec?.familia ?? "hub",
+      tema,
+      sirveHoy: spec?.sirveHoy ?? null,
+      keywordAsignadaKey: a.keywordPrimariaKey,
+      tipoDePagina: a.tipoDePagina,
+      tipoExigidoPorSerp: a.tipoExigidoPorSerp,
+      veredicto: null,
+      destinoDeRedireccion: null,
+    });
+    return {
+      ...a,
+      accion,
+      motivoDeAccion,
+      redirigeA,
+      dejarActualizarEliminar: accion === "dejar" ? ("dejar" as const) : ("actualizar" as const),
+    };
+  });
+
+  // Las filas que declaran que NO compiten entran solo con el resto: son la otra mitad de D-02.
+  const nuevas = scope === "resto" ? [...auditadas, ...filasSinPrimaria()] : auditadas;
+  const fundidas = fundir(existentes, nuevas);
   for (const [i, fila] of fundidas.entries()) validarAsignacion(fila, `salida:${i + 1}`);
 
   writeFileSync(rutaDestino, `${fundidas.map((f) => JSON.stringify(f)).join("\n")}\n`, "utf8");
 
-  out.write(`Lote: ${scope} (${resultado.asignaciones.length} URLs)\n`);
+  out.write(`Lote: ${scope} (${nuevas.length} URLs)\n`);
   out.write(`Archivo: ${destino} (${fundidas.length} lineas)\n\n`);
   for (const a of resultado.asignaciones) {
     out.write(`${a.url}\n`);
