@@ -1,0 +1,91 @@
+{
+  "schema": 1,
+  "generadoPor": "src/phase14/cannibal.ts",
+  "requisito": "MAP-02",
+  "umbralDeSolape": 3,
+  "conflictos": [],
+  "resueltos": [],
+  "sinResolver": [],
+  "paresDelMismoClusterSinSolape": [
+    {
+      "urls": [
+        "/",
+        "/sedes/consultorio-privado"
+      ],
+      "keywords": [
+        "traumatología lima",
+        "cirugía de columna surco"
+      ],
+      "cluster": "especialista-en-columna-y-trauma-en-lima",
+      "urlsCompartidas": [],
+      "umbralAplicado": 3,
+      "explicacion": "Comparten el cluster \"especialista-en-columna-y-trauma-en-lima\" y CERO URLs del top 10 medido. El cluster se formo por transitividad: quedaron encadenadas a traves de terceras keywords y nunca hubo evidencia directa entre estas dos. Google les responde cosas distintas, asi que son paginas distintas y fusionarlas colapsaria dos paginas legitimas por un artefacto del agrupamiento (D-05)."
+    },
+    {
+      "urls": [
+        "/",
+        "/servicios"
+      ],
+      "keywords": [
+        "traumatología lima",
+        "cirujano de columna lima"
+      ],
+      "cluster": "especialista-en-columna-y-trauma-en-lima",
+      "urlsCompartidas": [],
+      "umbralAplicado": 3,
+      "explicacion": "Comparten el cluster \"especialista-en-columna-y-trauma-en-lima\" y CERO URLs del top 10 medido. El cluster se formo por transitividad: quedaron encadenadas a traves de terceras keywords y nunca hubo evidencia directa entre estas dos. Google les responde cosas distintas, asi que son paginas distintas y fusionarlas colapsaria dos paginas legitimas por un artefacto del agrupamiento (D-05)."
+    },
+    {
+      "urls": [
+        "/",
+        "/servicios/ortopedia-infantil"
+      ],
+      "keywords": [
+        "traumatología lima",
+        "ortopedia infantil lima"
+      ],
+      "cluster": "especialista-en-columna-y-trauma-en-lima",
+      "urlsCompartidas": [],
+      "umbralAplicado": 3,
+      "explicacion": "Comparten el cluster \"especialista-en-columna-y-trauma-en-lima\" y CERO URLs del top 10 medido. El cluster se formo por transitividad: quedaron encadenadas a traves de terceras keywords y nunca hubo evidencia directa entre estas dos. Google les responde cosas distintas, asi que son paginas distintas y fusionarlas colapsaria dos paginas legitimas por un artefacto del agrupamiento (D-05)."
+    },
+    {
+      "urls": [
+        "/sedes/consultorio-privado",
+        "/servicios/ortopedia-infantil"
+      ],
+      "keywords": [
+        "cirugía de columna surco",
+        "ortopedia infantil lima"
+      ],
+      "cluster": "especialista-en-columna-y-trauma-en-lima",
+      "urlsCompartidas": [],
+      "umbralAplicado": 3,
+      "explicacion": "Comparten el cluster \"especialista-en-columna-y-trauma-en-lima\" y CERO URLs del top 10 medido. El cluster se formo por transitividad: quedaron encadenadas a traves de terceras keywords y nunca hubo evidencia directa entre estas dos. Google les responde cosas distintas, asi que son paginas distintas y fusionarlas colapsaria dos paginas legitimas por un artefacto del agrupamiento (D-05)."
+    },
+    {
+      "urls": [
+        "/servicios",
+        "/servicios/ortopedia-infantil"
+      ],
+      "keywords": [
+        "cirujano de columna lima",
+        "ortopedia infantil lima"
+      ],
+      "cluster": "especialista-en-columna-y-trauma-en-lima",
+      "urlsCompartidas": [],
+      "umbralAplicado": 3,
+      "explicacion": "Comparten el cluster \"especialista-en-columna-y-trauma-en-lima\" y CERO URLs del top 10 medido. El cluster se formo por transitividad: quedaron encadenadas a traves de terceras keywords y nunca hubo evidencia directa entre estas dos. Google les responde cosas distintas, asi que son paginas distintas y fusionarlas colapsaria dos paginas legitimas por un artefacto del agrupamiento (D-05)."
+    }
+  ],
+  "resumen": {
+    "urlsCruzadas": 24,
+    "paresComparados": 120,
+    "conflictos": 0,
+    "altos": 0,
+    "medios": 0,
+    "resueltos": 0,
+    "sinResolver": 0,
+    "altosSinResolucion": 0
+  }
+}
