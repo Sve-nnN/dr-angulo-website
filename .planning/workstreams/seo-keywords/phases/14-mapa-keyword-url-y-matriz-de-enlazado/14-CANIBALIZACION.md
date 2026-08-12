@@ -18,7 +18,7 @@ acumuló impresiones. No hay canibalización sobre lo indexado porque no hay his
 Construir un veredicto sobre esa respuesta vacía sería inventar un dato.
 
 La canibalización que importa en un sitio recién publicado no es la heredada: **es la que estamos
-por crear**. Un mapa que asigna 18 keywords primarias a 24 URLs decide, hoy, qué páginas van a
+por crear**. Un mapa que asigna 16 keywords primarias a 24 URLs decide, hoy, qué páginas van a
 competir entre sí durante los próximos dos años. Eso sí es medible, y es lo que se midió.
 
 **La regla que gobernó todo el cruce: dos URLs no chocan por compartir cluster.** Chocan cuando
@@ -123,7 +123,7 @@ cliente peleando una consulta que en dos semanas no va a existir.
 **Qué queda pendiente.** Volver a correr MAP-02 contra la canibalización **observada**: dos URLs
 del sitio apareciendo para la misma consulta en Search Console, con impresiones y clics reales.
 Eso es lo que `/canibalizaciones` de DinoRank devuelve cuando hay historial, y es la única forma
-de comprobar si las 18 asignaciones de este mapa se sostuvieron en la práctica.
+de comprobar si las 16 asignaciones de este mapa se sostuvieron en la práctica.
 
 **Condición que la habilita:** que `/canibalizaciones` deje de devolver `has_data: false` y
 reporte al menos una keyword. Depende de dos cosas que no están bajo control de este workstream:

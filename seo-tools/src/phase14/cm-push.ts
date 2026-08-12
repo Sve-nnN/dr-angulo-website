@@ -38,6 +38,7 @@ import { loadSheetModel, loadTabSchema, trimHeader, type TabModel } from "../she
 import { createGoogleWriteGateway, upsertRows, type WriteGateway } from "../sheets/upsert.js";
 import { normalizeKeyword } from "../keywords/normalize.js";
 import { validarAsignacion, type AsignacionDeUrl } from "./model.js";
+import { indexarAhrefs, metricasDe, type MetricasDeAhrefs, type RegistroDeAhrefs } from "./metricas.js";
 
 const TAB = "Content Model";
 const POR_DEFECTO = "data/url-map.jsonl";
@@ -83,9 +84,16 @@ export function claveDeUrl(a: AsignacionDeUrl): string {
  * Los campos que NO estan en esta proyeccion son tan importantes como los que estan: sin campo
  * en el registro, `omitirCamposAusentes` deja esa celda literalmente fuera de la peticion.
  */
-export function filaDeContentModel(a: AsignacionDeUrl): Record<string, unknown> {
+export function filaDeContentModel(
+  a: AsignacionDeUrl,
+  metricas: MetricasDeAhrefs = {},
+): Record<string, unknown> {
   const capitalizar = (valor: string): string => valor.charAt(0).toUpperCase() + valor.slice(1);
   return {
+    // Las tres metricas de Ahrefs se DESARMAN aca y no se pasan como objeto: una clave ausente
+    // significa que la celda queda fuera de la peticion y conserva lo que tuviera. Ver
+    // `metricas.ts` para por que una celda sin dato se omite en vez de mandarse vacia.
+    ...metricas,
     url: claveDeUrl(a),
     esPaginaSeo: a.esPaginaSeo ? "Sí" : "No",
     // Una URL sin primaria escribe la DECISION en la celda y no la deja en blanco. En el
@@ -100,6 +108,32 @@ export function filaDeContentModel(a: AsignacionDeUrl): Record<string, unknown> 
     accion: capitalizar(a.accion),
     dejarActualizarEliminar: capitalizar(a.dejarActualizarEliminar),
   };
+}
+
+/**
+ * Lee `ahrefs-keywords.jsonl` y lo indexa por keyword.
+ *
+ * Si el archivo no esta, la carga NO se detiene: devuelve un indice vacio y las tres columnas de
+ * Ahrefs quedan fuera de la peticion, que es exactamente el estado anterior a este cambio. El
+ * dataset de metricas es un enriquecimiento del mapa, no un requisito para publicarlo.
+ */
+export async function leerIndiceDeAhrefs(
+  ruta = "data/ahrefs-keywords.jsonl",
+): Promise<Map<string, RegistroDeAhrefs>> {
+  const candidatas = [resolveFromRepoRoot(ruta), path.resolve(SEO_TOOLS_ROOT, ruta)];
+  for (const candidata of candidatas) {
+    try {
+      const crudo = await readFile(candidata, "utf8");
+      const registros = crudo
+        .split("\n")
+        .filter((l) => l.trim() !== "")
+        .map((l) => JSON.parse(l) as RegistroDeAhrefs);
+      return indexarAhrefs(registros);
+    } catch {
+      // Se prueba la siguiente ruta.
+    }
+  }
+  return new Map();
 }
 
 /** Lee el mapa y valida cada linea contra el contrato de `model.ts`. */
@@ -193,7 +227,8 @@ async function cargar(
   // hoja son filas en blanco. Pero una fila del DATASET con clave vacia no es una fila en blanco,
   // es una URL que no va a llegar nunca al documento y cuyo resumen igual va a decir que la carga
   // salio bien. Se comprueba aca, antes de escribir, y se nombra cual.
-  const filas = asignaciones.map(filaDeContentModel);
+  const indiceAhrefs = await leerIndiceDeAhrefs();
+  const filas = asignaciones.map((a) => filaDeContentModel(a, metricasDe(a.keywordPrimaria, indiceAhrefs)));
   const sinClave = filas
     .map((f, i) => ({ url: asignaciones[i]?.url ?? "?", clave: normalizeKeyword(String(f["url"] ?? "")) }))
     .filter((x) => x.clave === "");

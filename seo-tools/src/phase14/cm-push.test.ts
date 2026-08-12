@@ -244,13 +244,46 @@ test("la proyeccion no trae campo para ninguna columna que la fase deja vacia", 
   }
   // Y al reves: cada columna de la fase SI tiene su campo, o la celda quedaria intacta y el
   // resumen diria que la fila se actualizo sin que el dato llegara.
+  //
+  // Las tres metricas de Ahrefs son la EXCEPCION deliberada y por eso se listan por nombre en vez
+  // de aflojar la regla para todas: su campo aparece solo cuando hay dato de Ahrefs para esa
+  // keyword. Una celda sin dato se omite del registro a proposito —ver `metricas.ts`— porque
+  // mandarla vacia borraria lo que el cliente hubiera escrito ahi. Listarlas nominalmente
+  // mantiene la regla estricta para cualquier columna que se agregue despues.
+  const CONDICIONALES = new Set(["volumenAhrefs", "kdAhrefs", "trafficPotentialAhrefs"]);
   for (const columna of tab.columns.filter((c: ColumnModel) => c.status === "fase-14")) {
     assert.ok(columna.field !== null, `${columna.header} tiene que declarar campo`);
+    if (CONDICIONALES.has(columna.field as string)) continue;
     assert.ok(
       (columna.field as string) in fila,
       `la proyeccion tiene que alimentar ${JSON.stringify(columna.header)}`,
     );
   }
+});
+
+test("las metricas de Ahrefs llegan a la proyeccion cuando hay dato, y se omiten cuando no", () => {
+  const conDato = filaDeContentModel(asignacion(), {
+    volumenAhrefs: 6000,
+    kdAhrefs: 5,
+    trafficPotentialAhrefs: 1500,
+  });
+  assert.equal(conDato["volumenAhrefs"], 6000);
+  assert.equal(conDato["kdAhrefs"], 5);
+  assert.equal(conDato["trafficPotentialAhrefs"], 1500);
+
+  // Sin dato, las tres claves quedan FUERA del registro. No vacias: fuera. Con
+  // `omitirCamposAusentes` eso deja la celda del documento intacta.
+  const sinDato = filaDeContentModel(asignacion());
+  assert.equal("volumenAhrefs" in sinDato, false);
+  assert.equal("kdAhrefs" in sinDato, false);
+  assert.equal("trafficPotentialAhrefs" in sinDato, false);
+});
+
+test("las metricas nunca pisan un campo propio de la proyeccion", () => {
+  // Se desarman primero justamente para que un nombre repetido lo gane el campo explicito.
+  const fila = filaDeContentModel(asignacion(), { volumenAhrefs: 6000 } as never);
+  assert.equal(fila["url"] !== undefined, true);
+  assert.equal(fila["accion"] !== undefined, true);
 });
 
 test("cargar dos veces actualiza la fila en lugar de duplicarla", async () => {

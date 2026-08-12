@@ -127,8 +127,13 @@ Ricardo Palma, Sanna La Molina, Padre Luis Tezza), más el hub `/servicios` refo
 
 ### Mapa keyword → URL (MAP)
 
-- [x] **MAP-01**: Cada una de las 18 URLs mapeables tiene exactamente una keyword primaria
-  asignada y de tres a cinco secundarias
+- [x] **MAP-01**: Cada una de las 20 URLs mapeables tiene exactamente una keyword primaria
+  asignada y de tres a cinco secundarias, o declara por escrito por qué no compite
+  <br>*(El roadmap estimó 18 mapeables; el inventario medido de la fase 14 encontró 20 sobre 22
+  URLs vivas. La diferencia se registra tal cual en `seo-tools/data/url-inventory.json` en vez de
+  ajustar la medición a la expectativa. De esas 20, doce pelean una primaria y ocho declaran por
+  escrito por qué no compiten. El mapa suma además las cuatro URLs por crear, todas con primaria:
+  24 filas y 16 primarias en total.)*
 
 - [x] **MAP-02**: Ninguna keyword primaria está asignada a dos URLs — la canibalización
   está detectada y resuelta antes de asignar
@@ -244,7 +249,7 @@ Mapeada por `ROADMAP.md` del workstream `seo-keywords` el 2026-08-10.
 | ONPAGE-05 | Fase 15 | Pendiente |
 | ONPAGE-06 | Fase 15 | Pendiente — handoff de contenido para las fases 8 y 10 de v1.1 |
 | SHEET-01 | Fase 13 | **Completo** |
-| SHEET-02 | Fase 14 | **Completo** (plan 14-03) — 24 filas vivas en `Content Model` |
+| SHEET-02 | Fase 14 | **Completo** (planes 14-03 y 14-05) — 24 filas vivas en `Content Model`. Las tres métricas de Ahrefs se llenan solo donde la procedencia es `ahrefs`: 24 celdas con dato y 48 vacías a propósito. Las de GSC siguen vacías porque el sitio no tiene impresiones |
 | SHEET-03 | Fase 13 | **Completo** |
 | SHEET-04 | Fase 14 | **Completo** (plan 14-04) — 24 filas en `Canonical Audit` |
 | SHEET-05 | Fase 14 | **Completo** (plan 14-04) — 22 filas en `Internal Linking Audit`, mapeo posicional verificado |
