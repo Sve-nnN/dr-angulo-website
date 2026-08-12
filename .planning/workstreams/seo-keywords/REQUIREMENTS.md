@@ -139,7 +139,7 @@ Ricardo Palma, Sanna La Molina, Padre Luis Tezza), más el hub `/servicios` refo
 - [x] **MAP-04**: Cada asignación declara el tipo de página que la SERP exige y si la URL
   actual lo cumple, la hay que reescribir o hay que crearla
 
-- [ ] **MAP-05**: Está definida la matriz de enlazado interno entre clusters: qué URL
+- [x] **MAP-05**: Está definida la matriz de enlazado interno entre clusters: qué URL
   enlaza a cuál y con qué anchor
 
 ### Optimización on-page (ONPAGE)
@@ -173,10 +173,10 @@ Ricardo Palma, Sanna La Molina, Padre Luis Tezza), más el hub `/servicios` refo
 - [x] **SHEET-03**: El tab `Competitor Analysis` tiene los cinco competidores con sus
   stats, keywords, snippets, páginas principales y contenido más enlazado
 
-- [ ] **SHEET-04**: El tab `Canonical Audit` tiene una fila por URL con su keyword,
+- [x] **SHEET-04**: El tab `Canonical Audit` tiene una fila por URL con su keyword,
   topic y canonical propuesto
 
-- [ ] **SHEET-05**: El tab `Internal Linking Audit` tiene una fila por URL con hasta ocho
+- [x] **SHEET-05**: El tab `Internal Linking Audit` tiene una fila por URL con hasta ocho
   enlaces salientes propuestos y su anchor
 
 - [x] **SHEET-06**: Reejecutar la carga actualiza las filas existentes en vez de duplicarlas
@@ -232,22 +232,22 @@ Mapeada por `ROADMAP.md` del workstream `seo-keywords` el 2026-08-10.
 | COMP-02 | Fase 13 | Pendiente |
 | COMP-03 | Fase 13 | Pendiente |
 | COMP-04 | Fase 13 | Pendiente |
-| MAP-01 | Fase 14 | Parcial — 9 de 21 URLs (plan 14-02). `/sedes` sin primaria por decisión de Juan |
-| MAP-02 | Fase 14 | Pendiente |
+| MAP-01 | Fase 14 | **Completo** (plan 14-03) — las 20 URLs mapeables; 8 declaran por escrito por qué no compiten |
+| MAP-02 | Fase 14 | **Completo** (plan 14-03) — 120 pares cruzados, cero conflictos. Revisión con datos de Search Console diferida en D-1 |
 | MAP-03 | Fase 14 | **Completo** (plan 14-02) — handoff entregado en `14-HANDOFF-V11.md` |
-| MAP-04 | Fase 14 | Parcial — 9 de 21 URLs (plan 14-02) |
-| MAP-05 | Fase 14 | Pendiente |
+| MAP-04 | Fase 14 | **Completo** (plan 14-03) — las 20 URLs mapeables |
+| MAP-05 | Fase 14 | **Completo** (plan 14-04) — 135 enlaces entre 22 URLs, en `14-ENLAZADO.md` |
 | ONPAGE-01 | Fase 15 | Pendiente |
 | ONPAGE-02 | Fase 15 | Pendiente |
 | ONPAGE-03 | Fase 15 | Pendiente |
 | ONPAGE-04 | Fase 15 | Pendiente |
 | ONPAGE-05 | Fase 15 | Pendiente |
 | ONPAGE-06 | Fase 15 | Pendiente — handoff de contenido para las fases 8 y 10 de v1.1 |
-| SHEET-01 | Fase 13 | Pendiente |
-| SHEET-02 | Fase 14 | Parcial — 9 filas vivas en `Content Model`, idempotencia probada (plan 14-02) |
-| SHEET-03 | Fase 13 | Pendiente |
-| SHEET-04 | Fase 14 | Pendiente |
-| SHEET-05 | Fase 14 | Pendiente |
+| SHEET-01 | Fase 13 | **Completo** |
+| SHEET-02 | Fase 14 | **Completo** (plan 14-03) — 24 filas vivas en `Content Model` |
+| SHEET-03 | Fase 13 | **Completo** |
+| SHEET-04 | Fase 14 | **Completo** (plan 14-04) — 24 filas en `Canonical Audit` |
+| SHEET-05 | Fase 14 | **Completo** (plan 14-04) — 22 filas en `Internal Linking Audit`, mapeo posicional verificado |
 | SHEET-06 | Fase 12 | Completo (12-02, verificado contra el documento real en 12-04) |
 
 ### Resumen por fase

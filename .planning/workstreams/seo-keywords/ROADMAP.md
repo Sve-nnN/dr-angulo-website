@@ -49,8 +49,8 @@ tabs `Keyword Research`, `Content Model`, `Competitor Analysis`, `Canonical Audi
 ## Phases
 
 - [x] **Phase 12: Instrumentación de datos y universo de keywords** - Las tres fuentes conectadas y cacheadas, escritura automática en el Sheet y 400+ keywords con métricas e intención
-- [ ] **Phase 13: Clusters, competencia y las 10 de Oro** - El universo plano se vuelve clusters por solape de SERP, con los cinco competidores perfilados y la lista corta de keywords alcanzables
-- [ ] **Phase 14: Mapa keyword → URL y matriz de enlazado** - Una keyword primaria por URL sin canibalización, tipo de página exigido por la SERP y enlazado interno entre clusters (handoff bloqueante para la fase 8 de v1.1)
+- [x] **Phase 13: Clusters, competencia y las 10 de Oro** - El universo plano se vuelve clusters por solape de SERP, con los cinco competidores perfilados y la lista corta de keywords alcanzables
+- [x] **Phase 14: Mapa keyword → URL y matriz de enlazado** - Una keyword primaria por URL sin canibalización, tipo de página exigido por la SERP y enlazado interno entre clusters (handoff bloqueante para la fase 8 de v1.1)
 - [ ] **Phase 15: Paquete on-page por URL** - Title, meta, H1, jerarquía, entidades TF-IDF y copy clínico humanizado, listos para que v1.1 los implemente sin decidir nada
 
 ## Phase Details
@@ -135,22 +135,28 @@ Plans:
   4. Cada asignación declara qué tipo de página exige la SERP y qué hay que hacer con la URL: dejarla como está, reescribirla o crearla.
   5. Los tabs `Content Model`, `Canonical Audit` e `Internal Linking Audit` tienen una fila por URL con keyword, intención, tipo, cluster, métricas, acción recomendada, canonical propuesto y hasta ocho enlaces salientes con su anchor; recargarlos no duplica filas.
 
-**Plans**: 3/4 plans executed
+**Plans**: 4/4 plans executed
 
 Plans:
 
 - [x] 14-01-PLAN.md — Inventario medido de URLs, solape par a par y tracer de una URL hasta `Content Model` (wave 1, cero cuota)
 - [x] 14-02-PLAN.md — MAP-03: las nueve URLs del handoff asignadas, aprobadas por Juan y publicadas, con el aviso de desbloqueo a v1.1 (wave 2)
 - [x] 14-03-PLAN.md — Auditoría de las URLs vivas, canibalización por cruce del mapa contra sí mismo y `Content Model` completo (wave 3)
-- [ ] 14-04-PLAN.md — Canonicals, matriz de enlazado interno y los tabs `Canonical Audit` e `Internal Linking Audit` (wave 4)
+- [x] 14-04-PLAN.md — Canonicals, matriz de enlazado interno y los tabs `Canonical Audit` e `Internal Linking Audit` (wave 4)
 
-> **HANDOFF BLOQUEANTE — MAP-03.**
-> La fase 8 de v1.1 (silo clínico: páginas por servicio) **no debe empezar a escribir páginas
-> de servicio hasta que esta fase cierre**. Las nueve URLs que la fase 8 y la fase 9 van a crear
-> necesitan su keyword primaria asignada antes de existir; si se escriben primero y se
-> optimizan después, se paga dos veces el mismo trabajo y se arrastra canibalización desde el
-> día uno. Al cerrar la fase 14 hay que avisar explícitamente al workstream `milestone` de que
-> el mapa está disponible.
+> **HANDOFF BLOQUEANTE — MAP-03: ENTREGADO el 2026-08-11. La fase está cerrada.**
+> El aviso autocontenido para la fase 8 de v1.1 es
+> `phases/14-mapa-keyword-url-y-matriz-de-enlazado/14-HANDOFF-V11.md`. La matriz de enlazado
+> (MAP-05) se entregó el 2026-08-12 en `14-ENLAZADO.md`, también como especificación para que
+> v1.1 la implemente.
+>
+> **Lo que pasó de verdad, y queda escrito porque cambia la fase 15.** El bloqueo se violó: v1.1
+> publicó las cuatro páginas de servicio el 2026-08-10, antes de que esta fase asignara ninguna
+> keyword. No se paga dos veces el trabajo por casualidad, se paga: la fase 15 tiene que
+> reescribir once URLs en vez de escribirlas bien la primera vez. Además, tres de esas cuatro
+> páginas enfrentan una SERP de contenido informativo y no de página de servicio, así que lo
+> publicado no tiene el formato que Google premia. Corregible desde la fase 15; no recuperable
+> sin reescribir.
 
 **Notas de ejecución**
 
@@ -209,7 +215,7 @@ paquete de la fase 15 para su contenido y su metadata.
 |-------|-----------|----------------|--------|-----------|
 | 12. Instrumentación de datos y universo de keywords | v1.2 | 5/5 | Complete | 2026-08-11 |
 | 13. Clusters, competencia y las 10 de Oro | v1.2 | 5/5 | In Progress|  |
-| 14. Mapa keyword → URL y matriz de enlazado | v1.2 | 3/4 | In Progress|  |
+| 14. Mapa keyword → URL y matriz de enlazado | v1.2 | 4/4 | In Progress|  |
 | 15. Paquete on-page por URL | v1.2 | 0/TBD | Not started | - |
 
 ## Cobertura de requisitos

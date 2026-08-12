@@ -44,5 +44,18 @@ olvido con mejor nombre.
 ## D-5 · Auditoría on-page con `/auditoria` de DinoRank
 
 - **Origen:** fase 15, ONPAGE-05.
-- **Condición que la habilita:** que DinoRank termine de rastrear el sitio.
-- **Fecha de revisión:** con el arranque de la fase 15.
+- **Condición que la habilita:** que `drangulocolumna.com` esté dado de alta como proyecto en
+  DinoRank y que el rastreo haya terminado. Hoy `/auditoria` responde HTTP 500 con un dominio que
+  no es proyecto de la cuenta.
+- **Fecha de revisión:** **vencida — se activa ahora.** La fase 14 cerró el 2026-08-12 y la 15 es
+  la siguiente. Es lo primero que hay que resolver al planificarla, porque ONPAGE-05 no se puede
+  cerrar sin este endpoint y no lo destraba el tooling: hay que darlo de alta a mano.
+
+## D-6 · Seis nodos de la matriz sin anchor optimizado
+
+- **Origen:** fase 14, plan 14-04 (MAP-05), heredado de 14-03.
+- **Por qué:** seis URLs no tienen keywords secundarias medidas, así que su anchor sale de lo que
+  hay en vez de la keyword que convendría. No invalida la matriz: los 135 enlaces cumplen que
+  ningún anchor apunte a dos destinos y que ninguna URL quede huérfana.
+- **Condición que la habilita:** que la fase 15 derive las secundarias por URL para ONPAGE-03.
+- **Fecha de revisión:** con el cierre de ONPAGE-03 en la fase 15.

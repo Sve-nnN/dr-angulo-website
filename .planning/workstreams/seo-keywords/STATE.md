@@ -2,18 +2,18 @@
 gsd_state_version: 1.0
 milestone: v1.2
 milestone_name: "SEO semantico: keyword research y optimizacion on-page"
-current_phase: 14
-current_phase_name: Mapa keyword → URL y matriz de enlazado
+current_phase: 15
+current_phase_name: Paquete on-page por URL
 status: in_progress
-stopped_at: Completed 14-03-PLAN.md
-last_updated: "2026-08-12T01:46:40.083Z"
-last_activity: "2026-08-11, cerrado el plan 14-03 con cero cuota gastada: el mapa cubre las 20 URLs mapeables, ocho de ellas declarando por escrito por que no compiten; el cruce de 120 pares da cero canibalizacion; dos posts del blog se funden con su guia y redirigen; y se atrapo que la home nunca habia llegado al documento del cliente porque su clave normalizaba a cadena vacia"
+stopped_at: Completed 14-04-PLAN.md — fase 14 cerrada
+last_updated: "2026-08-12T03:30:00.000Z"
+last_activity: "2026-08-12, cerrado el plan 14-04 y con el la fase 14 entera, sin gastar cuota: los 135 enlaces de la matriz y los 24 canonicals estan publicados, y el mapeo posicional del tab Internal Linking Audit quedo verificado contra el documento vivo comparando el primer bloque de enlace contra el octavo"
 progress:
   total_phases: 4
-  completed_phases: 2
+  completed_phases: 3
   total_plans: 14
-  completed_plans: 13
-  percent: 50
+  completed_plans: 14
+  percent: 75
 ---
 
 # Project State
@@ -23,16 +23,16 @@ progress:
 See: .planning/PROJECT.md (updated 2026-08-10)
 
 **Core value:** Que un paciente que busca traumatólogo/cirujano de columna en Lima encuentre el sitio y agende cita por WhatsApp en menos de 2 clics, con todo evento rastreado.
-**Current focus:** Fase 14 en curso. El inventario del sitio, el tipo de página exigido por la SERP y el guardarraíl de fusión ya están cerrados, sin gastar cuota. Hallazgo que reordena el plan 14-02: **tres de las cuatro páginas de servicio que v1.1 ya publicó enfrentan una SERP de contenido internacional, no de página de servicio** —`estenosis espinal` es 8 de 8—, así que el formato publicado no es el que Google premia. Se arrastra de la fase 13: los cinco competidores rankean **sin enlaces** en sus páginas interiores, así que el contenido es la palanca y no el linkbuilding.
+**Current focus:** Fase 14 cerrada; arranca la fase 15, la última de v1.2. El mapa entero está publicado y sostenido: 24 URLs con keyword o con su motivo escrito de por qué no compiten, 24 canonicals y 135 enlaces internos. Lo que gobierna la fase 15 sigue viniendo de la 13 y la 14: **los cinco competidores rankean sin enlaces en sus páginas interiores**, así que el contenido es la palanca; y **tres de las cuatro páginas de servicio que v1.1 ya publicó enfrentan una SERP de contenido internacional, no de página de servicio** —`estenosis espinal` es 8 de 8—, así que la fase 15 las reescribe como guía clínica en vez de retocarles las metas.
 
 ## Current Position
 
-Phase: 14 de 15 en curso (Mapa keyword → URL y matriz de enlazado), tercera de las 4 fases de v1.2
-Plan: 14-01 y 14-02 cerrados. Sigue 14-03, que completa el resto del mapa y cruza la canibalizacion
-Status: **MAP-03 cerrado y v1.1 desbloqueada.** MAP-01, MAP-04 y SHEET-02 satisfechos para las nueve del handoff: el mapa cubre 9 de 21 URLs y el Sheet del cliente ya tiene nueve filas vivas en `Content Model`, con idempotencia probada. Quedan **30 búsquedas de SerpApi** hasta el reset del 2026-08-21
-Last activity: 2026-08-11, cerrado el plan 14-02 con cero cuota gastada: las nueve URLs del handoff estan asignadas y publicadas, existe `14-HANDOFF-V11.md` para la fase 8 de v1.1, y la intencion de cada URL pasa a salir del top 10 medido en vez de la familia de la URL (tres paginas de servicio cambiaron a informacional)
+Phase: 15 de 15 por arrancar (Paquete on-page por URL), la última de las 4 fases de v1.2
+Plan: ninguno todavía. La fase 14 cerró con sus 4 planes
+Status: **Fase 14 completa.** MAP-01 a MAP-05, SHEET-02, SHEET-04 y SHEET-05 cerrados. Los tres tabs de la fase están llenos en el documento del cliente y una segunda carga de los tres no inserta ni agrega nada. Quedan **96 de 102 búsquedas de SerpApi** hasta el reset del 2026-08-21
+Last activity: 2026-08-12, cerrado el plan 14-04 con cero cuota gastada: 135 enlaces entre 22 URLs sin ninguna huérfana y sin anchors ambiguos, 24 canonicals sin repetir, y el mapeo posicional verificado leyendo el documento vivo — un mapeo por nombre habría escrito el mismo valor en los ocho bloques de enlace sin lanzar ninguna excepción
 
-Progress: [█████████░] 93% de la fase 14 (3 de 4 planes) · 2 de 4 fases de v1.2 cerradas
+Progress: [███████░░░] 75% de v1.2 · 3 de 4 fases cerradas
 
 ## Roadmap v1.2
 
@@ -49,8 +49,8 @@ Los dos milestones corren a la vez sobre el mismo repositorio.
 
 - **v1.2 manda en keywords y textos; v1.1 manda en código.** Ninguna fase de v1.2 escribe en `src/`.
 - **Handoff bloqueante — MAP-03 (fase 14): RESUELTO el 2026-08-11.** Las nueve URLs (cuatro de servicio, cuatro de sede y el hub `/servicios`) tienen keyword asignada y publicada. El aviso autocontenido para la fase 8 de v1.1 es `.planning/workstreams/seo-keywords/phases/14-mapa-keyword-url-y-matriz-de-enlazado/14-HANDOFF-V11.md`, e incluye el renombre de `/servicios/escoliosis` a `/servicios/escoliosis-y-deformidades`, que arrastra 301, sitemap y enlaces internos.
-- **Handoff de contenido — ONPAGE-06 (fase 15):** el paquete por URL es lo que implementan las fases 8 y 10 de v1.1.
-- Dentro de la fase 14, resolver MAP-03 primero para desbloquear la fase 8 lo antes posible.
+- **Handoff de enlazado — MAP-05 (fase 14): ENTREGADO el 2026-08-12.** Los 135 enlaces internos entre 22 URLs son **especificación, no implementación**: v1.1 los escribe en el código. La matriz legible está en `phases/14-mapa-keyword-url-y-matriz-de-enlazado/14-ENLAZADO.md` y el dataset en `seo-tools/data/internal-links.json`. Dos posts del blog se funden con su guía y redirigen, así que arrastran dos 301 nuevas además de la de escoliosis.
+- **Handoff de contenido — ONPAGE-06 (fase 15):** el paquete por URL es lo que implementan las fases 8 y 10 de v1.1. Es lo único que le queda pendiente a v1.2.
 - Nunca escribir en `.planning/STATE.md`, `.planning/ROADMAP.md`, `.planning/REQUIREMENTS.md` ni bajo `.planning/workstreams/milestone/`.
 
 ## Accumulated Context
@@ -86,6 +86,11 @@ Los dos milestones corren a la vez sobre el mismo repositorio.
 - [Fase 14, plan 01]: El inventario mide 22 URLs y 21 mapeables, no las 19 y 18 del roadmap. La diferencia se registra nominalmente en vez de ajustarse a la expectativa.
 - [Fase 14, plan 01]: El slug publicado es /servicios/escoliosis. El mapa se emite contra la URL que existe; renombrarla a /servicios/escoliosis-y-deformidades arrastra redirecciones y es decision de Juan en el checkpoint de 14-02.
 - [Fase 14, plan 01]: La pertenencia a un cluster no es parametro de veredictoDeFusion: solo decide el solape par a par del top 10 contra un umbral de 3.
+- **[Fase 14, plan 04] Un tab con encabezados repetidos se resuelve por posicion, y el cargador se niega a escribirlo si el modelo no lo declara.** `Title with Link` aparece ocho veces en `Internal Linking Audit`. El peligro no es que falle: es que **no** falla. Por nombre, los ocho bloques caen en la misma columna, el resumen igual reporta 22 filas actualizadas y la matriz queda destruida en silencio. La evidencia tiene que salir de leer el documento vivo y comparar el bloque 1 contra el 8 (`il-verify.ts`), porque ningun contador distingue un mapeo bueno de uno roto.
+- **[Fase 14, plan 04] El mismo riesgo entraba por `upsertRows`:** recorria `schema.byHeader.values()`, un indice por encabezado recortado que colapsaba los ocho `Title with Link` en una entrada y dejaba siete columnas sin escribir. `TabSchema.columns` es ahora la fuente de verdad de "que columnas hay"; `byHeader` queda solo para buscar una columna concreta por nombre.
+- **[Fase 14, plan 04] El canonical de una URL que va a redirigir es el suyo propio, no el destino del 301.** Son dos implementaciones distintas: apuntar al destino le pediria a v1.1 una etiqueta en el `<head>` de una pagina que en la misma fase se apaga. El destino de la fusion viaja en `redirigeA` y en la columna `Action`, que es donde se lee como orden.
+- **[Fase 14, plan 04] Las columnas que responde el cliente se siembran una sola vez.** `Approved?`, `Implemented?` y `Done` reciben su valor inicial en la primera carga y despues no se pisan. Un cargador que las reescribiera borraria la respuesta de Juan en cada corrida.
+- **[Fase 14, plan 04] Un criterio de aceptacion no justifica romper una decision anterior:** el criterio pedia keyword en las 24 filas y ocho no la tienen a proposito. Se estrecho el criterio a las 16 que compiten en vez de inventarles keyword a `/agendar`, `/contacto` o `/sedes`.
 
 ### Pending Todos
 
@@ -96,15 +101,16 @@ Los dos milestones corren a la vez sobre el mismo repositorio.
 ### Blockers/Concerns
 
 - El dominio es de agosto de 2026 y su perfil de enlaces es casi nulo. Cualquier selección de keywords que ignore eso entrega un plan que no se puede ganar en el horizonte del proyecto.
-- Las diez URLs existentes ya compiten entre sí sin que nadie lo haya decidido. La canibalización de MAP-02 no es hipotética: hay que medirla antes de asignar.
-- La fase 8 de v1.1 es la siguiente en su roadmap y depende de la fase 14 de este. Si v1.2 se demora, v1.1 se detiene o escribe páginas que después habrá que reoptimizar.
-- Contenido YMYL: nada de credenciales, cifras de cirugías ni resultados inventados. Solo lo verificado o lo que el doctor confirme por escrito.
-- El criterio del tracer pedia actualizadas: 1 en ensayo sin escribir en el Sheet, y las dos cosas se excluyen. Se respeto la restriccion: el Sheet sigue intacto y la primera escritura real es de 14-02, tras la aprobacion de Juan.
+- **Resuelto (fase 14).** La canibalización de MAP-02 se midió cruzando el mapa contra sí mismo: 120 pares, cero conflictos. La revisión con datos reales de Search Console queda como deuda D-1 con fecha al 2026-11-11.
+- **Resuelto (fase 14).** La fase 8 de v1.1 ya está desbloqueada: MAP-03 se entregó el 2026-08-11 y la matriz de enlazado el 2026-08-12.
+- **Solo quedan 6 búsquedas de SerpApi hasta el 2026-08-21.** La fase 15 necesita la SERP para derivar la jerarquía H2/H3 de ONPAGE-02. O sale de las 96 capturas ya cacheadas, o hay que esperar al reset. Planificar la fase asumiendo caché, no cuota.
+- **ONPAGE-05 depende de que DinoRank termine de rastrear el sitio** (deuda D-5) y de que `drangulocolumna.com` esté dado de alta como proyecto. Sin eso, `/auditoria` responde HTTP 500 y la auditoría de duplicados no se puede correr.
+- Contenido YMYL: nada de credenciales, cifras de cirugías ni resultados inventados. Solo lo verificado o lo que el doctor confirme por escrito. En la fase 15 esto deja de ser abstracto: ONPAGE-04 entrega copy clínico y ninguna línea sale sin el sello de pendiente de aprobación del doctor.
 
 ## Session Continuity
 
-Last session: 2026-08-12T01:46:40.075Z
-Stopped at: Completed 14-03-PLAN.md
+Last session: 2026-08-12T03:30:00.000Z
+Stopped at: Completed 14-04-PLAN.md — fase 14 cerrada, lista para planificar la fase 15
 Resume file: None
 
 ## Performance Metrics
@@ -119,13 +125,17 @@ Resume file: None
 | Phase 13 P05 | ~2h | 2 tasks | 6 files |
 | Phase 14 P01 | 50m | 3 tasks | 12 files |
 | Phase 14 P03 | ~2 h | 3 tasks | 19 files |
+| Phase 14 P04 | ~2 h | 3 tasks | 14 files |
 
-## Presupuesto de fuentes externas al cerrar la fase 12
+## Presupuesto de fuentes externas al cerrar la fase 14
+
+Las fases 13 y 14 gastaron SerpApi; la 14 entera cerró con **cero** búsquedas.
 
 | Fuente | Consumido | Disponible |
 |--------|-----------|------------|
-| SerpApi | 12 búsquedas | **115 hasta el 2026-08-21**, intactas desde el plan 12-03 |
+| SerpApi | 96 búsquedas | **6 hasta el reset del 2026-08-21.** Es el techo real de la fase 15: cualquier medición de SERP nueva hay que agendarla después del reset (deudas D-2 y D-3) |
 | DinoRank | 187 llamadas (40 del plan 03, 147 del plan 05) | Sin techo documentado; el proveedor no expone endpoint de saldo. El control es el libro de cuota persistido en `seo-tools/.cache/_quota.json` |
 
-186 respuestas de DinoRank y 12 capturas de SERP quedan en caché: reprocesar el universo
-completo cuesta **cero llamadas**, verificado sobre las 5716 keywords.
+186 respuestas de DinoRank y 96 capturas de SERP quedan en caché: reprocesar el universo
+completo cuesta **cero llamadas**, verificado sobre las 5716 keywords. Es lo que permitió que la
+fase 14 entera —cuatro planes— corriera sin gastar una búsqueda.
