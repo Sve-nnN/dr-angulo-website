@@ -359,7 +359,12 @@ export async function upsertRows(
   const estadosPropios = new Set<ColumnStatus>(
     options.estadosPropios ?? ESTADOS_PROPIOS_POR_DEFECTO,
   );
-  const propias = [...schema.byHeader.values()].filter((c) => estadosPropios.has(c.status));
+  //
+  // Se recorre `schema.columns` y NO `byHeader.values()`: el indice por nombre colapsa los
+  // encabezados repetidos y en un tab como `Internal Linking Audit`, donde `Title with Link`
+  // aparece ocho veces, dejaria siete columnas fuera de toda escritura sin lanzar nada
+  // (T-14-14).
+  const propias = schema.columns.filter((c) => estadosPropios.has(c.status));
   const runs = columnRuns(propias.map((c) => c.index));
 
   // Deduplicacion del propio dataset: dos escrituras de la misma keyword, una con tildes y
