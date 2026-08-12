@@ -145,3 +145,42 @@ Para que la fase 8 no espere por algo que no va a llegar de acá:
 El copy médico entra bajo la restricción YMYL del proyecto: solo lo verificado, sin afirmar
 credenciales, cifras ni resultados. Vale también para las tres guías clínicas nuevas, que por
 ser largas dan mucho más espacio para afirmar de más.
+
+---
+
+## Actualización del plan 14-03 (2026-08-11): lo que cambia para v1.1
+
+El mapa se completó sobre las 20 URLs mapeables. Tres cosas nuevas que son trabajo de v1.1.
+
+### 1. Dos redirecciones 301 nuevas, además de la de escoliosis
+
+| Desde | Hacia | Por qué |
+|---|---|---|
+| `/servicios/escoliosis` | `/servicios/escoliosis-y-deformidades` | Ya avisado arriba. Renombre de slug. |
+| `/blog/estenosis-espinal-que-es` | `/servicios/estenosis-espinal` | El post se funde con la guía clínica: cubre el mismo temario y el propio texto remite dos veces a "la guía completa". |
+| `/blog/hernia-discal-o-dolor-de-espalda-como-diferenciarlos` | `/servicios/hernia-discal` | Mismo caso: su ángulo diferencial ya vive dentro de la guía. |
+
+**Antes de redirigir, el contenido de los dos posts se funde dentro de su guía.** Redirigir sin
+fundir tira el contenido a la basura. El orden es: fase 15 escribe la guía larga incorporando el
+material del post, y recién entonces v1.1 pone el 301 y saca el post del sitemap.
+
+### 2. Las páginas publicadas que quedan marcadas para reescribir
+
+La lista completa, con el motivo de cada una, está en `14-MAPA.md`, sección 3, "Lista de páginas
+de v1.1 marcadas para reescribir". Se resume así: **las nueve del handoff más `/` y
+`/preguntas-frecuentes`**. Ninguna se reescribe por estar mal hecha; se reescriben porque salieron
+antes de que existiera el mapa.
+
+### 3. Cuatro URLs que NO deben recibir anchor optimizado
+
+`/sedes`, `/blog`, `/agendar`, `/contacto`, `/sobre-el-doctor` y `/testimonios` entran al mapa
+declarando que no pelean ninguna keyword, y en la mayoría de los casos **porque el dato dice que
+si la pelearan le quitarían la SERP a la home**. Enlazarlas con anchor de keyword desharía esa
+decisión desde el código. Se enlazan con anchor de navegación: "Sedes", "Agendar cita",
+"Contacto", "Sobre el doctor".
+
+### 4. Tres URLs nuevas por crear
+
+`/servicios/cirugia-minimamente-invasiva`, `/blog/artrosis` y `/blog/lumbalgia`. Las tres salen de
+keywords de oro que ninguna URL existente podía ganar. El copy es de la fase 15; la ruta, el
+layout y el sitemap son de v1.1.

@@ -160,10 +160,141 @@ lumbar y cervical en lima`, `lumbalgia` y `traumatología lima`.
 
 ---
 
+## Sección 2: el resto de las URLs vivas
+
+Doce URLs vivas que ningún documento de planificación había mirado, más tres planificadas por
+keywords de oro que ninguna URL existente podía ganar. Con esto el mapa cubre **las 20 URLs
+mapeables del inventario**, ni una menos.
+
+### Las que sí pelean una keyword
+
+| URL | Keyword primaria | Intención medida | Tipo que exige la SERP | Cluster | Acción | Leave, Update, or Bin? |
+|---|---|---|---|---|---|---|
+| `/` | `traumatología lima` | transaccional | pagina-de-servicio | especialista-en-columna-y-trauma-en-lima | reescribir | Actualizar |
+| `/servicios/cirugia-minimamente-invasiva` | `cirugía mínimamente invasiva en lima` | transaccional | pagina-de-servicio | cirugia-minimamente-invasiva-en-lima | crear | Actualizar |
+| `/blog/5-sintomas-de-columna-que-no-debes-ignorar` | `ciática` | informacional | contenido-internacional | ciatica | reescribir | Actualizar |
+| `/blog/miedo-a-operarte-de-la-columna-5-cosas-que-debes-saber` | `cirugía de columna` | informacional | contenido-internacional | cirugia-de-columna | reescribir | Actualizar |
+| `/blog/artrosis` | `artrosis` | informacional | guia | artrosis | crear | Actualizar |
+| `/blog/lumbalgia` | `lumbalgia` | informacional | contenido-internacional | lumbalgia | crear | Actualizar |
+| `/preguntas-frecuentes` | `reumatólogo o traumatólogo` | informacional | contenido-internacional | reumatologo-o-traumatologo | reescribir | Actualizar |
+
+**`/` — la home.** Toma la keyword de oro número 5, la única de las diez con volumen de tres
+cifras (880). Es la única URL del sitio que puede pelear la consulta de especialidad entera sin
+quitársela a nadie: medida de a pares comparte **cero** URLs del top 10 con `cirujano de columna
+lima` de `/servicios` y **cero** con `ortopedia infantil lima`. Las tres viven en el cluster de 41
+cabezas y son tres páginas distintas, no una.
+
+**`/servicios/cirugia-minimamente-invasiva` — la URL que el 14-02 dejó anotada.** Es la perdedora
+del único desempate de aquel plan: dos keywords de oro apuntaban a `/servicios` y ganó `cirujano
+de columna lima` por puesto. En vez de forzar la otra dentro, quedó como URL a crear, y esta es.
+Sus secundarias salen de los tres clusters de la técnica, porque la endoscopia de columna **es**
+el abordaje mínimamente invasivo, no un tema vecino.
+
+**`/blog/5-sintomas-de-columna-que-no-debes-ignorar` — la de oro que no necesitó URL nueva.**
+`golden-10.json` mandaba `ciática` (8.100 de volumen) a un `/blog/ciatica` inexistente. Crear esa
+URL al lado de un post que ya trata el dolor irradiado y lo nombra ciática con todas las letras
+(`src/content/blog.ts:62`) habría fabricado exactamente la canibalización que este plan viene a
+cerrar. La de oro aterriza en la URL que puede ganarla.
+
+**`/preguntas-frecuentes`.** `reumatólogo o traumatólogo` es la única cabeza medida del universo
+que **es** literalmente una pregunta frecuente, y su cluster entero son reformulaciones de la
+misma duda: a qué especialista corresponde cada dolor.
+
+### Las que declaran que NO pelean ninguna keyword
+
+Ocho URLs entran al mapa con `esPaginaSeo: false`, sin keyword primaria y con el motivo escrito.
+En el `Content Model` del cliente su celda `Keyword` dice **"Sin keyword primaria (decisión)"** y
+no queda en blanco: una celda vacía se lee como olvido, y ninguna de estas ocho lo es.
+
+| URL | Acción | Por qué no compite |
+|---|---|---|
+| `/sedes` | dejar | Decisión de Juan del 2026-08-11: hub de navegación, para dejar de canibalizar a las cuatro sedes. |
+| `/blog` | dejar | Índice del silo. Una keyword lo pondría a competir contra los artículos que lista. |
+| `/agendar` | dejar | Sus tres candidatas transaccionales comparten 8, 6 y 5 URLs del top 10 con `traumatología lima` de la home. |
+| `/contacto` | dejar | Mismo caso, agravado: comparte el temario de sedes con `/agendar`. |
+| `/sobre-el-doctor` | dejar | Su consulta es el nombre propio, y no hay ni una cabeza de marca medida. Deuda fechada para el 2026-08-21. |
+| `/testimonios` | dejar | Ninguna de las 91 cabezas es una consulta de reseñas de un médico concreto. Bajo YMYL tampoco es donde perseguir volumen clínico. |
+| `/blog/estenosis-espinal-que-es` | **redirigir** → `/servicios/estenosis-espinal` | Se funde con la guía. |
+| `/blog/hernia-discal-o-dolor-de-espalda-como-diferenciarlos` | **redirigir** → `/servicios/hernia-discal` | Se funde con la guía. |
+
+### Las dos URLs que quedan fuera del mapa
+
+- **`/privacidad`** — página legal con `noindex` desde v1.0, fuera del sitemap (D-11).
+- **`/servicios/escoliosis`** — es el slug **anterior** de `/servicios/escoliosis-y-deformidades`,
+  renombrado por decisión de Juan del 2026-08-11. No es una URL que no compite: es la **misma
+  página** bajo otro nombre, y ya tiene fila con el slug nuevo. Darle fila propia la mostraría
+  compitiendo contra sí misma. Por eso el inventario mapeable pasó de 21 a **20**.
+
+---
+
+## Sección 3: auditoría de lo publicado, y quién estaba compitiendo con quién
+
+Esta sección responde la pregunta que motivó D-02: **qué URLs vivas estaban peleando entre sí sin
+que nadie lo hubiera decidido.**
+
+### Hallazgo 1: toda la familia de traumatología genérica en Lima es UNA página
+
+Es el hallazgo grande, y solo se ve con el dato. Nueve candidatas se descartaron por solape
+medido, todas contra la misma víctima:
+
+| Candidata | La quería | Chocaba con | Compartidas |
+|---|---|---|---|
+| `traumatólogo lima` | `/agendar` | `traumatología lima` (home) | 8 |
+| `traumatología cerca de mí` | `/contacto` | `traumatología lima` (home) | 6 |
+| `traumatólogo` | `/sobre-el-doctor` | `traumatología lima` (home) | 6 |
+| `traumatólogo cerca de mí` | `/contacto` | `traumatólogo lima` | 5 |
+| `mejor clínica de traumatología en lima` | suelta | `traumatología lima` (home) | 5 |
+| `traumatología y ortopedia lima` | suelta | `traumatología lima` (home) | 4 |
+| `neurocirujano lima` | suelta | `cirujano de columna lima` (`/servicios`) | 6 |
+| `cirujano de columna` | `/sobre-el-doctor` | `cirujano de columna lima` (`/servicios`) | 3 |
+| `traumatología` | `/blog` | `traumatología lima` (home) | 3 |
+
+Un mapa armado por carpetas habría repartido esa familia entre la home, `/agendar`, `/contacto` y
+`/sobre-el-doctor`. Cuatro URLs peleando el mismo top 10 desde el día uno.
+
+### Hallazgo 2: los cuatro posts del blog contra las tres guías clínicas
+
+Con las páginas de servicio yéndose a formato guía larga, post y guía pasan a competir por la
+misma intención informativa. El veredicto se decidió leyendo el contenido publicado, no la
+carpeta:
+
+| Post | Veredicto | Qué lo decidió |
+|---|---|---|
+| `/blog/estenosis-espinal-que-es` | **fusionar y redirigir** | El post remite dos veces a "la guía completa" (`blog.ts:291` y `:309`). No compite con la guía: la anticipa. |
+| `/blog/hernia-discal-o-dolor-de-espalda-como-diferenciarlos` | **fusionar y redirigir** | Su ángulo diferencial ya vive en la guía como secundarias desde el 14-02, y `dolor de espalda` no está entre las 91 cabezas medidas, así que no hay primaria propia que darle sin inventarla. |
+| `/blog/5-sintomas-de-columna-que-no-debes-ignorar` | **ángulo distinto** | Se queda con `ciática`, la de oro número 7. |
+| `/blog/miedo-a-operarte-de-la-columna-5-cosas-que-debes-saber` | **ángulo distinto** | Se queda con `cirugía de columna`: el *qué* del procedimiento, distinto del *quién* de `/servicios`. Cero compartidas con todas las demás primarias. |
+
+### Hallazgo 3: `ortopedia infantil en los olivos` no debía estar ahí
+
+El plan 14-02 la dejó de secundaria de `/servicios/ortopedia-infantil` porque D-04 manda las geo
+de distrito a secundarias. Pero la regla asumía algo que nadie había escrito: **que el distrito
+esté en la red del consultorio**. Los Olivos queda en Lima Norte y ahí no hay sede. Se agregó el
+filtro y se aplicó a todas las geo: los tres distritos de la red —Surco, San Isidro y La Molina—
+siguen entrando; el resto de Lima ya no. La ranura quedó para `medico ortopedia infantil`.
+
+### Lista de páginas de v1.1 marcadas para reescribir
+
+Publicadas el 2026-08-10, antes de que esta fase asignara keywords (D-01):
+
+| URL | Motivo |
+|---|---|
+| `/servicios/escoliosis-y-deformidades` | Formato: la SERP premia contenido informativo largo, la página es comercial. Y cambia de slug. |
+| `/servicios/hernia-discal` | Formato: 6 de 7 del top 10 son contenido internacional. |
+| `/servicios/estenosis-espinal` | Formato: 8 de 8. El caso más extremo de los cuatro. |
+| `/servicios/ortopedia-infantil` | Solo el encabezado: ya está en el formato correcto. |
+| `/servicios` | Reformulación como hub que pelea `cirujano de columna lima`. |
+| Las cuatro sedes | Encabezado y cuerpo hacia el nombre de clínica que cada una pelea. |
+| `/` | Encabezado hacia `traumatología lima`. |
+| `/preguntas-frecuentes` | Incorporar la duda de especialista que su cabeza medida pide. |
+| `/blog/5-sintomas-…` | Hacia `ciática`. |
+| `/blog/miedo-a-operarte-…` | Hacia `cirugía de columna`. |
+
+Y dos que **no** se reescriben sino que se apagan: `/blog/estenosis-espinal-que-es` y
+`/blog/hernia-discal-o-dolor-de-espalda-como-diferenciarlos`, con 301 hacia su guía.
+
+---
+
 ## Secciones pendientes
 
-- **Sección 2: el resto de las URLs vivas.** Home, cuatro posts de blog, institucionales y de
-  conversión. Plan 14-03.
-- **Sección 3: canibalización.** Incluye el choque entre los posts del blog y las páginas de
-  servicio que ahora se van a formato informativo. Plan 14-03.
 - **Sección 4: matriz de enlazado.** Plan 14-04. Se propone, no se implementa.
