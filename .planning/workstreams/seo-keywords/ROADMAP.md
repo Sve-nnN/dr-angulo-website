@@ -180,7 +180,17 @@ Plans:
   4. La auditoría de DinoRank sobre el mapa propuesto devuelve cero titles duplicados, cero H1 duplicados y cero metas faltantes.
   5. Existe un paquete por URL que quien ejecute las fases 8 y 10 de v1.1 puede abrir e implementar de corrido, sin volver a este workstream a preguntar.
 
-**Plans**: TBD
+**Plans**: 7 plans
+
+Plans:
+
+- [ ] 15-01-PLAN.md — Jerarquía H2/H3 y entidades obligatorias de las 16 URLs desde caché, más el tracer de una página completa hasta su paquete (wave 1, checkpoint de tono con Juan)
+- [ ] 15-02-PLAN.md — Title, meta y H1 de las 24 filas, auditoría local de duplicados y las compuertas ejecutables de YMYL y humanización (wave 2)
+- [ ] 15-03-PLAN.md — Las tres guías clínicas de columna y preguntas frecuentes, con la absorción de los dos posts que se apagan (wave 3)
+- [ ] 15-04-PLAN.md — La home, el hub de servicios, ortopedia infantil y cirugía mínimamente invasiva (wave 3)
+- [ ] 15-05-PLAN.md — Las cuatro fichas de sede vigentes (wave 3)
+- [ ] 15-06-PLAN.md — Los cuatro posts del blog, dos nuevos y dos reescritos (wave 3)
+- [ ] 15-07-PLAN.md — Los 24 documentos del paquete, la ronda única del doctor, `Suggested H1` en el Sheet y el handoff hacia v1.1 (wave 4)
 
 **Notas de ejecución**
 
@@ -207,6 +217,16 @@ waves en serie, 14-01 → 14-02 → 14-03 → 14-04, porque los cuatro planes es
 cerrar 14-02, no al cerrar la fase entera. La fase completa se ejecuta con cero búsquedas de
 SerpApi: MAP-04 sale de las 96 capturas ya cacheadas.
 
+Dentro de la fase 15, siete planes en cuatro waves. 15-01 funda la fase y trae el checkpoint de
+tono con Juan sobre una página real; 15-02 cierra la metadata de las 22 URLs vivas y deja armadas
+las compuertas de YMYL y humanización. La wave 3 corre **cuatro planes en paralelo**, uno por
+familia de URL —guías, transaccionales, sedes y blog—, que es lo que permite escribir dieciséis
+páginas completas sin que un fallo se lleve el trabajo de las otras familias: cada plan escribe su
+propio dataset de copy y sus propios documentos, sin un solo archivo compartido. 15-07 arma la
+entrega. La fase entera se ejecuta con **cero búsquedas de SerpApi**: la jerarquía y las entidades
+salen de las 96 capturas ya cacheadas, y `url-map.jsonl` queda de solo lectura para no dejar sin
+respaldo los anchors de la matriz de la fase 14.
+
 **Cruce con v1.1:** la fase 8 de v1.1 espera a que cierre la fase 14 (MAP-03). Las fases 7, 9,
 10 y 11 de v1.1 no dependen de este workstream para arrancar, aunque las 8 y 10 consumen el
 paquete de la fase 15 para su contenido y su metadata.
@@ -216,7 +236,7 @@ paquete de la fase 15 para su contenido y su metadata.
 | 12. Instrumentación de datos y universo de keywords | v1.2 | 5/5 | Complete | 2026-08-11 |
 | 13. Clusters, competencia y las 10 de Oro | v1.2 | 5/5 | In Progress|  |
 | 14. Mapa keyword → URL y matriz de enlazado | v1.2 | 4/4 | In Progress|  |
-| 15. Paquete on-page por URL | v1.2 | 0/TBD | Not started | - |
+| 15. Paquete on-page por URL | v1.2 | 0/7 | Planned | - |
 
 ## Cobertura de requisitos
 
