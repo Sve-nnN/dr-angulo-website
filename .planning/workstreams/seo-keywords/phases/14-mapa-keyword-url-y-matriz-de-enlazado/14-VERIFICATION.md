@@ -2,8 +2,8 @@
 phase: 14-mapa-keyword-url-y-matriz-de-enlazado
 workstream: seo-keywords
 verified: 2026-08-12T13:56:46Z
-status: gaps_found
-score: 4/5 criterios de éxito verificados
+status: passed
+score: 5/5 criterios de éxito verificados (los dos gaps se cerraron en el plan 14-05)
 behavior_unverified: 0
 overrides_applied: 0
 requirements:
@@ -12,12 +12,12 @@ requirements:
   MAP-03: satisfecho
   MAP-04: satisfecho
   MAP-05: satisfecho
-  SHEET-02: parcial
+  SHEET-02: satisfecho
   SHEET-04: satisfecho
   SHEET-05: satisfecho
-gaps:
+gaps_cerrados:  # los dos se cerraron en el plan 14-05; se conservan con su evidencia original
   - truth: "SC-5 / SHEET-02: el tab Content Model tiene una fila por URL con keyword, intención, tipo, cluster, métricas y la acción recomendada"
-    status: partial
+    resolucion: cerrado_en_14-05
     reason: >-
       Todas las cláusulas se cumplen salvo `métricas`. Las seis columnas de métrica del tab
       (`Organic Clicks (GSC)`, `Organic Impressions (GSC)`, `Volume (Ahrefs)`,
@@ -38,7 +38,7 @@ gaps:
       - "Decidir con Juan: llenar `Volume (Ahrefs)`, `Traffic Potential (Ahrefs)` y `KD Difficulty (Ahrefs)` desde `data/ahrefs-keywords.jsonl` sólo donde la fuente diga literalmente `ahrefs`, o registrar un override que estreche SHEET-02 y SC-5 dejando por escrito que la fase entrega el mapa sin métricas."
       - "Si se llenan: dejar las celdas sin dato vacías en vez de escribir `no_consultado`, para no ensuciar el documento del cliente."
   - truth: "Los documentos entregables declaran las cifras que el dataset sostiene"
-    status: partial
+    resolucion: cerrado_en_14-05
     reason: >-
       `14-CANIBALIZACION.md` dice dos veces que el mapa asigna 18 keywords primarias. El dataset
       asigna 16. Es un error de prosa en un entregable, no del cruce: `cannibalization.json`
@@ -261,3 +261,26 @@ overrides:
 
 _Verificado: 2026-08-12T13:56:46Z_
 _Verificador: Claude (gsd-verifier)_
+
+## Cierre de los gaps (2026-08-12, plan 14-05)
+
+Los dos gaps de esta verificación se cerraron y se volvió a comprobar contra el documento vivo.
+
+**Gap 1 — métricas de Ahrefs en `Content Model`.** Decisión de Juan: llenar únicamente las celdas
+cuya procedencia registrada es literalmente `ahrefs`. J-1 seguía vigente en lo que prohibía —un
+dato de otra herramienta bajo un encabezado que dice Ahrefs— y nunca prohibió escribir el de
+Ahrefs cuando existe. `metricas.ts` implementa exactamente esa regla y omite del registro, en vez
+de mandar vacías, las celdas sin dato: con `omitirCamposAusentes` una clave ausente deja la celda
+intacta y una cadena vacía borraría lo que el cliente hubiera escrito. `metricas-verify.ts` leyó el
+documento vivo y midió **24 celdas con dato coincidentes** (10 volúmenes, 7 KD, 7 traffic
+potential) y **48 correctamente vacías**, con cero discrepancias. Las seis primarias de sede o de
+marca quedan sin métrica porque Ahrefs no tiene dato para ellas, distinción que el dataset conserva
+entre `ahrefs_sin_dato` y `no_consultado`. Las columnas de GSC siguen vacías con razón: el sitio no
+acumuló impresiones.
+
+**Gap 2 — dos cifras mal escritas.** Corregidas. `14-CANIBALIZACION.md` decía 18 primarias y son
+16; el cruce reportó 120 pares, que es exactamente C(16,2), así que la medición siempre estuvo bien
+y solo el texto estaba desalineado. El texto de MAP-01 en `REQUIREMENTS.md` decía 18 URLs mapeables
+y el inventario midió 20, con la reconciliación guardada en `url-inventory.json`.
+
+Suite después del cierre: 548 pruebas en verde, typecheck limpio, cero búsquedas de SerpApi.
