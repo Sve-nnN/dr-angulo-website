@@ -1,0 +1,1193 @@
+{
+  "schema": 1,
+  "generadoPor": "src/phase14/links.ts",
+  "requisito": "MAP-05",
+  "nota": "Esta matriz SE PROPONE. Los enlaces los implementa el workstream milestone (v1.1) dentro del codigo de la aplicacion; el workstream seo-keywords no escribe en src/.",
+  "umbralDeSolape": 3,
+  "filas": [
+    {
+      "url": "/",
+      "title": "Dr. Juan Carlos Angulo Totesaut — Traumatólogo y Cirujano de Columna en Lima",
+      "code": "200",
+      "action": "Reescribir",
+      "cluster": "especialista en columna y trauma en Lima",
+      "enlaces": [
+        {
+          "link": "/servicios",
+          "anchor": "mejor neurocirujano de columna lima",
+          "titleWithLink": "Traumatólogo Especialista en Columna en Lima — Servicios",
+          "regla": "raiz-de-navegacion",
+          "motivo": "La home reparte su autoridad hacia el hub de servicios, que es donde vive la oferta clinica entera."
+        },
+        {
+          "link": "/sedes",
+          "anchor": "Sedes donde atiende el Dr. Juan Carlos Angulo en Lima",
+          "titleWithLink": "Sedes donde atiende el Dr. Juan Carlos Angulo en Lima",
+          "regla": "raiz-de-navegacion",
+          "motivo": "Desde la raiz se llega al hub de sedes, que es la respuesta a la pregunta de donde atiende el doctor."
+        },
+        {
+          "link": "/blog",
+          "anchor": "Blog",
+          "titleWithLink": "Blog — Salud de columna y traumatología",
+          "regla": "raiz-de-navegacion",
+          "motivo": "El silo informativo cuelga de la home: es la puerta de la captacion y necesita senal desde la raiz."
+        },
+        {
+          "link": "/preguntas-frecuentes",
+          "anchor": "artrosis traumatologo o reumatologo",
+          "titleWithLink": "Preguntas frecuentes",
+          "regla": "raiz-de-navegacion",
+          "motivo": "Las dudas previas a la consulta se resuelven antes de agendar, asi que la raiz las pone a un clic."
+        },
+        {
+          "link": "/sobre-el-doctor",
+          "anchor": "Dr. Juan Carlos Angulo",
+          "titleWithLink": "Dr. Juan Carlos Angulo — Trayectoria y formación en Lima",
+          "regla": "raiz-de-navegacion",
+          "motivo": "La pagina de autoridad del sitio sostiene la confianza de todo lo demas bajo la restriccion YMYL."
+        },
+        {
+          "link": "/testimonios",
+          "anchor": "Testimonios de pacientes",
+          "titleWithLink": "Testimonios de pacientes",
+          "regla": "raiz-de-navegacion",
+          "motivo": "La prueba social acompana a la autoridad y la home es la que la pone delante del paciente."
+        },
+        {
+          "link": "/contacto",
+          "anchor": "Contacto y Citas en Lima",
+          "titleWithLink": "Contacto y Citas en Lima",
+          "regla": "raiz-de-navegacion",
+          "motivo": "Segunda via de conversion del sitio, con el temario de sedes: la raiz la enlaza junto con agendar."
+        },
+        {
+          "link": "/agendar",
+          "anchor": "Agendar cita",
+          "titleWithLink": "Agendar cita — Consultorios y horarios en Lima",
+          "regla": "raiz-de-navegacion",
+          "motivo": "La home termina en el paso que el proyecto entero persigue: pedir la cita en menos de dos clics."
+        }
+      ]
+    },
+    {
+      "url": "/agendar",
+      "title": "Agendar cita — Consultorios y horarios en Lima",
+      "code": "200",
+      "action": "Dejar",
+      "cluster": "Sin cluster (declara que no compite)",
+      "enlaces": [
+        {
+          "link": "/sedes",
+          "anchor": "Sedes donde atiende el Dr. Juan Carlos Angulo en Lima",
+          "titleWithLink": "Sedes donde atiende el Dr. Juan Carlos Angulo en Lima",
+          "regla": "navegacion-de-seccion",
+          "motivo": "Quien esta por agendar necesita ver las cuatro sedes con su direccion y su horario antes de elegir."
+        },
+        {
+          "link": "/servicios",
+          "anchor": "cirujano de columna cerca de mí",
+          "titleWithLink": "Traumatólogo Especialista en Columna en Lima — Servicios",
+          "regla": "navegacion-de-seccion",
+          "motivo": "Vuelve al hub de servicios, que es la pagina que pelea \"cirujano de columna lima\" y la que reparte la senal entre las cinco guias: el enlace de vuelta consolida el silo."
+        },
+        {
+          "link": "/",
+          "anchor": "mejor clínica de traumatología en lima",
+          "titleWithLink": "Dr. Juan Carlos Angulo Totesaut — Traumatólogo y Cirujano de Columna en Lima",
+          "regla": "navegacion-de-seccion",
+          "motivo": "Vuelve a la raiz: una pagina de conversion sin salida deja al paciente sin donde seguir si todavia esta decidiendo."
+        },
+        {
+          "link": "/contacto",
+          "anchor": "Contacto y Citas en Lima",
+          "titleWithLink": "Contacto y Citas en Lima",
+          "regla": "hacia-conversion",
+          "motivo": "Las dos vias de conversion del sitio se enlazan entre si: quien no quiere escribir, agenda, y al reves."
+        }
+      ]
+    },
+    {
+      "url": "/blog",
+      "title": "Blog — Salud de columna y traumatología",
+      "code": "200",
+      "action": "Dejar",
+      "cluster": "Sin cluster (declara que no compite)",
+      "enlaces": [
+        {
+          "link": "/blog/artrosis",
+          "anchor": "que es bueno para la artrosis",
+          "titleWithLink": "Artrosis: qué es, cómo se trata y cuándo consultar",
+          "regla": "hub-a-hijas",
+          "motivo": "El indice del blog enlaza a /blog/artrosis, que es uno de los articulos que lista. Es la unica senal que el hub tiene para darle a su propio contenido."
+        },
+        {
+          "link": "/blog/5-sintomas-de-columna-que-no-debes-ignorar",
+          "anchor": "espina ciática",
+          "titleWithLink": "5 síntomas de columna que no debes ignorar",
+          "regla": "hub-a-hijas",
+          "motivo": "El indice del blog enlaza a /blog/5-sintomas-de-columna-que-no-debes-ignorar, que es uno de los articulos que lista. Es la unica senal que el hub tiene para darle a su propio contenido."
+        },
+        {
+          "link": "/blog/lumbalgia",
+          "anchor": "ejercicios para lumbalgia",
+          "titleWithLink": "Lumbalgia: por qué duele la zona lumbar y qué hacer",
+          "regla": "hub-a-hijas",
+          "motivo": "El indice del blog enlaza a /blog/lumbalgia, que es uno de los articulos que lista. Es la unica senal que el hub tiene para darle a su propio contenido."
+        },
+        {
+          "link": "/blog/miedo-a-operarte-de-la-columna-5-cosas-que-debes-saber",
+          "anchor": "como dormir después de una cirugía de columna",
+          "titleWithLink": "¿Tienes miedo a operarte de la columna? 5 cosas que debes saber",
+          "regla": "hub-a-hijas",
+          "motivo": "El indice del blog enlaza a /blog/miedo-a-operarte-de-la-columna-5-cosas-que-debes-saber, que es uno de los articulos que lista. Es la unica senal que el hub tiene para darle a su propio contenido."
+        },
+        {
+          "link": "/servicios",
+          "anchor": "traumatólogo de columna",
+          "titleWithLink": "Traumatólogo Especialista en Columna en Lima — Servicios",
+          "regla": "navegacion-de-seccion",
+          "motivo": "Vuelve al hub de servicios, que es la pagina que pelea \"cirujano de columna lima\" y la que reparte la senal entre las cinco guias: el enlace de vuelta consolida el silo."
+        }
+      ]
+    },
+    {
+      "url": "/blog/5-sintomas-de-columna-que-no-debes-ignorar",
+      "title": "5 síntomas de columna que no debes ignorar",
+      "code": "200",
+      "action": "Reescribir",
+      "cluster": "ciática",
+      "enlaces": [
+        {
+          "link": "/servicios/hernia-discal",
+          "anchor": "hernia discal lumbar y cervical",
+          "titleWithLink": "Hernia discal: síntomas, diagnóstico y tratamiento",
+          "regla": "mencion-inversa",
+          "motivo": "/servicios/hernia-discal ya lleva \"ciatica o hernia discal\" entre sus keywords, que contiene la primaria \"ciática\" de esta pagina. La captacion alimenta al servicio y no al reves (D-09): el articulo manda al paciente a la guia que resuelve su caso."
+        },
+        {
+          "link": "/blog/artrosis",
+          "anchor": "artrosis lumbosacro",
+          "titleWithLink": "Artrosis: qué es, cómo se trata y cuándo consultar",
+          "regla": "vecindad-tematica",
+          "motivo": "El cluster \"ciática\" y el cluster \"artrosis\" son de la misma familia \"especialidad-y-procedimientos\": el paciente que llega por uno de los dos temas esta a un paso del otro."
+        },
+        {
+          "link": "/blog/lumbalgia",
+          "anchor": "tipos de lumbalgia",
+          "titleWithLink": "Lumbalgia: por qué duele la zona lumbar y qué hacer",
+          "regla": "vecindad-tematica",
+          "motivo": "El cluster \"ciática\" y el cluster \"lumbalgia\" son de la misma familia \"especialidad-y-procedimientos\": el paciente que llega por uno de los dos temas esta a un paso del otro."
+        },
+        {
+          "link": "/blog/miedo-a-operarte-de-la-columna-5-cosas-que-debes-saber",
+          "anchor": "videos de cirugía de columna",
+          "titleWithLink": "¿Tienes miedo a operarte de la columna? 5 cosas que debes saber",
+          "regla": "vecindad-tematica",
+          "motivo": "El cluster \"ciática\" y el cluster \"cirugía de columna\" son de la misma familia \"especialidad-y-procedimientos\": el paciente que llega por uno de los dos temas esta a un paso del otro."
+        },
+        {
+          "link": "/blog",
+          "anchor": "Blog",
+          "titleWithLink": "Blog — Salud de columna y traumatología",
+          "regla": "navegacion-de-seccion",
+          "motivo": "Vuelve al indice del silo informativo, que es la pagina que agrupa a todos los articulos hermanos."
+        },
+        {
+          "link": "/servicios",
+          "anchor": "cirugía de columna cerca de mí",
+          "titleWithLink": "Traumatólogo Especialista en Columna en Lima — Servicios",
+          "regla": "navegacion-de-seccion",
+          "motivo": "Vuelve al hub de servicios, que es la pagina que pelea \"cirujano de columna lima\" y la que reparte la senal entre las cinco guias: el enlace de vuelta consolida el silo."
+        }
+      ]
+    },
+    {
+      "url": "/blog/artrosis",
+      "title": "Artrosis: qué es, cómo se trata y cuándo consultar",
+      "code": "Sin publicar (planificada)",
+      "action": "Crear",
+      "cluster": "artrosis",
+      "enlaces": [
+        {
+          "link": "/blog/5-sintomas-de-columna-que-no-debes-ignorar",
+          "anchor": "ciática o lumbalgia",
+          "titleWithLink": "5 síntomas de columna que no debes ignorar",
+          "regla": "vecindad-tematica",
+          "motivo": "El cluster \"artrosis\" y el cluster \"ciática\" son de la misma familia \"especialidad-y-procedimientos\": el paciente que llega por uno de los dos temas esta a un paso del otro."
+        },
+        {
+          "link": "/blog/lumbalgia",
+          "anchor": "lumbalgia se opera",
+          "titleWithLink": "Lumbalgia: por qué duele la zona lumbar y qué hacer",
+          "regla": "vecindad-tematica",
+          "motivo": "El cluster \"artrosis\" y el cluster \"lumbalgia\" son de la misma familia \"especialidad-y-procedimientos\": el paciente que llega por uno de los dos temas esta a un paso del otro."
+        },
+        {
+          "link": "/blog/miedo-a-operarte-de-la-columna-5-cosas-que-debes-saber",
+          "anchor": "cirugía de columna cervical",
+          "titleWithLink": "¿Tienes miedo a operarte de la columna? 5 cosas que debes saber",
+          "regla": "vecindad-tematica",
+          "motivo": "El cluster \"artrosis\" y el cluster \"cirugía de columna\" son de la misma familia \"especialidad-y-procedimientos\": el paciente que llega por uno de los dos temas esta a un paso del otro."
+        },
+        {
+          "link": "/blog",
+          "anchor": "Blog",
+          "titleWithLink": "Blog — Salud de columna y traumatología",
+          "regla": "navegacion-de-seccion",
+          "motivo": "Vuelve al indice del silo informativo, que es la pagina que agrupa a todos los articulos hermanos."
+        },
+        {
+          "link": "/servicios",
+          "anchor": "cirujano de columna lima",
+          "titleWithLink": "Traumatólogo Especialista en Columna en Lima — Servicios",
+          "regla": "navegacion-de-seccion",
+          "motivo": "Vuelve al hub de servicios, que es la pagina que pelea \"cirujano de columna lima\" y la que reparte la senal entre las cinco guias: el enlace de vuelta consolida el silo."
+        }
+      ]
+    },
+    {
+      "url": "/blog/lumbalgia",
+      "title": "Lumbalgia: por qué duele la zona lumbar y qué hacer",
+      "code": "Sin publicar (planificada)",
+      "action": "Crear",
+      "cluster": "lumbalgia",
+      "enlaces": [
+        {
+          "link": "/servicios/hernia-discal",
+          "anchor": "hernia discal lumbosacra tratamiento",
+          "titleWithLink": "Hernia discal: síntomas, diagnóstico y tratamiento",
+          "regla": "mencion-inversa",
+          "motivo": "/servicios/hernia-discal ya lleva \"lumbalgia o hernia discal\" entre sus keywords, que contiene la primaria \"lumbalgia\" de esta pagina. La captacion alimenta al servicio y no al reves (D-09): el articulo manda al paciente a la guia que resuelve su caso."
+        },
+        {
+          "link": "/blog/artrosis",
+          "anchor": "como frenar la artrosis",
+          "titleWithLink": "Artrosis: qué es, cómo se trata y cuándo consultar",
+          "regla": "vecindad-tematica",
+          "motivo": "El cluster \"lumbalgia\" y el cluster \"artrosis\" son de la misma familia \"especialidad-y-procedimientos\": el paciente que llega por uno de los dos temas esta a un paso del otro."
+        },
+        {
+          "link": "/blog/5-sintomas-de-columna-que-no-debes-ignorar",
+          "anchor": "donde duele la ciática",
+          "titleWithLink": "5 síntomas de columna que no debes ignorar",
+          "regla": "vecindad-tematica",
+          "motivo": "El cluster \"lumbalgia\" y el cluster \"ciática\" son de la misma familia \"especialidad-y-procedimientos\": el paciente que llega por uno de los dos temas esta a un paso del otro."
+        },
+        {
+          "link": "/blog/miedo-a-operarte-de-la-columna-5-cosas-que-debes-saber",
+          "anchor": "cirugía de columna escoliosis",
+          "titleWithLink": "¿Tienes miedo a operarte de la columna? 5 cosas que debes saber",
+          "regla": "vecindad-tematica",
+          "motivo": "El cluster \"lumbalgia\" y el cluster \"cirugía de columna\" son de la misma familia \"especialidad-y-procedimientos\": el paciente que llega por uno de los dos temas esta a un paso del otro."
+        },
+        {
+          "link": "/blog",
+          "anchor": "Blog",
+          "titleWithLink": "Blog — Salud de columna y traumatología",
+          "regla": "navegacion-de-seccion",
+          "motivo": "Vuelve al indice del silo informativo, que es la pagina que agrupa a todos los articulos hermanos."
+        },
+        {
+          "link": "/servicios",
+          "anchor": "mejor neurocirujano de columna lima",
+          "titleWithLink": "Traumatólogo Especialista en Columna en Lima — Servicios",
+          "regla": "navegacion-de-seccion",
+          "motivo": "Vuelve al hub de servicios, que es la pagina que pelea \"cirujano de columna lima\" y la que reparte la senal entre las cinco guias: el enlace de vuelta consolida el silo."
+        }
+      ]
+    },
+    {
+      "url": "/blog/miedo-a-operarte-de-la-columna-5-cosas-que-debes-saber",
+      "title": "¿Tienes miedo a operarte de la columna? 5 cosas que debes saber",
+      "code": "200",
+      "action": "Reescribir",
+      "cluster": "cirugía de columna",
+      "enlaces": [
+        {
+          "link": "/servicios/cirugia-minimamente-invasiva",
+          "anchor": "cirugía endoscópica de columna",
+          "titleWithLink": "Cirugía mínimamente invasiva de columna en Lima",
+          "regla": "mencion-inversa",
+          "motivo": "La primaria de esta pagina, \"cirugía de columna\", y la de /servicios/cirugia-minimamente-invasiva, \"cirugía mínimamente invasiva en lima\", comparten el termino clinico \"cirugia\": el articulo explica la decision y la guia explica el procedimiento, asi que la captacion alimenta al servicio y no al reves (D-09)."
+        },
+        {
+          "link": "/blog/artrosis",
+          "anchor": "pastillas para la artrosis",
+          "titleWithLink": "Artrosis: qué es, cómo se trata y cuándo consultar",
+          "regla": "vecindad-tematica",
+          "motivo": "El cluster \"cirugía de columna\" y el cluster \"artrosis\" son de la misma familia \"especialidad-y-procedimientos\": el paciente que llega por uno de los dos temas esta a un paso del otro."
+        },
+        {
+          "link": "/blog/5-sintomas-de-columna-que-no-debes-ignorar",
+          "anchor": "falsa ciática",
+          "titleWithLink": "5 síntomas de columna que no debes ignorar",
+          "regla": "vecindad-tematica",
+          "motivo": "El cluster \"cirugía de columna\" y el cluster \"ciática\" son de la misma familia \"especialidad-y-procedimientos\": el paciente que llega por uno de los dos temas esta a un paso del otro."
+        },
+        {
+          "link": "/blog/lumbalgia",
+          "anchor": "causas de lumbalgia",
+          "titleWithLink": "Lumbalgia: por qué duele la zona lumbar y qué hacer",
+          "regla": "vecindad-tematica",
+          "motivo": "El cluster \"cirugía de columna\" y el cluster \"lumbalgia\" son de la misma familia \"especialidad-y-procedimientos\": el paciente que llega por uno de los dos temas esta a un paso del otro."
+        },
+        {
+          "link": "/blog",
+          "anchor": "Blog",
+          "titleWithLink": "Blog — Salud de columna y traumatología",
+          "regla": "navegacion-de-seccion",
+          "motivo": "Vuelve al indice del silo informativo, que es la pagina que agrupa a todos los articulos hermanos."
+        },
+        {
+          "link": "/servicios",
+          "anchor": "cirujano de columna cerca de mí",
+          "titleWithLink": "Traumatólogo Especialista en Columna en Lima — Servicios",
+          "regla": "navegacion-de-seccion",
+          "motivo": "Vuelve al hub de servicios, que es la pagina que pelea \"cirujano de columna lima\" y la que reparte la senal entre las cinco guias: el enlace de vuelta consolida el silo."
+        }
+      ]
+    },
+    {
+      "url": "/contacto",
+      "title": "Contacto y Citas en Lima",
+      "code": "200",
+      "action": "Dejar",
+      "cluster": "Sin cluster (declara que no compite)",
+      "enlaces": [
+        {
+          "link": "/sedes",
+          "anchor": "Sedes donde atiende el Dr. Juan Carlos Angulo en Lima",
+          "titleWithLink": "Sedes donde atiende el Dr. Juan Carlos Angulo en Lima",
+          "regla": "navegacion-de-seccion",
+          "motivo": "Quien esta por agendar necesita ver las cuatro sedes con su direccion y su horario antes de elegir."
+        },
+        {
+          "link": "/servicios",
+          "anchor": "traumatólogo de columna",
+          "titleWithLink": "Traumatólogo Especialista en Columna en Lima — Servicios",
+          "regla": "navegacion-de-seccion",
+          "motivo": "Vuelve al hub de servicios, que es la pagina que pelea \"cirujano de columna lima\" y la que reparte la senal entre las cinco guias: el enlace de vuelta consolida el silo."
+        },
+        {
+          "link": "/",
+          "anchor": "traumatología especialista en columna",
+          "titleWithLink": "Dr. Juan Carlos Angulo Totesaut — Traumatólogo y Cirujano de Columna en Lima",
+          "regla": "navegacion-de-seccion",
+          "motivo": "Vuelve a la raiz: una pagina de conversion sin salida deja al paciente sin donde seguir si todavia esta decidiendo."
+        },
+        {
+          "link": "/agendar",
+          "anchor": "Agendar cita",
+          "titleWithLink": "Agendar cita — Consultorios y horarios en Lima",
+          "regla": "hacia-conversion",
+          "motivo": "Las dos vias de conversion del sitio se enlazan entre si: quien no quiere escribir, agenda, y al reves."
+        }
+      ]
+    },
+    {
+      "url": "/preguntas-frecuentes",
+      "title": "Preguntas frecuentes",
+      "code": "200",
+      "action": "Reescribir",
+      "cluster": "reumatólogo o traumatólogo",
+      "enlaces": [
+        {
+          "link": "/blog/artrosis",
+          "anchor": "osteoporosis o artrosis",
+          "titleWithLink": "Artrosis: qué es, cómo se trata y cuándo consultar",
+          "regla": "mencion-directa",
+          "motivo": "Esta pagina persigue \"artrosis traumatologo o reumatologo\", que contiene la primaria \"artrosis\" de /blog/artrosis. El tema ya aparece en su propio texto: el enlace lo manda a donde se responde entero, en vez de dejar dos paginas peleando la misma consulta."
+        },
+        {
+          "link": "/servicios",
+          "anchor": "cirugía de columna cerca de mí",
+          "titleWithLink": "Traumatólogo Especialista en Columna en Lima — Servicios",
+          "regla": "navegacion-de-seccion",
+          "motivo": "Vuelve al hub de servicios, que es la pagina que pelea \"cirujano de columna lima\" y la que reparte la senal entre las cinco guias: el enlace de vuelta consolida el silo."
+        },
+        {
+          "link": "/blog",
+          "anchor": "Blog",
+          "titleWithLink": "Blog — Salud de columna y traumatología",
+          "regla": "navegacion-de-seccion",
+          "motivo": "Las dudas que no caben en una respuesta corta se desarrollan en el silo informativo."
+        },
+        {
+          "link": "/agendar",
+          "anchor": "Agendar cita",
+          "titleWithLink": "Agendar cita — Consultorios y horarios en Lima",
+          "regla": "hacia-conversion",
+          "motivo": "Cierra el recorrido: la pagina explica el servicio y el enlace lleva al unico sitio donde el paciente puede pedir la cita. Sin este enlace la pagina informa y no convierte."
+        }
+      ]
+    },
+    {
+      "url": "/sedes",
+      "title": "Sedes donde atiende el Dr. Juan Carlos Angulo en Lima",
+      "code": "200",
+      "action": "Dejar",
+      "cluster": "Sin cluster (declara que no compite)",
+      "enlaces": [
+        {
+          "link": "/sedes/clinica-ricardo-palma",
+          "anchor": "ortopedia infantil clínica ricardo palma",
+          "titleWithLink": "Traumatólogo y cirujano de columna en Clínica Ricardo Palma",
+          "regla": "hub-a-hijas",
+          "motivo": "El hub reparte hacia /sedes/clinica-ricardo-palma. Juan decidio el 2026-08-11 que este hub no pelee ninguna keyword justamente para que la senal se concentre en las cuatro sedes: el enlace es la forma de que llegue."
+        },
+        {
+          "link": "/sedes/clinica-tezza",
+          "anchor": "cirujano de columna clínica tezza",
+          "titleWithLink": "Traumatólogo y cirujano de columna en Clínica Padre Luis Tezza",
+          "regla": "hub-a-hijas",
+          "motivo": "El hub reparte hacia /sedes/clinica-tezza. Juan decidio el 2026-08-11 que este hub no pelee ninguna keyword justamente para que la senal se concentre en las cuatro sedes: el enlace es la forma de que llegue."
+        },
+        {
+          "link": "/sedes/consultorio-privado",
+          "anchor": "ortopedia surco",
+          "titleWithLink": "Consultorio de traumatología y columna en Surco, Lima",
+          "regla": "hub-a-hijas",
+          "motivo": "El hub reparte hacia /sedes/consultorio-privado. Juan decidio el 2026-08-11 que este hub no pelee ninguna keyword justamente para que la senal se concentre en las cuatro sedes: el enlace es la forma de que llegue."
+        },
+        {
+          "link": "/sedes/sanna-la-molina",
+          "anchor": "ortopedia infantil clínica sanna",
+          "titleWithLink": "Traumatólogo y cirujano de columna en Clínica Sanna, sede La Molina",
+          "regla": "hub-a-hijas",
+          "motivo": "El hub reparte hacia /sedes/sanna-la-molina. Juan decidio el 2026-08-11 que este hub no pelee ninguna keyword justamente para que la senal se concentre en las cuatro sedes: el enlace es la forma de que llegue."
+        },
+        {
+          "link": "/servicios",
+          "anchor": "cirujano de columna lima",
+          "titleWithLink": "Traumatólogo Especialista en Columna en Lima — Servicios",
+          "regla": "navegacion-de-seccion",
+          "motivo": "Vuelve al hub de servicios, que es la pagina que pelea \"cirujano de columna lima\" y la que reparte la senal entre las cinco guias: el enlace de vuelta consolida el silo."
+        },
+        {
+          "link": "/agendar",
+          "anchor": "Agendar cita",
+          "titleWithLink": "Agendar cita — Consultorios y horarios en Lima",
+          "regla": "hacia-conversion",
+          "motivo": "Cierra el recorrido: la pagina explica el servicio y el enlace lleva al unico sitio donde el paciente puede pedir la cita. Sin este enlace la pagina informa y no convierte."
+        }
+      ]
+    },
+    {
+      "url": "/sedes/clinica-ricardo-palma",
+      "title": "Traumatólogo y cirujano de columna en Clínica Ricardo Palma",
+      "code": "200",
+      "action": "Reescribir",
+      "cluster": "cirujano de columna clínica ricardo palma",
+      "enlaces": [
+        {
+          "link": "/sedes",
+          "anchor": "Sedes donde atiende el Dr. Juan Carlos Angulo en Lima",
+          "titleWithLink": "Sedes donde atiende el Dr. Juan Carlos Angulo en Lima",
+          "regla": "navegacion-de-seccion",
+          "motivo": "Vuelve al hub de sedes, que es la pagina que compara las cuatro y deja elegir la mas cercana."
+        },
+        {
+          "link": "/servicios",
+          "anchor": "mejor neurocirujano de columna lima",
+          "titleWithLink": "Traumatólogo Especialista en Columna en Lima — Servicios",
+          "regla": "navegacion-de-seccion",
+          "motivo": "Vuelve al hub de servicios, que es la pagina que pelea \"cirujano de columna lima\" y la que reparte la senal entre las cinco guias: el enlace de vuelta consolida el silo."
+        },
+        {
+          "link": "/servicios/ortopedia-infantil",
+          "anchor": "ortopedia infantil cerca de mí",
+          "titleWithLink": "Ortopedia infantil: desarrollo, marcha y columna en crecimiento",
+          "regla": "mencion-directa",
+          "motivo": "Esta pagina persigue \"ortopedia infantil clinica ricardo palma\", que contiene la primaria \"ortopedia infantil lima\" de /servicios/ortopedia-infantil. El tema ya aparece en su propio texto: el enlace lo manda a donde se responde entero, en vez de dejar dos paginas peleando la misma consulta."
+        },
+        {
+          "link": "/agendar",
+          "anchor": "Agendar cita",
+          "titleWithLink": "Agendar cita — Consultorios y horarios en Lima",
+          "regla": "hacia-conversion",
+          "motivo": "Cierra el recorrido: la pagina explica el servicio y el enlace lleva al unico sitio donde el paciente puede pedir la cita. Sin este enlace la pagina informa y no convierte."
+        },
+        {
+          "link": "/contacto",
+          "anchor": "Contacto y Citas en Lima",
+          "titleWithLink": "Contacto y Citas en Lima",
+          "regla": "hacia-conversion",
+          "motivo": "La sede ofrece la segunda via de contacto para quien prefiere escribir su caso antes de agendar."
+        },
+        {
+          "link": "/",
+          "anchor": "traumatólogo ortopedia infantil",
+          "titleWithLink": "Dr. Juan Carlos Angulo Totesaut — Traumatólogo y Cirujano de Columna en Lima",
+          "regla": "navegacion-de-seccion",
+          "motivo": "Vuelve a la raiz, que es la pagina que pelea la consulta de especialidad entera y de la que cuelga la red de sedes."
+        }
+      ]
+    },
+    {
+      "url": "/sedes/clinica-tezza",
+      "title": "Traumatólogo y cirujano de columna en Clínica Padre Luis Tezza",
+      "code": "200",
+      "action": "Reescribir",
+      "cluster": "cirujano de columna clínica tezza",
+      "enlaces": [
+        {
+          "link": "/sedes",
+          "anchor": "Sedes donde atiende el Dr. Juan Carlos Angulo en Lima",
+          "titleWithLink": "Sedes donde atiende el Dr. Juan Carlos Angulo en Lima",
+          "regla": "navegacion-de-seccion",
+          "motivo": "Vuelve al hub de sedes, que es la pagina que compara las cuatro y deja elegir la mas cercana."
+        },
+        {
+          "link": "/servicios",
+          "anchor": "cirujano de columna cerca de mí",
+          "titleWithLink": "Traumatólogo Especialista en Columna en Lima — Servicios",
+          "regla": "navegacion-de-seccion",
+          "motivo": "Vuelve al hub de servicios, que es la pagina que pelea \"cirujano de columna lima\" y la que reparte la senal entre las cinco guias: el enlace de vuelta consolida el silo."
+        },
+        {
+          "link": "/servicios/ortopedia-infantil",
+          "anchor": "ortopedia infantil perú",
+          "titleWithLink": "Ortopedia infantil: desarrollo, marcha y columna en crecimiento",
+          "regla": "mencion-directa",
+          "motivo": "Esta pagina persigue \"ortopedia infantil clinica tezza\", que contiene la primaria \"ortopedia infantil lima\" de /servicios/ortopedia-infantil. El tema ya aparece en su propio texto: el enlace lo manda a donde se responde entero, en vez de dejar dos paginas peleando la misma consulta."
+        },
+        {
+          "link": "/agendar",
+          "anchor": "Agendar cita",
+          "titleWithLink": "Agendar cita — Consultorios y horarios en Lima",
+          "regla": "hacia-conversion",
+          "motivo": "Cierra el recorrido: la pagina explica el servicio y el enlace lleva al unico sitio donde el paciente puede pedir la cita. Sin este enlace la pagina informa y no convierte."
+        },
+        {
+          "link": "/contacto",
+          "anchor": "Contacto y Citas en Lima",
+          "titleWithLink": "Contacto y Citas en Lima",
+          "regla": "hacia-conversion",
+          "motivo": "La sede ofrece la segunda via de contacto para quien prefiere escribir su caso antes de agendar."
+        },
+        {
+          "link": "/",
+          "anchor": "traumatología y ortopedia cerca de mí",
+          "titleWithLink": "Dr. Juan Carlos Angulo Totesaut — Traumatólogo y Cirujano de Columna en Lima",
+          "regla": "navegacion-de-seccion",
+          "motivo": "Vuelve a la raiz, que es la pagina que pelea la consulta de especialidad entera y de la que cuelga la red de sedes."
+        }
+      ]
+    },
+    {
+      "url": "/sedes/consultorio-privado",
+      "title": "Consultorio de traumatología y columna en Surco, Lima",
+      "code": "200",
+      "action": "Reescribir",
+      "cluster": "especialista en columna y trauma en Lima",
+      "enlaces": [
+        {
+          "link": "/sedes",
+          "anchor": "Sedes donde atiende el Dr. Juan Carlos Angulo en Lima",
+          "titleWithLink": "Sedes donde atiende el Dr. Juan Carlos Angulo en Lima",
+          "regla": "navegacion-de-seccion",
+          "motivo": "Vuelve al hub de sedes, que es la pagina que compara las cuatro y deja elegir la mas cercana."
+        },
+        {
+          "link": "/servicios",
+          "anchor": "traumatólogo de columna",
+          "titleWithLink": "Traumatólogo Especialista en Columna en Lima — Servicios",
+          "regla": "navegacion-de-seccion",
+          "motivo": "Vuelve al hub de servicios, que es la pagina que pelea \"cirujano de columna lima\" y la que reparte la senal entre las cinco guias: el enlace de vuelta consolida el silo."
+        },
+        {
+          "link": "/servicios/ortopedia-infantil",
+          "anchor": "pediatria ortopedia infantil",
+          "titleWithLink": "Ortopedia infantil: desarrollo, marcha y columna en crecimiento",
+          "regla": "mencion-directa",
+          "motivo": "Esta pagina persigue \"ortopedia infantil surco\", que contiene la primaria \"ortopedia infantil lima\" de /servicios/ortopedia-infantil. El tema ya aparece en su propio texto: el enlace lo manda a donde se responde entero, en vez de dejar dos paginas peleando la misma consulta."
+        },
+        {
+          "link": "/agendar",
+          "anchor": "Agendar cita",
+          "titleWithLink": "Agendar cita — Consultorios y horarios en Lima",
+          "regla": "hacia-conversion",
+          "motivo": "Cierra el recorrido: la pagina explica el servicio y el enlace lleva al unico sitio donde el paciente puede pedir la cita. Sin este enlace la pagina informa y no convierte."
+        },
+        {
+          "link": "/contacto",
+          "anchor": "Contacto y Citas en Lima",
+          "titleWithLink": "Contacto y Citas en Lima",
+          "regla": "hacia-conversion",
+          "motivo": "La sede ofrece la segunda via de contacto para quien prefiere escribir su caso antes de agendar."
+        },
+        {
+          "link": "/",
+          "anchor": "traumatólogo cerca de mí",
+          "titleWithLink": "Dr. Juan Carlos Angulo Totesaut — Traumatólogo y Cirujano de Columna en Lima",
+          "regla": "navegacion-de-seccion",
+          "motivo": "Vuelve a la raiz, que es la pagina que pelea la consulta de especialidad entera y de la que cuelga la red de sedes."
+        }
+      ]
+    },
+    {
+      "url": "/sedes/sanna-la-molina",
+      "title": "Traumatólogo y cirujano de columna en Clínica Sanna, sede La Molina",
+      "code": "200",
+      "action": "Reescribir",
+      "cluster": "cirujano de columna clínica sanna",
+      "enlaces": [
+        {
+          "link": "/sedes",
+          "anchor": "Sedes donde atiende el Dr. Juan Carlos Angulo en Lima",
+          "titleWithLink": "Sedes donde atiende el Dr. Juan Carlos Angulo en Lima",
+          "regla": "navegacion-de-seccion",
+          "motivo": "Vuelve al hub de sedes, que es la pagina que compara las cuatro y deja elegir la mas cercana."
+        },
+        {
+          "link": "/servicios",
+          "anchor": "cirugía de columna cerca de mí",
+          "titleWithLink": "Traumatólogo Especialista en Columna en Lima — Servicios",
+          "regla": "navegacion-de-seccion",
+          "motivo": "Vuelve al hub de servicios, que es la pagina que pelea \"cirujano de columna lima\" y la que reparte la senal entre las cinco guias: el enlace de vuelta consolida el silo."
+        },
+        {
+          "link": "/servicios/ortopedia-infantil",
+          "anchor": "medico ortopedia infantil",
+          "titleWithLink": "Ortopedia infantil: desarrollo, marcha y columna en crecimiento",
+          "regla": "mencion-directa",
+          "motivo": "Esta pagina persigue \"ortopedia infantil clinica sanna\", que contiene la primaria \"ortopedia infantil lima\" de /servicios/ortopedia-infantil. El tema ya aparece en su propio texto: el enlace lo manda a donde se responde entero, en vez de dejar dos paginas peleando la misma consulta."
+        },
+        {
+          "link": "/agendar",
+          "anchor": "Agendar cita",
+          "titleWithLink": "Agendar cita — Consultorios y horarios en Lima",
+          "regla": "hacia-conversion",
+          "motivo": "Cierra el recorrido: la pagina explica el servicio y el enlace lleva al unico sitio donde el paciente puede pedir la cita. Sin este enlace la pagina informa y no convierte."
+        },
+        {
+          "link": "/contacto",
+          "anchor": "Contacto y Citas en Lima",
+          "titleWithLink": "Contacto y Citas en Lima",
+          "regla": "hacia-conversion",
+          "motivo": "La sede ofrece la segunda via de contacto para quien prefiere escribir su caso antes de agendar."
+        },
+        {
+          "link": "/",
+          "anchor": "traumatología lima",
+          "titleWithLink": "Dr. Juan Carlos Angulo Totesaut — Traumatólogo y Cirujano de Columna en Lima",
+          "regla": "navegacion-de-seccion",
+          "motivo": "Vuelve a la raiz, que es la pagina que pelea la consulta de especialidad entera y de la que cuelga la red de sedes."
+        }
+      ]
+    },
+    {
+      "url": "/servicios",
+      "title": "Traumatólogo Especialista en Columna en Lima — Servicios",
+      "code": "200",
+      "action": "Reescribir",
+      "cluster": "especialista en columna y trauma en Lima",
+      "enlaces": [
+        {
+          "link": "/servicios/escoliosis-y-deformidades",
+          "anchor": "escoliosis y deformidades de columna",
+          "titleWithLink": "Escoliosis y deformidades de columna: diagnóstico y tratamiento",
+          "regla": "hub-a-hijas",
+          "motivo": "El hub reparte hacia /servicios/escoliosis-y-deformidades, que es la guia que responde ese tema entero. Un hub que no enlaza a sus hijas retiene una senal que no sabe usar."
+        },
+        {
+          "link": "/servicios/ortopedia-infantil",
+          "anchor": "ortopedia infantil lima",
+          "titleWithLink": "Ortopedia infantil: desarrollo, marcha y columna en crecimiento",
+          "regla": "hub-a-hijas",
+          "motivo": "El hub reparte hacia /servicios/ortopedia-infantil, que es la guia que responde ese tema entero. Un hub que no enlaza a sus hijas retiene una senal que no sabe usar."
+        },
+        {
+          "link": "/servicios/cirugia-minimamente-invasiva",
+          "anchor": "endoscopía espinal",
+          "titleWithLink": "Cirugía mínimamente invasiva de columna en Lima",
+          "regla": "hub-a-hijas",
+          "motivo": "El hub reparte hacia /servicios/cirugia-minimamente-invasiva, que es la guia que responde ese tema entero. Un hub que no enlaza a sus hijas retiene una senal que no sabe usar."
+        },
+        {
+          "link": "/servicios/estenosis-espinal",
+          "anchor": "estenosis de canal",
+          "titleWithLink": "Estenosis espinal: síntomas, diagnóstico y tratamiento",
+          "regla": "hub-a-hijas",
+          "motivo": "El hub reparte hacia /servicios/estenosis-espinal, que es la guia que responde ese tema entero. Un hub que no enlaza a sus hijas retiene una senal que no sabe usar."
+        },
+        {
+          "link": "/servicios/hernia-discal",
+          "anchor": "ciatica o hernia discal",
+          "titleWithLink": "Hernia discal: síntomas, diagnóstico y tratamiento",
+          "regla": "hub-a-hijas",
+          "motivo": "El hub reparte hacia /servicios/hernia-discal, que es la guia que responde ese tema entero. Un hub que no enlaza a sus hijas retiene una senal que no sabe usar."
+        },
+        {
+          "link": "/sedes",
+          "anchor": "Sedes donde atiende el Dr. Juan Carlos Angulo en Lima",
+          "titleWithLink": "Sedes donde atiende el Dr. Juan Carlos Angulo en Lima",
+          "regla": "navegacion-de-seccion",
+          "motivo": "El hub de servicios manda al de sedes: quien ya sabe que procedimiento necesita, pregunta donde se hace."
+        },
+        {
+          "link": "/blog",
+          "anchor": "Blog",
+          "titleWithLink": "Blog — Salud de columna y traumatología",
+          "regla": "navegacion-de-seccion",
+          "motivo": "Del hub al silo informativo, que es donde estan las respuestas largas que la pagina comercial no da."
+        },
+        {
+          "link": "/agendar",
+          "anchor": "Agendar cita",
+          "titleWithLink": "Agendar cita — Consultorios y horarios en Lima",
+          "regla": "hacia-conversion",
+          "motivo": "Cierra el recorrido: la pagina explica el servicio y el enlace lleva al unico sitio donde el paciente puede pedir la cita. Sin este enlace la pagina informa y no convierte."
+        }
+      ]
+    },
+    {
+      "url": "/servicios/cirugia-minimamente-invasiva",
+      "title": "Cirugía mínimamente invasiva de columna en Lima",
+      "code": "Sin publicar (planificada)",
+      "action": "Crear",
+      "cluster": "cirugía mínimamente invasiva en lima",
+      "enlaces": [
+        {
+          "link": "/servicios/escoliosis-y-deformidades",
+          "anchor": "ejercicios para escoliosis",
+          "titleWithLink": "Escoliosis y deformidades de columna: diagnóstico y tratamiento",
+          "regla": "vecindad-tematica",
+          "motivo": "Las dos viven en la seccion \"/servicios\" del sitio y sus clusters no se tocan, asi que el enlace las une por estructura y no por tema: es navegacion dentro del silo."
+        },
+        {
+          "link": "/servicios/ortopedia-infantil",
+          "anchor": "ortopedia infantil cerca de mí",
+          "titleWithLink": "Ortopedia infantil: desarrollo, marcha y columna en crecimiento",
+          "regla": "vecindad-tematica",
+          "motivo": "Las dos viven en la seccion \"/servicios\" del sitio y sus clusters no se tocan, asi que el enlace las une por estructura y no por tema: es navegacion dentro del silo."
+        },
+        {
+          "link": "/sedes/clinica-ricardo-palma",
+          "anchor": "traumatólogo clínica ricardo palma",
+          "titleWithLink": "Traumatólogo y cirujano de columna en Clínica Ricardo Palma",
+          "regla": "hacia-las-sedes",
+          "motivo": "La atencion de este servicio ocurre en /sedes/clinica-ricardo-palma: la pagina que explica el procedimiento tiene que decir donde se hace, o el paciente se queda sin el paso siguiente (D-08)."
+        },
+        {
+          "link": "/sedes/clinica-tezza",
+          "anchor": "traumatólogo clínica tezza",
+          "titleWithLink": "Traumatólogo y cirujano de columna en Clínica Padre Luis Tezza",
+          "regla": "hacia-las-sedes",
+          "motivo": "La atencion de este servicio ocurre en /sedes/clinica-tezza: la pagina que explica el procedimiento tiene que decir donde se hace, o el paciente se queda sin el paso siguiente (D-08)."
+        },
+        {
+          "link": "/sedes/consultorio-privado",
+          "anchor": "cirujano de columna surco",
+          "titleWithLink": "Consultorio de traumatología y columna en Surco, Lima",
+          "regla": "hacia-las-sedes",
+          "motivo": "La atencion de este servicio ocurre en /sedes/consultorio-privado: la pagina que explica el procedimiento tiene que decir donde se hace, o el paciente se queda sin el paso siguiente (D-08)."
+        },
+        {
+          "link": "/sedes/sanna-la-molina",
+          "anchor": "traumatólogo clínica sanna",
+          "titleWithLink": "Traumatólogo y cirujano de columna en Clínica Sanna, sede La Molina",
+          "regla": "hacia-las-sedes",
+          "motivo": "La atencion de este servicio ocurre en /sedes/sanna-la-molina: la pagina que explica el procedimiento tiene que decir donde se hace, o el paciente se queda sin el paso siguiente (D-08)."
+        },
+        {
+          "link": "/agendar",
+          "anchor": "Agendar cita",
+          "titleWithLink": "Agendar cita — Consultorios y horarios en Lima",
+          "regla": "hacia-conversion",
+          "motivo": "Cierra el recorrido: la pagina explica el servicio y el enlace lleva al unico sitio donde el paciente puede pedir la cita. Sin este enlace la pagina informa y no convierte."
+        },
+        {
+          "link": "/servicios",
+          "anchor": "cirujano de columna lima",
+          "titleWithLink": "Traumatólogo Especialista en Columna en Lima — Servicios",
+          "regla": "navegacion-de-seccion",
+          "motivo": "Vuelve al hub de servicios, que es la pagina que pelea \"cirujano de columna lima\" y la que reparte la senal entre las cinco guias: el enlace de vuelta consolida el silo."
+        }
+      ]
+    },
+    {
+      "url": "/servicios/escoliosis-y-deformidades",
+      "title": "Escoliosis y deformidades de columna: diagnóstico y tratamiento",
+      "code": "200",
+      "action": "Reescribir",
+      "cluster": "escoliosis",
+      "enlaces": [
+        {
+          "link": "/servicios/estenosis-espinal",
+          "anchor": "estenosis espinal: tratamientos",
+          "titleWithLink": "Estenosis espinal: síntomas, diagnóstico y tratamiento",
+          "regla": "vecindad-tematica",
+          "motivo": "El cluster \"escoliosis\" y el cluster \"estenosis espinal\" son de la misma familia \"condiciones-nucleo\": el paciente que llega por uno de los dos temas esta a un paso del otro."
+        },
+        {
+          "link": "/servicios/hernia-discal",
+          "anchor": "hernia discal tomografía",
+          "titleWithLink": "Hernia discal: síntomas, diagnóstico y tratamiento",
+          "regla": "vecindad-tematica",
+          "motivo": "El cluster \"escoliosis\" y el cluster \"hernia discal\" son de la misma familia \"condiciones-nucleo\": el paciente que llega por uno de los dos temas esta a un paso del otro."
+        },
+        {
+          "link": "/sedes/clinica-ricardo-palma",
+          "anchor": "clínica ricardo palma traumatología",
+          "titleWithLink": "Traumatólogo y cirujano de columna en Clínica Ricardo Palma",
+          "regla": "hacia-las-sedes",
+          "motivo": "La atencion de este servicio ocurre en /sedes/clinica-ricardo-palma: la pagina que explica el procedimiento tiene que decir donde se hace, o el paciente se queda sin el paso siguiente (D-08)."
+        },
+        {
+          "link": "/sedes/clinica-tezza",
+          "anchor": "neurocirujano clínica tezza",
+          "titleWithLink": "Traumatólogo y cirujano de columna en Clínica Padre Luis Tezza",
+          "regla": "hacia-las-sedes",
+          "motivo": "La atencion de este servicio ocurre en /sedes/clinica-tezza: la pagina que explica el procedimiento tiene que decir donde se hace, o el paciente se queda sin el paso siguiente (D-08)."
+        },
+        {
+          "link": "/sedes/consultorio-privado",
+          "anchor": "neurocirujano surco",
+          "titleWithLink": "Consultorio de traumatología y columna en Surco, Lima",
+          "regla": "hacia-las-sedes",
+          "motivo": "La atencion de este servicio ocurre en /sedes/consultorio-privado: la pagina que explica el procedimiento tiene que decir donde se hace, o el paciente se queda sin el paso siguiente (D-08)."
+        },
+        {
+          "link": "/sedes/sanna-la-molina",
+          "anchor": "cirugía de columna clínica sanna",
+          "titleWithLink": "Traumatólogo y cirujano de columna en Clínica Sanna, sede La Molina",
+          "regla": "hacia-las-sedes",
+          "motivo": "La atencion de este servicio ocurre en /sedes/sanna-la-molina: la pagina que explica el procedimiento tiene que decir donde se hace, o el paciente se queda sin el paso siguiente (D-08)."
+        },
+        {
+          "link": "/agendar",
+          "anchor": "Agendar cita",
+          "titleWithLink": "Agendar cita — Consultorios y horarios en Lima",
+          "regla": "hacia-conversion",
+          "motivo": "Cierra el recorrido: la pagina explica el servicio y el enlace lleva al unico sitio donde el paciente puede pedir la cita. Sin este enlace la pagina informa y no convierte."
+        },
+        {
+          "link": "/servicios",
+          "anchor": "mejor neurocirujano de columna lima",
+          "titleWithLink": "Traumatólogo Especialista en Columna en Lima — Servicios",
+          "regla": "navegacion-de-seccion",
+          "motivo": "Vuelve al hub de servicios, que es la pagina que pelea \"cirujano de columna lima\" y la que reparte la senal entre las cinco guias: el enlace de vuelta consolida el silo."
+        }
+      ]
+    },
+    {
+      "url": "/servicios/estenosis-espinal",
+      "title": "Estenosis espinal: síntomas, diagnóstico y tratamiento",
+      "code": "200",
+      "action": "Reescribir",
+      "cluster": "estenosis espinal",
+      "enlaces": [
+        {
+          "link": "/servicios/escoliosis-y-deformidades",
+          "anchor": "cirugía de escoliosis",
+          "titleWithLink": "Escoliosis y deformidades de columna: diagnóstico y tratamiento",
+          "regla": "vecindad-tematica",
+          "motivo": "El cluster \"estenosis espinal\" y el cluster \"escoliosis\" son de la misma familia \"condiciones-nucleo\": el paciente que llega por uno de los dos temas esta a un paso del otro."
+        },
+        {
+          "link": "/servicios/hernia-discal",
+          "anchor": "lumbalgia o hernia discal",
+          "titleWithLink": "Hernia discal: síntomas, diagnóstico y tratamiento",
+          "regla": "vecindad-tematica",
+          "motivo": "El cluster \"estenosis espinal\" y el cluster \"hernia discal\" son de la misma familia \"condiciones-nucleo\": el paciente que llega por uno de los dos temas esta a un paso del otro."
+        },
+        {
+          "link": "/sedes/clinica-ricardo-palma",
+          "anchor": "mejor traumatólogo de la clínica ricardo palma",
+          "titleWithLink": "Traumatólogo y cirujano de columna en Clínica Ricardo Palma",
+          "regla": "hacia-las-sedes",
+          "motivo": "La atencion de este servicio ocurre en /sedes/clinica-ricardo-palma: la pagina que explica el procedimiento tiene que decir donde se hace, o el paciente se queda sin el paso siguiente (D-08)."
+        },
+        {
+          "link": "/sedes/clinica-tezza",
+          "anchor": "cirugía de columna clínica tezza",
+          "titleWithLink": "Traumatólogo y cirujano de columna en Clínica Padre Luis Tezza",
+          "regla": "hacia-las-sedes",
+          "motivo": "La atencion de este servicio ocurre en /sedes/clinica-tezza: la pagina que explica el procedimiento tiene que decir donde se hace, o el paciente se queda sin el paso siguiente (D-08)."
+        },
+        {
+          "link": "/sedes/consultorio-privado",
+          "anchor": "ortopedia infantil surco",
+          "titleWithLink": "Consultorio de traumatología y columna en Surco, Lima",
+          "regla": "hacia-las-sedes",
+          "motivo": "La atencion de este servicio ocurre en /sedes/consultorio-privado: la pagina que explica el procedimiento tiene que decir donde se hace, o el paciente se queda sin el paso siguiente (D-08)."
+        },
+        {
+          "link": "/sedes/sanna-la-molina",
+          "anchor": "neurocirujano clínica sanna",
+          "titleWithLink": "Traumatólogo y cirujano de columna en Clínica Sanna, sede La Molina",
+          "regla": "hacia-las-sedes",
+          "motivo": "La atencion de este servicio ocurre en /sedes/sanna-la-molina: la pagina que explica el procedimiento tiene que decir donde se hace, o el paciente se queda sin el paso siguiente (D-08)."
+        },
+        {
+          "link": "/agendar",
+          "anchor": "Agendar cita",
+          "titleWithLink": "Agendar cita — Consultorios y horarios en Lima",
+          "regla": "hacia-conversion",
+          "motivo": "Cierra el recorrido: la pagina explica el servicio y el enlace lleva al unico sitio donde el paciente puede pedir la cita. Sin este enlace la pagina informa y no convierte."
+        },
+        {
+          "link": "/servicios",
+          "anchor": "cirujano de columna cerca de mí",
+          "titleWithLink": "Traumatólogo Especialista en Columna en Lima — Servicios",
+          "regla": "navegacion-de-seccion",
+          "motivo": "Vuelve al hub de servicios, que es la pagina que pelea \"cirujano de columna lima\" y la que reparte la senal entre las cinco guias: el enlace de vuelta consolida el silo."
+        }
+      ]
+    },
+    {
+      "url": "/servicios/hernia-discal",
+      "title": "Hernia discal: síntomas, diagnóstico y tratamiento",
+      "code": "200",
+      "action": "Reescribir",
+      "cluster": "hernia discal",
+      "enlaces": [
+        {
+          "link": "/servicios/escoliosis-y-deformidades",
+          "anchor": "escoliosis dorsal",
+          "titleWithLink": "Escoliosis y deformidades de columna: diagnóstico y tratamiento",
+          "regla": "vecindad-tematica",
+          "motivo": "El cluster \"hernia discal\" y el cluster \"escoliosis\" son de la misma familia \"condiciones-nucleo\": el paciente que llega por uno de los dos temas esta a un paso del otro."
+        },
+        {
+          "link": "/servicios/estenosis-espinal",
+          "anchor": "estenosis espinal cuidado personal",
+          "titleWithLink": "Estenosis espinal: síntomas, diagnóstico y tratamiento",
+          "regla": "vecindad-tematica",
+          "motivo": "El cluster \"hernia discal\" y el cluster \"estenosis espinal\" son de la misma familia \"condiciones-nucleo\": el paciente que llega por uno de los dos temas esta a un paso del otro."
+        },
+        {
+          "link": "/sedes/clinica-ricardo-palma",
+          "anchor": "cirugía de columna san isidro",
+          "titleWithLink": "Traumatólogo y cirujano de columna en Clínica Ricardo Palma",
+          "regla": "hacia-las-sedes",
+          "motivo": "La atencion de este servicio ocurre en /sedes/clinica-ricardo-palma: la pagina que explica el procedimiento tiene que decir donde se hace, o el paciente se queda sin el paso siguiente (D-08)."
+        },
+        {
+          "link": "/sedes/clinica-tezza",
+          "anchor": "ortopedia clínica tezza",
+          "titleWithLink": "Traumatólogo y cirujano de columna en Clínica Padre Luis Tezza",
+          "regla": "hacia-las-sedes",
+          "motivo": "La atencion de este servicio ocurre en /sedes/clinica-tezza: la pagina que explica el procedimiento tiene que decir donde se hace, o el paciente se queda sin el paso siguiente (D-08)."
+        },
+        {
+          "link": "/sedes/consultorio-privado",
+          "anchor": "traumatología surco",
+          "titleWithLink": "Consultorio de traumatología y columna en Surco, Lima",
+          "regla": "hacia-las-sedes",
+          "motivo": "La atencion de este servicio ocurre en /sedes/consultorio-privado: la pagina que explica el procedimiento tiene que decir donde se hace, o el paciente se queda sin el paso siguiente (D-08)."
+        },
+        {
+          "link": "/sedes/sanna-la-molina",
+          "anchor": "cirugía de columna la molina",
+          "titleWithLink": "Traumatólogo y cirujano de columna en Clínica Sanna, sede La Molina",
+          "regla": "hacia-las-sedes",
+          "motivo": "La atencion de este servicio ocurre en /sedes/sanna-la-molina: la pagina que explica el procedimiento tiene que decir donde se hace, o el paciente se queda sin el paso siguiente (D-08)."
+        },
+        {
+          "link": "/agendar",
+          "anchor": "Agendar cita",
+          "titleWithLink": "Agendar cita — Consultorios y horarios en Lima",
+          "regla": "hacia-conversion",
+          "motivo": "Cierra el recorrido: la pagina explica el servicio y el enlace lleva al unico sitio donde el paciente puede pedir la cita. Sin este enlace la pagina informa y no convierte."
+        },
+        {
+          "link": "/servicios",
+          "anchor": "traumatólogo de columna",
+          "titleWithLink": "Traumatólogo Especialista en Columna en Lima — Servicios",
+          "regla": "navegacion-de-seccion",
+          "motivo": "Vuelve al hub de servicios, que es la pagina que pelea \"cirujano de columna lima\" y la que reparte la senal entre las cinco guias: el enlace de vuelta consolida el silo."
+        }
+      ]
+    },
+    {
+      "url": "/servicios/ortopedia-infantil",
+      "title": "Ortopedia infantil: desarrollo, marcha y columna en crecimiento",
+      "code": "200",
+      "action": "Reescribir",
+      "cluster": "especialista en columna y trauma en Lima",
+      "enlaces": [
+        {
+          "link": "/",
+          "anchor": "mejor clínica de traumatología en lima",
+          "titleWithLink": "Dr. Juan Carlos Angulo Totesaut — Traumatólogo y Cirujano de Columna en Lima",
+          "regla": "vecindad-tematica",
+          "motivo": "Comparte con / el cluster \"especialista en columna y trauma en Lima\", que la fase 13 formo midiendo solape de SERP: son dos paginas del mismo tema y la senal tiene que circular entre ellas."
+        },
+        {
+          "link": "/servicios",
+          "anchor": "cirugía de columna cerca de mí",
+          "titleWithLink": "Traumatólogo Especialista en Columna en Lima — Servicios",
+          "regla": "vecindad-tematica",
+          "motivo": "Comparte con /servicios el cluster \"especialista en columna y trauma en Lima\", que la fase 13 formo midiendo solape de SERP: son dos paginas del mismo tema y la senal tiene que circular entre ellas."
+        },
+        {
+          "link": "/sedes/clinica-ricardo-palma",
+          "anchor": "cirujano de columna clínica ricardo palma",
+          "titleWithLink": "Traumatólogo y cirujano de columna en Clínica Ricardo Palma",
+          "regla": "hacia-las-sedes",
+          "motivo": "La atencion de este servicio ocurre en /sedes/clinica-ricardo-palma: la pagina que explica el procedimiento tiene que decir donde se hace, o el paciente se queda sin el paso siguiente (D-08)."
+        },
+        {
+          "link": "/sedes/clinica-tezza",
+          "anchor": "ortopedia infantil clínica tezza",
+          "titleWithLink": "Traumatólogo y cirujano de columna en Clínica Padre Luis Tezza",
+          "regla": "hacia-las-sedes",
+          "motivo": "La atencion de este servicio ocurre en /sedes/clinica-tezza: la pagina que explica el procedimiento tiene que decir donde se hace, o el paciente se queda sin el paso siguiente (D-08)."
+        },
+        {
+          "link": "/sedes/consultorio-privado",
+          "anchor": "cirugía de columna surco",
+          "titleWithLink": "Consultorio de traumatología y columna en Surco, Lima",
+          "regla": "hacia-las-sedes",
+          "motivo": "La atencion de este servicio ocurre en /sedes/consultorio-privado: la pagina que explica el procedimiento tiene que decir donde se hace, o el paciente se queda sin el paso siguiente (D-08)."
+        },
+        {
+          "link": "/sedes/sanna-la-molina",
+          "anchor": "cirujano de columna clínica sanna",
+          "titleWithLink": "Traumatólogo y cirujano de columna en Clínica Sanna, sede La Molina",
+          "regla": "hacia-las-sedes",
+          "motivo": "La atencion de este servicio ocurre en /sedes/sanna-la-molina: la pagina que explica el procedimiento tiene que decir donde se hace, o el paciente se queda sin el paso siguiente (D-08)."
+        },
+        {
+          "link": "/agendar",
+          "anchor": "Agendar cita",
+          "titleWithLink": "Agendar cita — Consultorios y horarios en Lima",
+          "regla": "hacia-conversion",
+          "motivo": "Cierra el recorrido: la pagina explica el servicio y el enlace lleva al unico sitio donde el paciente puede pedir la cita. Sin este enlace la pagina informa y no convierte."
+        }
+      ]
+    },
+    {
+      "url": "/sobre-el-doctor",
+      "title": "Dr. Juan Carlos Angulo — Trayectoria y formación en Lima",
+      "code": "200",
+      "action": "Dejar",
+      "cluster": "Sin cluster (declara que no compite)",
+      "enlaces": [
+        {
+          "link": "/",
+          "anchor": "traumatología especialista en columna",
+          "titleWithLink": "Dr. Juan Carlos Angulo Totesaut — Traumatólogo y Cirujano de Columna en Lima",
+          "regla": "navegacion-de-seccion",
+          "motivo": "Vuelve a la raiz, que es la pagina que la trayectoria y la prueba social existen para sostener."
+        },
+        {
+          "link": "/servicios",
+          "anchor": "cirujano de columna lima",
+          "titleWithLink": "Traumatólogo Especialista en Columna en Lima — Servicios",
+          "regla": "navegacion-de-seccion",
+          "motivo": "Vuelve al hub de servicios, que es la pagina que pelea \"cirujano de columna lima\" y la que reparte la senal entre las cinco guias: el enlace de vuelta consolida el silo."
+        },
+        {
+          "link": "/sedes",
+          "anchor": "Sedes donde atiende el Dr. Juan Carlos Angulo en Lima",
+          "titleWithLink": "Sedes donde atiende el Dr. Juan Carlos Angulo en Lima",
+          "regla": "navegacion-de-seccion",
+          "motivo": "Del respaldo a lo concreto: donde atiende el doctor, con direccion y horario de cada sede."
+        },
+        {
+          "link": "/testimonios",
+          "anchor": "Testimonios de pacientes",
+          "titleWithLink": "Testimonios de pacientes",
+          "regla": "navegacion-de-seccion",
+          "motivo": "Autoridad y prueba social se sostienen mutuamente: quien lee una de las dos esta evaluando lo mismo."
+        },
+        {
+          "link": "/agendar",
+          "anchor": "Agendar cita",
+          "titleWithLink": "Agendar cita — Consultorios y horarios en Lima",
+          "regla": "hacia-conversion",
+          "motivo": "Cierra el recorrido: la pagina explica el servicio y el enlace lleva al unico sitio donde el paciente puede pedir la cita. Sin este enlace la pagina informa y no convierte."
+        }
+      ]
+    },
+    {
+      "url": "/testimonios",
+      "title": "Testimonios de pacientes",
+      "code": "200",
+      "action": "Dejar",
+      "cluster": "Sin cluster (declara que no compite)",
+      "enlaces": [
+        {
+          "link": "/",
+          "anchor": "traumatólogo ortopedia infantil",
+          "titleWithLink": "Dr. Juan Carlos Angulo Totesaut — Traumatólogo y Cirujano de Columna en Lima",
+          "regla": "navegacion-de-seccion",
+          "motivo": "Vuelve a la raiz, que es la pagina que la trayectoria y la prueba social existen para sostener."
+        },
+        {
+          "link": "/servicios",
+          "anchor": "mejor neurocirujano de columna lima",
+          "titleWithLink": "Traumatólogo Especialista en Columna en Lima — Servicios",
+          "regla": "navegacion-de-seccion",
+          "motivo": "Vuelve al hub de servicios, que es la pagina que pelea \"cirujano de columna lima\" y la que reparte la senal entre las cinco guias: el enlace de vuelta consolida el silo."
+        },
+        {
+          "link": "/sedes",
+          "anchor": "Sedes donde atiende el Dr. Juan Carlos Angulo en Lima",
+          "titleWithLink": "Sedes donde atiende el Dr. Juan Carlos Angulo en Lima",
+          "regla": "navegacion-de-seccion",
+          "motivo": "Del respaldo a lo concreto: donde atiende el doctor, con direccion y horario de cada sede."
+        },
+        {
+          "link": "/sobre-el-doctor",
+          "anchor": "Dr. Juan Carlos Angulo",
+          "titleWithLink": "Dr. Juan Carlos Angulo — Trayectoria y formación en Lima",
+          "regla": "navegacion-de-seccion",
+          "motivo": "Autoridad y prueba social se sostienen mutuamente: quien lee una de las dos esta evaluando lo mismo."
+        },
+        {
+          "link": "/agendar",
+          "anchor": "Agendar cita",
+          "titleWithLink": "Agendar cita — Consultorios y horarios en Lima",
+          "regla": "hacia-conversion",
+          "motivo": "Cierra el recorrido: la pagina explica el servicio y el enlace lleva al unico sitio donde el paciente puede pedir la cita. Sin este enlace la pagina informa y no convierte."
+        }
+      ]
+    }
+  ],
+  "fueraDeLaMatriz": [
+    {
+      "url": "/blog/estenosis-espinal-que-es",
+      "motivo": "Redirige 301 hacia /servicios/estenosis-espinal en la fase 15. No entra a la matriz por las dos puntas: enlazar HACIA ella mandaria a cada visitante por un salto de mas, y enlazar DESDE ella seria escribir enlaces en una pagina que se apaga. Lo que hereda su senal es el destino del 301, que si esta en la matriz."
+    },
+    {
+      "url": "/blog/hernia-discal-o-dolor-de-espalda-como-diferenciarlos",
+      "motivo": "Redirige 301 hacia /servicios/hernia-discal en la fase 15. No entra a la matriz por las dos puntas: enlazar HACIA ella mandaria a cada visitante por un salto de mas, y enlazar DESDE ella seria escribir enlaces en una pagina que se apaga. Lo que hereda su senal es el destino del 301, que si esta en la matriz."
+    }
+  ],
+  "descartadosPorSolape": [],
+  "resumen": {
+    "filas": 22,
+    "enlaces": 135,
+    "anchorsUnicos": 78,
+    "sinEnlacesEntrantes": 0,
+    "entrantesPorUrl": {
+      "/": 9,
+      "/agendar": 16,
+      "/blog": 7,
+      "/blog/5-sintomas-de-columna-que-no-debes-ignorar": 4,
+      "/blog/artrosis": 5,
+      "/blog/lumbalgia": 4,
+      "/blog/miedo-a-operarte-de-la-columna-5-cosas-que-debes-saber": 4,
+      "/contacto": 6,
+      "/preguntas-frecuentes": 1,
+      "/sedes": 10,
+      "/sedes/clinica-ricardo-palma": 6,
+      "/sedes/clinica-tezza": 6,
+      "/sedes/consultorio-privado": 6,
+      "/sedes/sanna-la-molina": 6,
+      "/servicios": 21,
+      "/servicios/cirugia-minimamente-invasiva": 2,
+      "/servicios/escoliosis-y-deformidades": 4,
+      "/servicios/estenosis-espinal": 3,
+      "/servicios/hernia-discal": 5,
+      "/servicios/ortopedia-infantil": 6,
+      "/sobre-el-doctor": 2,
+      "/testimonios": 2
+    }
+  }
+}
