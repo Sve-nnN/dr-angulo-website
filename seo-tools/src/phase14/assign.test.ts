@@ -25,6 +25,7 @@ import {
   clinicaDe,
   distritoDe,
   esExclusivaDeCaptacion,
+  intentSegunSerp,
   motivoDeExclusion,
   type EntradaDeAsignacion,
   type EspecificacionDeUrl,
@@ -471,4 +472,103 @@ test("assign: cada asignacion sale con justificacion en prosa o no sale", () => 
       ),
     ErrorDeAsignacion,
   );
+});
+
+// --- Los dos huecos de calidad que la verificacion del plan 14-02 encontro. -------------------
+
+test("assign: la intencion de la URL sale del top 10 medido y no de la carpeta donde vive", () => {
+  // El caso testigo real: `estenosis espinal` cuelga de /servicios/, suena a operacion, y Google
+  // le responde con ocho de ocho articulos informativos. Si la intencion saliera de la familia
+  // de la URL, al cliente se le escribiria transaccional, que es la creencia previa y no el dato.
+  const medido = intentSegunSerp(
+    {
+      keywordKey: "estenosis espinal",
+      tipoDePagina: "contenido-internacional",
+      confianza: "alta",
+      repartoDeTipos: { "contenido-internacional": 8 },
+      posicionesMedidas: 8,
+    },
+    "transaccional",
+  );
+  assert.equal(medido.intent, "informacional");
+  assert.equal(medido.deLaSerp, true);
+  assert.match(medido.evidencia, /NO la transaccional/);
+
+  // Una SERP de fichas de clinica dice lo contrario sobre una keyword que el texto llamo
+  // informacional. La medicion manda en las dos direcciones o no manda en ninguna.
+  const sede = intentSegunSerp(
+    {
+      keywordKey: "cirujano de columna clinica x",
+      tipoDePagina: "ficha-de-clinica",
+      confianza: "alta",
+      repartoDeTipos: { "ficha-de-clinica": 6, directorio: 2 },
+      posicionesMedidas: 8,
+    },
+    "informacional",
+  );
+  assert.equal(sede.intent, "transaccional");
+  assert.equal(sede.deLaSerp, true);
+});
+
+test("assign: sin SERP medida o con empate la intencion se declara inferida, no medida", () => {
+  const sinSerp = intentSegunSerp(undefined, "comercial");
+  assert.equal(sinSerp.intent, "comercial");
+  assert.equal(sinSerp.deLaSerp, false);
+  assert.match(sinSerp.evidencia, /sin SERP medida/);
+
+  // `otro` no mapea a ninguna intencion: un top 10 entero de `otro` no autoriza a afirmar nada.
+  const opaca = intentSegunSerp(
+    {
+      keywordKey: "algo",
+      tipoDePagina: "otro",
+      confianza: "baja",
+      repartoDeTipos: { otro: 9 },
+      posicionesMedidas: 9,
+    },
+    "transaccional",
+  );
+  assert.equal(opaca.intent, "transaccional");
+  assert.equal(opaca.deLaSerp, false);
+
+  // Empate 4-4 entre informacional y transaccional: tampoco autoriza a afirmar.
+  const empate = intentSegunSerp(
+    {
+      keywordKey: "empatada",
+      tipoDePagina: "guia",
+      confianza: "media",
+      repartoDeTipos: { guia: 4, "pagina-de-servicio": 4 },
+      posicionesMedidas: 8,
+    },
+    "comercial",
+  );
+  assert.equal(empate.intent, "comercial");
+  assert.equal(empate.deLaSerp, false);
+});
+
+test("assign: dos secundarias donde una contiene a la otra no gastan dos ranuras", () => {
+  // Tres reformulaciones de lo mismo mas dos angulos distintos. Sin el filtro, las cinco ranuras
+  // se van en un solo termino escrito de tres formas y el mapa miente sobre lo que la pagina
+  // cubre.
+  const universo: RegistroDeKeyword[] = [
+    kw("escoliosis", "escoliosis", null, "informacional"),
+    kw("cirugia de escoliosis", "escoliosis", 500, "transaccional"),
+    kw("cirugia de escoliosis en lima", "escoliosis", 400, "transaccional"),
+    kw("cirugia de escoliosis en lima peru", "escoliosis", 300, "transaccional"),
+    kw("corrector de escoliosis", "escoliosis", 200, "comercial"),
+    kw("ejercicios para escoliosis", "escoliosis", 100, "informacional"),
+  ];
+  const { asignaciones } = asignar(
+    entrada({
+      universo,
+      especificaciones: [spec({ url: "/servicios/escoliosis-y-deformidades", candidatas: ["escoliosis"] })],
+    }),
+  );
+  const secundarias = asignaciones[0]?.secundarias ?? [];
+  assert.ok(secundarias.length >= 3);
+  for (const a of secundarias) {
+    for (const b of secundarias) {
+      if (a === b) continue;
+      assert.ok(!a.includes(b), `"${a}" contiene a "${b}": son la misma consulta dos veces`);
+    }
+  }
 });
