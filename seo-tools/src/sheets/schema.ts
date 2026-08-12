@@ -551,6 +551,23 @@ export interface TabSchema {
   readonly metadata: TabMetadata;
   /** Fila de encabezados leida, TAL CUAL, sin recortar. */
   readonly headers: string[];
+  /**
+   * TODAS las columnas resueltas, en orden y SIN deduplicar por encabezado.
+   *
+   * POR QUE EXISTE ADEMAS DE `byHeader`, Y NO ES REDUNDANTE.
+   *
+   * `byHeader` esta indexado por el encabezado recortado, asi que en un tab donde un
+   * encabezado se repite —`Internal Linking Audit` trae `Title with Link` ocho veces— colapsa
+   * las ocho en una sola entrada: la ultima que se registro. Quien recorra `byHeader.values()`
+   * para saber que columnas escribir se saltea siete de cada ocho SIN LANZAR NADA, y el
+   * resumen reporta las filas actualizadas igual. Es exactamente el modo de falla que el
+   * mapeo por posicion existe para evitar, entrando por otra puerta (T-14-14).
+   *
+   * Esta lista es la fuente de verdad para "que columnas hay". `byHeader` sigue sirviendo para
+   * buscar una columna concreta por nombre, que es su uso legitimo y donde la ambiguedad no
+   * aplica: la columna clave nunca esta repetida.
+   */
+  readonly columns: ResolvedColumn[];
   readonly byField: Map<string, ResolvedColumn>;
   readonly byHeader: Map<string, ResolvedColumn>;
   /** Encabezados requeridos que no estaban. Vacio salvo que se haya pedido la extension. */
@@ -623,9 +640,11 @@ export async function loadTabSchema(
   const headers = await gateway.readRow(tab.sheetTitle, headerRow);
   const ambiguous = findAmbiguousHeaders(headers);
 
+  const columns: ResolvedColumn[] = [];
   const byField = new Map<string, ResolvedColumn>();
   const byHeader = new Map<string, ResolvedColumn>();
   const register = (column: ResolvedColumn): void => {
+    columns.push(column);
     if (column.field !== null) byField.set(column.field, column);
     byHeader.set(trimHeader(column.header), column);
   };
@@ -636,6 +655,7 @@ export async function loadTabSchema(
       tab,
       metadata,
       headers,
+      columns,
       byField,
       byHeader,
       missing: [],
@@ -726,6 +746,7 @@ export async function loadTabSchema(
     tab,
     metadata,
     headers,
+    columns,
     byField,
     byHeader,
     missing: missing.map((c) => c.header),
