@@ -44,6 +44,9 @@ const POR_DEFECTO = "data/url-map.jsonl";
 /** Estado de columna que esta carga tiene permitido escribir. Uno solo, y a proposito. */
 const ESTADO_PROPIO = "fase-14" as const;
 
+/** Lo que se escribe en la columna `Keyword` de una URL que declara que no compite. */
+export const SIN_PRIMARIA = "Sin keyword primaria (decisión)";
+
 /**
  * Proyeccion del mapa a la fila que el tab espera.
  *
@@ -62,7 +65,11 @@ export function filaDeContentModel(a: AsignacionDeUrl): Record<string, unknown> 
   return {
     url: a.url,
     esPaginaSeo: a.esPaginaSeo ? "Sí" : "No",
-    keywordPrimaria: a.keywordPrimaria,
+    // Una URL sin primaria escribe la DECISION en la celda y no la deja en blanco. En el
+    // documento del cliente una celda vacia se lee como un olvido —y `/sedes` es justamente lo
+    // contrario: es la decision de Juan del 2026-08-11 de que ese hub deje de canibalizar a las
+    // cuatro sedes. El texto dice que no compite; el blanco no dice nada.
+    keywordPrimaria: a.keywordPrimaria ?? SIN_PRIMARIA,
     intent: capitalizar(a.intent),
     tipoDePagina: a.tipoDePagina,
     nuevaOExistente: a.estado === "planificada" ? "Nueva" : "Existente",

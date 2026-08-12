@@ -219,6 +219,7 @@ test("assign: las secundarias salen del cluster de la primaria y son de tres a c
   const fila = asignaciones[0];
   assert.ok(fila);
   assert.ok(fila.secundarias.length >= 3 && fila.secundarias.length <= 5);
+  assert.ok(fila.keywordPrimaria !== null, "una pagina de servicio siempre trae primaria");
   assert.ok(!fila.secundarias.includes(fila.keywordPrimaria), "la primaria no se repite abajo");
   const claves = new Set(CLUSTER_DE_PRUEBA.map((k) => k.keywordKey));
   for (const s of fila.secundarias) assert.ok(claves.has(s), `${s} no es del cluster de la primaria`);

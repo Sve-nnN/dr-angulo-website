@@ -176,6 +176,8 @@ function asignacion(sobrescritos: Record<string, unknown> = {}): AsignacionDeUrl
       estado: "viva",
       origen: "src/content/location-pages.ts:67",
       esPaginaSeo: true,
+      motivoDeAccion:
+        "La pagina esta publicada desde v1.1 pero salio antes de que esta fase asignara keywords.",
       keywordPrimaria: "cirujano de columna clínica ricardo palma",
       keywordPrimariaKey: "cirujano de columna clinica ricardo palma",
       secundarias: [

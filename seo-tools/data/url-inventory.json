@@ -136,7 +136,8 @@
       "url": "/servicios/escoliosis",
       "titulo": "Escoliosis y deformidades de columna: diagnóstico y tratamiento",
       "estado": "viva",
-      "mapeable": true,
+      "mapeable": false,
+      "motivoNoMapeable": "Es el slug ANTERIOR de /servicios/escoliosis-y-deformidades, renombrado por decision de Juan del 2026-08-11, y el slug nuevo ya tiene fila en el mapa desde el plan 14-02. No es una URL que no compite: es la MISMA pagina bajo otro nombre. Dos filas la mostrarian compitiendo contra si misma, que es exactamente la canibalizacion que el plan 14-03 viene a cerrar. La redireccion 301 hacia el slug nuevo es trabajo de v1.1 y viaja en el handoff.",
       "origen": "src/content/service-pages.ts:463",
       "familia": "servicio"
     },
@@ -183,7 +184,7 @@
   ],
   "resumen": {
     "total": 22,
-    "mapeables": 21,
+    "mapeables": 20,
     "porFamilia": {
       "home": 1,
       "hub": 3,
@@ -199,9 +200,9 @@
     "esperadoRoadmap": 19,
     "esperadoMapeableRoadmap": 18,
     "medido": 22,
-    "medidoMapeable": 21,
+    "medidoMapeable": 20,
     "diferencia": 3,
-    "diferenciaMapeable": 3,
+    "diferenciaMapeable": 2,
     "sobran": [
       "/blog/5-sintomas-de-columna-que-no-debes-ignorar",
       "/blog/estenosis-espinal-que-es",

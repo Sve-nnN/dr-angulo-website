@@ -246,8 +246,102 @@ export function motivoDeExclusion(keyword: string): string | null {
   if (MODIFICADORES_DE_ESTUDIO.test(texto)) {
     return "modificador de estudio o traduccion: quien lo busca baja material, no agenda consulta";
   }
+  const fuera = distritoFueraDeRed(texto);
+  if (fuera !== null) {
+    return (
+      `nombra ${fuera}, un distrito donde el doctor no atiende: la regla de D-04 manda la geo de ` +
+      `distrito de secundaria a la URL que sirve ese distrito, y da por sentado que el distrito ` +
+      `esta en la red. Las tres sedes cubren Surco, San Isidro y La Molina; el resto de Lima no. ` +
+      `Perseguir la geo de un distrito sin consultorio lleva a la pagina a una consulta que ` +
+      `termina en "no atiende aca"`
+    );
+  }
+  if (OTRAS_ESPECIALIDADES.test(texto)) {
+    return (
+      "nombra una cirugia de otra especialidad que el consultorio no realiza: es la misma logica " +
+      "de D-10, volumen que no puede convertirse en paciente de traumatologia y columna"
+    );
+  }
   return null;
 }
+
+/**
+ * Distritos de Lima donde el doctor NO atiende.
+ *
+ * Existe por un caso concreto que el plan 14-02 dejo anotado: `ortopedia infantil en los olivos`
+ * entro de secundaria de `/servicios/ortopedia-infantil` porque D-04 dice que las geo de distrito
+ * viajan de secundarias. Pero la regla asume algo que nadie habia escrito: que el distrito este
+ * en la red del consultorio. Los Olivos queda en Lima Norte y ahi no hay sede. La keyword trae
+ * volumen y trae a alguien que busca atenderse a una hora de distancia de donde el doctor opera.
+ *
+ * Los tres distritos de la red —Surco con el consultorio y Tezza, San Isidro con Ricardo Palma,
+ * La Molina con Sanna— NO estan en esta lista, y Monterrico y Chacarilla tampoco porque son
+ * zonas de Surco y de La Molina.
+ */
+const DISTRITOS_FUERA_DE_RED: readonly string[] = [
+  "los olivos",
+  "san martin de porres",
+  "san martín de porres",
+  "comas",
+  "independencia",
+  "carabayllo",
+  "puente piedra",
+  "ancon",
+  "ancón",
+  "san juan de lurigancho",
+  "san juan de miraflores",
+  "villa el salvador",
+  "villa maria del triunfo",
+  "villa maría del triunfo",
+  "chorrillos",
+  "barranco",
+  "miraflores",
+  "surquillo",
+  "san borja",
+  "lince",
+  "jesus maria",
+  "jesús maría",
+  "magdalena",
+  "pueblo libre",
+  "brena",
+  "breña",
+  "la victoria",
+  "el agustino",
+  "santa anita",
+  "ate vitarte",
+  "san luis",
+  "rimac",
+  "rímac",
+  "callao",
+  "bellavista",
+  "ventanilla",
+  "chaclacayo",
+  "chosica",
+  "lurin",
+  "lurín",
+  "pachacamac",
+  "pachacámac",
+  "cieneguilla",
+];
+
+/** Distrito fuera de la red que la keyword nombra, o `null`. */
+export function distritoFueraDeRed(keyword: string): string | null {
+  const texto = keyword.toLowerCase();
+  for (const d of DISTRITOS_FUERA_DE_RED) {
+    if (new RegExp(`\\b${d.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}\\b`).test(texto)) return d;
+  }
+  return null;
+}
+
+/**
+ * Cirugias de otras especialidades que comparten el adjetivo y no el consultorio.
+ *
+ * El cluster de `cirugia minimamente invasiva` agrupa por la tecnica, no por el organo: adentro
+ * conviven la de columna, la ortognatica de mandibula, la de paratiroides y la cardiaca. Una guia
+ * de columna que se lleve esas de secundarias promete algo que el consultorio no hace.
+ */
+const OTRAS_ESPECIALIDADES =
+  /\bortognatica\b|\bortognática\b|\bparatiroide|\bcardiac|\bcardíac|\bbariatric|\bbariátric|\bvesicula\b|\bvesícula\b|\bprostata\b|\bpróstata\b|\bginecolog|\burolog|\bmaxilofacial\b|\brinoplastia\b|\bcatarata|\bocular\b|\bestetica\b|\bestética\b/i;
 
 /**
  * Modificadores que delatan a alguien que no es paciente del consultorio.
@@ -973,6 +1067,9 @@ export function asignar(entrada: EntradaDeAsignacion): ResultadoDeAsignacion {
       cluster: primaria.cluster,
       clusterFuente: (primaria.clusterFuente ?? null) as FuenteDeCluster | null,
       accion,
+      motivoDeAccion,
+      motivoSinPrimaria: null,
+      redirigeA: null,
       dejarActualizarEliminar: disposicion,
       canonical: `${SITIO}${spec.url}`,
       topic: spec.topic,

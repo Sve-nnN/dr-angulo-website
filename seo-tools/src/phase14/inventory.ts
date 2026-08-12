@@ -357,6 +357,12 @@ const NO_MAPEABLES: Record<string, string> = {
     "D-11: es una pagina legal y ya declara noindex desde v1.0, asi que esta fuera del sitemap. " +
     "Asignarle una keyword seria pedirle a Google que posicione una URL que el propio sitio le " +
     "pide no indexar.",
+  "/servicios/escoliosis":
+    "Es el slug ANTERIOR de /servicios/escoliosis-y-deformidades, renombrado por decision de " +
+    "Juan del 2026-08-11, y el slug nuevo ya tiene fila en el mapa desde el plan 14-02. No es " +
+    "una URL que no compite: es la MISMA pagina bajo otro nombre. Dos filas la mostrarian " +
+    "compitiendo contra si misma, que es exactamente la canibalizacion que el plan 14-03 viene " +
+    "a cerrar. La redireccion 301 hacia el slug nuevo es trabajo de v1.1 y viaja en el handoff.",
 };
 
 // ---------------------------------------------------------------------------
