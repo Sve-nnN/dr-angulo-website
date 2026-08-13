@@ -94,6 +94,16 @@ const FORBIDDEN_FIELDS = [
  * publique el esqueleto de otra página.
  */
 const SKELETONS = {
+  "guia-clinica": [
+    "que-es",
+    "sintomas",
+    "causas",
+    "diagnostico",
+    "sin-operar",
+    "cirugia",
+    "preguntas-frecuentes",
+    "cuando-consultar",
+  ],
   "ficha-de-sede": [
     "donde-queda",
     "como-llegar",
@@ -142,6 +152,14 @@ const MANIFEST = [
   },
   { route: "/sedes/sanna-la-molina", type: "sede", format: "ficha-de-sede" },
   { route: "/sedes/clinica-tezza", type: "sede", format: "ficha-de-sede" },
+  // Sin `linksTo`: no es un post y la matriz de enlazado de v1.2 no le asigna
+  // fila propia, así que no se le inventan salidas. `SITEMAP_TOTAL` no cambia
+  // porque la URL ya existía desde v1.0.
+  {
+    route: "/preguntas-frecuentes",
+    type: "guia",
+    format: "guia-clinica",
+  },
 ];
 
 // --------------------------------------------------------------------------
