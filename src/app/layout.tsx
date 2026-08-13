@@ -26,16 +26,18 @@ export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
     template: `%s | ${siteConfig.shortName}`,
-    default: `${siteConfig.name} — ${siteConfig.title}`,
+    default: "Traumatología en Lima: Dr. Juan Carlos Angulo",
   },
-  description: siteConfig.description,
+  description:
+    "Traumatólogo y cirujano de columna en Lima. Atiende en su consultorio de Surco, Ricardo Palma, Sanna La Molina y Clínica Tezza.",
   alternates: { canonical: "/" },
   openGraph: {
     type: "website",
     locale: "es_PE",
     siteName: siteConfig.name,
-    title: `${siteConfig.name} — ${siteConfig.title}`,
-    description: siteConfig.description,
+    title: "Traumatología en Lima: Dr. Juan Carlos Angulo",
+    description:
+      "Traumatólogo y cirujano de columna en Lima. Atiende en su consultorio de Surco, Ricardo Palma, Sanna La Molina y Clínica Tezza.",
     url: siteConfig.url,
     images: [
       {
