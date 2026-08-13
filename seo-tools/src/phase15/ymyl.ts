@@ -24,7 +24,7 @@
  *   como se pierden las reglas.
  */
 
-import { readFileSync } from "node:fs";
+import { readFileSync, readdirSync } from "node:fs";
 import path from "node:path";
 
 import { CliError, SEO_TOOLS_ROOT } from "../config.js";
@@ -509,6 +509,51 @@ export function revisarDocumento(url: string, documento: string): Hallazgo[] {
   ];
 }
 
+/**
+ * La carpeta de los 24 documentos emitidos.
+ *
+ * Escrita literal y no importada de `paquete.ts` por el mismo motivo que las marcas de copy: el
+ * generador importa esta compuerta, asi que importarlo de vuelta cerraria el ciclo. Una prueba
+ * ata las dos copias.
+ */
+export const DIRECTORIO_DE_PAQUETES = path.join(
+  SEO_TOOLS_ROOT,
+  "..",
+  ".planning",
+  "workstreams",
+  "seo-keywords",
+  "phases",
+  "15-paquete-on-page-por-url",
+  "paquetes",
+);
+
+/**
+ * Corre las reglas de escritura sobre los documentos ya emitidos, uno por archivo.
+ *
+ * Es el unico recorrido que alcanza la region de copy de los ocho documentos cortos: la redacta
+ * `queHacerCon` en codigo y no en un dataset, asi que `revisar()` sobre los cuatro JSON no la ve
+ * nunca. El comentario de `renderPaqueteCorto` dice que llevan las marcas "para que la compuerta
+ * corra sobre cualquiera de los cuatro sin un caso especial", y ese recorrido no existia.
+ */
+export function revisarEmitidos(directorio: string = DIRECTORIO_DE_PAQUETES): Hallazgo[] {
+  let archivos: string[];
+  try {
+    archivos = readdirSync(directorio).filter((a) => a.endsWith(".md"));
+  } catch {
+    throw new CliError(
+      `No se pudo leer ${directorio}.\n` +
+        `  Accion: es la carpeta de los documentos emitidos. Se genera con ` +
+        `src/phase15/paquete.ts --todos`,
+    );
+  }
+
+  return archivos
+    .sort()
+    .flatMap((archivo) =>
+      revisarDocumento(archivo, readFileSync(path.join(directorio, archivo), "utf8")),
+    );
+}
+
 interface PaginaDeCopy {
   readonly url: string;
   readonly secciones: readonly SeccionDeCopy[];
@@ -565,6 +610,22 @@ const TODOS_LOS_DATASETS = [
 
 async function main(): Promise<number> {
   const banderas = parseBanderas(process.argv.slice(2));
+  const out = process.stdout;
+
+  // `--documentos` corre las reglas de escritura sobre los 24 emitidos. Es el unico modo que
+  // alcanza la region de copy de los ocho documentos cortos, que se redacta en codigo.
+  if (booleana(banderas, "documentos")) {
+    const hallazgos = revisarEmitidos();
+    for (const hallazgo of hallazgos) {
+      out.write(`${hallazgo.url}\n`);
+      out.write(`  [${hallazgo.regla}] ${hallazgo.seccion}\n`);
+      out.write(`    ${hallazgo.texto}\n`);
+      out.write(`    ${hallazgo.explicacion}\n`);
+    }
+    out.write(`\n${hallazgos.length} hallazgo(s) en los documentos emitidos\n`);
+    return hallazgos.length === 0 ? 0 : 1;
+  }
+
   // `--todos` corre la compuerta sobre las 16 paginas a la vez, que es como se comprueba al
   // cerrar la fase. Con un dataset por corrida, una regla que solo falla al cruzar dos familias
   // no se vería nunca.
@@ -578,7 +639,6 @@ async function main(): Promise<number> {
       ];
 
   const paginas = rutas.flatMap((ruta) => paginasParaRevisar(ruta));
-  const out = process.stdout;
   let total = 0;
 
   for (const pagina of paginas) {
