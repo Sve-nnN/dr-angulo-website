@@ -730,6 +730,845 @@
           "entidadesCubiertas": ["tezza"]
         }
       ]
+    },
+    {
+      "url": "/sedes/sanna-la-molina",
+      "title": "Cirujano de columna en Clínica Sanna La Molina",
+      "metaDescription": "El Dr. Juan Carlos Angulo atiende columna en la Clínica Sanna de La Molina. Días de consulta y cómo llegar a la sede.",
+      "h1": "Atención de columna en Sanna La Molina",
+      "h1Origen": "Misma lógica que las otras fichas de sede: el title nombra al especialista y el H1 nombra el servicio, para que las cuatro se lean igual.",
+      "notaDeFormato": "El resultado que domina la SERP de esta keyword es una red social: 4 de 9 posiciones tipificadas sobre 10 medidas, con confianza alta, y el primer orgánico es el buscador de médicos de la propia red. Eso dice qué está premiando Google acá, y es perfil antes que artículo. Por eso la ficha pone los datos concretos arriba y la prosa después, al revés de las guías clínicas de esta misma fase.",
+      "guiaParaElDoctor": "Esta ficha compite en una SERP donde el resultado dominante es una red social, así que está escrita como perfil: dirección, días, teléfono y app primero, explicación después. Cuatro bloques necesitan su ojo. El de cirugía de columna en La Molina, que es la búsqueda de quien ya escuchó la palabra operación. El de ortopedia infantil en esta sede. El de cirugía dentro de Sanna, donde se dice qué parte coordina la clínica y qué parte el consultorio. Y el que separa neurocirugía de traumatología de columna. Lo demás es operativo. Hay una decisión de contenido que conviene que revise: la ficha aclara varias veces que las otras sedes de Sanna, San Borja, El Golf, Trujillo y Arequipa, no son esta. Se escribió así porque la SERP mezcla todas, pero si le parece que le da demasiado espacio a otras sedes, se recorta. Quedan tres datos que Sanna tiene que confirmar y están listados aparte en el paquete.",
+      "datosOperativos": [
+        {
+          "dato": "Dirección",
+          "valor": "Av. Raúl Ferrero 1256, La Molina, Lima 15024",
+          "estado": "respaldado",
+          "fuente": "src/content/locations.ts, entrada sanna-la-molina. La cabecera del archivo declara que direcciones, teléfonos y webs están verificados contra la ficha oficial de cada clínica."
+        },
+        {
+          "dato": "Referencia para llegar",
+          "valor": "Cuadra 12 de Av. Raúl Ferrero, con frente sobre la avenida",
+          "estado": "respaldado",
+          "fuente": "src/content/location-pages.ts, bloque gettingThere de sanna-la-molina, publicado en el sitio."
+        },
+        {
+          "dato": "Días y horario de consulta",
+          "valor": "Martes de 8:00 a. m. a 7:00 p. m. y jueves de 8:00 a. m. a 12:00 p. m.",
+          "estado": "respaldado",
+          "fuente": "src/content/locations.ts, campo schedule. Horarios confirmados por el consultorio el 2026-08-09."
+        },
+        {
+          "dato": "Central de citas",
+          "valor": "(01) 635 5000",
+          "estado": "respaldado",
+          "fuente": "src/content/locations.ts, canal de agenda de sanna-la-molina."
+        },
+        {
+          "dato": "App de la clínica",
+          "valor": "App SANNA, disponible para iOS y Android",
+          "estado": "respaldado",
+          "fuente": "src/content/locations.ts, canal de agenda de sanna-la-molina."
+        },
+        {
+          "dato": "Agenda en línea de la red",
+          "valor": "agendamiento.sanna.pe",
+          "estado": "respaldado",
+          "fuente": "src/content/locations.ts, canal de agenda de sanna-la-molina."
+        },
+        {
+          "dato": "Cómo figura el doctor en el buscador de la clínica",
+          "valor": "Dr. Juan Carlos Angulo Totesaut, en Traumatología",
+          "estado": "respaldado",
+          "fuente": "src/content/locations.ts, detalle del canal de agenda de sanna-la-molina."
+        },
+        {
+          "dato": "Piso y número de consultorio dentro del centro clínico",
+          "valor": "sin dato publicado",
+          "estado": "pendiente",
+          "fuente": "No está en locations.ts ni en location-pages.ts, que son las dos fuentes publicadas del sitio. Lo confirma la clínica y v1.1 lo completa antes de publicar."
+        },
+        {
+          "dato": "Seguros y convenios que la sede acepta para esta consulta",
+          "valor": "sin dato publicado",
+          "estado": "pendiente",
+          "fuente": "No está en ninguna fuente publicada del sitio. Lo define la red y cambia con el tiempo; v1.1 lo confirma antes de publicar o deja la página sin afirmarlo."
+        },
+        {
+          "dato": "Precio de la consulta",
+          "valor": "sin dato publicado",
+          "estado": "pendiente",
+          "fuente": "La SERP de esta keyword lo pregunta de frente y el sitio no publica precios (D-10). Lo pone la clínica y cambia por sede; la página remite a la central en vez de dar una cifra."
+        }
+      ],
+      "enlacesPropuestos": [
+        {
+          "destino": "/sedes",
+          "anchor": "Sedes donde atiende el Dr. Juan Carlos Angulo en Lima",
+          "regla": "navegacion-de-seccion"
+        },
+        {
+          "destino": "/servicios",
+          "anchor": "cirugía de columna cerca de mí",
+          "regla": "navegacion-de-seccion"
+        },
+        {
+          "destino": "/servicios/ortopedia-infantil",
+          "anchor": "medico ortopedia infantil",
+          "regla": "mencion-directa"
+        },
+        {
+          "destino": "/agendar",
+          "anchor": "Agendar cita",
+          "regla": "hacia-conversion"
+        },
+        {
+          "destino": "/contacto",
+          "anchor": "Contacto y Citas en Lima",
+          "regla": "hacia-conversion"
+        },
+        {
+          "destino": "/",
+          "anchor": "traumatología lima",
+          "regla": "navegacion-de-seccion"
+        }
+      ],
+      "secciones": [
+        {
+          "clave": "donde-queda",
+          "nivel": 2,
+          "titulo": "Dónde queda Sanna La Molina",
+          "tipo": "operativo",
+          "aprobacion": "no-requiere",
+          "parrafos": [
+            "Av. Raúl Ferrero 1256, La Molina. El Dr. Juan Carlos Angulo pasa consulta de columna en el centro clínico de Sanna de ese distrito los martes y los jueves.",
+            "Los datos van primero porque es lo que casi todo el mundo viene a buscar en una página como esta: dirección, días, teléfono y app. La explicación de qué se atiende viene después.",
+            "El doctor atiende en Sanna. La red es de Sanna y la agenda también, así que la cita se saca por sus canales y no por el consultorio privado del doctor."
+          ],
+          "afirmaciones": [
+            {
+              "texto": "Av. Raúl Ferrero 1256, La Molina, Lima 15024",
+              "fuente": "src/content/locations.ts, entrada sanna-la-molina, verificada contra la ficha oficial de la clínica."
+            },
+            {
+              "texto": "Consulta los martes y jueves",
+              "fuente": "src/content/locations.ts, campo schedule, confirmado por el consultorio el 2026-08-09."
+            }
+          ],
+          "keywordsCubiertas": [],
+          "entidadesCubiertas": ["red"]
+        },
+        {
+          "clave": "donde-queda--cirugia-de-la-columna-la-molina",
+          "nivel": 3,
+          "titulo": "Cirugía de columna en La Molina",
+          "tipo": "clinico",
+          "aprobacion": "pendiente-doctor",
+          "parrafos": [
+            "Quien busca cirugía de columna en La Molina suele estar a mitad de camino. Ya tiene una resonancia encima, ya escuchó la palabra operación en algún consultorio, y ahora quiere saber dónde se resuelve eso cerca de su casa.",
+            "La evaluación se hace acá, en Sanna. La decisión de operar o no se toma en consulta, con el estudio de imagen sobre la mesa y con la persona delante, y termina en que no hace falta operar más seguido de lo que uno esperaría."
+          ],
+          "afirmaciones": [],
+          "keywordsCubiertas": ["cirugía de columna la molina"],
+          "entidadesCubiertas": []
+        },
+        {
+          "clave": "donde-queda--clinica-san-borja-staff-medico",
+          "nivel": 3,
+          "titulo": "Si buscabas el staff de Sanna San Borja",
+          "tipo": "operativo",
+          "aprobacion": "no-requiere",
+          "parrafos": [
+            "San Borja es otra sede de la misma red y su staff es otro. El listado de médicos de Sanna San Borja está en la web de Sanna, no acá.",
+            "Esta ficha cubre una sola sede y un solo médico: la consulta de columna, traumatología y ortopedia infantil del Dr. Angulo en La Molina."
+          ],
+          "afirmaciones": [],
+          "keywordsCubiertas": [],
+          "entidadesCubiertas": ["san", "borja", "san borja", "medicos", "red"]
+        },
+        {
+          "clave": "como-llegar",
+          "nivel": 2,
+          "titulo": "Cómo llegar por la avenida Raúl Ferrero",
+          "tipo": "operativo",
+          "aprobacion": "no-requiere",
+          "parrafos": [
+            "El 1256 cae en la cuadra 12 de Raúl Ferrero, dentro de La Molina. El centro clínico tiene frente sobre la avenida, así que la entrada se ve desde la vía.",
+            "Raúl Ferrero es una de las avenidas principales del distrito, y desde La Molina se llega sin dar vueltas. Desde Surco o desde Ate el trayecto depende más de la hora a la que salgas que de la distancia.",
+            "En qué piso queda el consultorio dentro del centro no es un dato publicado todavía. Se pregunta en informes al llegar, hasta que Sanna lo confirme."
+          ],
+          "afirmaciones": [
+            {
+              "texto": "El 1256 cae en la cuadra 12 de Av. Raúl Ferrero",
+              "fuente": "src/content/location-pages.ts, bloque gettingThere de sanna-la-molina."
+            }
+          ],
+          "keywordsCubiertas": [],
+          "entidadesCubiertas": []
+        },
+        {
+          "clave": "que-se-atiende",
+          "nivel": 2,
+          "titulo": "Qué se atiende en Sanna La Molina",
+          "tipo": "clinico",
+          "aprobacion": "pendiente-doctor",
+          "parrafos": [
+            "Columna del adulto, sobre todo: dolor lumbar, dolor cervical, hernia discal, canal estrecho, escoliosis y deformidades.",
+            "Junto a eso, traumatología general y las consultas de ortopedia infantil. Es la misma consulta que en las otras tres sedes. Lo que cambia acá es el día, el distrito y quién maneja la agenda.",
+            "Antes de hablar de tratamiento hay que saber qué estructura está comprometida. Una imagen sola no alcanza para eso: hace falta examinar y escuchar cómo empezó el cuadro."
+          ],
+          "afirmaciones": [],
+          "keywordsCubiertas": [],
+          "entidadesCubiertas": []
+        },
+        {
+          "clave": "que-se-atiende--quienes-son-los-medicos-del-staff-de-la-clinica-sanna",
+          "nivel": 3,
+          "titulo": "¿Quiénes son los médicos del staff de la Clínica SANNA?",
+          "tipo": "operativo",
+          "aprobacion": "no-requiere",
+          "parrafos": [
+            "Sanna publica su listado en un buscador de médicos propio, ordenado por sede y por especialidad. Ese buscador es el que manda, porque se actualiza del lado de ellos.",
+            "Los directorios de clínicas están escritos desde adentro, en primera persona del plural: nuestros médicos, nuestras sedes. Por eso, si buscas ahí sin filtrar primero por sede, te devuelve especialistas de toda la red y no solo los de La Molina.",
+            "Al Dr. Angulo lo vas a encontrar bajo Traumatología, con el nombre completo Juan Carlos Angulo Totesaut. El apellido de más importa: con Angulo a secas pueden salirte varios."
+          ],
+          "afirmaciones": [
+            {
+              "texto": "Sanna publica un buscador de médicos por sede y especialidad, en sanna.pe",
+              "fuente": "Primer resultado orgánico de la SERP medida de cirujano de columna clínica sanna, capturada el 2026-08-11: sanna.pe/medicos/."
+            }
+          ],
+          "keywordsCubiertas": [],
+          "entidadesCubiertas": ["medicos", "nuestro", "red"]
+        },
+        {
+          "clave": "que-se-atiende--que-especialidades-medicas-ofrece-sanna-san-borja",
+          "nivel": 3,
+          "titulo": "¿Qué especialidades médicas ofrece SANNA San Borja?",
+          "tipo": "operativo",
+          "aprobacion": "no-requiere",
+          "parrafos": [
+            "Sanna San Borja es una clínica general y cubre buena parte de las especialidades que uno esperaría. La lista completa está en la web de la red, sede por sede.",
+            "Conviene la aclaración: la consulta del Dr. Angulo no está en San Borja. Está en el centro clínico de La Molina, que es otra sede de la misma red."
+          ],
+          "afirmaciones": [],
+          "keywordsCubiertas": [],
+          "entidadesCubiertas": ["san", "borja", "san borja", "red"]
+        },
+        {
+          "clave": "que-se-atiende--hay-un-traumatologo-en-sanna-trujillo",
+          "nivel": 3,
+          "titulo": "¿Hay un traumatólogo en SANNA Trujillo?",
+          "tipo": "operativo",
+          "aprobacion": "no-requiere",
+          "parrafos": [
+            "Sanna tiene sedes en varias ciudades del Perú y Trujillo es una de ellas. Quién atiende traumatología ahí lo dice el buscador de la red, filtrando por esa ciudad.",
+            "El Dr. Angulo atiende solo en Lima, y en cuatro sedes: su consultorio de Surco, la Clínica Ricardo Palma, este centro de Sanna en La Molina y la Clínica Padre Luis Tezza."
+          ],
+          "afirmaciones": [],
+          "keywordsCubiertas": [],
+          "entidadesCubiertas": ["peru", "red"]
+        },
+        {
+          "clave": "que-se-atiende--ortopedia-infantil-clinica-sanna",
+          "nivel": 3,
+          "titulo": "Ortopedia infantil en el centro de La Molina",
+          "tipo": "clinico",
+          "aprobacion": "pendiente-doctor",
+          "parrafos": [
+            "Los martes y jueves también entran las consultas de ortopedia infantil: pie plano, caminar con las puntas hacia adentro, escoliosis del adolescente, dolor que aparece mientras el chico crece.",
+            "En un hueso que todavía está creciendo, mirar y volver a mirar en unos meses es una conducta. No es dejar pasar el tiempo. Es usarlo."
+          ],
+          "afirmaciones": [],
+          "keywordsCubiertas": ["ortopedia infantil clínica sanna"],
+          "entidadesCubiertas": []
+        },
+        {
+          "clave": "que-se-atiende--cirugia-de-la-columna-clinica-sanna",
+          "nivel": 3,
+          "titulo": "Cirugía de columna dentro de Sanna",
+          "tipo": "clinico",
+          "aprobacion": "pendiente-doctor",
+          "parrafos": [
+            "Cuando el caso llega a quirófano, la parte quirúrgica la coordina la clínica: sala, fecha y requisitos previos son trámite de ella y no del consultorio del doctor.",
+            "La evaluación previa y los controles de después salen de esta misma consulta, los martes o los jueves. Es el mismo médico de principio a fin, que en columna es lo que uno quiere."
+          ],
+          "afirmaciones": [],
+          "keywordsCubiertas": ["cirugía de columna clínica sanna"],
+          "entidadesCubiertas": []
+        },
+        {
+          "clave": "que-se-atiende--neurocirujano-clinica-sanna",
+          "nivel": 3,
+          "titulo": "Neurocirujano o traumatólogo de columna en Sanna",
+          "tipo": "clinico",
+          "aprobacion": "pendiente-doctor",
+          "parrafos": [
+            "Las dos formaciones operan columna. La diferencia práctica está en qué estructura tiene el problema y qué hay que hacerle.",
+            "En esta sede la consulta es de traumatología de columna. Cuando el caso le corresponde a neurocirugía, el doctor lo dice y deriva, que es lo que corresponde hacer."
+          ],
+          "afirmaciones": [],
+          "keywordsCubiertas": ["neurocirujano clínica sanna"],
+          "entidadesCubiertas": []
+        },
+        {
+          "clave": "que-se-atiende--sanna-staff-medico",
+          "nivel": 3,
+          "titulo": "Cómo ubicar al doctor en el staff de Sanna",
+          "tipo": "operativo",
+          "aprobacion": "no-requiere",
+          "parrafos": [
+            "En el buscador de la red se elige primero la sede, después la especialidad de Traumatología, y recién ahí se filtra por médico.",
+            "Buscarlo por ortopedia infantil no siempre da resultado. Los sistemas de citas agrupan todo bajo la especialidad madre y la dedicación queda fuera del filtro."
+          ],
+          "afirmaciones": [],
+          "keywordsCubiertas": ["traumatólogo clínica sanna"],
+          "entidadesCubiertas": ["red"]
+        },
+        {
+          "clave": "que-se-atiende--clinica-sanna-arequipa-telefono",
+          "nivel": 3,
+          "titulo": "Si buscabas el teléfono de Sanna Arequipa",
+          "tipo": "operativo",
+          "aprobacion": "no-requiere",
+          "parrafos": [
+            "Cada sede tiene su propia central. La de Arequipa no agenda en La Molina, y al revés tampoco.",
+            "El número de esta sede es el (01) 635 5000. Los de las otras están en la web de la red, sede por sede."
+          ],
+          "afirmaciones": [
+            {
+              "texto": "Central de citas de la sede de La Molina: (01) 635 5000",
+              "fuente": "src/content/locations.ts, canal de agenda de sanna-la-molina."
+            }
+          ],
+          "keywordsCubiertas": [],
+          "entidadesCubiertas": ["red"]
+        },
+        {
+          "clave": "que-se-atiende--servicios-que-ofrece-sanna-clinica-san-borja",
+          "nivel": 3,
+          "titulo": "Servicios de Sanna y cuál es el que te toca acá",
+          "tipo": "operativo",
+          "aprobacion": "no-requiere",
+          "parrafos": [
+            "La red cubre emergencia, hospitalización, diagnóstico por imágenes y consulta ambulatoria, y el reparto exacto cambia de una sede a otra.",
+            "De todo eso, lo que resuelve esta página es una consulta ambulatoria de traumatología y columna. Si hace falta una resonancia, la orden sale de acá y el estudio se hace donde la clínica lo tenga."
+          ],
+          "afirmaciones": [],
+          "keywordsCubiertas": [],
+          "entidadesCubiertas": ["red", "san", "borja", "san borja"]
+        },
+        {
+          "clave": "que-se-atiende--sanna-clinica-el-golf-consultorios",
+          "nivel": 3,
+          "titulo": "Sanna El Golf y las otras sedes de la red",
+          "tipo": "operativo",
+          "aprobacion": "no-requiere",
+          "parrafos": [
+            "El Golf es la sede de Sanna en San Isidro y tiene sus propios consultorios. En San Isidro el doctor sí atiende, pero en la Clínica Ricardo Palma, que es otra institución.",
+            "Conviene aclararlo porque confundirse es fácil: la misma red en varios distritos, y un médico que no está en todas sus sedes."
+          ],
+          "afirmaciones": [],
+          "keywordsCubiertas": [],
+          "entidadesCubiertas": ["red", "san"]
+        },
+        {
+          "clave": "que-se-atiende--sanna-trujillo-staff-medico",
+          "nivel": 3,
+          "titulo": "El staff de Trujillo no es el de La Molina",
+          "tipo": "operativo",
+          "aprobacion": "no-requiere",
+          "parrafos": [
+            "Sanna publica un staff por sede y son listas distintas. Ver un nombre en Trujillo no significa que esa persona atienda en Lima.",
+            "Para esta consulta, la lista que importa es la de La Molina. Ahí es donde figura el doctor."
+          ],
+          "afirmaciones": [],
+          "keywordsCubiertas": [],
+          "entidadesCubiertas": []
+        },
+        {
+          "clave": "horarios",
+          "nivel": 2,
+          "titulo": "Martes y jueves: los días de consulta acá",
+          "tipo": "operativo",
+          "aprobacion": "no-requiere",
+          "parrafos": [
+            "Martes de 8:00 a. m. a 7:00 p. m. y jueves de 8:00 a. m. a 12:00 p. m.",
+            "El jueves es media jornada y se llena antes. Si tienes flexibilidad, el martes tiene el día completo.",
+            "Ese es el horario de la sede y no una hora garantizada. La franja concreta la asigna la central de Sanna según cómo venga la agenda del día."
+          ],
+          "afirmaciones": [
+            {
+              "texto": "Martes de 8:00 a. m. a 7:00 p. m. y jueves de 8:00 a. m. a 12:00 p. m.",
+              "fuente": "src/content/locations.ts, campo schedule de sanna-la-molina. Horarios confirmados por el consultorio el 2026-08-09."
+            }
+          ],
+          "keywordsCubiertas": [],
+          "entidadesCubiertas": []
+        },
+        {
+          "clave": "como-agendar",
+          "nivel": 2,
+          "titulo": "Cómo se saca la cita en Sanna",
+          "tipo": "operativo",
+          "aprobacion": "no-requiere",
+          "parrafos": [
+            "Hay tres vías y las tres son de la clínica: la app SANNA, la central en el (01) 635 5000, o el agendamiento en línea de sanna.pe.",
+            "En cualquiera de las tres se elige Traumatología y se busca al Dr. Juan Carlos Angulo Totesaut.",
+            "El canal directo del consultorio del doctor no agenda esta sede. Solo agenda el consultorio privado de Surco, que es la única de las cuatro cuya agenda maneja él."
+          ],
+          "afirmaciones": [
+            {
+              "texto": "Central de citas: (01) 635 5000, y agenda en línea en agendamiento.sanna.pe",
+              "fuente": "src/content/locations.ts, canales de agenda de sanna-la-molina."
+            }
+          ],
+          "keywordsCubiertas": [],
+          "entidadesCubiertas": []
+        },
+        {
+          "clave": "como-agendar--cuanto-cuesta-una-consulta-en-sanna-san-borja",
+          "nivel": 3,
+          "titulo": "¿Cuánto cuesta una consulta en Sanna, San Borja?",
+          "tipo": "operativo",
+          "aprobacion": "no-requiere",
+          "parrafos": [
+            "El precio de la consulta lo pone la clínica, cambia por sede y por especialidad, y este sitio no lo publica.",
+            "Se pregunta en la central al momento de agendar, junto con la cobertura de tu seguro para una consulta de traumatología. Enterarse en la caja es la peor forma de enterarse."
+          ],
+          "afirmaciones": [],
+          "keywordsCubiertas": [],
+          "entidadesCubiertas": ["san", "borja", "san borja"]
+        },
+        {
+          "clave": "como-agendar--sanna-telefono-citas",
+          "nivel": 3,
+          "titulo": "El teléfono de citas de esta sede",
+          "tipo": "operativo",
+          "aprobacion": "no-requiere",
+          "parrafos": [
+            "(01) 635 5000, la central de Sanna.",
+            "Atiende todas las especialidades de la red, así que te van a pedir la sede, el servicio y el nombre del médico. Con esos tres datos a mano la llamada dura la mitad."
+          ],
+          "afirmaciones": [
+            {
+              "texto": "Central de citas: (01) 635 5000",
+              "fuente": "src/content/locations.ts, canal de agenda de sanna-la-molina."
+            }
+          ],
+          "keywordsCubiertas": [],
+          "entidadesCubiertas": ["red"]
+        }
+      ]
+    },
+    {
+      "url": "/sedes/consultorio-privado",
+      "title": "Cirugía de columna en Surco: consultorio privado",
+      "metaDescription": "Consultorio privado del Dr. Juan Carlos Angulo en Surco para consultas de columna. Dónde queda y cómo pedir cita por WhatsApp.",
+      "h1": "Consultorio de Surco: la consulta sin intermediarios",
+      "h1Origen": "El title sirve la búsqueda por procedimiento y zona, y el H1 destaca lo que diferencia a esta sede de las tres clínicas: se agenda directo.",
+      "notaDeFormato": "La SERP de cirugía de columna surco no tiene formato dominante y ese es el hecho, no un hueco del dato: sobre 9 posiciones medidas y 6 tipificadas, red social y otro empatan en 3 cada uno, ninguno pasa del tercio y la confianza queda en media. El formato de ficha de sede se eligió por coherencia con las otras tres sedes de esta misma familia y no porque la SERP lo exigiera. Esa parte es decisión y no medición, y va escrita acá para que quien implemente la URL sepa cuál es cuál y pueda cambiarla si la SERP se resuelve más adelante.",
+      "guiaParaElDoctor": "Esta es la única de las cuatro sedes cuya agenda maneja usted, y la ficha lo dice varias veces porque es la confusión más frecuente. Seis bloques necesitan su ojo. El de qué resuelve la consulta. El de la respuesta a quiénes son los mejores neurocirujanos de Lima, que dice que esos rankings están pagados. El de ortopedia en Surco, que aclara que esto no es una tienda de productos ortopédicos. El de cirujano de columna en Surco. El de cuándo el caso necesita neurocirugía. El de ortopedia infantil y el de traumatología general. Y aparte, el bloque de hernia discal sin cirugía, que es el que más cuidado necesita: la página dice que la mayoría mejora sin operar y al mismo tiempo advierte contra los sitios que prometen resolver toda hernia sin cirugía. Si esa frase no le parece bien balanceada, es la primera que hay que corregir. Sobre precios no hay ni una cifra, y las tres preguntas de precio que la SERP trae se responden explicando de qué depende. Quedan tres datos pendientes de confirmación, listados aparte en el paquete.",
+      "datosOperativos": [
+        {
+          "dato": "Dirección",
+          "valor": "Av. El Derby 254, piso 24, oficina 2403, Edificio Lima Central Tower, Santiago de Surco, Lima 15023",
+          "estado": "respaldado",
+          "fuente": "src/content/locations.ts, entrada consultorio-privado, con los campos building y reference. La cabecera del archivo declara que direcciones y teléfonos están verificados."
+        },
+        {
+          "dato": "Referencia para llegar",
+          "valor": "Cruce de Av. El Derby con Manuel Olguín, cuadra 2 de El Derby",
+          "estado": "respaldado",
+          "fuente": "src/content/locations.ts, campo reference, y src/content/location-pages.ts, bloque gettingThere de consultorio-privado."
+        },
+        {
+          "dato": "Días y horario de consulta",
+          "valor": "Viernes y sábados, de 9:00 a. m. a 5:00 p. m.",
+          "estado": "respaldado",
+          "fuente": "src/content/locations.ts, campo schedule. El comentario del archivo declara que el horario está publicado en la ficha de Google del consultorio y verificado el 2026-08-09."
+        },
+        {
+          "dato": "WhatsApp de agenda",
+          "valor": "+51 964 305 682",
+          "estado": "respaldado",
+          "fuente": "src/content/locations.ts, único canal de agenda de consultorio-privado. La cabecera del archivo declara la regla de negocio: este canal agenda solo el consultorio privado."
+        },
+        {
+          "dato": "Estacionamiento del edificio y sus tarifas",
+          "valor": "sin dato publicado",
+          "estado": "pendiente",
+          "fuente": "No está en locations.ts ni en location-pages.ts. Lo maneja la administración de la torre y no el consultorio; v1.1 lo confirma antes de publicar o deja la página sin afirmarlo."
+        },
+        {
+          "dato": "Seguros y convenios que el consultorio acepta",
+          "valor": "sin dato publicado",
+          "estado": "pendiente",
+          "fuente": "No está en ninguna fuente publicada del sitio. Lo define el consultorio; v1.1 lo confirma antes de publicar."
+        },
+        {
+          "dato": "Precio de la consulta",
+          "valor": "sin dato publicado",
+          "estado": "pendiente",
+          "fuente": "Las tres preguntas de la SERP de esta URL son de precio y el sitio no publica precios (D-10). La página explica de qué depende el costo en vez de dar una cifra."
+        }
+      ],
+      "enlacesPropuestos": [
+        {
+          "destino": "/sedes",
+          "anchor": "Sedes donde atiende el Dr. Juan Carlos Angulo en Lima",
+          "regla": "navegacion-de-seccion"
+        },
+        {
+          "destino": "/servicios",
+          "anchor": "traumatólogo de columna",
+          "regla": "navegacion-de-seccion"
+        },
+        {
+          "destino": "/servicios/ortopedia-infantil",
+          "anchor": "pediatria ortopedia infantil",
+          "regla": "mencion-directa"
+        },
+        {
+          "destino": "/agendar",
+          "anchor": "Agendar cita",
+          "regla": "hacia-conversion"
+        },
+        {
+          "destino": "/contacto",
+          "anchor": "Contacto y Citas en Lima",
+          "regla": "hacia-conversion"
+        },
+        {
+          "destino": "/",
+          "anchor": "traumatólogo cerca de mí",
+          "regla": "navegacion-de-seccion"
+        }
+      ],
+      "secciones": [
+        {
+          "clave": "donde-queda",
+          "nivel": 2,
+          "titulo": "Dónde queda el consultorio en Surco",
+          "tipo": "operativo",
+          "aprobacion": "no-requiere",
+          "parrafos": [
+            "Av. El Derby 254, piso 24, oficina 2403, en el Edificio Lima Central Tower, Santiago de Surco. Viernes y sábados.",
+            "Es el consultorio propio del doctor y la única de las cuatro sedes cuya agenda maneja él. Por eso acá la cita se coordina directo con el consultorio, sin central de por medio.",
+            "La referencia más clara es el cruce de Av. El Derby con Manuel Olguín, en la zona de oficinas del distrito. El 254 cae en la cuadra 2."
+          ],
+          "afirmaciones": [
+            {
+              "texto": "Av. El Derby 254, piso 24, oficina 2403, Edificio Lima Central Tower, Santiago de Surco",
+              "fuente": "src/content/locations.ts, entrada consultorio-privado, campos streetAddress, building y reference."
+            }
+          ],
+          "keywordsCubiertas": [],
+          "entidadesCubiertas": ["surco", "lima"]
+        },
+        {
+          "clave": "como-llegar",
+          "nivel": 2,
+          "titulo": "Cómo llegar al Lima Central Tower",
+          "tipo": "operativo",
+          "aprobacion": "no-requiere",
+          "parrafos": [
+            "El edificio tiene frente sobre El Derby y la torre se ve desde la avenida, así que esa es la referencia con la que vas a llegar aunque no conozcas la zona.",
+            "Adentro, la oficina es la 2403, en el piso 24.",
+            "El estacionamiento del edificio y sus tarifas los maneja la administración de la torre y no el consultorio. Ese dato todavía no está publicado, así que conviene preguntarlo al confirmar la cita."
+          ],
+          "afirmaciones": [
+            {
+              "texto": "Oficina 2403, piso 24 del Edificio Lima Central Tower",
+              "fuente": "src/content/locations.ts, campo streetAddress de consultorio-privado, y bloque gettingThere de location-pages.ts."
+            }
+          ],
+          "keywordsCubiertas": [],
+          "entidadesCubiertas": ["lima"]
+        },
+        {
+          "clave": "que-se-atiende",
+          "nivel": 2,
+          "titulo": "Qué resuelve esta consulta",
+          "tipo": "clinico",
+          "aprobacion": "pendiente-doctor",
+          "parrafos": [
+            "Columna del adulto: dolor lumbar, dolor cervical, hernia discal, canal estrecho, escoliosis y deformidades de la columna vertebral.",
+            "Al lado de eso, traumatología general y ortopedia infantil. Es la misma consulta de las otras tres sedes, con una diferencia de fondo: acá el tiempo lo pone el consultorio y no la agenda de una institución.",
+            "La mayoría de los tratamientos de columna no pasa por el quirófano. Eso no es una postura: es lo que corresponde en la mayor parte de los cuadros que llegan."
+          ],
+          "afirmaciones": [],
+          "keywordsCubiertas": [],
+          "entidadesCubiertas": [
+            "columna",
+            "dolor",
+            "discal",
+            "columna vertebral",
+            "vertebral",
+            "tratamientos"
+          ]
+        },
+        {
+          "clave": "que-se-atiende--quienes-son-los-mejores-neurocirujanos-en-lima",
+          "nivel": 3,
+          "titulo": "¿Quiénes son los mejores neurocirujanos en Lima?",
+          "tipo": "clinico",
+          "aprobacion": "pendiente-doctor",
+          "parrafos": [
+            "Los rankings de mejores neurocirujanos de Lima que devuelve el buscador suelen estar ordenados por quién pagó por aparecer ahí.",
+            "Lo que sí orienta es otra cosa: a qué le dedica la semana esa persona, qué parte de su consulta es columna, y con qué criterio decide no operar. Un cirujano que te explica cuándo no operaría dice más de sí mismo que cualquier lista."
+          ],
+          "afirmaciones": [],
+          "keywordsCubiertas": [],
+          "entidadesCubiertas": ["lima", "columna"]
+        },
+        {
+          "clave": "que-se-atiende--ortopedia-surco",
+          "nivel": 3,
+          "titulo": "Ortopedia en Surco: qué cubre y qué no",
+          "tipo": "operativo",
+          "aprobacion": "no-requiere",
+          "parrafos": [
+            "Ortopedia en Surco es una búsqueda que mezcla dos cosas distintas: la consulta médica y la tienda que vende plantillas, fajas y muletas.",
+            "Acá es lo primero. Si lo que necesitas es comprar un producto ortopédico, esto no es una tienda y te conviene buscar por ese lado."
+          ],
+          "afirmaciones": [
+            {
+              "texto": "La búsqueda de ortopedia en Surco devuelve tiendas de productos ortopédicos junto con consultorios",
+              "fuente": "El primer resultado orgánico medido de ortopedia surco es una tienda de productos ortopédicos, y solo 5 de sus 9 posiciones quedaron tipificadas. Captura del 2026-08-11, en data/page-type-map.json."
+            }
+          ],
+          "keywordsCubiertas": ["ortopedia surco"],
+          "entidadesCubiertas": ["surco"]
+        },
+        {
+          "clave": "que-se-atiende--cirujano-de-columna-surco",
+          "nivel": 3,
+          "titulo": "Cirujano de columna en Surco",
+          "tipo": "clinico",
+          "aprobacion": "pendiente-doctor",
+          "parrafos": [
+            "A la cirugía de columna se llega por dos caminos distintos: la traumatología con formación en columna, o la neurocirugía. El Dr. Angulo viene del primero.",
+            "Acá la consulta es esa, en Surco, viernes y sábados. Si el caso no es quirúrgico, se dice en la misma consulta y no en la tercera."
+          ],
+          "afirmaciones": [],
+          "keywordsCubiertas": ["cirujano de columna surco"],
+          "entidadesCubiertas": ["columna", "surco", "cirugia", "cirugia de columna"]
+        },
+        {
+          "clave": "que-se-atiende--neurocirujano-surco",
+          "nivel": 3,
+          "titulo": "Cuándo el caso de columna necesita neurocirugía",
+          "tipo": "clinico",
+          "aprobacion": "pendiente-doctor",
+          "parrafos": [
+            "Cuando el problema está en el nervio o en la médula y no en la estructura que los rodea. Esa es la línea, dicha corto.",
+            "En la práctica los dos campos se cruzan bastante y hay casos que resuelve cualquiera de los dos. Cuando el tuyo le corresponde a neurocirugía, el doctor lo dice y deriva."
+          ],
+          "afirmaciones": [],
+          "keywordsCubiertas": ["neurocirujano surco"],
+          "entidadesCubiertas": ["columna"]
+        },
+        {
+          "clave": "que-se-atiende--ortopedia-infantil-surco",
+          "nivel": 3,
+          "titulo": "Ortopedia infantil en el consultorio de Surco",
+          "tipo": "clinico",
+          "aprobacion": "pendiente-doctor",
+          "parrafos": [
+            "Pie plano, caminar con las puntas hacia adentro, piernas que se ven arqueadas, escoliosis del adolescente, dolor que aparece de noche mientras el chico crece.",
+            "El sábado por la mañana es el horario que mejor le funciona a una familia con un chico en edad escolar, y de las cuatro sedes esta es la única que lo tiene."
+          ],
+          "afirmaciones": [],
+          "keywordsCubiertas": ["ortopedia infantil surco"],
+          "entidadesCubiertas": ["dolor", "surco"]
+        },
+        {
+          "clave": "que-se-atiende--traumatologia-surco",
+          "nivel": 3,
+          "titulo": "Traumatología general en la consulta de Surco",
+          "tipo": "clinico",
+          "aprobacion": "pendiente-doctor",
+          "parrafos": [
+            "Lesiones de rodilla, hombro y tobillo del adulto, secuelas de un golpe viejo que no terminó de irse, y controles después de una fractura ya consolidada.",
+            "Lo que no entra acá es la urgencia. Una fractura de hoy se ve en emergencia hoy, y esta es una consulta programada."
+          ],
+          "afirmaciones": [],
+          "keywordsCubiertas": ["traumatología surco"],
+          "entidadesCubiertas": ["surco"]
+        },
+        {
+          "clave": "que-se-atiende--clinica-de-la-columna-hernias-discales-sin-cirugias",
+          "nivel": 3,
+          "titulo": "Hernia discal sin cirugía: qué es cierto de eso",
+          "tipo": "clinico",
+          "aprobacion": "pendiente-doctor",
+          "parrafos": [
+            "La mayor parte de las hernias discales mejora sin operar. Eso es cierto y no es un eslogan: con tiempo, control del dolor y trabajo de rehabilitación, el cuadro cede en la mayoría de los casos.",
+            "Lo que hay que mirar con cuidado es el otro extremo, el de los sitios que prometen resolver toda hernia discal sin cirugía, siempre y con un solo método. Ahí lo que se pierde de vista es la indicación quirúrgica que sí existía, y esa demora se paga."
+          ],
+          "afirmaciones": [],
+          "keywordsCubiertas": [],
+          "entidadesCubiertas": ["discal", "dolor", "cirugia"]
+        },
+        {
+          "clave": "que-se-atiende--mejores-especialistas-columna-vertebral-lima-peru",
+          "nivel": 3,
+          "titulo": "Cómo se elige entre los especialistas de columna vertebral en Lima",
+          "tipo": "operativo",
+          "aprobacion": "no-requiere",
+          "parrafos": [
+            "No hay un ranking honesto de los mejores especialistas de columna vertebral en Lima. Lo que hay son listas pagadas y opiniones sueltas.",
+            "Sirve más otra cosa: pedir una segunda opinión antes de operar, comparar qué explica cada uno sobre el mismo estudio, y desconfiar del que te promete un resultado."
+          ],
+          "afirmaciones": [],
+          "keywordsCubiertas": [],
+          "entidadesCubiertas": ["especialistas", "columna vertebral", "vertebral", "lima"]
+        },
+        {
+          "clave": "que-se-atiende--clinica-de-la-columna-chacarilla",
+          "nivel": 3,
+          "titulo": "Chacarilla, El Derby y por qué no son lo mismo",
+          "tipo": "operativo",
+          "aprobacion": "no-requiere",
+          "parrafos": [
+            "Chacarilla queda en Surco y es una zona conocida por su concentración de consultorios. Este consultorio no está ahí: está en El Derby, que es la zona de oficinas del distrito, a unos minutos de distancia.",
+            "Las dos son Surco. Si te pasaron una dirección de Chacarilla, no es esta."
+          ],
+          "afirmaciones": [],
+          "keywordsCubiertas": [],
+          "entidadesCubiertas": ["surco"]
+        },
+        {
+          "clave": "que-se-atiende--life-clinica-de-la-columna",
+          "nivel": 3,
+          "titulo": "Los centros dedicados solo a columna",
+          "tipo": "operativo",
+          "aprobacion": "no-requiere",
+          "parrafos": [
+            "En Lima hay varios centros dedicados exclusivamente a columna y compiten por esta misma búsqueda. Algunos son buenos.",
+            "La diferencia con este consultorio no está en el nombre sino en el formato: acá te ve un médico y ese mismo médico te sigue viendo después. En un centro con equipo rotativo eso no siempre pasa, y conviene preguntarlo antes de empezar."
+          ],
+          "afirmaciones": [],
+          "keywordsCubiertas": [],
+          "entidadesCubiertas": ["lima", "columna"]
+        },
+        {
+          "clave": "que-se-atiende--clinica-de-la-columna-lima",
+          "nivel": 3,
+          "titulo": "Consultorio o clínica de la columna: qué cambia para ti",
+          "tipo": "operativo",
+          "aprobacion": "no-requiere",
+          "parrafos": [
+            "Casi todas las páginas que salen en esta búsqueda están escritas en plural: somos, contamos con, estamos. Detrás de ese plural a veces hay un equipo grande de verdad y a veces solo hay una marca.",
+            "Lo que a ti te sirve saber es quién te va a ver la próxima vez. Acá es siempre el mismo médico, y la experiencia de la consulta cambia bastante por eso."
+          ],
+          "afirmaciones": [
+            {
+              "texto": "Somos, contamos y estamos son términos que repiten los orgánicos medidos de esta keyword",
+              "fuente": "Entidades obligatorias derivadas de los 9 resultados orgánicos de la SERP de cirugía de columna surco, capturada el 2026-08-11, en data/onpage-serp.json."
+            }
+          ],
+          "keywordsCubiertas": [],
+          "entidadesCubiertas": ["somos", "contamos", "estamos", "experiencia", "columna"]
+        },
+        {
+          "clave": "que-se-atiende--opiniones-de-clinica-de-la-columna-hernias-discales-sin-ciru",
+          "nivel": 3,
+          "titulo": "Qué mirar en las opiniones antes de elegir",
+          "tipo": "operativo",
+          "aprobacion": "no-requiere",
+          "parrafos": [
+            "Las reseñas sirven para lo operativo: si atienden a la hora, si explican con calma, si te devuelven la llamada. Para eso son bastante confiables.",
+            "Para lo clínico sirven poco. Quien escribe una reseña no tiene cómo saber si la indicación quirúrgica que le dieron era la correcta, y ese es justo el dato que estás tratando de averiguar."
+          ],
+          "afirmaciones": [],
+          "keywordsCubiertas": [],
+          "entidadesCubiertas": []
+        },
+        {
+          "clave": "horarios",
+          "nivel": 2,
+          "titulo": "Viernes y sábados, de nueve a cinco",
+          "tipo": "operativo",
+          "aprobacion": "no-requiere",
+          "parrafos": [
+            "Viernes y sábados, de 9:00 a. m. a 5:00 p. m.",
+            "El sábado es lo que esta sede tiene y las otras tres no. Para quien trabaja de lunes a viernes, esa es la diferencia entre atenderse y seguir postergándolo.",
+            "La hora exacta se acuerda por WhatsApp con el consultorio, porque acá la agenda la lleva el doctor y no una central."
+          ],
+          "afirmaciones": [
+            {
+              "texto": "Viernes y sábados, de 9:00 a. m. a 5:00 p. m.",
+              "fuente": "src/content/locations.ts, campo schedule de consultorio-privado. El comentario del archivo declara que sale de la ficha de Google del consultorio, verificada el 2026-08-09."
+            }
+          ],
+          "keywordsCubiertas": [],
+          "entidadesCubiertas": []
+        },
+        {
+          "clave": "como-agendar",
+          "nivel": 2,
+          "titulo": "Cómo se pide la cita acá",
+          "tipo": "operativo",
+          "aprobacion": "no-requiere",
+          "parrafos": [
+            "Por WhatsApp, al +51 964 305 682. Es el único canal donde el doctor agenda directamente.",
+            "Ese número no sirve para las citas de Ricardo Palma, Sanna o Tezza: esas agendas las manejan las clínicas y se sacan por sus centrales.",
+            "Lo que más preguntan quienes escriben es cuánto demora conseguir turno. Ayuda mandar de una vez qué te pasa, desde cuándo, y si ya tienes estudios de imagen: con eso el consultorio ubica mejor el día."
+          ],
+          "afirmaciones": [
+            {
+              "texto": "WhatsApp de agenda del consultorio: +51 964 305 682",
+              "fuente": "src/content/locations.ts, único canal de agenda de consultorio-privado, con la regla de negocio declarada en la cabecera del archivo."
+            }
+          ],
+          "keywordsCubiertas": [],
+          "entidadesCubiertas": ["preguntan"]
+        },
+        {
+          "clave": "como-agendar--cuanto-cobran-por-una-operacion-de-columna",
+          "nivel": 3,
+          "titulo": "¿Cuánto cobran por una operación de columna?",
+          "tipo": "operativo",
+          "aprobacion": "no-requiere",
+          "parrafos": [
+            "Este sitio no publica precios, y el motivo no es evasivo: el costo de una operación de columna no lo pone solo el cirujano.",
+            "Entran la clínica donde se opera, el tiempo de sala, el material que necesite el caso, los días de hospitalización y lo que cubra tu seguro. Dos casos que se llaman igual pueden costar muy distinto."
+          ],
+          "afirmaciones": [],
+          "keywordsCubiertas": [],
+          "entidadesCubiertas": ["columna"]
+        },
+        {
+          "clave": "como-agendar--cuanto-cuesta-una-cirugia-de-columna-en-peru",
+          "nivel": 3,
+          "titulo": "¿Cuánto cuesta una cirugía de columna en Perú?",
+          "tipo": "operativo",
+          "aprobacion": "no-requiere",
+          "parrafos": [
+            "El rango que circula en internet mezcla clínicas, técnicas y ciudades distintas, así que como referencia no sirve de mucho.",
+            "La cifra que a ti te importa sale de un presupuesto de la clínica donde se haría la cirugía, con tu caso y tu cobertura adentro. Eso se pide después de la consulta y no antes."
+          ],
+          "afirmaciones": [],
+          "keywordsCubiertas": [],
+          "entidadesCubiertas": ["cirugia", "columna", "cirugia de columna"]
+        },
+        {
+          "clave": "como-agendar--cuanto-puede-valer-una-operacion-de-columna",
+          "nivel": 3,
+          "titulo": "Por qué el presupuesto llega después de la consulta",
+          "tipo": "operativo",
+          "aprobacion": "no-requiere",
+          "parrafos": [
+            "Porque antes de la consulta nadie sabe qué operación sería, ni siquiera si hace falta operar.",
+            "Poner un número antes de examinar es venderte algo. Después de la evaluación, con el estudio de imagen visto, el presupuesto se pide a la clínica y ahí sí es un número que significa algo."
+          ],
+          "afirmaciones": [],
+          "keywordsCubiertas": [],
+          "entidadesCubiertas": ["columna"]
+        }
+      ]
     }
   ]
 }
