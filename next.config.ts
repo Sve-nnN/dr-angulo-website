@@ -18,6 +18,19 @@ const nextConfig: NextConfig = {
         destination: "/servicios/escoliosis-y-deformidades",
         permanent: true,
       },
+      // Los dos posts que las guías absorbieron entero (D-07 de la fase 14 de
+      // v1.2). El destino publica el material desde los planes 08-06 y 08-07:
+      // ese orden es la condición para que la redirección no entierre nada.
+      {
+        source: "/blog/hernia-discal-o-dolor-de-espalda-como-diferenciarlos",
+        destination: "/servicios/hernia-discal",
+        permanent: true,
+      },
+      {
+        source: "/blog/estenosis-espinal-que-es",
+        destination: "/servicios/estenosis-espinal",
+        permanent: true,
+      },
     ];
   },
 };
