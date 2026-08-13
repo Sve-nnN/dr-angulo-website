@@ -1,4 +1,3 @@
-import { Fragment } from "react";
 import Link from "next/link";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
@@ -9,26 +8,14 @@ import { AuthorByline } from "@/components/ui/author-byline";
 import { MedicalDisclaimer } from "@/components/ui/medical-disclaimer";
 import { MidContentCta } from "@/components/ui/mid-content-cta";
 import { TableOfContents } from "@/components/ui/table-of-contents";
-import { blogPosts, type BlogSection } from "@/content/blog";
+import {
+  ContentBody,
+  ContentBodyBoundary,
+  groupSections,
+} from "@/components/content/content-body";
+import { blogPosts } from "@/content/blog";
 import { getServicePage } from "@/content/service-pages";
 import { BlogPostingJsonLd, BreadcrumbJsonLd } from "@/components/structured-data";
-
-/**
- * Un h2 con las secciones de nivel 3 que le siguen. Agrupar antes de
- * renderizar es lo que evita que un h3 abra su propio `<section>` y quede
- * como hermano de su h2 en vez de colgar de él.
- */
-function groupSections(sections: BlogSection[]) {
-  const groups: { section: BlogSection; children: BlogSection[] }[] = [];
-  for (const section of sections) {
-    if (section.level === 3 && groups.length > 0) {
-      groups[groups.length - 1].children.push(section);
-      continue;
-    }
-    groups.push({ section, children: [] });
-  }
-  return groups;
-}
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -80,8 +67,8 @@ export default async function BlogPostPage({ params }: Props) {
           { name: post.title, path: `/blog/${post.slug}` },
         ]}
       />
-    <article
-      data-content-body=""
+    <ContentBodyBoundary
+      as="article"
       className="mx-auto max-w-2xl px-4 py-14 sm:px-6 sm:py-20"
     >
       <Link
@@ -114,50 +101,21 @@ export default async function BlogPostPage({ params }: Props) {
         </p>
       ))}
 
-      {groups.map(({ section, children }, index) => (
-        <Fragment key={section.id}>
-          <section className="mt-12">
-            <h2
-              id={section.id}
-              tabIndex={-1}
-              className="scroll-mt-28 font-heading text-xl font-bold text-primary sm:text-2xl"
-            >
-              {section.heading}
-            </h2>
-            {section.paragraphs.map((paragraph, i) => (
-              <p key={i} className="mt-5 text-lg text-foreground/80">
-                {paragraph}
-              </p>
-            ))}
-            {children.map((child) => (
-              <div key={child.id} className="mt-8">
-                <h3
-                  id={child.id}
-                  tabIndex={-1}
-                  className="scroll-mt-28 font-heading text-lg font-bold text-primary"
-                >
-                  {child.heading}
-                </h3>
-                {child.paragraphs.map((paragraph, i) => (
-                  <p key={i} className="mt-3 text-lg text-foreground/80">
-                    {paragraph}
-                  </p>
-                ))}
-              </div>
-            ))}
-          </section>
-          {/* Un banner por post, después de la primera sección, más el CTA de
-              cierre. Es el punto donde el lector acaba de reconocer su caso
-              (POS-01). */}
-          {index === 0 && (
-            <MidContentCta
-              heading={post.ctaBanner.heading}
-              body={post.ctaBanner.body}
-              location="blog_post"
-            />
-          )}
-        </Fragment>
-      ))}
+      {/* Un banner por post, después de la primera sección, más el CTA de
+          cierre. Es el punto donde el lector acaba de reconocer su caso
+          (POS-01). */}
+      <ContentBody
+        sections={post.sections}
+        headingSize="md"
+        banner={
+          <MidContentCta
+            heading={post.ctaBanner.heading}
+            body={post.ctaBanner.body}
+            location="blog_post"
+          />
+        }
+        bannerAfterIndex={0}
+      />
 
       <section className="mt-16 border-t border-border pt-12">
         <h2 className="font-heading text-xl font-bold text-primary sm:text-2xl">
@@ -209,7 +167,7 @@ export default async function BlogPostPage({ params }: Props) {
       <div className="mt-14">
         <MedicalDisclaimer />
       </div>
-    </article>
+    </ContentBodyBoundary>
     </>
   );
 }
