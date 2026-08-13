@@ -12,6 +12,7 @@ import { post5SintomasDeColumnaQueNoDebesIgnorar } from "./5-sintomas-de-columna
 import { postHerniaDiscalODolorDeEspaldaComoDiferenciarlos } from "./hernia-discal-o-dolor-de-espalda-como-diferenciarlos";
 import { postEstenosisEspinalQueEs } from "./estenosis-espinal-que-es";
 import { postMiedoAOperarteDeLaColumna5CosasQueDebesSaber } from "./miedo-a-operarte-de-la-columna-5-cosas-que-debes-saber";
+import { postArtrosis } from "./artrosis";
 
 /**
  * Sección de un post, plana y con el mismo modelo que las guías: el nivel 3 es
@@ -72,4 +73,5 @@ export const blogPosts: BlogPost[] = [
   postHerniaDiscalODolorDeEspaldaComoDiferenciarlos,
   postMiedoAOperarteDeLaColumna5CosasQueDebesSaber,
   postEstenosisEspinalQueEs,
+  postArtrosis,
 ];
