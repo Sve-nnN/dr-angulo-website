@@ -699,6 +699,826 @@
           "entidadesCubiertas": ["lumbalgia", "dolor"]
         }
       ]
+    },
+    {
+      "url": "/blog/5-sintomas-de-columna-que-no-debes-ignorar",
+      "title": "Ciática: por qué duele la pierna y qué hacer",
+      "metaDescription": "Qué es la ciática, cómo se distingue de una lumbalgia, qué la produce y cuándo el dolor de pierna necesita evaluación médica.",
+      "h1": "Ciática: el dolor que baja por la pierna",
+      "h1Origen": "Nombra el síntoma con las palabras del paciente, que es como llega buscando: le duele la pierna y todavía no sabe que eso se llama ciática.",
+      "notaDeFormato": "La reescritura mantiene la URL publicada y le cambia el eje: de cinco señales de columna en general a la ciática, que es su primaria medida. Las otras cuatro señales no se tiran, pasan a ser el contexto que acompaña al síntoma principal dentro del bloque de síntomas. El formato de guía clínica lo pide la SERP, y el límite del post sigue siendo la captación: explica el síntoma y deriva a la guía de hernia discal, que es donde vive el tratamiento.",
+      "derivaA": {
+        "url": "/servicios/hernia-discal",
+        "anchor": "hernia discal lumbar y cervical",
+        "regla": "mencion-inversa",
+        "motivo": "`/servicios/hernia-discal` ya lleva `ciatica o hernia discal` entre sus keywords, que contiene la primaria de esta página. La captación alimenta al servicio y no al revés: el artículo manda al paciente a la guía que resuelve su caso."
+      },
+      "cambios": [
+        {
+          "que": "Se conserva la URL, el slug y el título publicado como nombre del post dentro del sitio.",
+          "motivo": "La página tiene autoridad acumulada desde el 2026-06-10 y la fase 14 le asignó acción reescribir, no redirigir. Cambiar la URL tiraría esa señal sin ganar nada."
+        },
+        {
+          "que": "Se conserva el contenido de las cinco señales publicadas: dolor persistente, dolor irradiado, hormigueo, rigidez y pérdida de fuerza.",
+          "motivo": "Está bien escrito y es información correcta. Lo que cambia es su lugar: eran cinco secciones de igual peso y ahora son el conjunto que acompaña al dolor irradiado dentro del bloque de síntomas."
+        },
+        {
+          "que": "Se conservan literalmente tres pasajes: el párrafo sobre las resonancias alteradas en gente sin dolor, las tres situaciones que se evalúan el mismo día, y el consejo de anotar cómo se comporta el dolor antes de la consulta.",
+          "motivo": "Son los tres pasajes con más valor clínico del post publicado y ya pasaron por revisión. Reescribirlos por reescribir habría sido tirar trabajo hecho."
+        },
+        {
+          "que": "Se reemplaza el eje del texto: de señales de columna en general a ciática.",
+          "motivo": "El mapa de la fase 14 le asignó `ciática` como primaria porque el post ya trataba el dolor irradiado por la pierna, y golden-10.json mandaba esa keyword de oro a un `/blog/ciatica` inexistente. Crear esa URL al lado habría fabricado la canibalización que la fase vino a cerrar."
+        },
+        {
+          "que": "Se agregan doce secciones nuevas que el post publicado no tenía: espina ciática, falsa ciática, dónde duele, la diferencia con la lumbalgia, las tres búsquedas de alivio rápido, las causas en mujeres, el medicamento y las pastillas, y las tres preguntas de la SERP.",
+          "motivo": "Salen de la jerarquía medida en `data/onpage-serp.json`: cinco secundarias del mapa, seis búsquedas relacionadas y tres preguntas de People Also Ask de la SERP de Lima. Sin ellas la página no cubre lo que ya cubren las que posicionan."
+        },
+        {
+          "que": "Se quita el tratamiento de la hernia discal, que el post publicado rozaba al hablar de compromiso del disco.",
+          "motivo": "`ciatica o hernia discal` es secundaria de `/servicios/hernia-discal`. Explicar la hernia acá convertiría al post en la segunda guía del tema y devolvería la canibalización por la puerta del contenido."
+        }
+      ],
+      "guiaParaElDoctor": "La revisión de esta URL entra completa en una sola pasada. Lo que más necesita ojo clínico está en seis bloques: la definición de ciática como síntoma y no como diagnóstico; la sección de síntomas, porque es la que alguien usa para autoevaluarse; falsa ciática, por la mención del músculo piriforme; las tres secciones que contestan las búsquedas de alivio en dos y tres minutos, porque ahí se contradice una promesa muy difundida y conviene que la contradicción esté bien fundada; los dos bloques de medicación, donde a propósito no se nombra ningún principio activo ni dosis; y cuándo consultar, por las señales que se evalúan el mismo día. Los pasajes que vienen del post publicado están marcados en la tabla de cambios. No hay ninguna cifra sobre el doctor, ninguna tasa de resultado ni ninguna credencial en el texto, y esa ausencia es deliberada.",
+      "enlacesPropuestos": [
+        {
+          "destino": "/servicios/hernia-discal",
+          "anchor": "hernia discal lumbar y cervical",
+          "regla": "mencion-inversa"
+        },
+        {
+          "destino": "/blog/artrosis",
+          "anchor": "artrosis lumbosacro",
+          "regla": "vecindad-tematica"
+        },
+        {
+          "destino": "/blog/lumbalgia",
+          "anchor": "tipos de lumbalgia",
+          "regla": "vecindad-tematica"
+        },
+        {
+          "destino": "/blog/miedo-a-operarte-de-la-columna-5-cosas-que-debes-saber",
+          "anchor": "videos de cirugía de columna",
+          "regla": "vecindad-tematica"
+        },
+        {
+          "destino": "/blog",
+          "anchor": "Blog",
+          "regla": "navegacion-de-seccion"
+        },
+        {
+          "destino": "/servicios",
+          "anchor": "cirugía de columna cerca de mí",
+          "regla": "navegacion-de-seccion"
+        }
+      ],
+      "secciones": [
+        {
+          "clave": "que-es",
+          "nivel": 2,
+          "titulo": "Qué es la ciática",
+          "tipo": "clinico",
+          "aprobacion": "pendiente-doctor",
+          "parrafos": [
+            "La ciática es un dolor que sigue el recorrido del nervio ciático. Se extiende desde la región lumbar, cruza el glúteo y baja por la parte de atrás del muslo y de la pierna, a veces hasta el pie.",
+            "El nombre describe el síntoma y no la causa. Detrás de una ciática hay algo que comprime o irrita alguna de las raíces nerviosas que forman ese nervio, y la compresión y la irritación producen el mismo dolor aunque el origen sea distinto. Averiguar cuál de los dos es el trabajo de la consulta.",
+            "Lo que la distingue de un dolor de espalda común es el recorrido: viaja, sigue siempre el mismo camino y se repite igual cada vez. Un dolor que hoy está en un lugar y mañana en otro rara vez viene de una raíz nerviosa."
+          ],
+          "afirmaciones": [
+            {
+              "texto": "La ciática nombra el dolor que sigue el trayecto del nervio ciático y no es un diagnóstico: la hernia discal es una de sus causas y no la única.",
+              "fuente": "Ya publicado en data/copy-guias.json, página /servicios/hernia-discal, sección sintomas--diferencia-entre-ciatica-y-hernia-discal, redactada en el plan 15-03."
+            }
+          ],
+          "keywordsCubiertas": ["ciática"],
+          "entidadesCubiertas": [
+            "ciatica",
+            "ciatica es un dolor",
+            "ciatico",
+            "nervio",
+            "nervio ciatico",
+            "dolor",
+            "extiende",
+            "region",
+            "region lumbar",
+            "lumbar",
+            "pierna",
+            "raices",
+            "irritacion"
+          ]
+        },
+        {
+          "clave": "que-es--ciatica-lumbar",
+          "nivel": 3,
+          "titulo": "Ciática lumbar",
+          "tipo": "clinico",
+          "aprobacion": "pendiente-doctor",
+          "parrafos": [
+            "Casi toda ciática es lumbar, porque las raíces que forman el nervio ciático salen de los últimos niveles de la columna lumbar y del sacro. Por eso el dolor arranca abajo, en la espalda, y de ahí baja.",
+            "Cuando el mismo mecanismo ocurre en el cuello, el dolor viaja al hombro y al brazo. Es otro nervio y tiene otro nombre, y la lógica de fondo es idéntica."
+          ],
+          "afirmaciones": [],
+          "keywordsCubiertas": [],
+          "entidadesCubiertas": ["ciatica", "lumbar", "raices", "nervio ciatico", "dolor"]
+        },
+        {
+          "clave": "sintomas",
+          "nivel": 2,
+          "titulo": "Qué síntomas produce",
+          "tipo": "clinico",
+          "aprobacion": "pendiente-doctor",
+          "parrafos": [
+            "El síntoma principal es el dolor irradiado, y viene acompañado de otras señales que conviene mirar juntas, porque son las que cambian la conducta en la consulta.",
+            "Hormigueo y adormecimiento en una zona bien delimitada, no en toda la pierna. Sensación de menos fuerza, que se nota en gestos concretos: el pie que se arrastra al caminar, la dificultad para pararse en puntas, la sandalia que se sale sin que te des cuenta. Rigidez y dificultad para agacharte o girar el torso. Y un dolor que se dispara al toser, al estornudar o al hacer fuerza, porque esos gestos aumentan la presión dentro del canal.",
+            "Ninguna de esas señales por separado significa gran cosa. Juntas y con el recorrido, orientan bastante, y son lo que conviene contar en la consulta."
+          ],
+          "afirmaciones": [
+            {
+              "texto": "El dolor que se dispara al toser, estornudar o hacer fuerza responde al aumento de presión dentro del canal.",
+              "fuente": "Ya publicado en src/content/blog.ts, post 5-sintomas-de-columna-que-no-debes-ignorar, sección dolor-irradiado, con fecha de actualización 2026-08-10."
+            }
+          ],
+          "keywordsCubiertas": ["ciática"],
+          "entidadesCubiertas": ["dolor", "pierna"]
+        },
+        {
+          "clave": "sintomas--espina-ciatica",
+          "nivel": 3,
+          "titulo": "Espina ciática",
+          "tipo": "clinico",
+          "aprobacion": "pendiente-doctor",
+          "parrafos": [
+            "Es una prominencia del hueso de la pelvis y no tiene relación directa con el dolor que la gente llama ciática. Comparten el nombre y poco más.",
+            "Vale aclararlo porque es una búsqueda frecuente de quien leyó un informe y se asustó. Si lo que tienes es dolor que baja por la pierna, lo que te interesa es el nervio y no la espina."
+          ],
+          "afirmaciones": [],
+          "keywordsCubiertas": ["espina ciática"],
+          "entidadesCubiertas": ["ciatica", "dolor", "pierna", "nervio"]
+        },
+        {
+          "clave": "sintomas--diferencia-entre-ciatica-y-lumbalgia",
+          "nivel": 3,
+          "titulo": "Diferencia entre ciática y lumbalgia",
+          "tipo": "clinico",
+          "aprobacion": "pendiente-doctor",
+          "parrafos": [
+            "La lumbalgia se queda en la parte baja de la espalda. La ciática viaja por la pierna.",
+            "Esa diferencia no es de intensidad sino de mecanismo. Un dolor que se queda suele ser muscular o articular; uno que baja siguiendo un trayecto fijo apunta a una raíz nerviosa comprometida. Se pueden tener las dos cosas a la vez, y es frecuente."
+          ],
+          "afirmaciones": [],
+          "keywordsCubiertas": ["ciática o lumbalgia"],
+          "entidadesCubiertas": ["ciatica", "dolor", "pierna"]
+        },
+        {
+          "clave": "sintomas--donde-duele-la-ciatica",
+          "nivel": 3,
+          "titulo": "Donde duele la ciática",
+          "tipo": "clinico",
+          "aprobacion": "pendiente-doctor",
+          "parrafos": [
+            "Duele en el glúteo, en la parte de atrás del muslo, en la pantorrilla y a veces en el pie. Puede empezar en la región lumbar o directamente en el glúteo, sin que la espalda moleste demasiado.",
+            "Es raro que ocupe las dos piernas al mismo tiempo. Si el dolor baja por las dos y además aparece adormecimiento en la zona de la entrepierna, eso se evalúa el mismo día."
+          ],
+          "afirmaciones": [],
+          "keywordsCubiertas": ["donde duele la ciática"],
+          "entidadesCubiertas": ["ciatica", "dolor", "region lumbar", "region", "lumbar"]
+        },
+        {
+          "clave": "sintomas--falsa-ciatica",
+          "nivel": 3,
+          "titulo": "Falsa ciática",
+          "tipo": "clinico",
+          "aprobacion": "pendiente-doctor",
+          "parrafos": [
+            "Se llama así al dolor que imita el recorrido de la ciática sin que haya una raíz comprimida en la columna. La causa más nombrada es el músculo piriforme, que al contracturarse puede irritar el nervio a la altura del glúteo.",
+            "Se sospecha por el examen y por dónde se reproduce el dolor. Importa distinguirla porque el tratamiento es distinto y porque una resonancia de columna puede salir limpia y aun así haber un dolor muy real."
+          ],
+          "afirmaciones": [],
+          "keywordsCubiertas": ["falsa ciática"],
+          "entidadesCubiertas": ["ciatica", "dolor", "nervio", "irritacion"]
+        },
+        {
+          "clave": "sintomas--como-quitar-el-dolor-de-ciatica-rapido",
+          "nivel": 3,
+          "titulo": "Cómo quitar el dolor de ciática rápido",
+          "tipo": "clinico",
+          "aprobacion": "pendiente-doctor",
+          "parrafos": [
+            "En los primeros días lo que suele bajar la intensidad es el calor local, seguir moviéndote dentro de lo que toleres y la medicación que te indiquen. Las posiciones que descargan la zona, como acostarte de lado con una almohada entre las rodillas, ayudan sobre todo a dormir.",
+            "Rápido, en esto, quiere decir días y no minutos. Un dolor irradiado que cede un rato y vuelve igual no se resolvió, se calmó, y esa diferencia importa cuando hay que decidir si seguir esperando."
+          ],
+          "afirmaciones": [],
+          "keywordsCubiertas": [],
+          "entidadesCubiertas": ["dolor", "ciatica"]
+        },
+        {
+          "clave": "sintomas--como-aliviar-el-dolor-de-la-ciatica-en-2-minutos",
+          "nivel": 3,
+          "titulo": "Como aliviar el dolor de la ciática en 2 minutos",
+          "tipo": "clinico",
+          "aprobacion": "pendiente-doctor",
+          "parrafos": [
+            "Ningún ejercicio apaga una ciática en ese tiempo. Lo que sí existe son posiciones que descomprimen y alivian mientras las sostienes, y eso es distinto de tratar la causa.",
+            "El problema de los videos que prometen ese resultado es que se aplican igual a todo el mundo. Un estiramiento que le sirve a alguien con el piriforme contracturado puede empeorar a alguien con una raíz comprimida."
+          ],
+          "afirmaciones": [],
+          "keywordsCubiertas": [],
+          "entidadesCubiertas": ["ciatica", "dolor"]
+        },
+        {
+          "clave": "sintomas--como-quitar-el-dolor-de-ciatica-en-3-minutos",
+          "nivel": 3,
+          "titulo": "Como quitar el dolor de ciática en 3 minutos",
+          "tipo": "clinico",
+          "aprobacion": "pendiente-doctor",
+          "parrafos": [
+            "Vale lo mismo que arriba. Si una maniobra te alivia mientras la haces y el dolor vuelve apenas te levantas, sirve como calmante y no como tratamiento.",
+            "Lo que cambia el curso es sostener el movimiento, trabajar la fuerza y corregir lo que carga la zona. Eso lleva semanas, y es la parte que ningún video de tres minutos puede hacer por ti."
+          ],
+          "afirmaciones": [],
+          "keywordsCubiertas": [],
+          "entidadesCubiertas": ["dolor", "ciatica"]
+        },
+        {
+          "clave": "causas",
+          "nivel": 2,
+          "titulo": "Por qué aparece",
+          "tipo": "clinico",
+          "aprobacion": "pendiente-doctor",
+          "parrafos": [
+            "La causa más frecuente es una hernia discal que comprime una raíz nerviosa a la salida de la columna. Le siguen el estrechamiento del canal por desgaste, el deslizamiento de una vértebra sobre otra y la irritación del nervio a la altura del glúteo.",
+            "En gente joven predomina la hernia. Con los años pesa más el desgaste. La causa cambia el tratamiento, así que ponerle nombre importa, y ponerle nombre es trabajo de la consulta y no del buscador."
+          ],
+          "afirmaciones": [],
+          "keywordsCubiertas": [],
+          "entidadesCubiertas": ["raices", "nervio", "irritacion"]
+        },
+        {
+          "clave": "causas--que-es-lo-que-provoca-la-ciatica",
+          "nivel": 3,
+          "titulo": "¿Qué es lo que provoca la ciática?",
+          "tipo": "clinico",
+          "aprobacion": "pendiente-doctor",
+          "parrafos": [
+            "Lo provoca la compresión o la irritación de alguna de las raíces nerviosas lumbares o sacras que forman el nervio ciático.",
+            "Lo que comprime puede ser material del disco desplazado, un canal estrechado por el desgaste de los años o una vértebra que se corrió de su lugar. Cuál de esas cosas es se define con el examen y, cuando corresponde, con una imagen."
+          ],
+          "afirmaciones": [],
+          "keywordsCubiertas": ["ciática"],
+          "entidadesCubiertas": ["ciatica", "raices", "nervio ciatico", "irritacion", "lumbar"]
+        },
+        {
+          "clave": "causas--causas-de-la-ciatica-en-mujeres",
+          "nivel": 3,
+          "titulo": "Causas de la ciática en mujeres",
+          "tipo": "clinico",
+          "aprobacion": "pendiente-doctor",
+          "parrafos": [
+            "En el embarazo, el aumento de peso, el cambio del centro de gravedad y la posición del útero pueden irritar la zona y producir un dolor muy parecido a una ciática.",
+            "Fuera del embarazo las causas son las mismas que en cualquier persona. La búsqueda es frecuente y la respuesta honesta es que el sexo no cambia el mecanismo."
+          ],
+          "afirmaciones": [],
+          "keywordsCubiertas": [],
+          "entidadesCubiertas": ["ciatica", "dolor"]
+        },
+        {
+          "clave": "diagnostico",
+          "nivel": 2,
+          "titulo": "Cómo se confirma el diagnóstico",
+          "tipo": "clinico",
+          "aprobacion": "pendiente-doctor",
+          "parrafos": [
+            "Se define en la consulta. El relato del recorrido, el examen de fuerza, reflejos y sensibilidad, y algunas maniobras que ponen en tensión la raíz para reproducir el síntoma alcanzan para ubicar el nivel comprometido en la mayoría de los casos.",
+            "La resonancia se pide cuando hay señales de alarma, cuando el dolor no mejora con el tratamiento o cuando se está evaluando una intervención. Confirma lo que la consulta ya sospecha, y no es por donde se empieza.",
+            "Conviene repetirlo porque es la confusión más cara: una parte considerable de las resonancias de personas sin ningún dolor muestra discos alterados. La imagen sola no define nada."
+          ],
+          "afirmaciones": [
+            {
+              "texto": "Una parte considerable de las resonancias de personas sin dolor muestra discos alterados, así que la imagen sola no define la conducta.",
+              "fuente": "Ya publicado en src/content/blog.ts, post 5-sintomas-de-columna-que-no-debes-ignorar, sección que-hacer-con-estas-senales, con fecha de actualización 2026-08-10."
+            }
+          ],
+          "keywordsCubiertas": [],
+          "entidadesCubiertas": ["dolor", "raices"]
+        },
+        {
+          "clave": "sin-operar",
+          "nivel": 2,
+          "titulo": "Qué se puede hacer sin operar",
+          "tipo": "clinico",
+          "aprobacion": "pendiente-doctor",
+          "parrafos": [
+            "La mayoría de las ciáticas mejora sin operar. El plan combina movimiento temprano dentro de lo tolerado, terapia física dirigida, control del dolor con lo que indique tu médico y corrección de la postura de trabajo y de la forma de levantar peso.",
+            "El reposo absoluto prolongado juega en contra. Sostener actividad, aunque sea poca y adaptada, es parte del tratamiento y no una concesión que uno se permite cuando se siente mejor."
+          ],
+          "afirmaciones": [],
+          "keywordsCubiertas": [],
+          "entidadesCubiertas": ["dolor"]
+        },
+        {
+          "clave": "sin-operar--medicamento-para-la-ciatica",
+          "nivel": 3,
+          "titulo": "Medicamento para la ciática",
+          "tipo": "clinico",
+          "aprobacion": "pendiente-doctor",
+          "parrafos": [
+            "Acá no va ningún nombre ni ninguna dosis, y es a propósito. Lo que se usa para un dolor de origen nervioso no es lo mismo que para una contractura, y la elección depende de tu edad, de tu presión, de tu estómago y de lo que ya tomas.",
+            "Lo que sí conviene saber es que la medicación acompaña al tratamiento y no lo reemplaza. Sirve para que puedas moverte y hacer la rehabilitación, que es lo que de verdad cambia el cuadro."
+          ],
+          "afirmaciones": [],
+          "keywordsCubiertas": ["ciática medicamento"],
+          "entidadesCubiertas": ["ciatica", "dolor"]
+        },
+        {
+          "clave": "sin-operar--las-mejores-pastillas-para-la-ciatica",
+          "nivel": 3,
+          "titulo": "Las mejores pastillas para la ciática",
+          "tipo": "clinico",
+          "aprobacion": "pendiente-doctor",
+          "parrafos": [
+            "No hay una lista, y la búsqueda es tan común que vale contestarla igual. Quien te evalúa elige el fármaco según el tipo de dolor y según tu historia, y lo ajusta en los controles.",
+            "Comprar por recomendación de un conocido tiene dos riesgos concretos: tomar algo que no corresponde a un dolor de origen nervioso, y enmascarar una señal que había que mirar."
+          ],
+          "afirmaciones": [],
+          "keywordsCubiertas": [],
+          "entidadesCubiertas": ["ciatica", "dolor"]
+        },
+        {
+          "clave": "cirugia",
+          "nivel": 2,
+          "titulo": "Cuándo hace falta operar",
+          "tipo": "clinico",
+          "aprobacion": "pendiente-doctor",
+          "parrafos": [
+            "Operar se plantea cuando el dolor irradiado sigue siendo incapacitante después de un manejo conservador bien hecho y sostenido, o cuando hay compromiso neurológico que avanza.",
+            "Hay tres situaciones que no admiten esperar turno y se evalúan el mismo día: la pérdida de fuerza que avanza rápido, el adormecimiento en la zona de la entrepierna y los genitales, y la dificultad para controlar la orina o la deposición.",
+            "Fuera de eso, la conversación sobre operar se abre y no se cierra. Que se plantee no significa que esté decidido."
+          ],
+          "afirmaciones": [
+            {
+              "texto": "La pérdida de fuerza que avanza, el adormecimiento en la zona de la entrepierna y los cambios en el control de esfínteres pueden indicar una compresión seria dentro del canal y se evalúan el mismo día.",
+              "fuente": "Ya publicado en src/content/blog.ts, post 5-sintomas-de-columna-que-no-debes-ignorar, sección perdida-de-fuerza, con fecha de actualización 2026-08-10."
+            }
+          ],
+          "keywordsCubiertas": [],
+          "entidadesCubiertas": ["dolor"]
+        },
+        {
+          "clave": "preguntas-frecuentes",
+          "nivel": 2,
+          "titulo": "Preguntas frecuentes",
+          "tipo": "clinico",
+          "aprobacion": "pendiente-doctor",
+          "parrafos": [
+            "Las tres que más se repiten van abajo. Hay una cuarta que casi nadie hace y que conviene hacer: qué pasa si no hago nada. En una ciática sin señales de alarma la respuesta suele ser que mejora igual, más lento y con más probabilidad de recaída."
+          ],
+          "afirmaciones": [],
+          "keywordsCubiertas": [],
+          "entidadesCubiertas": ["ciatica"]
+        },
+        {
+          "clave": "preguntas-frecuentes--como-se-quita-la-ciatica",
+          "nivel": 3,
+          "titulo": "¿Cómo se quita la ciática?",
+          "tipo": "clinico",
+          "aprobacion": "pendiente-doctor",
+          "parrafos": [
+            "Con tiempo y con trabajo. La mayoría de los cuadros cede en semanas con tratamiento conservador bien llevado, y la parte que más pesa es la que hace la persona todos los días: moverse, hacer los ejercicios indicados y corregir lo que carga la zona.",
+            "Cuando no cede, lo que corresponde no es insistir con lo mismo sino volver a evaluar."
+          ],
+          "afirmaciones": [],
+          "keywordsCubiertas": ["ciática"],
+          "entidadesCubiertas": ["ciatica"]
+        },
+        {
+          "clave": "preguntas-frecuentes--que-no-debes-hacer-si-tienes-ciatica",
+          "nivel": 3,
+          "titulo": "¿Qué no debes hacer si tienes ciática?",
+          "tipo": "clinico",
+          "aprobacion": "pendiente-doctor",
+          "parrafos": [
+            "Quedarte en cama varios días, cargar peso con la espalda flexionada, estirar a la fuerza buscando que algo suene, y automedicarte durante semanas.",
+            "Tampoco conviene pedir una resonancia por cuenta propia y leerla sin contexto. Es la vía más rápida a asustarse con un informe que no explica lo que sientes."
+          ],
+          "afirmaciones": [],
+          "keywordsCubiertas": [],
+          "entidadesCubiertas": ["ciatica"]
+        },
+        {
+          "clave": "preguntas-frecuentes--cuanto-tiempo-te-dura-la-ciatica",
+          "nivel": 3,
+          "titulo": "¿Cuánto tiempo te dura la ciática?",
+          "tipo": "clinico",
+          "aprobacion": "pendiente-doctor",
+          "parrafos": [
+            "Un episodio típico mejora de forma clara en el transcurso de unas semanas, y lo esperable es que cada semana se parezca menos a la anterior.",
+            "Si la tendencia de las últimas semanas apunta hacia arriba en vez de hacia abajo, o si el dolor te despierta y no mejora al cambiar de posición, eso se evalúa aparte porque ya no se está comportando como un dolor mecánico."
+          ],
+          "afirmaciones": [],
+          "keywordsCubiertas": [],
+          "entidadesCubiertas": ["ciatica", "dolor"]
+        },
+        {
+          "clave": "cuando-consultar",
+          "nivel": 2,
+          "titulo": "Cuándo consultar",
+          "tipo": "clinico",
+          "aprobacion": "pendiente-doctor",
+          "parrafos": [
+            "Consulta si el dolor baja por la pierna y no cede en pocos días, si aparece hormigueo o falta de fuerza, o si el cuadro te obliga a modificar de forma sostenida lo que haces.",
+            "Mientras consigues la cita, anota cómo se comporta el dolor día a día. Ese registro simple vale mucho en la consulta, porque la historia es lo que más orienta antes de cualquier imagen.",
+            "Y si detrás de la ciática hay un disco que comprime una raíz, lo que sigue está explicado en la guía de hernia discal lumbar y cervical, que entra en el diagnóstico y en el tratamiento con el detalle que acá no corresponde."
+          ],
+          "afirmaciones": [],
+          "keywordsCubiertas": [],
+          "entidadesCubiertas": ["ciatica", "dolor", "pierna"]
+        }
+      ]
+    },
+    {
+      "url": "/blog/miedo-a-operarte-de-la-columna-5-cosas-que-debes-saber",
+      "title": "Cirugía de columna: cuándo se plantea y cómo es",
+      "metaDescription": "Cuándo se plantea operar la columna, qué técnicas existen, cómo es la recuperación y qué conviene preguntar en la consulta.",
+      "h1": "Operarse de la columna: lo que conviene saber antes",
+      "h1Origen": "La página responde al miedo y no al procedimiento, así que el H1 habla desde el lado del paciente mientras el title sirve la búsqueda.",
+      "notaDeFormato": "La SERP de `cirugía de columna` es siete de siete contenido informativo, así que el formato es guía clínica. La etapa de paciente de esta URL es la decisión y no el diagnóstico: la reescritura se queda en qué se evalúa antes de operar, qué preguntar y qué significa una segunda opinión. El detalle del procedimiento vive en la guía de cirugía mínimamente invasiva, hacia donde este post deriva.",
+      "derivaA": {
+        "url": "/servicios/cirugia-minimamente-invasiva",
+        "anchor": "cirugía endoscópica de columna",
+        "regla": "mencion-inversa",
+        "motivo": "La primaria de esta página y la de `/servicios/cirugia-minimamente-invasiva` comparten el término clínico cirugía: el artículo explica la decisión y la guía explica el procedimiento, así que la captación alimenta al servicio y no al revés."
+      },
+      "cambios": [
+        {
+          "que": "Se conserva la URL, el slug y el título publicado dentro del sitio.",
+          "motivo": "La página está viva desde el 2026-06-24 y la fase 14 le asignó acción reescribir. El title de buscador cambia y el nombre del post en el sitio no, que es lo que sostiene la señal acumulada."
+        },
+        {
+          "que": "Se conserva el ángulo entero del post publicado: cómo se decide una cirugía, quién la decide y con qué información.",
+          "motivo": "Es el único de los cuatro posts que sobrevivió con ángulo propio, y ese ángulo es justo la consulta `cirugía de columna` con intención informacional que la SERP midió. Cambiarlo habría tirado lo que hacía funcionar a la página."
+        },
+        {
+          "que": "Se conservan casi literales cinco pasajes: que no toda hernia termina en cirugía, que la imagen no manda sobre la decisión, que las razones para operar se pueden nombrar, la forma del plan de recuperación y qué significa una decisión informada.",
+          "motivo": "Están bien escritos, son correctos y ya pasaron revisión. La reescritura no existe para mejorarlos sino para que la página cubra lo que la SERP pide."
+        },
+        {
+          "que": "Se agregan diez secciones nuevas: cervical, escoliosis y lumbar, caminar después, precio, secuelas, tornillos, riesgo, costo, cómo dormir y cuáles son las cirugías.",
+          "motivo": "Salen de la jerarquía medida en `data/onpage-serp.json`: cinco secundarias del mapa, cuatro búsquedas relacionadas y cinco preguntas de People Also Ask. Son las que el post publicado no cubría y las que ya cubren las páginas que posicionan."
+        },
+        {
+          "que": "Se reemplaza el formato de lista de cinco cosas por la estructura de guía con encabezados propios.",
+          "motivo": "El esqueleto de cinco puntos no tenía dónde alojar las diez secciones nuevas sin volverse una lista de quince. La numeración era del título, no del contenido."
+        },
+        {
+          "que": "Se responden precio, costo, riesgo y tiempo de recuperación sin dar ninguna cifra.",
+          "motivo": "Son las cuatro preguntas donde más tienta tranquilizar con números, y ninguno está verificado (D-10). Se contesta explicando de qué depende cada cosa y qué pedir por escrito en la consulta, que es información útil y sostenible."
+        }
+      ],
+      "guiaParaElDoctor": "La revisión de esta URL entra completa en una sola pasada y es la que más ojo clínico necesita de los cuatro posts, porque habla de operarse. Lo que más pesa está en siete bloques: qué es la cirugía de columna, por la descripción de los objetivos del procedimiento; las tres secciones por región, cervical, escoliosis y lumbar, por lo que dicen sobre cuándo se plantea cada una; secuelas y riesgo, donde a propósito no hay ningún porcentaje; tornillos, por cuándo se indica la fijación; recuperación, por la forma del plan; y cuándo hace falta operar, por las razones nombradas una por una. Los pasajes que vienen del post publicado están marcados en la tabla de cambios. No hay ninguna cifra sobre el doctor, ningún plazo de recuperación prometido, ninguna tasa de resultado ni ningún precio en el texto, y esa ausencia es la decisión más deliberada de esta página.",
+      "enlacesPropuestos": [
+        {
+          "destino": "/servicios/cirugia-minimamente-invasiva",
+          "anchor": "cirugía endoscópica de columna",
+          "regla": "mencion-inversa"
+        },
+        {
+          "destino": "/blog/artrosis",
+          "anchor": "pastillas para la artrosis",
+          "regla": "vecindad-tematica"
+        },
+        {
+          "destino": "/blog/5-sintomas-de-columna-que-no-debes-ignorar",
+          "anchor": "falsa ciática",
+          "regla": "vecindad-tematica"
+        },
+        {
+          "destino": "/blog/lumbalgia",
+          "anchor": "causas de lumbalgia",
+          "regla": "vecindad-tematica"
+        },
+        {
+          "destino": "/blog",
+          "anchor": "Blog",
+          "regla": "navegacion-de-seccion"
+        },
+        {
+          "destino": "/servicios",
+          "anchor": "cirujano de columna cerca de mí",
+          "regla": "navegacion-de-seccion"
+        }
+      ],
+      "secciones": [
+        {
+          "clave": "que-es",
+          "nivel": 2,
+          "titulo": "Qué es la cirugía de columna",
+          "tipo": "clinico",
+          "aprobacion": "pendiente-doctor",
+          "parrafos": [
+            "Cirugía de columna es un término amplio. Abarca procedimientos bastante distintos entre sí sobre la columna vertebral, y lo que tienen en común es el objetivo: sacarle presión a los nervios, estabilizar un segmento que se mueve de más o corregir una deformidad.",
+            "Se opera la zona lumbar, la cervical y la dorsal, y el nombre cambia según lo que se haga: liberar el espacio de una raíz, retirar el material del disco que comprime, fusionar dos vértebras que ya no sostienen.",
+            "Nada de esto se decide por la palabra cirugía en abstracto. Se decide por lo que muestra tu caso, y esa es la diferencia entre asustarse con una categoría y entender una indicación."
+          ],
+          "afirmaciones": [],
+          "keywordsCubiertas": ["cirugía de columna", "videos de cirugía de columna"],
+          "entidadesCubiertas": [
+            "cirugia",
+            "columna",
+            "cirugia de columna",
+            "columna vertebral",
+            "vertebral",
+            "nervios",
+            "presion",
+            "lumbar"
+          ]
+        },
+        {
+          "clave": "que-es--cirugia-de-la-columna-cervical",
+          "nivel": 3,
+          "titulo": "Cirugía de la columna cervical",
+          "tipo": "clinico",
+          "aprobacion": "pendiente-doctor",
+          "parrafos": [
+            "Es la del cuello. Se plantea cuando una hernia o un canal estrecho comprimen una raíz o la médula y aparecen dolor irradiado al brazo, adormecimiento o pérdida de fuerza.",
+            "El abordaje puede ser por delante o por detrás, y eso lo define el nivel afectado y qué hay que liberar. Es una decisión técnica que te tienen que explicar en palabras que entiendas."
+          ],
+          "afirmaciones": [],
+          "keywordsCubiertas": ["cirugía de columna cervical"],
+          "entidadesCubiertas": ["cirugia", "columna"]
+        },
+        {
+          "clave": "que-es--cirugia-de-la-columna-escoliosis",
+          "nivel": 3,
+          "titulo": "Cirugía de la columna escoliosis",
+          "tipo": "clinico",
+          "aprobacion": "pendiente-doctor",
+          "parrafos": [
+            "Se opera cuando la curva progresa, cuando duele de forma sostenida o cuando compromete la función. Es la más compleja del grupo, porque no se trata de liberar un nivel sino de corregir y sostener la alineación de varios.",
+            "En la mayoría de los casos, y sobre todo en chicos y adolescentes, el manejo es seguimiento y corsé. Operar queda para las curvas que siguen avanzando pese a eso."
+          ],
+          "afirmaciones": [],
+          "keywordsCubiertas": ["cirugía de columna escoliosis"],
+          "entidadesCubiertas": ["cirugia", "columna"]
+        },
+        {
+          "clave": "que-es--cirugia-de-la-columna-lumbar",
+          "nivel": 3,
+          "titulo": "Cirugía de la columna lumbar",
+          "tipo": "clinico",
+          "aprobacion": "pendiente-doctor",
+          "parrafos": [
+            "Es la más frecuente. La razón habitual es un disco que comprime una raíz y produce dolor que baja por la pierna, o un canal estrecho que aparece con los años y limita cuánto se puede caminar.",
+            "Cuando alcanza con liberar el nervio, se libera. Cuando el segmento además está inestable, se agrega fijación, y eso es una operación más grande con una recuperación distinta."
+          ],
+          "afirmaciones": [],
+          "keywordsCubiertas": ["cirugía de columna lumbar"],
+          "entidadesCubiertas": ["cirugia", "columna", "lumbar", "nervios"]
+        },
+        {
+          "clave": "que-es--caminar-despues-de-cirugia-de-columna",
+          "nivel": 3,
+          "titulo": "Caminar después de cirugía de columna",
+          "tipo": "clinico",
+          "aprobacion": "pendiente-doctor",
+          "parrafos": [
+            "Caminar temprano es parte del plan y no una excepción. El criterio actual después de una descompresión es movilizarte pronto, con progresión gradual de la actividad y con indicaciones concretas de cuidado de la espalda mientras la zona cicatriza.",
+            "Cuánto y desde cuándo lo define el equipo que te operó, según la técnica usada y según cómo vienes."
+          ],
+          "afirmaciones": [
+            {
+              "texto": "El criterio actual después de una descompresión es la movilización temprana con progresión gradual de la actividad.",
+              "fuente": "Ya publicado en src/content/blog.ts, post miedo-a-operarte-de-la-columna-5-cosas-que-debes-saber, sección la-recuperacion-es-individual, con fecha de actualización 2026-08-10."
+            }
+          ],
+          "keywordsCubiertas": [],
+          "entidadesCubiertas": ["cirugia de columna", "cirugia", "columna"]
+        },
+        {
+          "clave": "que-es--cirugia-de-la-columna-precio",
+          "nivel": 3,
+          "titulo": "Cirugía de la columna precio",
+          "tipo": "clinico",
+          "aprobacion": "pendiente-doctor",
+          "parrafos": [
+            "Acá no hay una cifra, y no es una evasiva. El costo depende de la técnica, del material que se use, de los días de internamiento, de la clínica y de la cobertura de tu seguro.",
+            "Lo que sí se puede pedir en la consulta es un presupuesto por escrito que detalle qué incluye y qué no. Es una pregunta razonable y esperable, y quien te atiende debería contestarla sin incomodarse."
+          ],
+          "afirmaciones": [],
+          "keywordsCubiertas": [],
+          "entidadesCubiertas": ["cirugia", "columna"]
+        },
+        {
+          "clave": "que-es--secuelas-de-cirugia-de-columna-lumbar",
+          "nivel": 3,
+          "titulo": "Secuelas de cirugía de columna lumbar",
+          "tipo": "clinico",
+          "aprobacion": "pendiente-doctor",
+          "parrafos": [
+            "Toda operación tiene riesgos, y los de la columna incluyen infección, sangrado, lesión de una raíz nerviosa y la posibilidad de que el dolor no ceda del todo.",
+            "También existe que el dolor vuelva con el tiempo, sea por el mismo nivel o por otro. Preguntar qué riesgos tiene lo que te proponen, y también qué riesgos tiene no hacer nada, es parte de una decisión informada."
+          ],
+          "afirmaciones": [],
+          "keywordsCubiertas": [],
+          "entidadesCubiertas": ["cirugia de columna", "columna", "lumbar", "cirugia"]
+        },
+        {
+          "clave": "que-es--cirugia-de-la-columna-lumbar-con-tornillos",
+          "nivel": 3,
+          "titulo": "Cirugía de la columna lumbar con tornillos",
+          "tipo": "clinico",
+          "aprobacion": "pendiente-doctor",
+          "parrafos": [
+            "Los tornillos se usan cuando hay que estabilizar un segmento: se anclan en las vértebras y sostienen la corrección mientras el hueso se fusiona.",
+            "No se ponen por defecto ni son mejores por ser más. Se indican cuando el segmento está inestable o cuando hubo que retirar estructuras que lo sostenían, y esa indicación te la tienen que explicar."
+          ],
+          "afirmaciones": [],
+          "keywordsCubiertas": [],
+          "entidadesCubiertas": ["cirugia", "columna", "lumbar"]
+        },
+        {
+          "clave": "sintomas",
+          "nivel": 2,
+          "titulo": "Qué síntomas ponen la operación sobre la mesa",
+          "tipo": "clinico",
+          "aprobacion": "pendiente-doctor",
+          "parrafos": [
+            "El dolor irradiado que sigue siendo incapacitante después de un manejo conservador bien hecho y sostenido. La pérdida de fuerza que avanza. Y los signos de compresión seria del canal, que son el adormecimiento en la zona de la entrepierna y los cambios en el control de la orina, y esos se evalúan el mismo día.",
+            "El dolor de espalda solo, sin irradiación y sin hallazgos que lo expliquen, rara vez es motivo de operación."
+          ],
+          "afirmaciones": [
+            {
+              "texto": "Las razones que abren la conversación quirúrgica son el dolor que no responde a otros tratamientos y el compromiso neurológico progresivo.",
+              "fuente": "Ya publicado en src/content/blog.ts, post miedo-a-operarte-de-la-columna-5-cosas-que-debes-saber, sección la-cirugia-necesita-una-razon-concreta, con fecha de actualización 2026-08-10."
+            }
+          ],
+          "keywordsCubiertas": [],
+          "entidadesCubiertas": ["presion", "nervios"]
+        },
+        {
+          "clave": "causas",
+          "nivel": 2,
+          "titulo": "Por qué se llega a esta conversación",
+          "tipo": "clinico",
+          "aprobacion": "pendiente-doctor",
+          "parrafos": [
+            "Casi siempre por una de tres vías: un cuadro que no mejoró con lo conservador, un hallazgo que explica bien el síntoma, o un deterioro neurológico que apura la decisión.",
+            "También se llega por miedo, y conviene nombrarlo. Hay gente que posterga la evaluación durante años y llega cuando el cuadro ya le limitó la vida diaria. Ese miedo suele estar hecho de ideas sobre cómo era operarse hace décadas, y de lo que le pasó a un familiar en otra época."
+          ],
+          "afirmaciones": [],
+          "keywordsCubiertas": [],
+          "entidadesCubiertas": []
+        },
+        {
+          "clave": "diagnostico",
+          "nivel": 2,
+          "titulo": "Cómo se confirma que hace falta",
+          "tipo": "clinico",
+          "aprobacion": "pendiente-doctor",
+          "parrafos": [
+            "Con la coincidencia entre tres cosas: lo que cuentas, lo que muestra el examen y lo que muestra la imagen. Si las tres coinciden, la indicación es sólida. Si la imagen dice una cosa y el examen otra, no se opera la imagen.",
+            "Una resonancia con una hernia visible, en alguien que mejora y hace vida normal, no es por sí sola una indicación quirúrgica. Lo que se trata es a la persona."
+          ],
+          "afirmaciones": [
+            {
+              "texto": "Una imagen con una hernia visible no constituye por sí sola una indicación quirúrgica: la decisión se toma sobre la persona y no sobre el estudio.",
+              "fuente": "Ya publicado en src/content/blog.ts, post miedo-a-operarte-de-la-columna-5-cosas-que-debes-saber, sección no-toda-hernia-termina-en-cirugia, con fecha de actualización 2026-08-10."
+            }
+          ],
+          "keywordsCubiertas": [],
+          "entidadesCubiertas": []
+        },
+        {
+          "clave": "sin-operar",
+          "nivel": 2,
+          "titulo": "Qué se puede hacer sin operar",
+          "tipo": "clinico",
+          "aprobacion": "pendiente-doctor",
+          "parrafos": [
+            "La mayoría de los casos se maneja primero con tratamiento conservador: terapia física, medicación y cambios de hábitos. Esa etapa no es un trámite previo para llegar al quirófano, es tratamiento, y en buena parte de los casos es el único que hace falta.",
+            "El trabajo de terapia busca descargar el segmento afectado, recuperar movilidad y fortalecer la musculatura que sostiene la columna, y a eso se suma corregir la postura de trabajo y la forma de levantar peso, que es lo que evita la recaída.",
+            "Si te dijeron que necesitas operarte y todavía no atravesaste un manejo conservador bien hecho y sostenido, es razonable preguntar por qué."
+          ],
+          "afirmaciones": [],
+          "keywordsCubiertas": [],
+          "entidadesCubiertas": ["columna"]
+        },
+        {
+          "clave": "cirugia",
+          "nivel": 2,
+          "titulo": "Cuándo hace falta operar",
+          "tipo": "clinico",
+          "aprobacion": "pendiente-doctor",
+          "parrafos": [
+            "Cuando hay una razón concreta, y esa razón se puede nombrar. Conviene que te la nombren: dolor irradiado incapacitante que no respondió al tratamiento, compromiso neurológico que avanza, o signos de compresión seria del canal.",
+            "Fuera de esos escenarios, el paso siguiente casi siempre es seguir trabajando el manejo conservador y volver a evaluar más adelante. Que la conversación se abra no significa que la decisión esté tomada, y preguntar cuál de esas razones aplica a tu caso es esperable."
+          ],
+          "afirmaciones": [],
+          "keywordsCubiertas": [],
+          "entidadesCubiertas": ["presion"]
+        },
+        {
+          "clave": "cirugia--que-tan-riesgosa-es-una-operacion-en-la-columna",
+          "nivel": 3,
+          "titulo": "¿Qué tan riesgosa es una operación en la columna?",
+          "tipo": "clinico",
+          "aprobacion": "pendiente-doctor",
+          "parrafos": [
+            "Tiene riesgos, como cualquier operación, y no se pueden reducir a una frase tranquilizadora. Acá no vas a encontrar un porcentaje, porque el riesgo real depende de qué se hace, en qué nivel, con qué técnica y de tu estado de salud.",
+            "Lo que sí corresponde es que en la consulta te expliquen los riesgos de lo que te proponen y también los de no hacer nada, que es la parte que suele quedar fuera de la conversación."
+          ],
+          "afirmaciones": [],
+          "keywordsCubiertas": [],
+          "entidadesCubiertas": ["columna"]
+        },
+        {
+          "clave": "cirugia--cual-es-el-costo-de-una-operacion-de-columna",
+          "nivel": 3,
+          "titulo": "¿Cuál es el costo de una operación de columna?",
+          "tipo": "clinico",
+          "aprobacion": "pendiente-doctor",
+          "parrafos": [
+            "Depende de los mismos factores que el precio y varía mucho entre instituciones. Cualquier número que encuentres en internet corresponde a otro caso y a otro lugar.",
+            "Pide el presupuesto por escrito, con el detalle de honorarios, material, sala e internamiento, y consulta a tu seguro qué cubre antes de decidir."
+          ],
+          "afirmaciones": [],
+          "keywordsCubiertas": [],
+          "entidadesCubiertas": ["columna"]
+        },
+        {
+          "clave": "cirugia--como-dormir-despues-de-una-cirugia-de-columna",
+          "nivel": 3,
+          "titulo": "Como dormir después de una cirugía de columna",
+          "tipo": "clinico",
+          "aprobacion": "pendiente-doctor",
+          "parrafos": [
+            "El equipo que te operó te va a dar las indicaciones exactas, y son las que valen. En términos generales se busca evitar torsiones al acostarte y al levantarte, y mucha gente descansa mejor de lado con una almohada entre las rodillas, o boca arriba con las piernas apoyadas.",
+            "Si algo te duele más al día siguiente de dormir en cierta posición, eso se reporta en el control y no se aguanta."
+          ],
+          "afirmaciones": [],
+          "keywordsCubiertas": ["como dormir después de una cirugía de columna"],
+          "entidadesCubiertas": ["cirugia de columna", "cirugia", "columna"]
+        },
+        {
+          "clave": "preguntas-frecuentes",
+          "nivel": 2,
+          "titulo": "Preguntas frecuentes",
+          "tipo": "clinico",
+          "aprobacion": "pendiente-doctor",
+          "parrafos": [
+            "Dos quedan fuera de las anteriores y conviene contestarlas. Si conviene pedir una segunda opinión: salvo en las situaciones que se evalúan el mismo día, nada se rompe por pedirla, y pedirla no ofende a nadie. Y qué llevar a la consulta: los estudios de imagen completos y no solo el informe, la lista de lo que tomas, el detalle de qué tratamientos hiciste y por cuánto tiempo, y las preguntas escritas, porque en el momento se olvidan."
+          ],
+          "afirmaciones": [],
+          "keywordsCubiertas": [],
+          "entidadesCubiertas": []
+        },
+        {
+          "clave": "preguntas-frecuentes--cuanto-tiempo-tarda-en-recuperarse-de-una-cirugia-de-columna",
+          "nivel": 3,
+          "titulo": "¿Cuánto tiempo tarda en recuperarse de una cirugía de columna?",
+          "tipo": "clinico",
+          "aprobacion": "pendiente-doctor",
+          "parrafos": [
+            "No hay un plazo único, y conviene desconfiar de quien te dé uno cerrado antes de operarte. Lo que se puede anticipar es la forma del plan y no su duración exacta.",
+            "El tiempo depende de la técnica usada, de si hubo que estabilizar el segmento, de tu estado previo y del trabajo al que vuelves, y se define en los controles. Si alguien te da una fecha exacta antes de operarte, esa fecha es una estimación y no un compromiso."
+          ],
+          "afirmaciones": [
+            {
+              "texto": "El plazo de recuperación depende de la técnica, de la necesidad de estabilizar el segmento, del estado previo y del trabajo al que la persona vuelve, y se define en los controles.",
+              "fuente": "Ya publicado en src/content/blog.ts, post miedo-a-operarte-de-la-columna-5-cosas-que-debes-saber, sección la-recuperacion-es-individual, con fecha de actualización 2026-08-10."
+            }
+          ],
+          "keywordsCubiertas": [],
+          "entidadesCubiertas": ["cirugia de columna", "cirugia", "columna"]
+        },
+        {
+          "clave": "preguntas-frecuentes--cuales-son-las-cirugias-de-columna",
+          "nivel": 3,
+          "titulo": "¿Cuáles son las cirugías de columna?",
+          "tipo": "clinico",
+          "aprobacion": "pendiente-doctor",
+          "parrafos": [
+            "Las más frecuentes son las que liberan el espacio de un nervio, las que retiran el material del disco que comprime y las que fusionan un segmento inestable. A eso se suman las correcciones de deformidad y las revisiones de una operación anterior.",
+            "El nombre de cada una importa menos que el objetivo. Pregunta qué se busca lograr con lo que te proponen y qué alternativas quedaron descartadas, que es lo que de verdad te sirve para decidir."
+          ],
+          "afirmaciones": [],
+          "keywordsCubiertas": [],
+          "entidadesCubiertas": ["columna", "nervios"]
+        },
+        {
+          "clave": "cuando-consultar",
+          "nivel": 2,
+          "titulo": "Cuándo consultar",
+          "tipo": "clinico",
+          "aprobacion": "pendiente-doctor",
+          "parrafos": [
+            "Conviene consultar cuando el dolor irradiado no cede, cuando aparece falta de fuerza o adormecimiento, o cuando ya te dijeron que necesitas operarte y quieres entender por qué antes de decidir.",
+            "Si lo que buscas es entender el procedimiento en sí, cómo se hace y qué implica la recuperación, eso está explicado en la guía de cirugía endoscópica de columna y de los abordajes mínimamente invasivos, que es donde entra el detalle técnico."
+          ],
+          "afirmaciones": [],
+          "keywordsCubiertas": [],
+          "entidadesCubiertas": ["columna"]
+        }
+      ]
     }
   ]
 }
