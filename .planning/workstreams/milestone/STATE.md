@@ -25,9 +25,9 @@ See: .planning/PROJECT.md (updated 2026-08-10)
 ## Current Position
 
 Phase: 8, reabierta para consumir el paquete on-page de v1.2 (planes 08-05 a 08-19, en cuatro olas)
-Plan: 08-05 y 08-06 cerrados. Sigue la ola 2, los cinco planes 08-07 a 08-11
+Plan: 08-05, 08-06 y 08-07 cerrados. Sigue la ola 2, los cuatro planes 08-08 a 08-11
 Status: En ejecución
-Last activity: 2026-08-13, plan 08-06 ejecutado y verificado en local
+Last activity: 2026-08-13, plan 08-07 ejecutado y verificado en local
 
 Progress: [████████░░] 4 de 5 fases de v1.1, con la 8 reabierta
 
@@ -74,12 +74,17 @@ intacto para las otras tres guías: hernia discal declara `que-es` y cae en 15.8
 capacidad que `08-09-PLAN.md` iba a entregar en la ola 3; el orden real de dependencia la puso
 antes.
 
-**Lo que esto deja abierto para 08-07 y 08-08.** Estenosis espinal pasa con el default en 32.8 por
-ciento, a 2.2 puntos del techo, y conviene que declare `que-es` para tener margen. Ortopedia
-infantil no tiene ninguna posición de nivel 2 válida: su primer `h2` cuelga 13 subsecciones y ya
-cierra en 65.9 por ciento. El único punto dentro de la ventana cae entre subsecciones de nivel 3,
-y `bannerAfterSectionId` hoy solo resuelve ids de nivel 2. 08-08 necesita que la resolución acepte
-nivel 3, o que POS-01 se replantee para el formato de página de servicio.
+**Ola 2, plan 08-07, cerrado el 2026-08-13.** `/servicios/estenosis-espinal` publica el copy
+aprobado del paquete: 18 secciones, 2723 palabras. Declaró `bannerAfterSectionId: "que-es"` por
+margen (el default daba 32.8 por ciento, a 2.2 puntos del techo de la ventana), no porque la
+puerta lo exigiera. `tsc`, `lint`, `build`, `check-content.mjs` y `check-sedes.mjs` en verde sobre
+las 8 rutas.
+
+**Lo que esto deja abierto para 08-08.** Ortopedia infantil no tiene ninguna posición de nivel 2
+válida: su primer `h2` cuelga 13 subsecciones y ya cierra en 65.9 por ciento. El único punto
+dentro de la ventana cae entre subsecciones de nivel 3, y `bannerAfterSectionId` hoy solo resuelve
+ids de nivel 2. 08-08 necesita que la resolución acepte nivel 3, o que POS-01 se replantee para el
+formato de página de servicio.
 
 ### Estado de la fase 10, verificado en producción el 2026-08-10
 
