@@ -1,6 +1,12 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import Link from "next/link";
 import { WhatsAppCta } from "@/components/ui/whatsapp-cta";
+import {
+  ContentBody,
+  ContentBodyBoundary,
+} from "@/components/content/content-body";
+import { hubServicios, hubServiciosH1 } from "@/content/static-pages/hub-servicios";
 import { ServiceCard } from "@/components/services/service-card";
 import { serviceCategories, procedureApproaches } from "@/content/services";
 import { servicePages } from "@/content/service-pages";
@@ -20,7 +26,7 @@ export default function ServiciosPage() {
       <BreadcrumbJsonLd items={[{ name: "Servicios", path: "/servicios" }]} />
     <div className="mx-auto max-w-4xl px-4 py-14 sm:px-6 sm:py-20">
       <h1 className="font-heading text-3xl font-extrabold text-primary sm:text-4xl">
-        Especialidades y condiciones que trato
+        {hubServiciosH1}
       </h1>
       <p className="mt-5 max-w-2xl text-lg text-foreground/70">
         Cada consulta empieza con una evaluación a fondo. El tratamiento se
@@ -43,6 +49,33 @@ export default function ServiciosPage() {
           ))}
         </div>
       </section>
+
+      {/* Cuerpo aprobado del hub. Va después de la rejilla, que es la razón de
+          ser de esta página, y antes del catálogo heredado, que es el detalle.
+          El límite de la puerta abarca solo esta prosa. */}
+      <ContentBodyBoundary as="section" className="mt-16">
+        <ContentBody sections={hubServicios.sections} flushFirstSection />
+
+        {hubServicios.outboundLinks && hubServicios.outboundLinks.length > 0 && (
+          <section className="mt-14 border-t border-border pt-10">
+            <p className="font-heading text-lg font-bold text-foreground">
+              Sigue leyendo
+            </p>
+            <ul className="mt-3">
+              {hubServicios.outboundLinks.map((link) => (
+                <li key={link.href}>
+                  <Link
+                    href={link.href}
+                    className="block min-h-11 py-2.5 text-base font-semibold text-primary-dark hover:underline"
+                  >
+                    {link.anchor}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </section>
+        )}
+      </ContentBodyBoundary>
 
       <div className="mt-14 divide-y divide-border border-y border-border">
         {serviceCategories.map((cat) => (
