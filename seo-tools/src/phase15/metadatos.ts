@@ -569,8 +569,16 @@ interface PaginaRedactada {
   readonly h1: string;
 }
 
-export function copyRedactado(): readonly PaginaRedactada[] {
-  const crudo = JSON.parse(readFileSync(RUTA_COPY, "utf8")) as {
+/**
+ * Las URLs redactadas de un dataset de copy, con lo que v1.1 pega tal cual.
+ *
+ * Recibe la ruta porque la fase escribe una familia por archivo: las guias, los servicios y las
+ * sedes viven separadas para que dos planes en paralelo no se pisen. El cruce contra el mapa
+ * tiene que poder correr sobre las tres, o dos de ellas quedan sin guardia de divergencia.
+ */
+export function copyRedactado(archivo: string = RUTA_COPY): readonly PaginaRedactada[] {
+  const ruta = path.isAbsolute(archivo) ? archivo : path.join(SEO_TOOLS_ROOT, archivo);
+  const crudo = JSON.parse(readFileSync(ruta, "utf8")) as {
     readonly paginas?: readonly PaginaRedactada[];
   };
   const paginas: readonly PaginaRedactada[] = Array.isArray(crudo) ? crudo : (crudo.paginas ?? []);
