@@ -230,8 +230,14 @@ test("metadatos: los tres datasets de copy cruzan contra el mapa, no solo el de 
   // La familia de guias no es la unica que v1.1 lee. Los planes 15-04 y 15-05 escribieron
   // `copy-servicios.json` y `copy-sedes.json` en archivos propios para no pisarse, y el cruce
   // que protegia a uno dejaba a los otros dos sin guardia. Una divergencia ahi publica un title
-  // y audita otro, que es el falso verde que este cruce existe para impedir.
-  for (const archivo of ["data/copy-guias.json", "data/copy-servicios.json", "data/copy-sedes.json"]) {
+  // y audita otro, que es el falso verde que este cruce existe para impedir. El plan 15-06
+  // sumo `copy-blog.json`, que es la cuarta familia y la ultima.
+  for (const archivo of [
+    "data/copy-guias.json",
+    "data/copy-servicios.json",
+    "data/copy-sedes.json",
+    "data/copy-blog.json",
+  ]) {
     const copy = copyRedactado(archivo);
     assert.ok(copy.length > 0, `${archivo} no trae ninguna URL redactada para cruzar`);
     for (const pagina of copy) {

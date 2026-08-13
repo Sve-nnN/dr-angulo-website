@@ -30,6 +30,7 @@ import type {
   DatoOperativo,
   EnlacePropuesto,
   JerarquiaDeUrl,
+  MapeoDePost,
   PaqueteDeUrl,
   SeccionDeCopy,
   TipoDeDocumento,
@@ -151,6 +152,31 @@ function bloqueDeEnlaces(enlaces: readonly EnlacePropuesto[]): string[] {
     ...tabla(
       ["#", "Destino", "Anchor", "Regla"],
       enlaces.map((e, i) => [String(i + 1), `\`${e.destino}\``, e.anchor, e.regla]),
+    ),
+    "",
+  ];
+}
+
+/**
+ * Cómo entra el copy en la estructura de post que la aplicacion ya usa.
+ *
+ * Va FUERA de la region de copy porque es tabla generada. Lo llevan solo los posts del blog:
+ * son los unicos cuyo destino es una entrada de `blogPosts` con campos fijos, y sin este mapeo
+ * quien implementa tiene que decidir de nuevo que parte del copy es `intro` y cual una
+ * `subsection`. Esa decision ya se tomo al redactar, y volver a tomarla del otro lado es
+ * exactamente el trabajo duplicado que esta fase existe para evitar.
+ */
+function bloqueDeMapeoDePost(mapeo: readonly MapeoDePost[]): string[] {
+  if (mapeo.length === 0) return [];
+  return [
+    "## Cómo entra este copy en la estructura de post",
+    "",
+    "La aplicación ya tiene el tipo del post. Implementar esta URL es transcribir el copy de",
+    "arriba a esos campos, y no rediseñar la página.",
+    "",
+    ...tabla(
+      ["Campo del post", "De dónde sale"],
+      mapeo.map((m) => [`\`${m.campo}\``, m.deDonde]),
     ),
     "",
   ];
@@ -397,6 +423,7 @@ export function renderPaquete(
     lineas.push("");
   }
 
+  lineas.push(...bloqueDeMapeoDePost(paquete.mapeoDePost ?? []));
   lineas.push(...bloqueDeDatosOperativos(paquete.datosOperativos ?? []));
   lineas.push(...bloqueDeEnlaces(paquete.enlacesPropuestos ?? []));
 
@@ -636,6 +663,7 @@ interface PaginaDeCopy {
   readonly absorbe?: readonly BloqueAbsorbido[];
   readonly enlacesPropuestos?: readonly EnlacePropuesto[];
   readonly datosOperativos?: readonly DatoOperativo[];
+  readonly mapeoDePost?: readonly MapeoDePost[];
   readonly notaDeFormato?: string;
 }
 
@@ -758,6 +786,7 @@ export async function construirPaquete(
     guiaParaElDoctor: copy.guiaParaElDoctor,
     enlacesPropuestos: copy.enlacesPropuestos ?? [],
     datosOperativos: copy.datosOperativos ?? [],
+    mapeoDePost: copy.mapeoDePost ?? [],
     notaDeFormato: copy.notaDeFormato ?? null,
     fuente: medida.fuente,
   };

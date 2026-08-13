@@ -208,6 +208,20 @@ export interface DatoOperativo {
   readonly fuente: string;
 }
 
+/**
+ * Cómo entra una pieza del copy en la estructura de datos que la aplicacion ya usa.
+ *
+ * Solo lo llevan los cuatro posts del blog. Sin esta tabla, implementar un post obliga a
+ * decidir de nuevo que parte del copy es `intro`, cual es una `section` y cual una
+ * `subsection`, y esa decision ya esta tomada acá: el paquete se transcribe y no se rediseña.
+ */
+export interface MapeoDePost {
+  /** Campo del tipo de la aplicacion, escrito tal cual: `slug`, `intro`, `sections[].heading`. */
+  readonly campo: string;
+  /** De donde sale su contenido dentro de este paquete. */
+  readonly deDonde: string;
+}
+
 /** El paquete completo de una URL: todo lo que v1.1 necesita sin abrir otro archivo. */
 export interface PaqueteDeUrl {
   readonly fila: FilaOnPage;
@@ -229,6 +243,8 @@ export interface PaqueteDeUrl {
   readonly enlacesPropuestos?: readonly EnlacePropuesto[];
   /** Direccion, horario y canales de una sede. Solo lo llevan las cuatro fichas de sede. */
   readonly datosOperativos?: readonly DatoOperativo[];
+  /** Mapeo del copy a la estructura de post. Solo lo llevan los cuatro posts del blog. */
+  readonly mapeoDePost?: readonly MapeoDePost[];
   /**
    * Con que criterio se eligio el formato, cuando la SERP medida no lo resolvio sola.
    *

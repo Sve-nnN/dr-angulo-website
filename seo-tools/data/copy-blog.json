@@ -43,6 +43,64 @@
           "regla": "navegacion-de-seccion"
         }
       ],
+      "mapeoDePost": [
+        {
+          "campo": "slug",
+          "deDonde": "`artrosis`, la ruta publicada sin el prefijo /blog/. No cambia: la URL se conserva."
+        },
+        {
+          "campo": "title",
+          "deDonde": "El H1 de la tabla de arriba, que es el nombre del post dentro del sitio. El title de buscador va en el `<head>` y no acá."
+        },
+        {
+          "campo": "description",
+          "deDonde": "La meta description de la tabla de arriba, sin recortar."
+        },
+        {
+          "campo": "publishedAt",
+          "deDonde": "Se conserva la fecha publicada si la entrada ya existe. En los posts nuevos la pone quien publica."
+        },
+        {
+          "campo": "updatedAt",
+          "deDonde": "La fecha en la que v1.1 publique esta reescritura."
+        },
+        {
+          "campo": "relatedService",
+          "deDonde": "`hernia-discal`. Es el servicio de columna al que el blog empuja hoy en las cuatro entradas. Si v1.1 publica una guía de columna más cercana al desgaste, esta es la fila que cambia."
+        },
+        {
+          "campo": "ctaBanner.heading",
+          "deDonde": "¿El dolor articular ya te está limitando el día?"
+        },
+        {
+          "campo": "ctaBanner.body",
+          "deDonde": "Una evaluación con tus estudios define si lo tuyo necesita tratamiento o solo control."
+        },
+        {
+          "campo": "intro",
+          "deDonde": "Los dos primeros párrafos de la sección `que-es`, que son los que responden qué es la artrosis antes de cualquier encabezado."
+        },
+        {
+          "campo": "sections[].id",
+          "deDonde": "El `clave` de cada sección H2 del copy, que ya viene en kebab-case sin tildes y sirve como ancla compartible."
+        },
+        {
+          "campo": "sections[].heading",
+          "deDonde": "El título de cada sección H2 del copy, tal como está escrito."
+        },
+        {
+          "campo": "sections[].paragraphs",
+          "deDonde": "Los párrafos de esa sección H2, en el mismo orden."
+        },
+        {
+          "campo": "sections[].subsections[].heading",
+          "deDonde": "El título de cada H3 que cuelga de ese H2. El orden es el de la jerarquía de arriba."
+        },
+        {
+          "campo": "sections[].subsections[].paragraphs",
+          "deDonde": "Los párrafos de ese H3, en el mismo orden."
+        }
+      ],
       "secciones": [
         {
           "clave": "que-es",
@@ -400,6 +458,64 @@
           "destino": "/servicios",
           "anchor": "mejor neurocirujano de columna lima",
           "regla": "navegacion-de-seccion"
+        }
+      ],
+      "mapeoDePost": [
+        {
+          "campo": "slug",
+          "deDonde": "`lumbalgia`, la ruta publicada sin el prefijo /blog/. No cambia: la URL se conserva."
+        },
+        {
+          "campo": "title",
+          "deDonde": "El H1 de la tabla de arriba, que es el nombre del post dentro del sitio. El title de buscador va en el `<head>` y no acá."
+        },
+        {
+          "campo": "description",
+          "deDonde": "La meta description de la tabla de arriba, sin recortar."
+        },
+        {
+          "campo": "publishedAt",
+          "deDonde": "Se conserva la fecha publicada si la entrada ya existe. En los posts nuevos la pone quien publica."
+        },
+        {
+          "campo": "updatedAt",
+          "deDonde": "La fecha en la que v1.1 publique esta reescritura."
+        },
+        {
+          "campo": "relatedService",
+          "deDonde": "`hernia-discal`. Es la guía a la que este post deriva: cuando detrás del dolor lumbar hay un disco comprimiendo una raíz, el tratamiento se explica ahí."
+        },
+        {
+          "campo": "ctaBanner.heading",
+          "deDonde": "¿El dolor lumbar ya baja por la pierna?"
+        },
+        {
+          "campo": "ctaBanner.body",
+          "deDonde": "Esa diferencia cambia el tratamiento. Una evaluación con tus estudios lo define."
+        },
+        {
+          "campo": "intro",
+          "deDonde": "Los dos primeros párrafos de la sección `que-es`, que son los que definen la lumbalgia como síntoma antes de cualquier encabezado."
+        },
+        {
+          "campo": "sections[].id",
+          "deDonde": "El `clave` de cada sección H2 del copy, que ya viene en kebab-case sin tildes y sirve como ancla compartible."
+        },
+        {
+          "campo": "sections[].heading",
+          "deDonde": "El título de cada sección H2 del copy, tal como está escrito."
+        },
+        {
+          "campo": "sections[].paragraphs",
+          "deDonde": "Los párrafos de esa sección H2, en el mismo orden."
+        },
+        {
+          "campo": "sections[].subsections[].heading",
+          "deDonde": "El título de cada H3 que cuelga de ese H2. El orden es el de la jerarquía de arriba."
+        },
+        {
+          "campo": "sections[].subsections[].paragraphs",
+          "deDonde": "Los párrafos de ese H3, en el mismo orden."
         }
       ],
       "secciones": [
@@ -770,6 +886,64 @@
           "destino": "/servicios",
           "anchor": "cirugía de columna cerca de mí",
           "regla": "navegacion-de-seccion"
+        }
+      ],
+      "mapeoDePost": [
+        {
+          "campo": "slug",
+          "deDonde": "`5-sintomas-de-columna-que-no-debes-ignorar`, la ruta publicada sin el prefijo /blog/. No cambia: la URL se conserva."
+        },
+        {
+          "campo": "title",
+          "deDonde": "El H1 de la tabla de arriba, que es el nombre del post dentro del sitio. El title de buscador va en el `<head>` y no acá."
+        },
+        {
+          "campo": "description",
+          "deDonde": "La meta description de la tabla de arriba, sin recortar."
+        },
+        {
+          "campo": "publishedAt",
+          "deDonde": "Se conserva la fecha publicada si la entrada ya existe. En los posts nuevos la pone quien publica."
+        },
+        {
+          "campo": "updatedAt",
+          "deDonde": "La fecha en la que v1.1 publique esta reescritura."
+        },
+        {
+          "campo": "relatedService",
+          "deDonde": "`hernia-discal`. Ya es el valor publicado y no cambia: la guía de hernia discal es a donde este post deriva."
+        },
+        {
+          "campo": "ctaBanner.heading",
+          "deDonde": "¿Reconoces alguna de estas señales?"
+        },
+        {
+          "campo": "ctaBanner.body",
+          "deDonde": "Una evaluación con estudios propios define si lo tuyo necesita tratamiento o solo control. Es el banner ya publicado y se conserva."
+        },
+        {
+          "campo": "intro",
+          "deDonde": "Los dos primeros párrafos de la sección `que-es`. La intro publicada se reemplaza porque hablaba de síntomas de columna en general y el post ahora pelea ciática."
+        },
+        {
+          "campo": "sections[].id",
+          "deDonde": "El `clave` de cada sección H2 del copy, que ya viene en kebab-case sin tildes y sirve como ancla compartible."
+        },
+        {
+          "campo": "sections[].heading",
+          "deDonde": "El título de cada sección H2 del copy, tal como está escrito."
+        },
+        {
+          "campo": "sections[].paragraphs",
+          "deDonde": "Los párrafos de esa sección H2, en el mismo orden."
+        },
+        {
+          "campo": "sections[].subsections[].heading",
+          "deDonde": "El título de cada H3 que cuelga de ese H2. El orden es el de la jerarquía de arriba."
+        },
+        {
+          "campo": "sections[].subsections[].paragraphs",
+          "deDonde": "Los párrafos de ese H3, en el mismo orden."
         }
       ],
       "secciones": [
@@ -1205,6 +1379,64 @@
           "destino": "/servicios",
           "anchor": "cirujano de columna cerca de mí",
           "regla": "navegacion-de-seccion"
+        }
+      ],
+      "mapeoDePost": [
+        {
+          "campo": "slug",
+          "deDonde": "`miedo-a-operarte-de-la-columna-5-cosas-que-debes-saber`, la ruta publicada sin el prefijo /blog/. No cambia: la URL se conserva."
+        },
+        {
+          "campo": "title",
+          "deDonde": "El H1 de la tabla de arriba, que es el nombre del post dentro del sitio. El title de buscador va en el `<head>` y no acá."
+        },
+        {
+          "campo": "description",
+          "deDonde": "La meta description de la tabla de arriba, sin recortar."
+        },
+        {
+          "campo": "publishedAt",
+          "deDonde": "Se conserva la fecha publicada si la entrada ya existe. En los posts nuevos la pone quien publica."
+        },
+        {
+          "campo": "updatedAt",
+          "deDonde": "La fecha en la que v1.1 publique esta reescritura."
+        },
+        {
+          "campo": "relatedService",
+          "deDonde": "`cirugia-minimamente-invasiva`. Cambia respecto de lo publicado, que apuntaba a `hernia-discal`. La matriz de la fase 14 manda este post a la guía de cirugía mínimamente invasiva, que es la que explica el procedimiento."
+        },
+        {
+          "campo": "ctaBanner.heading",
+          "deDonde": "¿Te dijeron que necesitas operarte y quieres otra opinión?"
+        },
+        {
+          "campo": "ctaBanner.body",
+          "deDonde": "Una consulta con tus estudios en mano aclara qué corresponde en tu caso antes de decidir. Es el banner ya publicado y se conserva."
+        },
+        {
+          "campo": "intro",
+          "deDonde": "Los dos primeros párrafos de la sección `que-es`, que son los que ubican de qué se habla cuando se dice cirugía de columna."
+        },
+        {
+          "campo": "sections[].id",
+          "deDonde": "El `clave` de cada sección H2 del copy, que ya viene en kebab-case sin tildes y sirve como ancla compartible."
+        },
+        {
+          "campo": "sections[].heading",
+          "deDonde": "El título de cada sección H2 del copy, tal como está escrito."
+        },
+        {
+          "campo": "sections[].paragraphs",
+          "deDonde": "Los párrafos de esa sección H2, en el mismo orden."
+        },
+        {
+          "campo": "sections[].subsections[].heading",
+          "deDonde": "El título de cada H3 que cuelga de ese H2. El orden es el de la jerarquía de arriba."
+        },
+        {
+          "campo": "sections[].subsections[].paragraphs",
+          "deDonde": "Los párrafos de ese H3, en el mismo orden."
         }
       ],
       "secciones": [

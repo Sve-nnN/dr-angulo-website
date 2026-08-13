@@ -311,6 +311,30 @@ test("paquete: el enlazado de la fase 14 viaja adentro y dice que lo implementa 
   );
 });
 
+test("paquete: un post del blog trae el mapeo del copy a la estructura de post", () => {
+  // Es el bloque propio de los cuatro posts. Sin el, implementar una entrada de `blogPosts`
+  // obliga a decidir de nuevo que parte del copy es `intro` y cual una `subsection`, que es la
+  // decision que ya se tomo al redactar. Va fuera de la region de copy porque es tabla generada.
+  const documento = renderPaquete({
+    ...PAQUETE,
+    mapeoDePost: [
+      { campo: "slug", deDonde: "La ruta publicada sin el prefijo del blog." },
+      { campo: "sections[].id", deDonde: "El `clave` de cada seccion H2 del copy." },
+    ],
+  });
+
+  assert.ok(documento.includes("## Cómo entra este copy en la estructura de post"), "falta el bloque");
+  assert.ok(
+    documento.includes("| `sections[].id` | El `clave` de cada seccion H2 del copy. |"),
+    "falta el campo con su procedencia",
+  );
+  assert.ok(!regionDe(documento).includes("estructura de post"), "la tabla generada va fuera del copy");
+  assert.ok(
+    !renderPaquete(PAQUETE).includes("## Cómo entra este copy"),
+    "una URL que no es un post no estrena una sección vacía",
+  );
+});
+
 test("paquete: la cabecera nombra el dataset del que salió el copy", () => {
   // Las familias de la wave 3 escriben en archivos distintos y el generador los recibe con
   // --data. Si la cabecera dijera siempre copy-guias.json, el documento mentiria sobre su
