@@ -5,16 +5,16 @@ milestone_name: "SEO semantico: keyword research y optimizacion on-page"
 current_phase: 15
 current_phase_name: Paquete on-page por URL
 status: executing
-stopped_at: Completed 15-02-PLAN.md — metadata de las 24 URLs y las dos compuertas
-last_updated: "2026-08-12T20:35:00.000Z"
+stopped_at: Completed 15-03-PLAN.md — las cuatro paginas informativas y la familia de seis documentos
+last_updated: "2026-08-12T22:10:00.000Z"
 last_activity: 2026-08-12
-last_activity_desc: "2026-08-12, cerrado el plan 15-02 sin gastar cuota: las 22 URLs vivas salen con title y meta dentro del contrato de 60 y 155, la auditoria local sobre el paquete propuesto da cero duplicados y cero metas faltantes antes de que v1.1 publique, y la humanizacion deja de ser recomendacion y pasa a ser una compuerta ejecutable de once reglas que los cuatro planes de copy de la wave 3 tienen que pasar. ONPAGE-01, ONPAGE-02 y ONPAGE-05 cerrados"
+last_activity_desc: "2026-08-12, cerrado el plan 15-03 sin gastar cuota: las tres guias clinicas de columna y preguntas frecuentes quedaron redactadas dentro de contrato, con 6584 palabras nuevas de copy, y los dos posts del blog que se apagan estan fundidos en su guia con destino declarado bloque por bloque antes de que v1.1 ponga el 301. Las cuatro pasan la compuerta con cero hallazgos. ONPAGE-04 y ONPAGE-06 siguen abiertos a proposito: van cuatro paginas de dieciseis y seis documentos de veinticuatro"
 progress:
   total_phases: 4
   completed_phases: 3
   total_plans: 21
-  completed_plans: 16
-  percent: 76
+  completed_plans: 17
+  percent: 81
 ---
 
 # Project State
@@ -29,11 +29,11 @@ See: .planning/PROJECT.md (updated 2026-08-10)
 ## Current Position
 
 Phase: 15 (Paquete on-page por URL) — EJECUTANDO, la última de las 4 fases de v1.2
-Plan: 3 de 7. Cerraron el 15-01 y el 15-02; lo que sigue es la wave 3, con **cuatro planes en paralelo**: 15-03 guías, 15-04 transaccionales, 15-05 sedes y 15-06 blog
-Status: **Planes 15-01 y 15-02 completos.** ONPAGE-01, ONPAGE-02, ONPAGE-03 y ONPAGE-05 cerrados. Quedan abiertos ONPAGE-04, que pide el copy clínico de las 16 y hay una, y ONPAGE-06, que pide el paquete por URL y hay uno de veinticuatro. Siguen quedando **96 de 102 búsquedas de SerpApi** hasta el reset del 2026-08-21, porque la fase no ha gastado ninguna
-Last activity: 2026-08-12 — cerrado el plan 15-02 con cero cuota gastada. Las 22 URLs vivas tienen title y meta dentro de contrato, la auditoría de duplicados dio limpia sobre el paquete propuesto, y la compuerta de YMYL y humanización quedó como ejecutable con once reglas y evidencia por hallazgo
+Plan: 4 de 7. Cerraron el 15-01, el 15-02 y el 15-03; de la wave 3 quedan tres: 15-04 transaccionales, 15-05 sedes y 15-06 blog
+Status: **Planes 15-01, 15-02 y 15-03 completos.** ONPAGE-01, ONPAGE-02, ONPAGE-03 y ONPAGE-05 cerrados. Quedan abiertos ONPAGE-04, que pide el copy clínico de las 16 y hay cuatro, y ONPAGE-06, que pide el paquete por URL y hay seis de veinticuatro. Siguen quedando **96 de 102 búsquedas de SerpApi** hasta el reset del 2026-08-21, porque la fase no ha gastado ninguna
+Last activity: 2026-08-12 — cerrado el plan 15-03 con cero cuota gastada. Las tres guías clínicas de columna y preguntas frecuentes están redactadas de punta a punta y pasan la compuerta sin hallazgos, y los dos posts que se apagan ya viven dentro de su guía con el destino de cada bloque escrito en el documento del 301
 
-Progress: [████████░░] 76% de v1.2 · 3 de 4 fases cerradas
+Progress: [████████░░] 81% de v1.2 · 3 de 4 fases cerradas
 
 ## Roadmap v1.2
 
@@ -102,6 +102,8 @@ Los dos milestones corren a la vez sobre el mismo repositorio.
 - **[Fase 15, plan 02] Una compuerta devuelve evidencia, no un booleano.** `ymyl.ts` entrega cada hallazgo con URL, seccion, regla y el texto exacto que fallo. Una que dijera solo si o no obliga a releer dos mil palabras buscando el problema, y a la tercera vez que pasa eso alguien la desactiva.
 - **[Fase 15, plan 02] La prohibicion de cifras sobre el propio doctor no la levanta una fuente.** Cuantas cirugias hizo, cuantos anos lleva ejerciendo y que tasa de exito tiene son cifras que nadie verifico, asi que declarar procedencia no alcanza: la levanta el doctor por escrito (D-10). Cada patron exige la cantidad Y el sustantivo, para que "un paciente con hernia discal" siga siendo copy clinico normal y no una credencial.
 - **[Fase 15, plan 02] Cada cadena tiene una compuerta y solo una.** El title y la meta viven en su tabla, fuera de la region de copy, en los cuatro tipos de documento: los mide `auditoria.ts`, que sabe de largos y duplicados. La region de copy es lo que el generador escribe como prosa y lo mide `ymyl.ts`. Meter la misma cadena en dos compuertas suena mas seguro y es al reves: cuando una falla, nadie sabe cual manda.
+- **[Fase 15, plan 03] Primero se funde y después se redirige, y el documento del 301 lo dice.** El paquete de una URL que se apaga trae la tabla de qué bloque del post quedó en qué sección de la guía, más la frase de que la guía se publica antes que la redirección. Sin esa tabla, quien pone el 301 no tiene cómo comprobar que el contenido sobrevivió, y un 301 sobre contenido no fundido entierra el material sin dejar rastro de lo que había.
+- **[Fase 15, plan 03] Preguntas frecuentes responde lo transversal y remite, no desarrolla.** Cuánto dura una consulta, qué llevar, a quién consultar y cómo se decide operar. Si desarrollara temario clínico competiría contra las cuatro guías, que es exactamente la canibalización que la fase 14 se pasó tres planes cerrando.
 - **[Fase 15, plan 02] El H1 de las 6 que no compiten se transcribe con archivo y linea, nunca se propone.** Proponerles uno reabriria una decision de la fase 14 sin dato nuevo, y encima por la puerta de atras. Las 16 que compiten reciben H1 propuesto con la prosa de por que ese y no otro.
 
 ### Pending Todos
@@ -121,12 +123,14 @@ Los dos milestones corren a la vez sobre el mismo repositorio.
 
 ## Session Continuity
 
-Last session: 2026-08-12T20:35:00.000Z
-Stopped at: Completed 15-02-PLAN.md — metadata de las 24 URLs y las dos compuertas
+Last session: 2026-08-12T22:10:00.000Z
+Stopped at: Completed 15-03-PLAN.md — las cuatro páginas informativas y la familia de seis documentos
 Resume file: None
-Siguiente: la wave 3, cuatro planes en paralelo (15-03 guías, 15-04 transaccionales, 15-05 sedes,
-15-06 blog). Los cuatro corren su copy por `ymyl.ts` antes de darlo por escrito y ninguno comparte
-archivo con los otros.
+Siguiente: lo que queda de la wave 3 (15-04 transaccionales, 15-05 sedes, 15-06 blog). Los tres
+escriben en `data/copy-guias.json`, que ya tiene cuatro páginas dentro, y corren su copy por
+`ymyl.ts` antes de darlo por escrito. Ojo con una diferencia respecto del 15-03: la compuerta
+revisa el dataset entero en cada corrida, así que un hallazgo puede venir de una página que no
+es la tuya.
 
 ## Performance Metrics
 
@@ -143,6 +147,7 @@ archivo con los otros.
 | Phase 14 P04 | ~2 h | 3 tasks | 14 files |
 | Phase 15 P01 | ~2h 15min | 3 tasks | 12 files |
 | Phase 15 P02 | ~1h | 3 tasks | 15 files |
+| Phase 15 P03 | ~1h 30min | 3 tasks | 8 files |
 
 ## Presupuesto de fuentes externas al cerrar la fase 14
 

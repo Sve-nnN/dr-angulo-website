@@ -270,9 +270,9 @@ Mapeada por `ROADMAP.md` del workstream `seo-keywords` el 2026-08-10.
 | ONPAGE-01 | Fase 15 | **Completo** (plan 15-02) — 22 URLs vivas con title ≤60 y meta ≤155; las 16 que compiten con la primaria al frente |
 | ONPAGE-02 | Fase 15 | **Completo** (planes 15-01 y 15-02) — H1 propuesto y 305 encabezados H2/H3 en las 16 que compiten. Las 6 que no compiten transcriben su H1 publicado (D-06) |
 | ONPAGE-03 | Fase 15 | **Completo** (plan 15-01) — 196 términos con procedencia, derivados del top 10 capturado y no del TF-IDF de DinoRank (D-02) |
-| ONPAGE-04 | Fase 15 | Pendiente — una guía de dieciséis. La compuerta de humanización y YMYL ya existe (plan 15-02) |
+| ONPAGE-04 | Fase 15 | Pendiente — cuatro páginas de dieciséis: hernia discal (plan 15-01), estenosis espinal, escoliosis y deformidades y preguntas frecuentes (plan 15-03). Las cuatro pasan la compuerta con cero hallazgos |
 | ONPAGE-05 | Fase 15 | **Completo** (plan 15-02) — auditoría local sobre el paquete propuesto: cero duplicados y cero metas faltantes en 22 URLs (D-04) |
-| ONPAGE-06 | Fase 15 | Pendiente — handoff de contenido para las fases 8 y 10 de v1.1 |
+| ONPAGE-06 | Fase 15 | Pendiente — seis documentos de veinticuatro (plan 15-03), cuatro de página completa y dos de redirección. Handoff de contenido para las fases 8 y 10 de v1.1 |
 | SHEET-01 | Fase 13 | **Completo** |
 | SHEET-02 | Fase 14 | **Completo** (planes 14-03 y 14-05) — 24 filas vivas en `Content Model`. Las tres métricas de Ahrefs se llenan solo donde la procedencia es `ahrefs`: 24 celdas con dato y 48 vacías a propósito. Las de GSC siguen vacías porque el sitio no tiene impresiones |
 | SHEET-03 | Fase 13 | **Completo** |
