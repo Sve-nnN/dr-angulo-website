@@ -3,6 +3,15 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { ArrowLeft, ArrowRight, ArrowUpRight, Clock, MapPin } from "lucide-react";
 import { WhatsAppCta } from "@/components/ui/whatsapp-cta";
+import { AuthorByline } from "@/components/ui/author-byline";
+import { MedicalDisclaimer } from "@/components/ui/medical-disclaimer";
+import { MidContentCta } from "@/components/ui/mid-content-cta";
+import { TableOfContents } from "@/components/ui/table-of-contents";
+import {
+  ContentBody,
+  ContentBodyBoundary,
+  groupSections,
+} from "@/components/content/content-body";
 import { BreadcrumbJsonLd, SedeJsonLd } from "@/components/structured-data";
 import { getLocationPage, locationPages } from "@/content/location-pages";
 import { servicePages } from "@/content/service-pages";
@@ -40,6 +49,24 @@ export default async function SedePage({ params }: Props) {
   const { page, location } = entry;
   const isOwnOffice = location.kind === "consultorio";
 
+  // Una sede con cuerpo largo publica el copy del paquete on-page y la página
+  // cambia de forma: índice, banner, firma y aviso de cierre, y los bloques
+  // heredados se repliegan a los datos que salen de `locations.ts`. Una sede
+  // sin cuerpo renderiza exactamente lo mismo que antes del plan 08-17.
+  const hasBody = page.sections.length > 0;
+  const tocEntries = groupSections(page.sections).map(({ section }) => ({
+    id: section.id,
+    label: section.heading,
+  }));
+  const midContentCta = page.ctaBanner ? (
+    <MidContentCta
+      heading={page.ctaBanner.heading}
+      body={page.ctaBanner.body}
+      location="booking_page"
+      withWhatsApp={isOwnOffice}
+    />
+  ) : undefined;
+
   return (
     <>
       <SedeJsonLd page={page} location={location} />
@@ -60,6 +87,13 @@ export default async function SedePage({ params }: Props) {
         medido, que es el error que la fase 8 ya cometió una vez.
       */}
       <div data-sede-body="">
+        {/*
+          `data-content-body` es el límite que mide la puerta de contenido y
+          envuelve la banda de cabecera junto con el artículo: el h1 vive
+          arriba y quedaría fuera de lo medido si el límite abrazara solo al
+          artículo.
+        */}
+        <ContentBodyBoundary>
         <div className="border-b border-border bg-muted">
           <div className="mx-auto max-w-3xl px-4 py-12 sm:px-6 sm:py-16">
             <Link
@@ -79,9 +113,24 @@ export default async function SedePage({ params }: Props) {
         </div>
 
         <article className="mx-auto max-w-3xl px-4 py-14 sm:px-6 sm:py-20">
-          <section>
+          {hasBody ? (
+            <>
+              <div className="mb-12">
+                <TableOfContents title="En esta página" entries={tocEntries} />
+              </div>
+              <ContentBody
+                sections={page.sections}
+                flushFirstSection
+                banner={midContentCta}
+                bannerAfterSectionId={page.bannerAfterSectionId}
+                bannerAfterIndex={1}
+              />
+            </>
+          ) : null}
+
+          <section className={hasBody ? "mt-14" : undefined}>
             <h2 className="font-heading text-2xl font-bold text-primary sm:text-3xl">
-              Dónde queda y cómo llegar
+              {hasBody ? "Dirección y mapa" : "Dónde queda y cómo llegar"}
             </h2>
             <div className="mt-6 flex gap-3">
               <MapPin
@@ -121,16 +170,21 @@ export default async function SedePage({ params }: Props) {
                 </a>
               </address>
             </div>
-            {page.gettingThere.map((paragraph, index) => (
-              <p key={index} className="mt-5 text-lg text-foreground/80">
-                {paragraph}
-              </p>
-            ))}
+            {/* El bloque heredado de la fase 9 se calla en cuanto la sede
+                publica su sección `como-llegar` del paquete: la página no
+                puede explicar dos veces cómo llegar con palabras distintas. */}
+            {hasBody
+              ? null
+              : page.gettingThere.map((paragraph, index) => (
+                  <p key={index} className="mt-5 text-lg text-foreground/80">
+                    {paragraph}
+                  </p>
+                ))}
           </section>
 
           <section className="mt-14">
             <h2 className="font-heading text-2xl font-bold text-primary sm:text-3xl">
-              Días y horarios
+              {hasBody ? "Horario vigente" : "Días y horarios"}
             </h2>
             <div className="mt-6 flex gap-3">
               <Clock
@@ -152,7 +206,7 @@ export default async function SedePage({ params }: Props) {
 
           <section className="mt-14">
             <h2 className="font-heading text-2xl font-bold text-primary sm:text-3xl">
-              Cómo se agenda en esta sede
+              {hasBody ? "Canales de cita de la sede" : "Cómo se agenda en esta sede"}
             </h2>
             <p className="mt-5 text-lg text-foreground/80">
               {location.bookingSummary}
@@ -236,11 +290,18 @@ export default async function SedePage({ params }: Props) {
 
           <section className="mt-14">
             <h2 className="font-heading text-2xl font-bold text-primary sm:text-3xl">
-              Qué se atiende en esta sede
+              {hasBody
+                ? "Guías de las condiciones que atiende"
+                : "Qué se atiende en esta sede"}
             </h2>
-            <p className="mt-5 text-lg text-foreground/80">
-              {page.conditionsLead}
-            </p>
+            {/* Igual que `gettingThere`: la sección `que-se-atiende` del
+                paquete ya explica el alcance de la consulta y este párrafo
+                heredado repetiría el mismo contenido con otras palabras. */}
+            {hasBody ? null : (
+              <p className="mt-5 text-lg text-foreground/80">
+                {page.conditionsLead}
+              </p>
+            )}
             <ul className="mt-4">
               {servicePages.map((service) => (
                 <li key={service.slug}>
@@ -302,7 +363,42 @@ export default async function SedePage({ params }: Props) {
               <ArrowRight className="size-4" aria-hidden="true" />
             </Link>
           </section>
+
+          {hasBody && page.outboundLinks && page.outboundLinks.length > 0 && (
+            <section className="mt-14 border-t border-border pt-10">
+              <p className="font-heading text-lg font-bold text-foreground">
+                Sigue leyendo
+              </p>
+              <ul className="mt-3">
+                {page.outboundLinks.map((link) => (
+                  <li key={link.href}>
+                    <Link
+                      href={link.href}
+                      className="block min-h-11 py-2.5 text-base font-semibold text-primary-dark hover:underline"
+                    >
+                      {link.anchor}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </section>
+          )}
+
+          {hasBody && page.publishedAt && page.updatedAt ? (
+            <>
+              <div className="mt-14">
+                <AuthorByline
+                  publishedAt={page.publishedAt}
+                  updatedAt={page.updatedAt}
+                />
+              </div>
+              <div className="mt-8">
+                <MedicalDisclaimer />
+              </div>
+            </>
+          ) : null}
         </article>
+        </ContentBodyBoundary>
       </div>
     </>
   );
