@@ -338,7 +338,13 @@ export function revisar(pagina: PaginaParaRevisar): Hallazgo[] {
             "exactamente el dato que despues nadie puede desmentir.",
         });
       }
+      // Las mismas reglas que los parrafos. Una afirmacion con cifra se publica: `paquete.ts` la
+      // renderiza en la tabla de afirmaciones y `revision.ts` la repite en el documento del
+      // doctor, y las dos tablas quedan fuera de la region de copy, asi que `revisarDocumento`
+      // tampoco las alcanza.
       hallazgos.push(...hallazgosDeCifrasDelDoctor(pagina.url, seccion.clave, afirmacion.texto));
+      hallazgos.push(...hallazgosDeSedes(pagina.url, seccion.clave, afirmacion.texto));
+      hallazgos.push(...hallazgosDeEscritura(pagina.url, seccion.clave, afirmacion.texto));
     }
 
     if (esMayusculaDeTitulo(seccion.titulo)) {
