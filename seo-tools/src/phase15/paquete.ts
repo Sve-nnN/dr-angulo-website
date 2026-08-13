@@ -22,7 +22,7 @@ import { readFileSync } from "node:fs";
 import path from "node:path";
 
 import { CliError, REPO_ROOT, SEO_TOOLS_ROOT } from "../config.js";
-import { ejecutar, parseBanderas, texto, textoObligatorio } from "../phase13/args.js";
+import { booleana, ejecutar, parseBanderas, texto, textoObligatorio } from "../phase13/args.js";
 import { normalizar } from "./entidades.js";
 import type { FilaDeOnPage } from "./metadatos.js";
 import { construirOnPage, tituloYMeta } from "./metadatos.js";
@@ -489,6 +489,22 @@ export interface BloqueAbsorbido {
   readonly destino: string;
 }
 
+/**
+ * Un anchor con el que el resto del sitio enlaza a esta URL, y desde donde.
+ *
+ * Solo lo llevan los documentos cortos y no es adorno: la fase 14 decidio que estas seis URLs se
+ * enlazan con anchor de NAVEGACION y no de keyword, porque si pelearan un termino se lo quitarian
+ * a la home. Enlazarlas con anchor de keyword desharia esa decision desde el codigo, sin que
+ * ninguna revision lo note. Va escrito dentro del documento de cada una para que quien la
+ * implemente lo lea donde va a actuar.
+ */
+export interface AnchorDeEntrada {
+  readonly anchor: string;
+  readonly regla: string;
+  /** URLs que enlazan con ese anchor, en el orden de la matriz. */
+  readonly desde: readonly string[];
+}
+
 export interface PaqueteCorto {
   readonly fila: FilaDeOnPage;
   /**
@@ -508,6 +524,51 @@ export interface PaqueteCorto {
    * redirigir sin fundir tira el contenido a la basura sin dejar rastro de lo que habia.
    */
   readonly absorcion?: readonly BloqueAbsorbido[];
+  /** Con que anchor la enlaza el resto del sitio. Vacio si nadie le apunta en la matriz. */
+  readonly anchorsDeEntrada?: readonly AnchorDeEntrada[];
+}
+
+interface FilaDeLaMatriz {
+  readonly url: string;
+  readonly enlaces?: readonly { readonly link: string; readonly anchor: string; readonly regla: string }[];
+}
+
+/**
+ * Los anchors con los que la matriz de la fase 14 enlaza a una URL, leidos del dataset.
+ *
+ * Se recorre en el orden del archivo y se agrupa por anchor: dos corridas dan la misma lista.
+ */
+export function anchorsQueApuntanA(
+  url: string,
+  rutaArchivo: string = path.join(SEO_TOOLS_ROOT, "data", "internal-links.json"),
+): AnchorDeEntrada[] {
+  let crudo: string;
+  try {
+    crudo = readFileSync(rutaArchivo, "utf8");
+  } catch {
+    throw new CliError(
+      `No se pudo leer ${rutaArchivo}.\n` +
+        `  Accion: es la matriz de enlazado de la fase 14. Sin ella no se sabe con que anchor se ` +
+        `enlaza a esta URL.`,
+    );
+  }
+  const archivo = JSON.parse(crudo) as { readonly filas?: readonly FilaDeLaMatriz[] };
+  const porAnchor = new Map<string, { anchor: string; regla: string; desde: string[] }>();
+
+  for (const fila of archivo.filas ?? []) {
+    for (const enlace of fila.enlaces ?? []) {
+      if (enlace.link !== url) continue;
+      const clave = `${enlace.anchor} ${enlace.regla}`;
+      const ya = porAnchor.get(clave);
+      if (ya === undefined) {
+        porAnchor.set(clave, { anchor: enlace.anchor, regla: enlace.regla, desde: [fila.url] });
+      } else {
+        ya.desde.push(fila.url);
+      }
+    }
+  }
+
+  return [...porAnchor.values()];
 }
 
 /**
@@ -633,6 +694,30 @@ export function renderPaqueteCorto(corto: PaqueteCorto): string {
     }
   }
 
+  const anchors = corto.anchorsDeEntrada ?? [];
+  if (anchors.length > 0) {
+    lineas.push("## Con qué anchor se enlaza a esta URL");
+    lineas.push("");
+    lineas.push(
+      "Con anchor de **navegación**, nunca de keyword. La fase 14 midió que estas URLs no pelean",
+      "ningún término, y en varios casos porque si lo pelearan le quitarían la SERP a la home.",
+      "Enlazarlas desde el código con un anchor de keyword desharía esa decisión sin que ninguna",
+      "revisión lo note.",
+    );
+    lineas.push("");
+    lineas.push(
+      ...tabla(
+        ["Anchor", "Regla", "Desde"],
+        anchors.map((a) => [
+          a.anchor,
+          a.regla,
+          a.desde.map((d) => `\`${d}\``).join(", "),
+        ]),
+      ),
+    );
+    lineas.push("");
+  }
+
   if (corto.motivoSinPrimaria !== null) {
     lineas.push("## Por qué esta URL no compite");
     lineas.push("");
@@ -715,6 +800,7 @@ export function construirPaqueteCorto(url: string, rutaCopy: string = RUTA_COPY)
       fila.redirigeA === null
         ? []
         : (paginasDeCopy(rutaCopy).find((p) => p.url === fila.redirigeA)?.absorbe ?? []),
+    anchorsDeEntrada: anchorsQueApuntanA(url),
   };
 }
 
@@ -793,11 +879,205 @@ export async function construirPaquete(
 }
 
 // ---------------------------------------------------------------------------
+// El paquete entero y su indice
+// ---------------------------------------------------------------------------
+
+/**
+ * Los cuatro datasets de copy, en el orden en que los escribieron sus planes.
+ *
+ * Son cuatro y no uno porque los planes 15-03 a 15-06 corrieron en paralelo y dos planes sobre
+ * un mismo JSON se pisan. Para generar el paquete entero hay que volver a unirlos, y la union se
+ * hace por URL: cada una vive en un solo archivo y el primero que la trae gana.
+ */
+export const DATASETS_DE_COPY = [
+  "data/copy-guias.json",
+  "data/copy-servicios.json",
+  "data/copy-sedes.json",
+  "data/copy-blog.json",
+] as const;
+
+/** En cual de los cuatro datasets vive el copy de una URL. `null` si en ninguno. */
+export function rutaDelCopyDe(url: string): string | null {
+  for (const relativa of DATASETS_DE_COPY) {
+    const ruta = path.join(SEO_TOOLS_ROOT, relativa);
+    if (paginasDeCopy(ruta).some((p) => p.url === url)) return ruta;
+  }
+  return null;
+}
+
+/** Una fila del indice: lo que hace falta para saber que archivo abrir y que esperar dentro. */
+export interface EntradaDelIndice {
+  readonly url: string;
+  readonly accion: string;
+  readonly formato: TipoDeDocumento;
+  readonly archivo: string;
+  /** Palabras de prosa redactadas. `null` en los documentos que no llevan cuerpo. */
+  readonly palabras: number | null;
+  readonly minimoDePalabras: number | null;
+  readonly redirigeA: string | null;
+}
+
+/**
+ * Regenera los 24 documentos de una sola pasada y devuelve con que quedo cada uno.
+ *
+ * Regenerarlos todos y no solo los que faltan es lo que prueba que el paquete entero sale de los
+ * datasets (D-12). Un documento que solo se puede reproducir corriendo el plan que lo escribio no
+ * es un entregable reproducible: es un archivo que quedo.
+ */
+export async function generarTodos(): Promise<EntradaDelIndice[]> {
+  const entradas: EntradaDelIndice[] = [];
+
+  for (const fila of filasDelMapa()) {
+    const { url } = fila;
+    const conPrimaria = fila.keywordPrimaria !== null && fila.keywordPrimaria !== "";
+
+    if (!conPrimaria) {
+      // Las dos que se apagan necesitan el copy de su DESTINO para poder listar que se absorbio.
+      const rutaDelDestino =
+        fila.redirigeA === null ? null : rutaDelCopyDe(fila.redirigeA);
+      const corto = construirPaqueteCorto(
+        url,
+        rutaDelDestino ?? path.join(SEO_TOOLS_ROOT, DATASETS_DE_COPY[0]),
+      );
+      escribir(url, renderPaqueteCorto(corto));
+      entradas.push({
+        url,
+        accion: corto.fila.accion,
+        formato: "documento-corto",
+        archivo: archivoDePaquete(url),
+        palabras: null,
+        minimoDePalabras: null,
+        redirigeA: corto.fila.redirigeA,
+      });
+      continue;
+    }
+
+    const rutaCopy = rutaDelCopyDe(url);
+    if (rutaCopy === null) {
+      throw new CliError(
+        `No hay copy redactado para ${url} en ninguno de los cuatro datasets de la fase.\n` +
+          `  Buscado en: ${DATASETS_DE_COPY.join(", ")}.\n` +
+          `  Accion: la URL tiene keyword primaria, asi que recibe pagina completa (D-06).`,
+      );
+    }
+    const paquete = await construirPaquete(url, rutaCopy);
+    escribir(url, renderPaquete(paquete, path.relative(SEO_TOOLS_ROOT, rutaCopy)));
+    entradas.push({
+      url,
+      accion: paquete.fila.accion,
+      formato: paquete.formato,
+      archivo: archivoDePaquete(url),
+      palabras: palabrasDeCopy(paquete.secciones),
+      minimoDePalabras: paquete.minimoDePalabras,
+      redirigeA: paquete.fila.redirigeA,
+    });
+  }
+
+  return entradas;
+}
+
+/**
+ * El indice del paquete: la puerta de entrada del entregable.
+ *
+ * Se genera y no se transcribe. Veinticuatro filas escritas a mano se desincronizan en la primera
+ * correccion, y a partir de ahi el indice dice una cosa y los datasets otra, sin que nada avise.
+ */
+export function renderIndice(entradas: readonly EntradaDelIndice[]): string {
+  const completas = entradas.filter((e) => e.formato !== "documento-corto");
+  const soloMetadata = entradas.filter(
+    (e) => e.formato === "documento-corto" && e.accion === "dejar",
+  );
+  const redirecciones = entradas.filter((e) => e.accion === "redirigir");
+
+  const lineas: string[] = [
+    "# Paquete on-page: índice de las 24 URLs",
+    "",
+    "<!-- Generado por seo-tools/src/phase15/paquete.ts --todos --indice, desde data/url-map.jsonl",
+    "     y los cuatro datasets de copy. No se edita a mano: se regenera. -->",
+    "",
+    "**Fase:** 15, paquete on-page por URL. Última de v1.2.",
+    "**Para:** las fases 8 y 10 del workstream `milestone` (v1.1).",
+    "**Handoff que lo acompaña:** `15-HANDOFF-V11-ONPAGE.md`.",
+    "**Revisión clínica pendiente:** `15-REVISION-DOCTOR.md`, bloqueante para publicar.",
+    "",
+    "## Las 24 URLs",
+    "",
+    ...tabla(
+      ["URL", "Acción", "Formato", "Archivo", "Palabras"],
+      entradas.map((e) => [
+        `\`${e.url}\``,
+        e.accion,
+        NOMBRE_DE_FORMATO[e.formato],
+        `[\`paquetes/${e.archivo}\`](paquetes/${e.archivo})`,
+        e.palabras === null
+          ? "sin cuerpo"
+          : `${e.palabras} / mínimo ${e.minimoDePalabras ?? 0}`,
+      ]),
+    ),
+    "",
+    "## Qué recibe cada grupo",
+    "",
+    ...tabla(
+      ["Grupo", "Cuántas", "Qué recibe"],
+      [
+        [
+          "Con keyword primaria",
+          String(completas.length),
+          "Página completa: title, meta, H1, jerarquía, entidades obligatorias y copy redactado " +
+            "para pegar.",
+        ],
+        [
+          "Declararon no competir",
+          String(soloMetadata.length),
+          "Title y meta nuevos, el H1 publicado sin tocar, y el motivo escrito de por qué no " +
+            "pelean ninguna keyword (D-06).",
+        ],
+        [
+          "Se apagan con un 301",
+          String(redirecciones.length),
+          "La instrucción de redirección y la lista de qué bloque suyo quedó en qué sección de " +
+            "la guía de destino (D-07).",
+        ],
+      ],
+    ),
+    "",
+    "## Cómo se usa",
+    "",
+    "Cada archivo se abre solo. Quien implementa una URL no tiene que leer las otras veintitrés:",
+    "el documento de su URL trae el title, la meta, el H1, la jerarquía de encabezados con su",
+    "procedencia, las entidades que la página tiene que nombrar, el copy redactado y los enlaces",
+    "internos que le tocan (D-14). Ese es el criterio de terminado de esta fase: implementar una",
+    "URL no obliga a volver a preguntar nada.",
+    "",
+    "Los documentos se **regeneran**, no se editan:",
+    "",
+    "```bash",
+    "cd seo-tools",
+    "./node_modules/.bin/tsx src/phase15/paquete.ts --todos --indice",
+    "```",
+    "",
+    "Una corrección hecha a mano sobre el Markdown sobrevive hasta la siguiente corrida y después",
+    "desaparece sin dejar rastro. La fuente de verdad son `data/url-map.jsonl`, `data/onpage.json`",
+    "y los cuatro datasets de copy.",
+    "",
+    "## Lo que este paquete NO libera",
+    "",
+    "Ningún bloque clínico sale de acá aprobado. Cada uno va sellado como pendiente del doctor",
+    "(D-08) y la ronda completa está armada en `15-REVISION-DOCTOR.md`. v1.1 no publica texto",
+    "clínico sin ese visto bueno por escrito.",
+    "",
+  ];
+
+  return `${lineas.join("\n").replace(/\n{3,}/g, "\n\n").trimEnd()}\n`;
+}
+
+// ---------------------------------------------------------------------------
 // Punto de entrada
 // ---------------------------------------------------------------------------
 //
 //   cd seo-tools
 //   ./node_modules/.bin/tsx src/phase15/paquete.ts --url /servicios/hernia-discal
+//   ./node_modules/.bin/tsx src/phase15/paquete.ts --todos --indice
 //
 // COSTE DE CUOTA: CERO. La SERP sale de `.cache/serpapi/` en modo offline.
 
@@ -815,8 +1095,48 @@ function escribir(url: string, documento: string): string {
  * pida: no tiene SERP medida de la cual sacar jerarquia ni entidades, y el mapa ya escribio por
  * que no compite.
  */
+/** Regenera los 24 y, si se pide, el indice. Devuelve 1 si alguna pagina quedo bajo su minimo. */
+async function generarPaqueteCompleto(conIndice: boolean): Promise<number> {
+  const out = process.stdout;
+  const entradas = await generarTodos();
+
+  let cortas = 0;
+  for (const e of entradas) {
+    const cuerpo =
+      e.palabras === null
+        ? "sin cuerpo"
+        : `${e.palabras} palabras (minimo ${e.minimoDePalabras ?? 0})`;
+    if (e.palabras !== null && e.palabras < (e.minimoDePalabras ?? 0)) cortas += 1;
+    out.write(`  ${e.archivo.padEnd(56)} ${e.formato.padEnd(20)} ${cuerpo}\n`);
+  }
+
+  out.write(`\n${entradas.length} documento(s) escritos en ${DIRECTORIO_DE_PAQUETES}\n`);
+
+  if (conIndice) {
+    const destino = path.join(
+      REPO_ROOT,
+      ".planning",
+      "workstreams",
+      "seo-keywords",
+      "phases",
+      "15-paquete-on-page-por-url",
+      "15-PAQUETE.md",
+    );
+    writeFileSync(destino, renderIndice(entradas), "utf8");
+    out.write(`Indice: ${destino}\n`);
+  }
+
+  if (cortas > 0) out.write(`\n${cortas} pagina(s) por debajo de su minimo de palabras.\n`);
+  return cortas === 0 ? 0 : 1;
+}
+
 async function main(): Promise<number> {
   const banderas = parseBanderas(process.argv.slice(2));
+
+  if (booleana(banderas, "todos")) {
+    return generarPaqueteCompleto(booleana(banderas, "indice"));
+  }
+
   const url = textoObligatorio(banderas, "url");
   // El dataset por defecto es el de las guias. Las familias posteriores escriben en archivos
   // propios y lo pasan con --data: dos planes en paralelo sobre un mismo JSON se pisan.
