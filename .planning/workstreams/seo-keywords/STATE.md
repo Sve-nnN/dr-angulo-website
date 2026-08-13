@@ -5,16 +5,16 @@ milestone_name: "SEO semantico: keyword research y optimizacion on-page"
 current_phase: 15
 current_phase_name: Paquete on-page por URL
 status: executing
-stopped_at: Completed 15-05-PLAN.md — las cuatro fichas de sede
-last_updated: "2026-08-13T01:20:00.000Z"
+stopped_at: Completed 15-06-PLAN.md — los cuatro posts del blog
+last_updated: "2026-08-13T03:05:00.000Z"
 last_activity: 2026-08-13
-last_activity_desc: "2026-08-13, cerrado el plan 15-05 sin gastar cuota: las cuatro sedes vigentes quedaron con su ficha redactada de punta a punta, 4820 palabras nuevas, cada una con la forma que su SERP medida pide. Sanna se escribio como perfil porque su top 10 lo domina una red social, y el consultorio de Surco declara en su propio paquete que su SERP no resolvio el formato y con que criterio se eligio. Lo mas importante de este plan no es el texto sino lo que NO tiene: ningun dato de direccion, horario o telefono se compuso. Los 23 respaldados salen de locations.ts y location-pages.ts con su fuente escrita, y los 10 que el sitio no publica van en una tabla aparte del paquete que v1.1 tiene que cerrar antes de publicar. El generador aprendio a imprimir ese bloque. Van doce paginas de dieciseis y catorce documentos de veinticuatro"
+last_activity_desc: "2026-08-13, cerrado el plan 15-06 y con el la wave 3 entera, sin gastar cuota: los cuatro posts del blog quedaron redactados de punta a punta, 6595 palabras nuevas, dos creados desde keywords de oro que ninguna URL viva podia ganar y dos reescritos sobre contenido publicado que se conserva y se declara. Lo que define este plan no es el texto sino el limite: un post de captacion que explica el tratamiento se convierte en la segunda guia de su tema y devuelve la canibalizacion por la puerta del contenido aunque el mapa siga limpio, asi que los cuatro nombran la relacion con su guia y derivan hacia ella con el anchor de la matriz de la fase 14. El post de cirugia contesta precio, costo, riesgo y plazo de recuperacion sin una sola cifra. Con esto ONPAGE-04 queda cerrado: las dieciseis paginas con keyword primaria estan escritas y las dieciseis pasan la compuerta. Van dieciocho documentos de veinticuatro"
 progress:
   total_phases: 4
   completed_phases: 3
   total_plans: 21
-  completed_plans: 19
-  percent: 90
+  completed_plans: 20
+  percent: 95
 ---
 
 # Project State
@@ -29,11 +29,11 @@ See: .planning/PROJECT.md (updated 2026-08-10)
 ## Current Position
 
 Phase: 15 (Paquete on-page por URL) — EJECUTANDO, la última de las 4 fases de v1.2
-Plan: 6 de 7. Cerraron el 15-01, el 15-02, el 15-03, el 15-04 y el 15-05; de la wave 3 queda uno: 15-06 blog
-Status: **Planes 15-01 a 15-05 completos.** ONPAGE-01, ONPAGE-02, ONPAGE-03 y ONPAGE-05 cerrados. Quedan abiertos ONPAGE-04, que pide el copy clínico de las 16 y hay doce, y ONPAGE-06, que pide el paquete por URL y hay catorce de veinticuatro. Siguen quedando **96 de 102 búsquedas de SerpApi** hasta el reset del 2026-08-21, porque la fase no ha gastado ninguna
-Last activity: 2026-08-13 — cerrado el plan 15-05 con cero cuota gastada. Las cuatro fichas de sede pasan la compuerta sin hallazgos y ninguna de las cuatro repite el título de sección de otra, que es lo que evita que se canibalicen entre sí. Quedan diez datos operativos marcados como pendientes de confirmación: son la salida correcta de no inventar una dirección ni un horario, y v1.1 los cierra antes de publicar
+Plan: 7 de 7. Cerraron el 15-01, el 15-02 y la wave 3 entera (15-03, 15-04, 15-05 y 15-06). Queda solo el 15-07, que cierra la fase y el milestone
+Status: **Planes 15-01 a 15-06 completos.** ONPAGE-01, ONPAGE-02, ONPAGE-03, ONPAGE-04 y ONPAGE-05 cerrados. Queda abierto solo ONPAGE-06, que pide el paquete por URL y hay dieciocho de veinticuatro: faltan los seis documentos cortos de las URLs que declararon no competir, que emite el 15-07. Siguen quedando **96 de 102 búsquedas de SerpApi** hasta el reset del 2026-08-21, porque la fase no ha gastado ninguna
+Last activity: 2026-08-13 — cerrado el plan 15-06 con cero cuota gastada. Los cuatro posts del blog pasan la compuerta sin hallazgos y ninguno se lleva por título la primaria de otra URL. El de ciática quedó en 13 de 16 entidades, 81,3 %, y las tres que faltan son trigramas que solo se cubrirían escribiendo mal el castellano
 
-Progress: [█████████░] 90% de v1.2 · 3 de 4 fases cerradas
+Progress: [█████████▌] 95% de v1.2 · 3 de 4 fases cerradas
 
 ## Roadmap v1.2
 
@@ -110,6 +110,10 @@ Los dos milestones corren a la vez sobre el mismo repositorio.
 - **[Fase 15, plan 05] Un dato operativo lleva estado además de fuente.** La fuente dice de dónde salió; el estado dice si se puede publicar. Los 33 de las cuatro sedes declaran los dos, y el paquete imprime los 23 respaldados y los 10 pendientes en tablas separadas, con el encabezado `Pendientes de confirmación antes de publicar`. Mezclados, v1.1 publicaría un horario que nadie confirmó sin notarlo. En una ficha de sede una dirección inventada hace más daño que una afirmación médica inflada, porque manda a alguien a un edificio equivocado.
 - **[Fase 15, plan 05] Cuando la SERP no resuelve el formato, la decisión se declara con el reparto al lado.** El top 10 de `cirugía de columna surco` no tiene tipo dominante: 3 y 3 entre red social y otro, sobre 6 tipificadas de 9 medidas, confianza media. El paquete del consultorio dice que el formato de ficha se eligió por coherencia con las otras tres sedes y no porque la SERP lo pidiera. Elegir en silencio deja a quien lo lea seis meses después sin forma de saber qué parte fue medición.
 - **[Fase 15, plan 05] Una entidad obligatoria que solo se cubre nombrando a un tercero no se cubre.** `rodriguez` salió del staff de otra sede de Sanna y es el apellido de un pediatra. La URL quedó en 7 de 8, sobre el umbral del 80 %. El margen del umbral existe para exactamente este caso, y es el mismo criterio que el plan 15-04 aplicó con los encabezados que nombran colegas.
+- **[Fase 15, plan 06] El límite entre captación y guía se sostiene en el contenido, no en el mapa.** La fase 14 midió 120 pares cruzados con cero conflictos, y ese resultado se apoya en el reparto de temas. Un post que explica el tratamiento de su condición se convierte en la segunda guía del tema y devuelve la canibalización por la puerta del contenido aunque el mapa siga limpio. Los cuatro posts nombran la relación con su guía, derivan hacia ella con el anchor de la matriz y declaran ese límite por escrito en su `notaDeFormato`.
+- **[Fase 15, plan 06] Una reescritura declara qué conservó, y lo conservado se transcribe casi literal.** Los dos posts publicados salieron en junio, antes de que existiera el mapa, y esa es la razón por la que se reescriben, no que estén mal hechos. Ocho pasajes entraron casi textuales al copy nuevo, cada uno con la línea de `src/content/blog.ts` de la que salió. El campo `cambios` dice qué se conservó, qué se reemplazó y por qué, para que quien implemente pueda comparar contra lo publicado sin adivinar.
+- **[Fase 15, plan 06] Las cuatro preguntas de dinero y de plazo se contestan sin dar una sola cifra.** Precio, costo, riesgo y tiempo de recuperación son donde más tienta tranquilizar con números, y ninguno está verificado (D-10). Se contesta explicando de qué depende cada cosa y qué pedir por escrito en la consulta. Se tranquiliza explicando el proceso, no prometiendo el resultado.
+- **[Fase 15, plan 06] Un trigrama del extractor de entidades no se cubre escribiendo mal el castellano.** El post de ciática quedó en 13 de 16, sobre el umbral del 80 %. Las tres que faltan son trigramas que el extractor sacó de fragmentos donde una oración termina y otra empieza, y cubrirlas exigiría una aposición sin coma. Mismo criterio que `rodriguez` en el 15-05 y los encabezados que nombran colegas en el 15-04.
 - **[Fase 15, plan 02] El H1 de las 6 que no compiten se transcribe con archivo y linea, nunca se propone.** Proponerles uno reabriria una decision de la fase 14 sin dato nuevo, y encima por la puerta de atras. Las 16 que compiten reciben H1 propuesto con la prosa de por que ese y no otro.
 
 ### Pending Todos
@@ -129,22 +133,26 @@ Los dos milestones corren a la vez sobre el mismo repositorio.
 
 ## Session Continuity
 
-Last session: 2026-08-13T01:20:00.000Z
-Stopped at: Completed 15-05-PLAN.md — las cuatro fichas de sede
+Last session: 2026-08-13T03:05:00.000Z
+Stopped at: Completed 15-06-PLAN.md — los cuatro posts del blog
 Resume file: None
-Siguiente: 15-06, lo último de la wave 3, y después el 15-07 que cierra la fase. El 15-06 escribe
-en su propio dataset y corre su copy por `ymyl.ts --data <su archivo>` antes de darlo por escrito,
-porque la compuerta revisa el dataset entero de una corrida y no acepta `--url`. Para generar los
-documentos, `paquete.ts` acepta `--data`. Si la URL tiene fila en la matriz de la fase 14, el copy
-puede traer `enlacesPropuestos` y el paquete la imprime solo; y desde el 15-05 también puede traer
-`datosOperativos` y `notaDeFormato`, aunque el blog probablemente no necesite ninguno de los dos.
+Siguiente: 15-07, el último plan de la fase y del milestone v1.2. Cierra ONPAGE-06 emitiendo los seis documentos
+cortos que faltan (`/agendar`, `/blog`, `/contacto`, `/sedes`, `/sobre-el-doctor` y `/testimonios`), arma la ronda
+única del doctor (D-09) sobre todo lo que las cuatro familias sellaron, escribe `Suggested H1` en el Sheet y deja el
+handoff hacia v1.1.
 
-Lo que el 15-07 tiene que recoger de este plan: diez datos operativos pendientes de confirmación,
-listados en la tabla propia de cada paquete de sede, y 24 secciones clínicas selladas. Dos de esas
-secciones conviene que el doctor las mire antes que las demás y están señaladas en la guía de su
-propio paquete: el lema de la Clínica Tezza que el texto cita, que salió de los resultados medidos
-y no de una fuente institucional, y el bloque de hernia discal sin cirugía del consultorio de
-Surco.
+Lo que el 15-07 tiene que recoger de la wave 3 entera:
+
+- **Del 15-05:** diez datos operativos pendientes de confirmación, en la tabla propia de cada paquete de sede, y 24
+  secciones clínicas selladas. Dos merecen prioridad: el lema de la Clínica Tezza que el texto cita, que salió de los
+  resultados medidos y no de una fuente institucional, y el bloque de hernia discal sin cirugía del consultorio de Surco.
+- **Del 15-06:** 82 secciones clínicas selladas en los cuatro posts del blog. Dos bloques piden prioridad: las tres
+  secciones del post de ciática que contradicen la promesa de aliviar el dolor en dos o tres minutos, porque
+  contradecir una creencia muy difundida en una página médica conviene hacerlo con respaldo; y el bloque de secuelas y
+  riesgo del post de cirugía, que enumera complicaciones sin dar ninguna probabilidad.
+- **Herramienta:** `paquete.ts` imprime ahora cuatro bloques opcionales según lo que declare la fila de copy:
+  `enlacesPropuestos` (15-04), `datosOperativos` y `notaDeFormato` (15-05) y `mapeoDePost` (15-06). El cruce de title,
+  meta y H1 contra el mapa corre sobre los cuatro datasets de copy, así que ninguna familia quedó sin guardia.
 
 ## Performance Metrics
 
@@ -164,6 +172,7 @@ Surco.
 | Phase 15 P03 | ~1h 30min | 3 tasks | 8 files |
 | Phase 15 P04 | ~1h 40min | 3 tasks | 8 files |
 | Phase 15 P05 | ~1h 15min | 3 tasks | 10 files |
+| Phase 15 P06 | ~1h 30min | 3 tasks | 9 files |
 
 ## Presupuesto de fuentes externas al cerrar la fase 14
 

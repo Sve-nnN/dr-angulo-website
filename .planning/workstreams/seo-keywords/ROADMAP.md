@@ -189,7 +189,7 @@ Plans:
 - [x] 15-03-PLAN.md — Las tres guías clínicas de columna y preguntas frecuentes, con la absorción de los dos posts que se apagan (wave 3)
 - [x] 15-04-PLAN.md — La home, el hub de servicios, ortopedia infantil y cirugía mínimamente invasiva (wave 3)
 - [x] 15-05-PLAN.md — Las cuatro fichas de sede vigentes (wave 3)
-- [ ] 15-06-PLAN.md — Los cuatro posts del blog, dos nuevos y dos reescritos (wave 3)
+- [x] 15-06-PLAN.md — Los cuatro posts del blog, dos nuevos y dos reescritos (wave 3)
 - [ ] 15-07-PLAN.md — Los 24 documentos del paquete, la ronda única del doctor, `Suggested H1` en el Sheet y el handoff hacia v1.1 (wave 4)
 
 **Notas de ejecución**
@@ -236,7 +236,7 @@ paquete de la fase 15 para su contenido y su metadata.
 | 12. Instrumentación de datos y universo de keywords | v1.2 | 5/5 | Complete | 2026-08-11 |
 | 13. Clusters, competencia y las 10 de Oro | v1.2 | 5/5 | Complete | 2026-08-11 |
 | 14. Mapa keyword → URL y matriz de enlazado | v1.2 | 4/4 | Complete | 2026-08-12 |
-| 15. Paquete on-page por URL | v1.2 | 4/7 | In Progress|  |
+| 15. Paquete on-page por URL | v1.2 | 6/7 | In Progress|  |
 
 ## Cobertura de requisitos
 
