@@ -81,6 +81,80 @@ status: complete
 - `SITEMAP_TOTAL` baja de 24 a 22 en las tres puertas ejecutables (`check-content.mjs`, `check-sedes.mjs`, `check-seo.mjs`), el número con el que cierra todo el trabajo de contenido de la fase.
 - Los dos módulos de post viejos se eliminaron y su import salió de `src/content/blog/index.ts`.
 
+## La tabla de absorción, las 16 filas
+
+Criterio de aceptación de la Task 1: la comprobación se transcribe entera. Verificada sobre
+`.next/server/app/servicios/*.html` antes de escribir una sola línea de configuración.
+
+**`hernia-discal-o-dolor-de-espalda-como-diferenciarlos` → `/servicios/hernia-discal`, 7 filas**
+
+| Bloque del post | Destino declarado | En el HTML |
+|---|---|---|
+| intro | `sintomas--diferencia-entre-lumbalgia-y-hernia-discal` | presente |
+| `como-se-comporta-un-dolor-muscular` | `sintomas--diferencia-entre-lumbalgia-y-hernia-discal` | presente |
+| `como-se-comporta-una-hernia-discal` | `sintomas--diferencia-entre-lumbalgia-y-hernia-discal` y `sintomas` | los dos presentes |
+| `las-preguntas-que-lo-definen` | `sintomas--diferencia-entre-lumbalgia-y-hernia-discal` | presente |
+| `senales-que-no-esperan` | `cuando-consultar` | presente |
+| `cuando-dejar-de-esperar` | `cuando-consultar` | presente |
+| `ctaBanner` sobre el dolor que baja por la pierna | `sintomas` | presente |
+
+**`estenosis-espinal-que-es` → `/servicios/estenosis-espinal`, 9 filas, 8 con destino**
+
+| Bloque del post | Destino declarado | En el HTML |
+|---|---|---|
+| intro | `que-es` | presente |
+| `por-que-aparece-con-la-edad` | `causas` | presente |
+| `la-senal-que-mas-orienta` | `sintomas` | presente |
+| `como-se-siente-en-el-dia-a-dia` | `sintomas` | presente |
+| `que-se-pregunta-en-la-consulta` | `diagnostico` | presente |
+| `que-registrar-antes-de-la-cita` | `sin-operar--estenosis-espinal-cuidado-personal` y `cuando-consultar` | los dos presentes |
+| `como-se-trata` | `sin-operar` y `sin-operar--tratamientos-de-la-estenosis-espinal` | los dos presentes |
+| `ctaBanner` sobre caminar menos que antes | `cuando-consultar` | presente |
+| remisiones a "la guía completa", dos veces | no se transcriben a propósito | correcto: la guía completa pasa a ser esa página y la remisión pierde destino. `grep "guía completa"` sobre el HTML devuelve 0 |
+
+Once ids de destino distintos, todos vivos como ancla. Ninguna fila sin cubrir.
+
+## Las dos respuestas literales
+
+Contra el build recién hecho, servido en local:
+
+```
+GET /blog/hernia-discal-o-dolor-de-espalda-como-diferenciarlos
+HTTP/1.1 308 Permanent Redirect
+location: /servicios/hernia-discal
+
+GET /blog/estenosis-espinal-que-es
+HTTP/1.1 308 Permanent Redirect
+location: /servicios/estenosis-espinal
+```
+
+Siguiendo la redirección las dos terminan en 200 sobre su guía. El 308 es lo que Next emite para
+`permanent: true`; para el buscador equivale al 301 permanente que el paquete pide y el criterio
+de aceptación admite las dos. La tercera redirección, la de 08-15, sigue en pie:
+`/servicios/escoliosis` devuelve 308 hacia `/servicios/escoliosis-y-deformidades`.
+
+## Verificación
+
+| Comprobación | Resultado |
+|---|---|
+| `npx tsc --noEmit` | código 0 |
+| `npm run lint` | sin avisos |
+| `npm run build` | verde |
+| `node scripts/check-content.mjs` | sin fallas en 9 rutas |
+| `node scripts/check-sedes.mjs` | sin fallas en 4 sedes |
+| `node scripts/check-seo.mjs` | sin fallas, 23 rutas revisadas, 23 con Open Graph propia, `/llms.txt` con 161 líneas |
+| Redirecciones declaradas en `next.config.ts` | 3, las tres del handoff |
+| `grep -c "SITEMAP_TOTAL = 22"` en las tres puertas | 1 en cada una |
+| `<loc>` en el sitemap prerenderizado | 22, cero coincidencias con las dos URLs apagadas |
+| Listado `/blog` | cuatro posts |
+| `/llms.txt` | cero coincidencias con las dos URLs apagadas |
+| `grep -rn` de los dos slugs sobre `src/` y `scripts/` | cero líneas |
+| Borrados en el commit | los dos módulos de post, intencionales |
+
+## Known Stubs
+
+Ninguno.
+
 ## Task Commits
 
 1. **Task 1 + Task 2 (checkpoint intermedio sin commit propio, código en un solo commit tras la aprobación)** — `d1e22f5` (feat)
@@ -117,7 +191,13 @@ status: complete
 
 ## Issues Encountered
 
-Ninguno de código. El único punto de atención fue operativo: el servidor de verificación (`npm run start` en el puerto 3001) que el executor levantó para el checkpoint quedó corriendo después de que el checkpoint se resolvió, y un proceso de build previo quedó huérfano bloqueando `next build` momentáneamente — se limpiaron ambos sin tocar ningún archivo de código antes de cerrar el plan.
+Ninguno de código, pero sí un falso negativo de la verificación que vale registrar.
+
+Con `next.config.ts` ya escrito y el build ya hecho, la primera corrida de curl devolvió **200 en las dos rutas**, como si la redirección no existiera. La causa no era la regla: el servidor que se había levantado para el checkpoint seguía escuchando el puerto y respondía con el manifiesto de rutas y la configuración de redirecciones que había cargado al arrancar, antes del cambio. Un `pkill` previo no lo había alcanzado. Se detuvo por PID, se levantó un servidor limpio sobre el build nuevo y las dos rutas devolvieron 308.
+
+Es la justificación empírica de por qué T-08-33 pide petición real contra el build y no inspección de la configuración: leer `next.config.ts` habría dado el visto bueno con el sitio sin redirigir.
+
+Aparte de eso, el puerto 3000 estaba ocupado por un proceso node ajeno a este plan, que no se tocó; toda la verificación corrió en el 3001.
 
 ## User Setup Required
 
@@ -126,6 +206,10 @@ None - no external service configuration required.
 ## Next Phase Readiness
 
 Todo el cuerpo de contenido del silo clínico queda cerrado: 5 páginas de servicio, el hub `/servicios`, home, y 6 posts de blog (2 reescritos en el lugar, 2 nuevos, 2 redirigidos). Quedan tres planes de la fase 8, todos fuera del silo: 08-17, 08-18 y 08-19, que cubren las 4 fichas de sede y `/preguntas-frecuentes` — las 5 URLs del paquete de v1.2 que ninguna fase de v1.1 tenía asignadas hasta que Juan decidió sumarlas a esta fase.
+
+## Self-Check: PASSED
+
+`next.config.ts`, `src/content/blog/index.ts`, `src/content/service-pages/estenosis-espinal.ts` y los tres scripts de puerta existen en disco con los cambios. Los dos módulos de post ya no existen, que es lo que el plan pide. El commit `d1e22f5` está en `git log`.
 
 ---
 *Phase: 08-silo-cl-nico-p-ginas-por-servicio-y-blog-profundo*
