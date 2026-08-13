@@ -1,9 +1,33 @@
 # Auditoría de duplicados del paquete on-page
 
-**Corrida:** 2026-08-12, plan 15-02
+**Primera corrida:** 2026-08-12, plan 15-02, sobre la metadata sola
+**Corrida final:** 2026-08-13, plan 15-07, sobre el paquete terminado
 **Sobre:** `seo-tools/data/onpage.json`, el paquete propuesto
 **Resultado legible de:** `seo-tools/data/onpage-audit.json`
 **Herramienta:** `seo-tools/src/phase15/auditoria.ts`, función pura, cero llamadas de red
+
+## La corrida final, con la fase ya escrita
+
+La primera corrida fue sobre metadata sin copy: en ese momento no existía ni una página redactada.
+Esta segunda corre sobre el paquete terminado, con los 24 documentos generados y las 16 páginas
+escritas, y **vuelve a dar cero en las cinco comprobaciones**. Los números de la tabla de más
+abajo son los de esta corrida y no cambiaron respecto de la primera, que es exactamente lo que se
+quería: los cuatro planes de copy escribieron sobre el mapa sin moverle un title ni un H1.
+
+Se corrió el 2026-08-13, **antes de que v1.1 publique**, que es el momento en que ONPAGE-05 pide
+que esté limpia y el único en que la auditoría sirve de algo. Corregir un title duplicado ahora
+cuesta editar una línea de un JSON; corregirlo después de publicar cuesta una reimplementación del
+otro lado y el tiempo que Google tarde en volver a rastrear.
+
+En la misma corrida pasó la compuerta de YMYL y humanización sobre los cuatro datasets de copy a
+la vez, las 16 páginas juntas: **cero hallazgos**. Es la comprobación que faltaba, porque hasta
+ahora cada plan de la wave 3 la había corrido solo sobre su propia familia.
+
+```bash
+cd seo-tools
+./node_modules/.bin/tsx src/phase15/ymyl.ts --todos
+./node_modules/.bin/tsx src/phase15/auditoria.ts --data data/onpage.json --out data/onpage-audit.json
+```
 
 ## Por qué esta auditoría es local y no sale de DinoRank
 
@@ -99,11 +123,10 @@ decisión de la fase 14 sin dato nuevo y por la puerta de atrás.
 
 ## Qué queda habilitado
 
-ONPAGE-05 está cerrado sobre el mapa propuesto: cero titles duplicados, cero H1 duplicados y cero
-metas faltantes, comprobado **antes** de que v1.1 publique, que es lo que el requisito pide.
+ONPAGE-05 está cerrado sobre el paquete terminado: cero titles duplicados, cero H1 duplicados y
+cero metas faltantes, comprobado antes de que v1.1 publique, que es lo que el requisito pide.
 
-Los cuatro planes de copy de la wave 3 escriben sobre este mapa. Cualquiera que agregue o cambie
-un title, una meta o un H1 tiene que volver a correr:
+Cualquiera que agregue o cambie un title, una meta o un H1 tiene que volver a correr:
 
 ```bash
 cd seo-tools
