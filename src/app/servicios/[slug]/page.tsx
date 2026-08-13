@@ -132,6 +132,14 @@ export default async function ServiceGuidePage({ params }: Props) {
   // desincronizarse.
   const groups = groupSections(page.sections);
 
+  // Posición del banner de conversión. El default es la segunda sección con
+  // cuerpo; una página puede declarar otra cuando el volumen de sus
+  // subsecciones corre ese punto fuera del primer tercio (POS-01).
+  const declaredBannerIndex = page.bannerAfterSectionId
+    ? groups.findIndex(({ section }) => section.id === page.bannerAfterSectionId)
+    : -1;
+  const bannerIndex = declaredBannerIndex === -1 ? 1 : declaredBannerIndex;
+
   const relatedPosts = blogPosts.filter((post) =>
     page.relatedPosts.includes(post.slug)
   );
@@ -233,11 +241,11 @@ export default async function ServiceGuidePage({ params }: Props) {
                     </div>
                   ))}
                 </section>
-                {/* Un banner por página, más el CTA de cierre. Va después de la
-                    segunda sección de nivel 2 y de todas sus hijas, que es el
-                    punto donde el paciente acaba de reconocer lo que le pasa
+                {/* Un banner por página, más el CTA de cierre. Va después de
+                    una sección de nivel 2 y de todas sus hijas, en el punto
+                    donde el paciente acaba de reconocer lo que le pasa
                     (POS-01). */}
-                {index === 1 && (
+                {index === bannerIndex && (
                   <MidContentCta
                     heading={page.ctaBanner.heading}
                     body={page.ctaBanner.body}
