@@ -1,0 +1,735 @@
+{
+  "schema": 1,
+  "nota": "Copy redactado de las cuatro fichas de sede vigentes (plan 15-05). Las sedes son consultorio de Surco, Clinica Ricardo Palma, Clinica Sanna La Molina y Clinica Padre Luis Tezza. Montefiori no existe en este sitio (D-11). Cada dato operativo declara su fuente o queda marcado como pendiente de confirmacion: una direccion o un horario inventado manda a un paciente a un lugar equivocado, que es el dano mas concreto de esta fase. El title, la meta y el H1 salen de data/onpage.json y no se reescriben aca. La compuerta es src/phase15/ymyl.ts.",
+  "paginas": [
+    {
+      "url": "/sedes/clinica-ricardo-palma",
+      "title": "Cirujano de columna en Clínica Ricardo Palma",
+      "metaDescription": "El Dr. Juan Carlos Angulo atiende columna en la Clínica Ricardo Palma, San Isidro. Días de consulta y cómo pedir cita.",
+      "h1": "Atención de columna en la Clínica Ricardo Palma",
+      "h1Origen": "Cambia el sujeto: el title nombra al especialista, que es lo que se busca, y el H1 nombra el servicio en esa sede, que es lo que se resuelve ahí.",
+      "notaDeFormato": "La SERP de esta keyword premia página de servicio con confianza alta, 4 de 8 posiciones tipificadas, así que la ficha se escribe con jerarquía de servicio: qué se resuelve acá y con quién, antes que la descripción de la institución.",
+      "guiaParaElDoctor": "Esta ficha es la que más pacientes nuevos puede traer, porque responde una búsqueda que hoy no responde ninguna URL del sitio: el paciente que ya eligió la Clínica Ricardo Palma y busca adentro al especialista de columna. Tres bloques necesitan su ojo. El que explica que un cirujano de columna puede venir de traumatología o de neurocirugía, porque ahí se describe su propia formación. El que dice que no hay respuesta honesta a quién es el mejor traumatólogo de la clínica y propone en cambio qué preguntar. Y el que separa al neurólogo del traumatólogo de columna. Lo demás es operativo: dirección, días, teléfono y cómo se saca la cita. No hay cifras de cirugías, ni años de trayectoria, ni tasas: esa ausencia es deliberada. Falta un dato que la clínica tiene que confirmar y está listado aparte en el paquete.",
+      "datosOperativos": [
+        {
+          "dato": "Dirección",
+          "valor": "Av. Javier Prado Este 1066, San Isidro, Lima 15036",
+          "estado": "respaldado",
+          "fuente": "src/content/locations.ts, entrada clinica-ricardo-palma. La cabecera del archivo declara que direcciones, teléfonos y webs están verificados contra la ficha oficial de cada clínica."
+        },
+        {
+          "dato": "Referencia para llegar",
+          "valor": "Cuadra 10 de Javier Prado Este, con frente sobre la avenida",
+          "estado": "respaldado",
+          "fuente": "src/content/location-pages.ts, bloque gettingThere de clinica-ricardo-palma, publicado en el sitio."
+        },
+        {
+          "dato": "Días y horario de consulta",
+          "valor": "Lunes y miércoles, de 9:00 a. m. a 6:00 p. m.",
+          "estado": "respaldado",
+          "fuente": "src/content/locations.ts, campo schedule. Horarios confirmados por el consultorio el 2026-08-09."
+        },
+        {
+          "dato": "Central de citas",
+          "valor": "(01) 224 2224",
+          "estado": "respaldado",
+          "fuente": "src/content/locations.ts, canal de agenda de clinica-ricardo-palma."
+        },
+        {
+          "dato": "Agenda en línea de la clínica",
+          "valor": "crp.com.pe/agenda-tu-cita/",
+          "estado": "respaldado",
+          "fuente": "src/content/locations.ts, canal de agenda de clinica-ricardo-palma."
+        },
+        {
+          "dato": "Cómo figura el doctor en el buscador de la clínica",
+          "valor": "Dr. Juan Carlos Angulo Totesaut, en Traumatología",
+          "estado": "respaldado",
+          "fuente": "src/content/locations.ts, detalle del canal de agenda de clinica-ricardo-palma."
+        },
+        {
+          "dato": "Piso y número de consultorio dentro de la clínica",
+          "valor": "sin dato publicado",
+          "estado": "pendiente",
+          "fuente": "No está en locations.ts ni en location-pages.ts, que son las dos fuentes publicadas del sitio. Lo confirma la clínica y v1.1 lo completa antes de publicar."
+        },
+        {
+          "dato": "Seguros y convenios que la sede acepta para esta consulta",
+          "valor": "sin dato publicado",
+          "estado": "pendiente",
+          "fuente": "No está en ninguna fuente publicada del sitio. Lo define la clínica y cambia con el tiempo; v1.1 lo confirma antes de publicar o deja la página sin afirmarlo."
+        }
+      ],
+      "enlacesPropuestos": [
+        {
+          "destino": "/sedes",
+          "anchor": "Sedes donde atiende el Dr. Juan Carlos Angulo en Lima",
+          "regla": "navegacion-de-seccion"
+        },
+        {
+          "destino": "/servicios",
+          "anchor": "mejor neurocirujano de columna lima",
+          "regla": "navegacion-de-seccion"
+        },
+        {
+          "destino": "/servicios/ortopedia-infantil",
+          "anchor": "ortopedia infantil cerca de mí",
+          "regla": "mencion-directa"
+        },
+        {
+          "destino": "/agendar",
+          "anchor": "Agendar cita",
+          "regla": "hacia-conversion"
+        },
+        {
+          "destino": "/contacto",
+          "anchor": "Contacto y Citas en Lima",
+          "regla": "hacia-conversion"
+        },
+        {
+          "destino": "/",
+          "anchor": "traumatólogo ortopedia infantil",
+          "regla": "navegacion-de-seccion"
+        }
+      ],
+      "secciones": [
+        {
+          "clave": "donde-queda",
+          "nivel": 2,
+          "titulo": "Dónde queda la Clínica Ricardo Palma",
+          "tipo": "operativo",
+          "aprobacion": "no-requiere",
+          "parrafos": [
+            "Si llegaste buscando un traumatólogo especialista en columna dentro de la Clínica Ricardo Palma, esta página es esa respuesta. El Dr. Juan Carlos Angulo atiende ahí los lunes y miércoles, en Av. Javier Prado Este 1066, San Isidro.",
+            "El doctor atiende en la clínica. La clínica no es suya y su agenda tampoco: la maneja la central de citas de la institución. Esa distinción parece un detalle hasta que llega el momento de pedir la cita, así que más abajo está el cómo, con los dos canales.",
+            "La numeración corresponde a la cuadra 10 de Javier Prado Este. San Isidro concentra buena parte de la atención privada de Lima, y esta es la sede que cubre esa zona entre las cuatro donde el doctor pasa consulta."
+          ],
+          "afirmaciones": [
+            {
+              "texto": "Av. Javier Prado Este 1066, San Isidro, Lima 15036",
+              "fuente": "src/content/locations.ts, entrada clinica-ricardo-palma, verificada contra la ficha oficial de la clínica."
+            },
+            {
+              "texto": "Consulta los lunes y miércoles",
+              "fuente": "src/content/locations.ts, campo schedule, confirmado por el consultorio el 2026-08-09."
+            }
+          ],
+          "keywordsCubiertas": [],
+          "entidadesCubiertas": ["ricardo", "palma", "ricardo palma", "columna", "traumatologo"]
+        },
+        {
+          "clave": "donde-queda--cirugia-de-la-columna-san-isidro",
+          "nivel": 3,
+          "titulo": "Cirugía de columna en San Isidro",
+          "tipo": "clinico",
+          "aprobacion": "pendiente-doctor",
+          "parrafos": [
+            "Quien busca cirugía de columna en San Isidro casi nunca está buscando qué es. Está buscando dónde se hace y con quién. Se hace acá, en la Clínica Ricardo Palma, que es la sede del doctor en ese distrito.",
+            "La evaluación previa y los controles posteriores salen de esta misma consulta. Lo que se decide en el consultorio es si existe indicación quirúrgica, y esa respuesta muchas veces es que no: el tratamiento de la mayor parte de los cuadros de columna empieza y termina sin quirófano."
+          ],
+          "afirmaciones": [],
+          "keywordsCubiertas": ["cirugía de columna san isidro"],
+          "entidadesCubiertas": ["columna", "tratamiento"]
+        },
+        {
+          "clave": "como-llegar",
+          "nivel": 2,
+          "titulo": "Cómo llegar a la sede de Javier Prado",
+          "tipo": "operativo",
+          "aprobacion": "no-requiere",
+          "parrafos": [
+            "Javier Prado cruza Lima de este a oeste, así que desde casi cualquier distrito se llega sin salir de esa vía. El 1066 cae en la cuadra 10, del lado este de la avenida.",
+            "La clínica tiene frente sobre Javier Prado, que es la referencia más confiable si vienes manejando o en transporte público. A media mañana el tráfico de esa avenida es lo que es: conviene salir con holgura.",
+            "Lo que todavía no está publicado es en qué piso queda el consultorio del doctor dentro de la clínica. Hasta que la propia clínica lo confirme, se pregunta en informes al llegar."
+          ],
+          "afirmaciones": [
+            {
+              "texto": "El 1066 cae en la cuadra 10 de Javier Prado Este",
+              "fuente": "src/content/location-pages.ts, bloque gettingThere de clinica-ricardo-palma."
+            }
+          ],
+          "keywordsCubiertas": [],
+          "entidadesCubiertas": []
+        },
+        {
+          "clave": "que-se-atiende",
+          "nivel": 2,
+          "titulo": "Qué atiende el doctor en esta sede",
+          "tipo": "clinico",
+          "aprobacion": "pendiente-doctor",
+          "parrafos": [
+            "Columna, en primer lugar: dolor cervical y lumbar, hernia discal, estenosis o canal estrecho, escoliosis y deformidades del adulto.",
+            "Junto con eso, la traumatología general del adulto y las consultas de ortopedia infantil. Es la misma consulta que en las otras sedes. Lo que cambia acá es el día y quién maneja la agenda.",
+            "El manejo de cualquiera de esos casos arranca por lo mismo: entender qué estructura está comprometida antes de hablar de tratamiento. Una resonancia leída sin examinar a la persona explica poco."
+          ],
+          "afirmaciones": [],
+          "keywordsCubiertas": [],
+          "entidadesCubiertas": ["columna", "traumatologia", "manejo", "tratamiento"]
+        },
+        {
+          "clave": "que-se-atiende--como-se-llama-el-cirujano-que-opera-columna",
+          "nivel": 3,
+          "titulo": "¿Cómo se llama el cirujano que opera columna?",
+          "tipo": "clinico",
+          "aprobacion": "pendiente-doctor",
+          "parrafos": [
+            "Cirujano de columna. Se llega a esa dedicación por dos caminos distintos: la traumatología con formación en columna, o la neurocirugía. Las dos operan.",
+            "El Dr. Angulo viene del primero. Dentro de la clínica vas a encontrarlo listado en traumatología y no en neurocirugía, y esa es la especialidad por la que hay que buscarlo al pedir la cita."
+          ],
+          "afirmaciones": [],
+          "keywordsCubiertas": [],
+          "entidadesCubiertas": ["traumatologia", "especialidad", "columna"]
+        },
+        {
+          "clave": "que-se-atiende--quien-es-el-mejor-traumatologo-de-la-clinica-ricardo-palma",
+          "nivel": 3,
+          "titulo": "Cómo elegir traumatólogo dentro de la Clínica Ricardo Palma",
+          "tipo": "clinico",
+          "aprobacion": "pendiente-doctor",
+          "parrafos": [
+            "No hay una respuesta honesta a quién es el mejor traumatólogo de la clínica, y quien te la dé está vendiéndote algo.",
+            "Lo que sí orienta: a qué parte del cuerpo le dedica su práctica esa persona, cuánto de eso ve por semana y con qué criterio decide no operar. Un traumatólogo que ve rodilla todos los días y columna de vez en cuando no es peor médico. Es otro médico.",
+            "Pedir una segunda opinión antes de una operación de columna no ofende a nadie. En un servicio grande como el de esta clínica, además, es fácil de conseguir."
+          ],
+          "afirmaciones": [],
+          "keywordsCubiertas": [
+            "traumatólogo clínica ricardo palma",
+            "mejor traumatólogo de la clínica ricardo palma"
+          ],
+          "entidadesCubiertas": ["traumatologo", "columna"]
+        },
+        {
+          "clave": "que-se-atiende--quienes-son-los-mejores-neurocirujanos-en-lima",
+          "nivel": 3,
+          "titulo": "Neurocirujano o cirujano de columna: a quién ver acá",
+          "tipo": "clinico",
+          "aprobacion": "pendiente-doctor",
+          "parrafos": [
+            "La lista de los mejores neurocirujanos de Lima que devuelve el buscador suele estar ordenada por quién pagó por aparecer ahí.",
+            "Lo práctico es otra cosa. Si tu problema es la columna, te sirve igual un neurocirujano dedicado a columna que un traumatólogo dedicado a columna. En esta sede la consulta es la segunda, y para lo que le corresponde a la primera el doctor deriva."
+          ],
+          "afirmaciones": [],
+          "keywordsCubiertas": [],
+          "entidadesCubiertas": ["columna", "traumatologo"]
+        },
+        {
+          "clave": "que-se-atiende--ortopedia-infantil-clinica-ricardo-palma",
+          "nivel": 3,
+          "titulo": "Ortopedia infantil en la Clínica Ricardo Palma",
+          "tipo": "clinico",
+          "aprobacion": "pendiente-doctor",
+          "parrafos": [
+            "Los mismos lunes y miércoles entran las consultas de ortopedia infantil: pie plano, forma de caminar, escoliosis del adolescente, dolores de crecimiento que no terminan de encajar en ninguna explicación.",
+            "Buena parte de esas consultas termina sin indicación de tratamiento y con un control en unos meses. Eso no es un descarte: en un hueso que todavía crece, esperar y volver a mirar es una conducta y no una excusa."
+          ],
+          "afirmaciones": [],
+          "keywordsCubiertas": ["ortopedia infantil clínica ricardo palma"],
+          "entidadesCubiertas": ["tratamiento"]
+        },
+        {
+          "clave": "que-se-atiende--clinica-ricardo-palma-traumatologia",
+          "nivel": 3,
+          "titulo": "El servicio de traumatología de la clínica",
+          "tipo": "operativo",
+          "aprobacion": "no-requiere",
+          "parrafos": [
+            "Traumatología es la especialidad bajo la que el doctor figura en la Clínica Ricardo Palma. Es también el filtro que hay que usar en la web de la clínica para encontrarlo.",
+            "Dentro de un servicio de traumatología conviven dedicaciones bastante distintas: rodilla, hombro, mano, cadera, columna. La de esta consulta es columna, con ortopedia infantil al lado."
+          ],
+          "afirmaciones": [],
+          "keywordsCubiertas": ["clínica ricardo palma traumatología"],
+          "entidadesCubiertas": ["traumatologia", "especialidad", "columna", "ricardo palma"]
+        },
+        {
+          "clave": "que-se-atiende--clinica-ricardo-palma-staff-medico",
+          "nivel": 3,
+          "titulo": "El staff médico y dónde figura el doctor",
+          "tipo": "operativo",
+          "aprobacion": "no-requiere",
+          "parrafos": [
+            "El staff de la clínica es amplio y se consulta en su propia web. Ahí el nombre completo del doctor es Juan Carlos Angulo Totesaut.",
+            "El apellido de más importa para la búsqueda. Con Angulo a secas pueden salirte varios resultados y ninguno ser el correcto."
+          ],
+          "afirmaciones": [],
+          "keywordsCubiertas": [],
+          "entidadesCubiertas": []
+        },
+        {
+          "clave": "que-se-atiende--clinica-ricardo-palma-staff-medico-traumatologia",
+          "nivel": 3,
+          "titulo": "Cómo ubicarlo en el listado de traumatología",
+          "tipo": "operativo",
+          "aprobacion": "no-requiere",
+          "parrafos": [
+            "En la agenda en línea de crp.com.pe se elige primero la especialidad de traumatología y desde ahí se filtra por médico.",
+            "Si un día el buscador no lo muestra, la central de citas resuelve por teléfono. La disponibilidad de la agenda en línea depende de la clínica y no del consultorio del doctor."
+          ],
+          "afirmaciones": [],
+          "keywordsCubiertas": [],
+          "entidadesCubiertas": ["traumatologia", "especialidad"]
+        },
+        {
+          "clave": "que-se-atiende--clinica-ricardo-palma-staff-medico-oftalmologia",
+          "nivel": 3,
+          "titulo": "Si buscabas otra especialidad de la clínica",
+          "tipo": "operativo",
+          "aprobacion": "no-requiere",
+          "parrafos": [
+            "Esta página cubre una sola parte del staff: la consulta de columna, traumatología y ortopedia infantil del Dr. Angulo. Oftalmología, por dar el ejemplo que más se busca junto con esta, la maneja otro servicio y su listado está en la web de la clínica.",
+            "Conviene decirlo porque el buscador mezcla todas las especialidades de la clínica en la misma consulta, y llegar acá buscando otra cosa es fácil."
+          ],
+          "afirmaciones": [],
+          "keywordsCubiertas": [],
+          "entidadesCubiertas": ["especialidad", "traumatologia"]
+        },
+        {
+          "clave": "que-se-atiende--plantel-medico-clinica-ricardo-palma",
+          "nivel": 3,
+          "titulo": "Plantel médico: qué mirar antes de elegir",
+          "tipo": "operativo",
+          "aprobacion": "no-requiere",
+          "parrafos": [
+            "El plantel completo lo publica la clínica y se actualiza del lado de ella. Lo que un listado nunca te dice es lo que más pesa: a qué le dedica la semana cada nombre de esa lista.",
+            "Si tu caso es de columna, busca esa dedicación escrita en alguna parte. Si en cambio es una fractura de ayer, no esperes a un día de consulta: eso se ve en emergencia."
+          ],
+          "afirmaciones": [],
+          "keywordsCubiertas": [],
+          "entidadesCubiertas": ["columna", "ricardo palma", "palma"]
+        },
+        {
+          "clave": "que-se-atiende--neurologo-clinica-ricardo-palma",
+          "nivel": 3,
+          "titulo": "Neurólogo o traumatólogo de columna: qué cambia",
+          "tipo": "clinico",
+          "aprobacion": "pendiente-doctor",
+          "parrafos": [
+            "El neurólogo estudia el nervio y el sistema nervioso, y no opera columna. El traumatólogo de columna evalúa la estructura, decide si algo está comprimiendo ese nervio y si hay indicación de operar.",
+            "El hormigueo en una pierna llega a las dos consultas, y de vez en cuando hace falta que los dos médicos se hablen. Cuando el caso le corresponde al neurólogo, el doctor lo dice y deriva."
+          ],
+          "afirmaciones": [],
+          "keywordsCubiertas": [],
+          "entidadesCubiertas": ["columna", "traumatologo"]
+        },
+        {
+          "clave": "horarios",
+          "nivel": 2,
+          "titulo": "Días y horas de consulta en San Isidro",
+          "tipo": "operativo",
+          "aprobacion": "no-requiere",
+          "parrafos": [
+            "La consulta en esta sede es los lunes y miércoles, de 9:00 a. m. a 6:00 p. m.",
+            "Ese es el horario de la sede y no un cupo garantizado: la hora exacta la asigna la central de citas según cómo esté la agenda del día.",
+            "Si lo que necesitas es atención un viernes o un sábado, esa disponibilidad está en el consultorio de Surco, que es otra de las cuatro sedes y tiene su propia página."
+          ],
+          "afirmaciones": [
+            {
+              "texto": "Lunes y miércoles, de 9:00 a. m. a 6:00 p. m.",
+              "fuente": "src/content/locations.ts, campo schedule de clinica-ricardo-palma. Horario confirmado por el consultorio el 2026-08-09."
+            }
+          ],
+          "keywordsCubiertas": [],
+          "entidadesCubiertas": []
+        },
+        {
+          "clave": "como-agendar",
+          "nivel": 2,
+          "titulo": "Cómo sacar cita en la Clínica Ricardo Palma",
+          "tipo": "operativo",
+          "aprobacion": "no-requiere",
+          "parrafos": [
+            "La cita de esta sede la da la clínica. Hay dos vías: la central de citas, en el (01) 224 2224, o la agenda en línea de crp.com.pe.",
+            "En las dos se elige Traumatología y se busca al Dr. Juan Carlos Angulo Totesaut.",
+            "El canal directo del consultorio del doctor no agenda acá. Solo agenda la sede de Surco, que es la única cuya agenda maneja él. Es la confusión más frecuente de todas y por eso va escrita."
+          ],
+          "afirmaciones": [
+            {
+              "texto": "Central de citas de la clínica: (01) 224 2224",
+              "fuente": "src/content/locations.ts, canal de agenda de clinica-ricardo-palma."
+            },
+            {
+              "texto": "Agenda en línea en crp.com.pe/agenda-tu-cita/, buscando al Dr. Juan Carlos Angulo Totesaut en Traumatología",
+              "fuente": "src/content/locations.ts, canal de agenda de clinica-ricardo-palma."
+            }
+          ],
+          "keywordsCubiertas": [],
+          "entidadesCubiertas": ["ricardo palma", "traumatologia"]
+        }
+      ]
+    },
+    {
+      "url": "/sedes/clinica-tezza",
+      "title": "Ortopedia infantil en la Clínica Tezza, Lima",
+      "metaDescription": "Consulta de ortopedia infantil con el Dr. Juan Carlos Angulo en la Clínica Padre Luis Tezza, Surco. Horarios y cómo agendar.",
+      "h1": "Ortopedia infantil en la Clínica Padre Luis Tezza",
+      "h1Origen": "El title usa el nombre corto que la gente escribe y el H1 usa el nombre completo de la clínica, que es el que aparece en la puerta.",
+      "notaDeFormato": "La SERP de esta keyword premia página de servicio con confianza alta, 3 de 9 posiciones tipificadas y el resto repartido, así que la ficha se escribe con la especialidad al frente y la institución detrás.",
+      "guiaParaElDoctor": "Esta ficha pelea ortopedia infantil en la Clínica Padre Luis Tezza, y el riesgo propio es que se convierta en una segunda página de ortopedia infantil general y compita contra /servicios/ortopedia-infantil. Por eso el texto explica atenderse de esa especialidad acá, y no la especialidad en sí. Cuatro bloques necesitan su ojo. El que define qué es un ortopedista infantil y por qué observar es una conducta. El de la consulta de columna del adulto en esta sede. El de cuándo un caso de columna necesita neurocirugía. Y el de cómo se decide operar. Hay una frase que conviene mirar antes que todas: el lema de la clínica que el texto cita, que salió de los resultados medidos y no de una fuente institucional directa. Si no es exacto, se saca. Quedan además dos datos que la clínica tiene que confirmar y están listados aparte en el paquete.",
+      "datosOperativos": [
+        {
+          "dato": "Dirección",
+          "valor": "Av. El Polo 570, Santiago de Surco, Lima 15023",
+          "estado": "respaldado",
+          "fuente": "src/content/locations.ts, entrada clinica-tezza. La cabecera del archivo declara que direcciones, teléfonos y webs están verificados contra la ficha oficial de cada clínica."
+        },
+        {
+          "dato": "Referencia para llegar",
+          "valor": "Cuadra 5 de Av. El Polo, con frente sobre la avenida",
+          "estado": "respaldado",
+          "fuente": "src/content/location-pages.ts, bloque gettingThere de clinica-tezza, publicado en el sitio."
+        },
+        {
+          "dato": "Días y horario de consulta",
+          "valor": "Jueves y viernes, de 2:00 p. m. a 6:00 p. m.",
+          "estado": "respaldado",
+          "fuente": "src/content/locations.ts, campo schedule. Horarios confirmados por el consultorio el 2026-08-09."
+        },
+        {
+          "dato": "Central de citas",
+          "valor": "(01) 610 5050",
+          "estado": "respaldado",
+          "fuente": "src/content/locations.ts, canal de agenda de clinica-tezza."
+        },
+        {
+          "dato": "Web de la clínica",
+          "valor": "clinicatezza.com.pe",
+          "estado": "respaldado",
+          "fuente": "src/content/locations.ts, campo website de clinica-tezza."
+        },
+        {
+          "dato": "Cómo figura el doctor en el buscador de la clínica",
+          "valor": "Dr. Juan Carlos Angulo Totesaut, en Traumatología",
+          "estado": "respaldado",
+          "fuente": "src/content/locations.ts, detalle del canal de agenda de clinica-tezza."
+        },
+        {
+          "dato": "Planes de salud, seguros y convenios vigentes de la clínica",
+          "valor": "sin dato publicado",
+          "estado": "pendiente",
+          "fuente": "No está en ninguna fuente publicada del sitio, y la SERP de esta keyword lo pregunta de frente. Lo define la clínica y cambia con el tiempo; v1.1 lo confirma antes de publicar o deja la página sin afirmarlo."
+        },
+        {
+          "dato": "Piso y número de consultorio dentro de la clínica",
+          "valor": "sin dato publicado",
+          "estado": "pendiente",
+          "fuente": "No está en locations.ts ni en location-pages.ts. Lo confirma la clínica y v1.1 lo completa antes de publicar."
+        }
+      ],
+      "enlacesPropuestos": [
+        {
+          "destino": "/sedes",
+          "anchor": "Sedes donde atiende el Dr. Juan Carlos Angulo en Lima",
+          "regla": "navegacion-de-seccion"
+        },
+        {
+          "destino": "/servicios",
+          "anchor": "cirujano de columna cerca de mí",
+          "regla": "navegacion-de-seccion"
+        },
+        {
+          "destino": "/servicios/ortopedia-infantil",
+          "anchor": "ortopedia infantil perú",
+          "regla": "mencion-directa"
+        },
+        {
+          "destino": "/agendar",
+          "anchor": "Agendar cita",
+          "regla": "hacia-conversion"
+        },
+        {
+          "destino": "/contacto",
+          "anchor": "Contacto y Citas en Lima",
+          "regla": "hacia-conversion"
+        },
+        {
+          "destino": "/",
+          "anchor": "traumatología y ortopedia cerca de mí",
+          "regla": "navegacion-de-seccion"
+        }
+      ],
+      "secciones": [
+        {
+          "clave": "donde-queda",
+          "nivel": 2,
+          "titulo": "Dónde queda la Clínica Padre Luis Tezza",
+          "tipo": "operativo",
+          "aprobacion": "no-requiere",
+          "parrafos": [
+            "La Clínica Padre Luis Tezza está en Av. El Polo 570, en Santiago de Surco. La consulta de ortopedia infantil del Dr. Juan Carlos Angulo funciona ahí los jueves y viernes por la tarde.",
+            "El doctor atiende en la clínica. La institución no es suya y la agenda la maneja ella, cosa que conviene saber antes de intentar sacar la cita por otro lado.",
+            "Es la sede más cómoda para quien vive por El Polo, Monterrico o la zona de Surco que da hacia La Molina. Comparte distrito con el consultorio privado del doctor, que queda en la otra punta de Surco y atiende otros días."
+          ],
+          "afirmaciones": [
+            {
+              "texto": "Av. El Polo 570, Santiago de Surco, Lima 15023",
+              "fuente": "src/content/locations.ts, entrada clinica-tezza, verificada contra la ficha oficial de la clínica."
+            }
+          ],
+          "keywordsCubiertas": [],
+          "entidadesCubiertas": ["tezza", "luis"]
+        },
+        {
+          "clave": "como-llegar",
+          "nivel": 2,
+          "titulo": "Cómo llegar a la clínica por Av. El Polo",
+          "tipo": "operativo",
+          "aprobacion": "no-requiere",
+          "parrafos": [
+            "El 570 cae en la cuadra 5 de Av. El Polo. La clínica tiene frente sobre la avenida, así que la entrada se reconoce desde la vía sin dar vueltas.",
+            "Desde La Molina o desde el centro de Surco el trayecto es corto. Si vas con un niño, calcula el estacionamiento dentro del tiempo: llegar apurado a una consulta de ortopedia infantil arruina la mitad de la evaluación, porque parte de lo que se mira es cómo camina alguien que no está incómodo.",
+            "En qué piso atiende el doctor todavía no es un dato publicado. Se pregunta en informes al llegar, hasta que la clínica lo confirme."
+          ],
+          "afirmaciones": [
+            {
+              "texto": "El 570 cae en la cuadra 5 de Av. El Polo",
+              "fuente": "src/content/location-pages.ts, bloque gettingThere de clinica-tezza."
+            }
+          ],
+          "keywordsCubiertas": [],
+          "entidadesCubiertas": ["ortopedia"]
+        },
+        {
+          "clave": "que-se-atiende",
+          "nivel": 2,
+          "titulo": "Qué se atiende en la consulta de esta sede",
+          "tipo": "clinico",
+          "aprobacion": "pendiente-doctor",
+          "parrafos": [
+            "El eje de esta sede es la ortopedia infantil: pie plano, caminar con las puntas hacia adentro, diferencia de largo entre una pierna y la otra, escoliosis del adolescente, dolor de crecimiento.",
+            "Al lado de eso está la consulta de columna del adulto y la traumatología general. Ortopedia y traumatología son el mismo tronco con dos miradas: la primera sigue cómo se desarrolla el hueso, la segunda atiende la lesión que ya ocurrió.",
+            "Las fracturas recientes no entran acá. Eso se ve en emergencia el mismo día, y esta es una consulta programada."
+          ],
+          "afirmaciones": [],
+          "keywordsCubiertas": ["ortopedia clínica tezza"],
+          "entidadesCubiertas": [
+            "ortopedia",
+            "traumatologia",
+            "ortopedia y traumatologia",
+            "fracturas"
+          ]
+        },
+        {
+          "clave": "que-se-atiende--que-especialidades-ofrece-la-clinica-tezza",
+          "nivel": 3,
+          "titulo": "¿Qué especialidades ofrece la Clínica Tezza?",
+          "tipo": "operativo",
+          "aprobacion": "no-requiere",
+          "parrafos": [
+            "Es una clínica general y cubre buena parte de las especialidades que uno esperaría: pediatría, medicina interna, ginecología, traumatología, entre otras. La clínica lista a sus especialistas por servicio en clinicatezza.com.pe y ese listado es el que manda.",
+            "De todo eso, esta página cubre una sola especialidad y un solo médico: la consulta de ortopedia infantil y columna del Dr. Angulo."
+          ],
+          "afirmaciones": [],
+          "keywordsCubiertas": [],
+          "entidadesCubiertas": [
+            "especialidad",
+            "especialistas",
+            "pediatria",
+            "medico",
+            "traumatologia"
+          ]
+        },
+        {
+          "clave": "que-se-atiende--que-es-un-ortopedista-infantil",
+          "nivel": 3,
+          "titulo": "¿Qué es un ortopedista infantil?",
+          "tipo": "clinico",
+          "aprobacion": "pendiente-doctor",
+          "parrafos": [
+            "Es el especialista que se ocupa de los huesos, las articulaciones y la forma de caminar del niño mientras todavía están creciendo. Esa es la diferencia de fondo con la consulta del adulto: acá el hueso cambia de forma solo, y el tiempo juega a favor con más frecuencia de la que uno cree.",
+            "Por eso una parte de las consultas termina en observar y volver a mirar en unos meses. Un pie que a los tres años preocupa, a los seis suele haberse acomodado sin que nadie hiciera nada."
+          ],
+          "afirmaciones": [],
+          "keywordsCubiertas": [],
+          "entidadesCubiertas": ["especialistas"]
+        },
+        {
+          "clave": "que-se-atiende--cuales-son-los-planes-de-salud-que-ofrece-clinica-tezza",
+          "nivel": 3,
+          "titulo": "¿Cuáles son los planes de salud que ofrece la Clínica Tezza?",
+          "tipo": "operativo",
+          "aprobacion": "no-requiere",
+          "parrafos": [
+            "Los planes, los seguros y los convenios los define la clínica y cambian con el tiempo. Este sitio no los enumera porque no puede garantizar que la lista esté al día, y una cobertura mal informada se descubre en la caja.",
+            "Antes de agendar conviene preguntarlo en la central de la clínica, junto con la cobertura concreta de tu seguro para una consulta de traumatología."
+          ],
+          "afirmaciones": [],
+          "keywordsCubiertas": [],
+          "entidadesCubiertas": ["traumatologia"]
+        },
+        {
+          "clave": "que-se-atiende--cirujano-de-columna-clinica-tezza",
+          "nivel": 3,
+          "titulo": "Cirujano de columna en la Clínica Tezza",
+          "tipo": "clinico",
+          "aprobacion": "pendiente-doctor",
+          "parrafos": [
+            "La consulta de columna del adulto también existe en esta sede, los mismos jueves y viernes por la tarde: dolor lumbar, dolor cervical, hernia discal, canal estrecho.",
+            "Si el caso llega a cirugía, la conversación empieza en el consultorio y sigue con los estudios de imagen. El quirófano es el último paso de una escalera larga, y en la mayoría de los casos la escalera se corta antes."
+          ],
+          "afirmaciones": [],
+          "keywordsCubiertas": ["cirujano de columna clínica tezza"],
+          "entidadesCubiertas": []
+        },
+        {
+          "clave": "que-se-atiende--traumatologo-clinica-tezza",
+          "nivel": 3,
+          "titulo": "Cómo aparece el traumatólogo en la Clínica Tezza",
+          "tipo": "operativo",
+          "aprobacion": "no-requiere",
+          "parrafos": [
+            "En el directorio de la clínica el doctor aparece bajo traumatología, con el nombre completo Dr. Juan Carlos Angulo Totesaut.",
+            "Buscarlo por ortopedia infantil no siempre da resultado: los sistemas de citas suelen agrupar todo bajo la especialidad madre y dejar la dedicación fuera del filtro."
+          ],
+          "afirmaciones": [],
+          "keywordsCubiertas": ["traumatólogo clínica tezza"],
+          "entidadesCubiertas": ["traumatologia", "ortopedia", "especialidad", "madre"]
+        },
+        {
+          "clave": "que-se-atiende--neurocirujano-clinica-tezza",
+          "nivel": 3,
+          "titulo": "Neurocirujano en la Clínica Tezza: cuándo hace falta",
+          "tipo": "clinico",
+          "aprobacion": "pendiente-doctor",
+          "parrafos": [
+            "Hay casos de columna que necesitan neurocirugía y otros que se resuelven desde la traumatología de columna. Lo que marca la diferencia es qué estructura está comprometida y qué hay que hacer con ella.",
+            "Cuando el caso pide otra mano, el doctor lo deriva. Sostener un caso que le corresponde a otro es la peor manera de cuidar a alguien."
+          ],
+          "afirmaciones": [],
+          "keywordsCubiertas": ["neurocirujano clínica tezza"],
+          "entidadesCubiertas": ["traumatologia", "cuida"]
+        },
+        {
+          "clave": "que-se-atiende--cirugia-de-la-columna-clinica-tezza",
+          "nivel": 3,
+          "titulo": "Cirugía de columna en la Clínica Padre Luis Tezza",
+          "tipo": "clinico",
+          "aprobacion": "pendiente-doctor",
+          "parrafos": [
+            "La indicación de operar se decide en consulta y con estudios propios. No se decide por teléfono ni leyendo el informe de una resonancia que trajo otra persona.",
+            "Cuando la cirugía se hace en esta clínica, la programación es un trámite de la institución: sala, fecha y requisitos previos los coordina ella, y el consultorio del doctor acompaña esa parte pero no la decide."
+          ],
+          "afirmaciones": [],
+          "keywordsCubiertas": ["cirugía de columna clínica tezza"],
+          "entidadesCubiertas": ["tezza", "luis"]
+        },
+        {
+          "clave": "que-se-atiende--telefono-clinica-tezza",
+          "nivel": 3,
+          "titulo": "Teléfono de citas de la Clínica Tezza",
+          "tipo": "operativo",
+          "aprobacion": "no-requiere",
+          "parrafos": [
+            "La central de citas de la clínica es el (01) 610 5050.",
+            "Ese número es de la institución y atiende todas sus especialidades, así que te van a pedir el servicio y el nombre del médico. Si lo que quieres es contar tu caso antes de agendar, para eso está la página de contacto de este sitio."
+          ],
+          "afirmaciones": [
+            {
+              "texto": "Central de citas de la clínica: (01) 610 5050",
+              "fuente": "src/content/locations.ts, canal de agenda de clinica-tezza."
+            }
+          ],
+          "keywordsCubiertas": [],
+          "entidadesCubiertas": ["tezza", "medico", "especialidad"]
+        },
+        {
+          "clave": "que-se-atiende--servicios-que-ofrece-clinica-padre-luis-tezza",
+          "nivel": 3,
+          "titulo": "Servicios que ofrece la Clínica Padre Luis Tezza",
+          "tipo": "operativo",
+          "aprobacion": "no-requiere",
+          "parrafos": [
+            "La clínica nació de una congregación religiosa y todavía se presenta con la frase que le dio origen: cuidamos al enfermo como una madre cuida a su hijo.",
+            "Sus servicios van de emergencia y hospitalización a consulta ambulatoria. Dentro de esa última está el servicio de traumatología, que es donde atiende el doctor."
+          ],
+          "afirmaciones": [
+            {
+              "texto": "El lema de la clínica, cuidamos al enfermo como una madre cuida a su hijo",
+              "fuente": "Aparece en 2 de los 9 resultados orgánicos medidos de la SERP de ortopedia infantil clínica tezza, capturada el 2026-08-11. Pendiente de confirmar contra la web institucional antes de publicar."
+            }
+          ],
+          "keywordsCubiertas": [],
+          "entidadesCubiertas": [
+            "tezza",
+            "luis",
+            "cuida",
+            "cuidamos",
+            "cuidamos al enfermo",
+            "cuidamos al enfermo como una madre",
+            "enfermo",
+            "enfermo como una madre",
+            "enfermo como una madre cuida",
+            "madre",
+            "madre cuida",
+            "traumatologia"
+          ]
+        },
+        {
+          "clave": "que-se-atiende--clinica-tezza-maternidad",
+          "nivel": 3,
+          "titulo": "Si llegaste buscando maternidad",
+          "tipo": "operativo",
+          "aprobacion": "no-requiere",
+          "parrafos": [
+            "Maternidad es uno de los servicios por los que más se conoce a esta clínica, y no tiene nada que ver con esta consulta.",
+            "Acá se atiende ortopedia infantil, columna y traumatología. Si lo que buscabas era maternidad, esa información está en la web de la clínica."
+          ],
+          "afirmaciones": [],
+          "keywordsCubiertas": [],
+          "entidadesCubiertas": ["ortopedia", "traumatologia"]
+        },
+        {
+          "clave": "horarios",
+          "nivel": 2,
+          "titulo": "Días y horas de consulta en la Clínica Tezza",
+          "tipo": "operativo",
+          "aprobacion": "no-requiere",
+          "parrafos": [
+            "Jueves y viernes, de 2:00 p. m. a 6:00 p. m.",
+            "Es un horario de tarde, y para una consulta de ortopedia infantil eso suele jugar a favor: el niño no pierde el colegio y llega menos cansado que a primera hora.",
+            "Fuera de esos dos días el doctor atiende en las otras sedes, cada una con su horario y su forma de agendar."
+          ],
+          "afirmaciones": [
+            {
+              "texto": "Jueves y viernes, de 2:00 p. m. a 6:00 p. m.",
+              "fuente": "src/content/locations.ts, campo schedule de clinica-tezza. Horario confirmado por el consultorio el 2026-08-09."
+            }
+          ],
+          "keywordsCubiertas": [],
+          "entidadesCubiertas": ["ortopedia", "tezza"]
+        },
+        {
+          "clave": "como-agendar",
+          "nivel": 2,
+          "titulo": "Cómo sacar cita en la Clínica Padre Luis Tezza",
+          "tipo": "operativo",
+          "aprobacion": "no-requiere",
+          "parrafos": [
+            "La cita la da la clínica, por su central telefónica o desde clinicatezza.com.pe.",
+            "Se pide el servicio de traumatología y se busca al Dr. Juan Carlos Angulo Totesaut. La agenda de esta sede no la maneja el consultorio del doctor, así que escribirle a él no adelanta el turno."
+          ],
+          "afirmaciones": [
+            {
+              "texto": "Agenda desde clinicatezza.com.pe, buscando al Dr. Juan Carlos Angulo Totesaut en Traumatología",
+              "fuente": "src/content/locations.ts, canal de agenda de clinica-tezza."
+            }
+          ],
+          "keywordsCubiertas": [],
+          "entidadesCubiertas": ["tezza", "luis", "traumatologia"]
+        },
+        {
+          "clave": "como-agendar--como-puedo-programar-una-cita-en-la-clinica-tezza",
+          "nivel": 3,
+          "titulo": "¿Cómo programar una cita en la Clínica Tezza?",
+          "tipo": "operativo",
+          "aprobacion": "no-requiere",
+          "parrafos": [
+            "Llamando al (01) 610 5050 o desde la web de la clínica. Ten a mano el documento de identidad de quien va a atenderse y los datos del seguro, si vas a usarlo.",
+            "Para la consulta del niño, lleva las radiografías anteriores aunque sean de otra clínica y aunque te parezcan viejas. Comparar dos imágenes separadas por meses dice más que una sola imagen nueva."
+          ],
+          "afirmaciones": [],
+          "keywordsCubiertas": [],
+          "entidadesCubiertas": ["tezza"]
+        }
+      ]
+    }
+  ]
+}
