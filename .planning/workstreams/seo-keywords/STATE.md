@@ -5,16 +5,16 @@ milestone_name: "SEO semantico: keyword research y optimizacion on-page"
 current_phase: 15
 current_phase_name: Paquete on-page por URL
 status: executing
-stopped_at: Completed 15-03-PLAN.md — las cuatro paginas informativas y la familia de seis documentos
-last_updated: "2026-08-12T22:10:00.000Z"
+stopped_at: Completed 15-04-PLAN.md — las cuatro paginas transaccionales
+last_updated: "2026-08-12T23:55:00.000Z"
 last_activity: 2026-08-12
-last_activity_desc: "2026-08-12, cerrado el plan 15-03 sin gastar cuota: las tres guias clinicas de columna y preguntas frecuentes quedaron redactadas dentro de contrato, con 6584 palabras nuevas de copy, y los dos posts del blog que se apagan estan fundidos en su guia con destino declarado bloque por bloque antes de que v1.1 ponga el 301. Las cuatro pasan la compuerta con cero hallazgos. ONPAGE-04 y ONPAGE-06 siguen abiertos a proposito: van cuatro paginas de dieciseis y seis documentos de veinticuatro"
+last_activity_desc: "2026-08-12, cerrado el plan 15-04 sin gastar cuota: la home, el hub de servicios, ortopedia infantil y la pagina nueva de cirugia minimamente invasiva quedaron redactadas de punta a punta con 5608 palabras nuevas de copy, y la separacion que la fase 14 midio entre la home y el hub ahora se sostiene en los propios titulos de seccion. El generador aprendio dos cosas que le faltaban: leer un dataset alterno con --data e imprimir dentro del paquete el enlazado que propuso la fase 14. Van ocho paginas de dieciseis y diez documentos de veinticuatro"
 progress:
   total_phases: 4
   completed_phases: 3
   total_plans: 21
-  completed_plans: 17
-  percent: 81
+  completed_plans: 18
+  percent: 86
 ---
 
 # Project State
@@ -29,11 +29,11 @@ See: .planning/PROJECT.md (updated 2026-08-10)
 ## Current Position
 
 Phase: 15 (Paquete on-page por URL) — EJECUTANDO, la última de las 4 fases de v1.2
-Plan: 4 de 7. Cerraron el 15-01, el 15-02 y el 15-03; de la wave 3 quedan tres: 15-04 transaccionales, 15-05 sedes y 15-06 blog
-Status: **Planes 15-01, 15-02 y 15-03 completos.** ONPAGE-01, ONPAGE-02, ONPAGE-03 y ONPAGE-05 cerrados. Quedan abiertos ONPAGE-04, que pide el copy clínico de las 16 y hay cuatro, y ONPAGE-06, que pide el paquete por URL y hay seis de veinticuatro. Siguen quedando **96 de 102 búsquedas de SerpApi** hasta el reset del 2026-08-21, porque la fase no ha gastado ninguna
-Last activity: 2026-08-12 — cerrado el plan 15-03 con cero cuota gastada. Las tres guías clínicas de columna y preguntas frecuentes están redactadas de punta a punta y pasan la compuerta sin hallazgos, y los dos posts que se apagan ya viven dentro de su guía con el destino de cada bloque escrito en el documento del 301
+Plan: 5 de 7. Cerraron el 15-01, el 15-02, el 15-03 y el 15-04; de la wave 3 quedan dos: 15-05 sedes y 15-06 blog
+Status: **Planes 15-01, 15-02, 15-03 y 15-04 completos.** ONPAGE-01, ONPAGE-02, ONPAGE-03 y ONPAGE-05 cerrados. Quedan abiertos ONPAGE-04, que pide el copy clínico de las 16 y hay ocho, justo la mitad, y ONPAGE-06, que pide el paquete por URL y hay diez de veinticuatro. Siguen quedando **96 de 102 búsquedas de SerpApi** hasta el reset del 2026-08-21, porque la fase no ha gastado ninguna
+Last activity: 2026-08-12 — cerrado el plan 15-04 con cero cuota gastada. Las cuatro páginas transaccionales están redactadas de punta a punta y pasan la compuerta sin hallazgos, y cada uno de sus cuatro documentos trae adentro el enlazado que propuso la fase 14, con el rótulo de que lo implementa v1.1
 
-Progress: [████████░░] 81% de v1.2 · 3 de 4 fases cerradas
+Progress: [█████████░] 86% de v1.2 · 3 de 4 fases cerradas
 
 ## Roadmap v1.2
 
@@ -104,6 +104,9 @@ Los dos milestones corren a la vez sobre el mismo repositorio.
 - **[Fase 15, plan 02] Cada cadena tiene una compuerta y solo una.** El title y la meta viven en su tabla, fuera de la region de copy, en los cuatro tipos de documento: los mide `auditoria.ts`, que sabe de largos y duplicados. La region de copy es lo que el generador escribe como prosa y lo mide `ymyl.ts`. Meter la misma cadena en dos compuertas suena mas seguro y es al reves: cuando una falla, nadie sabe cual manda.
 - **[Fase 15, plan 03] Primero se funde y después se redirige, y el documento del 301 lo dice.** El paquete de una URL que se apaga trae la tabla de qué bloque del post quedó en qué sección de la guía, más la frase de que la guía se publica antes que la redirección. Sin esa tabla, quien pone el 301 no tiene cómo comprobar que el contenido sobrevivió, y un 301 sobre contenido no fundido entierra el material sin dejar rastro de lo que había.
 - **[Fase 15, plan 03] Preguntas frecuentes responde lo transversal y remite, no desarrolla.** Cuánto dura una consulta, qué llevar, a quién consultar y cómo se decide operar. Si desarrollara temario clínico competiría contra las cuatro guías, que es exactamente la canibalización que la fase 14 se pasó tres planes cerrando.
+- **[Fase 15, plan 04] Cuando dos URLs comparten una secundaria, ninguna la publica como título.** `traumatología especialista en columna` es secundaria de la home y del hub a la vez, así que la que la usara literal como encabezado se llevaba por título la keyword de la otra y devolvía la canibalización que la fase 14 había cerrado midiendo. Las dos la cubren con un título propio y la keyword sigue declarada en `keywordsCubiertas`.
+- **[Fase 15, plan 04] Un encabezado crudo de la SERP no siempre se puede publicar.** Tres búsquedas relacionadas del hub son nombres de colegas y varias más son otras clínicas y otras ciudades. La sección responde la intención de esa búsqueda con un título publicable y el crudo queda en la tabla de procedencia del paquete. Poner el nombre de un colega como H3 de la página comercial de otro es una decisión de marketing que ningún plan tomó.
+- **[Fase 15, plan 04] El dataset del copy se pasa por bandera.** `paquete.ts` tenía `copy-guias.json` cableado y las familias de la wave 3 escriben en archivos separados justamente para no pisarse. Ahora recibe `--data` y la cabecera del documento nombra el dataset real del que salió, para que quien quiera corregir una frase abra el archivo correcto.
 - **[Fase 15, plan 02] El H1 de las 6 que no compiten se transcribe con archivo y linea, nunca se propone.** Proponerles uno reabriria una decision de la fase 14 sin dato nuevo, y encima por la puerta de atras. Las 16 que compiten reciben H1 propuesto con la prosa de por que ese y no otro.
 
 ### Pending Todos
@@ -123,14 +126,15 @@ Los dos milestones corren a la vez sobre el mismo repositorio.
 
 ## Session Continuity
 
-Last session: 2026-08-12T22:10:00.000Z
-Stopped at: Completed 15-03-PLAN.md — las cuatro páginas informativas y la familia de seis documentos
+Last session: 2026-08-12T23:55:00.000Z
+Stopped at: Completed 15-04-PLAN.md — las cuatro páginas transaccionales
 Resume file: None
-Siguiente: lo que queda de la wave 3 (15-04 transaccionales, 15-05 sedes, 15-06 blog). Los tres
-escriben en `data/copy-guias.json`, que ya tiene cuatro páginas dentro, y corren su copy por
-`ymyl.ts` antes de darlo por escrito. Ojo con una diferencia respecto del 15-03: la compuerta
-revisa el dataset entero en cada corrida, así que un hallazgo puede venir de una página que no
-es la tuya.
+Siguiente: lo que queda de la wave 3 (15-05 sedes y 15-06 blog). Cada uno escribe en su propio
+dataset y corre su copy por `ymyl.ts --data <su archivo>` antes de darlo por escrito, porque la
+compuerta revisa el dataset entero de una corrida y no acepta `--url`. Para generar los
+documentos, `paquete.ts` ya acepta `--data`, así que no hace falta meter páginas nuevas en
+`copy-guias.json`. Y si la URL tiene fila en la matriz de la fase 14, el copy puede traer
+`enlacesPropuestos` y el paquete la imprime solo.
 
 ## Performance Metrics
 
@@ -148,6 +152,7 @@ es la tuya.
 | Phase 15 P01 | ~2h 15min | 3 tasks | 12 files |
 | Phase 15 P02 | ~1h | 3 tasks | 15 files |
 | Phase 15 P03 | ~1h 30min | 3 tasks | 8 files |
+| Phase 15 P04 | ~1h 40min | 3 tasks | 8 files |
 
 ## Presupuesto de fuentes externas al cerrar la fase 14
 
