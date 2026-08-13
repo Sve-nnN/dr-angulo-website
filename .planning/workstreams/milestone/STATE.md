@@ -25,9 +25,9 @@ See: .planning/PROJECT.md (updated 2026-08-10)
 ## Current Position
 
 Phase: 8, reabierta para consumir el paquete on-page de v1.2 (planes 08-05 a 08-19, en cuatro olas)
-Plan: 08-05 cerrado. Sigue la ola 2, los seis planes 08-06 a 08-11
+Plan: 08-05 y 08-06 cerrados. Sigue la ola 2, los cinco planes 08-07 a 08-11
 Status: En ejecución
-Last activity: 2026-08-13, plan 08-05 ejecutado y verificado en local
+Last activity: 2026-08-13, plan 08-06 ejecutado y verificado en local
 
 Progress: [████████░░] 4 de 5 fases de v1.1, con la 8 reabierta
 
@@ -54,6 +54,32 @@ prerenderizado. Las 21 rutas compilan, `check-content.mjs` y `check-sedes.mjs` e
 cambio de aspecto intencional: la sección de tratamiento perdió su presentación en dos tarjetas
 (`TreatmentCompare` se alimentaba de `subsections`, que ya no existe) y sus dos bloques ahora son
 h3 con ancla propia. Detalle completo en `08-05-SUMMARY.md`.
+
+**Ola 2, plan 08-06, cerrado el 2026-08-13.** `/servicios/hernia-discal` es la primera página que
+publica el copy aprobado del paquete de v1.2: 20 secciones, 2808 palabras de cuerpo contra las
+1936 que tenía, y adentro todo el material del post que la fase apaga después, con los tres ids
+de destino de su tabla de absorción escritos y verificados en el HTML. Estrena `outboundLinks`,
+que 08-05 dejó declarado y sin usar: ocho enlaces con los anchors literales de
+`internal-links.json`. La transcripción la hizo un script desde `copy-guias.json`, no desde el
+Markdown del paquete, porque el Markdown intercala la línea de estado de la ronda de revisión y
+el JSON no la tiene.
+
+El plan destapó un problema que afecta a toda la ola 2. La plantilla tenía la posición del banner
+de conversión cableada en la segunda sección de nivel 2, que con el esqueleto de v1.0 daba 25 por
+ciento del cuerpo. El paquete de v1.2 cuelga cuatro subsecciones de `sintomas` y ese punto se
+corre al 39.2 por ciento, fuera de la ventana de 15 a 35 que exige POS-01, así que la puerta
+falla y ningún cambio dentro del archivo de datos lo arregla. Se resolvió con
+`ServicePage.bannerAfterSectionId`, que hace de la posición un dato de la página y deja el default
+intacto para las otras tres guías: hernia discal declara `que-es` y cae en 15.8 por ciento. Es la
+capacidad que `08-09-PLAN.md` iba a entregar en la ola 3; el orden real de dependencia la puso
+antes.
+
+**Lo que esto deja abierto para 08-07 y 08-08.** Estenosis espinal pasa con el default en 32.8 por
+ciento, a 2.2 puntos del techo, y conviene que declare `que-es` para tener margen. Ortopedia
+infantil no tiene ninguna posición de nivel 2 válida: su primer `h2` cuelga 13 subsecciones y ya
+cierra en 65.9 por ciento. El único punto dentro de la ventana cae entre subsecciones de nivel 3,
+y `bannerAfterSectionId` hoy solo resuelve ids de nivel 2. 08-08 necesita que la resolución acepte
+nivel 3, o que POS-01 se replantee para el formato de página de servicio.
 
 ### Estado de la fase 10, verificado en producción el 2026-08-10
 

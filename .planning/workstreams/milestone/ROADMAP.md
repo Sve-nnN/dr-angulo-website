@@ -142,7 +142,8 @@ Plans:
 - [ ] 08-03-PLAN.md — Blog: nueva forma de `BlogPost` con secciones y anclas, plantilla de post reconstruida con firma, tabla de contenidos, banner y enlace al servicio, más los dos posts de hernia discal sobre 900 palabras
 - [ ] 08-04-PLAN.md — Superseded el 2026-08-13. Ver el addendum de supersesión en `08-CONTEXT.md`
 - [x] 08-05-PLAN.md — Ola 1: modelo de datos para el paquete on-page de v1.2. Secciones planas con `id` y `level`, `format` y `outboundLinks` en `ServicePage`, `h1` propio y `relatedService` opcional en `BlogPost`, y los dos archivos monolíticos abiertos en directorios con un módulo por página. Cerrado el 2026-08-13
-- [ ] 08-06 a 08-19-PLAN.md — Olas 2 a 4: el contenido del paquete on-page. 08-06 a 08-11 son la ola 2 y son elegibles en paralelo
+- [x] 08-06-PLAN.md — Ola 2: `/servicios/hernia-discal` con las 20 secciones del copy aprobado, 2808 palabras, el material del post que se apaga absorbido adentro y los ocho enlaces de la matriz en `outboundLinks`. Suma `ServicePage.bannerAfterSectionId` porque el esqueleto de v1.2 corría el banner fuera de la ventana de POS-01. Cerrado el 2026-08-13
+- [ ] 08-07 a 08-19-PLAN.md — Resto de las olas 2 a 4: el contenido del paquete on-page. 08-07 a 08-11 completan la ola 2
 
 **Notas de ejecución**
 - Gate de contenido médico: la redacción original de esta nota decía que el doctor revisa y aprueba antes de publicar. Quedó superada por la decisión de Juan del 2026-08-10, registrada en `08-CONTEXT.md` y en las Constraints de PROJECT.md: se publica directo y la revisión del doctor pasa a ser posterior. Lo que reemplaza a la aprobación previa son las diez salvaguardas SAFE del contrato de diseño, verificadas por `scripts/check-content.mjs` en cada plan.
