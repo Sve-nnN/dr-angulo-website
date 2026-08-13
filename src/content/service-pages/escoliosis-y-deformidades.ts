@@ -1,7 +1,7 @@
 import type { ServicePage } from "./index";
 
-export const escoliosis: ServicePage = {
-  slug: "escoliosis",
+export const escoliosisYDeformidades: ServicePage = {
+  slug: "escoliosis-y-deformidades",
   navLabel: "Escoliosis",
   h1: "Escoliosis y deformidades de columna",
   heroLead: "Una curva de columna casi nunca duele durante el crecimiento, y por eso suele detectarse tarde. Acá encuentras qué mirar en casa, qué logra realmente un corsé y en qué momento se plantea una corrección.",
