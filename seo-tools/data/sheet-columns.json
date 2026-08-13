@@ -62,8 +62,9 @@
       },
       {
         "header": "URL",
-        "field": null,
-        "status": "fase-14"
+        "field": "url",
+        "status": "fase-14",
+        "note": "HABILITADA POR EL PLAN 15-07, conservando el estado de la fase que produjo el dato. La fase 14 la reservo, genero el mapa que la llena y cerro sin escribirla. No la reclama ningun requisito ONPAGE: se llena acá porque este es el unico cargador que vuelve a tocar este tab y el dato ya existe en data/url-map.jsonl. La URL se LEE del mapa y no se deriva de la keyword: derivarla desharia una asignacion medida."
       },
       {
         "header": "Search Volume",
@@ -129,8 +130,9 @@
       },
       {
         "header": "Suggested H1",
-        "field": null,
-        "status": "fase-15"
+        "field": "suggestedH1",
+        "status": "fase-15",
+        "note": "HABILITADA POR EL PLAN 15-07. El plan 13-01 la reservo para esta fase y la dejo sin campo hasta que hubiera H1 que escribir. Lleva el H1 propuesto de data/onpage.json, uno por cada una de las 16 keywords primarias del mapa. Las 5700 filas restantes del tab no traen el campo y por eso su celda queda intacta."
       },
       {
         "header": "Top Result",
