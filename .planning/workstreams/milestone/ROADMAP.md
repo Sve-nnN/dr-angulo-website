@@ -183,9 +183,17 @@ Plans:
   3. Los testimonios publicados que son verificables están marcados con `Review` o `AggregateRating`, y ninguno no verificable aparece marcado.
   4. Ningún title del sitio pasa de 60 caracteres ni ninguna description de 155, contando las 9 rutas base más las de servicio y sede, y compartir cualquier URL en WhatsApp muestra la imagen OG propia de esa página.
   5. `/llms.txt` responde 200 con el resumen del sitio y `dr-angulo-portrait.png` ya no está ni en el repo ni en el build.
-**Plans**: TBD
+**Plans**: 3 plans
+
+Plans:
+- [ ] 10-01-PLAN.md (ola 1): title y meta del paquete on-page de v1.2 en las 9 rutas base con metadata estática, más los valores por defecto de Open Graph del layout
+- [ ] 10-02-PLAN.md (ola 1): title y meta del paquete en las entradas de `src/content/` que alimentan sedes, guías de servicio y blog
+- [ ] 10-03-PLAN.md (ola 2): la cuarta puerta pasa a medir 60/155, REQUIREMENTS.md al día y revisión de Juan sobre la tabla final
 
 **Notas de ejecución**
+- SEO-05, SEO-06, SEO-07, SEO-09, SEO-10 y SEO-11 se cerraron en la corrida ad-hoc de esta fase, sin PLAN.md, y están documentados en `10-SUMMARY.md`. Los tres planes de arriba cubren únicamente SEO-08, que quedó diferido en esa corrida.
+- El texto de los titles y las metas sale del paquete on-page del workstream `seo-keywords` (v1.2), aprobado por el doctor. La decisión del 2026-08-10 de que Juan los escribiera él quedó sin efecto.
+- El plan 10-02 no puede correr antes de que la fase 8 haya aterrizado sus rutas nuevas, sus renombres de slug y sus 301.
 - Esta fase corre después de las fases 8 y 9 a propósito: si corriera antes, los breadcrumbs, los titles y las imágenes OG dejarían fuera las rutas nuevas y habría que rehacer el trabajo.
 - SEO-06 necesita las horas exactas del consultorio privado los viernes y sábados. Hoy la ficha dice "horario coordinado al agendar". Si el doctor no las confirma a tiempo, se publica el rango que sí confirme y se anota el resto como pendiente, sin inventar horarios.
 - SEO-07 solo marca lo verificable. El testimonio en video vive en un post de Instagram y no se puede citar como `Review` con autor identificable mientras no haya texto o autorización.
