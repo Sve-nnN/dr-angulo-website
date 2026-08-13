@@ -13,9 +13,9 @@ import { servicePages } from "@/content/service-pages";
 import { BreadcrumbJsonLd, ServicesJsonLd } from "@/components/structured-data";
 
 export const metadata: Metadata = {
-  title: "Traumatólogo Especialista en Columna en Lima — Servicios",
+  title: { absolute: "Cirujano de columna en Lima: qué trata el doctor" },
   description:
-    "Cirugía de columna convencional y mínimamente invasiva, traumatología general y ortopedia infantil en Lima. Escoliosis, hernia discal y enfermedad degenerativa con el Dr. Juan Carlos Angulo.",
+    "Hernia discal, estenosis, escoliosis y ortopedia infantil. Qué atiende el Dr. Juan Carlos Angulo y en qué sede de Lima.",
   alternates: { canonical: "/servicios" },
 };
 

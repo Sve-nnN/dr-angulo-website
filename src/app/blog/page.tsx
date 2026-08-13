@@ -4,9 +4,9 @@ import { blogPosts } from "@/content/blog";
 import { BlogJsonLd, BreadcrumbJsonLd } from "@/components/structured-data";
 
 export const metadata: Metadata = {
-  title: "Blog — Salud de columna y traumatología",
+  title: { absolute: "Blog del Dr. Juan Carlos Angulo" },
   description:
-    "Artículos sobre dolor de espalda, hernia discal, cirugía de columna y salud músculo-esquelética, escritos por el Dr. Juan Carlos Angulo.",
+    "Artículos sobre dolor de espalda, salud de la columna y qué esperar de una consulta, escritos por el Dr. Juan Carlos Angulo.",
   alternates: { canonical: "/blog" },
 };
 

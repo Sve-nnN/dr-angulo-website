@@ -19,8 +19,9 @@ import { siteConfig } from "@/lib/site-config";
 import { GoogleReviewsSection } from "@/components/reviews/google-reviews";
 
 export const metadata: Metadata = {
-  title: `${siteConfig.name} — ${siteConfig.title}`,
-  description: siteConfig.description,
+  title: { absolute: "Traumatología en Lima: Dr. Juan Carlos Angulo" },
+  description:
+    "Traumatólogo y cirujano de columna en Lima. Atiende en su consultorio de Surco, Ricardo Palma, Sanna La Molina y Clínica Tezza.",
   alternates: { canonical: "/" },
 };
 

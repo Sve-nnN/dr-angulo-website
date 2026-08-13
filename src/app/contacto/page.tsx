@@ -7,9 +7,9 @@ import { siteConfig } from "@/lib/site-config";
 import { BreadcrumbJsonLd, ContactPageJsonLd } from "@/components/structured-data";
 
 export const metadata: Metadata = {
-  title: "Contacto y Citas en Lima",
+  title: { absolute: "Contacto con el consultorio del Dr. Angulo" },
   description:
-    "Escribe tu caso al Dr. Juan Carlos Angulo o agenda en su consultorio privado de Surco por WhatsApp. También atiende en Clínica Ricardo Palma, Sanna La Molina y Clínica Tezza.",
+    "Cuéntale tu caso al doctor por el formulario o escribe por WhatsApp. Datos de contacto del consultorio en Lima.",
   alternates: { canonical: "/contacto" },
 };
 

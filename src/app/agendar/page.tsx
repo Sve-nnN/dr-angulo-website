@@ -8,9 +8,9 @@ import { siteConfig } from "@/lib/site-config";
 import { BreadcrumbJsonLd, BookingPageJsonLd } from "@/components/structured-data";
 
 export const metadata: Metadata = {
-  title: "Agendar cita — Consultorios y horarios en Lima",
+  title: { absolute: "Agendar una cita con el Dr. Angulo" },
   description:
-    "Dónde atiende el Dr. Juan Carlos Angulo y cómo agendar en cada sede: consultorio privado en Surco por WhatsApp, y Clínica Ricardo Palma, Sanna La Molina y Clínica Tezza con sus propias centrales de citas.",
+    "Cómo pedir cita en cada sede: WhatsApp para el consultorio de Surco y la central de citas de Ricardo Palma, Sanna y Tezza.",
   alternates: { canonical: "/agendar" },
 };
 
