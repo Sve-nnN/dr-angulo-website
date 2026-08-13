@@ -201,8 +201,8 @@ Plans:
 **Plans**: 3 plans
 
 Plans:
-- [ ] 10-01-PLAN.md (ola 1): title y meta del paquete on-page de v1.2 en las 9 rutas base con metadata estática, más los valores por defecto de Open Graph del layout
-- [ ] 10-02-PLAN.md (ola 1): title y meta del paquete en las entradas de `src/content/` que alimentan sedes, guías de servicio y blog
+- [x] 10-01-PLAN.md (ola 1): title y meta del paquete on-page de v1.2 en las 9 rutas base con metadata estática, más los valores por defecto de Open Graph del layout
+- [x] 10-02-PLAN.md (ola 1): title y meta del paquete en las entradas de `src/content/` que alimentan sedes, guías de servicio y blog
 - [ ] 10-03-PLAN.md (ola 2): la cuarta puerta pasa a medir 60/155, REQUIREMENTS.md al día y revisión de Juan sobre la tabla final
 
 **Notas de ejecución**
@@ -249,7 +249,7 @@ Las fases se ejecutan en orden numérico: 7 → 8 → 9 → 10 → 11. La fase 1
 | 7. Dominio público, producción y Search Console | v1.1 | 0/5 | Planned | - |
 | 8. Silo clínico: servicios y blog profundo | v1.1 | 18/18 | Complete (falta la ronda de verificación de fase) | 2026-08-13 |
 | 9. Páginas por sede y cobertura local | v1.1 | 0/TBD | Not started | - |
-| 10. Schema, metadata y limpieza técnica | v1.1 | 1/2 | In progress (10-01 cerrado, falta 10-02) | - |
+| 10. Schema, metadata y limpieza técnica | v1.1 | 2/3 | In progress (10-01 y 10-02 cerrados, falta 10-03) | - |
 | 11. Local SEO: GBP, reseñas y citaciones | v1.1 | 0/TBD | Not started | - |
 
 ---
