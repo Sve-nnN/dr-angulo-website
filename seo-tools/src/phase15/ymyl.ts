@@ -28,7 +28,7 @@ import { readFileSync } from "node:fs";
 import path from "node:path";
 
 import { CliError, SEO_TOOLS_ROOT } from "../config.js";
-import { ejecutar, parseBanderas, textoObligatorio } from "../phase13/args.js";
+import { booleana, ejecutar, parseBanderas, textoObligatorio } from "../phase13/args.js";
 import { normalizar } from "./entidades.js";
 import type { SeccionDeCopy } from "./model.js";
 
@@ -454,12 +454,35 @@ export function paginasParaRevisar(rutaArchivo: string = RUTA_COPY): PaginaParaR
 //
 // Sale con codigo distinto de cero si hay un solo hallazgo. COSTE DE CUOTA: CERO.
 
+/**
+ * Los cuatro datasets de copy de la fase.
+ *
+ * Van escritos aca y no importados de `paquete.ts` por el mismo motivo que las marcas de copy:
+ * la compuerta declara sobre que corre sin que haya que abrir el generador. Una prueba ata las
+ * dos listas para que no puedan divergir en silencio.
+ */
+const TODOS_LOS_DATASETS = [
+  "data/copy-guias.json",
+  "data/copy-servicios.json",
+  "data/copy-sedes.json",
+  "data/copy-blog.json",
+] as const;
+
 async function main(): Promise<number> {
   const banderas = parseBanderas(process.argv.slice(2));
-  const origen = textoObligatorio(banderas, "data");
-  const ruta = path.isAbsolute(origen) ? origen : path.join(SEO_TOOLS_ROOT, origen);
+  // `--todos` corre la compuerta sobre las 16 paginas a la vez, que es como se comprueba al
+  // cerrar la fase. Con un dataset por corrida, una regla que solo falla al cruzar dos familias
+  // no se vería nunca.
+  const rutas = booleana(banderas, "todos")
+    ? TODOS_LOS_DATASETS.map((r) => path.join(SEO_TOOLS_ROOT, r))
+    : [
+        (() => {
+          const origen = textoObligatorio(banderas, "data");
+          return path.isAbsolute(origen) ? origen : path.join(SEO_TOOLS_ROOT, origen);
+        })(),
+      ];
 
-  const paginas = paginasParaRevisar(ruta);
+  const paginas = rutas.flatMap((ruta) => paginasParaRevisar(ruta));
   const out = process.stdout;
   let total = 0;
 
