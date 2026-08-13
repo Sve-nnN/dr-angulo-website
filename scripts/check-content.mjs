@@ -15,7 +15,7 @@
  * firmado y coherencia del sitemap y del hub.
  */
 
-import { readFileSync, existsSync } from "node:fs";
+import { readFileSync, existsSync, readdirSync } from "node:fs";
 import { resolve } from "node:path";
 
 const APP_DIR = ".next/server/app";
@@ -371,8 +371,17 @@ function checkRoute(entry) {
   if (entry.type === "service" && !article.includes('href="/servicios"')) {
     fail("falta el enlace de vuelta al hub /servicios");
   }
-  if (entry.type === "post" && !article.includes(`href="${entry.linksTo}"`)) {
-    fail(`falta el enlace hacia ${entry.linksTo} que le asigna el mapa de enlazado`);
+  // Un post con destino asignado por el mapa de enlazado sigue obligado a ese
+  // enlace exacto. Un post sin destino asignado no queda libre: debe salir
+  // igual hacia alguna ruta del silo. La puerta no se afloja, se generaliza.
+  if (entry.type === "post") {
+    if (entry.linksTo) {
+      if (!article.includes(`href="${entry.linksTo}"`)) {
+        fail(`falta el enlace hacia ${entry.linksTo} que le asigna el mapa de enlazado`);
+      }
+    } else if (!/href="\/servicios(\/|")/.test(article)) {
+      fail("no hay ningún enlace de salida hacia el silo /servicios");
+    }
   }
 
   // --- salvaguardas de contenido firmado ------------------------------------
@@ -417,12 +426,35 @@ function declaredFieldNames(source) {
   return names;
 }
 
+/**
+ * Todos los módulos de contenido del silo. Se enumeran los directorios en vez
+ * de listar archivos: el contenido crece de un módulo por página, y una lista
+ * fija dejaría de cubrir lo nuevo sin avisar.
+ */
+function contentSourceFiles() {
+  const dirs = ["src/content/service-pages", "src/content/blog"];
+  const files = [];
+  for (const dir of dirs) {
+    if (!existsSync(resolve(dir))) {
+      files.push(dir);
+      continue;
+    }
+    for (const name of readdirSync(resolve(dir))) {
+      if (name.endsWith(".ts")) files.push(`${dir}/${name}`);
+    }
+  }
+  return files;
+}
+
 function checkSources() {
   const failures = [];
-  const files = ["src/content/service-pages.ts", "src/content/blog.ts"];
+  const files = contentSourceFiles();
 
   for (const file of files) {
-    if (!existsSync(resolve(file))) continue;
+    if (!existsSync(resolve(file))) {
+      failures.push(`${file}: no existe, la puerta no puede revisar el contenido`);
+      continue;
+    }
     const source = readFileSync(resolve(file), "utf8");
 
     const normalized = normalize(source);
