@@ -37,6 +37,7 @@ import type {
 } from "./model.js";
 import { PaqueteInvalido } from "./model.js";
 import { filaOnPageDe, filasDelMapa } from "./serp-onpage.js";
+import { revisarEmitidos } from "./ymyl.js";
 
 /** Marcas que abren y cierran lo que escribimos nosotros. Las lee la compuerta del plan 15-02. */
 export const COPY_INICIO = "<!-- copy:inicio -->";
@@ -49,7 +50,7 @@ export const SELLO_PENDIENTE =
 const RUTA_COPY = path.join(SEO_TOOLS_ROOT, "data", "copy-guias.json");
 // No cuelga de PLANNING_DATA_DIR: ese apunta a `.../seo-keywords/data`, que es donde viven
 // los datasets del workstream. Los paquetes son entregables de la fase y van con su fase.
-const DIRECTORIO_DE_PAQUETES = path.join(
+export const DIRECTORIO_DE_PAQUETES = path.join(
   REPO_ROOT,
   ".planning",
   "workstreams",
@@ -1361,8 +1362,21 @@ async function generarPaqueteCompleto(conIndice: boolean, conHandoff: boolean): 
     out.write(`Handoff: ${destino}\n`);
   }
 
+  // La compuerta corre sobre lo que se acaba de emitir y no solo sobre los datasets. Sin este
+  // paso, la region de copy de los ocho documentos cortos, que `queHacerCon` redacta en codigo,
+  // no la revisa nadie: `revisar()` lee los cuatro JSON y ahi esa region no existe.
+  const hallazgos = revisarEmitidos(DIRECTORIO_DE_PAQUETES);
+  for (const hallazgo of hallazgos) {
+    out.write(`\n${hallazgo.url}\n`);
+    out.write(`  [${hallazgo.regla}] ${hallazgo.seccion}\n`);
+    out.write(`    ${hallazgo.texto}\n`);
+  }
+  if (hallazgos.length > 0) {
+    out.write(`\n${hallazgos.length} hallazgo(s) de la compuerta sobre los documentos emitidos.\n`);
+  }
+
   if (cortas > 0) out.write(`\n${cortas} pagina(s) por debajo de su minimo de palabras.\n`);
-  return cortas === 0 ? 0 : 1;
+  return cortas === 0 && hallazgos.length === 0 ? 0 : 1;
 }
 
 async function main(): Promise<number> {

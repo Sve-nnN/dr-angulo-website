@@ -1,15 +1,20 @@
 import assert from "node:assert/strict";
+import { mkdtempSync, rmSync, writeFileSync } from "node:fs";
+import { tmpdir } from "node:os";
+import path from "node:path";
 import { test } from "node:test";
 
 import type { SeccionDeCopy } from "./model.js";
-import { COPY_FIN, COPY_INICIO } from "./paquete.js";
+import { COPY_FIN, COPY_INICIO, DIRECTORIO_DE_PAQUETES as DIR_DEL_GENERADOR } from "./paquete.js";
 import {
+  DIRECTORIO_DE_PAQUETES,
   MARCAS_COPY,
   RITMO_MINIMO,
   paginasParaRevisar,
   regionDeCopy,
   revisar,
   revisarDocumento,
+  revisarEmitidos,
   tellsDeIa,
 } from "./ymyl.js";
 
@@ -306,4 +311,39 @@ test("ymyl: la regla de prevalencia mide proporciones y no el idioma", () => {
     const hallazgos = revisar(pagina([seccion({ parrafos: [texto] })]));
     assert.equal(de(hallazgos, "prevalencia-sin-respaldo").length, 1, `se dejó pasar: ${texto}`);
   }
+});
+
+test("ymyl: la carpeta de paquetes que recorre la compuerta es la que escribe el generador", () => {
+  // Va escrita literal en los dos archivos porque el generador importa la compuerta y el camino
+  // de vuelta cerraria el ciclo. Esta prueba ata las dos copias.
+  assert.equal(path.resolve(DIRECTORIO_DE_PAQUETES), path.resolve(DIR_DEL_GENERADOR));
+});
+
+test("ymyl: la compuerta recorre los documentos emitidos y no solo los datasets", () => {
+  // La region de copy de los ocho documentos cortos la redacta `queHacerCon` en codigo y no en
+  // un dataset, asi que `revisar()` sobre los cuatro JSON no la ve nunca.
+  const carpeta = mkdtempSync(path.join(tmpdir(), "ymyl-emitidos-"));
+  const cuerpo = (texto: string) => [MARCAS_COPY.inicio, texto, MARCAS_COPY.fin].join("\n");
+
+  writeFileSync(path.join(carpeta, "limpio.md"), cuerpo("El disco se desplaza y presiona la raíz."));
+  writeFileSync(path.join(carpeta, "sucio.md"), cuerpo("Atiende en Montefiori — con “estilo” 🙂"));
+  writeFileSync(path.join(carpeta, "notas.txt"), "Montefiori — “estilo” 🙂");
+
+  const hallazgos = revisarEmitidos(carpeta);
+  rmSync(carpeta, { recursive: true, force: true });
+
+  assert.ok(hallazgos.every((h) => h.url === "sucio.md"), "el .txt o el limpio entraron al recorrido");
+  assert.equal(de(hallazgos, "sede-que-no-existe").length, 1);
+  assert.equal(de(hallazgos, "emoji").length, 1);
+  assert.ok(de(hallazgos, "raya-o-comilla").length >= 1);
+});
+
+test("ymyl: un documento sin las marcas de copy se reporta y no se saltea", () => {
+  const carpeta = mkdtempSync(path.join(tmpdir(), "ymyl-emitidos-"));
+  writeFileSync(path.join(carpeta, "sin-marcas.md"), "# Un paquete sin región de copy");
+
+  const hallazgos = revisarEmitidos(carpeta);
+  rmSync(carpeta, { recursive: true, force: true });
+
+  assert.equal(de(hallazgos, "region-ausente").length, 1);
 });
