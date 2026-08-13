@@ -25,7 +25,7 @@
 import { readFileSync, writeFileSync } from "node:fs";
 import path from "node:path";
 
-import { CliError, SEO_TOOLS_ROOT } from "../config.js";
+import { CliError, SEO_TOOLS_ROOT, destinoPermitido } from "../config.js";
 import { ejecutar, parseBanderas, texto } from "../phase13/args.js";
 import { leerSerp } from "../phase13/serp.js";
 import {
@@ -787,7 +787,7 @@ export async function construirOnPageSerp(
 async function main(): Promise<number> {
   const banderas = parseBanderas(process.argv.slice(2));
   const destino = texto(banderas, "out") ?? "data/onpage-serp.json";
-  const absoluto = path.isAbsolute(destino) ? destino : path.resolve(SEO_TOOLS_ROOT, destino);
+  const absoluto = destinoPermitido(destino, SEO_TOOLS_ROOT);
 
   const dataset = await construirOnPageSerp();
   writeFileSync(absoluto, `${JSON.stringify(dataset, null, 2)}\n`, "utf8");

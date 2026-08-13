@@ -67,6 +67,39 @@ export function resolveFromRepoRoot(candidate: string): string {
   return path.isAbsolute(candidate) ? candidate : path.resolve(REPO_ROOT, candidate);
 }
 
+/**
+ * Resuelve un destino de `--out` y falla si cae fuera de las raices declaradas.
+ *
+ * La restriccion de no escribir en `src/` de la aplicacion es dura y hasta ahora la sostenia
+ * solamente la disciplina de quien tipea: `--out src/app/page.tsx` resolvia contra la raiz del
+ * repositorio y escribia adentro del arbol de la aplicacion, y `--out ../algo` salia del
+ * repositorio entero. Las rutas relativas se resuelven contra la primera raiz.
+ */
+export function destinoPermitido(
+  destino: string,
+  primeraRaiz: string,
+  ...otrasRaices: readonly string[]
+): string {
+  const absoluto = path.isAbsolute(destino) ? destino : path.resolve(primeraRaiz, destino);
+  const raices = [primeraRaiz, ...otrasRaices];
+
+  // Un relativo vacio significa que el destino ES la raiz, que tampoco es un archivo escribible.
+  const dentro = raices.some((raiz) => {
+    const relativo = path.relative(raiz, absoluto);
+    return relativo !== "" && !relativo.startsWith("..") && !path.isAbsolute(relativo);
+  });
+
+  if (!dentro) {
+    throw new CliError(
+      `El destino ${absoluto} queda fuera de las carpetas donde esta fase escribe.\n` +
+        `  Permitidas: ${raices.join(", ")}\n` +
+        `  Esta fase no escribe fuera de seo-tools/ ni de su carpeta de fase, y el arbol de la ` +
+        `aplicacion es de solo lectura para este workstream.`,
+    );
+  }
+  return absoluto;
+}
+
 function requireEnv(name: string, remedy: string): string {
   const raw = process.env[name];
   if (raw === undefined || raw.trim() === "") {
