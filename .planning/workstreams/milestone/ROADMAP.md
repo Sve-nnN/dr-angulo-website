@@ -26,9 +26,9 @@ La auditoría del 2026-08-10 encontró un sitio terminado que nadie puede visita
 **v1.1 Lanzamiento público y competitividad SEO (en curso)**
 
 - [ ] **Phase 7: Dominio público, producción y Search Console** - drangulocolumna.com sirviendo el sitio con HTTPS, www redirigido, canonicals reales, Resend verificado y sitemap enviado a Google
-- [ ] **Phase 8: Silo clínico: páginas por servicio y blog profundo** - Una URL por condición con 900+ palabras revisadas por el doctor, hub de servicios y los cuatro posts expandidos con enlace a su servicio
+- [x] **Phase 8: Silo clínico: páginas por servicio y blog profundo** - Una URL por condición con 900+ palabras revisadas por el doctor, hub de servicios y los cuatro posts expandidos con enlace a su servicio
 - [ ] **Phase 9: Páginas por sede y cobertura local** - Las cuatro sedes con URL propia, schema de ubicación y enlace en ambos sentidos con /agendar
-- [ ] **Phase 10: Schema, metadata y limpieza técnica** - Breadcrumbs, credenciales, horarios, reseñas, titles y OG por página, llms.txt y limpieza de assets
+- [x] **Phase 10: Schema, metadata y limpieza técnica** - Breadcrumbs, credenciales, horarios, reseñas, titles y OG por página, llms.txt y limpieza de assets
 - [ ] **Phase 11: Local SEO: GBP, reseñas y citaciones** - Ficha corregida, categorías, campaña de reseñas hacia 15-20, NAP consistente y UTM del GBP resolviendo a URLs vivas
 
 ## Phase Details
@@ -203,7 +203,7 @@ Plans:
 Plans:
 - [x] 10-01-PLAN.md (ola 1): title y meta del paquete on-page de v1.2 en las 9 rutas base con metadata estática, más los valores por defecto de Open Graph del layout
 - [x] 10-02-PLAN.md (ola 1): title y meta del paquete en las entradas de `src/content/` que alimentan sedes, guías de servicio y blog
-- [ ] 10-03-PLAN.md (ola 2): la cuarta puerta pasa a medir 60/155, REQUIREMENTS.md al día y revisión de Juan sobre la tabla final
+- [x] 10-03-PLAN.md (ola 2): la cuarta puerta pasa a medir 60/155 de verdad (23 rutas, sin fallas) y REQUIREMENTS.md al día (SEO-08, SEO-09 Complete). Cerrado el 2026-08-13. **Cierra la fase 10 entera**
 
 **Notas de ejecución**
 - SEO-05, SEO-06, SEO-07, SEO-09, SEO-10 y SEO-11 se cerraron en la corrida ad-hoc de esta fase, sin PLAN.md, y están documentados en `10-SUMMARY.md`. Los tres planes de arriba cubren únicamente SEO-08, que quedó diferido en esa corrida.

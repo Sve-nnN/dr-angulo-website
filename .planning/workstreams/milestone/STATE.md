@@ -24,10 +24,10 @@ See: .planning/PROJECT.md (updated 2026-08-10)
 
 ## Current Position
 
-Phase: 10, schema y metadata. Reabierta para cerrar SEO-08 con el paquete on-page de v1.2 (planes 10-01, 10-02 y 10-03)
-Plan: 10-01 y 10-02 cerrados. Las 22 rutas del paquete, las 9 base y las 13 dinámicas, sirven el title y la meta exactos del handoff dentro de 60 y 155. Falta 10-03, que convierte esa medición en puerta permanente y pone REQUIREMENTS.md al día
-Status: Fase 10 en curso, 2 de 3 planes cerrados
-Last activity: 2026-08-13, plan 10-02 ejecutado (title y meta del paquete en las 13 rutas dinámicas, `title: { absolute }` también en los tres `generateMetadata` de `[slug]`, tarjetas OG revisadas a ojo)
+Phase: 10, schema y metadata. **CERRADA.** Los tres planes (10-01, 10-02, 10-03) completos
+Plan: 10-01, 10-02 y 10-03 cerrados. Las 23 rutas del sitio sirven title y meta exactos del handoff de v1.2, dentro de 60 y 155, y `scripts/check-seo.mjs` lo mide de verdad y falla si algo se pasa. SEO-05 a SEO-11 completos en REQUIREMENTS.md
+Status: Fase 8 y fase 10 cerradas — todo el trabajo que consumía el paquete on-page de v1.2 está publicado
+Last activity: 2026-08-13, plan 10-03 verificado (tsc, build, las tres puertas en verde sobre 23 rutas)
 
 Progress: [████████░░] 4 de 5 fases de v1.1, con la 8 cerrada y esperando verificación
 
