@@ -86,6 +86,7 @@ Milestone v1.1 — derivados de la auditoría SEO del 2026-08-10:
 - Horario publicado en el GBP (cerrado lunes a jueves, abierto viernes y sábado 9-17) contradice las cuatro sedes del sitio. Pendiente de corregir con el doctor.
 - Juan (cliente que gestiona el proyecto) pidió explícitamente incluir la mayor parte del currículum del doctor (certificaciones, cursos, títulos) — pendiente que el doctor comparta el CV completo; mientras tanto se usa lo verificado públicamente (Doctoralia, LinkedIn).
 - Pendiente de Juan/doctor: archivo de logo real (PNG/SVG), CV completo, confirmación de precios de consulta a mostrar (o no mostrar precio).
+- **Milestone v1.2 (workstream `seo-keywords`) shipeado el 2026-08-13**, en paralelo a este v1.1: keyword research completo (universo de 5.716 keywords), clusters y 10 de Oro, mapa keyword→URL con matriz de enlazado, y el paquete on-page completo (title, meta, H1, jerarquía, entidades, copy clínico humanizado) para las 24 URLs del sitio. El doctor aprobó los 225 bloques clínicos por escrito (`15-APROBACION-DOCTOR.md`). El handoff autocontenido para implementarlo vive en `.planning/workstreams/seo-keywords/milestones/v1.2-phases/15-paquete-on-page-por-url/15-HANDOFF-V11-ONPAGE.md` — consumido por las fases 8 y 10 de este milestone v1.1. Detalle completo en `.planning/workstreams/seo-keywords/MILESTONES.md`.
 
 ## Constraints
 

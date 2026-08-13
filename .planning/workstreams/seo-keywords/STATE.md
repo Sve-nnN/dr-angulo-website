@@ -2,19 +2,19 @@
 gsd_state_version: 1.0
 milestone: v1.2
 milestone_name: "SEO semantico: keyword research y optimizacion on-page"
-current_phase: 15
-current_phase_name: Paquete on-page por URL
-status: phase_complete
-stopped_at: Completed 15-07-PLAN.md — la fase 15 y con ella la ejecucion de v1.2
-last_updated: "2026-08-13T06:40:00.000Z"
+status: Awaiting next milestone
+stopped_at: Completed 15-07-PLAN.md — la fase 15 y con ella la ejecución de v1.2
+last_updated: "2026-08-13T18:23:24.934Z"
 last_activity: 2026-08-13
-last_activity_desc: "2026-08-13, cerrado el plan 15-07 y con el la fase 15 entera, sin gastar cuota. Las 24 URLs del mapa tienen su documento, el indice y el handoff se generan desde los datasets, y la revision del doctor quedo en una sola ronda de 450 bloques ordenada por lo que puede hacer dano y no por orden de URL. Las columnas Suggested H1 y URL del tab Keyword Research quedaron llenas para las 16 primarias con dos cargas identicas de 16 actualizadas, 0 insertadas y 0 columnas agregadas, verificadas contra el documento vivo: las 19 columnas de dos filas al azar quedaron identicas antes y despues, asi que ninguna celda de las fases 12, 13 y 14 se movio. La columna URL, huerfana desde la fase 14, se cierra aca por oportunidad y no por alcance. ONPAGE-06 cerrado: los seis requisitos ONPAGE estan completos y v1.2 termina su ejecucion de planes"
+last_activity_desc: Milestone v1.2 completed and archived
 progress:
   total_phases: 4
   completed_phases: 4
   total_plans: 21
   completed_plans: 21
   percent: 100
+current_phase: 15
+current_phase_name: Paquete on-page por URL
 ---
 
 # Project State
@@ -28,12 +28,10 @@ See: .planning/PROJECT.md (updated 2026-08-10)
 
 ## Current Position
 
-Phase: 15 (Paquete on-page por URL) — **COMPLETA**, la última de las 4 fases de v1.2
-Plan: 7 de 7. Los siete cerrados
-Status: **Los 21 planes de v1.2 completos y los 30 requisitos cerrados.** ONPAGE-01 a ONPAGE-06 en verde. Quedaron **96 de 102 búsquedas de SerpApi** hasta el reset del 2026-08-21: la fase 15 entera, siete planes, corrió sin gastar ninguna
-Last activity: 2026-08-13 — cerrado el plan 15-07. Las 24 URLs tienen documento, la ronda del doctor tiene 450 bloques ordenados por riesgo clínico, la auditoría sobre el paquete terminado sigue en cero y el Sheet del cliente recibió las dos columnas con dos cargas idénticas y verificadas contra el documento vivo
-
-Progress: [██████████] 100% de v1.2 · 4 de 4 fases cerradas
+Phase: Milestone v1.2 complete
+Plan: —
+Status: Awaiting next milestone
+Last activity: 2026-08-13 — Milestone v1.2 completed and archived
 
 ## Roadmap v1.2
 
@@ -151,6 +149,7 @@ Lo que queda vivo del lado de v1.1 y no lo cierra este workstream:
   hacerlo con respaldo; y el bloque de secuelas y riesgo del post de cirugía, que enumera complicaciones sin dar
   ninguna probabilidad. Del lado operativo, el lema de la Clínica Tezza que el texto cita salió de los resultados
   medidos y no de una fuente institucional.
+
 - **Diez datos operativos de sede sin confirmar**, listados en el handoff y al final de la ronda.
 - **Los 135 enlaces internos de la fase 14 son especificación.** Los escribe v1.1 en el código.
 - **El orden que no se puede invertir:** las dos guías de destino se publican antes de que se ponga el 301 de sus
@@ -189,3 +188,7 @@ Las fases 13 y 14 gastaron SerpApi; la 14 entera cerró con **cero** búsquedas.
 186 respuestas de DinoRank y 96 capturas de SERP quedan en caché: reprocesar el universo
 completo cuesta **cero llamadas**, verificado sobre las 5716 keywords. Es lo que permitió que la
 fase 14 entera —cuatro planes— corriera sin gastar una búsqueda.
+
+## Operator Next Steps
+
+- Start the next milestone with /gsd-new-milestone
