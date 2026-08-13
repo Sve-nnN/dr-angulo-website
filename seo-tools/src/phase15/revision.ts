@@ -29,21 +29,22 @@
 import { writeFileSync } from "node:fs";
 import path from "node:path";
 
-import { CliError, REPO_ROOT, SEO_TOOLS_ROOT } from "../config.js";
+import { CliError, REPO_ROOT, SEO_TOOLS_ROOT, destinoPermitido } from "../config.js";
 import { ejecutar, parseBanderas, texto } from "../phase13/args.js";
 import { normalizar } from "./entidades.js";
 import type { DatoOperativo, SeccionDeCopy } from "./model.js";
 import { DATASETS_DE_COPY, archivoDePaquete, paginasDeCopy } from "./paquete.js";
 
-const DESTINO = path.join(
+const DIR_DE_LA_FASE = path.join(
   REPO_ROOT,
   ".planning",
   "workstreams",
   "seo-keywords",
   "phases",
   "15-paquete-on-page-por-url",
-  "15-REVISION-DOCTOR.md",
 );
+
+const DESTINO = path.join(DIR_DE_LA_FASE, "15-REVISION-DOCTOR.md");
 
 /** Los cuatro niveles, con el nombre que el doctor lee y el motivo de su lugar. */
 export const NIVELES = [
@@ -424,7 +425,13 @@ export function renderRevision(ronda: RondaDeRevision): string {
 async function main(): Promise<number> {
   const banderas = parseBanderas(process.argv.slice(2));
   const salida = texto(banderas, "out");
-  const destino = salida === undefined ? DESTINO : path.resolve(REPO_ROOT, salida);
+  // El relativo sigue resolviendose contra la raiz del repositorio, que es como se venia
+  // tipeando, pero el resultado tiene que caer dentro de las dos carpetas donde esta fase
+  // escribe. `--out src/app/page.tsx` resolvia y escribia adentro del arbol de la aplicacion.
+  const destino =
+    salida === undefined
+      ? DESTINO
+      : destinoPermitido(path.resolve(REPO_ROOT, salida), DIR_DE_LA_FASE, SEO_TOOLS_ROOT);
 
   const paginas = todasLasPaginas();
   const ronda = armarRonda(paginas);

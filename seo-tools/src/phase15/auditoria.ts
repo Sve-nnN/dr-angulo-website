@@ -21,7 +21,7 @@ import { writeFileSync } from "node:fs";
 import { readFileSync } from "node:fs";
 import path from "node:path";
 
-import { SEO_TOOLS_ROOT } from "../config.js";
+import { SEO_TOOLS_ROOT, destinoPermitido } from "../config.js";
 import { ejecutar, parseBanderas, textoObligatorio } from "../phase13/args.js";
 import { normalizar, tokenizar } from "./entidades.js";
 import type { FilaDeOnPage } from "./metadatos.js";
@@ -228,7 +228,7 @@ async function main(): Promise<number> {
   const destino = textoObligatorio(banderas, "out");
 
   const rutaOrigen = path.isAbsolute(origen) ? origen : path.join(SEO_TOOLS_ROOT, origen);
-  const rutaDestino = path.isAbsolute(destino) ? destino : path.join(SEO_TOOLS_ROOT, destino);
+  const rutaDestino = destinoPermitido(destino, SEO_TOOLS_ROOT);
 
   const dataset = JSON.parse(readFileSync(rutaOrigen, "utf8")) as EntradaDeAuditoria;
   const resultado = auditar(dataset);

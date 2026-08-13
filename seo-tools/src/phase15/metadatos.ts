@@ -17,7 +17,7 @@
 import { readFileSync, writeFileSync } from "node:fs";
 import path from "node:path";
 
-import { REPO_ROOT, SEO_TOOLS_ROOT } from "../config.js";
+import { REPO_ROOT, SEO_TOOLS_ROOT, destinoPermitido } from "../config.js";
 import { ejecutar, parseBanderas, textoObligatorio } from "../phase13/args.js";
 import { normalizar, tokenizar } from "./entidades.js";
 import { PaqueteInvalido } from "./model.js";
@@ -676,7 +676,7 @@ async function main(): Promise<number> {
   const destino = textoObligatorio(banderas, "out");
 
   const onpage = construirOnPage();
-  const ruta = path.isAbsolute(destino) ? destino : path.join(SEO_TOOLS_ROOT, destino);
+  const ruta = destinoPermitido(destino, SEO_TOOLS_ROOT);
   writeFileSync(ruta, `${JSON.stringify(onpage, null, 2)}\n`, "utf8");
 
   const out = process.stdout;
