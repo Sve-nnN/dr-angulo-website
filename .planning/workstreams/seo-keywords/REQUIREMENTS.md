@@ -149,11 +149,21 @@ Ricardo Palma, Sanna La Molina, Padre Luis Tezza), más el hub `/servicios` refo
 
 ### Optimización on-page (ONPAGE)
 
-- [ ] **ONPAGE-01**: Cada URL mapeable tiene title y meta description reescritos, dentro
+- [x] **ONPAGE-01**: Cada URL mapeable tiene title y meta description reescritos, dentro
   de límite de caracteres y con la keyword primaria al frente
+  <br>_Las 22 URLs vivas del mapa tienen title dentro de 60 caracteres y meta dentro de 155,
+  que es el contrato con la fase 10 de v1.1 (D-13). Las 16 que compiten llevan la keyword
+  primaria al frente, medido por tokens y sin tildes porque en español la keyword se parte con
+  preposiciones. Las 2 que se apagan con un 301 no reciben metadata por decisión de la fase
+  (D-07). Dataset en `seo-tools/data/onpage.json`._
 
-- [ ] **ONPAGE-02**: Cada URL tiene H1 propuesto y jerarquía H2/H3 derivada de las
+- [x] **ONPAGE-02**: Cada URL tiene H1 propuesto y jerarquía H2/H3 derivada de las
   preguntas reales de la SERP
+  <br>_Cumplido sobre las 16 URLs que compiten: H1 propuesto con la prosa de por qué ese y no
+  otro, y 305 encabezados H2/H3 derivados de las preguntas reales de la SERP de Lima (plan
+  15-01). Las 6 que declararon no competir transcriben el H1 ya publicado con archivo y línea,
+  en vez de recibir uno propuesto, y no reciben jerarquía porque no llevan cuerpo (D-06):
+  proponerles uno reabriría una decisión de la fase 14 sin dato nuevo._
 
 - [x] **ONPAGE-03**: Cada URL trae su lista de entidades y términos semánticos obligatorios
   del TF-IDF de DinoRank contra los que ya posicionan
@@ -168,8 +178,16 @@ Ricardo Palma, Sanna La Molina, Padre Luis Tezza), más el hub `/servicios` refo
 - [ ] **ONPAGE-04**: El copy clínico nuevo o reescrito está redactado, humanizado y marcado
   como pendiente de aprobación del doctor antes de que v1.1 lo publique
 
-- [ ] **ONPAGE-05**: La auditoría de DinoRank confirma cero titles duplicados, cero H1
+- [x] **ONPAGE-05**: La auditoría de DinoRank confirma cero titles duplicados, cero H1
   duplicados y cero metas faltantes en el mapa propuesto
+  <br>_Cumplido con una auditoría local, no con la de DinoRank, por los dos motivos de D-04.
+  El primero es de método y ya estaba en el ROADMAP: `/auditoria` audita un sitio **publicado**
+  y acá se audita un paquete que todavía no lo está, que es cuando la auditoría sirve. El
+  segundo es más grave que un endpoint caído: pidiéndole `drangulocolumna.com` responde HTTP 200
+  con `site.domain: soumahotel.com`, el proyecto de otro cliente dado de alta en esa cuenta.
+  Resultado sobre las 22 URLs auditadas: cero duplicados y cero metas faltantes, con las 2 que
+  redirigen declaradas fuera de alcance y con motivo. En `seo-tools/data/onpage-audit.json` y en
+  `phases/15-paquete-on-page-por-url/15-AUDITORIA.md`._
 
 - [ ] **ONPAGE-06**: Existe un paquete de entrega por URL que la fase 8 y la fase 10 de
   v1.1 pueden implementar sin volver a decidir nada
@@ -249,11 +267,11 @@ Mapeada por `ROADMAP.md` del workstream `seo-keywords` el 2026-08-10.
 | MAP-03 | Fase 14 | **Completo** (plan 14-02) — handoff entregado en `14-HANDOFF-V11.md` |
 | MAP-04 | Fase 14 | **Completo** (plan 14-03) — las 20 URLs mapeables |
 | MAP-05 | Fase 14 | **Completo** (plan 14-04) — 135 enlaces entre 22 URLs, en `14-ENLAZADO.md` |
-| ONPAGE-01 | Fase 15 | Pendiente |
-| ONPAGE-02 | Fase 15 | Pendiente |
-| ONPAGE-03 | Fase 15 | Pendiente |
-| ONPAGE-04 | Fase 15 | Pendiente |
-| ONPAGE-05 | Fase 15 | Pendiente |
+| ONPAGE-01 | Fase 15 | **Completo** (plan 15-02) — 22 URLs vivas con title ≤60 y meta ≤155; las 16 que compiten con la primaria al frente |
+| ONPAGE-02 | Fase 15 | **Completo** (planes 15-01 y 15-02) — H1 propuesto y 305 encabezados H2/H3 en las 16 que compiten. Las 6 que no compiten transcriben su H1 publicado (D-06) |
+| ONPAGE-03 | Fase 15 | **Completo** (plan 15-01) — 196 términos con procedencia, derivados del top 10 capturado y no del TF-IDF de DinoRank (D-02) |
+| ONPAGE-04 | Fase 15 | Pendiente — una guía de dieciséis. La compuerta de humanización y YMYL ya existe (plan 15-02) |
+| ONPAGE-05 | Fase 15 | **Completo** (plan 15-02) — auditoría local sobre el paquete propuesto: cero duplicados y cero metas faltantes en 22 URLs (D-04) |
 | ONPAGE-06 | Fase 15 | Pendiente — handoff de contenido para las fases 8 y 10 de v1.1 |
 | SHEET-01 | Fase 13 | **Completo** |
 | SHEET-02 | Fase 14 | **Completo** (planes 14-03 y 14-05) — 24 filas vivas en `Content Model`. Las tres métricas de Ahrefs se llenan solo donde la procedencia es `ahrefs`: 24 celdas con dato y 48 vacías a propósito. Las de GSC siguen vacías porque el sitio no tiene impresiones |

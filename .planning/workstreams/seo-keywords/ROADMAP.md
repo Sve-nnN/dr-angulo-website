@@ -236,7 +236,7 @@ paquete de la fase 15 para su contenido y su metadata.
 | 12. Instrumentación de datos y universo de keywords | v1.2 | 5/5 | Complete | 2026-08-11 |
 | 13. Clusters, competencia y las 10 de Oro | v1.2 | 5/5 | Complete | 2026-08-11 |
 | 14. Mapa keyword → URL y matriz de enlazado | v1.2 | 4/4 | Complete | 2026-08-12 |
-| 15. Paquete on-page por URL | v1.2 | 1/7 | In Progress|  |
+| 15. Paquete on-page por URL | v1.2 | 2/7 | In Progress|  |
 
 ## Cobertura de requisitos
 

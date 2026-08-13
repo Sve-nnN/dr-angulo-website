@@ -5,16 +5,16 @@ milestone_name: "SEO semantico: keyword research y optimizacion on-page"
 current_phase: 15
 current_phase_name: Paquete on-page por URL
 status: executing
-stopped_at: Completed 15-01-PLAN.md — paquete de muestra aprobado por Juan
-last_updated: "2026-08-12T20:21:09.249Z"
+stopped_at: Completed 15-02-PLAN.md — metadata de las 24 URLs y las dos compuertas
+last_updated: "2026-08-12T20:35:00.000Z"
 last_activity: 2026-08-12
-last_activity_desc: "2026-08-12, cerrado el plan 15-01 sin gastar cuota: la tuberia entera corrio sobre /servicios/hernia-discal y salio un paquete Markdown de 2483 palabras que Juan aprobo como molde de las quince guias restantes, mas la jerarquia H2/H3 y las 196 entidades obligatorias de las 16 URLs con keyword primaria, todo desde las 96 capturas ya pagadas"
+last_activity_desc: "2026-08-12, cerrado el plan 15-02 sin gastar cuota: las 22 URLs vivas salen con title y meta dentro del contrato de 60 y 155, la auditoria local sobre el paquete propuesto da cero duplicados y cero metas faltantes antes de que v1.1 publique, y la humanizacion deja de ser recomendacion y pasa a ser una compuerta ejecutable de once reglas que los cuatro planes de copy de la wave 3 tienen que pasar. ONPAGE-01, ONPAGE-02 y ONPAGE-05 cerrados"
 progress:
   total_phases: 4
   completed_phases: 3
   total_plans: 21
-  completed_plans: 15
-  percent: 71
+  completed_plans: 16
+  percent: 76
 ---
 
 # Project State
@@ -24,16 +24,16 @@ progress:
 See: .planning/PROJECT.md (updated 2026-08-10)
 
 **Core value:** Que un paciente que busca traumatólogo/cirujano de columna en Lima encuentre el sitio y agende cita por WhatsApp en menos de 2 clics, con todo evento rastreado.
-**Current focus:** Fase 15, la última de v1.2, en ejecución. El plan 15-01 fundó la tubería y el molde: un paquete completo por URL, generado desde el dataset y no editado a mano, con el copy clínico sellado como pendiente del doctor. Lo que gobierna lo que falta sigue viniendo de la 13 y la 14: **los cinco competidores rankean sin enlaces en sus páginas interiores**, así que el contenido es la palanca; y **tres de las cuatro páginas de servicio que v1.1 ya publicó enfrentan una SERP de contenido informativo, no de página de servicio** —`estenosis espinal` es 8 de 8—, así que se reescriben como guía clínica en vez de retocarles las metas.
+**Current focus:** Fase 15, la última de v1.2, en ejecución. El plan 15-01 fundó la tubería y el molde y el 15-02 cerró la metadata y armó las compuertas, así que lo único que le queda a la fase es escribir texto. Lo que gobierna ese texto sigue viniendo de la 13 y la 14: **los cinco competidores rankean sin enlaces en sus páginas interiores**, así que el contenido es la palanca; y **tres de las cuatro páginas de servicio que v1.1 ya publicó enfrentan una SERP de contenido informativo, no de página de servicio** —`estenosis espinal` es 8 de 8—, así que se reescriben como guía clínica en vez de retocarles las metas. La novedad del 15-02 es que ahora hay un juez: `ymyl.ts` corre sobre el copy y devuelve dónde falla, así que las cuatro familias de la wave 3 no pueden inventar cada una su propio criterio de qué cuenta como texto humanizado.
 
 ## Current Position
 
 Phase: 15 (Paquete on-page por URL) — EJECUTANDO, la última de las 4 fases de v1.2
-Plan: 2 de 7. El 15-01 cerró con el checkpoint de Juan resuelto
-Status: **Plan 15-01 completo.** ONPAGE-03 cerrado. ONPAGE-02 y ONPAGE-06 avanzados pero abiertos a propósito: el primero pide H1 por URL y hay uno de dieciséis, el segundo pide el paquete de las dieciséis y hay uno. Siguen quedando **96 de 102 búsquedas de SerpApi** hasta el reset del 2026-08-21, porque la fase no gastó ninguna
-Last activity: 2026-08-12 — cerrado el plan 15-01 con cero cuota gastada. Juan aprobó tono, formato y extensión sobre `/servicios/hernia-discal`, y las 2483 palabras de esa guía quedan como referencia de las quince que faltan
+Plan: 3 de 7. Cerraron el 15-01 y el 15-02; lo que sigue es la wave 3, con **cuatro planes en paralelo**: 15-03 guías, 15-04 transaccionales, 15-05 sedes y 15-06 blog
+Status: **Planes 15-01 y 15-02 completos.** ONPAGE-01, ONPAGE-02, ONPAGE-03 y ONPAGE-05 cerrados. Quedan abiertos ONPAGE-04, que pide el copy clínico de las 16 y hay una, y ONPAGE-06, que pide el paquete por URL y hay uno de veinticuatro. Siguen quedando **96 de 102 búsquedas de SerpApi** hasta el reset del 2026-08-21, porque la fase no ha gastado ninguna
+Last activity: 2026-08-12 — cerrado el plan 15-02 con cero cuota gastada. Las 22 URLs vivas tienen title y meta dentro de contrato, la auditoría de duplicados dio limpia sobre el paquete propuesto, y la compuerta de YMYL y humanización quedó como ejecutable con once reglas y evidencia por hallazgo
 
-Progress: [███████░░░] 71% de v1.2 · 3 de 4 fases cerradas
+Progress: [████████░░] 76% de v1.2 · 3 de 4 fases cerradas
 
 ## Roadmap v1.2
 
@@ -97,6 +97,12 @@ Los dos milestones corren a la vez sobre el mismo repositorio.
 - **[Fase 15, plan 01] El formato de pagina lo decide la SERP salvo el prefijo `/sedes/`.** El top 10 de "cirujano de columna clinica ricardo palma" no distingue una ficha de sede de una pagina de servicio porque los dos moldes rankean igual ahi. Donde la SERP si resuelve, manda ella.
 - **[Fase 15, plan 01] El copy de referencia quedo en 2483 palabras contra un minimo de 1400**, y Juan lo confirmo como la extension objetivo de las guias restantes el 2026-08-12. El minimo por URL de `onpage-serp.json` no baja.
 - **[Fase 15, plan 01] Un plan cierra solo los requisitos que cumplio entero.** El plan declaraba ONPAGE-02, ONPAGE-03 y ONPAGE-06 y se marco ONPAGE-03: los otros dos piden algo por cada una de las 16 URLs y hay una. Marcarlos dejaria en verde la matriz de trazabilidad que el plan 15-07 tiene que auditar.
+- **[Fase 15, plan 02] La auditoria de ONPAGE-05 es local y el motivo va con el dato crudo.** `/auditoria` de DinoRank no responde HTTP 500: responde HTTP 200 con `site.domain: soumahotel.com`, el proyecto de otro cliente dado de alta en esa cuenta. Un fallo silencioso que entrega datos ajenos es peor que uno ruidoso. Y hay un motivo anterior a ese: `/auditoria` audita un sitio publicado, y esta fase audita un paquete que todavia no se publico, que es cuando la auditoria sirve. Queda escrito en `15-AUDITORIA.md` para que nadie lo reintente creyendo que fue una caida pasajera.
+- **[Fase 15, plan 02] Las reglas de humanizacion se acotan a la region entre las dos marcas de copy.** `url-map.jsonl` trae doce rayas largas en campos de justificacion escritos en la fase 14, y esa prosa entra al paquete como procedencia. Una regla global fallaria por texto que este workstream no escribio, y la presion seria aflojar la regla en vez de acotarla. Hay una prueba con prosa heredada fuera de la region que TIENE que pasar.
+- **[Fase 15, plan 02] Una compuerta devuelve evidencia, no un booleano.** `ymyl.ts` entrega cada hallazgo con URL, seccion, regla y el texto exacto que fallo. Una que dijera solo si o no obliga a releer dos mil palabras buscando el problema, y a la tercera vez que pasa eso alguien la desactiva.
+- **[Fase 15, plan 02] La prohibicion de cifras sobre el propio doctor no la levanta una fuente.** Cuantas cirugias hizo, cuantos anos lleva ejerciendo y que tasa de exito tiene son cifras que nadie verifico, asi que declarar procedencia no alcanza: la levanta el doctor por escrito (D-10). Cada patron exige la cantidad Y el sustantivo, para que "un paciente con hernia discal" siga siendo copy clinico normal y no una credencial.
+- **[Fase 15, plan 02] Cada cadena tiene una compuerta y solo una.** El title y la meta viven en su tabla, fuera de la region de copy, en los cuatro tipos de documento: los mide `auditoria.ts`, que sabe de largos y duplicados. La region de copy es lo que el generador escribe como prosa y lo mide `ymyl.ts`. Meter la misma cadena en dos compuertas suena mas seguro y es al reves: cuando una falla, nadie sabe cual manda.
+- **[Fase 15, plan 02] El H1 de las 6 que no compiten se transcribe con archivo y linea, nunca se propone.** Proponerles uno reabriria una decision de la fase 14 sin dato nuevo, y encima por la puerta de atras. Las 16 que compiten reciben H1 propuesto con la prosa de por que ese y no otro.
 
 ### Pending Todos
 
@@ -110,14 +116,17 @@ Los dos milestones corren a la vez sobre el mismo repositorio.
 - **Resuelto (fase 14).** La canibalización de MAP-02 se midió cruzando el mapa contra sí mismo: 120 pares, cero conflictos. La revisión con datos reales de Search Console queda como deuda D-1 con fecha al 2026-11-11.
 - **Resuelto (fase 14).** La fase 8 de v1.1 ya está desbloqueada: MAP-03 se entregó el 2026-08-11 y la matriz de enlazado el 2026-08-12.
 - **Solo quedan 6 búsquedas de SerpApi hasta el 2026-08-21.** La fase 15 necesita la SERP para derivar la jerarquía H2/H3 de ONPAGE-02. O sale de las 96 capturas ya cacheadas, o hay que esperar al reset. Planificar la fase asumiendo caché, no cuota.
-- **ONPAGE-05 depende de que DinoRank termine de rastrear el sitio** (deuda D-5) y de que `drangulocolumna.com` esté dado de alta como proyecto. Sin eso, `/auditoria` responde HTTP 500 y la auditoría de duplicados no se puede correr.
-- Contenido YMYL: nada de credenciales, cifras de cirugías ni resultados inventados. Solo lo verificado o lo que el doctor confirme por escrito. En la fase 15 esto deja de ser abstracto: ONPAGE-04 entrega copy clínico y ninguna línea sale sin el sello de pendiente de aprobación del doctor.
+- **Resuelto (fase 15, plan 02).** ONPAGE-05 ya no depende de DinoRank. Se midió el 2026-08-12 y el diagnóstico anterior estaba equivocado en la forma: `/auditoria` no responde HTTP 500, responde HTTP 200 con los datos de `soumahotel.com`. La auditoría corre local sobre el paquete propuesto, que además es lo que el ROADMAP pedía, y dio cero duplicados y cero metas faltantes en las 22 URLs vivas. Dar de alta el proyecto en DinoRank sigue siendo útil para auditar el sitio **publicado**, o sea después de que v1.1 implemente (deuda D-5).
+- Contenido YMYL: nada de credenciales, cifras de cirugías ni resultados inventados. Solo lo verificado o lo que el doctor confirme por escrito. En la fase 15 esto deja de ser abstracto: ONPAGE-04 entrega copy clínico y ninguna línea sale sin el sello de pendiente de aprobación del doctor. **Desde el plan 15-02 esto ya no depende de que quien escriba se acuerde:** `ymyl.ts` lo comprueba y sale con estado distinto de cero si encuentra una sola sección clínica sin sello, una cifra sin fuente o una cifra sobre el propio doctor.
 
 ## Session Continuity
 
-Last session: 2026-08-12T20:20:50.080Z
-Stopped at: Completed 15-01-PLAN.md — paquete de muestra aprobado por Juan
+Last session: 2026-08-12T20:35:00.000Z
+Stopped at: Completed 15-02-PLAN.md — metadata de las 24 URLs y las dos compuertas
 Resume file: None
+Siguiente: la wave 3, cuatro planes en paralelo (15-03 guías, 15-04 transaccionales, 15-05 sedes,
+15-06 blog). Los cuatro corren su copy por `ymyl.ts` antes de darlo por escrito y ninguno comparte
+archivo con los otros.
 
 ## Performance Metrics
 
@@ -133,6 +142,7 @@ Resume file: None
 | Phase 14 P03 | ~2 h | 3 tasks | 19 files |
 | Phase 14 P04 | ~2 h | 3 tasks | 14 files |
 | Phase 15 P01 | ~2h 15min | 3 tasks | 12 files |
+| Phase 15 P02 | ~1h | 3 tasks | 15 files |
 
 ## Presupuesto de fuentes externas al cerrar la fase 14
 
