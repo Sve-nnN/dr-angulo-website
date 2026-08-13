@@ -96,6 +96,14 @@ export function tituloYMeta(entrada: EntradaDeMetadatos): Metadatos {
   }
 
   const tokensDeLaPrimaria = tokenizar(entrada.keywordPrimaria);
+  // Sin tokens, las dos comprobaciones que siguen pasan sin comprobar nada: `ausentes` queda
+  // vacio y `posicionDePalabra` arma una regex que busca la palabra literal "undefined".
+  if (tokensDeLaPrimaria.length === 0) {
+    throw new PaqueteInvalido(
+      `${entrada.url}: se pidio medir title y meta sin keyword primaria.\n` +
+        `  Accion: las URLs sin primaria reciben documento corto, no pagina completa (D-06).`,
+    );
+  }
   const titleNormal = normalizar(title);
 
   const ausentes = tokensDeLaPrimaria.filter((t) => posicionDePalabra(titleNormal, t) === -1);
