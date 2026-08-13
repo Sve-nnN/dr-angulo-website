@@ -738,8 +738,12 @@ export async function construirOnPageSerp(
   for (const fila of conPrimaria) {
     try {
       urls.push(await filaOnPageDe(fila));
-    } catch {
-      sinCaptura.push(`${fila.url} (${fila.keywordPrimaria ?? "sin keyword"})`);
+    } catch (error) {
+      // El motivo viaja con la URL: "sin captura" a secas rotula igual una consulta ausente en
+      // modo offline que un JSON mal formado, y entonces la URL desaparece del dataset con una
+      // explicacion que no es la suya.
+      const motivo = error instanceof Error ? error.message : String(error);
+      sinCaptura.push(`${fila.url} (${fila.keywordPrimaria ?? "sin keyword"}): ${motivo}`);
     }
   }
 
