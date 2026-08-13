@@ -1,7 +1,7 @@
 # Paquete on-page: /servicios/hernia-discal
 
-<!-- Generado por seo-tools/src/phase15/paquete.ts desde data/copy-guias.json y las
-     capturas de .cache/serpapi/. No se edita a mano: se regenera. -->
+<!-- Generado por seo-tools/src/phase15/paquete.ts desde data/copy-guias.json y las capturas de .cache/serpapi/.
+     No se edita a mano: se regenera. -->
 
 ## Qué hay que hacer con esta URL
 

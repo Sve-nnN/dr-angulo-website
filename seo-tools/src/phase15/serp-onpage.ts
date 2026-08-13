@@ -627,6 +627,8 @@ export interface FilaDelMapa {
   readonly tipoExigidoPorSerp: string;
   readonly accion: string;
   readonly redirigeA: string | null;
+  /** Por que la URL no compite, escrito en la fase 14. Solo lo traen las 8 sin primaria. */
+  readonly motivoSinPrimaria?: string | null;
 }
 
 /** Las 24 filas del mapa de la fase 14. SOLO LECTURA en toda la fase 15 (D-15). */
