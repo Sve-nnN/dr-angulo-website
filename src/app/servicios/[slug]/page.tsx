@@ -1,4 +1,3 @@
-import { Fragment } from "react";
 import Link from "next/link";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
@@ -9,19 +8,18 @@ import { AuthorByline } from "@/components/ui/author-byline";
 import { MedicalDisclaimer } from "@/components/ui/medical-disclaimer";
 import { MidContentCta } from "@/components/ui/mid-content-cta";
 import { TableOfContents } from "@/components/ui/table-of-contents";
-import { ServiceItemGrid } from "@/components/ui/service-item-grid";
-import { ConsultAlert } from "@/components/ui/consult-alert";
+import {
+  ContentBody,
+  ContentBodyBoundary,
+  groupSections,
+} from "@/components/content/content-body";
 import {
   BreadcrumbJsonLd,
   FaqJsonLd,
   MedicalWebPageJsonLd,
 } from "@/components/structured-data";
 import { blogPosts } from "@/content/blog";
-import {
-  getServicePage,
-  servicePages,
-  type ServiceSection,
-} from "@/content/service-pages";
+import { getServicePage, servicePages } from "@/content/service-pages";
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -50,79 +48,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
-/** Una sección sin párrafos ni tarjetas no se renderiza ni entra en el índice. */
-function hasContent(section: ServiceSection) {
-  return section.paragraphs.length > 0 || (section.items?.length ?? 0) > 0;
-}
-
-/**
- * Cada sección tiene su propio tratamiento visual: alerta para "cuándo
- * consultar", tarjetas para síntomas y complicaciones, pasos numerados para
- * diagnóstico y recuperación. Es lo que separa una página de servicio de un
- * post de blog con el mismo contenido.
- */
-function SectionBody({ section }: { section: ServiceSection }) {
-  if (section.id === "cuando-consultar") {
-    return <ConsultAlert paragraphs={section.paragraphs} />;
-  }
-
-  const stepVariant =
-    section.id === "diagnostico" || section.id === "recuperacion";
-
-  return (
-    <>
-      {section.paragraphs.map((paragraph, index) => (
-        <p
-          key={index}
-          className={
-            section.level === 3
-              ? "mt-3 text-lg text-foreground/80"
-              : "mt-5 text-lg text-foreground/80"
-          }
-        >
-          {paragraph}
-        </p>
-      ))}
-      {section.items && (
-        <ServiceItemGrid
-          items={section.items}
-          variant={stepVariant ? "steps" : "grid"}
-        />
-      )}
-    </>
-  );
-}
-
-/**
- * Un h2 con las secciones de nivel 3 que le siguen. Agrupar antes de
- * renderizar es lo que evita que un h3 abra su propio `<section>` y quede
- * como hermano de su h2 en vez de colgar de él.
- */
-type SectionGroup = {
-  section: ServiceSection;
-  children: ServiceSection[];
-};
-
-function groupSections(sections: ServiceSection[]): SectionGroup[] {
-  const groups: SectionGroup[] = [];
-  for (const section of sections) {
-    if (section.level === 3) {
-      if (hasContent(section) && groups.length > 0) {
-        groups[groups.length - 1].children.push(section);
-      }
-      continue;
-    }
-    groups.push({ section, children: [] });
-  }
-  // Una sección de nivel 2 sin cuerpo propio se conserva si tiene hijas:
-  // "Preguntas frecuentes" no tiene párrafos y es solo el techo de sus
-  // preguntas. Si se filtrara por cuerpo propio, sus h3 quedarían colgando de
-  // la sección anterior y el índice perdería la entrada.
-  return groups.filter(
-    (group) => hasContent(group.section) || group.children.length > 0
-  );
-}
-
 export default async function ServiceGuidePage({ params }: Props) {
   const { slug } = await params;
   const page = getServicePage(slug);
@@ -132,28 +57,10 @@ export default async function ServiceGuidePage({ params }: Props) {
   // desincronizarse.
   const groups = groupSections(page.sections);
 
-  // Posición del banner de conversión. El default es la segunda sección con
-  // cuerpo; una página puede declarar otra cuando el volumen de sus
-  // subsecciones corre ese punto fuera del primer tercio (POS-01). El id
-  // declarado puede ser de nivel 3: en el esqueleto de página de servicio
-  // ninguna frontera de nivel 2 cae dentro de la ventana.
-  const declaredBannerIndex = page.bannerAfterSectionId
-    ? groups.findIndex(({ section }) => section.id === page.bannerAfterSectionId)
-    : -1;
-  const bannerChildId =
-    page.bannerAfterSectionId && declaredBannerIndex === -1
-      ? groups
-          .flatMap(({ children }) => children)
-          .find((child) => child.id === page.bannerAfterSectionId)?.id
-      : undefined;
-  const bannerIndex = bannerChildId
-    ? -1
-    : declaredBannerIndex === -1
-      ? 1
-      : declaredBannerIndex;
-
   // Un banner por página, más el CTA de cierre. Va después de la sección donde
-  // el paciente acaba de reconocer lo que le pasa (POS-01).
+  // el paciente acaba de reconocer lo que le pasa (POS-01). El default es la
+  // segunda sección con cuerpo; una página puede declarar otra cuando el
+  // volumen de sus subsecciones corre ese punto fuera del primer tercio.
   const midContentCta = (
     <MidContentCta
       heading={page.ctaBanner.heading}
@@ -187,16 +94,16 @@ export default async function ServiceGuidePage({ params }: Props) {
       )}
 
       {/*
-        `data-content-body` envuelve la banda de cabecera y el artículo como
+        El límite del cuerpo envuelve la banda de cabecera y el artículo como
         una sola unidad: el h1, el enlace de vuelta al hub y el resto del
-        cuerpo viven bajo el mismo límite que mide la puerta de contenido
+        cuerpo viven bajo lo que mide la puerta de contenido
         (scripts/check-content.mjs). Antes vivía solo en el `<article>`, y al
         mover el h1 y el enlace a la banda de cabecera quedaban fuera de lo
         medido: la puerta reportaba "0 h1" y "falta el enlace al hub" aunque
         ambos estuvieran en la página. Se corrige moviendo el límite, no
         debilitando la puerta.
       */}
-      <div data-content-body="">
+      <ContentBodyBoundary>
         {/* Banda de cabecera: identifica la página como servicio desde el
             primer scroll, no como un artículo. El h1, la orientación y el
             CTA conviven arriba del pliegue. */}
@@ -239,36 +146,14 @@ export default async function ServiceGuidePage({ params }: Props) {
         <article className="mx-auto max-w-5xl px-4 py-14 sm:px-6 sm:py-20">
         <div className="flex flex-col lg:grid lg:grid-cols-[1fr_18rem] lg:gap-12">
           <div className="order-2 min-w-0 max-w-2xl lg:order-1">
-            {groups.map(({ section, children }, index) => (
-              <Fragment key={section.id}>
-                <section className="mt-12 first:mt-0">
-                  <h2
-                    id={section.id}
-                    tabIndex={-1}
-                    className="scroll-mt-28 font-heading text-2xl font-bold text-primary sm:text-3xl"
-                  >
-                    {section.heading}
-                  </h2>
-                  <SectionBody section={section} />
-                  {children.map((child) => (
-                    <Fragment key={child.id}>
-                      <div className="mt-8">
-                        <h3
-                          id={child.id}
-                          tabIndex={-1}
-                          className="scroll-mt-28 font-heading text-lg font-bold text-primary"
-                        >
-                          {child.heading}
-                        </h3>
-                        <SectionBody section={child} />
-                      </div>
-                      {child.id === bannerChildId && midContentCta}
-                    </Fragment>
-                  ))}
-                </section>
-                {index === bannerIndex && midContentCta}
-              </Fragment>
-            ))}
+            <ContentBody
+              sections={page.sections}
+              flushFirstSection
+              consultAlertSectionId="cuando-consultar"
+              banner={midContentCta}
+              bannerAfterSectionId={page.bannerAfterSectionId}
+              bannerAfterIndex={1}
+            />
 
             <section className="mt-16 border-t border-border pt-12">
               <h2 className="font-heading text-2xl font-bold text-primary sm:text-3xl">
@@ -367,7 +252,7 @@ export default async function ServiceGuidePage({ params }: Props) {
           </aside>
         </div>
         </article>
-      </div>
+      </ContentBodyBoundary>
     </>
   );
 }
