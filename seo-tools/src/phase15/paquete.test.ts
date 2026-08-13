@@ -323,3 +323,48 @@ test("paquete: la cabecera nombra el dataset del que salió el copy", () => {
     "el dataset de las guías sigue siendo el valor por defecto",
   );
 });
+
+test("paquete: una ficha de sede separa los datos operativos respaldados de los pendientes", () => {
+  // Es el bloque propio de las cuatro sedes y no lo necesita ninguna otra familia. Va separado
+  // en dos tablas a proposito: si un horario sin confirmar se mezclara con los respaldados,
+  // v1.1 lo publicaria sin notarlo y mandaria a alguien a una puerta que no abre a esa hora.
+  const documento = renderPaquete({
+    ...PAQUETE,
+    formato: "ficha-de-sede",
+    notaDeFormato: "La SERP de esta keyword no tiene formato dominante y el de ficha se eligió por coherencia.",
+    datosOperativos: [
+      {
+        dato: "Dirección",
+        valor: "Av. El Derby 254",
+        estado: "respaldado",
+        fuente: "src/content/locations.ts, entrada consultorio-privado.",
+      },
+      {
+        dato: "Estacionamiento",
+        valor: "sin dato publicado",
+        estado: "pendiente",
+        fuente: "No está en ninguna fuente publicada del sitio.",
+      },
+    ],
+  });
+
+  assert.ok(documento.includes("## Datos operativos de la sede"), "falta el bloque de la sede");
+  assert.ok(documento.includes("Av. El Derby 254"), "falta el dato respaldado con su valor");
+  assert.ok(
+    documento.includes("### Pendientes de confirmación antes de publicar"),
+    "los pendientes no tienen tabla propia",
+  );
+  assert.ok(documento.includes("Estacionamiento"), "falta el pendiente");
+  assert.ok(
+    documento.includes("no tiene formato dominante"),
+    "la nota de formato no llegó al documento",
+  );
+  assert.ok(
+    !regionDe(documento).includes("## Datos operativos de la sede"),
+    "es tabla generada y va fuera de la región de copy",
+  );
+  assert.ok(
+    !renderPaquete(PAQUETE).includes("## Datos operativos de la sede"),
+    "una guía clínica sin datos operativos no estrena una sección vacía",
+  );
+});
