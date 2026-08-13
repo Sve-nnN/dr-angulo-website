@@ -66,6 +66,49 @@ Estos cuatro son explícitos y no son opcionales:
 - `MedicalProcedure` se suma solo en las secciones donde la página describe efectivamente la cirugía.
 - Ojo con lo que ya existe: el commit `5387091` metió 403 líneas nuevas en `src/components/structured-data.tsx` con breadcrumbs, `hasCredential`, `openingHoursSpecification` y marcado de reseñas. Hay que leer ese archivo antes de escribir schema nuevo, para extender lo que hay en vez de duplicarlo.
 
+### Supersesión del 2026-08-13: el paquete de v1.2 reemplaza al plan 08-04 original
+
+El plan `08-04-PLAN.md` (nunca ejecutado, sin SUMMARY) proponía expandir los cuatro posts del
+blog conservando el texto de v1.0 como núcleo. Eso queda **superado**: el workstream paralelo
+`seo-keywords` (v1.2) cerró el 2026-08-13 con un paquete on-page completo por URL —title, meta,
+H1, jerarquía, entidades y copy clínico humanizado, aprobado por el doctor
+(`15-APROBACION-DOCTOR.md`)— para las 24 URLs del sitio, incluidas las cuatro páginas de servicio
+y los cuatro posts del blog que esta fase toca.
+
+**El paquete de v1.2 es ahora la fuente de verdad del contenido**, no `08-04-PLAN.md` ni el texto
+de v1.0. Handoff completo y autocontenido en
+`.planning/workstreams/seo-keywords/milestones/v1.2-phases/15-paquete-on-page-por-url/15-HANDOFF-V11-ONPAGE.md`,
+con el índice de los 24 documentos en `15-PAQUETE.md` de esa misma carpeta.
+
+Lo que cambia de alcance para cerrar la fase 8:
+
+- **Las cuatro páginas de servicio** (`hernia-discal`, `estenosis-espinal`,
+  `escoliosis-y-deformidades`, `ortopedia-infantil`) se **reescriben enteras** con el copy
+  aprobado del paquete, no se retocan. Tres de ellas (todas menos ortopedia infantil) cambian de
+  formato: la SERP de Lima exige guía clínica y no página de servicio para `hernia discal` y
+  `escoliosis`, y **8 de 8** resultados para `estenosis espinal` — el paquete ya las redactó como
+  guía.
+- **Dos posts del blog se apagan con 301** hacia la guía que absorbe su contenido:
+  `hernia-discal-o-dolor-de-espalda-como-diferenciarlos` → `/servicios/hernia-discal`, y
+  `estenosis-espinal-que-es` → `/servicios/estenosis-espinal`. **Orden que no se puede invertir:
+  la guía se publica primero.** Redirigir antes que publicar la guía entierra contenido que
+  todavía no vive en ningún otro lado.
+- **Dos posts nuevos entran completos**: `artrosis` y `lumbalgia`, con su copy ya redactado en el
+  paquete.
+- **Los dos posts que sobreviven sin cambio de URL** (`5-sintomas-de-columna-que-no-debes-ignorar`,
+  `miedo-a-operarte-de-la-columna-5-cosas-que-debes-saber`) también se reescriben con el copy del
+  paquete — no es la expansión de v1.0 que proponía 08-04, es una reescritura completa.
+- **Home y hub de servicios** entran a esta fase por primera vez: no estaban en el alcance
+  original de 08-04, pero el paquete de v1.2 los reescribió (`home.md`, `servicios.md`) y no hay
+  otra fase de v1.1 que los cubra.
+- **`/servicios/cirugia-minimamente-invasiva` es una página nueva**, no una URL existente: el
+  mapa de v1.2 (fase 14) la creó porque una keyword de oro no tenía URL que la pudiera ganar.
+  Entra al silo clínico igual que las cuatro de servicio.
+- **Cada bloque clínico del paquete ya viene aprobado por el doctor** (`15-APROBACION-DOCTOR.md`,
+  225 bloques, 2026-08-13). Esta fase no vuelve a pedir esa aprobación: la consume.
+- **`08-04-PLAN.md` no se ejecuta tal como está escrito.** El plan nuevo que cierre la fase 8
+  reemplaza su alcance por completo.
+
 ### Claude's Discretion
 
 - Nombre y forma exacta del archivo de datos de las páginas de servicio, y si extiende `src/content/services.ts` o vive aparte.
