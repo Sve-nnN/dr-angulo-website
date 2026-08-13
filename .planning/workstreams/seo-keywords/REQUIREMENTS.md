@@ -265,13 +265,13 @@ Mapeada por `ROADMAP.md` del workstream `seo-keywords` el 2026-08-10.
 | KWR-01 | Fase 12 | Completo (12-03, 12-04) |
 | KWR-02 | Fase 12 | Completo (12-05) |
 | KWR-03 | Fase 12 | Completo (12-04) |
-| KWR-04 | Fase 13 | Pendiente |
-| KWR-05 | Fase 13 | Pendiente |
-| KWR-06 | Fase 13 | Pendiente |
-| COMP-01 | Fase 13 | Pendiente |
-| COMP-02 | Fase 13 | Pendiente |
-| COMP-03 | Fase 13 | Pendiente |
-| COMP-04 | Fase 13 | Pendiente |
+| KWR-04 | Fase 13 | **Completo** — clusters por solape de SERP, no por texto (13-VERIFICATION.md: passed) |
+| KWR-05 | Fase 13 | **Completo** — punto dulce con KD real de Ahrefs para las 22 cabezas medidas (13-VERIFICATION.md: passed) |
+| KWR-06 | Fase 13 | **Completo** — las 10 de Oro seleccionadas con justificación (13-VERIFICATION.md: passed) |
+| COMP-01 | Fase 13 | **Completo** — cinco competidores perfilados (13-VERIFICATION.md: passed) |
+| COMP-02 | Fase 13 | **Completo** — gap de keywords registrado (13-VERIFICATION.md: passed) |
+| COMP-03 | Fase 13 | **Completo** — SERP real por cluster capturada (13-VERIFICATION.md: passed) |
+| COMP-04 | Fase 13 | **Completo** — featured snippets y páginas más enlazadas registrados (13-VERIFICATION.md: passed) |
 | MAP-01 | Fase 14 | **Completo** (plan 14-03) — las 20 URLs mapeables; 8 declaran por escrito por qué no compiten |
 | MAP-02 | Fase 14 | **Completo** (plan 14-03) — 120 pares cruzados, cero conflictos. Revisión con datos de Search Console diferida en D-1 |
 | MAP-03 | Fase 14 | **Completo** (plan 14-02) — handoff entregado en `14-HANDOFF-V11.md` |
