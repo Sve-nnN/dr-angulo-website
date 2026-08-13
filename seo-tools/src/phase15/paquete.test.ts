@@ -510,6 +510,18 @@ test("handoff: el orden de publicar la guía antes de poner el 301 queda escrito
   assert.ok(/Recién entonces se pone el 301/.test(bloque), "no se dice qué va después");
 });
 
+test("handoff: el número de redirecciones que dice la frase es el largo de su tabla", () => {
+  // El número estaba escrito a mano. Si el mapa de la fase 14 gana o pierde una redirección, la
+  // tabla cambia sola y la frase se quedaba con el número viejo.
+  const documento = renderHandoff(FILAS_DEL_HANDOFF, PENDIENTES_DEL_HANDOFF);
+  const bloque = documento.split("redirecciones 301.**")[1]?.split("## 4.")[0] ?? "";
+
+  const declarado = /\*\*(\d+) redirecciones 301\.\*\*/.exec(documento)?.[1];
+  const filas = bloque.split("\n").filter((l) => l.startsWith("| `")).length;
+
+  assert.equal(Number(declarado), filas, `la frase dice ${declarado} y la tabla trae ${filas}`);
+});
+
 test("handoff: la aprobación del doctor viaja como bloqueante para la fase 8", () => {
   // La compuerta YMYL de esta fase no sirve de nada si el sello se queda de este lado. Que el
   // handoff la nombre bloqueante es lo único que la sostiene una vez que el paquete cambia de mano.

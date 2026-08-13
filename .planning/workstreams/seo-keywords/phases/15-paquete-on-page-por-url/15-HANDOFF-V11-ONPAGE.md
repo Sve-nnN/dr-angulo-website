@@ -117,7 +117,7 @@ trabajo de v1.1; el copy está entregado.
 | `/blog/lumbalgia` | `lumbalgia` | guia-clinica |
 | `/servicios/cirugia-minimamente-invasiva` | `cirugía mínimamente invasiva en lima` | pagina-de-servicio |
 
-**3 redirecciones 301.** Dos salen de este paquete y la tercera venía avisada de la fase 14.
+**3 redirecciones 301.** Dos salen de este paquete y la restante venía avisada de la fase 14.
 
 | Desde | Hacia | Por qué |
 | --- | --- | --- |
