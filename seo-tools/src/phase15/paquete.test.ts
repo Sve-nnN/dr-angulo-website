@@ -285,3 +285,41 @@ test("paquete: ningún tipo de documento ensucia su región de copy, y lo hereda
   assert.ok(conMotivo.includes("canibalización que el mapa de la fase 14 cerró"), "falta el motivo");
   assert.ok(!regionDe(conMotivo).includes("canibalización"), "el motivo heredado va fuera");
 });
+
+test("paquete: el enlazado de la fase 14 viaja adentro y dice que lo implementa v1.1", () => {
+  // Quien abre el paquete de una URL tiene que encontrar ahi su enlazado y no ir a buscar
+  // 14-ENLAZADO.md (D-14). Y tiene que quedar escrito que se propone: escribir los enlaces en
+  // el codigo del sitio es trabajo de v1.1, no de este workstream.
+  const documento = renderPaquete({
+    ...PAQUETE,
+    enlacesPropuestos: [
+      { destino: "/servicios", anchor: "cirujano de columna lima", regla: "navegacion-de-seccion" },
+      { destino: "/agendar", anchor: "Agendar cita", regla: "hacia-conversion" },
+    ],
+  });
+
+  assert.ok(documento.includes("## Enlaces internos propuestos"), "falta el bloque");
+  assert.ok(documento.includes("los implementa v1.1"), "falta decir quién los escribe");
+  assert.ok(
+    documento.includes("| 2 | `/agendar` | Agendar cita | hacia-conversion |"),
+    "falta el destino con su anchor y su regla",
+  );
+  assert.ok(!regionDe(documento).includes("Enlaces internos"), "la tabla generada va fuera del copy");
+  assert.ok(
+    !renderPaquete(PAQUETE).includes("## Enlaces internos propuestos"),
+    "una URL sin fila en la matriz no estrena una sección vacía",
+  );
+});
+
+test("paquete: la cabecera nombra el dataset del que salió el copy", () => {
+  // Las familias de la wave 3 escriben en archivos distintos y el generador los recibe con
+  // --data. Si la cabecera dijera siempre copy-guias.json, el documento mentiria sobre su
+  // propia procedencia y quien quisiera corregir una frase abriria el archivo equivocado.
+  const documento = renderPaquete(PAQUETE, "data/copy-servicios.json");
+
+  assert.ok(documento.includes("desde data/copy-servicios.json y las capturas"), "falta la ruta");
+  assert.ok(
+    renderPaquete(PAQUETE).includes("desde data/copy-guias.json y las capturas"),
+    "el dataset de las guías sigue siendo el valor por defecto",
+  );
+});

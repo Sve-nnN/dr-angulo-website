@@ -178,6 +178,20 @@ export interface PreguntaSinUsar {
 /** Prosa minima de un motivo para que sea auditable y no una etiqueta. */
 export const MINIMO_DE_MOTIVO = 20;
 
+/**
+ * Un enlace saliente que la matriz de la fase 14 propuso para esta URL.
+ *
+ * Se propone y no se implementa: escribirlo en el codigo del sitio seria trabajo de v1.1, y
+ * este workstream no toca `src/`. Viaja dentro del paquete para que quien implemente la URL
+ * encuentre ahi su enlazado y no tenga que abrir `14-ENLAZADO.md` (D-14).
+ */
+export interface EnlacePropuesto {
+  readonly destino: string;
+  readonly anchor: string;
+  /** Regla de la matriz que lo justifica: `hub-a-hijas`, `hacia-las-sedes` y demas. */
+  readonly regla: string;
+}
+
 /** El paquete completo de una URL: todo lo que v1.1 necesita sin abrir otro archivo. */
 export interface PaqueteDeUrl {
   readonly fila: FilaOnPage;
@@ -195,6 +209,8 @@ export interface PaqueteDeUrl {
   readonly secciones: readonly SeccionDeCopy[];
   /** Que leer primero en la ronda de revision del doctor (D-09). */
   readonly guiaParaElDoctor: string;
+  /** Enlazado saliente propuesto por la fase 14. Vacio cuando la URL no tiene fila en la matriz. */
+  readonly enlacesPropuestos?: readonly EnlacePropuesto[];
   /** Keyword, cuantos organicos y cuando se capturo la SERP de la que salio todo esto. */
   readonly fuente: FuenteDeLaSerp;
 }

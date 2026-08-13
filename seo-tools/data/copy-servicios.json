@@ -9,6 +9,16 @@
       "h1": "Traumatólogo y cirujano de columna en Lima",
       "h1Origen": "El title vende la especialidad y el H1 dice quién la ejerce, que es lo que alguien que ya entró quiere confirmar en el primer segundo.",
       "guiaParaElDoctor": "Esta es la puerta del sitio y por eso el texto se queda corto a propósito en lo clínico: nombra las condiciones y deriva a las guías, que son las que las explican. Lo que más necesita su ojo son cuatro bloques. El de qué casos trata la especialidad, porque es el reparto del alcance. El de la rodilla, que es la única parte del cuerpo fuera de la columna con sección propia. El de la mano y el de pie y tobillo, donde el texto dice que el caso puede derivarse a otra subespecialidad, y esa frase tiene que reflejar cómo trabaja usted de verdad. Lo demás es operativo: sedes, horarios y cómo se agenda. No hay ninguna cifra de cirugías, ninguna tasa de éxito y ningún año de trayectoria en el texto, y esa ausencia es deliberada.",
+      "enlacesPropuestos": [
+        { "destino": "/servicios", "anchor": "mejor neurocirujano de columna lima", "regla": "raiz-de-navegacion" },
+        { "destino": "/sedes", "anchor": "Sedes donde atiende el Dr. Juan Carlos Angulo en Lima", "regla": "raiz-de-navegacion" },
+        { "destino": "/blog", "anchor": "Blog", "regla": "raiz-de-navegacion" },
+        { "destino": "/preguntas-frecuentes", "anchor": "artrosis traumatologo o reumatologo", "regla": "raiz-de-navegacion" },
+        { "destino": "/sobre-el-doctor", "anchor": "Dr. Juan Carlos Angulo", "regla": "raiz-de-navegacion" },
+        { "destino": "/testimonios", "anchor": "Testimonios de pacientes", "regla": "raiz-de-navegacion" },
+        { "destino": "/contacto", "anchor": "Contacto y Citas en Lima", "regla": "raiz-de-navegacion" },
+        { "destino": "/agendar", "anchor": "Agendar cita", "regla": "raiz-de-navegacion" }
+      ],
       "secciones": [
         {
           "clave": "que-se-atiende",
@@ -333,6 +343,16 @@
       "h1": "Cirujano de columna en Lima",
       "h1Origen": "El hub repite la primaria limpia porque es la página que la pelea de frente, y el title agrega la promesa de contenido que el H1 no necesita.",
       "guiaParaElDoctor": "El hub pelea la consulta del paciente que busca a quien opera la columna, así que el texto tiene más carga de criterio quirúrgico que de temario clínico. Cuatro bloques necesitan su ojo. El que explica la diferencia entre el cirujano de columna formado en traumatología y el formado en neurocirugía, porque ahí se está describiendo su propia formación. El que dice qué se evalúa antes de indicar una operación. El de la segunda opinión, por la frase de que pedirla no ofende a nadie. Y el del costo de la cirugía, donde a propósito no hay ninguna cifra y sí el compromiso de dar presupuesto escrito. El resto es operativo. No hay cifras de cirugías, tasas de éxito ni años de trayectoria, y esa ausencia es deliberada.",
+      "enlacesPropuestos": [
+        { "destino": "/servicios/escoliosis-y-deformidades", "anchor": "escoliosis y deformidades de columna", "regla": "hub-a-hijas" },
+        { "destino": "/servicios/ortopedia-infantil", "anchor": "ortopedia infantil lima", "regla": "hub-a-hijas" },
+        { "destino": "/servicios/cirugia-minimamente-invasiva", "anchor": "endoscopía espinal", "regla": "hub-a-hijas" },
+        { "destino": "/servicios/estenosis-espinal", "anchor": "estenosis de canal", "regla": "hub-a-hijas" },
+        { "destino": "/servicios/hernia-discal", "anchor": "ciatica o hernia discal", "regla": "hub-a-hijas" },
+        { "destino": "/sedes", "anchor": "Sedes donde atiende el Dr. Juan Carlos Angulo en Lima", "regla": "navegacion-de-seccion" },
+        { "destino": "/blog", "anchor": "Blog", "regla": "navegacion-de-seccion" },
+        { "destino": "/agendar", "anchor": "Agendar cita", "regla": "hacia-conversion" }
+      ],
       "secciones": [
         {
           "clave": "que-se-atiende",
@@ -575,6 +595,15 @@
       "h1": "Ortopedia infantil: la consulta del niño",
       "h1Origen": "El title responde a la duda que trae al padre y el H1 aclara de quién es la consulta, que es la confusión más común de esta página.",
       "guiaParaElDoctor": "Esta página le habla al padre o a la madre que no sabe si lo que ve en su hijo necesita consulta, así que casi todo el texto es criterio de derivación y ahí es donde más falta su ojo. Los bloques que conviene leer con lupa son cuatro. El de cuándo llevar al niño, porque enumera los motivos que sí ameritan cita y por omisión define los que pueden esperar. El de qué ve el ortopedista infantil, que reparte el alcance con pediatría. El de las condiciones, por el criterio de observar y controlar en vez de tratar, que es el que más tranquiliza y el que peor se lee si queda ambiguo. Y el de pediatría y ortopedia, por la frase de que el pediatra es quien deriva. No hay cifras de cirugías, ni tasas de corrección, ni edades presentadas como reglas rígidas, y esa ausencia es deliberada.",
+      "enlacesPropuestos": [
+        { "destino": "/", "anchor": "mejor clínica de traumatología en lima", "regla": "vecindad-tematica" },
+        { "destino": "/servicios", "anchor": "cirugía de columna cerca de mí", "regla": "vecindad-tematica" },
+        { "destino": "/sedes/clinica-ricardo-palma", "anchor": "cirujano de columna clínica ricardo palma", "regla": "hacia-las-sedes" },
+        { "destino": "/sedes/clinica-tezza", "anchor": "ortopedia infantil clínica tezza", "regla": "hacia-las-sedes" },
+        { "destino": "/sedes/consultorio-privado", "anchor": "cirugía de columna surco", "regla": "hacia-las-sedes" },
+        { "destino": "/sedes/sanna-la-molina", "anchor": "cirujano de columna clínica sanna", "regla": "hacia-las-sedes" },
+        { "destino": "/agendar", "anchor": "Agendar cita", "regla": "hacia-conversion" }
+      ],
       "secciones": [
         {
           "clave": "que-se-atiende",
@@ -882,6 +911,16 @@
       "h1": "Cirugía de columna mínimamente invasiva",
       "h1Origen": "Reordena las mismas palabras para poner columna delante, porque quien ya entró busca confirmar la parte del cuerpo antes que la técnica.",
       "guiaParaElDoctor": "Esta es la página con más riesgo de las cuatro, porque es donde más tienta escribir cifras de recuperación y de resultado. No hay ninguna, y esa ausencia es la decisión que le pido confirmar primero. Los bloques que necesitan su ojo son cinco. El que define qué es el abordaje mínimamente invasivo y en qué se diferencia del abierto. El de endoscopía espinal, por la descripción de la técnica. El de desventajas y límites, que dice que no toda hernia es candidata y que el abordaje se elige por el caso. El del robot Da Vinci en el país, donde el texto afirma que su uso habitual está en otras especialidades y no en columna: si eso no es exacto, hay que corregirlo antes de publicar. Y el de la cirugía láser, donde el texto dice que ese nombre agrupa técnicas distintas y recomienda preguntar cuál exactamente. Sobre precios no se da ninguna cifra y sí el compromiso de presupuesto escrito.",
+      "enlacesPropuestos": [
+        { "destino": "/servicios/escoliosis-y-deformidades", "anchor": "ejercicios para escoliosis", "regla": "vecindad-tematica" },
+        { "destino": "/servicios/ortopedia-infantil", "anchor": "ortopedia infantil cerca de mí", "regla": "vecindad-tematica" },
+        { "destino": "/sedes/clinica-ricardo-palma", "anchor": "traumatólogo clínica ricardo palma", "regla": "hacia-las-sedes" },
+        { "destino": "/sedes/clinica-tezza", "anchor": "traumatólogo clínica tezza", "regla": "hacia-las-sedes" },
+        { "destino": "/sedes/consultorio-privado", "anchor": "cirujano de columna surco", "regla": "hacia-las-sedes" },
+        { "destino": "/sedes/sanna-la-molina", "anchor": "traumatólogo clínica sanna", "regla": "hacia-las-sedes" },
+        { "destino": "/agendar", "anchor": "Agendar cita", "regla": "hacia-conversion" },
+        { "destino": "/servicios", "anchor": "cirujano de columna lima", "regla": "navegacion-de-seccion" }
+      ],
       "secciones": [
         {
           "clave": "que-se-atiende",

@@ -22,11 +22,12 @@ import { readFileSync } from "node:fs";
 import path from "node:path";
 
 import { CliError, REPO_ROOT, SEO_TOOLS_ROOT } from "../config.js";
-import { ejecutar, parseBanderas, textoObligatorio } from "../phase13/args.js";
+import { ejecutar, parseBanderas, texto, textoObligatorio } from "../phase13/args.js";
 import { normalizar } from "./entidades.js";
 import type { FilaDeOnPage } from "./metadatos.js";
 import { construirOnPage, tituloYMeta } from "./metadatos.js";
 import type {
+  EnlacePropuesto,
   JerarquiaDeUrl,
   PaqueteDeUrl,
   SeccionDeCopy,
@@ -131,12 +132,39 @@ function cabecera(
 }
 
 /**
+ * El enlazado saliente que la matriz de la fase 14 propuso para esta URL.
+ *
+ * Va FUERA de la region de copy porque es tabla generada y no prosa nuestra, y va con el
+ * rotulo de propuesta con todas las letras: los enlaces los escribe v1.1 en el codigo del
+ * sitio. Sin este bloque, quien abre el paquete de una URL tiene que ir a buscar
+ * `14-ENLAZADO.md` para saber que enlaces le tocan, que es justo lo que D-14 pide evitar.
+ */
+function bloqueDeEnlaces(enlaces: readonly EnlacePropuesto[]): string[] {
+  if (enlaces.length === 0) return [];
+  return [
+    "## Enlaces internos propuestos",
+    "",
+    "Salen de la matriz de la fase 14 y acá **se proponen**: los implementa v1.1 en el código del",
+    "sitio, porque este workstream no toca `src/`. El copy de arriba ya deja el lugar de cada uno.",
+    "",
+    ...tabla(
+      ["#", "Destino", "Anchor", "Regla"],
+      enlaces.map((e, i) => [String(i + 1), `\`${e.destino}\``, e.anchor, e.regla]),
+    ),
+    "",
+  ];
+}
+
+/**
  * El paquete completo en Markdown.
  *
  * Determinista por construccion: no lee el reloj, no recorre ningun Set para decidir orden y
  * la fecha que imprime es la del envelope de la captura. Dos corridas dan el mismo archivo.
  */
-export function renderPaquete(paquete: PaqueteDeUrl): string {
+export function renderPaquete(
+  paquete: PaqueteDeUrl,
+  rutaDelCopy: string = "data/copy-guias.json",
+): string {
   const meta = tituloYMeta({
     url: paquete.fila.url,
     keywordPrimaria: paquete.fila.keywordPrimaria ?? "",
@@ -153,7 +181,7 @@ export function renderPaquete(paquete: PaqueteDeUrl): string {
   lineas.push(
     ...cabecera(
       paquete.fila.url,
-      "data/copy-guias.json y las capturas de .cache/serpapi/",
+      `${rutaDelCopy} y las capturas de .cache/serpapi/`,
       [
         ["URL", `\`${paquete.fila.url}\``],
         ["Acción", paquete.fila.accion],
@@ -311,9 +339,11 @@ export function renderPaquete(paquete: PaqueteDeUrl): string {
   if (sinCopy.length > 0) {
     lineas.push("### Encabezados todavía sin copy");
     lineas.push("");
-    for (const texto of sinCopy) lineas.push(`- ${texto}`);
+    for (const encabezado of sinCopy) lineas.push(`- ${encabezado}`);
     lineas.push("");
   }
+
+  lineas.push(...bloqueDeEnlaces(paquete.enlacesPropuestos ?? []));
 
   lineas.push("## Qué queda pendiente del doctor");
   lineas.push("");
@@ -549,6 +579,7 @@ interface PaginaDeCopy {
   readonly guiaParaElDoctor: string;
   readonly secciones: readonly SeccionDeCopy[];
   readonly absorbe?: readonly BloqueAbsorbido[];
+  readonly enlacesPropuestos?: readonly EnlacePropuesto[];
 }
 
 interface ArchivoDeCopy {
@@ -575,7 +606,7 @@ export function paginasDeCopy(rutaArchivo: string = RUTA_COPY): readonly PaginaD
  * `construirOnPage()` en vez de leer `data/onpage.json`: el dataset es la fuente de verdad y el
  * archivo su copia en disco. Regenerarlo cuesta cero y no puede quedar desincronizado.
  */
-export function construirPaqueteCorto(url: string): PaqueteCorto {
+export function construirPaqueteCorto(url: string, rutaCopy: string = RUTA_COPY): PaqueteCorto {
   const fila = construirOnPage().filas.find((f) => f.url === url);
   if (fila === undefined) {
     throw new CliError(
@@ -598,7 +629,7 @@ export function construirPaqueteCorto(url: string): PaqueteCorto {
     absorcion:
       fila.redirigeA === null
         ? []
-        : (paginasDeCopy().find((p) => p.url === fila.redirigeA)?.absorbe ?? []),
+        : (paginasDeCopy(rutaCopy).find((p) => p.url === fila.redirigeA)?.absorbe ?? []),
   };
 }
 
@@ -607,7 +638,10 @@ export function construirPaqueteCorto(url: string): PaqueteCorto {
  *
  * La SERP se lee offline: una captura ausente falla nombrando la keyword y jamas sale a la red.
  */
-export async function construirPaquete(url: string): Promise<PaqueteDeUrl> {
+export async function construirPaquete(
+  url: string,
+  rutaCopy: string = RUTA_COPY,
+): Promise<PaqueteDeUrl> {
   const fila = filasDelMapa().find((f) => f.url === url);
   if (fila === undefined) {
     throw new CliError(
@@ -623,10 +657,10 @@ export async function construirPaquete(url: string): Promise<PaqueteDeUrl> {
   }
 
   const medida = await filaOnPageDe(fila);
-  const copy = paginasDeCopy().find((p) => p.url === url);
+  const copy = paginasDeCopy(rutaCopy).find((p) => p.url === url);
   if (copy === undefined) {
     throw new CliError(
-      `No hay copy redactado para ${url} en data/copy-guias.json.\n` +
+      `No hay copy redactado para ${url} en ${rutaCopy}.\n` +
         `  Accion: agregar la entrada con sus secciones antes de generar el paquete.`,
     );
   }
@@ -665,6 +699,7 @@ export async function construirPaquete(url: string): Promise<PaqueteDeUrl> {
     preguntasSinUsar: medida.preguntasSinUsar,
     secciones: copy.secciones,
     guiaParaElDoctor: copy.guiaParaElDoctor,
+    enlacesPropuestos: copy.enlacesPropuestos ?? [],
     fuente: medida.fuente,
   };
 }
@@ -695,6 +730,10 @@ function escribir(url: string, documento: string): string {
 async function main(): Promise<number> {
   const banderas = parseBanderas(process.argv.slice(2));
   const url = textoObligatorio(banderas, "url");
+  // El dataset por defecto es el de las guias. Las familias posteriores escriben en archivos
+  // propios y lo pasan con --data: dos planes en paralelo sobre un mismo JSON se pisan.
+  const origen = texto(banderas, "data") ?? "data/copy-guias.json";
+  const rutaCopy = path.isAbsolute(origen) ? origen : path.join(SEO_TOOLS_ROOT, origen);
   const out = process.stdout;
 
   const enElMapa = filasDelMapa().find((f) => f.url === url);
@@ -706,7 +745,7 @@ async function main(): Promise<number> {
   }
 
   if (enElMapa.keywordPrimaria === null || enElMapa.keywordPrimaria === "") {
-    const corto = construirPaqueteCorto(url);
+    const corto = construirPaqueteCorto(url, rutaCopy);
     const destino = escribir(url, renderPaqueteCorto(corto));
     out.write(`Paquete de ${url}\n`);
     out.write(`  tipo:               documento corto\n`);
@@ -716,8 +755,8 @@ async function main(): Promise<number> {
     return 0;
   }
 
-  const paquete = await construirPaquete(url);
-  const destino = escribir(url, renderPaquete(paquete));
+  const paquete = await construirPaquete(url, rutaCopy);
+  const destino = escribir(url, renderPaquete(paquete, path.relative(SEO_TOOLS_ROOT, rutaCopy)));
 
   const escritas = palabrasDeCopy(paquete.secciones);
   out.write(`Paquete de ${url}\n`);
