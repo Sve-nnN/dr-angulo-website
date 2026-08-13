@@ -87,14 +87,19 @@ export type ServicePage = {
   format: ServiceFormat;
   ctaBanner: { heading: string; body: string };
   /**
-   * `id` de la sección de nivel 2 después de la cual va el banner de
-   * conversión. Sin declarar, el banner cae después de la segunda sección con
-   * cuerpo, que es donde POS-01 lo pide para el esqueleto de v1.0.
+   * `id` de la sección después de la cual va el banner de conversión. Sin
+   * declarar, el banner cae después de la segunda sección con cuerpo, que es
+   * donde POS-01 lo pide para el esqueleto de v1.0.
    *
    * El paquete on-page de v1.2 cuelga hasta cuatro subsecciones de nivel 3 de
    * la segunda sección, y con ese volumen el punto por defecto se corre más
    * allá del 35 por ciento del cuerpo que la puerta admite. Por eso la posición
    * pasa a ser un dato de la página y no una constante de la plantilla.
+   *
+   * Admite también un `id` de nivel 3, y entonces el banner va dentro del
+   * `<section>` de su padre, detrás de esa subsección. En el esqueleto de
+   * página de servicio hace falta: `que-se-atiende` cuelga trece subsecciones y
+   * ninguna frontera de nivel 2 cae dentro de la ventana de POS-01.
    */
   bannerAfterSectionId?: string;
   /** Secciones en orden de lectura, con el nivel 3 intercalado. */
