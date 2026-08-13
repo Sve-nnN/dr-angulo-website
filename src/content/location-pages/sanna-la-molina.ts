@@ -3,10 +3,10 @@ import type { LocationPage } from "./types";
 export const sannaLaMolina: LocationPage = {
   slug: "sanna-la-molina",
   navLabel: "Clínica Sanna, La Molina",
-  title: "Traumatólogo y cirujano de columna en Clínica Sanna, sede La Molina",
+  title: "Cirujano de columna en Clínica Sanna La Molina",
   h1: "Atención de columna en Sanna La Molina",
   description:
-    "El Dr. Juan Carlos Angulo atiende columna y traumatología en Sanna La Molina, martes y jueves. La cita se saca por la app o la central de Sanna.",
+    "El Dr. Juan Carlos Angulo atiende columna en la Clínica Sanna de La Molina. Días de consulta y cómo llegar a la sede.",
   heroLead:
     "En esta sede el doctor evalúa dolor de columna, lesiones traumatológicas y consultas de ortopedia infantil, los martes y jueves. La agenda la maneja Sanna, así que la cita se saca por su app o por su central y no con el consultorio del doctor.",
   cardSummary:

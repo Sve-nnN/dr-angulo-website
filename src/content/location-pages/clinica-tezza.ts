@@ -3,10 +3,10 @@ import type { LocationPage } from "./types";
 export const clinicaTezza: LocationPage = {
   slug: "clinica-tezza",
   navLabel: "Clínica Padre Luis Tezza",
-  title: "Traumatólogo y cirujano de columna en Clínica Padre Luis Tezza",
+  title: "Ortopedia infantil en la Clínica Tezza, Lima",
   h1: "Ortopedia infantil en la Clínica Padre Luis Tezza",
   description:
-    "El Dr. Juan Carlos Angulo atiende columna y traumatología en Clínica Padre Luis Tezza, Surco, jueves y viernes por la tarde. La cita la saca la clínica.",
+    "Consulta de ortopedia infantil con el Dr. Juan Carlos Angulo en la Clínica Padre Luis Tezza, Surco. Horarios y cómo agendar.",
   heroLead:
     "En esta sede el doctor evalúa dolor de columna, lesiones traumatológicas y consultas de ortopedia infantil, los jueves y viernes por la tarde. La agenda la maneja la clínica, así que la cita se saca con su central de citas y no con el consultorio del doctor.",
   cardSummary:

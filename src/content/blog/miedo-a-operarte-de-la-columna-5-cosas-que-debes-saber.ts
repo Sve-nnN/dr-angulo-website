@@ -2,9 +2,10 @@ import type { BlogPost } from "./index";
 
 export const postMiedoAOperarteDeLaColumna5CosasQueDebesSaber: BlogPost = {
   slug: "miedo-a-operarte-de-la-columna-5-cosas-que-debes-saber",
-  title: "¿Tienes miedo a operarte de la columna? 5 cosas que debes saber",
+  title: "Cirugía de columna: cuándo se plantea y cómo es",
   h1: "Operarse de la columna: lo que conviene saber antes",
-  description: "Resolvemos las dudas más comunes de quienes enfrentan por primera vez la posibilidad de una cirugía de columna.",
+  description:
+    "Cuándo se plantea operar la columna, qué técnicas existen, cómo es la recuperación y qué conviene preguntar en la consulta.",
   publishedAt: "2026-06-24",
   updatedAt: "2026-08-13",
   relatedService: "hernia-discal",

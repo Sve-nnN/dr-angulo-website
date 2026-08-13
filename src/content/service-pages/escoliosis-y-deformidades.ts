@@ -5,8 +5,8 @@ export const escoliosisYDeformidades: ServicePage = {
   navLabel: "Escoliosis",
   h1: "Escoliosis y deformidades de la columna",
   heroLead: "Una curva de columna casi nunca duele durante el crecimiento, y por eso suele detectarse tarde. Acá encuentras qué mirar en casa, qué logra realmente un corsé y en qué momento se plantea una corrección.",
-  title: "Escoliosis y deformidades de columna: diagnóstico y tratamiento",
-  description: "Qué es la escoliosis, cómo se detecta durante el crecimiento, qué hace el corsé y cuándo se plantea una corrección quirúrgica. Guía del Dr. Juan Carlos Angulo, cirujano de columna en Lima.",
+  title: "Escoliosis: cómo se evalúa y cómo se trata",
+  description: "Qué es la escoliosis, cómo se mide la curva, qué opciones hay según la edad y en qué casos se plantea la cirugía. Consulta en Lima.",
   cardSummary: "Cómo se detecta una curva a tiempo, qué logra el corsé y cuándo se plantea corregirla.",
   conditionName: "Escoliosis",
   alternateNames: [

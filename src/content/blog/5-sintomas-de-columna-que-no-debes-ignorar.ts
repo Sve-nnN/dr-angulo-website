@@ -2,9 +2,10 @@ import type { BlogPost } from "./index";
 
 export const post5SintomasDeColumnaQueNoDebesIgnorar: BlogPost = {
   slug: "5-sintomas-de-columna-que-no-debes-ignorar",
-  title: "5 síntomas de columna que no debes ignorar",
+  title: "Ciática: por qué duele la pierna y qué hacer",
   h1: "Ciática: el dolor que baja por la pierna",
-  description: "Estas señales indican que tu columna necesita una evaluación médica, no solo reposo.",
+  description:
+    "Qué es la ciática, cómo se distingue de una lumbalgia, qué la produce y cuándo el dolor de pierna necesita evaluación médica.",
   publishedAt: "2026-06-10",
   updatedAt: "2026-08-13",
   relatedService: "hernia-discal",

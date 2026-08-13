@@ -3,10 +3,10 @@ import type { LocationPage } from "./types";
 export const clinicaRicardoPalma: LocationPage = {
   slug: "clinica-ricardo-palma",
   navLabel: "Clínica Ricardo Palma",
-  title: "Traumatólogo y cirujano de columna en Clínica Ricardo Palma",
+  title: "Cirujano de columna en Clínica Ricardo Palma",
   h1: "Atención de columna en la Clínica Ricardo Palma",
   description:
-    "El Dr. Juan Carlos Angulo atiende columna y traumatología en Clínica Ricardo Palma, San Isidro, lunes y miércoles. La cita la saca la clínica.",
+    "El Dr. Juan Carlos Angulo atiende columna en la Clínica Ricardo Palma, San Isidro. Días de consulta y cómo pedir cita.",
   heroLead:
     "En esta sede el doctor evalúa dolor de columna, lesiones traumatológicas y consultas de ortopedia infantil, los lunes y miércoles. La agenda la maneja la clínica, así que la cita se saca con su central de citas y no con el consultorio del doctor.",
   cardSummary:
