@@ -134,11 +134,33 @@ export default async function ServiceGuidePage({ params }: Props) {
 
   // Posición del banner de conversión. El default es la segunda sección con
   // cuerpo; una página puede declarar otra cuando el volumen de sus
-  // subsecciones corre ese punto fuera del primer tercio (POS-01).
+  // subsecciones corre ese punto fuera del primer tercio (POS-01). El id
+  // declarado puede ser de nivel 3: en el esqueleto de página de servicio
+  // ninguna frontera de nivel 2 cae dentro de la ventana.
   const declaredBannerIndex = page.bannerAfterSectionId
     ? groups.findIndex(({ section }) => section.id === page.bannerAfterSectionId)
     : -1;
-  const bannerIndex = declaredBannerIndex === -1 ? 1 : declaredBannerIndex;
+  const bannerChildId =
+    page.bannerAfterSectionId && declaredBannerIndex === -1
+      ? groups
+          .flatMap(({ children }) => children)
+          .find((child) => child.id === page.bannerAfterSectionId)?.id
+      : undefined;
+  const bannerIndex = bannerChildId
+    ? -1
+    : declaredBannerIndex === -1
+      ? 1
+      : declaredBannerIndex;
+
+  // Un banner por página, más el CTA de cierre. Va después de la sección donde
+  // el paciente acaba de reconocer lo que le pasa (POS-01).
+  const midContentCta = (
+    <MidContentCta
+      heading={page.ctaBanner.heading}
+      body={page.ctaBanner.body}
+      location="service_page"
+    />
+  );
 
   const relatedPosts = blogPosts.filter((post) =>
     page.relatedPosts.includes(post.slug)
@@ -229,29 +251,22 @@ export default async function ServiceGuidePage({ params }: Props) {
                   </h2>
                   <SectionBody section={section} />
                   {children.map((child) => (
-                    <div key={child.id} className="mt-8">
-                      <h3
-                        id={child.id}
-                        tabIndex={-1}
-                        className="scroll-mt-28 font-heading text-lg font-bold text-primary"
-                      >
-                        {child.heading}
-                      </h3>
-                      <SectionBody section={child} />
-                    </div>
+                    <Fragment key={child.id}>
+                      <div className="mt-8">
+                        <h3
+                          id={child.id}
+                          tabIndex={-1}
+                          className="scroll-mt-28 font-heading text-lg font-bold text-primary"
+                        >
+                          {child.heading}
+                        </h3>
+                        <SectionBody section={child} />
+                      </div>
+                      {child.id === bannerChildId && midContentCta}
+                    </Fragment>
                   ))}
                 </section>
-                {/* Un banner por página, más el CTA de cierre. Va después de
-                    una sección de nivel 2 y de todas sus hijas, en el punto
-                    donde el paciente acaba de reconocer lo que le pasa
-                    (POS-01). */}
-                {index === bannerIndex && (
-                  <MidContentCta
-                    heading={page.ctaBanner.heading}
-                    body={page.ctaBanner.body}
-                    location="service_page"
-                  />
-                )}
+                {index === bannerIndex && midContentCta}
               </Fragment>
             ))}
 
