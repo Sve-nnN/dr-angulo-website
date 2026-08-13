@@ -27,6 +27,7 @@ import { normalizar } from "./entidades.js";
 import type { FilaDeOnPage } from "./metadatos.js";
 import { construirOnPage, tituloYMeta } from "./metadatos.js";
 import type {
+  DatoOperativo,
   EnlacePropuesto,
   JerarquiaDeUrl,
   PaqueteDeUrl,
@@ -156,6 +157,52 @@ function bloqueDeEnlaces(enlaces: readonly EnlacePropuesto[]): string[] {
 }
 
 /**
+ * Los datos operativos de una sede, en dos tablas y no en una.
+ *
+ * Va FUERA de la region de copy porque es tabla generada. La separacion entre respaldado y
+ * pendiente es lo que hace este bloque: mezclados, v1.1 publicaria un horario que nadie confirmo
+ * sin darse cuenta, y una direccion o un horario equivocado manda a un paciente a otro lado. Ese
+ * es el dano mas concreto de esta fase, mas concreto todavia que una afirmacion medica inflada.
+ */
+function bloqueDeDatosOperativos(datos: readonly DatoOperativo[]): string[] {
+  if (datos.length === 0) return [];
+  const respaldados = datos.filter((d) => d.estado === "respaldado");
+  const pendientes = datos.filter((d) => d.estado === "pendiente");
+  const lineas: string[] = ["## Datos operativos de la sede", ""];
+
+  if (respaldados.length > 0) {
+    lineas.push(
+      "Cada uno sale del contenido publicado del sitio y declara de dónde. Ninguno se compone.",
+      "",
+      ...tabla(
+        ["Dato", "Valor", "Fuente"],
+        respaldados.map((d) => [d.dato, d.valor, d.fuente]),
+      ),
+      "",
+    );
+  }
+
+  if (pendientes.length > 0) {
+    lineas.push(
+      "### Pendientes de confirmación antes de publicar",
+      "",
+      "Esto es lo que v1.1 tiene que resolver antes de que la página salga. No se completó acá",
+      "porque no está publicado en ninguna fuente del sitio, y componer un dato operativo manda a",
+      "un paciente a un lugar equivocado. Va en tabla aparte para que publicarlo sin confirmarlo",
+      "requiera saltearse un encabezado que dice que falta.",
+      "",
+      ...tabla(
+        ["Dato", "Estado", "Quién lo confirma"],
+        pendientes.map((d) => [d.dato, d.valor, d.fuente]),
+      ),
+      "",
+    );
+  }
+
+  return lineas;
+}
+
+/**
  * El paquete completo en Markdown.
  *
  * Determinista por construccion: no lee el reloj, no recorre ningun Set para decidir orden y
@@ -199,6 +246,13 @@ export function renderPaquete(
       ],
     ),
   );
+
+  if (paquete.notaDeFormato != null && paquete.notaDeFormato !== "") {
+    lineas.push("### Con qué criterio se eligió el formato");
+    lineas.push("");
+    lineas.push(paquete.notaDeFormato);
+    lineas.push("");
+  }
 
   lineas.push("## Title, meta y H1");
   lineas.push("");
@@ -343,6 +397,7 @@ export function renderPaquete(
     lineas.push("");
   }
 
+  lineas.push(...bloqueDeDatosOperativos(paquete.datosOperativos ?? []));
   lineas.push(...bloqueDeEnlaces(paquete.enlacesPropuestos ?? []));
 
   lineas.push("## Qué queda pendiente del doctor");
@@ -580,6 +635,8 @@ interface PaginaDeCopy {
   readonly secciones: readonly SeccionDeCopy[];
   readonly absorbe?: readonly BloqueAbsorbido[];
   readonly enlacesPropuestos?: readonly EnlacePropuesto[];
+  readonly datosOperativos?: readonly DatoOperativo[];
+  readonly notaDeFormato?: string;
 }
 
 interface ArchivoDeCopy {
@@ -700,6 +757,8 @@ export async function construirPaquete(
     secciones: copy.secciones,
     guiaParaElDoctor: copy.guiaParaElDoctor,
     enlacesPropuestos: copy.enlacesPropuestos ?? [],
+    datosOperativos: copy.datosOperativos ?? [],
+    notaDeFormato: copy.notaDeFormato ?? null,
     fuente: medida.fuente,
   };
 }
