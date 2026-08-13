@@ -96,7 +96,7 @@ const MANIFEST = [
   {
     slug: "sanna-la-molina",
     kind: "clinica",
-    h1: "Traumatólogo y cirujano de columna en Clínica Sanna, sede La Molina",
+    h1: "Atención de columna en Sanna La Molina",
     title: "Traumatólogo y cirujano de columna en Clínica Sanna, sede La Molina",
     streetAddress: "Av. Raúl Ferrero 1256",
     schemaType: "MedicalClinic",
