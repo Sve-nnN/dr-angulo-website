@@ -25,9 +25,9 @@ See: .planning/PROJECT.md (updated 2026-08-10)
 ## Current Position
 
 Phase: 8, reabierta para consumir el paquete on-page de v1.2 (planes 08-05 a 08-19, en cuatro olas)
-Plan: 08-05 a 08-10 cerrados. Queda 08-11 para cerrar la ola 2
+Plan: 08-05 a 08-11 cerrados. Ola 2 completa. Sigue la ola 3, que abre 08-15 con escoliosis
 Status: En ejecución
-Last activity: 2026-08-13, plan 08-10 ejecutado y verificado en local
+Last activity: 2026-08-13, plan 08-11 ejecutado y verificado en local
 
 Progress: [████████░░] 4 de 5 fases de v1.1, con la 8 reabierta
 
@@ -231,6 +231,6 @@ El cierre formal del milestone v1.0 (audit, complete-milestone, cleanup) espera 
 
 ## Session Continuity
 
-Last session: 2026-08-10
-Stopped at: ROADMAP de v1.1 escrito con 5 fases (7 a 11) y trazabilidad completa de los 27 requisitos en REQUIREMENTS.md. Nada de código tocado todavía.
+Last session: 2026-08-13
+Stopped at: Ola 2 de la fase 8 cerrada. Los cuatro posts del blog publican el copy aprobado de v1.2 con su esqueleto de guía clínica y sus URLs intactas. El último, 08-11, convirtió el post del miedo a operarse en la guía de cirugía de columna, 1747 palabras. La puerta de contenido pasa las ocho rutas del manifiesto.
 Resume file: None

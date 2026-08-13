@@ -175,8 +175,8 @@ Mapeo v1.1 completado al crear el ROADMAP (2026-08-10). Fases 7 a 11.
 | SVC-03 | Phase 8 | Pending |
 | SVC-04 | Phase 8 | Pending |
 | SVC-05 | Phase 8 | Pending |
-| BLOG-02 | Phase 8 | Pending |
-| BLOG-03 | Phase 8 | Pending |
+| BLOG-02 | Phase 8 | Done |
+| BLOG-03 | Phase 8 | Done |
 | SEDE-01 | Phase 9 | Pending |
 | SEDE-02 | Phase 9 | Pending |
 | SEDE-03 | Phase 9 | Pending |
