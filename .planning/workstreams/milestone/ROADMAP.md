@@ -145,7 +145,8 @@ Plans:
 - [x] 08-06-PLAN.md — Ola 2: `/servicios/hernia-discal` con las 20 secciones del copy aprobado, 2808 palabras, el material del post que se apaga absorbido adentro y los ocho enlaces de la matriz en `outboundLinks`. Suma `ServicePage.bannerAfterSectionId` porque el esqueleto de v1.2 corría el banner fuera de la ventana de POS-01. Cerrado el 2026-08-13
 - [x] 08-07-PLAN.md — Ola 2: `/servicios/estenosis-espinal` con las 18 secciones del copy aprobado, 2723 palabras, `bannerAfterSectionId: "que-es"` por margen. Cerrado el 2026-08-13
 - [x] 08-08-PLAN.md — Ola 2: `/servicios/ortopedia-infantil` con las 20 secciones del copy aprobado, 1814 palabras y el esqueleto de `pagina-de-servicio`, el único del silo que no pasa a guía clínica. Extiende `bannerAfterSectionId` para que resuelva ids de nivel 3, porque ninguna frontera de nivel 2 de este formato cae dentro de la ventana de POS-01. Cerrado el 2026-08-13
-- [ ] 08-09 a 08-19-PLAN.md — Resto de las olas 2 a 4: el contenido del paquete on-page. 08-09 a 08-11 completan la ola 2
+- [x] 08-09-PLAN.md — Ola 2: `ContentBody`/`ContentBodyBoundary` extraído como único renderizador de cuerpo largo, sin cambiar el HTML de las páginas ya publicadas, y el inicio publica 21 secciones / 1697 palabras del paquete de v1.2 sin tocar los siete módulos de marketing existentes. Cerrado el 2026-08-13
+- [ ] 08-10 a 08-19-PLAN.md — Resto de las olas 2 a 4: el contenido del paquete on-page. 08-10 y 08-11 completan la ola 2
 
 **Notas de ejecución**
 - Gate de contenido médico: la redacción original de esta nota decía que el doctor revisa y aprueba antes de publicar. Quedó superada por la decisión de Juan del 2026-08-10, registrada en `08-CONTEXT.md` y en las Constraints de PROJECT.md: se publica directo y la revisión del doctor pasa a ser posterior. Lo que reemplaza a la aprobación previa son las diez salvaguardas SAFE del contrato de diseño, verificadas por `scripts/check-content.mjs` en cada plan.

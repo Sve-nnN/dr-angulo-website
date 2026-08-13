@@ -25,9 +25,9 @@ See: .planning/PROJECT.md (updated 2026-08-10)
 ## Current Position
 
 Phase: 8, reabierta para consumir el paquete on-page de v1.2 (planes 08-05 a 08-19, en cuatro olas)
-Plan: 08-05 a 08-08 cerrados. Sigue la ola 2, los planes 08-09 a 08-11
+Plan: 08-05 a 08-09 cerrados. Sigue la ola 2, los planes 08-10 y 08-11
 Status: En ejecución
-Last activity: 2026-08-13, plan 08-08 ejecutado y verificado en local
+Last activity: 2026-08-13, plan 08-09 ejecutado y verificado en local
 
 Progress: [████████░░] 4 de 5 fases de v1.1, con la 8 reabierta
 
@@ -100,6 +100,20 @@ el que más margen deja contra los dos bordes.
 internos de las 16 URLs los escribe 08-18 de una sola vez. Y el colchón del banner importa para
 los planes que vienen: 08-18 agrega bloque al pie y la fase 10 toca metadatos, y los 8.5 puntos
 de margen por el lado del piso son lo que absorbe ese crecimiento.
+
+**Ola 2, plan 08-09, cerrado el 2026-08-13.** Dos tareas separadas en dos commits. La primera
+extrae `ContentBody` y `ContentBodyBoundary` a `src/components/content/content-body.tsx`: el
+renderizador de secciones que las plantillas de servicios y de blog tenían duplicado pasa a
+vivir en un solo archivo, sin cambiar un byte del HTML que esas páginas ya publicaban
+(`check-content.mjs` da los mismos ocho PASA con los mismos conteos de palabras de antes). La
+segunda publica el cuerpo de texto del inicio: 21 secciones, 1697 palabras, transcritas literal
+del paquete de v1.2, insertadas antes del CTA de cierre sin tocar ninguno de los siete módulos de
+marketing existentes (diff de `page.tsx`: +37/-0).
+
+Nota operativa: la sesión que ejecutó este plan murió por límite de uso de la cuenta después de
+que los dos commits ya estaban en el árbol. Esta continuación no rehizo nada — verificó el estado
+real (`tsc`, `lint`, `build`, las dos puertas de contenido, el conteo de palabras de home medido
+directo del HTML) contra lo ya commiteado, y escribió el SUMMARY que había quedado pendiente.
 
 ### Estado de la fase 10, verificado en producción el 2026-08-10
 
