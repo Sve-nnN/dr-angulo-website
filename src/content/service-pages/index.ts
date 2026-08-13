@@ -15,7 +15,7 @@
 
 import { herniaDiscal } from "./hernia-discal";
 import { estenosisEspinal } from "./estenosis-espinal";
-import { escoliosis } from "./escoliosis";
+import { escoliosisYDeformidades } from "./escoliosis-y-deformidades";
 import { ortopediaInfantil } from "./ortopedia-infantil";
 
 /**
@@ -114,7 +114,7 @@ export type ServicePage = {
 export const servicePages: ServicePage[] = [
   herniaDiscal,
   estenosisEspinal,
-  escoliosis,
+  escoliosisYDeformidades,
   ortopediaInfantil,
 ];
 
