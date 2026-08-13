@@ -226,6 +226,24 @@ test("metadatos: title, meta y H1 no divergen de lo que ya esta redactado en cop
   }
 });
 
+test("metadatos: los tres datasets de copy cruzan contra el mapa, no solo el de las guias", () => {
+  // La familia de guias no es la unica que v1.1 lee. Los planes 15-04 y 15-05 escribieron
+  // `copy-servicios.json` y `copy-sedes.json` en archivos propios para no pisarse, y el cruce
+  // que protegia a uno dejaba a los otros dos sin guardia. Una divergencia ahi publica un title
+  // y audita otro, que es el falso verde que este cruce existe para impedir.
+  for (const archivo of ["data/copy-guias.json", "data/copy-servicios.json", "data/copy-sedes.json"]) {
+    const copy = copyRedactado(archivo);
+    assert.ok(copy.length > 0, `${archivo} no trae ninguna URL redactada para cruzar`);
+    for (const pagina of copy) {
+      const fila = FILAS.find((f) => f.url === pagina.url);
+      assert.ok(fila !== undefined, `${pagina.url} esta en ${archivo} y no en el mapa`);
+      assert.equal(fila.title, pagina.title, `${pagina.url}: title distinto entre los dos datasets`);
+      assert.equal(fila.metaDescription, pagina.metaDescription, `${pagina.url}: meta distinta`);
+      assert.equal(fila.h1, pagina.h1, `${pagina.url}: H1 distinto`);
+    }
+  }
+});
+
 test("metadatos: un title que no nombra la primaria falla nombrando lo que falta", () => {
   assert.throws(
     () =>
