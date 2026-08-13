@@ -1191,25 +1191,36 @@ export function renderHandoff(
       porCrear.map((f) => [`\`${f.url}\``, `\`${f.keywordPrimaria ?? ""}\``, f.formato ?? "sin formato"]),
     ),
     "",
-    "**3 redirecciones 301.** Dos salen de este paquete y la tercera venía avisada de la fase 14.",
-    "",
-    ...tabla(
-      ["Desde", "Hacia", "Por qué"],
-      [
+    // La frase y la tabla salen de la misma lista: si el mapa de la fase 14 gana o pierde una
+    // redireccion, las dos cambian juntas. El documento declara en su cabecera que se genera
+    // desde los datasets justamente para no desincronizarse.
+    ...((): readonly string[] => {
+      const deLaFase14 = [
         [
           "`/servicios/escoliosis`",
           "`/servicios/escoliosis-y-deformidades`",
           "Renombre de slug decidido en la fase 14. Arrastra el 301, el sitemap y los enlaces " +
             "internos ya escritos que apunten al slug viejo.",
         ],
-        ...redirecciones.map((f) => [
-          `\`${f.url}\``,
-          `\`${f.redirigeA ?? "sin destino"}\``,
-          "El post se funde con la guía de destino: su contenido ya vive adentro, bloque por " +
-            "bloque, y la lista está en el documento del post.",
-        ]),
-      ],
-    ),
+      ];
+      const deEstePaquete = redirecciones.map((f) => [
+        `\`${f.url}\``,
+        `\`${f.redirigeA ?? "sin destino"}\``,
+        "El post se funde con la guía de destino: su contenido ya vive adentro, bloque por " +
+          "bloque, y la lista está en el documento del post.",
+      ]);
+      const filas = [...deLaFase14, ...deEstePaquete];
+      const enPalabras = ["Cero", "Una", "Dos", "Tres", "Cuatro", "Cinco", "Seis"];
+      const cuantas = enPalabras[deEstePaquete.length] ?? String(deEstePaquete.length);
+      return [
+        `**${filas.length} redirecciones 301.** ${cuantas} ` +
+          `${deEstePaquete.length === 1 ? "sale" : "salen"} de este paquete y ` +
+          `${deLaFase14.length === 1 ? "la restante venía avisada" : "las restantes venían avisadas"} ` +
+          "de la fase 14.",
+        "",
+        ...tabla(["Desde", "Hacia", "Por qué"], filas),
+      ];
+    })(),
     "",
     "---",
     "",
