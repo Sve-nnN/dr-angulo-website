@@ -237,6 +237,26 @@ test("paquete: una URL que se apaga con un 301 dice hacia dónde va", () => {
   );
 });
 
+test("paquete: el documento de un 301 dice qué se absorbió y en qué orden se publica", () => {
+  // Redirigir sin fundir tira el contenido a la basura, y el 301 lo entierra sin dejar rastro de
+  // lo que habia. La lista por bloque es lo que permite comprobar que no se perdio nada sin
+  // volver a abrir el post, y el orden escrito evita que alguien ponga la redireccion primero.
+  const documento = renderPaqueteCorto({
+    ...CORTO_QUE_REDIRIGE,
+    absorcion: [
+      { origen: "sección por-que-aparece-con-la-edad", destino: "causas" },
+      { origen: "sección como-se-trata", destino: "sin-operar" },
+    ],
+  });
+
+  assert.ok(documento.includes("primero se publica la guía de destino"), "falta el orden");
+  assert.ok(documento.includes("| sección como-se-trata | sin-operar |"), "falta el destino");
+  assert.ok(
+    !renderPaqueteCorto(CORTO_QUE_SE_QUEDA).includes("Qué se absorbió"),
+    "una URL que se queda no absorbe nada de nadie",
+  );
+});
+
 test("paquete: el documento corto trae las dos marcas para que la compuerta pueda correrlo", () => {
   // La compuerta de ymyl.ts devuelve `region-ausente` si un documento no las trae. Los cuatro
   // tipos las llevan para que la wave 3 corra la compuerta sobre cualquiera sin caso especial.
