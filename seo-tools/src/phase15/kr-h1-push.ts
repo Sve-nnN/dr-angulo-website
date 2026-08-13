@@ -171,6 +171,23 @@ export async function cargar(
   verificarModelo(tab);
 
   const schema = await loadTabSchema(gateway, tab, { addMissingColumns: false });
+
+  // `verificarModelo` comprueba el modelo local, que sale de data/sheet-columns.json. La
+  // escritura se decide sobre el esquema resuelto, que sale de los encabezados reales del tab, y
+  // los estados de esta carga no estan en REQUIRED_STATUSES: si alguien renombra la columna en el
+  // documento vivo, `loadTabSchema` no la registra, no la cuenta como faltante y no lanza nada.
+  // La carga escribiria una columna en vez de dos y el resumen reportaria las 16 filas igual.
+  for (const esperada of COLUMNAS_PROPIAS) {
+    if (schema.byHeader.get(esperada.header) === undefined) {
+      throw new CliError(
+        `El tab "${TAB}" ya no trae el encabezado ${JSON.stringify(esperada.header)}.\n` +
+          `  La carga se detiene sin escribir nada: sin la columna, el dato no llega a ninguna ` +
+          `celda y el resumen reportaria filas actualizadas igual.\n` +
+          `  Accion: revisar los encabezados del tab en el documento con Juan.`,
+      );
+    }
+  }
+
   const columnaClave = schema.byHeader.get((tab.keyHeader ?? "").trim());
   if (columnaClave === undefined) {
     throw new CliError(
