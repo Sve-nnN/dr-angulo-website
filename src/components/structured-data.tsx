@@ -507,8 +507,8 @@ export type BlogPostJsonLdItem = {
   description: string;
   publishedAt: string;
   updatedAt: string;
-  /** Slug de la guía de servicio que este post alimenta. */
-  relatedService: string;
+  /** Slug de la guía de servicio que este post alimenta, si tiene una. */
+  relatedService?: string;
 };
 
 /** Listado del blog. */
@@ -544,7 +544,9 @@ export function BlogJsonLd({ posts }: { posts: BlogPostJsonLdItem[] }) {
  * se publica antes de que el doctor lo revise.
  *
  * `about` apunta al `@id` de la guía de servicio del tema, que es lo que le
- * dice al buscador que el post y la guía son el mismo silo.
+ * dice al buscador que el post y la guía son el mismo silo. Se omite si el
+ * post no declara guía: un `about` que apunta a una URL inexistente vale menos
+ * que no emitirlo.
  */
 export function BlogPostingJsonLd({ post }: { post: BlogPostJsonLdItem }) {
   const data = {
@@ -555,7 +557,9 @@ export function BlogPostingJsonLd({ post }: { post: BlogPostJsonLdItem }) {
     description: post.description,
     datePublished: post.publishedAt,
     dateModified: post.updatedAt,
-    about: { "@id": `${abs(`/servicios/${post.relatedService}`)}#page` },
+    ...(post.relatedService
+      ? { about: { "@id": `${abs(`/servicios/${post.relatedService}`)}#page` } }
+      : {}),
     url: abs(`/blog/${post.slug}`),
     inLanguage: "es-PE",
     image: abs("/og-dr-angulo.jpg"),

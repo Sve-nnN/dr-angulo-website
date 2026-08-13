@@ -11,7 +11,6 @@ import { MidContentCta } from "@/components/ui/mid-content-cta";
 import { TableOfContents } from "@/components/ui/table-of-contents";
 import { ServiceItemGrid } from "@/components/ui/service-item-grid";
 import { ConsultAlert } from "@/components/ui/consult-alert";
-import { TreatmentCompare } from "@/components/ui/treatment-compare";
 import {
   BreadcrumbJsonLd,
   FaqJsonLd,
@@ -19,11 +18,9 @@ import {
 } from "@/components/structured-data";
 import { blogPosts } from "@/content/blog";
 import {
-  SERVICE_SECTION_ORDER,
   getServicePage,
   servicePages,
   type ServiceSection,
-  type ServiceSectionId,
 } from "@/content/service-pages";
 
 type Props = {
@@ -53,52 +50,36 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
-/** Una sección sin párrafos, tarjetas ni subsecciones no se renderiza ni entra en el índice. */
+/** Una sección sin párrafos ni tarjetas no se renderiza ni entra en el índice. */
 function hasContent(section: ServiceSection) {
-  return (
-    section.paragraphs.length > 0 ||
-    (section.items?.length ?? 0) > 0 ||
-    (section.subsections?.length ?? 0) > 0
-  );
+  return section.paragraphs.length > 0 || (section.items?.length ?? 0) > 0;
 }
 
 /**
  * Cada sección tiene su propio tratamiento visual: alerta para "cuándo
  * consultar", tarjetas para síntomas y complicaciones, pasos numerados para
- * diagnóstico y recuperación, comparación de dos columnas para tratamiento.
- * Es lo que separa una página de servicio de un post de blog con el mismo
- * contenido.
+ * diagnóstico y recuperación. Es lo que separa una página de servicio de un
+ * post de blog con el mismo contenido.
  */
-function SectionBody({
-  id,
-  section,
-}: {
-  id: ServiceSectionId;
-  section: ServiceSection;
-}) {
-  if (id === "cuando-consultar") {
+function SectionBody({ section }: { section: ServiceSection }) {
+  if (section.id === "cuando-consultar") {
     return <ConsultAlert paragraphs={section.paragraphs} />;
   }
 
-  if (id === "tratamiento" && section.subsections) {
-    return (
-      <>
-        {section.paragraphs.map((paragraph, index) => (
-          <p key={index} className="mt-5 text-lg text-foreground/80">
-            {paragraph}
-          </p>
-        ))}
-        <TreatmentCompare subsections={section.subsections} />
-      </>
-    );
-  }
-
-  const stepVariant = id === "diagnostico" || id === "recuperacion";
+  const stepVariant =
+    section.id === "diagnostico" || section.id === "recuperacion";
 
   return (
     <>
       {section.paragraphs.map((paragraph, index) => (
-        <p key={index} className="mt-5 text-lg text-foreground/80">
+        <p
+          key={index}
+          className={
+            section.level === 3
+              ? "mt-3 text-lg text-foreground/80"
+              : "mt-5 text-lg text-foreground/80"
+          }
+        >
           {paragraph}
         </p>
       ))}
@@ -108,19 +89,37 @@ function SectionBody({
           variant={stepVariant ? "steps" : "grid"}
         />
       )}
-      {section.subsections?.map((subsection) => (
-        <div key={subsection.heading} className="mt-8">
-          <h3 className="font-heading text-lg font-bold text-primary">
-            {subsection.heading}
-          </h3>
-          {subsection.paragraphs.map((paragraph, index) => (
-            <p key={index} className="mt-3 text-lg text-foreground/80">
-              {paragraph}
-            </p>
-          ))}
-        </div>
-      ))}
     </>
+  );
+}
+
+/**
+ * Un h2 con las secciones de nivel 3 que le siguen. Agrupar antes de
+ * renderizar es lo que evita que un h3 abra su propio `<section>` y quede
+ * como hermano de su h2 en vez de colgar de él.
+ */
+type SectionGroup = {
+  section: ServiceSection;
+  children: ServiceSection[];
+};
+
+function groupSections(sections: ServiceSection[]): SectionGroup[] {
+  const groups: SectionGroup[] = [];
+  for (const section of sections) {
+    if (section.level === 3) {
+      if (hasContent(section) && groups.length > 0) {
+        groups[groups.length - 1].children.push(section);
+      }
+      continue;
+    }
+    groups.push({ section, children: [] });
+  }
+  // Una sección de nivel 2 sin cuerpo propio se conserva si tiene hijas:
+  // "Preguntas frecuentes" no tiene párrafos y es solo el techo de sus
+  // preguntas. Si se filtrara por cuerpo propio, sus h3 quedarían colgando de
+  // la sección anterior y el índice perdería la entrada.
+  return groups.filter(
+    (group) => hasContent(group.section) || group.children.length > 0
   );
 }
 
@@ -129,23 +128,20 @@ export default async function ServiceGuidePage({ params }: Props) {
   const page = getServicePage(slug);
   if (!page) notFound();
 
-  // Se recorre la tupla, nunca las llaves del objeto: el orden y el índice
-  // salen de la misma lista que lo renderizado y no pueden desincronizarse.
-  const visibleSections = SERVICE_SECTION_ORDER.map((id) => ({
-    id,
-    section: page.sections[id],
-  })).filter(({ section }) => hasContent(section));
+  // El índice y lo renderizado salen de la misma lista agrupada: no pueden
+  // desincronizarse.
+  const groups = groupSections(page.sections);
 
   const relatedPosts = blogPosts.filter((post) =>
     page.relatedPosts.includes(post.slug)
   );
 
-  const faqItems = (page.sections["preguntas-frecuentes"].subsections ?? []).map(
-    (subsection) => ({
-      question: subsection.heading,
-      answer: subsection.paragraphs.join(" "),
-    })
-  );
+  const faqItems = page.sections
+    .filter((section) => section.id.startsWith("preguntas-frecuentes--"))
+    .map((section) => ({
+      question: section.heading,
+      answer: section.paragraphs.join(" "),
+    }));
 
   return (
     <>
@@ -213,22 +209,35 @@ export default async function ServiceGuidePage({ params }: Props) {
         <article className="mx-auto max-w-5xl px-4 py-14 sm:px-6 sm:py-20">
         <div className="flex flex-col lg:grid lg:grid-cols-[1fr_18rem] lg:gap-12">
           <div className="order-2 min-w-0 max-w-2xl lg:order-1">
-            {visibleSections.map(({ id, section }) => (
-              <Fragment key={id}>
+            {groups.map(({ section, children }, index) => (
+              <Fragment key={section.id}>
                 <section className="mt-12 first:mt-0">
                   <h2
-                    id={id}
+                    id={section.id}
                     tabIndex={-1}
                     className="scroll-mt-28 font-heading text-2xl font-bold text-primary sm:text-3xl"
                   >
                     {section.heading}
                   </h2>
-                  <SectionBody id={id} section={section} />
+                  <SectionBody section={section} />
+                  {children.map((child) => (
+                    <div key={child.id} className="mt-8">
+                      <h3
+                        id={child.id}
+                        tabIndex={-1}
+                        className="scroll-mt-28 font-heading text-lg font-bold text-primary"
+                      >
+                        {child.heading}
+                      </h3>
+                      <SectionBody section={child} />
+                    </div>
+                  ))}
                 </section>
-                {/* Un banner por página, más el CTA de cierre. Va después de
-                    `sintomas` porque es el punto donde el paciente acaba de
-                    reconocer lo que le pasa (POS-01). */}
-                {id === "sintomas" && (
+                {/* Un banner por página, más el CTA de cierre. Va después de la
+                    segunda sección de nivel 2 y de todas sus hijas, que es el
+                    punto donde el paciente acaba de reconocer lo que le pasa
+                    (POS-01). */}
+                {index === 1 && (
                   <MidContentCta
                     heading={page.ctaBanner.heading}
                     body={page.ctaBanner.body}
@@ -276,6 +285,26 @@ export default async function ServiceGuidePage({ params }: Props) {
               </section>
             )}
 
+            {page.outboundLinks && page.outboundLinks.length > 0 && (
+              <section className="mt-14 border-t border-border pt-10">
+                <p className="font-heading text-lg font-bold text-foreground">
+                  Sigue leyendo
+                </p>
+                <ul className="mt-3">
+                  {page.outboundLinks.map((link) => (
+                    <li key={link.href}>
+                      <Link
+                        href={link.href}
+                        className="block min-h-11 py-2.5 text-base font-semibold text-primary-dark hover:underline"
+                      >
+                        {link.anchor}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </section>
+            )}
+
             <div className="mt-14">
               <AuthorByline
                 publishedAt={page.publishedAt}
@@ -295,8 +324,8 @@ export default async function ServiceGuidePage({ params }: Props) {
             <div className="lg:sticky lg:top-24 lg:space-y-5">
               <TableOfContents
                 title="En esta página"
-                entries={visibleSections.map(({ id, section }) => ({
-                  id,
+                entries={groups.map(({ section }) => ({
+                  id: section.id,
                   label: section.heading,
                 }))}
               />
