@@ -200,6 +200,7 @@ Ver tabla completa en PROJECT.md, sección Key Decisions.
 
 - **Deploy: Dokploy self-hosted, no Vercel.** Infraestructura propia de Juan (Hetzner + Dokploy en `/Users/juan/Documents/Codigo/Personal/hosting`), el mismo stack de juantech y Juan Portfolio. Repo: `github.com/Sve-nnN/dr-angulo-website`. Dokploy: proyecto `client-dr-angulo`, `applicationId: 29ZFzVVwEczNI733DodMp`, appName real `dr-angulo-website-nqscdc`. Pasos de dominio y variables en `.planning/milestones/v1.0-phases/04-contenido-seo-legal-y-publicaci-n/04-VERIFICATION.md`, sección Human Verification Required.
 - **Arquitectura en silo:** una URL por servicio y una por sede. La SERP de Lima está segmentada por condición y por clínica, y una sola página `/servicios` no compite contra dominios exact-match. Se valida en las fases 8 y 9.
+- **Las redirecciones de renombre viven en `next.config.ts`, no en `src/proxy.ts`.** El 08-15 estrenó el bloque `redirects()` para mandar `/servicios/escoliosis` al slug nuevo. `proxy.ts` se queda con lo suyo, que es el host `www`. Los renombres de URL de contenido entran como entradas del mismo arreglo. En Next 16 `permanent: true` emite 308 y no 301, a propósito: Google lo trata igual para consolidar señales.
 - **Contenido médico SIN gate previo, cambiado el 2026-08-10 por decisión de Juan.** El texto clínico se publica y el doctor revisa después. Además las páginas van firmadas por él. Lo que reemplaza a la aprobación previa son las salvaguardas verificadas por máquina en `scripts/check-content.mjs`: cero credenciales fuera de `cv.ts`, cero cifras de cirugías, tasas de éxito, plazos garantizados o precios, cero voz en primera persona sobre casos, y schema sin `reviewedBy` ni `lastReviewed`.
 
 ### Pending Todos
@@ -232,5 +233,5 @@ El cierre formal del milestone v1.0 (audit, complete-milestone, cleanup) espera 
 ## Session Continuity
 
 Last session: 2026-08-13
-Stopped at: Ola 2 de la fase 8 cerrada. Los cuatro posts del blog publican el copy aprobado de v1.2 con su esqueleto de guía clínica y sus URLs intactas. El último, 08-11, convirtió el post del miedo a operarse en la guía de cirugía de columna, 1747 palabras. La puerta de contenido pasa las ocho rutas del manifiesto.
+Stopped at: Ola 3 de la fase 8 abierta con 08-15 cerrado. `/servicios/escoliosis` se renombró a `/servicios/escoliosis-y-deformidades` y publica las 19 secciones del copy aprobado, 2615 palabras. El slug viejo responde 308 permanente, comprobado con una petición real contra el sitio construido. Con eso SVC-03 deja de ser el requisito sin dueño del set. `next.config.ts` ya tiene el bloque `redirects()` donde el 08-14 sumará los dos 301 del blog. El sitemap sigue en 21 URLs; el primero que mueve ese conteo es el 08-16.
 Resume file: None
