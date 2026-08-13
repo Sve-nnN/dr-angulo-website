@@ -1,8 +1,17 @@
 import assert from "node:assert/strict";
 import { test } from "node:test";
 
-import type { PaqueteDeUrl } from "./model.js";
-import { COPY_FIN, COPY_INICIO, SELLO_PENDIENTE, renderPaquete } from "./paquete.js";
+import type { FilaDeOnPage } from "./metadatos.js";
+import type { FormatoDePagina, PaqueteDeUrl } from "./model.js";
+import type { PaqueteCorto } from "./paquete.js";
+import {
+  COPY_FIN,
+  COPY_INICIO,
+  SELLO_PENDIENTE,
+  queHacerCon,
+  renderPaquete,
+  renderPaqueteCorto,
+} from "./paquete.js";
 
 /**
  * Paquete minimo con las dos clases de seccion que existen: una clinica y una operativa.
@@ -70,6 +79,64 @@ const PAQUETE: PaqueteDeUrl = {
   },
 };
 
+/** Una URL que se queda publicada y de la que solo cambian el title y la meta (D-06). */
+const FILA_QUE_SE_QUEDA: FilaDeOnPage = {
+  url: "/agendar",
+  accion: "dejar",
+  keywordPrimaria: null,
+  title: "Agendar una cita con el Dr. Angulo",
+  titleLargo: 34,
+  metaDescription: "Como pedir cita en cada sede, por WhatsApp o por la central de citas.",
+  metaLargo: 69,
+  h1: "Agendar cita",
+  h1Origen: "publicado",
+  origenDelH1: "Transcrito del sitio publicado, sin cambiarlo. src/app/agendar/page.tsx:33",
+  keywordAlFrente: null,
+  redirigeA: null,
+  formato: null,
+};
+
+/** Una URL que se apaga con un 301 hacia su guia (D-07). */
+const FILA_QUE_REDIRIGE: FilaDeOnPage = {
+  url: "/blog/estenosis-espinal-que-es",
+  accion: "redirigir",
+  keywordPrimaria: null,
+  title: null,
+  titleLargo: null,
+  metaDescription: null,
+  metaLargo: null,
+  h1: null,
+  h1Origen: null,
+  origenDelH1:
+    "La URL se apaga con un 301 hacia /servicios/estenosis-espinal y no recibe title, meta ni " +
+    "H1 propios (D-07). El paquete que hay que implementar es el del destino.",
+  keywordAlFrente: null,
+  redirigeA: "/servicios/estenosis-espinal",
+  formato: null,
+};
+
+const CORTO_QUE_SE_QUEDA: PaqueteCorto = {
+  fila: FILA_QUE_SE_QUEDA,
+  // Con su raya larga: es prosa de la fase 14 y entra al paquete como procedencia.
+  motivoSinPrimaria:
+    "Es el final del embudo y no tiene cabeza medida propia — asignarle una montaría la " +
+    "canibalización que el mapa de la fase 14 cerró, y con la home como víctima.",
+  queHacer: queHacerCon(FILA_QUE_SE_QUEDA),
+};
+
+const CORTO_QUE_REDIRIGE: PaqueteCorto = {
+  fila: FILA_QUE_REDIRIGE,
+  motivoSinPrimaria: "Se funde con la guía de estenosis espinal y redirige, así que no pelea nada.",
+  queHacer: queHacerCon(FILA_QUE_REDIRIGE),
+};
+
+/** El texto entre las dos marcas. Es la unica region sobre la que mandan las reglas de escritura. */
+function regionDe(documento: string): string {
+  const region = documento.split(COPY_INICIO)[1]?.split(COPY_FIN)[0];
+  assert.ok(region !== undefined, "el documento no trae las dos marcas de copy");
+  return region;
+}
+
 /** Devuelve el bloque de una seccion del documento, desde su encabezado hasta el siguiente. */
 function bloqueDe(documento: string, titulo: string): string {
   const desde = documento.indexOf(`## ${titulo}`);
@@ -113,4 +180,88 @@ test("paquete: dos renderizados del mismo dataset producen el mismo texto", () =
   // El documento se regenera, no se edita (D-12). Si dos corridas difirieran, cualquier
   // correccion hecha a mano sobreviviria hasta la siguiente y despues desapareceria.
   assert.equal(renderPaquete(PAQUETE), renderPaquete(PAQUETE));
+  assert.equal(renderPaqueteCorto(CORTO_QUE_SE_QUEDA), renderPaqueteCorto(CORTO_QUE_SE_QUEDA));
+});
+
+test("paquete: los cuatro tipos de documento comparten cabecera y cada uno se nombra", () => {
+  // Quien implementa abre el archivo de su URL y lo primero que necesita saber es que clase de
+  // documento tiene delante. Si la cabecera cambiara de forma entre tipos habria que aprender
+  // cuatro documentos en vez de uno.
+  const formatos: readonly [FormatoDePagina, string][] = [
+    ["guia-clinica", "guía clínica"],
+    ["pagina-de-servicio", "página de servicio"],
+    ["ficha-de-sede", "ficha de sede"],
+  ];
+
+  for (const [formato, nombre] of formatos) {
+    const documento = renderPaquete({ ...PAQUETE, formato });
+    assert.ok(documento.startsWith(`# Paquete on-page: ${PAQUETE.fila.url}\n`), formato);
+    assert.ok(documento.includes("## Qué hay que hacer con esta URL"), formato);
+    assert.ok(documento.includes(`| Formato | ${nombre} |`), `${formato}: falta el rótulo`);
+  }
+
+  const corto = renderPaqueteCorto(CORTO_QUE_SE_QUEDA);
+  assert.ok(corto.startsWith("# Paquete on-page: /agendar\n"));
+  assert.ok(corto.includes("## Qué hay que hacer con esta URL"));
+  assert.ok(corto.includes("| Formato | documento corto |"));
+});
+
+test("paquete: una URL que solo lleva title y meta recibe el corto, sin cuerpo inventado", () => {
+  // Las 6 que declararon no competir no reciben copy (D-06): redactarles cuerpo seria
+  // inventarles una intencion que el mapa decidio que no tienen.
+  const documento = renderPaqueteCorto(CORTO_QUE_SE_QUEDA);
+
+  assert.ok(documento.includes("| Title | Agendar una cita con el Dr. Angulo | 34 / 60 |"));
+  assert.ok(documento.includes("| H1 | Agendar cita | publicado |"));
+  assert.ok(!documento.includes("## Copy propuesto"), "el corto no lleva copy");
+  assert.ok(!documento.includes(SELLO_PENDIENTE), "sin copy clinico no hay nada que sellar");
+  assert.equal(
+    regionDe(documento).split("\n").filter((l) => l.trim() !== "").length,
+    2,
+    "el corto dice en dos líneas qué hacer con la URL (D-14)",
+  );
+});
+
+test("paquete: una URL que se apaga con un 301 dice hacia dónde va", () => {
+  // El paquete existe igual porque quien abra esa URL tiene que encontrar la instruccion y no
+  // un hueco (D-07). Sin el destino escrito, la instruccion no sirve para nada.
+  const documento = renderPaqueteCorto(CORTO_QUE_REDIRIGE);
+
+  assert.ok(documento.includes("/servicios/estenosis-espinal"), "falta el destino del 301");
+  assert.ok(documento.includes("301"), "falta decir que la redirección es un 301");
+  assert.ok(!documento.includes("## Title, meta y H1"), "una URL que se apaga no recibe title");
+  assert.equal(
+    regionDe(documento).split("\n").filter((l) => l.trim() !== "").length,
+    2,
+    "también son dos líneas",
+  );
+});
+
+test("paquete: el documento corto trae las dos marcas para que la compuerta pueda correrlo", () => {
+  // La compuerta de ymyl.ts devuelve `region-ausente` si un documento no las trae. Los cuatro
+  // tipos las llevan para que la wave 3 corra la compuerta sobre cualquiera sin caso especial.
+  for (const corto of [CORTO_QUE_SE_QUEDA, CORTO_QUE_REDIRIGE]) {
+    const documento = renderPaqueteCorto(corto);
+    assert.ok(documento.includes(COPY_INICIO), corto.fila.url);
+    assert.ok(documento.includes(COPY_FIN), corto.fila.url);
+  }
+});
+
+test("paquete: ningún tipo de documento ensucia su región de copy, y lo heredado queda afuera", () => {
+  // El generador no emite rayas largas ni comillas tipograficas dentro de la region, ni siquiera
+  // en los rotulos que el mismo escribe. El motivo de la fase 14 trae una raya larga y por eso
+  // va afuera: acotar la region es lo que deja sostener la regla sin aflojarla.
+  const documentos = [
+    renderPaquete(PAQUETE),
+    renderPaqueteCorto(CORTO_QUE_SE_QUEDA),
+    renderPaqueteCorto(CORTO_QUE_REDIRIGE),
+  ];
+
+  for (const documento of documentos) {
+    assert.equal((regionDe(documento).match(/[—–“”‘’]/g) ?? []).length, 0);
+  }
+
+  const conMotivo = renderPaqueteCorto(CORTO_QUE_SE_QUEDA);
+  assert.ok(conMotivo.includes("canibalización que el mapa de la fase 14 cerró"), "falta el motivo");
+  assert.ok(!regionDe(conMotivo).includes("canibalización"), "el motivo heredado va fuera");
 });

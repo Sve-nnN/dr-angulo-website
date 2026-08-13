@@ -40,6 +40,15 @@ export type AccionDeUrl = "dejar" | "reescribir" | "crear" | "redirigir";
  */
 export type FormatoDePagina = "guia-clinica" | "pagina-de-servicio" | "ficha-de-sede";
 
+/**
+ * Los cuatro tipos de documento que la fase entrega.
+ *
+ * El cuarto no tiene formato de pagina porque no describe una pagina que se escriba: es la URL
+ * que solo recibe title y meta (D-06) o la que se apaga con un 301 (D-07). Su documento existe
+ * igual para que quien la abra encuentre la instruccion y no un hueco (D-14).
+ */
+export type TipoDeDocumento = FormatoDePagina | "documento-corto";
+
 /** De donde salio un encabezado. La procedencia viaja con el dato, como en las fases 13 y 14. */
 export type OrigenDeEncabezado =
   | "esqueleto"

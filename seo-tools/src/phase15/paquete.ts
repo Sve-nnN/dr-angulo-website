@@ -24,8 +24,14 @@ import path from "node:path";
 import { CliError, REPO_ROOT, SEO_TOOLS_ROOT } from "../config.js";
 import { ejecutar, parseBanderas, textoObligatorio } from "../phase13/args.js";
 import { normalizar } from "./entidades.js";
-import { tituloYMeta } from "./metadatos.js";
-import type { JerarquiaDeUrl, PaqueteDeUrl, SeccionDeCopy } from "./model.js";
+import type { FilaDeOnPage } from "./metadatos.js";
+import { construirOnPage, tituloYMeta } from "./metadatos.js";
+import type {
+  JerarquiaDeUrl,
+  PaqueteDeUrl,
+  SeccionDeCopy,
+  TipoDeDocumento,
+} from "./model.js";
 import { PaqueteInvalido } from "./model.js";
 import { filaOnPageDe, filasDelMapa } from "./serp-onpage.js";
 
@@ -50,10 +56,11 @@ const DIRECTORIO_DE_PAQUETES = path.join(
   "paquetes",
 );
 
-const NOMBRE_DE_FORMATO: Readonly<Record<string, string>> = {
+const NOMBRE_DE_FORMATO: Readonly<Record<TipoDeDocumento, string>> = {
   "guia-clinica": "guía clínica",
   "pagina-de-servicio": "página de servicio",
   "ficha-de-sede": "ficha de sede",
+  "documento-corto": "documento corto",
 };
 
 /**
@@ -99,6 +106,31 @@ export function palabrasDeCopy(secciones: readonly SeccionDeCopy[]): number {
 }
 
 /**
+ * La cabecera que comparten los cuatro tipos de documento.
+ *
+ * Va igual en los cuatro a proposito. Quien implementa abre el archivo de su URL sin saber que
+ * clase de documento le toco, y lo primero que lee tiene que decirselo. Cuatro cabeceras
+ * distintas obligarian a aprender cuatro documentos donde hay uno.
+ */
+function cabecera(
+  url: string,
+  fuente: string,
+  filas: readonly (readonly string[])[],
+): string[] {
+  return [
+    `# Paquete on-page: ${url}`,
+    "",
+    `<!-- Generado por seo-tools/src/phase15/paquete.ts desde ${fuente}.`,
+    "     No se edita a mano: se regenera. -->",
+    "",
+    "## Qué hay que hacer con esta URL",
+    "",
+    ...tabla(["Campo", "Valor"], filas),
+    "",
+  ];
+}
+
+/**
  * El paquete completo en Markdown.
  *
  * Determinista por construccion: no lee el reloj, no recorre ningun Set para decidir orden y
@@ -118,23 +150,14 @@ export function renderPaquete(paquete: PaqueteDeUrl): string {
   const escritas = palabrasDeCopy(paquete.secciones);
   const lineas: string[] = [];
 
-  lineas.push(`# Paquete on-page: ${paquete.fila.url}`);
-  lineas.push("");
   lineas.push(
-    "<!-- Generado por seo-tools/src/phase15/paquete.ts desde data/copy-guias.json y las",
-    "     capturas de .cache/serpapi/. No se edita a mano: se regenera. -->",
-  );
-  lineas.push("");
-
-  lineas.push("## Qué hay que hacer con esta URL");
-  lineas.push("");
-  lineas.push(
-    ...tabla(
-      ["Campo", "Valor"],
+    ...cabecera(
+      paquete.fila.url,
+      "data/copy-guias.json y las capturas de .cache/serpapi/",
       [
         ["URL", `\`${paquete.fila.url}\``],
         ["Acción", paquete.fila.accion],
-        ["Formato", NOMBRE_DE_FORMATO[paquete.formato] ?? paquete.formato],
+        ["Formato", NOMBRE_DE_FORMATO[paquete.formato]],
         ["Keyword primaria", `\`${paquete.fila.keywordPrimaria ?? "sin primaria"}\``],
         ["Mínimo de palabras", String(paquete.minimoDePalabras)],
         ["Palabras redactadas", `${escritas} (mínimo ${paquete.minimoDePalabras})`],
@@ -148,7 +171,6 @@ export function renderPaquete(paquete: PaqueteDeUrl): string {
       ],
     ),
   );
-  lineas.push("");
 
   lineas.push("## Title, meta y H1");
   lineas.push("");
@@ -339,6 +361,146 @@ export function renderPaquete(paquete: PaqueteDeUrl): string {
 }
 
 // ---------------------------------------------------------------------------
+// El cuarto tipo: el documento corto
+// ---------------------------------------------------------------------------
+
+/**
+ * El documento de una URL que no lleva copy.
+ *
+ * Son las 6 que declararon no competir y solo reciben title y meta (D-06), y las 2 que se apagan
+ * con un 301 (D-07). Existe porque quien abra esa URL tiene que encontrar la instruccion y no un
+ * hueco (D-14): un archivo ausente se lee como olvido y el que lo busca termina decidiendo solo.
+ */
+export interface PaqueteCorto {
+  readonly fila: FilaDeOnPage;
+  /**
+   * Por que la URL no compite, tal como lo escribio la fase 14.
+   *
+   * Prosa heredada, con las rayas largas de entonces. Va FUERA de la region de copy: acotar la
+   * region es lo que permite prohibir la raya larga en lo que escribimos sin que la regla se
+   * caiga por texto que esta fase no puso ni va a tocar.
+   */
+  readonly motivoSinPrimaria: string | null;
+  /** Las dos lineas que dicen que hacer con esta URL. Es lo unico que esta fase redacta aca. */
+  readonly queHacer: readonly string[];
+}
+
+/**
+ * Las dos lineas que contestan "y con esta URL, que hago".
+ *
+ * Generadas y no escritas a mano: son ocho URLs con dos respuestas posibles, y escribir la misma
+ * frase ocho veces es como una queda distinta sin que nadie lo note.
+ */
+export function queHacerCon(fila: FilaDeOnPage): readonly string[] {
+  if (fila.accion === "redirigir") {
+    const destino = fila.redirigeA ?? "su destino";
+    return [
+      `Esta URL se apaga con una redirección 301 permanente hacia \`${destino}\`.`,
+      `No recibe title, meta ni H1 propios. El paquete que hay que implementar es el de ` +
+        `\`${destino}\`.`,
+    ];
+  }
+  return [
+    "Esta URL se queda publicada y de ella solo cambian el title y la meta description, que " +
+      "están en la tabla de abajo.",
+    fila.h1 === null
+      ? "El H1 no se propone porque la URL declaró no competir, y el sitio publicado no tiene " +
+        "uno de texto plano que transcribir. Lo decide quien publique."
+      : "El H1 no se toca. El que ya está en el sitio se transcribió acá para que se vea cuál " +
+        "es y no haya que ir a buscarlo.",
+  ];
+}
+
+/**
+ * El documento corto en Markdown.
+ *
+ * Comparte cabecera con los otros tres tipos y lleva las dos marcas de copy aunque casi no
+ * tenga copy: asi la compuerta de `ymyl.ts` corre sobre cualquiera de los cuatro documentos sin
+ * un caso especial, y un caso especial es donde una regla se pierde.
+ */
+export function renderPaqueteCorto(corto: PaqueteCorto): string {
+  const { fila } = corto;
+  const lineas: string[] = [];
+
+  lineas.push(
+    ...cabecera(fila.url, "data/onpage.json y data/url-map.jsonl", [
+      ["URL", `\`${fila.url}\``],
+      ["Acción", fila.accion],
+      ["Formato", NOMBRE_DE_FORMATO["documento-corto"]],
+      ["Keyword primaria", "sin primaria, y es una decisión medida de la fase 14"],
+      ["Redirige a", fila.redirigeA === null ? "no aplica" : `\`${fila.redirigeA}\``],
+    ]),
+  );
+
+  lineas.push(COPY_INICIO);
+  lineas.push("");
+  for (const linea of corto.queHacer) {
+    lineas.push(linea);
+    lineas.push("");
+  }
+  lineas.push(COPY_FIN);
+  lineas.push("");
+
+  if (fila.title !== null && fila.metaDescription !== null) {
+    lineas.push("## Title, meta y H1");
+    lineas.push("");
+    lineas.push(
+      ...tabla(
+        ["Campo", "Texto", "Caracteres"],
+        [
+          ["Title", fila.title, `${fila.titleLargo ?? fila.title.length} / 60`],
+          [
+            "Meta description",
+            fila.metaDescription,
+            `${fila.metaLargo ?? fila.metaDescription.length} / 155`,
+          ],
+          ["H1", fila.h1 ?? "sin H1 en el sitio", fila.h1Origen ?? "sin origen"],
+        ],
+      ),
+    );
+    lineas.push("");
+    if (fila.origenDelH1 !== null) {
+      lineas.push(`Por qué ese H1: ${fila.origenDelH1}`);
+      lineas.push("");
+    }
+  }
+
+  if (fila.accion === "redirigir") {
+    lineas.push("## La redirección");
+    lineas.push("");
+    lineas.push(
+      ...tabla(
+        ["Campo", "Valor"],
+        [
+          ["Origen", `\`${fila.url}\``],
+          ["Destino", `\`${fila.redirigeA ?? "sin destino en el mapa"}\``],
+          ["Tipo", "301 permanente"],
+        ],
+      ),
+    );
+    lineas.push("");
+    if (fila.origenDelH1 !== null) {
+      lineas.push(fila.origenDelH1);
+      lineas.push("");
+    }
+  }
+
+  if (corto.motivoSinPrimaria !== null) {
+    lineas.push("## Por qué esta URL no compite");
+    lineas.push("");
+    lineas.push(
+      "Escrito en la fase 14 y transcrito acá sin tocarlo. No es una omisión: es una decisión",
+      "medida, y quien implemente esta URL merece leer el motivo sin abrir otro archivo (D-14).",
+    );
+    lineas.push("");
+    lineas.push(corto.motivoSinPrimaria);
+    lineas.push("");
+  }
+
+  return `${lineas.join("\n").replace(/\n{3,}/g, "\n\n").trimEnd()}\n`;
+}
+
+// ---------------------------------------------------------------------------
 // Construccion desde los datasets
 // ---------------------------------------------------------------------------
 
@@ -368,6 +530,35 @@ export function paginasDeCopy(rutaArchivo: string = RUTA_COPY): readonly PaginaD
   }
   const archivo = JSON.parse(crudo) as ArchivoDeCopy | readonly PaginaDeCopy[];
   return Array.isArray(archivo) ? archivo : ((archivo as ArchivoDeCopy).paginas ?? []);
+}
+
+/**
+ * Arma el documento corto de una URL sin copy, desde el mapa de metadatos y el de la fase 14.
+ *
+ * `construirOnPage()` en vez de leer `data/onpage.json`: el dataset es la fuente de verdad y el
+ * archivo su copia en disco. Regenerarlo cuesta cero y no puede quedar desincronizado.
+ */
+export function construirPaqueteCorto(url: string): PaqueteCorto {
+  const fila = construirOnPage().filas.find((f) => f.url === url);
+  if (fila === undefined) {
+    throw new CliError(
+      `La URL ${url} no esta en el mapa de metadatos.\n` +
+        `  Accion: las 24 filas salen de data/url-map.jsonl; revisa la ruta que pasaste.`,
+    );
+  }
+  if (fila.keywordPrimaria !== null && fila.keywordPrimaria !== "") {
+    throw new CliError(
+      `La URL ${url} tiene keyword primaria y recibe pagina completa, no documento corto.\n` +
+        `  Accion: el documento corto es para las 6 que declararon no competir y las 2 que se ` +
+        `apagan con un 301.`,
+    );
+  }
+
+  return {
+    fila,
+    motivoSinPrimaria: filasDelMapa().find((f) => f.url === url)?.motivoSinPrimaria ?? null,
+    queHacer: queHacerCon(fila),
+  };
 }
 
 /**
@@ -446,19 +637,48 @@ export async function construirPaquete(url: string): Promise<PaqueteDeUrl> {
 //
 // COSTE DE CUOTA: CERO. La SERP sale de `.cache/serpapi/` en modo offline.
 
-async function main(): Promise<number> {
-  const banderas = parseBanderas(process.argv.slice(2));
-  const url = textoObligatorio(banderas, "url");
-
-  const paquete = await construirPaquete(url);
-  const documento = renderPaquete(paquete);
-
+function escribir(url: string, documento: string): string {
   mkdirSync(DIRECTORIO_DE_PAQUETES, { recursive: true });
   const destino = path.join(DIRECTORIO_DE_PAQUETES, archivoDePaquete(url));
   writeFileSync(destino, documento, "utf8");
+  return destino;
+}
+
+/**
+ * Que tipo de documento le toca a la URL lo decide el mapa, no la bandera.
+ *
+ * Una URL sin keyword primaria no puede recibir pagina completa aunque quien corra el comando lo
+ * pida: no tiene SERP medida de la cual sacar jerarquia ni entidades, y el mapa ya escribio por
+ * que no compite.
+ */
+async function main(): Promise<number> {
+  const banderas = parseBanderas(process.argv.slice(2));
+  const url = textoObligatorio(banderas, "url");
+  const out = process.stdout;
+
+  const enElMapa = filasDelMapa().find((f) => f.url === url);
+  if (enElMapa === undefined) {
+    throw new CliError(
+      `La URL ${url} no esta en data/url-map.jsonl.\n` +
+        `  Accion: el mapa de la fase 14 es de solo lectura; revisa la ruta que pasaste.`,
+    );
+  }
+
+  if (enElMapa.keywordPrimaria === null || enElMapa.keywordPrimaria === "") {
+    const corto = construirPaqueteCorto(url);
+    const destino = escribir(url, renderPaqueteCorto(corto));
+    out.write(`Paquete de ${url}\n`);
+    out.write(`  tipo:               documento corto\n`);
+    out.write(`  accion:             ${corto.fila.accion}\n`);
+    out.write(`  redirige a:         ${corto.fila.redirigeA ?? "no aplica"}\n`);
+    out.write(`\nEscrito: ${destino}\n`);
+    return 0;
+  }
+
+  const paquete = await construirPaquete(url);
+  const destino = escribir(url, renderPaquete(paquete));
 
   const escritas = palabrasDeCopy(paquete.secciones);
-  const out = process.stdout;
   out.write(`Paquete de ${url}\n`);
   out.write(`  formato:            ${paquete.formato}\n`);
   out.write(`  palabras de copy:   ${escritas} (minimo ${paquete.minimoDePalabras})\n`);
