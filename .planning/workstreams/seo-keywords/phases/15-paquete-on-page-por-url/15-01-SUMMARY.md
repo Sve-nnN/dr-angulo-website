@@ -134,7 +134,7 @@ status: complete
 
 - **Una URL entera, de punta a punta.** `/servicios/hernia-discal` sale con title, meta, H1, veinte encabezados con su procedencia, catorce entidades obligatorias y una guía clínica de 2483 palabras contra un mínimo de 1400. El documento se abre solo: quien lo implementa no necesita leer ningún otro archivo del workstream.
 - **Las 16 URLs con primaria tienen jerarquía y entidades medidas.** De las 64 preguntas de las 16 SERPs, 63 entraron a una jerarquía y la única que quedó fuera dice por escrito por qué. Cero secundarias del mapa sin encabezado que las cubra, que es lo que sostiene los 135 anchors de la matriz del plan 14-04.
-- **196 entidades obligatorias con procedencia término a término.** Cada una declara en cuántos orgánicos apareció, sobre cuántos, y en qué posiciones. Ninguna fila quedó con entidades insuficientes.
+- **204 entidades obligatorias con procedencia término a término** (número final tras el fix de WR-05 en la revisión de código de la fase, que ajustó qué clase de término cuenta). Cada una declara en cuántos orgánicos apareció, sobre cuántos, y en qué posiciones. 9 de las 16 filas quedan marcadas `entidadesInsuficientes: true` tras esa corrección — está documentado en `15-VERIFICATION.md` como advertencia no bloqueante, no como bug de este plan.
 - **El presupuesto de la fase se respetó entero.** `.cache/_quota.json` marca 96 llamadas a SerpApi antes y después. Las 6 búsquedas que quedan hasta el reset del 2026-08-21 siguen intactas.
 - **Juan aprobó el molde sobre el documento real** el 2026-08-12: tono, formato y extensión quedan como referencia para las quince páginas restantes.
 

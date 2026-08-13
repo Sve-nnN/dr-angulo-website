@@ -35,7 +35,10 @@ findings:
   warning: 10
   info: 7
   total: 18
-status: issues_found
+status: fixed
+fixed: 2026-08-13
+fix_commits: [48a82b5, ff1ba76, 0b89d2e, b4ec747, 8a1d6a8, 37b1f44, 9bd3a18, 0a94ff3, e77aeb5, 527f741, 6875815]
+fix_note: "Los 11 findings de Critical y Warning (CR-01, WR-01..WR-10) quedaron arreglados y reverificados por gsd-verifier el 2026-08-13 (15-VERIFICATION.md). Los 7 Info (IN-01..IN-07) quedaron fuera de alcance, sin arreglar."
 ---
 
 # Fase 15: reporte de code review

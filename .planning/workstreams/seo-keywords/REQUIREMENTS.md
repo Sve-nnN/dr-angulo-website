@@ -172,7 +172,7 @@ Ricardo Palma, Sanna La Molina, Padre Luis Tezza), más el hub `/servicios` refo
   2026-08-12 (`totalUrls: 0`, `wdfdf.media: []`, `df: null`): analiza la página aislada, que
   es lo contrario de lo que el requisito pide. Los términos salen de la frecuencia documental
   sobre los títulos y fragmentos del top 10 ya capturado, que sí son los que posicionan, y
-  cada uno viaja con su procedencia. 196 términos sobre las 16 URLs, en
+  cada uno viaja con su procedencia. 204 términos sobre las 16 URLs, en
   `seo-tools/data/onpage-serp.json`._
 
 - [x] **ONPAGE-04**: El copy clínico nuevo o reescrito está redactado, humanizado y marcado
@@ -279,10 +279,10 @@ Mapeada por `ROADMAP.md` del workstream `seo-keywords` el 2026-08-10.
 | MAP-05 | Fase 14 | **Completo** (plan 14-04) — 135 enlaces entre 22 URLs, en `14-ENLAZADO.md` |
 | ONPAGE-01 | Fase 15 | **Completo** (plan 15-02) — 22 URLs vivas con title ≤60 y meta ≤155; las 16 que compiten con la primaria al frente |
 | ONPAGE-02 | Fase 15 | **Completo** (planes 15-01 y 15-02) — H1 propuesto y 305 encabezados H2/H3 en las 16 que compiten. Las 6 que no compiten transcriben su H1 publicado (D-06) |
-| ONPAGE-03 | Fase 15 | **Completo** (plan 15-01) — 196 términos con procedencia, derivados del top 10 capturado y no del TF-IDF de DinoRank (D-02) |
+| ONPAGE-03 | Fase 15 | **Completo** (plan 15-01) — 204 términos con procedencia, derivados del top 10 capturado y no del TF-IDF de DinoRank (D-02) |
 | ONPAGE-04 | Fase 15 | **Completo** (planes 15-01, 15-03, 15-04, 15-05 y 15-06) — las 16 páginas con keyword primaria redactadas de punta a punta en cuatro datasets separados. Las 16 pasan `ymyl.ts` con cero hallazgos y toda sección clínica sale sellada como pendiente-doctor |
 | ONPAGE-05 | Fase 15 | **Completo** (plan 15-02) — auditoría local sobre el paquete propuesto: cero duplicados y cero metas faltantes en 22 URLs (D-04) |
-| ONPAGE-06 | Fase 15 | **Completo** (plan 15-07) — los 24 documentos: 16 de página completa, 6 cortos de las URLs que declararon no competir y 2 de redirección. Con índice generado, ronda única del doctor de 450 bloques y handoff autocontenido hacia las fases 8 y 10 de v1.1 |
+| ONPAGE-06 | Fase 15 | **Completo** (plan 15-07) — los 24 documentos: 16 de página completa, 6 cortos de las URLs que declararon no competir y 2 de redirección. Con índice generado, ronda única del doctor de 225 bloques (450 casillas) y handoff autocontenido hacia las fases 8 y 10 de v1.1 |
 | SHEET-01 | Fase 13 | **Completo** |
 | SHEET-02 | Fase 14 | **Completo** (planes 14-03 y 14-05) — 24 filas vivas en `Content Model`. Las tres métricas de Ahrefs se llenan solo donde la procedencia es `ahrefs`: 24 celdas con dato y 48 vacías a propósito. Las de GSC siguen vacías porque el sitio no tiene impresiones |
 | SHEET-03 | Fase 13 | **Completo** |
