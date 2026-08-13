@@ -25,9 +25,9 @@ See: .planning/PROJECT.md (updated 2026-08-10)
 ## Current Position
 
 Phase: 8, reabierta para consumir el paquete on-page de v1.2 (planes 08-05 a 08-19, en cuatro olas)
-Plan: 08-05 a 08-11, 08-15 y 08-16 cerrados. El silo clínico ya tiene sus cinco hijas y el hub con cuerpo. Quedan 08-12, 08-13, 08-14, 08-17, 08-18 y 08-19
+Plan: 08-05 a 08-13, 08-15 y 08-16 cerrados. El silo clínico tiene sus cinco hijas, el hub con cuerpo y los seis posts del blog: todo el contenido nuevo o reescrito de la fase está publicado. Quedan 08-14, 08-17, 08-18 y 08-19
 Status: En ejecución
-Last activity: 2026-08-13, plan 08-16 ejecutado y verificado en local
+Last activity: 2026-08-13, plan 08-13 ejecutado y verificado en local
 
 Progress: [████████░░] 4 de 5 fases de v1.1, con la 8 reabierta
 
@@ -134,6 +134,19 @@ tres posts no declaran nada y siguen con el default: los ocho PASA de la puerta 
 se movieron. Es probable que 08-11 y los posts nuevos repitan el patrón, porque todos toman la
 intro de `que-es`.
 
+**Olas 5 y 6, planes 08-12 y 08-13, cerrados el 2026-08-13.** Las dos URLs de blog que el paquete
+manda crear en vez de reescribir. `/blog/artrosis` publica 20 secciones y 1989 palabras y sale al
+silo por el hub `/servicios`, sin `relatedService`, porque la matriz no le asigna mención inversa
+hacia ninguna guía. `/blog/lumbalgia` publica 19 secciones y 1737 palabras y sí la tiene: declara
+`relatedService: "hernia-discal"` y enlaza a esa guía con el anchor literal de la matriz,
+`hernia discal lumbosacra tratamiento`, en vez de la frase que la plantilla arma sola desde
+`conditionName`. Los dos módulos se serializaron desde `copy-blog.json` con un script de una
+pasada, y los dos planes contaron de menos las secciones del dataset: manda el dataset.
+
+Con eso el blog llega a seis posts y el sitemap a 24 URLs, que es el máximo de la fase. Los tres
+`SITEMAP_TOTAL` van sincronizados en el mismo commit cada vez que el conteo se mueve. El plan
+08-14 lo devuelve a 22 al apagar los dos posts absorbidos con sus 301.
+
 ### Estado de la fase 10, verificado en producción el 2026-08-10
 
 | Req | Estado | Evidencia |
@@ -233,9 +246,11 @@ El cierre formal del milestone v1.0 (audit, complete-milestone, cleanup) espera 
 ## Session Continuity
 
 Last session: 2026-08-13
-Stopped at: Ola 5 abierta con 08-12. `/blog/artrosis` existe y publica las 20 secciones del paquete con 1989 palabras: 8 de nivel 2 y 12 de nivel 3, contra las 19 que el plan había contado, porque el plan se saltó `que-es--artrosis-mano` y manda el dataset. Es el primer post del sitio sin `relatedService`. La matriz de la fase 14 no le asigna mención inversa hacia ninguna guía, así que sale al silo por el hub `/servicios` y su entrada del `MANIFEST` va sin `linksTo`, que es el caso para el que el 08-05 dejó el campo opcional. Su banner cuelga de `que-es--artrosis-de-rodilla`, porque `que-es` arrastra seis subsecciones y la única frontera de nivel 2 cercana cae en el 41.9 por ciento. `SITEMAP_TOTAL` está en 23 en las tres puertas y el sitemap real tiene 23 URLs. Queda un enlace de salida hacia `/blog/lumbalgia`, que todavía responde 404: lo cierra el 08-13, que además sube el conteo a 24. Después el 08-14 lo devuelve a 22 con las redirecciones, y 08-17 a 08-19 son sedes y preguntas frecuentes.
+Stopped at: Ola 6 cerrada con 08-13, y con ella todo el contenido nuevo o reescrito de la fase. `/blog/lumbalgia` existe y publica las 19 secciones del paquete con 1737 palabras de cuerpo: 8 de nivel 2 y 11 de nivel 3, contra las 15 que el plan había contado, porque el plan contó de menos y manda el dataset. A diferencia de artrosis, este post sí declara `relatedService: "hernia-discal"`, que es la mención inversa que la matriz le asigna, y su enlace de salida usa el anchor literal `hernia discal lumbosacra tratamiento` en vez de la frase que la plantilla arma sola. Su banner cuelga de `sintomas`, la única frontera de nivel 2 que cae dentro de la ventana de POS-01. `SITEMAP_TOTAL` está en 24 en las tres puertas y el sitemap real tiene 24 URLs: es el máximo de la fase. El enlace que el 08-12 dejó apuntando a un 404 ya resuelve. Lo que queda: el 08-14 devuelve el conteo a 22 con las redirecciones de los dos posts absorbidos, y 08-17 a 08-19 son sedes y preguntas frecuentes.
 
-Anterior: Ola 4 abierta y cerrada en su parte de silo con 08-16. `/servicios/cirugia-minimamente-invasiva` existe: es la única URL nueva del set, publica las 18 secciones del paquete con 1794 palabras y su banner cuelga de `que-se-atiende--endoscopia-espinal`, porque las siete subsecciones del primer bloque dejan la única frontera de nivel 2 fuera de la ventana de POS-01. El hub `/servicios` publica sus 16 secciones y 1191 palabras con el `ContentBody` del 08-09, entre la rejilla de tarjetas y el catálogo heredado, y conserva las cuatro anclas de v1.0. Su `h1` pasó a "Cirujano de columna en Lima"; el title y la meta siguen siendo de la fase 10. `SITEMAP_TOTAL` está en 22 en las tres puertas y el sitemap real tiene 22 URLs. El enlace que el 08-15 dejó apuntando a la cirugía mínimamente invasiva ya resuelve. Lo que sigue: 08-12 y 08-13 suben el conteo a 23 y 24 con los posts nuevos, el 08-14 lo devuelve a 22 con las redirecciones, y 08-17 a 08-19 son sedes y preguntas frecuentes.
+Anterior: Ola 5 abierta con 08-12. `/blog/artrosis` existe y publica las 20 secciones del paquete con 1989 palabras: 8 de nivel 2 y 12 de nivel 3, contra las 19 que el plan había contado, porque el plan se saltó `que-es--artrosis-mano` y manda el dataset. Es el primer post del sitio sin `relatedService`. La matriz de la fase 14 no le asigna mención inversa hacia ninguna guía, así que sale al silo por el hub `/servicios` y su entrada del `MANIFEST` va sin `linksTo`, que es el caso para el que el 08-05 dejó el campo opcional. Su banner cuelga de `que-es--artrosis-de-rodilla`, porque `que-es` arrastra seis subsecciones y la única frontera de nivel 2 cercana cae en el 41.9 por ciento. `SITEMAP_TOTAL` está en 23 en las tres puertas y el sitemap real tiene 23 URLs. Queda un enlace de salida hacia `/blog/lumbalgia`, que todavía responde 404: lo cierra el 08-13, que además sube el conteo a 24. Después el 08-14 lo devuelve a 22 con las redirecciones, y 08-17 a 08-19 son sedes y preguntas frecuentes.
 
-Antes de eso: Ola 3 de la fase 8 abierta con 08-15 cerrado. `/servicios/escoliosis` se renombró a `/servicios/escoliosis-y-deformidades` y publica las 19 secciones del copy aprobado, 2615 palabras. El slug viejo responde 308 permanente, comprobado con una petición real contra el sitio construido. Con eso SVC-03 deja de ser el requisito sin dueño del set. `next.config.ts` ya tiene el bloque `redirects()` donde el 08-14 sumará los dos 301 del blog. El sitemap sigue en 21 URLs; el primero que mueve ese conteo es el 08-16.
+Antes: Ola 4 abierta y cerrada en su parte de silo con 08-16. `/servicios/cirugia-minimamente-invasiva` existe: es la única URL nueva del set, publica las 18 secciones del paquete con 1794 palabras y su banner cuelga de `que-se-atiende--endoscopia-espinal`, porque las siete subsecciones del primer bloque dejan la única frontera de nivel 2 fuera de la ventana de POS-01. El hub `/servicios` publica sus 16 secciones y 1191 palabras con el `ContentBody` del 08-09, entre la rejilla de tarjetas y el catálogo heredado, y conserva las cuatro anclas de v1.0. Su `h1` pasó a "Cirujano de columna en Lima"; el title y la meta siguen siendo de la fase 10. `SITEMAP_TOTAL` está en 22 en las tres puertas y el sitemap real tiene 22 URLs. El enlace que el 08-15 dejó apuntando a la cirugía mínimamente invasiva ya resuelve. Lo que sigue: 08-12 y 08-13 suben el conteo a 23 y 24 con los posts nuevos, el 08-14 lo devuelve a 22 con las redirecciones, y 08-17 a 08-19 son sedes y preguntas frecuentes.
+
+Y antes: Ola 3 de la fase 8 abierta con 08-15 cerrado. `/servicios/escoliosis` se renombró a `/servicios/escoliosis-y-deformidades` y publica las 19 secciones del copy aprobado, 2615 palabras. El slug viejo responde 308 permanente, comprobado con una petición real contra el sitio construido. Con eso SVC-03 deja de ser el requisito sin dueño del set. `next.config.ts` ya tiene el bloque `redirects()` donde el 08-14 sumará los dos 301 del blog. El sitemap sigue en 21 URLs; el primero que mueve ese conteo es el 08-16.
 Resume file: None
