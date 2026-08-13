@@ -44,6 +44,7 @@ const BOOLEANAS = new Set([
   "pretty",
   "todos",
   "indice",
+  "handoff",
 ]);
 
 /** Recolecta `--bandera valor`, `--bandera=valor` y `--bandera` sola, mas los sueltos. */
