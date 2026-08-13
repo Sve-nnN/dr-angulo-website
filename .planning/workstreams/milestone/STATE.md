@@ -25,9 +25,9 @@ See: .planning/PROJECT.md (updated 2026-08-10)
 ## Current Position
 
 Phase: 8, reabierta para consumir el paquete on-page de v1.2 (planes 08-05 a 08-19, en cuatro olas)
-Plan: 08-05 a 08-13, 08-15 y 08-16 cerrados. El silo clínico tiene sus cinco hijas, el hub con cuerpo y los seis posts del blog: todo el contenido nuevo o reescrito de la fase está publicado. Quedan 08-14, 08-17, 08-18 y 08-19
+Plan: 08-05 a 08-16 cerrados. El silo clínico entero está cerrado: cinco páginas de servicio, el hub, home, seis posts de blog, y los dos posts absorbidos ya 301 permanentes con aprobación de Juan. Sitio en 22 URLs. Quedan solo 08-17, 08-18 y 08-19 (sedes + preguntas-frecuentes)
 Status: En ejecución
-Last activity: 2026-08-13, plan 08-13 ejecutado y verificado en local
+Last activity: 2026-08-13, plan 08-14 ejecutado y verificado (build + curl real contra los 3 redirects)
 
 Progress: [████████░░] 4 de 5 fases de v1.1, con la 8 reabierta
 
@@ -146,6 +146,23 @@ pasada, y los dos planes contaron de menos las secciones del dataset: manda el d
 Con eso el blog llega a seis posts y el sitemap a 24 URLs, que es el máximo de la fase. Los tres
 `SITEMAP_TOTAL` van sincronizados en el mismo commit cada vez que el conteo se mueve. El plan
 08-14 lo devuelve a 22 al apagar los dos posts absorbidos con sus 301.
+
+**Ola 7, plan 08-14, cerrado el 2026-08-13. Cierra todo el contenido de la fase.**
+`/blog/hernia-discal-o-dolor-de-espalda-como-diferenciarlos` y `/blog/estenosis-espinal-que-es`
+dejan de existir con redirección permanente hacia la guía que absorbió su material. Antes de
+escribir la regla se comprobaron las 16 filas de las dos tablas de absorción sobre el HTML
+prerenderizado, once ids de destino distintos y todos vivos, y un checkpoint bloqueante lo puso a
+lectura humana sobre el sitio servido en local. Ese orden, publicar y después redirigir, es la
+única razón por la que el plan estaba en la ola 7 y no antes.
+
+`next.config.ts` queda con las tres redirecciones que el handoff declara para v1.1 y ninguna
+pendiente. El blog baja a cuatro posts y el sitemap a 22 URLs, el número con el que cierra la
+fase, con la cuenta escrita en el comentario de las tres constantes. Dos cosas que dejó el plan y
+conviene tener presentes: `relatedPosts` de la guía de estenosis quedó vacío, porque el único
+post que apuntaba a esa condición ahora vive dentro de ella, y la primera comprobación con curl
+dio 200 en las dos rutas por un servidor viejo que seguía escuchando el puerto con la
+configuración anterior. Leer `next.config.ts` en vez de pedir la URL habría dado el visto bueno
+con el sitio sin redirigir.
 
 ### Estado de la fase 10, verificado en producción el 2026-08-10
 
