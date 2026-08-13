@@ -8,21 +8,22 @@
  * Si falta el build, falla: igual que las otras tres puertas, aprobar por
  * ausencia de evidencia es peor que no tener puerta.
  *
- * Verifica seis familias:
+ * Verifica siete familias:
  *
  *   1. SEO-05  Toda ruta anidada emite `BreadcrumbList` y la portada no.
  *   2. SEO-06  El grafo raíz declara CMP, RNE y el horario de las cuatro sedes.
  *   3. SEO-07  Ninguna calificación escrita a mano en el código fuente.
  *   4. SEO-08  Cada ruta declara su propia imagen de Open Graph y esa imagen
  *              existe en el build.
- *   5. SEO-10  `/llms.txt` se prerenderiza con contenido real.
- *   6. SEO-11  `dr-angulo-portrait.png` no está ni en el repo ni en el build.
+ *   5. SEO-08  Ningún `title` pasa de `TITLE_MAX` ni ninguna `description` de
+ *              `DESCRIPTION_MAX`, medidos sobre el HTML servido.
+ *   6. SEO-10  `/llms.txt` se prerenderiza con contenido real.
+ *   7. SEO-11  `dr-angulo-portrait.png` no está ni en el repo ni en el build.
  *              Más la hoja de estilo del sitemap, pedido de Juan del 2026-08-10.
  *
- * Lo que esta puerta NO mira, a propósito: el largo de los `title` y de las
- * `description`. Juan reescribe esos textos él mismo (decisión del 2026-08-10)
- * y una puerta que naciera roja en 17 rutas sería ruido, no una puerta. Cuando
- * termine su pasada, ese control se suma en otra fase.
+ * Los textos que se miden salen del paquete on-page de v1.2, que los planes
+ * 10-01 y 10-02 aplicaron ruta por ruta; los dos límites viven en las
+ * constantes `TITLE_MAX` y `DESCRIPTION_MAX`, acá abajo.
  */
 
 import { readFileSync, existsSync, readdirSync } from "node:fs";
@@ -38,6 +39,10 @@ const STYLESHEET = "public/sitemap.xsl";
  *  hacia la guía que los absorbió. 21 + 1 + 2 − 2 = 22, y es el número con el
  *  que cierra la fase 8. */
 const SITEMAP_TOTAL = 22;
+
+/** Límites de SEO-08, en caracteres del texto ya desescapado. */
+const TITLE_MAX = 60;
+const DESCRIPTION_MAX = 155;
 
 /**
  * Rutas que declaran `noindex` y por eso quedan fuera del sitemap.
@@ -301,7 +306,89 @@ function checkOgImages(routes) {
 }
 
 // --------------------------------------------------------------------------
-// 5. SEO-10, /llms.txt
+// 5. SEO-08, largo del title y de la description
+// --------------------------------------------------------------------------
+
+/** El HTML escapa antes de servir; contar `&amp;` como cinco caracteres infla
+ *  el número y no es lo que cuenta Google. */
+function unescapeHtml(text) {
+  return text
+    .replace(/&lt;/g, "<")
+    .replace(/&gt;/g, ">")
+    .replace(/&quot;/g, '"')
+    .replace(/&#(?:39|x27);/g, "'")
+    .replace(/&amp;/g, "&");
+}
+
+function trim(text) {
+  return text.length > 70 ? `${text.slice(0, 70)}…` : text;
+}
+
+function checkMetadataLength(routes) {
+  let measured = 0;
+  let longestTitle = { route: null, length: 0, text: "" };
+  let longestDescription = { route: null, length: 0, text: "" };
+
+  for (const route of routes) {
+    const file = htmlFor(route);
+    if (!existsSync(resolve(file))) continue;
+
+    const html = read(file);
+    measured += 1;
+
+    const rawTitle = /<title>([^<]*)<\/title>/.exec(html)?.[1];
+    if (rawTitle === undefined) {
+      fail(`${route} no declara <title>`);
+    } else {
+      const title = unescapeHtml(rawTitle).trim();
+      if (title === "") {
+        fail(`${route} tiene el <title> vacío`);
+      } else {
+        if (title.length > TITLE_MAX) {
+          fail(`${route} tiene un title de ${title.length} caracteres, el límite es ${TITLE_MAX}: ${trim(title)}`);
+        }
+        if (title.length > longestTitle.length) {
+          longestTitle = { route, length: title.length, text: title };
+        }
+      }
+    }
+
+    const rawDescription = /<meta name="description" content="([^"]*)"/.exec(html)?.[1];
+    if (rawDescription === undefined) {
+      fail(`${route} no declara meta description`);
+      continue;
+    }
+
+    const description = unescapeHtml(rawDescription).trim();
+    if (description === "") {
+      fail(`${route} tiene la meta description vacía`);
+      continue;
+    }
+    if (description.length > DESCRIPTION_MAX) {
+      fail(
+        `${route} tiene una description de ${description.length} caracteres, el límite es ${DESCRIPTION_MAX}: ${trim(description)}`
+      );
+    }
+    if (description.length > longestDescription.length) {
+      longestDescription = { route, length: description.length, text: description };
+    }
+  }
+
+  notes.push(`${measured} rutas con title y description medidos`);
+  if (longestTitle.route) {
+    notes.push(
+      `title más largo: ${longestTitle.length}/${TITLE_MAX} en ${longestTitle.route}, ${trim(longestTitle.text)}`
+    );
+  }
+  if (longestDescription.route) {
+    notes.push(
+      `description más larga: ${longestDescription.length}/${DESCRIPTION_MAX} en ${longestDescription.route}, ${trim(longestDescription.text)}`
+    );
+  }
+}
+
+// --------------------------------------------------------------------------
+// 6. SEO-10, /llms.txt
 // --------------------------------------------------------------------------
 
 function checkLlmsTxt() {
@@ -333,7 +420,7 @@ function checkLlmsTxt() {
 }
 
 // --------------------------------------------------------------------------
-// 6. Sitemap con hoja de estilo, y limpieza de SEO-11
+// 7. Sitemap con hoja de estilo, y limpieza de SEO-11
 // --------------------------------------------------------------------------
 
 function checkSitemap(sitemap) {
@@ -410,6 +497,7 @@ function main() {
   checkCredentialsAndHours();
   checkNoHandwrittenRatings();
   checkOgImages(routes);
+  checkMetadataLength(routes);
   checkLlmsTxt();
   checkSitemap(sitemap);
   checkDeletedAsset();
