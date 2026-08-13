@@ -89,7 +89,7 @@ de presentación y así hay que leerlo.
 | --- | --- | --- | --- |
 | `lima` | 8 de 9 | 1, 2, 3, 4, 6, 7, 8, 9 | generica |
 | `traumatologia` | 5 de 9 | 1, 2, 3, 5, 6 | generica |
-| `lesiones` | 4 de 9 | 1, 5, 6, 7 | generica |
+| `lesiones` | 4 de 9 | 1, 5, 6, 7 | clinica |
 | `traumatologo` | 3 de 9 | 7, 8, 9 | generica |
 | `consulta` | 2 de 9 | 1, 4 | procedimiento |
 | `medicos` | 2 de 9 | 1, 5 | generica |
@@ -103,6 +103,10 @@ de presentación y así hay que leerlo.
 | `experiencia` | 2 de 9 | 7, 9 | generica |
 | `rodilla` | 2 de 9 | 7, 8 | anatomica |
 | `traumatologo en lima` | 2 de 9 | 7, 9 | generica |
+
+> Esta SERP no dio ocho términos clínicos, anatómicos o de procedimiento ni al umbral
+> mínimo. Los términos genéricos que sí trae quedan listados arriba y no cuentan para el
+> mínimo: exigir que la página nombre `especialidad` no le pide nada a quien la escribe.
 
 ## Copy propuesto
 

@@ -85,7 +85,7 @@ deja sin respaldo al enlace que apunta acá.
 
 Derivadas de los títulos y fragmentos de los 10 orgánicos que ya
 posicionan para `cirujano de columna clínica sanna`, con umbral de frecuencia documental
-0.3. La captura no trae el cuerpo de esas páginas: el corpus es texto
+0.2. La captura no trae el cuerpo de esas páginas: el corpus es texto
 de presentación y así hay que leerlo.
 
 | Término | Documentos | Posiciones | Clase |
@@ -96,8 +96,24 @@ de presentación y así hay que leerlo.
 | `red` | 3 de 10 | 1, 4, 9 | generica |
 | `borja` | 3 de 10 | 3, 7, 8 | generica |
 | `san borja` | 3 de 10 | 3, 7, 8 | generica |
-| `nuestro` | 3 de 10 | 6, 7, 8 | generica |
 | `rodriguez` | 3 de 10 | 6, 7, 8 | generica |
+| `medicina` | 2 de 10 | 2, 5 | generica |
+| `servicios` | 2 de 10 | 2, 4 | generica |
+| `castro` | 2 de 10 | 3, 5 | generica |
+| `paciente` | 2 de 10 | 3, 10 | generica |
+| `calidad` | 2 de 10 | 4, 9 | generica |
+| `medico` | 2 de 10 | 5, 6 | generica |
+| `articulaciones` | 2 de 10 | 7, 8 | anatomica |
+| `constantes` | 2 de 10 | 7, 8 | generica |
+| `constantes en tus huesos` | 2 de 10 | 7, 8 | anatomica |
+| `constantes en tus huesos o articulaciones` | 2 de 10 | 7, 8 | anatomica |
+| `huesos` | 2 de 10 | 7, 8 | anatomica |
+| `huesos o articulaciones` | 2 de 10 | 7, 8 | anatomica |
+| `jorge` | 2 de 10 | 7, 8 | generica |
+
+> Esta SERP no dio ocho términos clínicos, anatómicos o de procedimiento ni al umbral
+> mínimo. Los términos genéricos que sí trae quedan listados arriba y no cuentan para el
+> mínimo: exigir que la página nombre `especialidad` no le pide nada a quien la escribe.
 
 ## Copy propuesto
 

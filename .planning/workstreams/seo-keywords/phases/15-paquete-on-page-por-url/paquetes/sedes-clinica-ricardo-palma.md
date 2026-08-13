@@ -100,6 +100,10 @@ de presentación y así hay que leerlo.
 | `columna` | 3 de 8 | 3, 6, 8 | anatomica |
 | `traumatologo` | 3 de 8 | 4, 7, 8 | generica |
 
+> Esta SERP no dio ocho términos clínicos, anatómicos o de procedimiento ni al umbral
+> mínimo. Los términos genéricos que sí trae quedan listados arriba y no cuentan para el
+> mínimo: exigir que la página nombre `especialidad` no le pide nada a quien la escribe.
+
 ## Copy propuesto
 
 Redactado para pegar. 1214 palabras de prosa contra un mínimo de

@@ -91,9 +91,9 @@ de presentación y así hay que leerlo.
 | Término | Documentos | Posiciones | Clase |
 | --- | --- | --- | --- |
 | `artrosis` | 7 de 7 | 1, 2, 3, 4, 5, 6, 7 | clinica |
-| `articular` | 5 de 7 | 1, 2, 3, 5, 6 | generica |
-| `cartilago` | 5 de 7 | 1, 2, 4, 5, 6 | generica |
-| `enfermedad` | 5 de 7 | 1, 2, 3, 6, 7 | generica |
+| `articular` | 5 de 7 | 1, 2, 3, 5, 6 | anatomica |
+| `cartilago` | 5 de 7 | 1, 2, 4, 5, 6 | anatomica |
+| `enfermedad` | 5 de 7 | 1, 2, 3, 6, 7 | clinica |
 | `degenerativa` | 5 de 7 | 2, 3, 5, 6, 7 | clinica |
 | `artrosis es una enfermedad` | 3 de 7 | 1, 2, 3 | clinica |
 | `dolor` | 3 de 7 | 1, 3, 4 | clinica |

@@ -92,8 +92,8 @@ de presentación y así hay que leerlo.
 | `sintomas` | 4 de 7 | 1, 2, 4, 6 | clinica |
 | `escoliosis sintomas` | 3 de 7 | 2, 4, 6 | clinica |
 | `afecta` | 2 de 7 | 3, 6 | generica |
-| `enfermedad` | 2 de 7 | 3, 6 | generica |
-| `desviacion` | 2 de 7 | 4, 6 | generica |
+| `enfermedad` | 2 de 7 | 3, 6 | clinica |
+| `desviacion` | 2 de 7 | 4, 6 | clinica |
 | `lateral` | 2 de 7 | 4, 5 | generica |
 
 ## Copy propuesto

@@ -93,7 +93,7 @@ de presentación y así hay que leerlo.
 | `lumbalgia` | 7 de 7 | 1, 2, 3, 4, 5, 6, 7 | clinica |
 | `lumbar` | 4 de 7 | 1, 2, 6, 7 | anatomica |
 | `zona` | 4 de 7 | 2, 4, 6, 7 | generica |
-| `costillas` | 2 de 7 | 1, 7 | generica |
+| `costillas` | 2 de 7 | 1, 7 | anatomica |
 | `baja` | 2 de 7 | 2, 7 | generica |
 | `baja de la espalda` | 2 de 7 | 2, 7 | anatomica |
 | `espalda` | 2 de 7 | 2, 7 | anatomica |

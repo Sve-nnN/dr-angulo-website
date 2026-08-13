@@ -98,6 +98,10 @@ de presentación y así hay que leerlo.
 | `ortopedia y traumatologia` | 3 de 9 | 2, 6, 9 | generica |
 | `pediatrica` | 3 de 9 | 2, 4, 8 | generica |
 
+> Esta SERP no dio ocho términos clínicos, anatómicos o de procedimiento ni al umbral
+> mínimo. Los términos genéricos que sí trae quedan listados arriba y no cuentan para el
+> mínimo: exigir que la página nombre `especialidad` no le pide nada a quien la escribe.
+
 ## Copy propuesto
 
 Redactado para pegar. 1520 palabras de prosa contra un mínimo de

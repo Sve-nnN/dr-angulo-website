@@ -86,14 +86,14 @@ de presentación y así hay que leerlo.
 | `reumatologo` | 7 de 7 | 1, 2, 3, 4, 5, 6, 7 | generica |
 | `traumatologo` | 6 de 7 | 1, 2, 3, 4, 5, 6 | generica |
 | `aparato` | 4 de 7 | 1, 2, 3, 4 | generica |
-| `aparato locomotor` | 4 de 7 | 1, 2, 3, 4 | generica |
-| `locomotor` | 4 de 7 | 1, 2, 3, 4 | generica |
+| `aparato locomotor` | 4 de 7 | 1, 2, 3, 4 | anatomica |
+| `locomotor` | 4 de 7 | 1, 2, 3, 4 | anatomica |
 | `reumatologo y traumatologo` | 4 de 7 | 2, 3, 5, 6 | generica |
 | `medico` | 3 de 7 | 2, 3, 4 | generica |
-| `diagnosticar` | 2 de 7 | 1, 7 | generica |
+| `diagnosticar` | 2 de 7 | 1, 7 | procedimiento |
 | `especialista` | 2 de 7 | 1, 2 | generica |
 | `reumatologo es el especialista` | 2 de 7 | 1, 2 | generica |
-| `tratar` | 2 de 7 | 1, 7 | generica |
+| `tratar` | 2 de 7 | 1, 7 | procedimiento |
 | `diferencia` | 2 de 7 | 2, 3 | generica |
 | `tratamiento` | 2 de 7 | 2, 5 | procedimiento |
 | `cirujano` | 2 de 7 | 3, 4 | generica |
@@ -103,6 +103,10 @@ de presentación y así hay que leerlo.
 | `sencilla el reumatologo es el medico` | 2 de 7 | 3, 4 | generica |
 | `traumatologo es el cirujano` | 2 de 7 | 3, 4 | generica |
 | `acudir` | 2 de 7 | 4, 6 | generica |
+
+> Esta SERP no dio ocho términos clínicos, anatómicos o de procedimiento ni al umbral
+> mínimo. Los términos genéricos que sí trae quedan listados arriba y no cuentan para el
+> mínimo: exigir que la página nombre `especialidad` no le pide nada a quien la escribe.
 
 ## Copy propuesto
 

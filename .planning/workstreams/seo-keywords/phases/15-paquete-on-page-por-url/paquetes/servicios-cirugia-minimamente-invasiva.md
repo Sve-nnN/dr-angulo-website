@@ -92,6 +92,10 @@ de presentación y así hay que leerlo.
 | `robotica` | 5 de 9 | 1, 3, 5, 6, 7 | generica |
 | `cirugia robotica` | 4 de 9 | 3, 5, 6, 7 | procedimiento |
 
+> Esta SERP no dio ocho términos clínicos, anatómicos o de procedimiento ni al umbral
+> mínimo. Los términos genéricos que sí trae quedan listados arriba y no cuentan para el
+> mínimo: exigir que la página nombre `especialidad` no le pide nada a quien la escribe.
+
 ## Copy propuesto
 
 Redactado para pegar. 1459 palabras de prosa contra un mínimo de

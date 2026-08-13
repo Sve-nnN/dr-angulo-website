@@ -86,13 +86,13 @@ de presentación y así hay que leerlo.
 | `especialista` | 4 de 9 | 1, 3, 4, 6 | generica |
 | `lima` | 4 de 9 | 1, 2, 3, 6 | generica |
 | `neurocirujano` | 4 de 9 | 1, 2, 4, 9 | generica |
-| `enfermedades` | 3 de 9 | 1, 5, 8 | generica |
+| `enfermedades` | 3 de 9 | 1, 5, 8 | clinica |
 | `especialista en columna` | 3 de 9 | 1, 3, 6 | anatomica |
 | `tratamiento` | 3 de 9 | 1, 3, 8 | procedimiento |
 | `columna vertebral` | 3 de 9 | 3, 4, 8 | anatomica |
 | `vertebral` | 3 de 9 | 3, 4, 8 | anatomica |
-| `cerebro` | 3 de 9 | 5, 8, 9 | generica |
-| `neurocirugia` | 3 de 9 | 5, 8, 9 | generica |
+| `cerebro` | 3 de 9 | 5, 8, 9 | anatomica |
+| `neurocirugia` | 3 de 9 | 5, 8, 9 | procedimiento |
 
 ## Copy propuesto
 

@@ -108,7 +108,7 @@ de presentación y así hay que leerlo.
 | `region lumbar` | 2 de 7 | 2, 4 | anatomica |
 | `raices` | 2 de 7 | 3, 7 | anatomica |
 | `ciatica es un dolor` | 2 de 7 | 4, 5 | clinica |
-| `irritacion` | 2 de 7 | 6, 7 | generica |
+| `irritacion` | 2 de 7 | 6, 7 | clinica |
 
 ## Copy propuesto
 

@@ -99,6 +99,10 @@ de presentación y así hay que leerlo.
 | `vertebral` | 3 de 7 | 1, 6, 7 | anatomica |
 | `lumbar` | 3 de 7 | 2, 3, 4 | anatomica |
 
+> Esta SERP no dio ocho términos clínicos, anatómicos o de procedimiento ni al umbral
+> mínimo. Los términos genéricos que sí trae quedan listados arriba y no cuentan para el
+> mínimo: exigir que la página nombre `especialidad` no le pide nada a quien la escribe.
+
 ## Copy propuesto
 
 Redactado para pegar. 1497 palabras de prosa contra un mínimo de

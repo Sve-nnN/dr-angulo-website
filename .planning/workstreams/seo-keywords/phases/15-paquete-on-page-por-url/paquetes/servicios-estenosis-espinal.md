@@ -93,6 +93,10 @@ de presentación y así hay que leerlo.
 | `medula espinal` | 4 de 8 | 2, 3, 4, 7 | anatomica |
 | `lumbar` | 4 de 8 | 5, 6, 7, 8 | anatomica |
 
+> Esta SERP no dio ocho términos clínicos, anatómicos o de procedimiento ni al umbral
+> mínimo. Los términos genéricos que sí trae quedan listados arriba y no cuentan para el
+> mínimo: exigir que la página nombre `especialidad` no le pide nada a quien la escribe.
+
 ## Copy propuesto
 
 Redactado para pegar. 2423 palabras de prosa contra un mínimo de

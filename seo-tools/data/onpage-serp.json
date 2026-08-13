@@ -203,7 +203,7 @@
             6,
             7
           ],
-          "clase": "generica"
+          "clase": "clinica"
         },
         {
           "termino": "traumatologo",
@@ -337,7 +337,7 @@
           "clase": "generica"
         }
       ],
-      "entidadesInsuficientes": false,
+      "entidadesInsuficientes": true,
       "umbralAplicado": 0.2,
       "coberturaDeSecundarias": [
         {
@@ -753,7 +753,7 @@
             6,
             7
           ],
-          "clase": "generica"
+          "clase": "clinica"
         }
       ],
       "entidadesInsuficientes": false,
@@ -999,7 +999,7 @@
             5,
             6
           ],
-          "clase": "generica"
+          "clase": "anatomica"
         },
         {
           "termino": "cartilago",
@@ -1012,7 +1012,7 @@
             5,
             6
           ],
-          "clase": "generica"
+          "clase": "anatomica"
         },
         {
           "termino": "enfermedad",
@@ -1025,7 +1025,7 @@
             6,
             7
           ],
-          "clase": "generica"
+          "clase": "clinica"
         },
         {
           "termino": "degenerativa",
@@ -1368,7 +1368,7 @@
             1,
             7
           ],
-          "clase": "generica"
+          "clase": "anatomica"
         },
         {
           "termino": "baja",
@@ -1747,7 +1747,7 @@
           "clase": "anatomica"
         }
       ],
-      "entidadesInsuficientes": false,
+      "entidadesInsuficientes": true,
       "umbralAplicado": 0.4,
       "coberturaDeSecundarias": [
         {
@@ -2008,7 +2008,7 @@
             3,
             4
           ],
-          "clase": "generica"
+          "clase": "anatomica"
         },
         {
           "termino": "locomotor",
@@ -2020,7 +2020,7 @@
             3,
             4
           ],
-          "clase": "generica"
+          "clase": "anatomica"
         },
         {
           "termino": "reumatologo y traumatologo",
@@ -2053,7 +2053,7 @@
             1,
             7
           ],
-          "clase": "generica"
+          "clase": "procedimiento"
         },
         {
           "termino": "especialista",
@@ -2083,7 +2083,7 @@
             1,
             7
           ],
-          "clase": "generica"
+          "clase": "procedimiento"
         },
         {
           "termino": "diferencia",
@@ -2176,7 +2176,7 @@
           "clase": "generica"
         }
       ],
-      "entidadesInsuficientes": false,
+      "entidadesInsuficientes": true,
       "umbralAplicado": 0.2,
       "coberturaDeSecundarias": [
         {
@@ -2463,7 +2463,7 @@
           "clase": "generica"
         }
       ],
-      "entidadesInsuficientes": false,
+      "entidadesInsuficientes": true,
       "umbralAplicado": 0.3,
       "coberturaDeSecundarias": [
         {
@@ -2741,46 +2741,6 @@
           "clase": "generica"
         },
         {
-          "termino": "cuida",
-          "documentos": 2,
-          "de": 9,
-          "posiciones": [
-            2,
-            7
-          ],
-          "clase": "generica"
-        },
-        {
-          "termino": "cuidamos",
-          "documentos": 2,
-          "de": 9,
-          "posiciones": [
-            2,
-            7
-          ],
-          "clase": "generica"
-        },
-        {
-          "termino": "cuidamos al enfermo",
-          "documentos": 2,
-          "de": 9,
-          "posiciones": [
-            2,
-            7
-          ],
-          "clase": "generica"
-        },
-        {
-          "termino": "cuidamos al enfermo como una madre",
-          "documentos": 2,
-          "de": 9,
-          "posiciones": [
-            2,
-            7
-          ],
-          "clase": "generica"
-        },
-        {
           "termino": "enfermo",
           "documentos": 2,
           "de": 9,
@@ -2801,27 +2761,7 @@
           "clase": "generica"
         },
         {
-          "termino": "enfermo como una madre cuida",
-          "documentos": 2,
-          "de": 9,
-          "posiciones": [
-            2,
-            7
-          ],
-          "clase": "generica"
-        },
-        {
           "termino": "madre",
-          "documentos": 2,
-          "de": 9,
-          "posiciones": [
-            2,
-            7
-          ],
-          "clase": "generica"
-        },
-        {
-          "termino": "madre cuida",
           "documentos": 2,
           "de": 9,
           "posiciones": [
@@ -2837,16 +2777,6 @@
           "posiciones": [
             2,
             6
-          ],
-          "clase": "generica"
-        },
-        {
-          "termino": "nuestros",
-          "documentos": 2,
-          "de": 9,
-          "posiciones": [
-            2,
-            3
           ],
           "clase": "generica"
         },
@@ -2868,10 +2798,80 @@
             3,
             5
           ],
+          "clase": "clinica"
+        },
+        {
+          "termino": "manejo",
+          "documentos": 2,
+          "de": 9,
+          "posiciones": [
+            3,
+            6
+          ],
+          "clase": "generica"
+        },
+        {
+          "termino": "medicos",
+          "documentos": 2,
+          "de": 9,
+          "posiciones": [
+            3,
+            4
+          ],
+          "clase": "generica"
+        },
+        {
+          "termino": "procedimientos",
+          "documentos": 2,
+          "de": 9,
+          "posiciones": [
+            3,
+            4
+          ],
+          "clase": "generica"
+        },
+        {
+          "termino": "ninos",
+          "documentos": 2,
+          "de": 9,
+          "posiciones": [
+            5,
+            8
+          ],
+          "clase": "generica"
+        },
+        {
+          "termino": "infantil",
+          "documentos": 2,
+          "de": 9,
+          "posiciones": [
+            6,
+            8
+          ],
+          "clase": "generica"
+        },
+        {
+          "termino": "traumatologo",
+          "documentos": 2,
+          "de": 9,
+          "posiciones": [
+            6,
+            8
+          ],
+          "clase": "generica"
+        },
+        {
+          "termino": "lima",
+          "documentos": 2,
+          "de": 9,
+          "posiciones": [
+            7,
+            8
+          ],
           "clase": "generica"
         }
       ],
-      "entidadesInsuficientes": false,
+      "entidadesInsuficientes": true,
       "umbralAplicado": 0.2,
       "coberturaDeSecundarias": [
         {
@@ -3127,17 +3127,6 @@
           "clase": "procedimiento"
         },
         {
-          "termino": "somos",
-          "documentos": 3,
-          "de": 9,
-          "posiciones": [
-            1,
-            4,
-            9
-          ],
-          "clase": "generica"
-        },
-        {
           "termino": "cirugia de columna",
           "documentos": 2,
           "de": 9,
@@ -3198,26 +3187,6 @@
           "clase": "generica"
         },
         {
-          "termino": "estamos",
-          "documentos": 2,
-          "de": 9,
-          "posiciones": [
-            3,
-            6
-          ],
-          "clase": "generica"
-        },
-        {
-          "termino": "preguntan",
-          "documentos": 2,
-          "de": 9,
-          "posiciones": [
-            3,
-            6
-          ],
-          "clase": "generica"
-        },
-        {
           "termino": "tratamientos",
           "documentos": 2,
           "de": 9,
@@ -3226,16 +3195,6 @@
             7
           ],
           "clase": "procedimiento"
-        },
-        {
-          "termino": "contamos",
-          "documentos": 2,
-          "de": 9,
-          "posiciones": [
-            5,
-            6
-          ],
-          "clase": "generica"
         },
         {
           "termino": "lima",
@@ -3543,7 +3502,7 @@
           "clase": "generica"
         },
         {
-          "termino": "nuestro",
+          "termino": "rodriguez",
           "documentos": 3,
           "de": 10,
           "posiciones": [
@@ -3554,19 +3513,138 @@
           "clase": "generica"
         },
         {
-          "termino": "rodriguez",
-          "documentos": 3,
+          "termino": "medicina",
+          "documentos": 2,
           "de": 10,
           "posiciones": [
-            6,
+            2,
+            5
+          ],
+          "clase": "generica"
+        },
+        {
+          "termino": "servicios",
+          "documentos": 2,
+          "de": 10,
+          "posiciones": [
+            2,
+            4
+          ],
+          "clase": "generica"
+        },
+        {
+          "termino": "castro",
+          "documentos": 2,
+          "de": 10,
+          "posiciones": [
+            3,
+            5
+          ],
+          "clase": "generica"
+        },
+        {
+          "termino": "paciente",
+          "documentos": 2,
+          "de": 10,
+          "posiciones": [
+            3,
+            10
+          ],
+          "clase": "generica"
+        },
+        {
+          "termino": "calidad",
+          "documentos": 2,
+          "de": 10,
+          "posiciones": [
+            4,
+            9
+          ],
+          "clase": "generica"
+        },
+        {
+          "termino": "medico",
+          "documentos": 2,
+          "de": 10,
+          "posiciones": [
+            5,
+            6
+          ],
+          "clase": "generica"
+        },
+        {
+          "termino": "articulaciones",
+          "documentos": 2,
+          "de": 10,
+          "posiciones": [
+            7,
+            8
+          ],
+          "clase": "anatomica"
+        },
+        {
+          "termino": "constantes",
+          "documentos": 2,
+          "de": 10,
+          "posiciones": [
+            7,
+            8
+          ],
+          "clase": "generica"
+        },
+        {
+          "termino": "constantes en tus huesos",
+          "documentos": 2,
+          "de": 10,
+          "posiciones": [
+            7,
+            8
+          ],
+          "clase": "anatomica"
+        },
+        {
+          "termino": "constantes en tus huesos o articulaciones",
+          "documentos": 2,
+          "de": 10,
+          "posiciones": [
+            7,
+            8
+          ],
+          "clase": "anatomica"
+        },
+        {
+          "termino": "huesos",
+          "documentos": 2,
+          "de": 10,
+          "posiciones": [
+            7,
+            8
+          ],
+          "clase": "anatomica"
+        },
+        {
+          "termino": "huesos o articulaciones",
+          "documentos": 2,
+          "de": 10,
+          "posiciones": [
+            7,
+            8
+          ],
+          "clase": "anatomica"
+        },
+        {
+          "termino": "jorge",
+          "documentos": 2,
+          "de": 10,
+          "posiciones": [
             7,
             8
           ],
           "clase": "generica"
         }
       ],
-      "entidadesInsuficientes": false,
-      "umbralAplicado": 0.3,
+      "entidadesInsuficientes": true,
+      "umbralAplicado": 0.2,
       "coberturaDeSecundarias": [
         {
           "keyword": "ortopedia infantil clínica sanna",
@@ -3815,7 +3893,7 @@
             5,
             8
           ],
-          "clase": "generica"
+          "clase": "clinica"
         },
         {
           "termino": "especialista en columna",
@@ -3870,7 +3948,7 @@
             8,
             9
           ],
-          "clase": "generica"
+          "clase": "anatomica"
         },
         {
           "termino": "neurocirugia",
@@ -3881,7 +3959,7 @@
             8,
             9
           ],
-          "clase": "generica"
+          "clase": "procedimiento"
         }
       ],
       "entidadesInsuficientes": false,
@@ -4205,7 +4283,7 @@
           "clase": "procedimiento"
         }
       ],
-      "entidadesInsuficientes": false,
+      "entidadesInsuficientes": true,
       "umbralAplicado": 0.4,
       "coberturaDeSecundarias": [
         {
@@ -4508,7 +4586,7 @@
             3,
             6
           ],
-          "clase": "generica"
+          "clase": "clinica"
         },
         {
           "termino": "desviacion",
@@ -4518,7 +4596,7 @@
             4,
             6
           ],
-          "clase": "generica"
+          "clase": "clinica"
         },
         {
           "termino": "lateral",
@@ -4841,7 +4919,7 @@
           "clase": "anatomica"
         }
       ],
-      "entidadesInsuficientes": false,
+      "entidadesInsuficientes": true,
       "umbralAplicado": 0.4,
       "coberturaDeSecundarias": [
         {
@@ -5570,7 +5648,7 @@
           "clase": "generica"
         }
       ],
-      "entidadesInsuficientes": false,
+      "entidadesInsuficientes": true,
       "umbralAplicado": 0.3,
       "coberturaDeSecundarias": [
         {
@@ -5646,7 +5724,7 @@
       "pagina-de-servicio": 4,
       "ficha-de-sede": 4
     },
-    "entidadesInsuficientes": 0,
+    "entidadesInsuficientes": 9,
     "secundariasSinCubrir": 0,
     "preguntasSinUsar": 1
   }

@@ -93,17 +93,13 @@ de presentación y así hay que leerlo.
 | `columna` | 6 de 9 | 1, 3, 4, 5, 6, 7 | anatomica |
 | `surco` | 5 de 9 | 2, 3, 6, 8, 9 | generica |
 | `cirugia` | 3 de 9 | 1, 7, 8 | procedimiento |
-| `somos` | 3 de 9 | 1, 4, 9 | generica |
 | `cirugia de columna` | 2 de 9 | 1, 7 | procedimiento |
 | `columna vertebral` | 2 de 9 | 1, 4 | anatomica |
 | `discal` | 2 de 9 | 1, 2 | clinica |
 | `experiencia` | 2 de 9 | 1, 5 | generica |
 | `vertebral` | 2 de 9 | 1, 4 | anatomica |
 | `especialistas` | 2 de 9 | 2, 9 | generica |
-| `estamos` | 2 de 9 | 3, 6 | generica |
-| `preguntan` | 2 de 9 | 3, 6 | generica |
 | `tratamientos` | 2 de 9 | 4, 7 | procedimiento |
-| `contamos` | 2 de 9 | 5, 6 | generica |
 | `lima` | 2 de 9 | 5, 7 | generica |
 | `dolor` | 2 de 9 | 6, 7 | clinica |
 

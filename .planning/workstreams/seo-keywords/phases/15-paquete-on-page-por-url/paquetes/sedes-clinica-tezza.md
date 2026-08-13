@@ -93,19 +93,23 @@ de presentación y así hay que leerlo.
 | `especialidad` | 3 de 9 | 1, 5, 6 | generica |
 | `especialistas` | 3 de 9 | 2, 5, 8 | generica |
 | `luis` | 2 de 9 | 1, 9 | generica |
-| `cuida` | 2 de 9 | 2, 7 | generica |
-| `cuidamos` | 2 de 9 | 2, 7 | generica |
-| `cuidamos al enfermo` | 2 de 9 | 2, 7 | generica |
-| `cuidamos al enfermo como una madre` | 2 de 9 | 2, 7 | generica |
 | `enfermo` | 2 de 9 | 2, 7 | generica |
 | `enfermo como una madre` | 2 de 9 | 2, 7 | generica |
-| `enfermo como una madre cuida` | 2 de 9 | 2, 7 | generica |
 | `madre` | 2 de 9 | 2, 7 | generica |
-| `madre cuida` | 2 de 9 | 2, 7 | generica |
 | `medico` | 2 de 9 | 2, 6 | generica |
-| `nuestros` | 2 de 9 | 2, 3 | generica |
 | `pediatria` | 2 de 9 | 2, 9 | generica |
-| `fracturas` | 2 de 9 | 3, 5 | generica |
+| `fracturas` | 2 de 9 | 3, 5 | clinica |
+| `manejo` | 2 de 9 | 3, 6 | generica |
+| `medicos` | 2 de 9 | 3, 4 | generica |
+| `procedimientos` | 2 de 9 | 3, 4 | generica |
+| `ninos` | 2 de 9 | 5, 8 | generica |
+| `infantil` | 2 de 9 | 6, 8 | generica |
+| `traumatologo` | 2 de 9 | 6, 8 | generica |
+| `lima` | 2 de 9 | 7, 8 | generica |
+
+> Esta SERP no dio ocho términos clínicos, anatómicos o de procedimiento ni al umbral
+> mínimo. Los términos genéricos que sí trae quedan listados arriba y no cuentan para el
+> mínimo: exigir que la página nombre `especialidad` no le pide nada a quien la escribe.
 
 ## Copy propuesto
 
