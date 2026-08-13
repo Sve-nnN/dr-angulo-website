@@ -249,7 +249,7 @@ Las fases se ejecutan en orden numérico: 7 → 8 → 9 → 10 → 11. La fase 1
 | 7. Dominio público, producción y Search Console | v1.1 | 0/5 | Planned | - |
 | 8. Silo clínico: servicios y blog profundo | v1.1 | 18/18 | Complete (falta la ronda de verificación de fase) | 2026-08-13 |
 | 9. Páginas por sede y cobertura local | v1.1 | 0/TBD | Not started | - |
-| 10. Schema, metadata y limpieza técnica | v1.1 | 0/TBD | Not started | - |
+| 10. Schema, metadata y limpieza técnica | v1.1 | 1/2 | In progress (10-01 cerrado, falta 10-02) | - |
 | 11. Local SEO: GBP, reseñas y citaciones | v1.1 | 0/TBD | Not started | - |
 
 ---
