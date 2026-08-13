@@ -25,9 +25,9 @@ See: .planning/PROJECT.md (updated 2026-08-10)
 ## Current Position
 
 Phase: 8, reabierta para consumir el paquete on-page de v1.2 (planes 08-05 a 08-19, en cuatro olas)
-Plan: 08-05 a 08-11 cerrados. Ola 2 completa. Sigue la ola 3, que abre 08-15 con escoliosis
+Plan: 08-05 a 08-11, 08-15 y 08-16 cerrados. El silo clínico ya tiene sus cinco hijas y el hub con cuerpo. Quedan 08-12, 08-13, 08-14, 08-17, 08-18 y 08-19
 Status: En ejecución
-Last activity: 2026-08-13, plan 08-11 ejecutado y verificado en local
+Last activity: 2026-08-13, plan 08-16 ejecutado y verificado en local
 
 Progress: [████████░░] 4 de 5 fases de v1.1, con la 8 reabierta
 
@@ -233,5 +233,7 @@ El cierre formal del milestone v1.0 (audit, complete-milestone, cleanup) espera 
 ## Session Continuity
 
 Last session: 2026-08-13
-Stopped at: Ola 3 de la fase 8 abierta con 08-15 cerrado. `/servicios/escoliosis` se renombró a `/servicios/escoliosis-y-deformidades` y publica las 19 secciones del copy aprobado, 2615 palabras. El slug viejo responde 308 permanente, comprobado con una petición real contra el sitio construido. Con eso SVC-03 deja de ser el requisito sin dueño del set. `next.config.ts` ya tiene el bloque `redirects()` donde el 08-14 sumará los dos 301 del blog. El sitemap sigue en 21 URLs; el primero que mueve ese conteo es el 08-16.
+Stopped at: Ola 4 abierta y cerrada en su parte de silo con 08-16. `/servicios/cirugia-minimamente-invasiva` existe: es la única URL nueva del set, publica las 18 secciones del paquete con 1794 palabras y su banner cuelga de `que-se-atiende--endoscopia-espinal`, porque las siete subsecciones del primer bloque dejan la única frontera de nivel 2 fuera de la ventana de POS-01. El hub `/servicios` publica sus 16 secciones y 1191 palabras con el `ContentBody` del 08-09, entre la rejilla de tarjetas y el catálogo heredado, y conserva las cuatro anclas de v1.0. Su `h1` pasó a "Cirujano de columna en Lima"; el title y la meta siguen siendo de la fase 10. `SITEMAP_TOTAL` está en 22 en las tres puertas y el sitemap real tiene 22 URLs. El enlace que el 08-15 dejó apuntando a la cirugía mínimamente invasiva ya resuelve. Lo que sigue: 08-12 y 08-13 suben el conteo a 23 y 24 con los posts nuevos, el 08-14 lo devuelve a 22 con las redirecciones, y 08-17 a 08-19 son sedes y preguntas frecuentes.
+
+Anterior: Ola 3 de la fase 8 abierta con 08-15 cerrado. `/servicios/escoliosis` se renombró a `/servicios/escoliosis-y-deformidades` y publica las 19 secciones del copy aprobado, 2615 palabras. El slug viejo responde 308 permanente, comprobado con una petición real contra el sitio construido. Con eso SVC-03 deja de ser el requisito sin dueño del set. `next.config.ts` ya tiene el bloque `redirects()` donde el 08-14 sumará los dos 301 del blog. El sitemap sigue en 21 URLs; el primero que mueve ese conteo es el 08-16.
 Resume file: None

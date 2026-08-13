@@ -22,7 +22,7 @@ Derivados de la auditoría SEO del 2026-08-10. Cada requisito nombra la severida
 - [x] **SVC-02**: Existe la misma página dedicada para estenosis espinal *(alto A3)*
 - [x] **SVC-03**: Existe la misma página dedicada para escoliosis y deformidades de columna *(alto A3)*
 - [x] **SVC-04**: Existe la misma página dedicada para ortopedia infantil *(alto A3)*
-- [x] **SVC-05**: `/servicios` funciona como hub: enlaza a las cuatro páginas, cada una enlaza de vuelta y ofrece CTA de agenda sin volver al inicio
+- [x] **SVC-05**: `/servicios` funciona como hub: enlaza a las cinco páginas del silo y publica su propio cuerpo aprobado, cada hija enlaza de vuelta y ofrece CTA de agenda sin volver al inicio
 
 ### SEDE — Páginas por sede
 
@@ -174,7 +174,7 @@ Mapeo v1.1 completado al crear el ROADMAP (2026-08-10). Fases 7 a 11.
 | SVC-02 | Phase 8 | Pending |
 | SVC-03 | Phase 8 | Done |
 | SVC-04 | Phase 8 | Pending |
-| SVC-05 | Phase 8 | Pending |
+| SVC-05 | Phase 8 | Complete (08-16) |
 | BLOG-02 | Phase 8 | Done |
 | BLOG-03 | Phase 8 | Done |
 | SEDE-01 | Phase 9 | Pending |
