@@ -1123,7 +1123,7 @@ Cifras que este bloque declara, con la fuente que trae:
 
 `/sedes/consultorio-privado` · sección `que-se-atiende--clinica-de-la-columna-hernias-discales-sin-cirugias` · [`paquetes/sedes-consultorio-privado.md`](paquetes/sedes-consultorio-privado.md)
 
-> La mayor parte de las hernias discales mejora sin operar. Eso es cierto y no es un eslogan: con tiempo, control del dolor y trabajo de rehabilitación, el cuadro cede en la mayoría de los casos.
+> La mayor parte de las hernias discales mejora sin operar. Eso es cierto y no es un eslogan: con tiempo, control del dolor y trabajo de rehabilitación, el cuadro suele ceder.
 >
 > Lo que hay que mirar con cuidado es el otro extremo, el de los sitios que prometen resolver toda hernia discal sin cirugía, siempre y con un solo método. Ahí lo que se pierde de vista es la indicación quirúrgica que sí existía, y esa demora se paga.
 
@@ -1424,7 +1424,7 @@ Cifras que este bloque declara, con la fuente que trae:
 >
 > La zona lumbar es la que más se afecta, porque es la que soporta el peso del cuerpo. También ocurre en el cuello, y ahí el cuadro es distinto: lo que queda comprimido es la médula espinal y no solo las raíces, así que las señales cambian por completo.
 >
-> Conviene separar dos cosas que se confunden todo el tiempo. Una es el hallazgo de la imagen, el canal que se ve estrecho. Otra es lo que te pasa cuando caminas. Hay canales estrechos que no dan un solo síntoma, y esa distinción manda sobre casi todas las decisiones que vienen después.
+> Conviene separar dos cosas que se confunden todo el tiempo. Una es el hallazgo de la imagen, el canal que se ve estrecho. Otra es lo que te pasa cuando caminas. Hay canales estrechos que no dan un solo síntoma, y esa distinción manda sobre las decisiones que vienen después.
 
 - [ ] Aprobado tal como está.
 - [ ] Corregir. Qué cambia:
@@ -1433,7 +1433,7 @@ Cifras que este bloque declara, con la fuente que trae:
 
 `/servicios/estenosis-espinal` · sección `que-es--estenosis-de-canal` · [`paquetes/servicios-estenosis-espinal.md`](paquetes/servicios-estenosis-espinal.md)
 
-> Estenosis de canal y canal estrecho son los nombres con los que la mayoría llega a la consulta. Describen lo mismo que estenosis espinal: el conducto por donde pasan los nervios tiene menos espacio del que debería.
+> Estenosis de canal y canal estrecho son los nombres con los que la gente llega a la consulta. Describen lo mismo que estenosis espinal: el conducto por donde pasan los nervios tiene menos espacio del que debería.
 >
 > Puede ser central, cuando lo que se cierra es el conducto principal, o lateral, cuando lo que se estrecha es la salida de una raíz hacia la pierna. Esa ubicación explica por qué a una persona le pesan las dos piernas al caminar y a otra le duele solo una, siempre por el mismo recorrido.
 
@@ -2345,7 +2345,7 @@ Cifras que este bloque declara, con la fuente que trae:
 >
 > Al lado de eso, traumatología general y ortopedia infantil. Es la misma consulta de las otras tres sedes, con una diferencia de fondo: acá el tiempo lo pone el consultorio y no la agenda de una institución.
 >
-> La mayoría de los tratamientos de columna no pasa por el quirófano. Eso no es una postura: es lo que corresponde en la mayor parte de los cuadros que llegan.
+> La mayoría de los tratamientos de columna no pasa por el quirófano. Eso no es una postura: es lo que corresponde según lo que muestra cada evaluación.
 
 - [ ] Aprobado tal como está.
 - [ ] Corregir. Qué cambia:
@@ -2521,7 +2521,7 @@ Cifras que este bloque declara, con la fuente que trae:
 
 `/blog/artrosis` · sección `preguntas-frecuentes` · [`paquetes/blog-artrosis.md`](paquetes/blog-artrosis.md)
 
-> Tres dudas se repiten en casi todas las consultas por artrosis. Si el clima influye: no cambia el desgaste, aunque mucha gente nota los días húmedos y esa percepción es real. Si conviene dejar de moverse cuando duele: quedarse quieto alivia el rato y empeora el cuadro a mediano plazo. Y si tomar calcio sirve de algo: el calcio cuida el hueso, que es otra cosa, y no repara el cartílago.
+> Tres dudas se repiten en las consultas por artrosis. Si el clima influye: no cambia el desgaste, aunque mucha gente nota los días húmedos y esa percepción es real. Si conviene dejar de moverse cuando duele: quedarse quieto alivia el rato y empeora el cuadro a mediano plazo. Y si tomar calcio sirve de algo: el calcio cuida el hueso, que es otra cosa, y no repara el cartílago.
 
 - [ ] Aprobado tal como está.
 - [ ] Corregir. Qué cambia:
@@ -2686,7 +2686,7 @@ Cifras que este bloque declara, con la fuente que trae:
 
 `/blog/5-sintomas-de-columna-que-no-debes-ignorar` · sección `preguntas-frecuentes` · [`paquetes/blog-5-sintomas-de-columna-que-no-debes-ignorar.md`](paquetes/blog-5-sintomas-de-columna-que-no-debes-ignorar.md)
 
-> Las tres que más se repiten van abajo. Hay una cuarta que casi nadie hace y que conviene hacer: qué pasa si no hago nada. En una ciática sin señales de alarma la respuesta suele ser que mejora igual, más lento y con más probabilidad de recaída.
+> Las tres que más se repiten van abajo. Hay una cuarta que se pregunta poco y conviene hacer: qué pasa si no hago nada. En una ciática sin señales de alarma la respuesta suele ser que mejora igual, más lento y con más probabilidad de recaída.
 
 - [ ] Aprobado tal como está.
 - [ ] Corregir. Qué cambia:

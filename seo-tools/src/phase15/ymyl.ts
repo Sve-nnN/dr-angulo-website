@@ -220,7 +220,7 @@ function recorte(texto: string, posicion: number): string {
 
 /** Cantidades escritas con digitos o con palabras. El copy de esta fase usa palabras (D-11). */
 const CANTIDAD =
-  "(?:\\d+|un|una|dos|tres|cuatro|cinco|seis|siete|ocho|nueve|diez|once|doce|quince|veinte|treinta|cuarenta|cincuenta|cien|ciento|cientos|mil|miles|decenas|centenares|numerosos|numerosas|multiples|innumerables)";
+  "(?:\\d+|un|una|dos|tres|cuatro|cinco|seis|siete|ocho|nueve|diez|once|doce|quince|veinte|treinta|cuarenta|cincuenta|sesenta|setenta|ochenta|noventa|cien|ciento|cientos|mil|miles|decenas|centenares|numerosos|numerosas|multiples|innumerables)";
 
 /**
  * Cifras sobre el propio doctor. Ninguna esta verificada y ninguna se publica.
@@ -277,6 +277,86 @@ function hallazgosDeCifrasDelDoctor(url: string, seccion: string, texto: string)
   return hallazgos;
 }
 
+/**
+ * Cantidad en la forma en que esta fase escribe las cifras.
+ *
+ * La regla de D-10 se disparaba con `/\d/`, o sea que miraba exactamente la forma que el copy no
+ * usa: `CANTIDAD` ya declara arriba que esta fase escribe los numeros con palabras (D-11). "El
+ * noventa por ciento de las hernias mejora sin operarse" pasaba sin fuente y "El 90 por ciento..."
+ * no.
+ */
+const CANTIDAD_ESCRITA = new RegExp(
+  `\\d|\\b(?:${CANTIDAD}|mayoria|minoria|mitad|tercio|cuarto|por ciento|porcentaje|de cada)\\b`,
+  "u",
+);
+
+/**
+ * Afirmaciones de proporcion sobre una poblacion, que es lo que D-10 existe para obligar a
+ * respaldar.
+ *
+ * Va aparte de `CANTIDAD_ESCRITA` y es mas estrecha a proposito. Las afirmaciones viven en una
+ * tabla con su campo de fuente al lado, asi que ahi conviene el disparador ancho. Los parrafos son
+ * prosa: pedirle respaldo a cada "dos" o "un" no marcaria cifras sin fuente, marcaria el idioma.
+ * Lo que si es una estadistica implicita es la proporcion de una poblacion, y por eso cada patron
+ * exige la construccion entera y no la palabra suelta.
+ */
+const PREVALENCIA: readonly RegExp[] = [
+  /\b(?:la |una |en la |de la |gran |enorme )*mayoria\b/u,
+  /\bmayor parte de (?:los|las)\b/u,
+  /\bminoria\b/u,
+  /\bcasi (?:todos|todas|ningun|ninguna|nadie)\b/u,
+  new RegExp(`\\b${CANTIDAD}\\s+por ciento\\b`, "u"),
+  new RegExp(`\\b${CANTIDAD}\\s+de cada\\s+${CANTIDAD}\\b`, "u"),
+  /\b(?:la mitad|un tercio|dos tercios|un cuarto|tres cuartos) de (?:los|las)\b/u,
+];
+
+/** Las oraciones de un texto. La unidad de la regla de prevalencia es la afirmacion, no el bloque. */
+function oracionesDe(texto: string): string[] {
+  return texto
+    .split(/(?<=[.!?])\s+/)
+    .map((o) => o.trim())
+    .filter((o) => o !== "");
+}
+
+/**
+ * Prevalencia afirmada en un parrafo sin que ninguna afirmacion con fuente la respalde.
+ *
+ * La regla `cifra-sin-fuente` solo alcanza `afirmaciones`, que son las unicas que traen campo de
+ * fuente. Pero las quince afirmaciones de frecuencia clinica que el copy entrega viven en
+ * `parrafos`, o sea en la parte del dataset que estructuralmente no puede declarar procedencia.
+ * El respaldo se busca en las afirmaciones de la misma seccion: registrar ahi la frase es lo que
+ * la hace llegar a la tabla del paquete y al documento del doctor.
+ */
+function hallazgosDePrevalencia(url: string, seccion: SeccionDeCopy): Hallazgo[] {
+  const respaldos = seccion.afirmaciones
+    .filter((a) => a.fuente.trim() !== "")
+    .map((a) => normalizar(a.texto));
+
+  const hallazgos: Hallazgo[] = [];
+  for (const parrafo of seccion.parrafos) {
+    for (const oracion of oracionesDe(parrafo)) {
+      const normal = normalizar(oracion);
+      const patron = PREVALENCIA.find((p) => p.test(normal));
+      if (patron === undefined) continue;
+      if (respaldos.some((r) => r.includes(normal) || normal.includes(r))) continue;
+      hallazgos.push({
+        url,
+        seccion: seccion.clave,
+        regla: "prevalencia-sin-respaldo",
+        texto: oracion,
+        explicacion:
+          `La oracion afirma una proporcion ("${patron.exec(normal)?.[0] ?? ""}") sobre una ` +
+          `poblacion de pacientes, que es una cifra escrita con palabras (D-11) y por lo tanto ` +
+          `una afirmacion que declara de donde salio (D-10).\n` +
+          `      Accion: registrarla como afirmacion con su fuente en la misma seccion, para que ` +
+          `llegue a la tabla del paquete y al documento del doctor, o reescribirla sin la ` +
+          `proporcion. Aflojar la regla no es una opcion en una pagina medica.`,
+      });
+    }
+  }
+  return hallazgos;
+}
+
 function hallazgosDeSedes(url: string, seccion: string, texto: string): Hallazgo[] {
   const normal = normalizar(texto);
   return SEDES_QUE_NO_EXISTEN.filter((sede) => normal.includes(sede)).map((sede) => ({
@@ -327,7 +407,7 @@ export function revisar(pagina: PaginaParaRevisar): Hallazgo[] {
     }
 
     for (const afirmacion of seccion.afirmaciones) {
-      if (/\d/.test(afirmacion.texto) && afirmacion.fuente.trim() === "") {
+      if (CANTIDAD_ESCRITA.test(normalizar(afirmacion.texto)) && afirmacion.fuente.trim() === "") {
         hallazgos.push({
           url: pagina.url,
           seccion: seccion.clave,
@@ -358,6 +438,8 @@ export function revisar(pagina: PaginaParaRevisar): Hallazgo[] {
           "propios. Capitalizar todas es una costumbre del ingles y una firma de texto generado.",
       });
     }
+
+    hallazgos.push(...hallazgosDePrevalencia(pagina.url, seccion));
 
     const textos = [seccion.titulo, ...seccion.parrafos];
     for (const texto of textos) {

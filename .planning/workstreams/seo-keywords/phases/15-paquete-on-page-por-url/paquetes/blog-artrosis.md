@@ -12,7 +12,7 @@
 | Formato | guía clínica |
 | Keyword primaria | `artrosis` |
 | Mínimo de palabras | 900 |
-| Palabras redactadas | 1791 (mínimo 900) |
+| Palabras redactadas | 1789 (mínimo 900) |
 | Redirige a | no aplica |
 | SERP medida | 7 orgánicos, 4 preguntas, 8 relacionadas, capturada el 2026-08-11 |
 
@@ -103,7 +103,7 @@ de presentación y así hay que leerlo.
 
 ## Copy propuesto
 
-Redactado para pegar. 1791 palabras de prosa contra un mínimo de
+Redactado para pegar. 1789 palabras de prosa contra un mínimo de
 900. Todo bloque clínico va sellado y ninguno se publica sin la
 aprobación del doctor.
 
@@ -257,7 +257,7 @@ Lo que decide no es la radiografía sino el conjunto: cuánto limita, qué se in
 
 > **Pendiente de aprobación del doctor.** Bloque clínico: no se publica sin su visto bueno por escrito.
 
-Tres dudas se repiten en casi todas las consultas por artrosis. Si el clima influye: no cambia el desgaste, aunque mucha gente nota los días húmedos y esa percepción es real. Si conviene dejar de moverse cuando duele: quedarse quieto alivia el rato y empeora el cuadro a mediano plazo. Y si tomar calcio sirve de algo: el calcio cuida el hueso, que es otra cosa, y no repara el cartílago.
+Tres dudas se repiten en las consultas por artrosis. Si el clima influye: no cambia el desgaste, aunque mucha gente nota los días húmedos y esa percepción es real. Si conviene dejar de moverse cuando duele: quedarse quieto alivia el rato y empeora el cuadro a mediano plazo. Y si tomar calcio sirve de algo: el calcio cuida el hueso, que es otra cosa, y no repara el cartílago.
 
 ### ¿Cuál es la mejor vitamina para la artrosis?
 

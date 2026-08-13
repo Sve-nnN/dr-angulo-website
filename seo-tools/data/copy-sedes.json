@@ -127,7 +127,12 @@
             "Quien busca cirugía de columna en San Isidro casi nunca está buscando qué es. Está buscando dónde se hace y con quién. Se hace acá, en la Clínica Ricardo Palma, que es la sede del doctor en ese distrito.",
             "La evaluación previa y los controles posteriores salen de esta misma consulta. Lo que se decide en el consultorio es si existe indicación quirúrgica, y esa respuesta muchas veces es que no: el tratamiento de la mayor parte de los cuadros de columna empieza y termina sin quirófano."
           ],
-          "afirmaciones": [],
+          "afirmaciones": [
+            {
+              "texto": "Lo que se decide en el consultorio es si existe indicación quirúrgica, y esa respuesta muchas veces es que no: el tratamiento de la mayor parte de los cuadros de columna empieza y termina sin quirófano.",
+              "fuente": "Afirmación de frecuencia clínica redactada en la fase 15. No tiene todavía una referencia que la respalde: queda registrada acá, y en la ronda de revisión, para que el doctor la confirme, la matice o la retire antes de publicar (D-10)."
+            }
+          ],
           "keywordsCubiertas": ["cirugía de columna san isidro"],
           "entidadesCubiertas": ["columna", "tratamiento"]
         },
@@ -565,7 +570,12 @@
             "La consulta de columna del adulto también existe en esta sede, los mismos jueves y viernes por la tarde: dolor lumbar, dolor cervical, hernia discal, canal estrecho.",
             "Si el caso llega a cirugía, la conversación empieza en el consultorio y sigue con los estudios de imagen. El quirófano es el último paso de una escalera larga, y en la mayoría de los casos la escalera se corta antes."
           ],
-          "afirmaciones": [],
+          "afirmaciones": [
+            {
+              "texto": "El quirófano es el último paso de una escalera larga, y en la mayoría de los casos la escalera se corta antes.",
+              "fuente": "Afirmación de frecuencia clínica redactada en la fase 15. No tiene todavía una referencia que la respalde: queda registrada acá, y en la ronda de revisión, para que el doctor la confirme, la matice o la retire antes de publicar (D-10)."
+            }
+          ],
           "keywordsCubiertas": ["cirujano de columna clínica tezza"],
           "entidadesCubiertas": []
         },
@@ -1295,9 +1305,14 @@
           "parrafos": [
             "Columna del adulto: dolor lumbar, dolor cervical, hernia discal, canal estrecho, escoliosis y deformidades de la columna vertebral.",
             "Al lado de eso, traumatología general y ortopedia infantil. Es la misma consulta de las otras tres sedes, con una diferencia de fondo: acá el tiempo lo pone el consultorio y no la agenda de una institución.",
-            "La mayoría de los tratamientos de columna no pasa por el quirófano. Eso no es una postura: es lo que corresponde en la mayor parte de los cuadros que llegan."
+            "La mayoría de los tratamientos de columna no pasa por el quirófano. Eso no es una postura: es lo que corresponde según lo que muestra cada evaluación."
           ],
-          "afirmaciones": [],
+          "afirmaciones": [
+            {
+              "texto": "La mayoría de los tratamientos de columna no pasa por el quirófano.",
+              "fuente": "Afirmación de frecuencia clínica redactada en la fase 15. No tiene todavía una referencia que la respalde: queda registrada acá, y en la ronda de revisión, para que el doctor la confirme, la matice o la retire antes de publicar (D-10)."
+            }
+          ],
           "keywordsCubiertas": [],
           "entidadesCubiertas": [
             "columna",
@@ -1404,10 +1419,15 @@
           "tipo": "clinico",
           "aprobacion": "pendiente-doctor",
           "parrafos": [
-            "La mayor parte de las hernias discales mejora sin operar. Eso es cierto y no es un eslogan: con tiempo, control del dolor y trabajo de rehabilitación, el cuadro cede en la mayoría de los casos.",
+            "La mayor parte de las hernias discales mejora sin operar. Eso es cierto y no es un eslogan: con tiempo, control del dolor y trabajo de rehabilitación, el cuadro suele ceder.",
             "Lo que hay que mirar con cuidado es el otro extremo, el de los sitios que prometen resolver toda hernia discal sin cirugía, siempre y con un solo método. Ahí lo que se pierde de vista es la indicación quirúrgica que sí existía, y esa demora se paga."
           ],
-          "afirmaciones": [],
+          "afirmaciones": [
+            {
+              "texto": "La mayor parte de las hernias discales mejora sin operar.",
+              "fuente": "Afirmación de frecuencia clínica redactada en la fase 15. No tiene todavía una referencia que la respalde: queda registrada acá, y en la ronda de revisión, para que el doctor la confirme, la matice o la retire antes de publicar (D-10)."
+            }
+          ],
           "keywordsCubiertas": [],
           "entidadesCubiertas": ["discal", "dolor", "cirugia"]
         },
@@ -1460,7 +1480,7 @@
           "tipo": "operativo",
           "aprobacion": "no-requiere",
           "parrafos": [
-            "Casi todas las páginas que salen en esta búsqueda están escritas en plural: somos, contamos con, estamos. Detrás de ese plural a veces hay un equipo grande de verdad y a veces solo hay una marca.",
+            "Las páginas que salen en esta búsqueda están escritas en plural: somos, contamos con, estamos. Detrás de ese plural a veces hay un equipo grande de verdad y a veces solo hay una marca.",
             "Lo que a ti te sirve saber es quién te va a ver la próxima vez. Acá es siempre el mismo médico, y la experiencia de la consulta cambia bastante por eso."
           ],
           "afirmaciones": [

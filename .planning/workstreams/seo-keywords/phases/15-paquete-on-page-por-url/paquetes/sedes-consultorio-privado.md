@@ -12,7 +12,7 @@
 | Formato | ficha de sede |
 | Keyword primaria | `cirugía de columna surco` |
 | Mínimo de palabras | 500 |
-| Palabras redactadas | 1248 (mínimo 500) |
+| Palabras redactadas | 1238 (mínimo 500) |
 | Redirige a | no aplica |
 | SERP medida | 9 orgánicos, 4 preguntas, 8 relacionadas, capturada el 2026-08-11 |
 
@@ -105,7 +105,7 @@ de presentación y así hay que leerlo.
 
 ## Copy propuesto
 
-Redactado para pegar. 1248 palabras de prosa contra un mínimo de
+Redactado para pegar. 1238 palabras de prosa contra un mínimo de
 500. Todo bloque clínico va sellado y ninguno se publica sin la
 aprobación del doctor.
 
@@ -135,7 +135,7 @@ Columna del adulto: dolor lumbar, dolor cervical, hernia discal, canal estrecho,
 
 Al lado de eso, traumatología general y ortopedia infantil. Es la misma consulta de las otras tres sedes, con una diferencia de fondo: acá el tiempo lo pone el consultorio y no la agenda de una institución.
 
-La mayoría de los tratamientos de columna no pasa por el quirófano. Eso no es una postura: es lo que corresponde en la mayor parte de los cuadros que llegan.
+La mayoría de los tratamientos de columna no pasa por el quirófano. Eso no es una postura: es lo que corresponde según lo que muestra cada evaluación.
 
 ### ¿Quiénes son los mejores neurocirujanos en Lima?
 
@@ -187,7 +187,7 @@ Lo que no entra acá es la urgencia. Una fractura de hoy se ve en emergencia hoy
 
 > **Pendiente de aprobación del doctor.** Bloque clínico: no se publica sin su visto bueno por escrito.
 
-La mayor parte de las hernias discales mejora sin operar. Eso es cierto y no es un eslogan: con tiempo, control del dolor y trabajo de rehabilitación, el cuadro cede en la mayoría de los casos.
+La mayor parte de las hernias discales mejora sin operar. Eso es cierto y no es un eslogan: con tiempo, control del dolor y trabajo de rehabilitación, el cuadro suele ceder.
 
 Lo que hay que mirar con cuidado es el otro extremo, el de los sitios que prometen resolver toda hernia discal sin cirugía, siempre y con un solo método. Ahí lo que se pierde de vista es la indicación quirúrgica que sí existía, y esa demora se paga.
 
@@ -211,7 +211,7 @@ La diferencia con este consultorio no está en el nombre sino en el formato: ac�
 
 ### Consultorio o clínica de la columna: qué cambia para ti
 
-Casi todas las páginas que salen en esta búsqueda están escritas en plural: somos, contamos con, estamos. Detrás de ese plural a veces hay un equipo grande de verdad y a veces solo hay una marca.
+Las páginas que salen en esta búsqueda están escritas en plural: somos, contamos con, estamos. Detrás de ese plural a veces hay un equipo grande de verdad y a veces solo hay una marca.
 
 Lo que a ti te sirve saber es quién te va a ver la próxima vez. Acá es siempre el mismo médico, y la experiencia de la consulta cambia bastante por eso.
 

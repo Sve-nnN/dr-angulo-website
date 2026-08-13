@@ -1158,7 +1158,12 @@
             "La disponibilidad de cirugía robótica en el Perú es limitada y desigual, y eso influye en el costo más que en el resultado.",
             "Para la mayoría de los casos de columna que llegan a esta consulta, la decisión relevante no es robot sí o robot no: es abordaje endoscópico, microquirúrgico o abierto."
           ],
-          "afirmaciones": [],
+          "afirmaciones": [
+            {
+              "texto": "Para la mayoría de los casos de columna que llegan a esta consulta, la decisión relevante no es robot sí o robot no: es abordaje endoscópico, microquirúrgico o abierto.",
+              "fuente": "Afirmación de frecuencia clínica redactada en la fase 15. No tiene todavía una referencia que la respalde: queda registrada acá, y en la ronda de revisión, para que el doctor la confirme, la matice o la retire antes de publicar (D-10)."
+            }
+          ],
           "keywordsCubiertas": [],
           "entidadesCubiertas": ["cirugia", "robotica", "cirugia robotica", "consulta"]
         },

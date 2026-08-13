@@ -12,7 +12,7 @@
 | Formato | guía clínica |
 | Keyword primaria | `ciática` |
 | Mínimo de palabras | 900 |
-| Palabras redactadas | 1775 (mínimo 900) |
+| Palabras redactadas | 1774 (mínimo 900) |
 | Redirige a | no aplica |
 | SERP medida | 7 orgánicos, 4 preguntas, 8 relacionadas, capturada el 2026-08-11 |
 
@@ -112,7 +112,7 @@ de presentación y así hay que leerlo.
 
 ## Copy propuesto
 
-Redactado para pegar. 1775 palabras de prosa contra un mínimo de
+Redactado para pegar. 1774 palabras de prosa contra un mínimo de
 900. Todo bloque clínico va sellado y ninguno se publica sin la
 aprobación del doctor.
 
@@ -274,7 +274,7 @@ Fuera de eso, la conversación sobre operar se abre y no se cierra. Que se plant
 
 > **Pendiente de aprobación del doctor.** Bloque clínico: no se publica sin su visto bueno por escrito.
 
-Las tres que más se repiten van abajo. Hay una cuarta que casi nadie hace y que conviene hacer: qué pasa si no hago nada. En una ciática sin señales de alarma la respuesta suele ser que mejora igual, más lento y con más probabilidad de recaída.
+Las tres que más se repiten van abajo. Hay una cuarta que se pregunta poco y conviene hacer: qué pasa si no hago nada. En una ciática sin señales de alarma la respuesta suele ser que mejora igual, más lento y con más probabilidad de recaída.
 
 ### ¿Cómo se quita la ciática?
 

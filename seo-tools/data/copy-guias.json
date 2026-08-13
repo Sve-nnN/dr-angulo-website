@@ -55,6 +55,10 @@
             {
               "texto": "El disco intervertebral tiene una capa externa fibrosa y un núcleo pulposo interno, y la hernia es el desplazamiento de ese núcleo hacia afuera.",
               "fuente": "Descripción ya publicada en src/content/service-pages.ts, slug hernia-discal, sección que-es, con fecha de publicación 2026-08-10."
+            },
+            {
+              "texto": "La mayoría se presenta en la zona lumbar, que es la que carga más peso, y en la zona cervical.",
+              "fuente": "Afirmación de frecuencia clínica redactada en la fase 15. No tiene todavía una referencia que la respalde: queda registrada acá, y en la ronda de revisión, para que el doctor la confirme, la matice o la retire antes de publicar (D-10)."
             }
           ],
           "keywordsCubiertas": ["hernia discal"],
@@ -232,7 +236,12 @@
             "En paralelo entra la terapia física, que es donde se juega buena parte del resultado. El trabajo dirigido busca descargar el segmento afectado, recuperar movilidad y fortalecer la musculatura profunda del tronco. A eso se suma corregir la postura de trabajo y la forma de levantar peso, que es lo que evita la recaída.",
             "Cuando el dolor por compromiso de la raíz no cede con eso, existen procedimientos intermedios como las infiltraciones guiadas por imagen, que dejan medicación antiinflamatoria cerca de la raíz irritada. No reparan el disco. Bajan el dolor lo suficiente para que la terapia pueda avanzar, y este manejo se sostiene varias semanas antes de plantear otra cosa."
           ],
-          "afirmaciones": [],
+          "afirmaciones": [
+            {
+              "texto": "La mayoría de las hernias discales no termina en quirófano.",
+              "fuente": "Afirmación de frecuencia clínica redactada en la fase 15. No tiene todavía una referencia que la respalde: queda registrada acá, y en la ronda de revisión, para que el doctor la confirme, la matice o la retire antes de publicar (D-10)."
+            }
+          ],
           "keywordsCubiertas": ["hernia discal tratamiento"],
           "entidadesCubiertas": ["hernia discal", "columna", "disco"]
         },
@@ -247,7 +256,12 @@
             "Parte del material herniado se reabsorbe con el tiempo: el organismo lo reconoce como algo que no debería estar ahí y lo va reduciendo de a poco. Esa es una de las razones por las que tiene sentido darle tiempo al manejo conservador antes de plantear una operación.",
             "Así que la pregunta práctica no es si la hernia se cura, sino si el nervio deja de estar comprimido y tú vuelves a hacer tu vida. Eso último se logra en la mayoría de los casos sin pasar por el quirófano."
           ],
-          "afirmaciones": [],
+          "afirmaciones": [
+            {
+              "texto": "Eso último se logra en la mayoría de los casos sin pasar por el quirófano.",
+              "fuente": "Afirmación de frecuencia clínica redactada en la fase 15. No tiene todavía una referencia que la respalde: queda registrada acá, y en la ronda de revisión, para que el doctor la confirme, la matice o la retire antes de publicar (D-10)."
+            }
+          ],
           "keywordsCubiertas": ["hernia discal tratamiento"],
           "entidadesCubiertas": ["hernia discal", "disco"]
         },
@@ -422,7 +436,7 @@
             "El canal espinal es el túnel que recorre la columna por dentro. Por ahí viajan la médula y las raíces nerviosas que salen hacia los brazos y las piernas. La estenosis espinal es el estrechamiento de ese túnel: el espacio disponible se reduce y las estructuras que pasan por ahí quedan bajo presión.",
             "Casi nunca hay una sola causa. Con los años el disco pierde altura, las articulaciones pequeñas de la parte de atrás de la vértebra se engrosan para repartir la carga que el disco ya no reparte, y el ligamento que tapiza el canal por dentro se vuelve más grueso. Cada cambio le resta unos milímetros al espacio. Es la suma la que termina apretando.",
             "La zona lumbar es la que más se afecta, porque es la que soporta el peso del cuerpo. También ocurre en el cuello, y ahí el cuadro es distinto: lo que queda comprimido es la médula espinal y no solo las raíces, así que las señales cambian por completo.",
-            "Conviene separar dos cosas que se confunden todo el tiempo. Una es el hallazgo de la imagen, el canal que se ve estrecho. Otra es lo que te pasa cuando caminas. Hay canales estrechos que no dan un solo síntoma, y esa distinción manda sobre casi todas las decisiones que vienen después."
+            "Conviene separar dos cosas que se confunden todo el tiempo. Una es el hallazgo de la imagen, el canal que se ve estrecho. Otra es lo que te pasa cuando caminas. Hay canales estrechos que no dan un solo síntoma, y esa distinción manda sobre las decisiones que vienen después."
           ],
           "afirmaciones": [],
           "keywordsCubiertas": ["estenosis espinal"],
@@ -459,7 +473,7 @@
           "tipo": "clinico",
           "aprobacion": "pendiente-doctor",
           "parrafos": [
-            "Estenosis de canal y canal estrecho son los nombres con los que la mayoría llega a la consulta. Describen lo mismo que estenosis espinal: el conducto por donde pasan los nervios tiene menos espacio del que debería.",
+            "Estenosis de canal y canal estrecho son los nombres con los que la gente llega a la consulta. Describen lo mismo que estenosis espinal: el conducto por donde pasan los nervios tiene menos espacio del que debería.",
             "Puede ser central, cuando lo que se cierra es el conducto principal, o lateral, cuando lo que se estrecha es la salida de una raíz hacia la pierna. Esa ubicación explica por qué a una persona le pesan las dos piernas al caminar y a otra le duele solo una, siempre por el mismo recorrido."
           ],
           "afirmaciones": [],
@@ -864,7 +878,12 @@
             "Resumido: es una desviación lateral de la columna con rotación de las vértebras, y en la mayoría de los casos no hay una causa que se pueda señalar.",
             "Que exista un componente familiar está descrito, así que tener un antecedente cercano es razón suficiente para revisar a un hijo durante el estirón sin esperar a que se note algo. Lo que no está descrito es que la produzcan el deporte, la mochila o dormir de un lado."
           ],
-          "afirmaciones": [],
+          "afirmaciones": [
+            {
+              "texto": "Resumido: es una desviación lateral de la columna con rotación de las vértebras, y en la mayoría de los casos no hay una causa que se pueda señalar.",
+              "fuente": "Afirmación de frecuencia clínica redactada en la fase 15. No tiene todavía una referencia que la respalde: queda registrada acá, y en la ronda de revisión, para que el doctor la confirme, la matice o la retire antes de publicar (D-10)."
+            }
+          ],
           "keywordsCubiertas": [],
           "entidadesCubiertas": ["escoliosis", "columna", "desviacion", "lateral"]
         },
@@ -1154,7 +1173,12 @@
             "Ese manejo necesita tiempo para mostrar si sirve. Semanas, no días. Abandonarlo en la primera semana y concluir que no funcionó es el error más común, y el que más gente lleva a pedir una cirugía que quizá no necesita.",
             "Cuando el dolor por compromiso de una raíz no cede, hay un escalón intermedio antes del quirófano: las infiltraciones guiadas por imagen. No arreglan la causa. Bajan el dolor lo suficiente para que la terapia pueda avanzar."
           ],
-          "afirmaciones": [],
+          "afirmaciones": [
+            {
+              "texto": "La mayoría de los problemas de columna se maneja sin quirófano.",
+              "fuente": "Afirmación de frecuencia clínica redactada en la fase 15. No tiene todavía una referencia que la respalde: queda registrada acá, y en la ronda de revisión, para que el doctor la confirme, la matice o la retire antes de publicar (D-10)."
+            }
+          ],
           "keywordsCubiertas": [],
           "entidadesCubiertas": ["columna", "tratar"]
         },

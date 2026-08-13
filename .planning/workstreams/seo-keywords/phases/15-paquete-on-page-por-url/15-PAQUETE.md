@@ -15,8 +15,8 @@
 | `/` | reescribir | página de servicio | [`paquetes/home.md`](paquetes/home.md) | 1537 / mínimo 600 |
 | `/agendar` | dejar | documento corto | [`paquetes/agendar.md`](paquetes/agendar.md) | sin cuerpo |
 | `/blog` | dejar | documento corto | [`paquetes/blog.md`](paquetes/blog.md) | sin cuerpo |
-| `/blog/5-sintomas-de-columna-que-no-debes-ignorar` | reescribir | guía clínica | [`paquetes/blog-5-sintomas-de-columna-que-no-debes-ignorar.md`](paquetes/blog-5-sintomas-de-columna-que-no-debes-ignorar.md) | 1775 / mínimo 900 |
-| `/blog/artrosis` | crear | guía clínica | [`paquetes/blog-artrosis.md`](paquetes/blog-artrosis.md) | 1791 / mínimo 900 |
+| `/blog/5-sintomas-de-columna-que-no-debes-ignorar` | reescribir | guía clínica | [`paquetes/blog-5-sintomas-de-columna-que-no-debes-ignorar.md`](paquetes/blog-5-sintomas-de-columna-que-no-debes-ignorar.md) | 1774 / mínimo 900 |
+| `/blog/artrosis` | crear | guía clínica | [`paquetes/blog-artrosis.md`](paquetes/blog-artrosis.md) | 1789 / mínimo 900 |
 | `/blog/estenosis-espinal-que-es` | redirigir | documento corto | [`paquetes/blog-estenosis-espinal-que-es.md`](paquetes/blog-estenosis-espinal-que-es.md) | sin cuerpo |
 | `/blog/hernia-discal-o-dolor-de-espalda-como-diferenciarlos` | redirigir | documento corto | [`paquetes/blog-hernia-discal-o-dolor-de-espalda-como-diferenciarlos.md`](paquetes/blog-hernia-discal-o-dolor-de-espalda-como-diferenciarlos.md) | sin cuerpo |
 | `/blog/lumbalgia` | crear | guía clínica | [`paquetes/blog-lumbalgia.md`](paquetes/blog-lumbalgia.md) | 1532 / mínimo 900 |
@@ -26,12 +26,12 @@
 | `/sedes` | dejar | documento corto | [`paquetes/sedes.md`](paquetes/sedes.md) | sin cuerpo |
 | `/sedes/clinica-ricardo-palma` | reescribir | ficha de sede | [`paquetes/sedes-clinica-ricardo-palma.md`](paquetes/sedes-clinica-ricardo-palma.md) | 1214 / mínimo 500 |
 | `/sedes/clinica-tezza` | reescribir | ficha de sede | [`paquetes/sedes-clinica-tezza.md`](paquetes/sedes-clinica-tezza.md) | 1095 / mínimo 500 |
-| `/sedes/consultorio-privado` | reescribir | ficha de sede | [`paquetes/sedes-consultorio-privado.md`](paquetes/sedes-consultorio-privado.md) | 1248 / mínimo 500 |
+| `/sedes/consultorio-privado` | reescribir | ficha de sede | [`paquetes/sedes-consultorio-privado.md`](paquetes/sedes-consultorio-privado.md) | 1238 / mínimo 500 |
 | `/sedes/sanna-la-molina` | reescribir | ficha de sede | [`paquetes/sedes-sanna-la-molina.md`](paquetes/sedes-sanna-la-molina.md) | 1263 / mínimo 500 |
 | `/servicios` | reescribir | página de servicio | [`paquetes/servicios.md`](paquetes/servicios.md) | 1092 / mínimo 700 |
 | `/servicios/cirugia-minimamente-invasiva` | crear | página de servicio | [`paquetes/servicios-cirugia-minimamente-invasiva.md`](paquetes/servicios-cirugia-minimamente-invasiva.md) | 1459 / mínimo 700 |
 | `/servicios/escoliosis-y-deformidades` | reescribir | guía clínica | [`paquetes/servicios-escoliosis-y-deformidades.md`](paquetes/servicios-escoliosis-y-deformidades.md) | 2338 / mínimo 1200 |
-| `/servicios/estenosis-espinal` | reescribir | guía clínica | [`paquetes/servicios-estenosis-espinal.md`](paquetes/servicios-estenosis-espinal.md) | 2423 / mínimo 1400 |
+| `/servicios/estenosis-espinal` | reescribir | guía clínica | [`paquetes/servicios-estenosis-espinal.md`](paquetes/servicios-estenosis-espinal.md) | 2421 / mínimo 1400 |
 | `/servicios/hernia-discal` | reescribir | guía clínica | [`paquetes/servicios-hernia-discal.md`](paquetes/servicios-hernia-discal.md) | 2483 / mínimo 1400 |
 | `/servicios/ortopedia-infantil` | reescribir | página de servicio | [`paquetes/servicios-ortopedia-infantil.md`](paquetes/servicios-ortopedia-infantil.md) | 1520 / mínimo 700 |
 | `/sobre-el-doctor` | dejar | documento corto | [`paquetes/sobre-el-doctor.md`](paquetes/sobre-el-doctor.md) | sin cuerpo |

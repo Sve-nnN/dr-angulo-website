@@ -12,7 +12,7 @@
 | Formato | guía clínica |
 | Keyword primaria | `estenosis espinal` |
 | Mínimo de palabras | 1400 |
-| Palabras redactadas | 2423 (mínimo 1400) |
+| Palabras redactadas | 2421 (mínimo 1400) |
 | Redirige a | no aplica |
 | SERP medida | 8 orgánicos, 4 preguntas, 8 relacionadas, capturada el 2026-08-10 |
 
@@ -99,7 +99,7 @@ de presentación y así hay que leerlo.
 
 ## Copy propuesto
 
-Redactado para pegar. 2423 palabras de prosa contra un mínimo de
+Redactado para pegar. 2421 palabras de prosa contra un mínimo de
 1400. Todo bloque clínico va sellado y ninguno se publica sin la
 aprobación del doctor.
 
@@ -115,7 +115,7 @@ Casi nunca hay una sola causa. Con los años el disco pierde altura, las articul
 
 La zona lumbar es la que más se afecta, porque es la que soporta el peso del cuerpo. También ocurre en el cuello, y ahí el cuadro es distinto: lo que queda comprimido es la médula espinal y no solo las raíces, así que las señales cambian por completo.
 
-Conviene separar dos cosas que se confunden todo el tiempo. Una es el hallazgo de la imagen, el canal que se ve estrecho. Otra es lo que te pasa cuando caminas. Hay canales estrechos que no dan un solo síntoma, y esa distinción manda sobre casi todas las decisiones que vienen después.
+Conviene separar dos cosas que se confunden todo el tiempo. Una es el hallazgo de la imagen, el canal que se ve estrecho. Otra es lo que te pasa cuando caminas. Hay canales estrechos que no dan un solo síntoma, y esa distinción manda sobre las decisiones que vienen después.
 
 ### ¿Qué tan peligrosa es la estenosis?
 
@@ -131,7 +131,7 @@ Fuera de eso, el daño se mide en cuadras. Cada tramo que dejas de caminar cuest
 
 > **Pendiente de aprobación del doctor.** Bloque clínico: no se publica sin su visto bueno por escrito.
 
-Estenosis de canal y canal estrecho son los nombres con los que la mayoría llega a la consulta. Describen lo mismo que estenosis espinal: el conducto por donde pasan los nervios tiene menos espacio del que debería.
+Estenosis de canal y canal estrecho son los nombres con los que la gente llega a la consulta. Describen lo mismo que estenosis espinal: el conducto por donde pasan los nervios tiene menos espacio del que debería.
 
 Puede ser central, cuando lo que se cierra es el conducto principal, o lateral, cuando lo que se estrecha es la salida de una raíz hacia la pierna. Esa ubicación explica por qué a una persona le pesan las dos piernas al caminar y a otra le duele solo una, siempre por el mismo recorrido.
 
