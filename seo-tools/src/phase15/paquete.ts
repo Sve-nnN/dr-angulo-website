@@ -1071,13 +1071,210 @@ export function renderIndice(entradas: readonly EntradaDelIndice[]): string {
   return `${lineas.join("\n").replace(/\n{3,}/g, "\n\n").trimEnd()}\n`;
 }
 
+/**
+ * El handoff hacia las fases 8 y 10 de v1.1, generado desde los datasets.
+ *
+ * AUTOCONTENIDO A PROPOSITO. Quien lo lea del otro lado no tiene por que abrir un solo archivo de
+ * este workstream para actuar. Un handoff que obliga a interpretar hace que el trabajo se decida
+ * dos veces, y esta fase existe exactamente para que se decida una.
+ *
+ * La prosa vive en el codigo, igual que en el indice, y por el mismo motivo: las tablas salen de
+ * `onpage.json` y del mapa, asi que documento y datasets no se pueden desincronizar.
+ */
+export function renderHandoff(
+  filas: readonly FilaDeOnPage[],
+  pendientes: readonly { readonly url: string; readonly dato: string }[],
+): string {
+  const conMetadata = filas.filter((f) => f.accion !== "redirigir");
+  const completas = filas.filter(
+    (f) => f.keywordPrimaria !== null && f.keywordPrimaria !== "",
+  );
+  const soloMetadata = filas.filter((f) => f.accion === "dejar");
+  const porCrear = filas.filter((f) => f.accion === "crear");
+  const redirecciones = filas.filter((f) => f.accion === "redirigir");
+
+  const lineas: string[] = [
+    "# Handoff a v1.1: el paquete on-page de las 24 URLs",
+    "",
+    "<!-- Generado por seo-tools/src/phase15/paquete.ts --todos --handoff, desde data/onpage.json,",
+    "     data/url-map.jsonl y los cuatro datasets de copy. No se edita a mano: se regenera. -->",
+    "",
+    "**De:** workstream `seo-keywords` (v1.2), fase 15, plan 15-07",
+    "**Para:** workstream `milestone` (v1.1), fases 8 y 10",
+    "**Continúa:** `phases/14-mapa-keyword-url-y-matriz-de-enlazado/14-HANDOFF-V11.md`. La fase 14",
+    "dijo por qué keyword pelea cada URL; esta dice con qué texto la gana.",
+    "",
+    "Este documento se lee solo. No hace falta abrir ningún otro archivo del workstream",
+    "`seo-keywords` para actuar sobre lo que dice acá.",
+    "",
+    "---",
+    "",
+    "## 1. Qué se entrega y dónde",
+    "",
+    `**${filas.length} documentos, uno por URL**, en`,
+    "`.planning/workstreams/seo-keywords/phases/15-paquete-on-page-por-url/paquetes/`.",
+    "El índice que los ordena es `15-PAQUETE.md`, en esa misma carpeta.",
+    "",
+    "Para implementar una URL se abre su archivo y se sigue de corrido. Adentro está el title, la",
+    "meta, el H1, la jerarquía de encabezados con la procedencia de cada uno, las entidades que la",
+    "página tiene que nombrar, el copy redactado para pegar y los enlaces internos que le tocan. No",
+    "hay que leer los otros veintitrés.",
+    "",
+    "Los documentos se **regeneran** desde los datasets del repositorio. Una corrección hecha a mano",
+    "sobre el Markdown se pierde en la siguiente corrida:",
+    "",
+    "```bash",
+    "cd seo-tools",
+    "./node_modules/.bin/tsx src/phase15/paquete.ts --todos --indice --handoff",
+    "```",
+    "",
+    "---",
+    "",
+    `## 2. Para la fase 10: title y meta de las ${conMetadata.length} URLs con metadata`,
+    "",
+    "Los límites son 60 y 155 caracteres, que es lo que esa fase ya verifica del otro lado. Las",
+    `${conMetadata.length} entran dentro del contrato y ninguna queda pegada al borde: el title más largo mide ` +
+      `${Math.max(...conMetadata.map((f) => f.titleLargo ?? 0))} y la meta más larga mide ` +
+      `${Math.max(...conMetadata.map((f) => f.metaLargo ?? 0))}.`,
+    "",
+    ...tabla(
+      ["URL", "Title", "Car.", "Meta description", "Car."],
+      conMetadata.map((f) => [
+        `\`${f.url}\``,
+        f.title ?? "sin title",
+        `${f.titleLargo ?? 0}/60`,
+        f.metaDescription ?? "sin meta",
+        `${f.metaLargo ?? 0}/155`,
+      ]),
+    ),
+    "",
+    `Las ${redirecciones.length} URLs que faltan en esta tabla son las que se apagan con un 301: no reciben`,
+    "title, meta ni H1 propios porque dejan de existir.",
+    "",
+    "---",
+    "",
+    "## 3. Para la fase 8: qué recibe cada página",
+    "",
+    `**${completas.length} reciben copy completo.** Página redactada de punta a punta, lista para`,
+    "pegar, con su jerarquía de encabezados y sus entidades obligatorias.",
+    "",
+    ...tabla(
+      ["URL", "Keyword primaria", "Formato", "Acción"],
+      completas.map((f) => [
+        `\`${f.url}\``,
+        `\`${f.keywordPrimaria ?? ""}\``,
+        f.formato ?? "sin formato",
+        f.accion,
+      ]),
+    ),
+    "",
+    `**${soloMetadata.length} reciben solo title y meta.** Declararon no competir por ninguna`,
+    "keyword y eso fue una decisión medida en la fase 14, no un hueco. No se les propone cuerpo de",
+    "texto: inventarles uno les inventaría una intención que el mapa decidió que no tienen. Se",
+    "enlazan con anchor de navegación y nunca de keyword; el anchor exacto está en el documento de",
+    "cada una.",
+    "",
+    ...tabla(
+      ["URL", "H1 publicado", "Qué hacer"],
+      soloMetadata.map((f) => [
+        `\`${f.url}\``,
+        f.h1 ?? "sin H1 de texto plano",
+        "Cambiar title y meta. El H1 no se toca.",
+      ]),
+    ),
+    "",
+    `**${porCrear.length} URLs por crear.** No existen todavía: la ruta, el layout y el sitemap son`,
+    "trabajo de v1.1; el copy está entregado.",
+    "",
+    ...tabla(
+      ["URL por crear", "Keyword primaria", "Formato"],
+      porCrear.map((f) => [`\`${f.url}\``, `\`${f.keywordPrimaria ?? ""}\``, f.formato ?? "sin formato"]),
+    ),
+    "",
+    "**3 redirecciones 301.** Dos salen de este paquete y la tercera venía avisada de la fase 14.",
+    "",
+    ...tabla(
+      ["Desde", "Hacia", "Por qué"],
+      [
+        [
+          "`/servicios/escoliosis`",
+          "`/servicios/escoliosis-y-deformidades`",
+          "Renombre de slug decidido en la fase 14. Arrastra el 301, el sitemap y los enlaces " +
+            "internos ya escritos que apunten al slug viejo.",
+        ],
+        ...redirecciones.map((f) => [
+          `\`${f.url}\``,
+          `\`${f.redirigeA ?? "sin destino"}\``,
+          "El post se funde con la guía de destino: su contenido ya vive adentro, bloque por " +
+            "bloque, y la lista está en el documento del post.",
+        ]),
+      ],
+    ),
+    "",
+    "---",
+    "",
+    "## 4. El orden que no se puede invertir",
+    "",
+    "Las dos guías de destino **absorben** el contenido de los posts que se apagan. Por eso:",
+    "",
+    "1. Primero se publica la guía de destino con el contenido ya fundido.",
+    "2. Recién entonces se pone el 301 y se saca el post del sitemap.",
+    "",
+    "Al revés, el 301 entierra material que todavía no vive en ningún otro lado. El documento de",
+    "cada post que se apaga trae la tabla de qué bloque suyo quedó en qué sección de la guía, así",
+    "que se puede comprobar que no se perdió nada antes de redirigir.",
+    "",
+    "---",
+    "",
+    "## 5. La restricción que sigue viva, y es bloqueante",
+    "",
+    "**Ninguna línea de texto clínico se publica sin la aprobación del doctor por escrito.** Cada",
+    "bloque médico sale de esta fase sellado como pendiente, y ese sello no lo levanta este",
+    "workstream.",
+    "",
+    "La ronda completa está armada en `15-REVISION-DOCTOR.md`, ordenada por riesgo clínico y no por",
+    "URL, con una casilla por bloque. **Es bloqueante para la fase 8:** si v1.1 encuentra un bloque",
+    "sin sello levantado, el paquete no está listo para esa URL.",
+    "",
+    "Vale también la regla de la que salen todos los textos: nada de credenciales, número de",
+    "cirugías, tasas de éxito ni resultados. Solo lo verificable. Si al implementar aparece la",
+    "tentación de una frase con más fuerza comercial, va la verificable.",
+    "",
+    "---",
+    "",
+    "## 6. Lo que este handoff NO resuelve",
+    "",
+    `**${pendientes.length} datos operativos de sede siguen sin confirmar.** No se compusieron a`,
+    "propósito: una dirección, un piso o un horario inventado manda a un paciente a un lugar",
+    "equivocado. Van listados en la página de su sede, en tabla aparte, y también al final de la",
+    "ronda del doctor. v1.1 no publica esa sede hasta resolverlos, sea confirmándolos o sacando la",
+    "afirmación.",
+    "",
+    ...tabla(
+      ["Sede", "Dato pendiente"],
+      pendientes.map((p) => [`\`${p.url}\``, p.dato]),
+    ),
+    "",
+    "**Los enlaces internos se proponen, no se implementan.** La matriz salió de la fase 14 y cada",
+    "documento trae los enlaces que le tocan, con su anchor y la regla que lo justifica. Escribirlos",
+    "en el código del sitio es trabajo de v1.1: este workstream no toca `src/`.",
+    "",
+    "**El Sheet del cliente es la fuente viva.** El tab `Keyword Research` tiene las columnas",
+    "`Suggested H1` y `URL` llenas para las 16 keywords primarias. Si este documento y el Sheet",
+    "difieren, gana el Sheet.",
+    "",
+  ];
+
+  return `${lineas.join("\n").replace(/\n{3,}/g, "\n\n").trimEnd()}\n`;
+}
+
 // ---------------------------------------------------------------------------
 // Punto de entrada
 // ---------------------------------------------------------------------------
 //
 //   cd seo-tools
 //   ./node_modules/.bin/tsx src/phase15/paquete.ts --url /servicios/hernia-discal
-//   ./node_modules/.bin/tsx src/phase15/paquete.ts --todos --indice
+//   ./node_modules/.bin/tsx src/phase15/paquete.ts --todos --indice --handoff
 //
 // COSTE DE CUOTA: CERO. La SERP sale de `.cache/serpapi/` en modo offline.
 
@@ -1096,7 +1293,35 @@ function escribir(url: string, documento: string): string {
  * que no compite.
  */
 /** Regenera los 24 y, si se pide, el indice. Devuelve 1 si alguna pagina quedo bajo su minimo. */
-async function generarPaqueteCompleto(conIndice: boolean): Promise<number> {
+/** Un entregable de la fase, por nombre de archivo. Los tres viven en la carpeta de la fase 15. */
+function rutaDeLaFase(archivo: string): string {
+  return path.join(
+    REPO_ROOT,
+    ".planning",
+    "workstreams",
+    "seo-keywords",
+    "phases",
+    "15-paquete-on-page-por-url",
+    archivo,
+  );
+}
+
+/**
+ * Los datos de sede que quedaron sin confirmar, de las cuatro fichas.
+ *
+ * Salen del dataset y no de una lista escrita a mano: si una sede confirma su piso y alguien
+ * actualiza `copy-sedes.json`, el handoff deja de reclamarlo en la siguiente corrida.
+ */
+function pendientesDeSede(): { readonly url: string; readonly dato: string }[] {
+  const ruta = path.join(SEO_TOOLS_ROOT, "data", "copy-sedes.json");
+  return paginasDeCopy(ruta).flatMap((p) =>
+    (p.datosOperativos ?? [])
+      .filter((d) => d.estado === "pendiente")
+      .map((d) => ({ url: p.url, dato: d.dato })),
+  );
+}
+
+async function generarPaqueteCompleto(conIndice: boolean, conHandoff: boolean): Promise<number> {
   const out = process.stdout;
   const entradas = await generarTodos();
 
@@ -1113,17 +1338,15 @@ async function generarPaqueteCompleto(conIndice: boolean): Promise<number> {
   out.write(`\n${entradas.length} documento(s) escritos en ${DIRECTORIO_DE_PAQUETES}\n`);
 
   if (conIndice) {
-    const destino = path.join(
-      REPO_ROOT,
-      ".planning",
-      "workstreams",
-      "seo-keywords",
-      "phases",
-      "15-paquete-on-page-por-url",
-      "15-PAQUETE.md",
-    );
+    const destino = rutaDeLaFase("15-PAQUETE.md");
     writeFileSync(destino, renderIndice(entradas), "utf8");
     out.write(`Indice: ${destino}\n`);
+  }
+
+  if (conHandoff) {
+    const destino = rutaDeLaFase("15-HANDOFF-V11-ONPAGE.md");
+    writeFileSync(destino, renderHandoff(construirOnPage().filas, pendientesDeSede()), "utf8");
+    out.write(`Handoff: ${destino}\n`);
   }
 
   if (cortas > 0) out.write(`\n${cortas} pagina(s) por debajo de su minimo de palabras.\n`);
@@ -1134,7 +1357,7 @@ async function main(): Promise<number> {
   const banderas = parseBanderas(process.argv.slice(2));
 
   if (booleana(banderas, "todos")) {
-    return generarPaqueteCompleto(booleana(banderas, "indice"));
+    return generarPaqueteCompleto(booleana(banderas, "indice"), booleana(banderas, "handoff"));
   }
 
   const url = textoObligatorio(banderas, "url");
