@@ -9,8 +9,6 @@
 
 import type { ServicePage } from "@/content/service-pages";
 import { post5SintomasDeColumnaQueNoDebesIgnorar } from "./5-sintomas-de-columna-que-no-debes-ignorar";
-import { postHerniaDiscalODolorDeEspaldaComoDiferenciarlos } from "./hernia-discal-o-dolor-de-espalda-como-diferenciarlos";
-import { postEstenosisEspinalQueEs } from "./estenosis-espinal-que-es";
 import { postMiedoAOperarteDeLaColumna5CosasQueDebesSaber } from "./miedo-a-operarte-de-la-columna-5-cosas-que-debes-saber";
 import { postArtrosis } from "./artrosis";
 import { postLumbalgia } from "./lumbalgia";
@@ -71,9 +69,7 @@ export type BlogPost = {
 
 export const blogPosts: BlogPost[] = [
   post5SintomasDeColumnaQueNoDebesIgnorar,
-  postHerniaDiscalODolorDeEspaldaComoDiferenciarlos,
   postMiedoAOperarteDeLaColumna5CosasQueDebesSaber,
-  postEstenosisEspinalQueEs,
   postArtrosis,
   postLumbalgia,
 ];

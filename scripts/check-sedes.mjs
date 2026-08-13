@@ -57,13 +57,13 @@ const SERVICE_SLUGS = [
   "ortopedia-infantil",
 ];
 
-/** URLs totales del sitemap: las 21 con las que cerró la fase 9, o sea las 16
- *  de v1.0 más el hub de sedes y las cuatro páginas de sede, más la página de
- *  cirugía mínimamente invasiva del plan 08-16 y los dos posts nuevos,
- *  artrosis del plan 08-12 y lumbalgia del 08-13. Este es el máximo que
- *  alcanza la fase: el plan 08-14 lo baja a 22 al apagar los dos posts
- *  absorbidos. */
-const SITEMAP_TOTAL = 24;
+/** URLs totales del sitemap, y el número con el que cierra la fase 8: las 21
+ *  con las que cerró la fase 9, o sea las 16 de v1.0 más el hub de sedes y las
+ *  cuatro páginas de sede, más la página de cirugía mínimamente invasiva del
+ *  plan 08-16 y los dos posts nuevos, artrosis del plan 08-12 y lumbalgia del
+ *  08-13, menos los dos posts que el plan 08-14 apagó con 301 hacia la guía
+ *  que los absorbió. 21 + 1 + 2 − 2 = 22. */
+const SITEMAP_TOTAL = 22;
 
 /**
  * Expectativas por sede, hardcodeadas a propósito. Una puerta que deriva sus

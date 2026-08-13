@@ -17,9 +17,9 @@ export const estenosisEspinal: ServicePage = {
   updatedAt: "2026-08-13",
   format: "guia-clinica",
   describesSurgery: true,
-  relatedPosts: [
-    "estenosis-espinal-que-es",
-  ],
+  // Vacío desde el plan 08-14: el único post que apuntaba a esta condición se
+  // fundió dentro de esta misma guía y su URL redirige acá.
+  relatedPosts: [],
   ctaBanner: {
     heading: "¿Caminas menos que antes y tienes que sentarte?",
     body: "Una evaluación con tus estudios define cuánto se redujo el espacio del canal y qué opciones tienes hoy.",
