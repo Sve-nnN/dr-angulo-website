@@ -25,9 +25,9 @@ See: .planning/PROJECT.md (updated 2026-08-10)
 ## Current Position
 
 Phase: 8, reabierta para consumir el paquete on-page de v1.2 (planes 08-05 a 08-19, en cuatro olas)
-Plan: 08-05 a 08-09 cerrados. Sigue la ola 2, los planes 08-10 y 08-11
+Plan: 08-05 a 08-10 cerrados. Queda 08-11 para cerrar la ola 2
 Status: En ejecución
-Last activity: 2026-08-13, plan 08-09 ejecutado y verificado en local
+Last activity: 2026-08-13, plan 08-10 ejecutado y verificado en local
 
 Progress: [████████░░] 4 de 5 fases de v1.1, con la 8 reabierta
 
@@ -114,6 +114,25 @@ Nota operativa: la sesión que ejecutó este plan murió por límite de uso de l
 que los dos commits ya estaban en el árbol. Esta continuación no rehizo nada — verificó el estado
 real (`tsc`, `lint`, `build`, las dos puertas de contenido, el conteo de palabras de home medido
 directo del HTML) contra lo ya commiteado, y escribió el SUMMARY que había quedado pendiente.
+
+**Ola 2, plan 08-10, cerrado el 2026-08-13.** Primer post del blog que consume el paquete.
+`/blog/5-sintomas-de-columna-que-no-debes-ignorar` conserva su URL y cambia entero por dentro: la
+fase 14 le asignó `ciática` como primaria y ahora publica las 24 secciones canónicas del paquete,
+2008 palabras contra las 1093 que tenía. `h1` pasa a `Ciática: el dolor que baja por la pierna`,
+mientras `title` y `description` quedan intactos a la espera de la fase 10, que es exactamente
+para lo que 08-05 separó los dos campos. Los seis enlaces de la matriz entraron en
+`outboundLinks`, incluidos los dos que apuntan a `/blog/artrosis` y `/blog/lumbalgia`, rutas que
+crean 08-12 y 08-13 y que verifica 08-14.
+
+El problema del banner volvió a aparecer, ahora del lado del piso y no del techo. La intro se
+lleva los dos primeros párrafos de `que-es`, así que la primera sección de nivel 2 queda en 223
+palabras sobre 2008 y el banner caía en 11.1 por ciento; la frontera siguiente, después de todo
+el bloque de síntomas, se iba al 57. `BlogPost` ganó `bannerAfterSectionId`, el mismo campo que
+`ServicePage` ya tenía desde 08-06 y que 08-08 extendió a ids de nivel 3, y la plantilla de blog
+lo reenvía. Este post declara `sintomas--espina-ciatica` y queda en 21.7 por ciento. Los otros
+tres posts no declaran nada y siguen con el default: los ocho PASA de la puerta y sus conteos no
+se movieron. Es probable que 08-11 y los posts nuevos repitan el patrón, porque todos toman la
+intro de `que-es`.
 
 ### Estado de la fase 10, verificado en producción el 2026-08-10
 

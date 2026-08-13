@@ -146,7 +146,8 @@ Plans:
 - [x] 08-07-PLAN.md — Ola 2: `/servicios/estenosis-espinal` con las 18 secciones del copy aprobado, 2723 palabras, `bannerAfterSectionId: "que-es"` por margen. Cerrado el 2026-08-13
 - [x] 08-08-PLAN.md — Ola 2: `/servicios/ortopedia-infantil` con las 20 secciones del copy aprobado, 1814 palabras y el esqueleto de `pagina-de-servicio`, el único del silo que no pasa a guía clínica. Extiende `bannerAfterSectionId` para que resuelva ids de nivel 3, porque ninguna frontera de nivel 2 de este formato cae dentro de la ventana de POS-01. Cerrado el 2026-08-13
 - [x] 08-09-PLAN.md — Ola 2: `ContentBody`/`ContentBodyBoundary` extraído como único renderizador de cuerpo largo, sin cambiar el HTML de las páginas ya publicadas, y el inicio publica 21 secciones / 1697 palabras del paquete de v1.2 sin tocar los siete módulos de marketing existentes. Cerrado el 2026-08-13
-- [ ] 08-10 a 08-19-PLAN.md — Resto de las olas 2 a 4: el contenido del paquete on-page. 08-10 y 08-11 completan la ola 2
+- [x] 08-10-PLAN.md — Ola 2: `/blog/5-sintomas-de-columna-que-no-debes-ignorar` conserva su URL y cambia de tema por dentro. Pasa a pelear `ciática` con 2008 palabras y las 24 secciones del paquete, con `h1` propio y los seis enlaces de la matriz. Suma `BlogPost.bannerAfterSectionId`, porque la intro se lleva los dos primeros párrafos de `que-es` y el banner quedaba fuera de la ventana de POS-01. Cerrado el 2026-08-13
+- [ ] 08-11 a 08-19-PLAN.md — Resto de las olas 2 a 4: el contenido del paquete on-page. 08-11 cierra la ola 2
 
 **Notas de ejecución**
 - Gate de contenido médico: la redacción original de esta nota decía que el doctor revisa y aprueba antes de publicar. Quedó superada por la decisión de Juan del 2026-08-10, registrada en `08-CONTEXT.md` y en las Constraints de PROJECT.md: se publica directo y la revisión del doctor pasa a ser posterior. Lo que reemplaza a la aprobación previa son las diez salvaguardas SAFE del contrato de diseño, verificadas por `scripts/check-content.mjs` en cada plan.
@@ -238,7 +239,7 @@ Las fases se ejecutan en orden numérico: 7 → 8 → 9 → 10 → 11. La fase 1
 | 5. Material real y feed de Instagram | v1.0 | 4/4 | Complete (vinculación de Instagram pendiente) | 2026-08-09 |
 | 6. Sedes, horarios y flujo de agenda | v1.0 | 1/1 | Complete (falta confirmar Montefiori) | 2026-08-09 |
 | 7. Dominio público, producción y Search Console | v1.1 | 0/5 | Planned | - |
-| 8. Silo clínico: servicios y blog profundo | v1.1 | 4/18 | In progress (reabierta para el paquete on-page de v1.2) | - |
+| 8. Silo clínico: servicios y blog profundo | v1.1 | 5/18 | In progress (reabierta para el paquete on-page de v1.2) | - |
 | 9. Páginas por sede y cobertura local | v1.1 | 0/TBD | Not started | - |
 | 10. Schema, metadata y limpieza técnica | v1.1 | 0/TBD | Not started | - |
 | 11. Local SEO: GBP, reseñas y citaciones | v1.1 | 0/TBD | Not started | - |
