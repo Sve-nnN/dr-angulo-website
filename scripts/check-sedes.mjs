@@ -31,7 +31,7 @@ const HUB = `${APP_DIR}/sedes.html`;
 const AGENDAR = `${APP_DIR}/agendar.html`;
 const GLOBALS_CSS = "src/app/globals.css";
 const LOCATIONS = "src/content/locations.ts";
-const LOCATION_PAGES = "src/content/location-pages.ts";
+const LOCATION_PAGES = "src/content/location-pages";
 
 /**
  * Marcador de la región del cuerpo de la sede, con el `=""` pegado.
@@ -414,18 +414,33 @@ function checkGlobals(selected, isFullRun) {
     }
   }
 
-  // cada slug del manifiesto existe en los dos archivos de contenido
-  for (const file of [LOCATIONS, LOCATION_PAGES]) {
-    if (!existsSync(resolve(file))) {
-      failures.push(`no existe ${file}`);
-      continue;
-    }
-    const source = readFileSync(resolve(file), "utf8");
+  // cada slug del manifiesto existe en `locations.ts` y tiene su módulo
+  // editorial propio. Desde el plan 08-17 el contenido de las sedes vive en un
+  // módulo por sede dentro de `src/content/location-pages/`, así que la puerta
+  // busca el archivo del slug en vez de una mención dentro de un archivo único.
+  if (!existsSync(resolve(LOCATIONS))) {
+    failures.push(`no existe ${LOCATIONS}`);
+  } else {
+    const source = readFileSync(resolve(LOCATIONS), "utf8");
     for (const entry of selected) {
       if (!source.includes(entry.slug)) {
-        failures.push(`${file} no declara la sede \`${entry.slug}\``);
+        failures.push(`${LOCATIONS} no declara la sede \`${entry.slug}\``);
       }
     }
+  }
+  for (const entry of selected) {
+    const module = `${LOCATION_PAGES}/${entry.slug}.ts`;
+    if (!existsSync(resolve(module))) {
+      failures.push(`no existe ${module}: la sede no tiene módulo editorial`);
+      continue;
+    }
+    if (!readFileSync(resolve(module), "utf8").includes(`slug: "${entry.slug}"`)) {
+      failures.push(`${module} no declara la sede \`${entry.slug}\``);
+    }
+  }
+  const registry = `${LOCATION_PAGES}/index.ts`;
+  if (!existsSync(resolve(registry))) {
+    failures.push(`no existe ${registry}: el registro de sedes desapareció`);
   }
 
   // el sitemap declara el hub y cada sede
