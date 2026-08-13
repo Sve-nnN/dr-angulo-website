@@ -40,7 +40,7 @@ Derivados de la auditoría SEO del 2026-08-10. Cada requisito nombra la severida
 - [x] **SEO-05**: Toda página anidada declara `BreadcrumbList` y Google muestra la miga de pan en el resultado *(alto A6)*
 - [x] **SEO-06**: El `Physician` declara `hasCredential` con CMP 83189 y RNE 35310, y `openingHoursSpecification` del consultorio privado *(alto A6)*
 - [x] **SEO-07**: Los testimonios publicados están marcados con `Review`/`AggregateRating`, únicamente los verificables *(alto A6)*
-- [ ] **SEO-08**: Ningún title supera 60 caracteres ni ninguna description 155, en las 9 rutas base más las nuevas *(medio M1)*
+- [x] **SEO-08**: Ningún title supera 60 caracteres ni ninguna description 155, en las 9 rutas base más las nuevas *(medio M1)*
 - [x] **SEO-09**: Cada página tiene su propia imagen OG en vez de compartir una sola *(medio M2)*
 - [x] **SEO-10**: El sitio expone `llms.txt` para motores generativos *(medio M4)*
 - [x] **SEO-11**: `dr-angulo-portrait.png` (489 KB, permisos `rw-------`, sin uso) queda fuera del repo *(medio M3)*
@@ -183,8 +183,8 @@ Mapeo v1.1 completado al crear el ROADMAP (2026-08-10). Fases 7 a 11.
 | SEO-05 | Phase 10 | Pending |
 | SEO-06 | Phase 10 | Pending |
 | SEO-07 | Phase 10 | Pending |
-| SEO-08 | Phase 10 | Pending |
-| SEO-09 | Phase 10 | Pending |
+| SEO-08 | Phase 10 | Complete |
+| SEO-09 | Phase 10 | Complete |
 | SEO-10 | Phase 10 | Pending |
 | SEO-11 | Phase 10 | Pending |
 | GBP-01 | Phase 11 | Pending |
