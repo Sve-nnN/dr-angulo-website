@@ -140,7 +140,9 @@ Plans:
 - [ ] 08-01-PLAN.md — Trazador del silo: `/servicios/hernia-discal` de punta a punta, componentes de firma, aviso, tabla de contenidos y banner, tarjeta del hub, schema `MedicalWebPage`, sitemap y la puerta automática `scripts/check-content.mjs`
 - [ ] 08-02-PLAN.md — Las otras tres guías del silo: estenosis espinal, escoliosis y ortopedia infantil, solo datos, con el hub en cuatro tarjetas y el sitemap en 16 URLs
 - [ ] 08-03-PLAN.md — Blog: nueva forma de `BlogPost` con secciones y anclas, plantilla de post reconstruida con firma, tabla de contenidos, banner y enlace al servicio, más los dos posts de hernia discal sobre 900 palabras
-- [ ] 08-04-PLAN.md — Blog: los dos posts restantes sobre 900 palabras, puerta de contenido completa sobre las ocho URLs y verificación humana de teclado, responsive y contenido publicado
+- [ ] 08-04-PLAN.md — Superseded el 2026-08-13. Ver el addendum de supersesión en `08-CONTEXT.md`
+- [x] 08-05-PLAN.md — Ola 1: modelo de datos para el paquete on-page de v1.2. Secciones planas con `id` y `level`, `format` y `outboundLinks` en `ServicePage`, `h1` propio y `relatedService` opcional en `BlogPost`, y los dos archivos monolíticos abiertos en directorios con un módulo por página. Cerrado el 2026-08-13
+- [ ] 08-06 a 08-19-PLAN.md — Olas 2 a 4: el contenido del paquete on-page. 08-06 a 08-11 son la ola 2 y son elegibles en paralelo
 
 **Notas de ejecución**
 - Gate de contenido médico: la redacción original de esta nota decía que el doctor revisa y aprueba antes de publicar. Quedó superada por la decisión de Juan del 2026-08-10, registrada en `08-CONTEXT.md` y en las Constraints de PROJECT.md: se publica directo y la revisión del doctor pasa a ser posterior. Lo que reemplaza a la aprobación previa son las diez salvaguardas SAFE del contrato de diseño, verificadas por `scripts/check-content.mjs` en cada plan.
@@ -232,7 +234,7 @@ Las fases se ejecutan en orden numérico: 7 → 8 → 9 → 10 → 11. La fase 1
 | 5. Material real y feed de Instagram | v1.0 | 4/4 | Complete (vinculación de Instagram pendiente) | 2026-08-09 |
 | 6. Sedes, horarios y flujo de agenda | v1.0 | 1/1 | Complete (falta confirmar Montefiori) | 2026-08-09 |
 | 7. Dominio público, producción y Search Console | v1.1 | 0/5 | Planned | - |
-| 8. Silo clínico: servicios y blog profundo | v1.1 | 0/TBD | Not started | - |
+| 8. Silo clínico: servicios y blog profundo | v1.1 | 4/18 | In progress (reabierta para el paquete on-page de v1.2) | - |
 | 9. Páginas por sede y cobertura local | v1.1 | 0/TBD | Not started | - |
 | 10. Schema, metadata y limpieza técnica | v1.1 | 0/TBD | Not started | - |
 | 11. Local SEO: GBP, reseñas y citaciones | v1.1 | 0/TBD | Not started | - |

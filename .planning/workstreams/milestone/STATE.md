@@ -3,8 +3,8 @@ gsd_state_version: 1.0
 milestone: v1.1
 milestone_name: Lanzamiento público y competitividad SEO
 status: planning
-last_updated: "2026-08-10T03:20:00.000Z"
-last_activity: 2026-08-10
+last_updated: "2026-08-13T00:00:00.000Z"
+last_activity: 2026-08-13
 progress:
   total_phases: 5
   completed_phases: 0
@@ -24,12 +24,36 @@ See: .planning/PROJECT.md (updated 2026-08-10)
 
 ## Current Position
 
-Phase: 10 de 11 (Schema, metadata y limpieza técnica), cerrada y en producción. Queda la 11 (Local SEO)
-Plan: fases 7, 8, 9 y 10 cerradas. La 11 no toca código de aplicación
-Status: Listo para la fase 11
-Last activity: 2026-08-10, fase 10 desplegada y verificada en producción
+Phase: 8, reabierta para consumir el paquete on-page de v1.2 (planes 08-05 a 08-19, en cuatro olas)
+Plan: 08-05 cerrado. Sigue la ola 2, los seis planes 08-06 a 08-11
+Status: En ejecución
+Last activity: 2026-08-13, plan 08-05 ejecutado y verificado en local
 
-Progress: [████████░░] 4 de 5 fases de v1.1
+Progress: [████████░░] 4 de 5 fases de v1.1, con la 8 reabierta
+
+### Fase 8 reabierta: el paquete on-page de v1.2
+
+El workstream `seo-keywords` (v1.2) cerró con un paquete on-page que la fase 8 tiene que
+publicar: dos esqueletos de sección distintos, cinco páginas de servicio y varios posts nuevos.
+Ninguno de los dos esqueletos coincidía con la tupla de ocho claves que la fase 8 dejó en v1.0,
+así que la fase se reabrió con 15 planes nuevos, 08-05 a 08-19, organizados en olas.
+
+**Ola 1, plan 08-05, cerrado el 2026-08-13.** Es la única dependencia dura de toda la fase y no
+publica una palabra de contenido: cambia el modelo de datos. `ServicePage.sections` pasó de
+`Record` sobre una tupla global a un arreglo plano de secciones con `id` y `level` propios, así
+una página puede declarar el esqueleto de guía clínica de ocho huecos o el de página de servicio
+de cinco sin inventar secciones que su formato no tiene, y una subsección de nivel 3 puede ser
+destino de un ancla. `src/content/service-pages.ts` y `src/content/blog.ts` se abrieron en
+directorios con un módulo por página, con la ruta de importación pública intacta. `BlogPost` ganó
+`h1` propio, separado de `title`, para que la fase 10 no borre el H1 al reescribir el title, y
+`relatedService` pasó a opcional, porque hay temas cuyo destino natural es el hub y no una guía.
+
+La migración la hizo un script mecánico sobre los archivos viejos, no una persona: se verificó
+que las 382 cadenas de texto de las ocho páginas siguen apareciendo verbatim en el HTML
+prerenderizado. Las 21 rutas compilan, `check-content.mjs` y `check-sedes.mjs` en verde. Un
+cambio de aspecto intencional: la sección de tratamiento perdió su presentación en dos tarjetas
+(`TreatmentCompare` se alimentaba de `subsections`, que ya no existe) y sus dos bloques ahora son
+h3 con ancla propia. Detalle completo en `08-05-SUMMARY.md`.
 
 ### Estado de la fase 10, verificado en producción el 2026-08-10
 
