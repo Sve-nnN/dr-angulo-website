@@ -32,9 +32,8 @@ const HUB_ANCHORS = ["columna", "traumatologia", "ortopedia-infantil", "procedim
  * cuatro páginas de sede, más la página de cirugía mínimamente invasiva del
  * plan 08-16 y los dos posts nuevos, artrosis del plan 08-12 y lumbalgia del
  * 08-13, menos los dos posts que el plan 08-14 apagó con 301 hacia la guía que
- * los absorbió. 21 + 1 + 2 − 2 = 22. La puerta de 900 palabras no aplica a las
- * rutas de sede y ninguna de ellas entra al `MANIFEST`: su puerta propia es
- * `scripts/check-sedes.mjs`.
+ * los absorbió. 21 + 1 + 2 − 2 = 22. Las cuatro rutas de sede ya existían y ya
+ * estaban en el sitemap: publicar su cuerpo no mueve este número.
  */
 const SITEMAP_TOTAL = 22;
 
@@ -129,14 +128,19 @@ const MANIFEST = [
     type: "post",
     linksTo: "/servicios/hernia-discal",
   },
-  // Las dos sedes que ya publican el cuerpo del paquete. Las otras dos entran
-  // con el plan 08-18: la puerta no lista una ruta cuyo cuerpo todavía no está
-  // escrito, porque le exigiría 900 palabras a una página que no las tiene.
+  // Las cuatro sedes, todas con el cuerpo del paquete publicado desde el plan
+  // 08-18. El orden es el de `locationPages`.
+  {
+    route: "/sedes/consultorio-privado",
+    type: "sede",
+    format: "ficha-de-sede",
+  },
   {
     route: "/sedes/clinica-ricardo-palma",
     type: "sede",
     format: "ficha-de-sede",
   },
+  { route: "/sedes/sanna-la-molina", type: "sede", format: "ficha-de-sede" },
   { route: "/sedes/clinica-tezza", type: "sede", format: "ficha-de-sede" },
 ];
 
