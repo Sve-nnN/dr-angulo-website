@@ -59,8 +59,9 @@ const SERVICE_SLUGS = [
 
 /** URLs totales del sitemap: las 21 con las que cerró la fase 9, o sea las 16
  *  de v1.0 más el hub de sedes y las cuatro páginas de sede, más la página de
- *  cirugía mínimamente invasiva que suma la fase 8. */
-const SITEMAP_TOTAL = 22;
+ *  cirugía mínimamente invasiva del plan 08-16 y el post de artrosis del plan
+ *  08-12. */
+const SITEMAP_TOTAL = 23;
 
 /**
  * Expectativas por sede, hardcodeadas a propósito. Una puerta que deriva sus
