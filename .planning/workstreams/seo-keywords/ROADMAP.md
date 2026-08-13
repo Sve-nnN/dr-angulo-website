@@ -180,7 +180,7 @@ Plans:
   4. La auditoría de DinoRank sobre el mapa propuesto devuelve cero titles duplicados, cero H1 duplicados y cero metas faltantes.
   5. Existe un paquete por URL que quien ejecute las fases 8 y 10 de v1.1 puede abrir e implementar de corrido, sin volver a este workstream a preguntar.
 
-**Plans**: 5/7 plans executed
+**Plans**: 7/7 plans executed — **fase completa**
 
 Plans:
 
@@ -190,7 +190,7 @@ Plans:
 - [x] 15-04-PLAN.md — La home, el hub de servicios, ortopedia infantil y cirugía mínimamente invasiva (wave 3)
 - [x] 15-05-PLAN.md — Las cuatro fichas de sede vigentes (wave 3)
 - [x] 15-06-PLAN.md — Los cuatro posts del blog, dos nuevos y dos reescritos (wave 3)
-- [ ] 15-07-PLAN.md — Los 24 documentos del paquete, la ronda única del doctor, `Suggested H1` en el Sheet y el handoff hacia v1.1 (wave 4)
+- [x] 15-07-PLAN.md — Los 24 documentos del paquete, la ronda única del doctor, `Suggested H1` en el Sheet y el handoff hacia v1.1 (wave 4)
 
 **Notas de ejecución**
 
