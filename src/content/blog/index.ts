@@ -13,6 +13,7 @@ import { postHerniaDiscalODolorDeEspaldaComoDiferenciarlos } from "./hernia-disc
 import { postEstenosisEspinalQueEs } from "./estenosis-espinal-que-es";
 import { postMiedoAOperarteDeLaColumna5CosasQueDebesSaber } from "./miedo-a-operarte-de-la-columna-5-cosas-que-debes-saber";
 import { postArtrosis } from "./artrosis";
+import { postLumbalgia } from "./lumbalgia";
 
 /**
  * Sección de un post, plana y con el mismo modelo que las guías: el nivel 3 es
@@ -74,4 +75,5 @@ export const blogPosts: BlogPost[] = [
   postMiedoAOperarteDeLaColumna5CosasQueDebesSaber,
   postEstenosisEspinalQueEs,
   postArtrosis,
+  postLumbalgia,
 ];
