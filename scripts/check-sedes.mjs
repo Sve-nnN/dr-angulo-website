@@ -53,7 +53,7 @@ const TITLE_SUFFIX = " | Dr. Juan Angulo";
 const SERVICE_SLUGS = [
   "hernia-discal",
   "estenosis-espinal",
-  "escoliosis",
+  "escoliosis-y-deformidades",
   "ortopedia-infantil",
 ];
 

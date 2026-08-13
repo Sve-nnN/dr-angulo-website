@@ -87,7 +87,7 @@ const FORBIDDEN_FIELDS = [
 const MANIFEST = [
   { route: "/servicios/hernia-discal", type: "service" },
   { route: "/servicios/estenosis-espinal", type: "service" },
-  { route: "/servicios/escoliosis", type: "service" },
+  { route: "/servicios/escoliosis-y-deformidades", type: "service" },
   { route: "/servicios/ortopedia-infantil", type: "service" },
   {
     route: "/blog/5-sintomas-de-columna-que-no-debes-ignorar",
