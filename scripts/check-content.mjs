@@ -87,6 +87,23 @@ const FORBIDDEN_FIELDS = [
   "tarifa",
 ];
 
+/**
+ * Orden canónico de los esqueletos del paquete on-page de v1.2. Las claves son
+ * las de `seo-tools/src/phase15/serp-onpage.ts`, copiadas literales. Una ruta
+ * que declara formato tiene que emitir esas secciones de nivel 2 con ancla, en
+ * ese orden y sin ninguna de más: es lo que impide que un plan de contenido
+ * publique el esqueleto de otra página.
+ */
+const SKELETONS = {
+  "ficha-de-sede": [
+    "donde-queda",
+    "como-llegar",
+    "que-se-atiende",
+    "horarios",
+    "como-agendar",
+  ],
+};
+
 /** Mapa de enlazado de CTX-12: cada post empuja a su página de servicio. */
 const MANIFEST = [
   { route: "/servicios/hernia-discal", type: "service" },
@@ -112,6 +129,15 @@ const MANIFEST = [
     type: "post",
     linksTo: "/servicios/hernia-discal",
   },
+  // Las dos sedes que ya publican el cuerpo del paquete. Las otras dos entran
+  // con el plan 08-18: la puerta no lista una ruta cuyo cuerpo todavía no está
+  // escrito, porque le exigiría 900 palabras a una página que no las tiene.
+  {
+    route: "/sedes/clinica-ricardo-palma",
+    type: "sede",
+    format: "ficha-de-sede",
+  },
+  { route: "/sedes/clinica-tezza", type: "sede", format: "ficha-de-sede" },
 ];
 
 // --------------------------------------------------------------------------
@@ -285,6 +311,23 @@ function checkRoute(entry) {
   const anchorH2 = articleHeadings.filter(
     (h) => h.level === 2 && /id="/.test(h.attrs) && /tabindex="-1"/.test(h.attrs)
   );
+
+  // --- esqueleto del paquete on-page ---------------------------------------
+  if (entry.format) {
+    const expected = SKELETONS[entry.format];
+    if (!expected) {
+      fail(`el formato "${entry.format}" no tiene esqueleto declarado`);
+    } else {
+      const published = anchorH2.map(
+        (h) => /id="([^"]+)"/.exec(h.attrs)?.[1] ?? ""
+      );
+      if (published.join("|") !== expected.join("|")) {
+        fail(
+          `el esqueleto de ${entry.format} pide [${expected.join(", ")}] y la página publica [${published.join(", ")}]`
+        );
+      }
+    }
+  }
   if (anchorH2.length >= 3) {
     const tocAt = article.indexOf("data-toc");
     const tocRange = tocAt === -1 ? null : elementRange(article, tocAt);
@@ -435,7 +478,11 @@ function declaredFieldNames(source) {
  * fija dejaría de cubrir lo nuevo sin avisar.
  */
 function contentSourceFiles() {
-  const dirs = ["src/content/service-pages", "src/content/blog"];
+  const dirs = [
+    "src/content/service-pages",
+    "src/content/blog",
+    "src/content/location-pages",
+  ];
   const files = [];
   for (const dir of dirs) {
     if (!existsSync(resolve(dir))) {
