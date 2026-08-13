@@ -195,8 +195,12 @@ Ricardo Palma, Sanna La Molina, Padre Luis Tezza), más el hub `/servicios` refo
   redirigen declaradas fuera de alcance y con motivo. En `seo-tools/data/onpage-audit.json` y en
   `phases/15-paquete-on-page-por-url/15-AUDITORIA.md`._
 
-- [ ] **ONPAGE-06**: Existe un paquete de entrega por URL que la fase 8 y la fase 10 de
+- [x] **ONPAGE-06**: Existe un paquete de entrega por URL que la fase 8 y la fase 10 de
   v1.1 pueden implementar sin volver a decidir nada
+
+  _Cerrado en el plan 15-07: 24 documentos en `phases/15-paquete-on-page-por-url/paquetes/`,
+  uno por URL del mapa, con su índice en `15-PAQUETE.md` y el handoff autocontenido en
+  `15-HANDOFF-V11-ONPAGE.md`. Los tres se generan desde los datasets, no se transcriben._
 
 ### Entrega en el Sheet (SHEET)
 
@@ -278,7 +282,7 @@ Mapeada por `ROADMAP.md` del workstream `seo-keywords` el 2026-08-10.
 | ONPAGE-03 | Fase 15 | **Completo** (plan 15-01) — 196 términos con procedencia, derivados del top 10 capturado y no del TF-IDF de DinoRank (D-02) |
 | ONPAGE-04 | Fase 15 | **Completo** (planes 15-01, 15-03, 15-04, 15-05 y 15-06) — las 16 páginas con keyword primaria redactadas de punta a punta en cuatro datasets separados. Las 16 pasan `ymyl.ts` con cero hallazgos y toda sección clínica sale sellada como pendiente-doctor |
 | ONPAGE-05 | Fase 15 | **Completo** (plan 15-02) — auditoría local sobre el paquete propuesto: cero duplicados y cero metas faltantes en 22 URLs (D-04) |
-| ONPAGE-06 | Fase 15 | Pendiente — dieciocho documentos de veinticuatro tras el plan 15-06: dieciséis de página completa y dos de redirección. Faltan los seis cortos de las URLs que declararon no competir, que los emite el plan 15-07. Handoff de contenido para las fases 8 y 10 de v1.1 |
+| ONPAGE-06 | Fase 15 | **Completo** (plan 15-07) — los 24 documentos: 16 de página completa, 6 cortos de las URLs que declararon no competir y 2 de redirección. Con índice generado, ronda única del doctor de 450 bloques y handoff autocontenido hacia las fases 8 y 10 de v1.1 |
 | SHEET-01 | Fase 13 | **Completo** |
 | SHEET-02 | Fase 14 | **Completo** (planes 14-03 y 14-05) — 24 filas vivas en `Content Model`. Las tres métricas de Ahrefs se llenan solo donde la procedencia es `ahrefs`: 24 celdas con dato y 48 vacías a propósito. Las de GSC siguen vacías porque el sitio no tiene impresiones |
 | SHEET-03 | Fase 13 | **Completo** |

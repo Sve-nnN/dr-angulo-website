@@ -4,17 +4,17 @@ milestone: v1.2
 milestone_name: "SEO semantico: keyword research y optimizacion on-page"
 current_phase: 15
 current_phase_name: Paquete on-page por URL
-status: executing
-stopped_at: Completed 15-06-PLAN.md — los cuatro posts del blog
-last_updated: "2026-08-13T03:05:00.000Z"
+status: phase_complete
+stopped_at: Completed 15-07-PLAN.md — la fase 15 y con ella la ejecucion de v1.2
+last_updated: "2026-08-13T06:40:00.000Z"
 last_activity: 2026-08-13
-last_activity_desc: "2026-08-13, cerrado el plan 15-06 y con el la wave 3 entera, sin gastar cuota: los cuatro posts del blog quedaron redactados de punta a punta, 6595 palabras nuevas, dos creados desde keywords de oro que ninguna URL viva podia ganar y dos reescritos sobre contenido publicado que se conserva y se declara. Lo que define este plan no es el texto sino el limite: un post de captacion que explica el tratamiento se convierte en la segunda guia de su tema y devuelve la canibalizacion por la puerta del contenido aunque el mapa siga limpio, asi que los cuatro nombran la relacion con su guia y derivan hacia ella con el anchor de la matriz de la fase 14. El post de cirugia contesta precio, costo, riesgo y plazo de recuperacion sin una sola cifra. Con esto ONPAGE-04 queda cerrado: las dieciseis paginas con keyword primaria estan escritas y las dieciseis pasan la compuerta. Van dieciocho documentos de veinticuatro"
+last_activity_desc: "2026-08-13, cerrado el plan 15-07 y con el la fase 15 entera, sin gastar cuota. Las 24 URLs del mapa tienen su documento, el indice y el handoff se generan desde los datasets, y la revision del doctor quedo en una sola ronda de 450 bloques ordenada por lo que puede hacer dano y no por orden de URL. Las columnas Suggested H1 y URL del tab Keyword Research quedaron llenas para las 16 primarias con dos cargas identicas de 16 actualizadas, 0 insertadas y 0 columnas agregadas, verificadas contra el documento vivo: las 19 columnas de dos filas al azar quedaron identicas antes y despues, asi que ninguna celda de las fases 12, 13 y 14 se movio. La columna URL, huerfana desde la fase 14, se cierra aca por oportunidad y no por alcance. ONPAGE-06 cerrado: los seis requisitos ONPAGE estan completos y v1.2 termina su ejecucion de planes"
 progress:
   total_phases: 4
-  completed_phases: 3
+  completed_phases: 4
   total_plans: 21
-  completed_plans: 20
-  percent: 95
+  completed_plans: 21
+  percent: 100
 ---
 
 # Project State
@@ -24,16 +24,16 @@ progress:
 See: .planning/PROJECT.md (updated 2026-08-10)
 
 **Core value:** Que un paciente que busca traumatólogo/cirujano de columna en Lima encuentre el sitio y agende cita por WhatsApp en menos de 2 clics, con todo evento rastreado.
-**Current focus:** Fase 15, la última de v1.2, en ejecución. El plan 15-01 fundó la tubería y el molde y el 15-02 cerró la metadata y armó las compuertas, así que lo único que le queda a la fase es escribir texto. Lo que gobierna ese texto sigue viniendo de la 13 y la 14: **los cinco competidores rankean sin enlaces en sus páginas interiores**, así que el contenido es la palanca; y **tres de las cuatro páginas de servicio que v1.1 ya publicó enfrentan una SERP de contenido informativo, no de página de servicio** —`estenosis espinal` es 8 de 8—, así que se reescriben como guía clínica en vez de retocarles las metas. La novedad del 15-02 es que ahora hay un juez: `ymyl.ts` corre sobre el copy y devuelve dónde falla, así que las cuatro familias de la wave 3 no pueden inventar cada una su propio criterio de qué cuenta como texto humanizado.
+**Current focus:** Fase 15 cerrada el 2026-08-13, y con ella la ejecución de los 21 planes de v1.2. Lo que queda del milestone es su ciclo de cierre: revisión de código, verificación de fase y lifecycle. El entregable que cruza al otro workstream es el paquete on-page: 24 documentos, su índice y `15-HANDOFF-V11-ONPAGE.md`, que las fases 8 y 10 de v1.1 implementan. El plan 15-01 fundó la tubería y el molde y el 15-02 cerró la metadata y armó las compuertas, así que lo único que le quedó a la fase fue escribir texto. Lo que gobierna ese texto sigue viniendo de la 13 y la 14: **los cinco competidores rankean sin enlaces en sus páginas interiores**, así que el contenido es la palanca; y **tres de las cuatro páginas de servicio que v1.1 ya publicó enfrentan una SERP de contenido informativo, no de página de servicio** —`estenosis espinal` es 8 de 8—, así que se reescriben como guía clínica en vez de retocarles las metas. La novedad del 15-02 es que ahora hay un juez: `ymyl.ts` corre sobre el copy y devuelve dónde falla, así que las cuatro familias de la wave 3 no pueden inventar cada una su propio criterio de qué cuenta como texto humanizado.
 
 ## Current Position
 
-Phase: 15 (Paquete on-page por URL) — EJECUTANDO, la última de las 4 fases de v1.2
-Plan: 7 de 7. Cerraron el 15-01, el 15-02 y la wave 3 entera (15-03, 15-04, 15-05 y 15-06). Queda solo el 15-07, que cierra la fase y el milestone
-Status: **Planes 15-01 a 15-06 completos.** ONPAGE-01, ONPAGE-02, ONPAGE-03, ONPAGE-04 y ONPAGE-05 cerrados. Queda abierto solo ONPAGE-06, que pide el paquete por URL y hay dieciocho de veinticuatro: faltan los seis documentos cortos de las URLs que declararon no competir, que emite el 15-07. Siguen quedando **96 de 102 búsquedas de SerpApi** hasta el reset del 2026-08-21, porque la fase no ha gastado ninguna
-Last activity: 2026-08-13 — cerrado el plan 15-06 con cero cuota gastada. Los cuatro posts del blog pasan la compuerta sin hallazgos y ninguno se lleva por título la primaria de otra URL. El de ciática quedó en 13 de 16 entidades, 81,3 %, y las tres que faltan son trigramas que solo se cubrirían escribiendo mal el castellano
+Phase: 15 (Paquete on-page por URL) — **COMPLETA**, la última de las 4 fases de v1.2
+Plan: 7 de 7. Los siete cerrados
+Status: **Los 21 planes de v1.2 completos y los 30 requisitos cerrados.** ONPAGE-01 a ONPAGE-06 en verde. Quedaron **96 de 102 búsquedas de SerpApi** hasta el reset del 2026-08-21: la fase 15 entera, siete planes, corrió sin gastar ninguna
+Last activity: 2026-08-13 — cerrado el plan 15-07. Las 24 URLs tienen documento, la ronda del doctor tiene 450 bloques ordenados por riesgo clínico, la auditoría sobre el paquete terminado sigue en cero y el Sheet del cliente recibió las dos columnas con dos cargas idénticas y verificadas contra el documento vivo
 
-Progress: [█████████▌] 95% de v1.2 · 3 de 4 fases cerradas
+Progress: [██████████] 100% de v1.2 · 4 de 4 fases cerradas
 
 ## Roadmap v1.2
 
@@ -51,7 +51,7 @@ Los dos milestones corren a la vez sobre el mismo repositorio.
 - **v1.2 manda en keywords y textos; v1.1 manda en código.** Ninguna fase de v1.2 escribe en `src/`.
 - **Handoff bloqueante — MAP-03 (fase 14): RESUELTO el 2026-08-11.** Las nueve URLs (cuatro de servicio, cuatro de sede y el hub `/servicios`) tienen keyword asignada y publicada. El aviso autocontenido para la fase 8 de v1.1 es `.planning/workstreams/seo-keywords/phases/14-mapa-keyword-url-y-matriz-de-enlazado/14-HANDOFF-V11.md`, e incluye el renombre de `/servicios/escoliosis` a `/servicios/escoliosis-y-deformidades`, que arrastra 301, sitemap y enlaces internos.
 - **Handoff de enlazado — MAP-05 (fase 14): ENTREGADO el 2026-08-12.** Los 135 enlaces internos entre 22 URLs son **especificación, no implementación**: v1.1 los escribe en el código. La matriz legible está en `phases/14-mapa-keyword-url-y-matriz-de-enlazado/14-ENLAZADO.md` y el dataset en `seo-tools/data/internal-links.json`. Dos posts del blog se funden con su guía y redirigen, así que arrastran dos 301 nuevas además de la de escoliosis.
-- **Handoff de contenido — ONPAGE-06 (fase 15):** el paquete por URL es lo que implementan las fases 8 y 10 de v1.1. Es lo único que le queda pendiente a v1.2.
+- **Handoff de contenido — ONPAGE-06 (fase 15): ENTREGADO el 2026-08-13.** El paquete por URL es lo que implementan las fases 8 y 10 de v1.1: 24 documentos en `phases/15-paquete-on-page-por-url/paquetes/`, su índice en `15-PAQUETE.md` y el aviso autocontenido en `15-HANDOFF-V11-ONPAGE.md`. Dos cosas del handoff son bloqueantes y no recordatorios: **ninguna línea de texto clínico se publica sin la aprobación del doctor**, cuya ronda está armada en `15-REVISION-DOCTOR.md` con 450 casillas sin responder; y **la guía de destino se publica antes de poner el 301**, porque las dos guías absorben el contenido de los posts que se apagan y redirigir primero entierra material que todavía no vive en ningún otro lado.
 - Nunca escribir en `.planning/STATE.md`, `.planning/ROADMAP.md`, `.planning/REQUIREMENTS.md` ni bajo `.planning/workstreams/milestone/`.
 
 ## Accumulated Context
@@ -114,13 +114,17 @@ Los dos milestones corren a la vez sobre el mismo repositorio.
 - **[Fase 15, plan 06] Una reescritura declara qué conservó, y lo conservado se transcribe casi literal.** Los dos posts publicados salieron en junio, antes de que existiera el mapa, y esa es la razón por la que se reescriben, no que estén mal hechos. Ocho pasajes entraron casi textuales al copy nuevo, cada uno con la línea de `src/content/blog.ts` de la que salió. El campo `cambios` dice qué se conservó, qué se reemplazó y por qué, para que quien implemente pueda comparar contra lo publicado sin adivinar.
 - **[Fase 15, plan 06] Las cuatro preguntas de dinero y de plazo se contestan sin dar una sola cifra.** Precio, costo, riesgo y tiempo de recuperación son donde más tienta tranquilizar con números, y ninguno está verificado (D-10). Se contesta explicando de qué depende cada cosa y qué pedir por escrito en la consulta. Se tranquiliza explicando el proceso, no prometiendo el resultado.
 - **[Fase 15, plan 06] Un trigrama del extractor de entidades no se cubre escribiendo mal el castellano.** El post de ciática quedó en 13 de 16, sobre el umbral del 80 %. Las tres que faltan son trigramas que el extractor sacó de fragmentos donde una oración termina y otra empieza, y cubrirlas exigiría una aposición sin coma. Mismo criterio que `rodriguez` en el 15-05 y los encabezados que nombran colegas en el 15-04.
+- **[Fase 15, plan 07] Un permiso de escritura ampliado se comprueba en el código, no en la intención.** El tab `Keyword Research` tiene 5716 filas escritas por tres fases y el escritor junta columnas contiguas en un solo rango: bastaría con que una columna ajena quedara entre dos propias para sobreescribirla sin lanzar nada. `kr-h1-push.ts` acota `estadosPropios` a `["fase-14", "fase-15"]` y además exige que esos dos estados habiliten **exactamente dos** columnas en el modelo. Si alguien agrega una tercera con uno de esos estados, la carga se detiene antes de escribirla. Ampliar un permiso de uno a dos estados es el cambio que seis meses después nadie recuerda haber revisado.
+- **[Fase 15, plan 07] La columna `URL` se cierra por oportunidad y se registra como residuo de la fase 14.** Ningún requisito ONPAGE la nombra: la fase 14 la reservó, produjo el dato que la llena y cerró sin escribirla. Se llena acá porque este es el único cargador que vuelve a tocar ese tab y el dato ya vive en `url-map.jsonl`. Conserva su `status: "fase-14"`, que es de donde viene el dato. Queda declarado como residuo cerrado y no como alcance de la fase 15, para que la trazabilidad no cuente como ONPAGE algo que ningún ONPAGE pidió.
+- **[Fase 15, plan 07] La ronda del doctor se ordena por lo que puede hacer daño, no por orden de URL.** Cuatro niveles: lo que un paciente puede accionar solo, lo que decide una conducta médica, lo descriptivo y lo operativo que confirma la clínica. Ordenarla por URL sería más fácil de generar y haría que el doctor revisara primero lo descriptivo de la primera página alfabética. Un doctor que tiene que abrir dieciséis archivos deja la revisión para después, y la fase se queda entregada a medias por un problema de formato.
 - **[Fase 15, plan 02] El H1 de las 6 que no compiten se transcribe con archivo y linea, nunca se propone.** Proponerles uno reabriria una decision de la fase 14 sin dato nuevo, y encima por la puerta de atras. Las 16 que compiten reciben H1 propuesto con la prosa de por que ese y no otro.
 
 ### Pending Todos
 
 - **Dar de alta `drangulocolumna.com` como proyecto en DinoRank y conectarle Search Console (bloqueante para la fase 14).** `/auditoria` responde HTTP 500 con un dominio que no es proyecto de la cuenta, y `/canibalizaciones` devuelve `has_data: false` sin Search Console conectado. MAP-02 y ONPAGE-05 dependen de esto y no lo puede resolver el tooling. Ninguno de los dos endpoints consume cuota, así que resondear después es gratis.
 - **Dos competidores por definir:** de los cinco de COMP-01 hay tres ya investigados en `.planning/research/COMPETITORS.md` (drcarranzacolumna.com, drciezatraumatologia.com, cirujanocolumna-elaos.com). Candidatos del local pack según la auditoría del 2026-08-10: Centro de Columna Vertebral y Clínica De La Columna.
-- **Aprobación del doctor sobre el copy clínico (fase 15):** ONPAGE-04 entrega el texto marcado como pendiente. Conviene agrupar toda la revisión en una sola ronda.
+- **Aprobación del doctor sobre el copy clínico (fase 15): la ronda está armada, no respondida.** `phases/15-paquete-on-page-por-url/15-REVISION-DOCTOR.md`, 450 bloques con casilla en una sola ronda ordenada por riesgo clínico. Es bloqueante para la fase 8 de v1.1 y no lo levanta este workstream.
+- **Diez datos operativos de sede sin confirmar (fase 15):** piso y consultorio de las tres clínicas, seguros y convenios de las cuatro sedes, estacionamiento del edificio del consultorio y dos precios de consulta. Van en la ficha de cada sede en tabla aparte y al final de la ronda del doctor. Los confirma la clínica, no el doctor. v1.1 no publica esa sede hasta resolverlos, sea confirmándolos o sacando la afirmación.
 
 ### Blockers/Concerns
 
@@ -133,26 +137,24 @@ Los dos milestones corren a la vez sobre el mismo repositorio.
 
 ## Session Continuity
 
-Last session: 2026-08-13T03:05:00.000Z
-Stopped at: Completed 15-06-PLAN.md — los cuatro posts del blog
+Last session: 2026-08-13T06:40:00.000Z
+Stopped at: Completed 15-07-PLAN.md — la fase 15 y con ella la ejecución de v1.2
 Resume file: None
-Siguiente: 15-07, el último plan de la fase y del milestone v1.2. Cierra ONPAGE-06 emitiendo los seis documentos
-cortos que faltan (`/agendar`, `/blog`, `/contacto`, `/sedes`, `/sobre-el-doctor` y `/testimonios`), arma la ronda
-única del doctor (D-09) sobre todo lo que las cuatro familias sellaron, escribe `Suggested H1` en el Sheet y deja el
-handoff hacia v1.1.
+Siguiente: el ciclo de cierre del milestone. Revisión de código de la fase 15, verificación de fase hacia atrás desde
+el objetivo, y después el lifecycle de v1.2 (audit, complete, cleanup). No queda plan que ejecutar.
 
-Lo que el 15-07 tiene que recoger de la wave 3 entera:
+Lo que queda vivo del lado de v1.1 y no lo cierra este workstream:
 
-- **Del 15-05:** diez datos operativos pendientes de confirmación, en la tabla propia de cada paquete de sede, y 24
-  secciones clínicas selladas. Dos merecen prioridad: el lema de la Clínica Tezza que el texto cita, que salió de los
-  resultados medidos y no de una fuente institucional, y el bloque de hernia discal sin cirugía del consultorio de Surco.
-- **Del 15-06:** 82 secciones clínicas selladas en los cuatro posts del blog. Dos bloques piden prioridad: las tres
-  secciones del post de ciática que contradicen la promesa de aliviar el dolor en dos o tres minutos, porque
-  contradecir una creencia muy difundida en una página médica conviene hacerlo con respaldo; y el bloque de secuelas y
-  riesgo del post de cirugía, que enumera complicaciones sin dar ninguna probabilidad.
-- **Herramienta:** `paquete.ts` imprime ahora cuatro bloques opcionales según lo que declare la fila de copy:
-  `enlacesPropuestos` (15-04), `datosOperativos` y `notaDeFormato` (15-05) y `mapeoDePost` (15-06). El cruce de title,
-  meta y H1 contra el mapa corre sobre los cuatro datasets de copy, así que ninguna familia quedó sin guardia.
+- **La ronda del doctor, 450 casillas sin responder**, en `15-REVISION-DOCTOR.md`. Bloqueante para la fase 8.
+  Dos bloques piden prioridad sobre los demás: las tres secciones del post de ciática que contradicen la promesa de
+  aliviar el dolor en dos o tres minutos, porque contradecir una creencia muy difundida en una página médica conviene
+  hacerlo con respaldo; y el bloque de secuelas y riesgo del post de cirugía, que enumera complicaciones sin dar
+  ninguna probabilidad. Del lado operativo, el lema de la Clínica Tezza que el texto cita salió de los resultados
+  medidos y no de una fuente institucional.
+- **Diez datos operativos de sede sin confirmar**, listados en el handoff y al final de la ronda.
+- **Los 135 enlaces internos de la fase 14 son especificación.** Los escribe v1.1 en el código.
+- **El orden que no se puede invertir:** las dos guías de destino se publican antes de que se ponga el 301 de sus
+  posts. El documento de cada post trae la tabla de qué bloque suyo quedó en qué sección de la guía.
 
 ## Performance Metrics
 
@@ -173,6 +175,7 @@ Lo que el 15-07 tiene que recoger de la wave 3 entera:
 | Phase 15 P04 | ~1h 40min | 3 tasks | 8 files |
 | Phase 15 P05 | ~1h 15min | 3 tasks | 10 files |
 | Phase 15 P06 | ~1h 30min | 3 tasks | 9 files |
+| Phase 15 P07 | ~2h 30min | 3 tasks | 18 files |
 
 ## Presupuesto de fuentes externas al cerrar la fase 14
 
