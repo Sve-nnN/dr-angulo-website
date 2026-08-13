@@ -377,8 +377,9 @@ export function renderPaquete(
   if (paquete.entidadesInsuficientes) {
     lineas.push("");
     lineas.push(
-      "> Esta SERP no dio ocho términos ni al umbral mínimo. La lista queda corta a propósito:",
-      "> inventar términos sería peor que entregar pocos.",
+      "> Esta SERP no dio ocho términos clínicos, anatómicos o de procedimiento ni al umbral",
+      "> mínimo. Los términos genéricos que sí trae quedan listados arriba y no cuentan para el",
+      "> mínimo: exigir que la página nombre `especialidad` no le pide nada a quien la escribe.",
     );
   }
   lineas.push("");

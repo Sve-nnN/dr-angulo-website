@@ -108,6 +108,11 @@ const RELLENO = new Set([
   "menores", "mejor", "mejores", "peor", "buena", "bueno", "buenos", "buenas", "principal",
   "principales", "comun", "comunes", "general", "generales", "generalmente", "ademas",
   "tambien", "siempre", "nunca", "ahora", "despues", "antes",
+  // Voz institucional en primera persona. Medida sobre las 16 capturas: sobrevive a la
+  // frecuencia documental porque media pagina de clinica esta escrita en plural. "La pagina
+  // tiene que nombrar `somos`" no le pide nada a quien escribe.
+  "somos", "estamos", "contamos", "nuestro", "nuestra", "nuestros", "nuestras", "cuidamos",
+  "cuida", "ofrecemos", "atendemos", "brindamos", "preguntan", "sabemos", "trabajamos",
 ]);
 
 /** La marca propia. Una pagina no se posiciona nombrandose a si misma en la lista de exigencias. */
@@ -128,6 +133,10 @@ const CLINICAS = new Set([
   "degeneracion", "desgaste", "protrusion", "pinzamiento", "contractura", "rigidez", "fractura",
   "tumor", "infeccion", "calambre", "calambres", "parestesia", "radiculopatia", "cervicalgia",
   "dorsalgia", "claudicacion", "lumbociatalgia", "deformidad", "deformidades",
+  // Salen del corpus medido y estaban cayendo en `generica`, que es la clase que la bandera de
+  // entidades insuficientes descarta. Un termino obligatorio que diga `fracturas` si le pide
+  // algo a quien escribe la pagina.
+  "fracturas", "lesion", "lesiones", "enfermedad", "enfermedades", "irritacion", "desviacion",
 ]);
 
 const PROCEDIMIENTOS = new Set([
@@ -140,6 +149,7 @@ const PROCEDIMIENTOS = new Set([
   "antiinflamatorio", "antiinflamatorios", "corticoide", "reposo", "prevencion", "curar",
   "cura", "desinflamar", "aliviar", "alivio", "remedio", "remedios", "consulta", "evaluacion",
   "examen", "estudio", "estudios",
+  "neurocirugia", "diagnosticar", "tratar",
 ]);
 
 const ANATOMICAS = new Set([
@@ -151,6 +161,7 @@ const ANATOMICAS = new Set([
   "articulacion", "articulaciones", "cadera", "rodilla", "pierna", "piernas", "brazo", "brazos",
   "cuello", "espalda", "cintura", "gluteo", "muslo", "pie", "pies", "mano", "manos", "faceta",
   "apofisis", "cauda", "equina", "cuerpo",
+  "cartilago", "costilla", "costillas", "articular", "locomotor", "cerebro",
 ]);
 
 /** Minusculas y sin tildes. La n con virgulilla cae en n, que es lo que hace comparable el corpus. */
@@ -324,10 +335,15 @@ export function entidadesDelTop10(
     clase: claseDe(c.termino),
   }));
 
+  // La bandera cuenta solo lo que le exige algo a quien escribe. Contando el total, ocho
+  // terminos genericos la dejaban en false, o sea que la bandera que existe para declarar
+  // "esta SERP no dio lo suficiente" quedaba satisfecha por ruido.
+  const utiles = entidades.filter((e) => e.clase !== "generica");
+
   return {
     entidades,
     umbralAplicado,
-    entidadesInsuficientes: entidades.length < minimo,
+    entidadesInsuficientes: utiles.length < minimo,
     de,
   };
 }

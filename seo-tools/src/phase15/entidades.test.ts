@@ -125,3 +125,27 @@ test("entidades: dominios, marcas de competidores y ruido de navegacion no son e
     `el termino clinico si tiene que salir. Lista: ${terminos.join(", ")}`,
   );
 });
+
+test("entidades: ocho terminos genericos no dan por satisfecha la bandera de insuficientes", () => {
+  // La bandera existe para declarar "esta SERP no dio lo suficiente". Contando el total, ocho
+  // terminos institucionales la dejaban en false: quedaba satisfecha por ruido.
+  const institucional = "Somos especialistas y contamos con la experiencia de nuestros medicos";
+  const serp = serpDe(
+    Array.from({ length: 9 }, (_, i) => ({
+      titulo: `Especialidad y calidad en Lima ${i}`,
+      fragmento: institucional,
+      link: `https://sitio${i}.pe/pagina`,
+    })),
+  );
+
+  const resultado = entidadesDelTop10(serp);
+  const terminos = resultado.entidades.map((e) => e.termino);
+
+  for (const primeraPersona of ["somos", "contamos", "nuestros"]) {
+    assert.ok(!terminos.includes(primeraPersona), `"${primeraPersona}" salio como exigencia`);
+  }
+  assert.ok(
+    resultado.entidadesInsuficientes,
+    `una SERP sin vocabulario clinico tiene que declararse insuficiente. Lista: ${terminos.join(", ")}`,
+  );
+});
