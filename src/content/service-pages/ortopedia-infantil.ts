@@ -5,8 +5,8 @@ export const ortopediaInfantil: ServicePage = {
   navLabel: "Ortopedia infantil",
   h1: "Ortopedia infantil: la consulta del niño",
   heroLead: "No toda pierna arqueada o pie plano necesita tratamiento, y no toda espalda encorvada es postura. Acá encuentras qué es parte del desarrollo normal, qué hallazgos sí necesitan evaluación y cuándo conviene consultar sin esperar el próximo control.",
-  title: "Ortopedia infantil: desarrollo, marcha y columna en crecimiento",
-  description: "Qué se evalúa en una consulta de ortopedia infantil, qué hallazgos son parte del desarrollo normal y cuáles necesitan atención. Guía del Dr. Juan Carlos Angulo, traumatólogo en Lima.",
+  title: "Ortopedia infantil en Lima: cuándo consultar",
+  description: "Pie plano, displasia de cadera, desviaciones de la columna del niño y fracturas. Consulta de ortopedia infantil en Lima.",
   cardSummary: "Qué es parte del desarrollo normal, qué necesita evaluación y cuándo no conviene esperar.",
   conditionName: "Condiciones ortopédicas en niños y adolescentes",
   alternateNames: [

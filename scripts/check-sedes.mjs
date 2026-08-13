@@ -46,9 +46,6 @@ const SEDE_BODY = 'data-sede-body=""';
  *  todas las páginas del sitio, por eso solo se cuenta dentro de la región. */
 const DOCTOR_CHAT = "wa.me";
 
-/** Sufijo que la plantilla del layout raíz agrega a todo `<title>`. */
-const TITLE_SUFFIX = " | Dr. Juan Angulo";
-
 /** Las cuatro guías del silo clínico de la fase 8. */
 const SERVICE_SLUGS = [
   "hernia-discal",
@@ -75,7 +72,7 @@ const MANIFEST = [
     slug: "consultorio-privado",
     kind: "consultorio",
     h1: "Consultorio de Surco: la consulta sin intermediarios",
-    title: "Consultorio de traumatología y columna en Surco, Lima",
+    title: "Cirugía de columna en Surco: consultorio privado",
     streetAddress: "Av. El Derby 254, piso 24, oficina 2403",
     schemaType: "MedicalBusiness",
     latitude: -12.0977043,
@@ -86,7 +83,7 @@ const MANIFEST = [
     slug: "clinica-ricardo-palma",
     kind: "clinica",
     h1: "Atención de columna en la Clínica Ricardo Palma",
-    title: "Traumatólogo y cirujano de columna en Clínica Ricardo Palma",
+    title: "Cirujano de columna en Clínica Ricardo Palma",
     streetAddress: "Av. Javier Prado Este 1066",
     schemaType: "MedicalClinic",
     latitude: -12.090602,
@@ -97,7 +94,7 @@ const MANIFEST = [
     slug: "sanna-la-molina",
     kind: "clinica",
     h1: "Atención de columna en Sanna La Molina",
-    title: "Traumatólogo y cirujano de columna en Clínica Sanna, sede La Molina",
+    title: "Cirujano de columna en Clínica Sanna La Molina",
     streetAddress: "Av. Raúl Ferrero 1256",
     schemaType: "MedicalClinic",
     latitude: -12.0902268,
@@ -108,7 +105,7 @@ const MANIFEST = [
     slug: "clinica-tezza",
     kind: "clinica",
     h1: "Ortopedia infantil en la Clínica Padre Luis Tezza",
-    title: "Traumatólogo y cirujano de columna en Clínica Padre Luis Tezza",
+    title: "Ortopedia infantil en la Clínica Tezza, Lima",
     streetAddress: "Av. El Polo 570",
     schemaType: "MedicalClinic",
     latitude: -12.1032942,
@@ -280,7 +277,7 @@ function checkSede(entry) {
   if (!titleMatch) {
     fail("el documento no declara <title>");
   } else {
-    const expected = `${entry.title}${TITLE_SUFFIX}`;
+    const expected = entry.title;
     if (toText(titleMatch[1]) !== expected) {
       fail(`el title dice "${toText(titleMatch[1])}" y debería decir "${expected}"`);
     }

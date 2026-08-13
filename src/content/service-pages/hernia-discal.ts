@@ -6,7 +6,7 @@ export const herniaDiscal: ServicePage = {
   h1: "Hernia discal",
   heroLead: "El dolor que baja por la pierna o por el brazo rara vez nace en la espalda: nace en una raíz nerviosa comprimida. Acá encuentras qué es una hernia discal, cómo se confirma y qué opciones existen antes de plantear una cirugía.",
   title: "Hernia discal: síntomas, diagnóstico y tratamiento",
-  description: "Qué es una hernia discal, qué síntomas produce, cómo se diagnostica y en qué casos se plantea la cirugía. Guía del Dr. Juan Carlos Angulo, cirujano de columna en Lima.",
+  description: "Qué es una hernia discal, qué síntomas produce, cómo se confirma con resonancia y en qué casos se plantea la cirugía. Guía de columna en Lima.",
   cardSummary: "Qué es, cómo se diagnostica y en qué casos la cirugía es realmente necesaria.",
   conditionName: "Hernia discal",
   alternateNames: [

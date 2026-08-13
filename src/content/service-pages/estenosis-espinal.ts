@@ -5,8 +5,8 @@ export const estenosisEspinal: ServicePage = {
   navLabel: "Estenosis espinal",
   h1: "Estenosis espinal: el canal que se estrecha",
   heroLead: "Cuando el túnel por donde viajan los nervios se estrecha, el cuerpo lo avisa al caminar. Acá encuentras por qué las piernas pesan después de unas cuadras, cómo se confirma el diagnóstico y qué opciones hay en cada etapa.",
-  title: "Estenosis espinal: síntomas, diagnóstico y tratamiento",
-  description: "Qué es la estenosis espinal o canal estrecho, por qué las piernas pesan al caminar, cómo se diagnostica y cuándo se plantea la cirugía. Guía del Dr. Juan Carlos Angulo, cirujano de columna en Lima.",
+  title: "Estenosis espinal: síntomas y tratamiento",
+  description: "Qué es la estenosis espinal, por qué aparece con los años, qué alivia el dolor al caminar y en qué casos se opera. Consulta en Lima.",
   cardSummary: "Por qué las piernas pesan al caminar, cómo se confirma el canal estrecho y qué opciones hay.",
   conditionName: "Estenosis espinal",
   alternateNames: [

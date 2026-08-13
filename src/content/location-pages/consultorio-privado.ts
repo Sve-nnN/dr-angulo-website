@@ -5,11 +5,11 @@ export const consultorioPrivado: LocationPage = {
   navLabel: "Consultorio privado en Surco",
   // El consultorio es la excepción del patrón de title de las clínicas: su
   // nombre no es algo que un paciente escriba en el buscador. Su consulta es
-  // de distrito, no de institución, y por eso el title nombra Surco y Lima.
-  title: "Consultorio de traumatología y columna en Surco, Lima",
+  // de distrito, no de institución, y por eso el title nombra Surco.
+  title: "Cirugía de columna en Surco: consultorio privado",
   h1: "Consultorio de Surco: la consulta sin intermediarios",
   description:
-    "El Dr. Juan Carlos Angulo atiende columna y traumatología en su consultorio de Surco, viernes y sábados. Acá él agenda tu cita directamente.",
+    "Consultorio privado del Dr. Juan Carlos Angulo en Surco para consultas de columna. Dónde queda y cómo pedir cita por WhatsApp.",
   heroLead:
     "Este es el consultorio propio del doctor, en el Edificio Lima Central Tower de Surco. Es la única sede cuya agenda maneja él, así que la cita se coordina directamente con su consultorio.",
   cardSummary:

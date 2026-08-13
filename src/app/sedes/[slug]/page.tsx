@@ -35,7 +35,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!entry) return {};
 
   return {
-    title: entry.page.title,
+    title: { absolute: entry.page.title },
     description: entry.page.description,
     alternates: { canonical: `/sedes/${entry.page.slug}` },
   };
