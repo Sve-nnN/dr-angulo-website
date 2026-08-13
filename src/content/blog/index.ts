@@ -1,0 +1,68 @@
+/**
+ * Posts del blog: un módulo de datos por artículo, una sola plantilla en
+ * `src/app/blog/[slug]/page.tsx`.
+ *
+ * Mismas reglas de contenido que las guías de servicio: consenso clínico
+ * general en voz explicativa, nunca testimonial. Prohibido escribir cifras de
+ * cirugías, tasas de éxito, plazos garantizados o precios.
+ */
+
+import type { ServicePage } from "@/content/service-pages";
+import { post5SintomasDeColumnaQueNoDebesIgnorar } from "./5-sintomas-de-columna-que-no-debes-ignorar";
+import { postHerniaDiscalODolorDeEspaldaComoDiferenciarlos } from "./hernia-discal-o-dolor-de-espalda-como-diferenciarlos";
+import { postEstenosisEspinalQueEs } from "./estenosis-espinal-que-es";
+import { postMiedoAOperarteDeLaColumna5CosasQueDebesSaber } from "./miedo-a-operarte-de-la-columna-5-cosas-que-debes-saber";
+
+/**
+ * Sección de un post, plana y con el mismo modelo que las guías: el nivel 3 es
+ * otro elemento del arreglo con `level: 3`, no una propiedad anidada.
+ *
+ * El `id` se escribe a mano y no se genera a partir del título en tiempo de
+ * render: pasa a ser un ancla compartible, y un cambio de redacción no puede
+ * romper un enlace que alguien ya mandó por WhatsApp.
+ */
+export type BlogSection = {
+  /** kebab-case sin tildes. Es el `id` del encabezado y el destino del ancla. */
+  id: string;
+  level: 2 | 3;
+  heading: string;
+  paragraphs: string[];
+};
+
+/** Enlace interno de salida hacia el silo clínico. */
+export type BlogOutboundLink = {
+  href: string;
+  anchor: string;
+};
+
+export type BlogPost = {
+  slug: string;
+  /** Título de buscador. Alimenta `generateMetadata`, no el encabezado. */
+  title: string;
+  /**
+   * Encabezado visible de la página. Separado de `title` a propósito: el
+   * paquete on-page le da a cada post un H1 distinto de su title, y sin campo
+   * propio la fase que reescribe `title` borraría el H1 sin enterarse.
+   */
+  h1: string;
+  description: string;
+  publishedAt: string;
+  updatedAt: string;
+  /**
+   * Guía del silo a la que empuja este post. Opcional: hay temas cuyo destino
+   * natural es el hub `/servicios` y no una guía concreta, y forzar el campo
+   * obligaría a inventarles una guía que la matriz de enlazado no les dio.
+   */
+  relatedService?: ServicePage["slug"];
+  outboundLinks?: BlogOutboundLink[];
+  ctaBanner: { heading: string; body: string };
+  intro: string[];
+  sections: BlogSection[];
+};
+
+export const blogPosts: BlogPost[] = [
+  post5SintomasDeColumnaQueNoDebesIgnorar,
+  postHerniaDiscalODolorDeEspaldaComoDiferenciarlos,
+  postMiedoAOperarteDeLaColumna5CosasQueDebesSaber,
+  postEstenosisEspinalQueEs,
+];

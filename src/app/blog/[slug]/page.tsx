@@ -9,9 +9,26 @@ import { AuthorByline } from "@/components/ui/author-byline";
 import { MedicalDisclaimer } from "@/components/ui/medical-disclaimer";
 import { MidContentCta } from "@/components/ui/mid-content-cta";
 import { TableOfContents } from "@/components/ui/table-of-contents";
-import { blogPosts } from "@/content/blog";
+import { blogPosts, type BlogSection } from "@/content/blog";
 import { getServicePage } from "@/content/service-pages";
 import { BlogPostingJsonLd, BreadcrumbJsonLd } from "@/components/structured-data";
+
+/**
+ * Un h2 con las secciones de nivel 3 que le siguen. Agrupar antes de
+ * renderizar es lo que evita que un h3 abra su propio `<section>` y quede
+ * como hermano de su h2 en vez de colgar de él.
+ */
+function groupSections(sections: BlogSection[]) {
+  const groups: { section: BlogSection; children: BlogSection[] }[] = [];
+  for (const section of sections) {
+    if (section.level === 3 && groups.length > 0) {
+      groups[groups.length - 1].children.push(section);
+      continue;
+    }
+    groups.push({ section, children: [] });
+  }
+  return groups;
+}
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -52,6 +69,7 @@ export default async function BlogPostPage({ params }: Props) {
     ? service.conditionName.charAt(0).toLowerCase() +
       service.conditionName.slice(1)
     : "";
+  const groups = groupSections(post.sections);
 
   return (
     <>
@@ -75,7 +93,7 @@ export default async function BlogPostPage({ params }: Props) {
       </Link>
 
       <h1 className="mt-6 text-pretty font-heading text-2xl font-extrabold text-primary sm:text-3xl">
-        {post.title}
+        {post.h1}
       </h1>
 
       <AuthorByline publishedAt={post.publishedAt} updatedAt={post.updatedAt} />
@@ -83,7 +101,7 @@ export default async function BlogPostPage({ params }: Props) {
       <div className="mt-8">
         <TableOfContents
           title="En este artículo"
-          entries={post.sections.map((section) => ({
+          entries={groups.map(({ section }) => ({
             id: section.id,
             label: section.heading,
           }))}
@@ -96,7 +114,7 @@ export default async function BlogPostPage({ params }: Props) {
         </p>
       ))}
 
-      {post.sections.map((section, index) => (
+      {groups.map(({ section, children }, index) => (
         <Fragment key={section.id}>
           <section className="mt-12">
             <h2
@@ -111,12 +129,16 @@ export default async function BlogPostPage({ params }: Props) {
                 {paragraph}
               </p>
             ))}
-            {section.subsections?.map((subsection) => (
-              <div key={subsection.heading} className="mt-8">
-                <h3 className="font-heading text-lg font-bold text-primary">
-                  {subsection.heading}
+            {children.map((child) => (
+              <div key={child.id} className="mt-8">
+                <h3
+                  id={child.id}
+                  tabIndex={-1}
+                  className="scroll-mt-28 font-heading text-lg font-bold text-primary"
+                >
+                  {child.heading}
                 </h3>
-                {subsection.paragraphs.map((paragraph, i) => (
+                {child.paragraphs.map((paragraph, i) => (
                   <p key={i} className="mt-3 text-lg text-foreground/80">
                     {paragraph}
                   </p>
@@ -162,6 +184,26 @@ export default async function BlogPostPage({ params }: Props) {
           Leer la guía completa sobre {conditionLabel}
           <ArrowRight className="size-4" aria-hidden="true" />
         </Link>
+      )}
+
+      {post.outboundLinks && post.outboundLinks.length > 0 && (
+        <section className="mt-10 border-t border-border pt-8">
+          <p className="font-heading text-lg font-bold text-foreground">
+            Sigue leyendo
+          </p>
+          <ul className="mt-3">
+            {post.outboundLinks.map((link) => (
+              <li key={link.href}>
+                <Link
+                  href={link.href}
+                  className="block min-h-11 py-2.5 text-base font-semibold text-primary-dark hover:underline"
+                >
+                  {link.anchor}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </section>
       )}
 
       <div className="mt-14">
