@@ -56,6 +56,13 @@ export type BlogPost = {
   relatedService?: ServicePage["slug"];
   outboundLinks?: BlogOutboundLink[];
   ctaBanner: { heading: string; body: string };
+  /**
+   * `id` de la sección detrás de la que va el banner, igual que en las guías
+   * de servicio. Admite un `id` de nivel 3: hay posts cuya primera sección es
+   * corta y ninguna frontera de nivel 2 cae dentro de la ventana de POS-01.
+   * Sin valor, el banner sigue yendo detrás de la primera sección.
+   */
+  bannerAfterSectionId?: string;
   intro: string[];
   sections: BlogSection[];
 };

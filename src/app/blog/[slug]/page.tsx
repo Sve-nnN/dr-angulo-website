@@ -114,6 +114,7 @@ export default async function BlogPostPage({ params }: Props) {
             location="blog_post"
           />
         }
+        bannerAfterSectionId={post.bannerAfterSectionId}
         bannerAfterIndex={0}
       />
 
