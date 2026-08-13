@@ -247,3 +247,63 @@ test("ymyl: la guia ya aprobada por Juan pasa la compuerta sin un solo hallazgo"
     assert.deepEqual(hallazgos, [], `${p.url}: ${JSON.stringify(hallazgos, null, 1)}`);
   }
 });
+
+test("ymyl: una cifra escrita con palabras exige fuente igual que una escrita con digitos", () => {
+  // La regla se disparaba con /\d/, o sea que miraba exactamente la forma que el copy no usa:
+  // esta fase escribe los numeros con palabras (D-11).
+  const conPalabras = [{ texto: "El noventa por ciento de las hernias mejora sin operarse.", fuente: "" }];
+  const conDigitos = [{ texto: "El 90 por ciento de las hernias mejora sin operarse.", fuente: "" }];
+
+  assert.equal(de(revisar(pagina([seccion({ afirmaciones: conPalabras })])), "cifra-sin-fuente").length, 1);
+  assert.equal(de(revisar(pagina([seccion({ afirmaciones: conDigitos })])), "cifra-sin-fuente").length, 1);
+
+  const conFuente = [{ texto: conPalabras[0]!.texto, fuente: "Una procedencia escrita." }];
+  assert.equal(de(revisar(pagina([seccion({ afirmaciones: conFuente })])), "cifra-sin-fuente").length, 0);
+});
+
+test("ymyl: una prevalencia afirmada en un parrafo necesita una afirmacion con fuente que la respalde", () => {
+  // Las quince afirmaciones de frecuencia clinica del copy viven en `parrafos`, que es la parte
+  // del dataset que no tiene campo de fuente: `cifra-sin-fuente` no las alcanza por construccion.
+  const oracion = "La mayoría de las hernias discales no termina en quirófano.";
+
+  const sola = revisar(pagina([seccion({ parrafos: [oracion] })]));
+  assert.equal(de(sola, "prevalencia-sin-respaldo").length, 1);
+
+  const respaldada = revisar(
+    pagina([seccion({ parrafos: [oracion], afirmaciones: [{ texto: oracion, fuente: "Una procedencia." }] })]),
+  );
+  assert.equal(de(respaldada, "prevalencia-sin-respaldo").length, 0);
+
+  const sinFuente = revisar(
+    pagina([seccion({ parrafos: [oracion], afirmaciones: [{ texto: oracion, fuente: "  " }] })]),
+  );
+  assert.equal(de(sinFuente, "prevalencia-sin-respaldo").length, 1, "una fuente en blanco no respalda");
+});
+
+test("ymyl: la regla de prevalencia mide proporciones y no el idioma", () => {
+  // Pedirle respaldo a cada "dos" o "un" de un parrafo no marcaria cifras sin fuente: marcaria
+  // el espanol. Cada patron exige la construccion entera de proporcion sobre una poblacion.
+  const noSonProporciones = [
+    "Adentro, la oficina es la 2403, en el piso 24.",
+    "Los estudios que tengas, aunque sean viejos, y el informe escrito de cada uno.",
+    "La comparación en el tiempo es la mitad de la información.",
+    "Hay dos vías: la central de citas o la agenda en línea.",
+  ];
+  for (const texto of noSonProporciones) {
+    const hallazgos = revisar(pagina([seccion({ parrafos: [texto] })]));
+    assert.equal(de(hallazgos, "prevalencia-sin-respaldo").length, 0, `se marcó de más: ${texto}`);
+  }
+
+  const siSonProporciones = [
+    "La mayoría de los cuadros cede en semanas.",
+    "La mayor parte de las hernias discales mejora sin operar.",
+    "Casi todos los pacientes vuelven a caminar sin dolor.",
+    "El noventa por ciento de los casos se resuelve sin operar.",
+    "Ocho de cada diez episodios ceden solos.",
+    "La mitad de los pacientes no necesita imagen.",
+  ];
+  for (const texto of siSonProporciones) {
+    const hallazgos = revisar(pagina([seccion({ parrafos: [texto] })]));
+    assert.equal(de(hallazgos, "prevalencia-sin-respaldo").length, 1, `se dejó pasar: ${texto}`);
+  }
+});

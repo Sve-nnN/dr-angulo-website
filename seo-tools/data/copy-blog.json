@@ -377,7 +377,7 @@
           "tipo": "clinico",
           "aprobacion": "pendiente-doctor",
           "parrafos": [
-            "Tres dudas se repiten en casi todas las consultas por artrosis. Si el clima influye: no cambia el desgaste, aunque mucha gente nota los días húmedos y esa percepción es real. Si conviene dejar de moverse cuando duele: quedarse quieto alivia el rato y empeora el cuadro a mediano plazo. Y si tomar calcio sirve de algo: el calcio cuida el hueso, que es otra cosa, y no repara el cartílago."
+            "Tres dudas se repiten en las consultas por artrosis. Si el clima influye: no cambia el desgaste, aunque mucha gente nota los días húmedos y esa percepción es real. Si conviene dejar de moverse cuando duele: quedarse quieto alivia el rato y empeora el cuadro a mediano plazo. Y si tomar calcio sirve de algo: el calcio cuida el hueso, que es otra cosa, y no repara el cartílago."
           ],
           "afirmaciones": [],
           "keywordsCubiertas": [],
@@ -575,7 +575,12 @@
             "Es la que aparece de golpe y lleva poco tiempo instalada. Suele venir después de un mal gesto, de un esfuerzo o de un día largo, y muchas veces no se encuentra una lesión concreta que la explique.",
             "La mayoría mejora sola en unas semanas si la persona se mantiene en movimiento dentro de lo que tolera. El reposo en cama, que era el consejo de antes, se desaconseja salvo los primeros días y solo si el dolor no deja de otra forma."
           ],
-          "afirmaciones": [],
+          "afirmaciones": [
+            {
+              "texto": "La mayoría mejora sola en unas semanas si la persona se mantiene en movimiento dentro de lo que tolera.",
+              "fuente": "Afirmación de frecuencia clínica redactada en la fase 15. No tiene todavía una referencia que la respalde: queda registrada acá, y en la ronda de revisión, para que el doctor la confirme, la matice o la retire antes de publicar (D-10)."
+            }
+          ],
           "keywordsCubiertas": [],
           "entidadesCubiertas": ["lumbalgia", "dolor"]
         },
@@ -632,7 +637,12 @@
             "En la mayor parte de los casos el origen es mecánico: músculos sobrecargados, articulaciones pequeñas de la columna irritadas, discos que perdieron altura con los años. Es frecuente que convivan varias cosas y que no se pueda señalar una sola culpable.",
             "Un grupo más chico corresponde al compromiso de una raíz nerviosa, y ahí el dolor deja de quedarse en la espalda y baja por la pierna. Y un grupo bastante más pequeño responde a causas que necesitan estudio sin demora: fracturas, infecciones, tumores o enfermedades inflamatorias."
           ],
-          "afirmaciones": [],
+          "afirmaciones": [
+            {
+              "texto": "En la mayor parte de los casos el origen es mecánico: músculos sobrecargados, articulaciones pequeñas de la columna irritadas, discos que perdieron altura con los años.",
+              "fuente": "Afirmación de frecuencia clínica redactada en la fase 15. No tiene todavía una referencia que la respalde: queda registrada acá, y en la ronda de revisión, para que el doctor la confirme, la matice o la retire antes de publicar (D-10)."
+            }
+          ],
           "keywordsCubiertas": [],
           "entidadesCubiertas": ["dolor", "espalda"]
         },
@@ -665,6 +675,10 @@
             {
               "texto": "Una parte considerable de las resonancias de personas sin dolor muestra discos alterados, así que la imagen sola no define la conducta.",
               "fuente": "Ya publicado en src/content/blog.ts, post 5-sintomas-de-columna-que-no-debes-ignorar, sección que-hacer-con-estas-senales, con fecha de actualización 2026-08-10."
+            },
+            {
+              "texto": "La consulta empieza por la historia y el examen físico, que en la zona lumbar resuelven la mayoría de los casos sin ninguna imagen.",
+              "fuente": "Afirmación de frecuencia clínica redactada en la fase 15. No tiene todavía una referencia que la respalde: queda registrada acá, y en la ronda de revisión, para que el doctor la confirme, la matice o la retire antes de publicar (D-10)."
             }
           ],
           "keywordsCubiertas": [],
@@ -680,7 +694,12 @@
             "El tratamiento de la lumbalgia es conservador en la enorme mayoría de los casos. Movimiento temprano, terapia física dirigida, trabajo de fuerza del tronco y corrección de la ergonomía del puesto de trabajo.",
             "La medicación acompaña el período de más dolor y se usa por el tiempo que indique quien te atiende. En casos seleccionados se plantean infiltraciones, que son un recurso para bajar el dolor y permitir la rehabilitación, no un tratamiento en sí mismo."
           ],
-          "afirmaciones": [],
+          "afirmaciones": [
+            {
+              "texto": "El tratamiento de la lumbalgia es conservador en la enorme mayoría de los casos.",
+              "fuente": "Afirmación de frecuencia clínica redactada en la fase 15. No tiene todavía una referencia que la respalde: queda registrada acá, y en la ronda de revisión, para que el doctor la confirme, la matice o la retire antes de publicar (D-10)."
+            }
+          ],
           "keywordsCubiertas": ["lumbalgia"],
           "entidadesCubiertas": ["lumbalgia", "dolor"]
         },
@@ -694,7 +713,12 @@
             "Es el dolor de la parte baja de la espalda, y la mayoría de los episodios se resuelven sin nada invasivo.",
             "La palabra curar encaja mal acá. Un episodio agudo cede; lo que se trabaja después es que no vuelva, y eso depende más de la fuerza y de los hábitos que de cualquier cosa que se tome. Cuando el dolor ya es crónico el objetivo es recuperar función y bajar la intensidad, y eso se consigue con constancia."
           ],
-          "afirmaciones": [],
+          "afirmaciones": [
+            {
+              "texto": "Es el dolor de la parte baja de la espalda, y la mayoría de los episodios se resuelven sin nada invasivo.",
+              "fuente": "Afirmación de frecuencia clínica redactada en la fase 15. No tiene todavía una referencia que la respalde: queda registrada acá, y en la ronda de revisión, para que el doctor la confirme, la matice o la retire antes de publicar (D-10)."
+            }
+          ],
           "keywordsCubiertas": ["lumbalgia"],
           "entidadesCubiertas": ["lumbalgia", "dolor", "baja de la espalda", "espalda", "baja"]
         },
@@ -1170,6 +1194,10 @@
             {
               "texto": "Una parte considerable de las resonancias de personas sin dolor muestra discos alterados, así que la imagen sola no define la conducta.",
               "fuente": "Ya publicado en src/content/blog.ts, post 5-sintomas-de-columna-que-no-debes-ignorar, sección que-hacer-con-estas-senales, con fecha de actualización 2026-08-10."
+            },
+            {
+              "texto": "El relato del recorrido, el examen de fuerza, reflejos y sensibilidad, y algunas maniobras que ponen en tensión la raíz para reproducir el síntoma alcanzan para ubicar el nivel comprometido en la mayoría de los casos.",
+              "fuente": "Afirmación de frecuencia clínica redactada en la fase 15. No tiene todavía una referencia que la respalde: queda registrada acá, y en la ronda de revisión, para que el doctor la confirme, la matice o la retire antes de publicar (D-10)."
             }
           ],
           "keywordsCubiertas": [],
@@ -1185,7 +1213,12 @@
             "La mayoría de las ciáticas mejora sin operar. El plan combina movimiento temprano dentro de lo tolerado, terapia física dirigida, control del dolor con lo que indique tu médico y corrección de la postura de trabajo y de la forma de levantar peso.",
             "El reposo absoluto prolongado juega en contra. Sostener actividad, aunque sea poca y adaptada, es parte del tratamiento y no una concesión que uno se permite cuando se siente mejor."
           ],
-          "afirmaciones": [],
+          "afirmaciones": [
+            {
+              "texto": "La mayoría de las ciáticas mejora sin operar.",
+              "fuente": "Afirmación de frecuencia clínica redactada en la fase 15. No tiene todavía una referencia que la respalde: queda registrada acá, y en la ronda de revisión, para que el doctor la confirme, la matice o la retire antes de publicar (D-10)."
+            }
+          ],
           "keywordsCubiertas": [],
           "entidadesCubiertas": ["dolor"]
         },
@@ -1244,7 +1277,7 @@
           "tipo": "clinico",
           "aprobacion": "pendiente-doctor",
           "parrafos": [
-            "Las tres que más se repiten van abajo. Hay una cuarta que casi nadie hace y que conviene hacer: qué pasa si no hago nada. En una ciática sin señales de alarma la respuesta suele ser que mejora igual, más lento y con más probabilidad de recaída."
+            "Las tres que más se repiten van abajo. Hay una cuarta que se pregunta poco y conviene hacer: qué pasa si no hago nada. En una ciática sin señales de alarma la respuesta suele ser que mejora igual, más lento y con más probabilidad de recaída."
           ],
           "afirmaciones": [],
           "keywordsCubiertas": [],
@@ -1260,7 +1293,12 @@
             "Con tiempo y con trabajo. La mayoría de los cuadros cede en semanas con tratamiento conservador bien llevado, y la parte que más pesa es la que hace la persona todos los días: moverse, hacer los ejercicios indicados y corregir lo que carga la zona.",
             "Cuando no cede, lo que corresponde no es insistir con lo mismo sino volver a evaluar."
           ],
-          "afirmaciones": [],
+          "afirmaciones": [
+            {
+              "texto": "La mayoría de los cuadros cede en semanas con tratamiento conservador bien llevado, y la parte que más pesa es la que hace la persona todos los días: moverse, hacer los ejercicios indicados y corregir lo que carga la zona.",
+              "fuente": "Afirmación de frecuencia clínica redactada en la fase 15. No tiene todavía una referencia que la respalde: queda registrada acá, y en la ronda de revisión, para que el doctor la confirme, la matice o la retire antes de publicar (D-10)."
+            }
+          ],
           "keywordsCubiertas": ["ciática"],
           "entidadesCubiertas": ["ciatica"]
         },
@@ -1488,7 +1526,12 @@
             "Se opera cuando la curva progresa, cuando duele de forma sostenida o cuando compromete la función. Es la más compleja del grupo, porque no se trata de liberar un nivel sino de corregir y sostener la alineación de varios.",
             "En la mayoría de los casos, y sobre todo en chicos y adolescentes, el manejo es seguimiento y corsé. Operar queda para las curvas que siguen avanzando pese a eso."
           ],
-          "afirmaciones": [],
+          "afirmaciones": [
+            {
+              "texto": "En la mayoría de los casos, y sobre todo en chicos y adolescentes, el manejo es seguimiento y corsé.",
+              "fuente": "Afirmación de frecuencia clínica redactada en la fase 15. No tiene todavía una referencia que la respalde: queda registrada acá, y en la ronda de revisión, para que el doctor la confirme, la matice o la retire antes de publicar (D-10)."
+            }
+          ],
           "keywordsCubiertas": ["cirugía de columna escoliosis"],
           "entidadesCubiertas": ["cirugia", "columna"]
         },
@@ -1630,7 +1673,12 @@
             "El trabajo de terapia busca descargar el segmento afectado, recuperar movilidad y fortalecer la musculatura que sostiene la columna, y a eso se suma corregir la postura de trabajo y la forma de levantar peso, que es lo que evita la recaída.",
             "Si te dijeron que necesitas operarte y todavía no atravesaste un manejo conservador bien hecho y sostenido, es razonable preguntar por qué."
           ],
-          "afirmaciones": [],
+          "afirmaciones": [
+            {
+              "texto": "La mayoría de los casos se maneja primero con tratamiento conservador: terapia física, medicación y cambios de hábitos.",
+              "fuente": "Afirmación de frecuencia clínica redactada en la fase 15. No tiene todavía una referencia que la respalde: queda registrada acá, y en la ronda de revisión, para que el doctor la confirme, la matice o la retire antes de publicar (D-10)."
+            }
+          ],
           "keywordsCubiertas": [],
           "entidadesCubiertas": ["columna"]
         },
