@@ -33,8 +33,10 @@ const SITEMAP = `${APP_DIR}/sitemap.xml.body`;
 const LLMS = `${APP_DIR}/llms.txt.body`;
 const STYLESHEET = "public/sitemap.xsl";
 /** Las 21 con las que cerró la fase 9 más la página de cirugía mínimamente
- *  invasiva del plan 08-16 y el post de artrosis del plan 08-12. */
-const SITEMAP_TOTAL = 23;
+ *  invasiva del plan 08-16 y los dos posts nuevos, artrosis del plan 08-12 y
+ *  lumbalgia del 08-13. Este es el máximo que alcanza la fase: el plan 08-14
+ *  lo baja a 22 al apagar los dos posts absorbidos. */
+const SITEMAP_TOTAL = 24;
 
 /**
  * Rutas que declaran `noindex` y por eso quedan fuera del sitemap.
