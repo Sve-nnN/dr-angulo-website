@@ -25,9 +25,9 @@ See: .planning/PROJECT.md (updated 2026-08-10)
 ## Current Position
 
 Phase: 8, reabierta para consumir el paquete on-page de v1.2 (planes 08-05 a 08-19, en cuatro olas)
-Plan: 08-05, 08-06 y 08-07 cerrados. Sigue la ola 2, los cuatro planes 08-08 a 08-11
+Plan: 08-05 a 08-08 cerrados. Sigue la ola 2, los planes 08-09 a 08-11
 Status: En ejecución
-Last activity: 2026-08-13, plan 08-07 ejecutado y verificado en local
+Last activity: 2026-08-13, plan 08-08 ejecutado y verificado en local
 
 Progress: [████████░░] 4 de 5 fases de v1.1, con la 8 reabierta
 
@@ -80,11 +80,26 @@ margen (el default daba 32.8 por ciento, a 2.2 puntos del techo de la ventana), 
 puerta lo exigiera. `tsc`, `lint`, `build`, `check-content.mjs` y `check-sedes.mjs` en verde sobre
 las 8 rutas.
 
-**Lo que esto deja abierto para 08-08.** Ortopedia infantil no tiene ninguna posición de nivel 2
-válida: su primer `h2` cuelga 13 subsecciones y ya cierra en 65.9 por ciento. El único punto
-dentro de la ventana cae entre subsecciones de nivel 3, y `bannerAfterSectionId` hoy solo resuelve
-ids de nivel 2. 08-08 necesita que la resolución acepte nivel 3, o que POS-01 se replantee para el
-formato de página de servicio.
+**Ola 2, plan 08-08, cerrado el 2026-08-13.** `/servicios/ortopedia-infantil` publica el copy
+aprobado y es la única de las cuatro que no pasa a guía clínica: la SERP de Lima para
+`ortopedia infantil lima` pide página de servicio, así que estrena `format: "pagina-de-servicio"`
+con su esqueleto de cinco `h2` y quince `h3`, 1814 palabras de cuerpo. Las 67 cadenas del dataset
+aparecen literales en el HTML.
+
+El problema de posición del banner que 08-06 había dejado abierto se cerró acá. Ninguna frontera
+de nivel 2 de esta página cae dentro de la ventana de POS-01: las dos disponibles miden 13.3 y
+76.1 por ciento, porque `que-se-atiende` cuelga trece subsecciones y cierra recién en 69.9. La
+resolución de `bannerAfterSectionId` se extendió para aceptar también un id de nivel 3, y entonces
+el banner va dentro del `<section>` del padre, detrás de esa subsección. El default y el camino de
+nivel 2 quedaron intactos, así que las otras tres páginas no se movieron: 15.8, 18.4 y 25.1.
+Ortopedia infantil quedó en 23.5 por ciento, anclada en
+`que-se-atiende--como-se-le-llama-al-ortopedista-de-ninos`, que de los tres candidatos medidos es
+el que más margen deja contra los dos bordes.
+
+**Lo que esto deja abierto.** `outboundLinks` de esta página sigue vacío por diseño: los enlaces
+internos de las 16 URLs los escribe 08-18 de una sola vez. Y el colchón del banner importa para
+los planes que vienen: 08-18 agrega bloque al pie y la fase 10 toca metadatos, y los 8.5 puntos
+de margen por el lado del piso son lo que absorbe ese crecimiento.
 
 ### Estado de la fase 10, verificado en producción el 2026-08-10
 
