@@ -17,6 +17,7 @@ import { herniaDiscal } from "./hernia-discal";
 import { estenosisEspinal } from "./estenosis-espinal";
 import { escoliosisYDeformidades } from "./escoliosis-y-deformidades";
 import { ortopediaInfantil } from "./ortopedia-infantil";
+import { cirugiaMinimamenteInvasiva } from "./cirugia-minimamente-invasiva";
 
 /**
  * Esqueleto que sigue la página. `guia-clinica` recorre la condición desde qué
@@ -116,6 +117,7 @@ export const servicePages: ServicePage[] = [
   estenosisEspinal,
   escoliosisYDeformidades,
   ortopediaInfantil,
+  cirugiaMinimamenteInvasiva,
 ];
 
 export function getServicePage(slug: string | undefined): ServicePage | undefined {
