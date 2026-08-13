@@ -9,6 +9,7 @@ import {
   COPY_INICIO,
   SELLO_PENDIENTE,
   queHacerCon,
+  renderHandoff,
   renderPaquete,
   renderPaqueteCorto,
 } from "./paquete.js";
@@ -390,5 +391,153 @@ test("paquete: una ficha de sede separa los datos operativos respaldados de los 
   assert.ok(
     !renderPaquete(PAQUETE).includes("## Datos operativos de la sede"),
     "una guía clínica sin datos operativos no estrena una sección vacía",
+  );
+});
+
+/**
+ * Las cuatro acciones que el mapa reparte, una fila de cada una. Es fixture y no el dataset real
+ * por el mismo motivo que el resto del archivo: lo que se prueba es el renderizador del handoff.
+ */
+const FILA_QUE_SE_REESCRIBE: FilaDeOnPage = {
+  url: "/servicios/hernia-discal",
+  accion: "reescribir",
+  keywordPrimaria: "hernia discal",
+  title: "Hernia discal: síntomas, diagnóstico y tratamiento",
+  titleLargo: 50,
+  metaDescription: "Qué es una hernia discal y cuándo se plantea la cirugía.",
+  metaLargo: 56,
+  h1: "Hernia discal",
+  h1Origen: "propuesto",
+  origenDelH1: "Repite la primaria literal porque la SERP la premia así.",
+  keywordAlFrente: 0,
+  redirigeA: null,
+  formato: "guia-clinica",
+};
+
+const FILA_POR_CREAR: FilaDeOnPage = {
+  url: "/sedes/consultorio-privado",
+  accion: "crear",
+  keywordPrimaria: "traumatólogo surco",
+  title: "Traumatólogo en Surco: consultorio del Dr. Angulo",
+  titleLargo: 49,
+  metaDescription: "Consulta de traumatología y columna en Surco, viernes y sábados.",
+  metaLargo: 64,
+  h1: "Traumatólogo en Surco",
+  h1Origen: "propuesto",
+  origenDelH1: "La URL no existe todavía, así que el H1 se propone entero.",
+  keywordAlFrente: 0,
+  redirigeA: null,
+  formato: "ficha-de-sede",
+};
+
+const FILAS_DEL_HANDOFF: readonly FilaDeOnPage[] = [
+  FILA_QUE_SE_REESCRIBE,
+  FILA_QUE_SE_QUEDA,
+  FILA_POR_CREAR,
+  FILA_QUE_REDIRIGE,
+];
+
+const PENDIENTES_DEL_HANDOFF = [
+  { url: "/sedes/consultorio-privado", dato: "Estacionamiento del edificio y sus tarifas" },
+];
+
+test("handoff: las seis secciones salen en el orden en que v1.1 las tiene que leer", () => {
+  // El orden no es cosmético. Quien recibe esto decide primero qué implementar y recién después
+  // con qué texto: un handoff que arranca por la restricción hace que se lea la mitad.
+  const documento = renderHandoff(FILAS_DEL_HANDOFF, PENDIENTES_DEL_HANDOFF);
+
+  const secciones = [
+    "## 1. Qué se entrega y dónde",
+    "## 2. Para la fase 10",
+    "## 3. Para la fase 8",
+    "## 4. El orden que no se puede invertir",
+    "## 5. La restricción que sigue viva",
+    "## 6. Lo que este handoff NO resuelve",
+  ];
+
+  let anterior = -1;
+  for (const seccion of secciones) {
+    const donde = documento.indexOf(seccion);
+    assert.ok(donde !== -1, `falta la sección "${seccion}"`);
+    assert.ok(donde > anterior, `la sección "${seccion}" quedó fuera de orden`);
+    anterior = donde;
+  }
+});
+
+test("handoff: la tabla de la fase 10 lleva la metadata y deja afuera lo que se apaga", () => {
+  const documento = renderHandoff(FILAS_DEL_HANDOFF, PENDIENTES_DEL_HANDOFF);
+  const bloque = documento.split("## 2. Para la fase 10")[1]?.split("## 3.")[0] ?? "";
+
+  for (const fila of FILAS_DEL_HANDOFF.filter((f) => f.accion !== "redirigir")) {
+    assert.ok(bloque.includes(fila.url), `la URL ${fila.url} no llegó a la tabla de la fase 10`);
+    assert.ok(bloque.includes(fila.title ?? ""), `falta el title de ${fila.url}`);
+    assert.ok(bloque.includes(`${fila.titleLargo ?? 0}/60`), `falta el conteo del title de ${fila.url}`);
+    assert.ok(bloque.includes(`${fila.metaLargo ?? 0}/155`), `falta el conteo de la meta de ${fila.url}`);
+  }
+
+  assert.ok(
+    !bloque.includes(FILA_QUE_REDIRIGE.url),
+    "una URL que se apaga con un 301 no recibe title ni meta y no va en esta tabla",
+  );
+});
+
+test("handoff: cada página queda clasificada en copy completo, solo metadata o se apaga", () => {
+  const documento = renderHandoff(FILAS_DEL_HANDOFF, PENDIENTES_DEL_HANDOFF);
+  const bloque = documento.split("## 3. Para la fase 8")[1]?.split("## 4.")[0] ?? "";
+
+  assert.ok(bloque.includes("2 reciben copy completo"), "el conteo de copy completo no sale del dataset");
+  assert.ok(bloque.includes(FILA_QUE_SE_REESCRIBE.keywordPrimaria ?? ""), "falta la primaria de la que se reescribe");
+  assert.ok(bloque.includes("1 reciben solo title y meta"), "el conteo de solo metadata no sale del dataset");
+  assert.ok(bloque.includes("El H1 no se toca"), "a la que solo lleva metadata no se le dice qué no tocar");
+  assert.ok(bloque.includes("1 URLs por crear"), "el conteo de URLs por crear no sale del dataset");
+  assert.ok(bloque.includes(FILA_QUE_REDIRIGE.redirigeA ?? ""), "la redirección no dice hacia dónde va");
+  assert.ok(
+    bloque.includes("escoliosis-y-deformidades"),
+    "el renombre de slug que la fase 14 avisó se perdió en el traspaso",
+  );
+});
+
+test("handoff: el orden de publicar la guía antes de poner el 301 queda escrito", () => {
+  // Es la instrucción que evita perder contenido, y no se deduce de ninguna tabla: si no está
+  // dicha con todas las letras, v1.1 pone el 301 primero porque es el paso más barato.
+  const bloque =
+    renderHandoff(FILAS_DEL_HANDOFF, PENDIENTES_DEL_HANDOFF)
+      .split("## 4. El orden que no se puede invertir")[1]
+      ?.split("## 5.")[0] ?? "";
+
+  assert.ok(bloque.includes("absorben"), "no se dice que la guía absorbe el contenido del post");
+  assert.ok(/Primero se publica la guía/.test(bloque), "no se dice qué va primero");
+  assert.ok(/Recién entonces se pone el 301/.test(bloque), "no se dice qué va después");
+});
+
+test("handoff: la aprobación del doctor viaja como bloqueante para la fase 8", () => {
+  // La compuerta YMYL de esta fase no sirve de nada si el sello se queda de este lado. Que el
+  // handoff la nombre bloqueante es lo único que la sostiene una vez que el paquete cambia de mano.
+  const bloque =
+    renderHandoff(FILAS_DEL_HANDOFF, PENDIENTES_DEL_HANDOFF)
+      .split("## 5. La restricción que sigue viva")[1]
+      ?.split("## 6.")[0] ?? "";
+
+  assert.ok(bloque.includes("15-REVISION-DOCTOR.md"), "no dice dónde está la ronda del doctor");
+  assert.ok(bloque.includes("bloqueante para la fase 8"), "la ronda no queda declarada bloqueante");
+});
+
+test("handoff: lo que queda sin resolver se nombra dato por dato", () => {
+  const bloque =
+    renderHandoff(FILAS_DEL_HANDOFF, PENDIENTES_DEL_HANDOFF)
+      .split("## 6. Lo que este handoff NO resuelve")[1] ?? "";
+
+  for (const pendiente of PENDIENTES_DEL_HANDOFF) {
+    assert.ok(bloque.includes(pendiente.dato), `el pendiente "${pendiente.dato}" no quedó listado`);
+    assert.ok(bloque.includes(pendiente.url), `el pendiente de ${pendiente.url} no dice de qué sede es`);
+  }
+
+  assert.ok(bloque.includes("enlaces internos"), "no dice que los enlaces internos los implementa v1.1");
+});
+
+test("handoff: dos renderizados del mismo dataset producen el mismo texto", () => {
+  assert.equal(
+    renderHandoff(FILAS_DEL_HANDOFF, PENDIENTES_DEL_HANDOFF),
+    renderHandoff(FILAS_DEL_HANDOFF, PENDIENTES_DEL_HANDOFF),
   );
 });
