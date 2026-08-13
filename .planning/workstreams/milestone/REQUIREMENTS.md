@@ -170,13 +170,13 @@ Mapeo v1.1 completado al crear el ROADMAP (2026-08-10). Fases 7 a 11.
 | DOM-03 | Phase 7 | Pending |
 | DOM-04 | Phase 7 | Pending |
 | DOM-05 | Phase 7 | Pending |
-| SVC-01 | Phase 8 | Pending |
-| SVC-02 | Phase 8 | Pending |
-| SVC-03 | Phase 8 | Done |
-| SVC-04 | Phase 8 | Pending |
-| SVC-05 | Phase 8 | Complete (08-16) |
-| BLOG-02 | Phase 8 | Done |
-| BLOG-03 | Phase 8 | Done |
+| SVC-01 | Phase 8 | Done (08-10) |
+| SVC-02 | Phase 8 | Done (08-11) |
+| SVC-03 | Phase 8 | Done (08-15) |
+| SVC-04 | Phase 8 | Done (08-08) |
+| SVC-05 | Phase 8 | Done (08-16, 08-17, 08-18, 08-19) |
+| BLOG-02 | Phase 8 | Done (08-06, 08-07, 08-12, 08-13) |
+| BLOG-03 | Phase 8 | Done (08-14) |
 | SEDE-01 | Phase 9 | Pending |
 | SEDE-02 | Phase 9 | Pending |
 | SEDE-03 | Phase 9 | Pending |
