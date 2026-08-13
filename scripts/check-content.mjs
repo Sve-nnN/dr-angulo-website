@@ -27,12 +27,13 @@ const MIN_WORDS = 900;
 const HUB_ANCHORS = ["columna", "traumatologia", "ortopedia-infantil", "procedimientos"];
 
 /**
- * URLs totales del sitemap. Las 16 de v1.0 más el hub de sedes y las cuatro
- * páginas de sede. Esta constante es lo único que la fase 9 cambia de este
- * archivo: la puerta de 900 palabras no aplica a las rutas de sede y ninguna
- * de ellas entra al `MANIFEST`. Su puerta propia es `scripts/check-sedes.mjs`.
+ * URLs totales del sitemap: las 21 con las que cerró la fase 9, o sea las 16
+ * de v1.0 más el hub de sedes y las cuatro páginas de sede, más la página de
+ * cirugía mínimamente invasiva que suma la fase 8. La puerta de 900 palabras
+ * no aplica a las rutas de sede y ninguna de ellas entra al `MANIFEST`: su
+ * puerta propia es `scripts/check-sedes.mjs`.
  */
-const SITEMAP_TOTAL = 21;
+const SITEMAP_TOTAL = 22;
 
 /** Banner del primer tercio: palabras previas sobre el total del cuerpo. */
 const BANNER_MIN_RATIO = 0.15;
@@ -89,6 +90,7 @@ const MANIFEST = [
   { route: "/servicios/estenosis-espinal", type: "service" },
   { route: "/servicios/escoliosis-y-deformidades", type: "service" },
   { route: "/servicios/ortopedia-infantil", type: "service" },
+  { route: "/servicios/cirugia-minimamente-invasiva", type: "service" },
   {
     route: "/blog/5-sintomas-de-columna-que-no-debes-ignorar",
     type: "post",
