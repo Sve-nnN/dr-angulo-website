@@ -192,6 +192,22 @@ export interface EnlacePropuesto {
   readonly regla: string;
 }
 
+/**
+ * Un dato operativo de una sede, con de donde salio.
+ *
+ * `respaldado` significa que el valor sale del contenido publicado del sitio. `pendiente` que
+ * nadie lo confirmo todavia y el valor no se compone: una direccion o un horario inventado manda
+ * a un paciente a un lugar equivocado, que es el dano mas concreto que puede hacer esta fase.
+ * Los dos estados viajan juntos y se separan al renderizar, para que publicar un pendiente
+ * requiera saltearse una tabla que dice que lo es.
+ */
+export interface DatoOperativo {
+  readonly dato: string;
+  readonly valor: string;
+  readonly estado: "respaldado" | "pendiente";
+  readonly fuente: string;
+}
+
 /** El paquete completo de una URL: todo lo que v1.1 necesita sin abrir otro archivo. */
 export interface PaqueteDeUrl {
   readonly fila: FilaOnPage;
@@ -211,6 +227,15 @@ export interface PaqueteDeUrl {
   readonly guiaParaElDoctor: string;
   /** Enlazado saliente propuesto por la fase 14. Vacio cuando la URL no tiene fila en la matriz. */
   readonly enlacesPropuestos?: readonly EnlacePropuesto[];
+  /** Direccion, horario y canales de una sede. Solo lo llevan las cuatro fichas de sede. */
+  readonly datosOperativos?: readonly DatoOperativo[];
+  /**
+   * Con que criterio se eligio el formato, cuando la SERP medida no lo resolvio sola.
+   *
+   * Se declara en vez de disimularse: quien lea el paquete tiene que poder distinguir que parte
+   * es medicion y que parte es decision, o dentro de seis meses nadie sabe cual fue cual.
+   */
+  readonly notaDeFormato?: string | null;
   /** Keyword, cuantos organicos y cuando se capturo la SERP de la que salio todo esto. */
   readonly fuente: FuenteDeLaSerp;
 }
