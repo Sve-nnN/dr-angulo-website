@@ -1,0 +1,572 @@
+{
+  "schema": 1,
+  "nota": "Copy redactado de las cuatro paginas transaccionales de la fase 15: la home, el hub de servicios y las dos paginas de servicio cuya SERP premia formato comercial. Misma forma que data/copy-guias.json, que trae las paginas informativas. Se separan en dos archivos porque son dos familias distintas y cada plan escribe la suya sin pisar la del otro. Los titulos de seccion pueden diferir del encabezado crudo de data/onpage-serp.json: el crudo es una busqueda de la SERP y no siempre se puede publicar tal cual. La procedencia no se pierde, vive en la tabla de jerarquia del paquete.",
+  "paginas": [
+    {
+      "url": "/",
+      "title": "Traumatología en Lima: Dr. Juan Carlos Angulo",
+      "metaDescription": "Traumatólogo y cirujano de columna en Lima. Atiende en su consultorio de Surco, Ricardo Palma, Sanna La Molina y Clínica Tezza.",
+      "h1": "Traumatólogo y cirujano de columna en Lima",
+      "h1Origen": "El title vende la especialidad y el H1 dice quién la ejerce, que es lo que alguien que ya entró quiere confirmar en el primer segundo.",
+      "guiaParaElDoctor": "Esta es la puerta del sitio y por eso el texto se queda corto a propósito en lo clínico: nombra las condiciones y deriva a las guías, que son las que las explican. Lo que más necesita su ojo son cuatro bloques. El de qué casos trata la especialidad, porque es el reparto del alcance. El de la rodilla, que es la única parte del cuerpo fuera de la columna con sección propia. El de la mano y el de pie y tobillo, donde el texto dice que el caso puede derivarse a otra subespecialidad, y esa frase tiene que reflejar cómo trabaja usted de verdad. Lo demás es operativo: sedes, horarios y cómo se agenda. No hay ninguna cifra de cirugías, ninguna tasa de éxito y ningún año de trayectoria en el texto, y esa ausencia es deliberada.",
+      "secciones": [
+        {
+          "clave": "que-se-atiende",
+          "nivel": 2,
+          "titulo": "Qué se atiende",
+          "tipo": "clinico",
+          "aprobacion": "pendiente-doctor",
+          "parrafos": [
+            "La traumatología se ocupa del aparato locomotor: huesos, articulaciones, músculos, tendones y ligamentos. Todo lo que te sostiene y te permite moverte. Cuando algo de eso duele, se traba o se rompe, esta es la especialidad que lo evalúa.",
+            "El Dr. Juan Carlos Angulo ejerce la traumatología en Lima con dedicación a la columna, y también ve ortopedia general del adulto y del niño. Las lesiones que más llegan a la consulta son las de espalda y cuello, las de rodilla y las fracturas que quedaron con secuela.",
+            "Si todavía no sabes si tu caso corresponde a esta especialidad, la regla práctica es sencilla: si el problema está en un hueso, en una articulación o en la columna, empieza acá. Si resulta que no, se te dice en la primera cita."
+          ],
+          "afirmaciones": [],
+          "keywordsCubiertas": [],
+          "entidadesCubiertas": ["traumatologia", "lesiones", "huesos", "articulaciones", "lima", "consulta"]
+        },
+        {
+          "clave": "que-se-atiende--cual-es-el-mejor-traumatologo-de-lima",
+          "nivel": 3,
+          "titulo": "¿Cuál es el mejor traumatólogo de Lima?",
+          "tipo": "clinico",
+          "aprobacion": "pendiente-doctor",
+          "parrafos": [
+            "No hay respuesta honesta a esa pregunta. Quien te la conteste con nombre y apellido te está vendiendo algo.",
+            "Lo que sí puedes evaluar antes de decidir: que el profesional tenga registro vigente, que dedique su práctica al tipo de problema que tienes, que te explique las alternativas sin apuro y que no te proponga cirugía en la primera cita sin haber agotado lo que se puede hacer antes.",
+            "Los médicos que trabajan bien se parecen en eso. Te dicen qué todavía no saben, piden los estudios que hacen falta y no los que rellenan una carpeta."
+          ],
+          "afirmaciones": [],
+          "keywordsCubiertas": [],
+          "entidadesCubiertas": ["medicos", "medico", "traumatologo"]
+        },
+        {
+          "clave": "que-se-atiende--cuanto-cobra-un-traumatologo-en-peru",
+          "nivel": 3,
+          "titulo": "¿Cuánto cobra un traumatólogo en Perú?",
+          "tipo": "operativo",
+          "aprobacion": "no-requiere",
+          "parrafos": [
+            "Depende de la sede, del seguro que tengas y de si la cita incluye la lectura de estudios previos. Acá no vas a encontrar una tarifa publicada, porque cambiaría cada pocos meses y te dejaría con un número viejo en la cabeza.",
+            "Lo transparente es preguntarlo al momento de agendar. Cada clínica maneja su propio tarifario y la atención por seguro se coordina con la aseguradora antes de la cita."
+          ],
+          "afirmaciones": [],
+          "keywordsCubiertas": [],
+          "entidadesCubiertas": ["traumatologo", "consulta"]
+        },
+        {
+          "clave": "que-se-atiende--que-casos-trata-un-traumatologo",
+          "nivel": 3,
+          "titulo": "¿Qué casos trata un traumatólogo?",
+          "tipo": "clinico",
+          "aprobacion": "pendiente-doctor",
+          "parrafos": [
+            "Dolor de espalda y de cuello que no cede. Hernia discal, canal estrecho, escoliosis y otras deformidades de la columna.",
+            "Del resto del cuerpo: dolor de rodilla, de hombro y de cadera, lesiones deportivas, esguinces, fracturas y las secuelas que dejan cuando consolidan mal. También la ortopedia del niño, que tiene reglas propias porque el hueso todavía está creciendo.",
+            "El tratamiento casi nunca empieza en el quirófano. Empieza por un diagnóstico bien hecho, y de ahí sale todo lo demás."
+          ],
+          "afirmaciones": [],
+          "keywordsCubiertas": [],
+          "entidadesCubiertas": ["tratamiento", "rodilla", "lesiones", "traumatologo"]
+        },
+        {
+          "clave": "que-se-atiende--traumatologia-especialista-en-columna",
+          "nivel": 3,
+          "titulo": "Cuándo el problema viene de la columna",
+          "tipo": "clinico",
+          "aprobacion": "pendiente-doctor",
+          "parrafos": [
+            "Un dolor que baja por la pierna o por el brazo, que sigue siempre el mismo recorrido y que trae hormigueo o pérdida de fuerza, suele venir de la columna y no del músculo.",
+            "Esa parte de la consulta tiene página propia, con las condiciones explicadas una por una y con el detalle de cómo se decide operar y cómo se decide esperar. Desde acá se llega en un clic."
+          ],
+          "afirmaciones": [],
+          "keywordsCubiertas": ["traumatología especialista en columna"],
+          "entidadesCubiertas": ["consulta"]
+        },
+        {
+          "clave": "que-se-atiende--traumatologo-ortopedia-infantil",
+          "nivel": 3,
+          "titulo": "El traumatólogo que ve ortopedia infantil",
+          "tipo": "clinico",
+          "aprobacion": "pendiente-doctor",
+          "parrafos": [
+            "La ortopedia del niño no es la del adulto en versión chica. El hueso está creciendo, y eso cambia el diagnóstico, los plazos y hasta la decisión de tratar o de esperar y controlar.",
+            "Pie plano, marcha con las puntas hacia adentro, displasia de cadera, desviaciones de la columna en crecimiento y fracturas: eso es lo que más llega. La consulta pediátrica tiene su propia página con el detalle."
+          ],
+          "afirmaciones": [],
+          "keywordsCubiertas": ["traumatólogo ortopedia infantil"],
+          "entidadesCubiertas": ["traumatologo", "consulta"]
+        },
+        {
+          "clave": "que-se-atiende--traumatologia-y-ortopedia-cerca-de-mi",
+          "nivel": 3,
+          "titulo": "Traumatología y ortopedia cerca de mí",
+          "tipo": "operativo",
+          "aprobacion": "no-requiere",
+          "parrafos": [
+            "La búsqueda de cercanía es razonable. Un tratamiento de columna o de rodilla no es una cita y listo: son controles repartidos en varias semanas.",
+            "La consulta funciona en cuatro puntos de Lima, en el consultorio de Surco, en la Clínica Ricardo Palma, en la Clínica Sanna La Molina y en la Clínica Padre Luis Tezza. Conviene elegir por la sede a la que puedas volver sin pelearte con el tráfico, no por la que tenga el primer cupo libre."
+          ],
+          "afirmaciones": [
+            {
+              "texto": "Las 4 sedes vigentes son el consultorio de Surco, la Clínica Ricardo Palma, la Clínica Sanna La Molina y la Clínica Padre Luis Tezza.",
+              "fuente": "Decisión D-11 de 15-CONTEXT.md, confirmada por Juan el 2026-08-12: Montefiori ya no atiende y no se nombra en ninguna página."
+            }
+          ],
+          "keywordsCubiertas": ["traumatología y ortopedia cerca de mí"],
+          "entidadesCubiertas": ["lima", "tratamiento", "rodilla", "consulta"]
+        },
+        {
+          "clave": "que-se-atiende--traumatologo-cerca-de-mi",
+          "nivel": 3,
+          "titulo": "Traumatólogo cerca de mí",
+          "tipo": "operativo",
+          "aprobacion": "no-requiere",
+          "parrafos": [
+            "Si escribiste eso en el buscador, lo que quieres es una cita pronto y sin cruzar la ciudad entera.",
+            "Las sedes están en Surco, San Isidro y La Molina, así que hay opción hacia el centro y hacia el este de Lima. La página de cada sede trae dirección, horario y cómo llegar."
+          ],
+          "afirmaciones": [
+            {
+              "texto": "Los distritos de las 4 sedes son Santiago de Surco (consultorio y Clínica Padre Luis Tezza), San Isidro (Clínica Ricardo Palma) y La Molina (Clínica Sanna).",
+              "fuente": "src/content/locations.ts del sitio publicado, campos addressLocality de las cuatro sedes, leído el 2026-08-12."
+            }
+          ],
+          "keywordsCubiertas": ["traumatólogo cerca de mí"],
+          "entidadesCubiertas": ["traumatologo", "lima"]
+        },
+        {
+          "clave": "que-se-atiende--hospital-de-traumatologia-en-lima",
+          "nivel": 3,
+          "titulo": "Hospital de traumatología en Lima",
+          "tipo": "operativo",
+          "aprobacion": "no-requiere",
+          "parrafos": [
+            "En Lima la traumatología se atiende en hospitales públicos, en clínicas privadas y en consultorios. La diferencia práctica no es el edificio: es cuánto vas a esperar por una resonancia y quién te va a ver en el control.",
+            "Esta consulta es privada y funciona en clínica y en consultorio. Si ya tienes historia en un hospital, trae tus estudios: sirven igual y evitan repetir lo que ya está hecho."
+          ],
+          "afirmaciones": [],
+          "keywordsCubiertas": [],
+          "entidadesCubiertas": ["traumatologia en lima", "traumatologia", "lima", "consulta"]
+        },
+        {
+          "clave": "que-se-atiende--traumatologo-especialista-en-rodilla-lima-peru",
+          "nivel": 3,
+          "titulo": "El traumatólogo de rodilla",
+          "tipo": "clinico",
+          "aprobacion": "pendiente-doctor",
+          "parrafos": [
+            "Después de la espalda, la rodilla es la que más consulta genera. Menisco, ligamento cruzado, artrosis y dolor por sobrecarga en gente que corre o que subió de peso rápido.",
+            "La evaluación arranca con el examen físico y sigue con imágenes solo si aportan algo. Una resonancia pedida antes de que alguien te examine suele traer más dudas que respuestas."
+          ],
+          "afirmaciones": [],
+          "keywordsCubiertas": [],
+          "entidadesCubiertas": ["rodilla", "traumatologo", "consulta"]
+        },
+        {
+          "clave": "que-se-atiende--traumatologia-solidaridad",
+          "nivel": 3,
+          "titulo": "Si te atendiste en un hospital público y quieres otra opinión",
+          "tipo": "operativo",
+          "aprobacion": "no-requiere",
+          "parrafos": [
+            "Pasa seguido. Alguien recibe un diagnóstico en una consulta de diez minutos, sale con una indicación de cirugía y quiere escuchar a otro médico antes de decidir.",
+            "Pedir una segunda opinión no ofende a nadie que trabaje bien. Trae los estudios y el informe que te entregaron, y la conversación arranca donde quedó en vez de empezar de cero."
+          ],
+          "afirmaciones": [],
+          "keywordsCubiertas": [],
+          "entidadesCubiertas": ["medico", "consulta"]
+        },
+        {
+          "clave": "que-se-atiende--traumatologo-en-los-olivos",
+          "nivel": 3,
+          "titulo": "Si buscas traumatólogo en Los Olivos o en otro distrito",
+          "tipo": "operativo",
+          "aprobacion": "no-requiere",
+          "parrafos": [
+            "Lima es grande y no en todos los distritos hay consulta de columna. Si vives en el norte o en el este, la pregunta útil no es cuál queda más cerca hoy, sino en cuál vas a poder cumplir los controles de los próximos meses.",
+            "La primera cita puede ser la que te quede lejos, si ahí se resuelve el diagnóstico. El seguimiento conviene coordinarlo en la sede que te sea más fácil de alcanzar."
+          ],
+          "afirmaciones": [],
+          "keywordsCubiertas": [],
+          "entidadesCubiertas": ["consulta", "lima"]
+        },
+        {
+          "clave": "que-se-atiende--traumatologo-especialista-en-mano-lima",
+          "nivel": 3,
+          "titulo": "Si el problema es de mano o de muñeca",
+          "tipo": "clinico",
+          "aprobacion": "pendiente-doctor",
+          "parrafos": [
+            "Buscar un traumatólogo en Lima para un problema de mano tiene una vuelta que conviene saber: la mano tiene subespecialidad propia, y hay cuadros que se derivan a un cirujano de mano.",
+            "En consulta se evalúa el caso y, si corresponde otra subespecialidad, se te dice en la primera cita en lugar de hacerte dar vueltas por consultorios."
+          ],
+          "afirmaciones": [],
+          "keywordsCubiertas": [],
+          "entidadesCubiertas": ["traumatologo en lima", "traumatologo", "lima", "consulta"]
+        },
+        {
+          "clave": "que-se-atiende--traumatologo-especialista-en-pie-y-tobillo-en-lima",
+          "nivel": 3,
+          "titulo": "Pie y tobillo: a quién consultar",
+          "tipo": "clinico",
+          "aprobacion": "pendiente-doctor",
+          "parrafos": [
+            "El esguince que no termina de curar, el dolor en el talón al primer paso de la mañana y las deformidades del pie son consultas frecuentes de traumatología en Lima.",
+            "Se evalúan acá y, cuando el caso pide un especialista de pie y tobillo, se deriva con el estudio ya hecho y no con la carpeta vacía."
+          ],
+          "afirmaciones": [],
+          "keywordsCubiertas": [],
+          "entidadesCubiertas": ["traumatologia en lima", "traumatologia", "lima"]
+        },
+        {
+          "clave": "como-es-la-consulta",
+          "nivel": 2,
+          "titulo": "Cómo es la consulta",
+          "tipo": "clinico",
+          "aprobacion": "pendiente-doctor",
+          "parrafos": [
+            "La primera cita arranca con lo que tú cuentas: desde cuándo duele, hasta dónde llega, qué lo empeora y qué lo alivia. Ese relato orienta más que cualquier informe.",
+            "Después viene el examen físico, que en traumatología define bastante más de lo que la gente supone. Fuerza, reflejos, sensibilidad, rango de movimiento y algunas maniobras que reproducen el síntoma. Recién ahí se decide qué imagen hace falta, si es que hace falta alguna.",
+            "Sales sabiendo qué te pasa, qué se hace primero y cuándo se vuelve a evaluar. Si algo no queda claro, se pregunta ahí mismo: repetir una explicación cuesta menos que un tratamiento mal entendido."
+          ],
+          "afirmaciones": [],
+          "keywordsCubiertas": [],
+          "entidadesCubiertas": ["consulta", "traumatologia", "tratamiento"]
+        },
+        {
+          "clave": "condiciones",
+          "nivel": 2,
+          "titulo": "Qué condiciones se tratan",
+          "tipo": "clinico",
+          "aprobacion": "pendiente-doctor",
+          "parrafos": [
+            "De la columna: hernia discal, estenosis o canal estrecho, escoliosis y deformidades, lumbalgia y cervicalgia que ya llevan meses.",
+            "Del resto del aparato locomotor: artrosis de rodilla y de cadera, lesiones de menisco y de ligamentos, tendinitis, fracturas recientes y las que consolidaron en mala posición.",
+            "Cada condición de columna tiene su guía completa en este mismo sitio, con síntomas, diagnóstico y opciones de tratamiento. Acá se nombran; ahí se explican con calma."
+          ],
+          "afirmaciones": [],
+          "keywordsCubiertas": [],
+          "entidadesCubiertas": ["rodilla", "lesiones", "tratamiento"]
+        },
+        {
+          "clave": "condiciones--que-es-la-traumatologia-de-la-rodilla",
+          "nivel": 3,
+          "titulo": "¿Qué es la traumatología de la rodilla?",
+          "tipo": "clinico",
+          "aprobacion": "pendiente-doctor",
+          "parrafos": [
+            "Es la parte de la especialidad que se ocupa de esa articulación: el cartílago, los meniscos, los ligamentos y el hueso que los sostiene.",
+            "Un dolor de rodilla puede venir de un menisco roto, de artrosis, de un ligamento que quedó laxo tras una torcedura vieja o de sobrecarga por la forma de pisar. El tratamiento cambia bastante según cuál de esas cosas sea, y por eso el diagnóstico manda sobre la técnica."
+          ],
+          "afirmaciones": [],
+          "keywordsCubiertas": [],
+          "entidadesCubiertas": ["rodilla", "traumatologia", "tratamiento"]
+        },
+        {
+          "clave": "donde-se-atiende",
+          "nivel": 2,
+          "titulo": "Dónde se atiende",
+          "tipo": "operativo",
+          "aprobacion": "no-requiere",
+          "parrafos": [
+            "La consulta funciona en el consultorio de Surco, en la Clínica Ricardo Palma, en la Clínica Sanna La Molina y en la Clínica Padre Luis Tezza.",
+            "Cada sede tiene su página con dirección, horario y cómo llegar. Si tienes seguro, conviene revisar en cuál te cubre antes de reservar, porque eso cambia el trámite más que la distancia."
+          ],
+          "afirmaciones": [
+            {
+              "texto": "Las 4 sedes vigentes son el consultorio de Surco, la Clínica Ricardo Palma, la Clínica Sanna La Molina y la Clínica Padre Luis Tezza.",
+              "fuente": "Decisión D-11 de 15-CONTEXT.md, confirmada por Juan el 2026-08-12: Montefiori ya no atiende y no se nombra en ninguna página."
+            }
+          ],
+          "keywordsCubiertas": [],
+          "entidadesCubiertas": ["consulta"]
+        },
+        {
+          "clave": "donde-se-atiende--mejor-clinica-de-traumatologia-en-lima",
+          "nivel": 3,
+          "titulo": "Mejor clínica de traumatología en Lima",
+          "tipo": "operativo",
+          "aprobacion": "no-requiere",
+          "parrafos": [
+            "Ninguna clínica es la mejor para todo. Lo que cambia el resultado es quién te evalúa, con qué experiencia en tu problema concreto, y qué tan bien se coordina lo que viene después de la cita.",
+            "Dicho eso, la sede sí importa para lo práctico: qué equipos de imagen tiene, cómo trabaja con tu seguro y en cuánto consigues el control. Eso se pregunta al agendar y se responde en el momento."
+          ],
+          "afirmaciones": [],
+          "keywordsCubiertas": ["mejor clínica de traumatología en lima"],
+          "entidadesCubiertas": ["traumatologia", "lima", "experiencia", "consulta"]
+        },
+        {
+          "clave": "donde-se-atiende--traumatologia-clinica-internacional",
+          "nivel": 3,
+          "titulo": "Y si buscabas otra clínica de Lima",
+          "tipo": "operativo",
+          "aprobacion": "no-requiere",
+          "parrafos": [
+            "Varias clínicas grandes de la ciudad tienen especialistas de traumatología y ortopedia, y esta consulta no atiende en todas.",
+            "Las sedes donde sí puedes encontrarla son las cuatro de arriba. Si tu seguro te obliga a atenderte en otra, la segunda opinión sigue siendo posible: se coordina como consulta particular y con los estudios que ya te hicieron."
+          ],
+          "afirmaciones": [],
+          "keywordsCubiertas": [],
+          "entidadesCubiertas": ["especialistas", "traumatologia", "consulta"]
+        },
+        {
+          "clave": "como-agendar",
+          "nivel": 2,
+          "titulo": "Cómo agendar una cita",
+          "tipo": "operativo",
+          "aprobacion": "no-requiere",
+          "parrafos": [
+            "Puedes pedir la cita desde el formulario del sitio o escribir contando tu caso, si prefieres explicar antes de reservar. Las citas en clínica las gestiona cada clínica y el consultorio de Surco se coordina de forma directa.",
+            "Lleva los estudios que tengas, incluso los viejos. Comparar una resonancia de hace dos años con la de ahora dice bastante más que cualquiera de las dos por separado."
+          ],
+          "afirmaciones": [],
+          "keywordsCubiertas": [],
+          "entidadesCubiertas": ["consulta"]
+        }
+      ]
+    },
+    {
+      "url": "/servicios",
+      "title": "Cirujano de columna en Lima: qué trata el doctor",
+      "metaDescription": "Hernia discal, estenosis, escoliosis y ortopedia infantil. Qué atiende el Dr. Juan Carlos Angulo y en qué sede de Lima.",
+      "h1": "Cirujano de columna en Lima",
+      "h1Origen": "El hub repite la primaria limpia porque es la página que la pelea de frente, y el title agrega la promesa de contenido que el H1 no necesita.",
+      "guiaParaElDoctor": "El hub pelea la consulta del paciente que busca a quien opera la columna, así que el texto tiene más carga de criterio quirúrgico que de temario clínico. Cuatro bloques necesitan su ojo. El que explica la diferencia entre el cirujano de columna formado en traumatología y el formado en neurocirugía, porque ahí se está describiendo su propia formación. El que dice qué se evalúa antes de indicar una operación. El de la segunda opinión, por la frase de que pedirla no ofende a nadie. Y el del costo de la cirugía, donde a propósito no hay ninguna cifra y sí el compromiso de dar presupuesto escrito. El resto es operativo. No hay cifras de cirugías, tasas de éxito ni años de trayectoria, y esa ausencia es deliberada.",
+      "secciones": [
+        {
+          "clave": "que-se-atiende",
+          "nivel": 2,
+          "titulo": "Qué se atiende",
+          "tipo": "clinico",
+          "aprobacion": "pendiente-doctor",
+          "parrafos": [
+            "Esta es la parte de la consulta dedicada a la columna, del cuello al sacro: cervical, dorsal y lumbar.",
+            "Las enfermedades que más llegan son la hernia discal, la estenosis o canal estrecho, la escoliosis y las deformidades del adulto, y el dolor lumbar que ya lleva meses sin ceder. Cada una tiene su guía completa en este mismo sitio, con síntomas, diagnóstico y alternativas.",
+            "El tratamiento de la columna vertebral casi nunca empieza en el quirófano. Empieza por entender qué estructura está comprometida y qué está haciendo esa columna cuando tú te mueves."
+          ],
+          "afirmaciones": [],
+          "keywordsCubiertas": [],
+          "entidadesCubiertas": ["columna", "enfermedades", "tratamiento", "columna vertebral", "vertebral", "consulta"]
+        },
+        {
+          "clave": "que-se-atiende--como-se-llama-el-cirujano-que-opera-la-columna",
+          "nivel": 3,
+          "titulo": "¿Cómo se llama el cirujano que opera la columna?",
+          "tipo": "clinico",
+          "aprobacion": "pendiente-doctor",
+          "parrafos": [
+            "Se le llama cirujano de columna, y llega ahí por dos caminos distintos: la traumatología con dedicación a columna o la neurocirugía. Las dos formaciones operan columna.",
+            "La diferencia práctica no está en el título sino en la trayectoria. Lo que conviene preguntar es cuánta columna opera esa persona hoy y con qué criterio decide cuándo no operar, que es la decisión que más veces se toma."
+          ],
+          "afirmaciones": [],
+          "keywordsCubiertas": [],
+          "entidadesCubiertas": ["columna", "neurocirugia"]
+        },
+        {
+          "clave": "que-se-atiende--quien-es-el-mejor-neurocirujano-del-peru",
+          "nivel": 3,
+          "titulo": "¿Quién es el mejor neurocirujano del Perú?",
+          "tipo": "clinico",
+          "aprobacion": "pendiente-doctor",
+          "parrafos": [
+            "Esa lista no existe. Cualquier ranking que encuentres está ordenando publicidad, no resultados.",
+            "Un neurocirujano se forma para operar el sistema nervioso, y eso incluye el cerebro y la columna. Si tu problema es un disco o un canal estrecho, lo que conviene mirar no es el puesto en una lista sino qué parte de la práctica de esa persona es columna."
+          ],
+          "afirmaciones": [],
+          "keywordsCubiertas": ["mejor neurocirujano de columna lima"],
+          "entidadesCubiertas": ["neurocirujano", "cerebro", "columna"]
+        },
+        {
+          "clave": "que-se-atiende--quien-es-el-mejor-traumatologo-en-lima-peru",
+          "nivel": 3,
+          "titulo": "¿Quién es el mejor traumatólogo en Lima, Perú?",
+          "tipo": "clinico",
+          "aprobacion": "pendiente-doctor",
+          "parrafos": [
+            "La respuesta es la misma que para la pregunta anterior, con otra especialidad de por medio.",
+            "Lo verificable antes de la cita: registro vigente, dedicación al problema que tienes y una explicación que puedas repetirle a tu familia cuando llegues a casa. Si sales del consultorio sin poder contar qué te dijeron, algo faltó en esa consulta."
+          ],
+          "afirmaciones": [],
+          "keywordsCubiertas": ["traumatólogo de columna"],
+          "entidadesCubiertas": ["lima", "consulta"]
+        },
+        {
+          "clave": "que-se-atiende--traumatologia-especialista-en-columna",
+          "nivel": 3,
+          "titulo": "El especialista que dedica su práctica a la columna",
+          "tipo": "clinico",
+          "aprobacion": "pendiente-doctor",
+          "parrafos": [
+            "Un especialista en columna no lee solo la imagen. Mira qué hace tu columna cuando caminas, cuando te inclinas y cuando llevas peso.",
+            "La evaluación incluye fuerza por grupos musculares, reflejos, sensibilidad por territorios y maniobras que ponen a prueba la raíz nerviosa. Con eso en la mano, la resonancia por fin significa algo concreto y deja de ser una lista de hallazgos sueltos."
+          ],
+          "afirmaciones": [],
+          "keywordsCubiertas": ["traumatología especialista en columna"],
+          "entidadesCubiertas": ["especialista en columna", "especialista", "columna"]
+        },
+        {
+          "clave": "que-se-atiende--cirujano-de-columna-cerca-de-mi",
+          "nivel": 3,
+          "titulo": "Cirujano de columna cerca de mí",
+          "tipo": "operativo",
+          "aprobacion": "no-requiere",
+          "parrafos": [
+            "Un problema de columna no se resuelve en una cita suelta: hay evaluación, estudios y controles después. Por eso la cercanía pesa de verdad.",
+            "La atención está repartida en cuatro sedes de Lima y el consultorio de Surco concentra buena parte de la consulta ambulatoria. Elige por la que te quede sostenible en el tiempo."
+          ],
+          "afirmaciones": [],
+          "keywordsCubiertas": ["cirujano de columna cerca de mí"],
+          "entidadesCubiertas": ["columna", "lima", "consulta"]
+        },
+        {
+          "clave": "que-se-atiende--cirugia-de-la-columna-cerca-de-mi",
+          "nivel": 3,
+          "titulo": "Cirugía de la columna cerca de mí",
+          "tipo": "operativo",
+          "aprobacion": "no-requiere",
+          "parrafos": [
+            "Buscar dónde operarse cerca es entendible, pero el orden conviene al revés: primero se define si hay que operar y qué exactamente, y después dónde se hace.",
+            "La programación quirúrgica se coordina en las clínicas donde el doctor tiene actividad, y eso se conversa en consulta con tu seguro sobre la mesa. Nadie debería reservar quirófano antes de tener el diagnóstico cerrado."
+          ],
+          "afirmaciones": [],
+          "keywordsCubiertas": ["cirugía de columna cerca de mí"],
+          "entidadesCubiertas": ["columna", "consulta"]
+        },
+        {
+          "clave": "que-se-atiende--neurocirujanos-del-hospital-rebagliati",
+          "nivel": 3,
+          "titulo": "Si te evaluaron en un hospital público",
+          "tipo": "operativo",
+          "aprobacion": "no-requiere",
+          "parrafos": [
+            "Muchas evaluaciones de columna en Lima empiezan en el sistema público y siguen con una lista de espera, a veces para la resonancia y a veces para el quirófano.",
+            "Si estás en esa situación y quieres una opinión mientras tanto, trae el informe que ya tienes. No hace falta repetir estudios que sigan vigentes, y repetirlos solo te cuesta plata y tiempo."
+          ],
+          "afirmaciones": [],
+          "keywordsCubiertas": [],
+          "entidadesCubiertas": ["columna", "lima"]
+        },
+        {
+          "clave": "que-se-atiende--dr-marco-gonzales-portillo",
+          "nivel": 3,
+          "titulo": "Cómo comparar antes de elegir",
+          "tipo": "clinico",
+          "aprobacion": "pendiente-doctor",
+          "parrafos": [
+            "Si estás comparando nombres, hay preguntas que ordenan la decisión mucho mejor que cualquier reseña. Qué parte de la práctica de esa persona es exactamente tu problema. Qué alternativas te ofreció antes de plantear cirugía. Qué pasa si la operación no termina de resolver el dolor.",
+            "Ninguna de esas respuestas está en un ranking. Se consiguen preguntando, y a un especialista que trabaja bien no le molesta que se las hagan."
+          ],
+          "afirmaciones": [],
+          "keywordsCubiertas": [],
+          "entidadesCubiertas": ["especialista"]
+        },
+        {
+          "clave": "que-se-atiende--dr-paul-carranza",
+          "nivel": 3,
+          "titulo": "Qué llevar a la primera cita",
+          "tipo": "operativo",
+          "aprobacion": "no-requiere",
+          "parrafos": [
+            "Los estudios que tengas, aunque sean viejos, y el informe escrito de cada uno. Las placas y los discos sirven más que la foto del informe en el celular.",
+            "Anota antes de venir desde cuándo duele, hasta dónde baja y qué lo empeora. Con eso escrito, la consulta rinde el doble y no se te queda el detalle importante en la puerta."
+          ],
+          "afirmaciones": [],
+          "keywordsCubiertas": [],
+          "entidadesCubiertas": ["consulta"]
+        },
+        {
+          "clave": "que-se-atiende--dr-eduardo-laos-plasier",
+          "nivel": 3,
+          "titulo": "Segunda opinión sobre una cirugía de columna",
+          "tipo": "clinico",
+          "aprobacion": "pendiente-doctor",
+          "parrafos": [
+            "Si te indicaron operarte y tienes dudas, pedir otra opinión es sensato y no ofende a nadie que trabaje en serio.",
+            "La segunda opinión sirve cuando llega completa: los estudios, el informe y la indicación escrita que te dieron. Sin ese material solo se puede especular, y especular sobre una cirugía de columna no le sirve a nadie."
+          ],
+          "afirmaciones": [],
+          "keywordsCubiertas": [],
+          "entidadesCubiertas": ["columna"]
+        },
+        {
+          "clave": "como-es-la-consulta",
+          "nivel": 2,
+          "titulo": "Cómo es la consulta",
+          "tipo": "clinico",
+          "aprobacion": "pendiente-doctor",
+          "parrafos": [
+            "Empieza por tu relato, que en columna orienta muchísimo: desde cuándo, hasta dónde baja el dolor, qué gesto lo dispara y hacia dónde viene yendo en las últimas semanas.",
+            "Sigue el examen físico y recién después la imagen. La resonancia se interpreta contra lo que muestran tus síntomas, nunca sola, porque buena parte de las resonancias de gente sin dolor también muestra discos alterados.",
+            "De ahí sale el plan. Qué se hace primero, qué se espera de eso, en cuánto tiempo se vuelve a evaluar y en qué escenario se plantearía operar. Todo eso se conversa antes de que te vayas."
+          ],
+          "afirmaciones": [],
+          "keywordsCubiertas": [],
+          "entidadesCubiertas": ["columna", "consulta"]
+        },
+        {
+          "clave": "condiciones",
+          "nivel": 2,
+          "titulo": "Qué condiciones se tratan",
+          "tipo": "clinico",
+          "aprobacion": "pendiente-doctor",
+          "parrafos": [
+            "Hernia discal, estenosis espinal o canal estrecho, escoliosis y deformidades de la columna del adulto, lumbalgia y cervicalgia persistentes, y las secuelas de fracturas vertebrales.",
+            "Cada una de esas condiciones tiene su guía propia en el sitio, escrita para que llegues a la cita sabiendo de qué se está hablando. Este hub las nombra y reparte; el detalle vive en cada guía.",
+            "La consulta también cubre ortopedia infantil, que tiene su página aparte, y la cirugía de columna por vía mínimamente invasiva, con la endoscopía espinal explicada en su propia sección del sitio."
+          ],
+          "afirmaciones": [],
+          "keywordsCubiertas": [],
+          "entidadesCubiertas": ["columna", "consulta", "enfermedades"]
+        },
+        {
+          "clave": "donde-se-atiende",
+          "nivel": 2,
+          "titulo": "Dónde se atiende",
+          "tipo": "operativo",
+          "aprobacion": "no-requiere",
+          "parrafos": [
+            "La consulta de columna funciona en el consultorio de Surco, en la Clínica Ricardo Palma, en la Clínica Sanna La Molina y en la Clínica Padre Luis Tezza.",
+            "Cada sede tiene su página con dirección, horario y cómo llegar. La actividad quirúrgica se coordina en clínica, y qué sede te conviene depende sobre todo de tu seguro."
+          ],
+          "afirmaciones": [
+            {
+              "texto": "Las 4 sedes vigentes son el consultorio de Surco, la Clínica Ricardo Palma, la Clínica Sanna La Molina y la Clínica Padre Luis Tezza.",
+              "fuente": "Decisión D-11 de 15-CONTEXT.md, confirmada por Juan el 2026-08-12: Montefiori ya no atiende y no se nombra en ninguna página."
+            }
+          ],
+          "keywordsCubiertas": [],
+          "entidadesCubiertas": ["columna", "consulta"]
+        },
+        {
+          "clave": "como-agendar",
+          "nivel": 2,
+          "titulo": "Cómo agendar una cita",
+          "tipo": "operativo",
+          "aprobacion": "no-requiere",
+          "parrafos": [
+            "La cita se pide desde el formulario del sitio o escribiendo tu caso, si prefieres contar el cuadro antes de reservar. Las clínicas gestionan sus propias agendas y el consultorio de Surco se coordina directo.",
+            "Si el motivo es una segunda opinión quirúrgica, avísalo al agendar: esa cita necesita más tiempo y conviene reservarla sabiéndolo."
+          ],
+          "afirmaciones": [],
+          "keywordsCubiertas": [],
+          "entidadesCubiertas": ["consulta"]
+        },
+        {
+          "clave": "como-agendar--cuanto-cuesta-una-cirugia-de-columna-en-peru",
+          "nivel": 3,
+          "titulo": "¿Cuánto cuesta una cirugía de columna en Perú?",
+          "tipo": "operativo",
+          "aprobacion": "no-requiere",
+          "parrafos": [
+            "No hay cifra única, y desconfía de quien te la dé por teléfono sin haberte visto. El costo depende del procedimiento, de la clínica, de cuántos días de hospitalización necesites y del material que se use.",
+            "Lo que sí se puede hacer es entregarte el presupuesto por escrito una vez definido qué se va a hacer, y revisar con tu seguro qué parte cubre. Eso ocurre antes de programar nada, nunca después."
+          ],
+          "afirmaciones": [],
+          "keywordsCubiertas": [],
+          "entidadesCubiertas": ["columna"]
+        }
+      ]
+    }
+  ]
+}
