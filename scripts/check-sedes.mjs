@@ -85,7 +85,7 @@ const MANIFEST = [
   {
     slug: "clinica-ricardo-palma",
     kind: "clinica",
-    h1: "Traumatólogo y cirujano de columna en Clínica Ricardo Palma",
+    h1: "Atención de columna en la Clínica Ricardo Palma",
     title: "Traumatólogo y cirujano de columna en Clínica Ricardo Palma",
     streetAddress: "Av. Javier Prado Este 1066",
     schemaType: "MedicalClinic",
@@ -107,7 +107,7 @@ const MANIFEST = [
   {
     slug: "clinica-tezza",
     kind: "clinica",
-    h1: "Traumatólogo y cirujano de columna en Clínica Padre Luis Tezza",
+    h1: "Ortopedia infantil en la Clínica Padre Luis Tezza",
     title: "Traumatólogo y cirujano de columna en Clínica Padre Luis Tezza",
     streetAddress: "Av. El Polo 570",
     schemaType: "MedicalClinic",
