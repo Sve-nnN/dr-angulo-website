@@ -5,6 +5,11 @@ import { ArrowRight } from "lucide-react";
 import { InstagramReelsSection } from "@/components/instagram/instagram-reels-section";
 import { BookingCta } from "@/components/ui/booking-cta";
 import { WhatsAppCta } from "@/components/ui/whatsapp-cta";
+import {
+  ContentBody,
+  ContentBodyBoundary,
+} from "@/components/content/content-body";
+import { homePage } from "@/content/static-pages/home";
 import { locations } from "@/content/locations";
 import { serviceCategories } from "@/content/services";
 import { credentialsInfo } from "@/content/cv";
@@ -274,6 +279,38 @@ export default async function Home() {
           </Link>
         </div>
       </section>
+
+      {/* Cuerpo de texto del inicio. Va como último bloque antes del CTA de
+          cierre: quien llegó hasta acá ya vio quién es el doctor y viene por
+          el detalle. El límite de la puerta abarca solo esta prosa, así que
+          los h2 de los módulos de marketing quedan fuera de la comprobación
+          de esqueleto y no se confunden con secciones canónicas. */}
+      <ContentBodyBoundary
+        as="section"
+        className="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24"
+      >
+        <ContentBody sections={homePage.sections} flushFirstSection />
+
+        {homePage.outboundLinks && homePage.outboundLinks.length > 0 && (
+          <section className="mt-14 border-t border-border pt-10">
+            <p className="font-heading text-lg font-bold text-foreground">
+              Sigue leyendo
+            </p>
+            <ul className="mt-3">
+              {homePage.outboundLinks.map((link) => (
+                <li key={link.href}>
+                  <Link
+                    href={link.href}
+                    className="block min-h-11 py-2.5 text-base font-semibold text-primary-dark hover:underline"
+                  >
+                    {link.anchor}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </section>
+        )}
+      </ContentBodyBoundary>
 
       <section className="bg-primary py-16 sm:py-20">
         <div className="mx-auto max-w-3xl px-4 text-center sm:px-6">
