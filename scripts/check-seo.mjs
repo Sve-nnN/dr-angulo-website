@@ -32,7 +32,9 @@ const APP_DIR = ".next/server/app";
 const SITEMAP = `${APP_DIR}/sitemap.xml.body`;
 const LLMS = `${APP_DIR}/llms.txt.body`;
 const STYLESHEET = "public/sitemap.xsl";
-const SITEMAP_TOTAL = 21;
+/** Las 21 con las que cerró la fase 9 más la página de cirugía mínimamente
+ *  invasiva que suma la fase 8. */
+const SITEMAP_TOTAL = 22;
 
 /**
  * Rutas que declaran `noindex` y por eso quedan fuera del sitemap.

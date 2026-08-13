@@ -57,9 +57,10 @@ const SERVICE_SLUGS = [
   "ortopedia-infantil",
 ];
 
-/** URLs totales del sitemap con la fase 9 completa: las 16 de v1.0 más el hub
- *  de sedes y las cuatro páginas de sede. */
-const SITEMAP_TOTAL = 21;
+/** URLs totales del sitemap: las 21 con las que cerró la fase 9, o sea las 16
+ *  de v1.0 más el hub de sedes y las cuatro páginas de sede, más la página de
+ *  cirugía mínimamente invasiva que suma la fase 8. */
+const SITEMAP_TOTAL = 22;
 
 /**
  * Expectativas por sede, hardcodeadas a propósito. Una puerta que deriva sus
