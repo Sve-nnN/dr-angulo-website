@@ -303,3 +303,21 @@ test("kr-h1: una keyword que no esta en el tab se reporta por nombre y no se ins
   );
   assert.equal(JSON.stringify(gw.filas), antes);
 });
+
+test("kr-h1: un encabezado renombrado en el documento vivo detiene la carga", async () => {
+  // verificarModelo comprueba data/sheet-columns.json, no el documento. Los estados de esta
+  // carga no estan en REQUIRED_STATUSES, asi que un encabezado renombrado no se contaba como
+  // faltante: la carga escribia una columna en vez de dos y el resumen reportaba las tres filas.
+  const tab = await tabDelModelo();
+  const gw = grilla(tab, ["hernia discal", "estenosis espinal", "traumatología lima"]);
+
+  const h1 = indiceDe(tab, "Suggested H1");
+  (gw.filas[2] as CellValue[])[h1] = "H1 sugerido";
+  const antes = JSON.stringify(gw.filas);
+
+  await assert.rejects(
+    () => cargar(gw, tab, registrosDeH1(ONPAGE, MAPA), false),
+    (error: unknown) => error instanceof CliError && /Suggested H1/.test(error.message),
+  );
+  assert.equal(JSON.stringify(gw.filas), antes, "no se escribio ni una celda");
+});
