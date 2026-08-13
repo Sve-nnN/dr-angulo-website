@@ -438,11 +438,18 @@ export function paginasParaRevisar(rutaArchivo: string = RUTA_COPY): PaginaParaR
   };
   const minimos = new Map(serp.urls.map((u) => [u.url, u.minimoDePalabras]));
 
-  return paginas.map((p) => ({
-    url: p.url,
-    minimoDePalabras: minimos.get(p.url) ?? 0,
-    secciones: p.secciones,
-  }));
+  return paginas.map((p) => {
+    // Con minimo cero, `escritas < 0` nunca se cumple y la regla de extension queda desactivada
+    // para esa URL sin que nada avise. En una compuerta, el default que pasa es el que se paga caro.
+    const minimo = minimos.get(p.url);
+    if (minimo === undefined) {
+      throw new CliError(
+        `${p.url} tiene copy pero no tiene minimo de palabras en data/onpage-serp.json.\n` +
+          `  La compuerta se detiene: con minimo cero la regla de extension no revisa nada.`,
+      );
+    }
+    return { url: p.url, minimoDePalabras: minimo, secciones: p.secciones };
+  });
 }
 
 // ---------------------------------------------------------------------------
