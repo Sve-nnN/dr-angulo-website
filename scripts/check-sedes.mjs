@@ -74,7 +74,7 @@ const MANIFEST = [
   {
     slug: "consultorio-privado",
     kind: "consultorio",
-    h1: "Consultorio privado del Dr. Angulo en Surco",
+    h1: "Consultorio de Surco: la consulta sin intermediarios",
     title: "Consultorio de traumatología y columna en Surco, Lima",
     streetAddress: "Av. El Derby 254, piso 24, oficina 2403",
     schemaType: "MedicalBusiness",
