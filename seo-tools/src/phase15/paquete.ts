@@ -371,6 +371,12 @@ export function renderPaquete(paquete: PaqueteDeUrl): string {
  * con un 301 (D-07). Existe porque quien abra esa URL tiene que encontrar la instruccion y no un
  * hueco (D-14): un archivo ausente se lee como olvido y el que lo busca termina decidiendo solo.
  */
+/** Un bloque del post que se apaga y la seccion de la guia que lo recibio. */
+export interface BloqueAbsorbido {
+  readonly origen: string;
+  readonly destino: string;
+}
+
 export interface PaqueteCorto {
   readonly fila: FilaDeOnPage;
   /**
@@ -383,6 +389,13 @@ export interface PaqueteCorto {
   readonly motivoSinPrimaria: string | null;
   /** Las dos lineas que dicen que hacer con esta URL. Es lo unico que esta fase redacta aca. */
   readonly queHacer: readonly string[];
+  /**
+   * Los bloques del post que la guia de destino ya absorbio, con su destino nombrado.
+   *
+   * Sin esta lista, quien pone el 301 no tiene como comprobar que el contenido sobrevivio, y
+   * redirigir sin fundir tira el contenido a la basura sin dejar rastro de lo que habia.
+   */
+  readonly absorcion?: readonly BloqueAbsorbido[];
 }
 
 /**
@@ -483,6 +496,29 @@ export function renderPaqueteCorto(corto: PaqueteCorto): string {
       lineas.push(fila.origenDelH1);
       lineas.push("");
     }
+    lineas.push(
+      "El orden no es indistinto: primero se publica la guía de destino con el contenido ya",
+      "fundido y después se pone la redirección. Al revés, el 301 entierra material que todavía",
+      "no vive en ningún otro lado.",
+    );
+    lineas.push("");
+
+    const absorcion = corto.absorcion ?? [];
+    if (absorcion.length > 0) {
+      lineas.push("### Qué se absorbió y dónde quedó");
+      lineas.push("");
+      lineas.push(
+        "Bloque por bloque, para poder comprobar que no se perdió nada sin volver a abrir el post.",
+      );
+      lineas.push("");
+      lineas.push(
+        ...tabla(
+          ["Bloque del post que se apaga", "Dónde quedó en la guía"],
+          absorcion.map((b) => [b.origen, b.destino]),
+        ),
+      );
+      lineas.push("");
+    }
   }
 
   if (corto.motivoSinPrimaria !== null) {
@@ -512,6 +548,7 @@ interface PaginaDeCopy {
   readonly h1Origen: string;
   readonly guiaParaElDoctor: string;
   readonly secciones: readonly SeccionDeCopy[];
+  readonly absorbe?: readonly BloqueAbsorbido[];
 }
 
 interface ArchivoDeCopy {
@@ -558,6 +595,10 @@ export function construirPaqueteCorto(url: string): PaqueteCorto {
     fila,
     motivoSinPrimaria: filasDelMapa().find((f) => f.url === url)?.motivoSinPrimaria ?? null,
     queHacer: queHacerCon(fila),
+    absorcion:
+      fila.redirigeA === null
+        ? []
+        : (paginasDeCopy().find((p) => p.url === fila.redirigeA)?.absorbe ?? []),
   };
 }
 

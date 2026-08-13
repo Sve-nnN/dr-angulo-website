@@ -8,6 +8,36 @@
       "metaDescription": "Qué es una hernia discal, qué síntomas produce, cómo se confirma con resonancia y en qué casos se plantea la cirugía. Guía de columna en Lima.",
       "h1": "Hernia discal",
       "h1Origen": "La keyword primaria va literal y sola. La SERP de Lima premia contenido informativo para esta búsqueda, y el título que mejor responde a alguien que escribe hernia discal es el nombre de lo que le pasa, sin adorno comercial delante.",
+      "absorbe": [
+        {
+          "origen": "src/content/blog.ts, hernia-discal-o-dolor-de-espalda-como-diferenciarlos, intro",
+          "destino": "sintomas--diferencia-entre-lumbalgia-y-hernia-discal"
+        },
+        {
+          "origen": "src/content/blog.ts, hernia-discal-o-dolor-de-espalda-como-diferenciarlos, sección como-se-comporta-un-dolor-muscular",
+          "destino": "sintomas--diferencia-entre-lumbalgia-y-hernia-discal"
+        },
+        {
+          "origen": "src/content/blog.ts, hernia-discal-o-dolor-de-espalda-como-diferenciarlos, sección como-se-comporta-una-hernia-discal",
+          "destino": "sintomas--diferencia-entre-lumbalgia-y-hernia-discal y sintomas"
+        },
+        {
+          "origen": "src/content/blog.ts, hernia-discal-o-dolor-de-espalda-como-diferenciarlos, sección las-preguntas-que-lo-definen",
+          "destino": "sintomas--diferencia-entre-lumbalgia-y-hernia-discal, con la fuente declarada en su afirmación"
+        },
+        {
+          "origen": "src/content/blog.ts, hernia-discal-o-dolor-de-espalda-como-diferenciarlos, sección senales-que-no-esperan",
+          "destino": "cuando-consultar"
+        },
+        {
+          "origen": "src/content/blog.ts, hernia-discal-o-dolor-de-espalda-como-diferenciarlos, sección cuando-dejar-de-esperar",
+          "destino": "cuando-consultar"
+        },
+        {
+          "origen": "src/content/blog.ts, hernia-discal-o-dolor-de-espalda-como-diferenciarlos, ctaBanner sobre si el dolor baja por la pierna",
+          "destino": "sintomas"
+        }
+      ],
       "guiaParaElDoctor": "La revisión de esta URL entra completa en una sola pasada. Lo que más necesita ojo clínico está concentrado en cuatro bloques: la sección de síntomas, porque es la que un paciente usa para autoevaluarse; la de diagnóstico, por la frase sobre resonancias alteradas en gente sin dolor; la de tratamiento sin operar, por la mención de infiltraciones y por el párrafo de medicamentos, donde a propósito no se nombra ningún principio activo ni dosis; y la de cuándo consultar, por las tres banderas rojas. Lo demás se lee rápido. No hay ninguna cifra de cirugías, ninguna tasa de éxito ni ninguna credencial en el texto, y esa ausencia es deliberada.",
       "secciones": [
         {
