@@ -214,6 +214,19 @@ test("ymyl: un ritmo de oraciones demasiado parejo hace fallar la compuerta", ()
   assert.equal(RITMO_MINIMO, 6);
 });
 
+test("ymyl: una afirmacion pasa por las mismas reglas que un parrafo", () => {
+  // Las afirmaciones se publican: van a la tabla del paquete y al documento del doctor, y las
+  // dos tablas quedan fuera de la region de copy, asi que revisarDocumento no las alcanza.
+  const afirmaciones = [
+    { texto: "Atiende en Montefiori — con “excelencia” 🙂 desde 2015.", fuente: "Un respaldo." },
+  ];
+  const hallazgos = revisar(pagina([seccion({ afirmaciones })]));
+
+  assert.equal(de(hallazgos, "sede-que-no-existe").length, 1);
+  assert.ok(de(hallazgos, "raya-o-comilla").length >= 1);
+  assert.equal(de(hallazgos, "emoji").length, 1);
+});
+
 test("ymyl: un encabezado escrito en mayusculas de titulo hace fallar la compuerta", () => {
   const mal = revisar(pagina([seccion({ titulo: "Diagnóstico Precoz De La Hernia Discal" })]));
   assert.equal(de(mal, "titulo-en-mayusculas").length, 1);
