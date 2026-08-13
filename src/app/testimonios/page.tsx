@@ -7,9 +7,9 @@ import { BreadcrumbJsonLd } from "@/components/structured-data";
 import { GoogleReviewsSection } from "@/components/reviews/google-reviews";
 
 export const metadata: Metadata = {
-  title: "Testimonios de pacientes",
+  title: { absolute: "Testimonios de pacientes del Dr. Angulo" },
   description:
-    "Reseñas y testimonios reales de pacientes del Dr. Juan Carlos Angulo Totesaut.",
+    "Lo que cuentan, en sus propias palabras, los pacientes que se atendieron con el Dr. Juan Carlos Angulo en Lima.",
   alternates: { canonical: "/testimonios" },
 };
 

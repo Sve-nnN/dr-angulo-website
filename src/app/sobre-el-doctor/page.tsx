@@ -8,9 +8,9 @@ import { siteConfig } from "@/lib/site-config";
 import { BreadcrumbJsonLd, ProfilePageJsonLd } from "@/components/structured-data";
 
 export const metadata: Metadata = {
-  title: "Dr. Juan Carlos Angulo — Trayectoria y formación en Lima",
+  title: { absolute: "Sobre el Dr. Juan Carlos Angulo Totesaut" },
   description:
-    "15 años de experiencia. Traumatólogo por la Universidad de Oriente, especializado en columna en el Instituto de Columna de Caracas, con cursos AO y entrenamientos en Estados Unidos, Francia y Argentina. Trayectoria del Dr. Juan Carlos Angulo Totesaut en Lima, Perú.",
+    "Formación, forma de trabajo y sedes donde atiende el Dr. Juan Carlos Angulo Totesaut, médico de columna en Lima.",
   alternates: { canonical: "/sobre-el-doctor" },
 };
 

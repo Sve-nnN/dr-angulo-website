@@ -5,9 +5,9 @@ import { getLocationPage, locationPages } from "@/content/location-pages";
 import { BreadcrumbJsonLd } from "@/components/structured-data";
 
 export const metadata: Metadata = {
-  title: "Sedes donde atiende el Dr. Juan Carlos Angulo en Lima",
+  title: { absolute: "Dónde atiende el Dr. Juan Carlos Angulo en Lima" },
   description:
-    "Dónde atiende el Dr. Juan Carlos Angulo, traumatólogo y cirujano de columna en Lima: dirección, días y horarios de cada sede, con la página de cada una.",
+    "Las cuatro sedes donde atiende el Dr. Juan Carlos Angulo: consultorio de Surco, Ricardo Palma, Sanna La Molina y Padre Luis Tezza.",
   alternates: { canonical: "/sedes" },
 };
 

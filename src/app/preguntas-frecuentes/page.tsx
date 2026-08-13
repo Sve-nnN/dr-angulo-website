@@ -16,9 +16,9 @@ import { faqItems } from "@/content/faq";
 import { preguntasFrecuentesPage as page } from "@/content/static-pages/preguntas-frecuentes";
 
 export const metadata: Metadata = {
-  title: "Preguntas frecuentes",
+  title: { absolute: "Reumatólogo o traumatólogo: a cuál te toca ir" },
   description:
-    "Resolvemos las dudas más comunes sobre dolor de espalda, cirugía de columna y consultas con el Dr. Juan Carlos Angulo.",
+    "Cuándo corresponde un reumatólogo y cuándo un traumatólogo, qué pasa en la primera cita y en qué casos se plantea operar.",
   alternates: { canonical: "/preguntas-frecuentes" },
 };
 
