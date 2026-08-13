@@ -429,13 +429,13 @@ function checkGlobals(selected, isFullRun) {
     }
   }
   for (const entry of selected) {
-    const module = `${LOCATION_PAGES}/${entry.slug}.ts`;
-    if (!existsSync(resolve(module))) {
-      failures.push(`no existe ${module}: la sede no tiene módulo editorial`);
+    const pageModule = `${LOCATION_PAGES}/${entry.slug}.ts`;
+    if (!existsSync(resolve(pageModule))) {
+      failures.push(`no existe ${pageModule}: la sede no tiene módulo editorial`);
       continue;
     }
-    if (!readFileSync(resolve(module), "utf8").includes(`slug: "${entry.slug}"`)) {
-      failures.push(`${module} no declara la sede \`${entry.slug}\``);
+    if (!readFileSync(resolve(pageModule), "utf8").includes(`slug: "${entry.slug}"`)) {
+      failures.push(`${pageModule} no declara la sede \`${entry.slug}\``);
     }
   }
   const registry = `${LOCATION_PAGES}/index.ts`;
