@@ -201,6 +201,15 @@ const locationRoutes: MetadataRoute.Sitemap = locationPages.map((page) => ({
 
 ---
 
+## Fix Applied
+
+- **CR-01 (fixed, `bdd7519`):** every route that lacked its own `openGraph` object now declares `{ title, description, url }` matching its own `<title>`/`<meta description>`; the two dynamic routes that already declared `openGraph` gained the missing `url`. Verified against the rebuilt HTML: `/agendar` now serves its own `og:title`/`og:url` instead of the homepage's.
+- **CR-02 (fixed, `bdd7519`):** root layout no longer declares `twitter.title`/`twitter.description`, so X falls back to each route's own `og:title`/`og:description` (same precedent as `twitter.images`). Verified: `twitter:title` now differs per route in the rebuilt HTML.
+- **WR-01 (fixed, `68ed9b5`):** `locationRoutes` in `src/app/sitemap.xml/route.ts` now emits `lastModified` from `page.updatedAt` when present, matching `serviceRoutes`/`blogRoutes`. Verified against the rebuilt sitemap.
+- **WR-02 (skipped):** `scripts/check-sedes.mjs` documents inline, from an earlier phase, that it deliberately avoids sharing modules with the other gate scripts ("acoplar el gate de la fase 8 al de la fase 9 no compra nada"). Introducing a shared `SITEMAP_TOTAL` module now would contradict that documented decision for a warning-level, non-blocking finding. Left as three independently-commented magic numbers (also found in `scripts/check-content.mjs`, not flagged by the original review).
+
+All four quality gates (`tsc`, `lint`, `build`, `check-content.mjs`, `check-sedes.mjs`, `check-seo.mjs`) green after the fix.
+
 _Reviewed: 2026-08-14T00:51:42Z_
 _Reviewer: Claude (gsd-code-reviewer)_
 _Depth: standard_
