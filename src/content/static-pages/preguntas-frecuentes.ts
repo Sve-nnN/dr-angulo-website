@@ -23,6 +23,12 @@ export const preguntasFrecuentesPage: StaticPage = {
     body: "Cuenta tu caso y en la primera cita se te dice si corresponde a esta consulta o a otra especialidad.",
   },
   bannerAfterSectionId: "sintomas",
+  outboundLinks: [
+    { href: "/blog/artrosis", anchor: "osteoporosis o artrosis" },
+    { href: "/servicios", anchor: "cirugía de columna cerca de mí" },
+    { href: "/blog", anchor: "Blog" },
+    { href: "/agendar", anchor: "Agendar cita" },
+  ],
   sections: [
     {
       id: "que-es",

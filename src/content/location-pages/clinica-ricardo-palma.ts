@@ -165,6 +165,15 @@ export const clinicaRicardoPalma: LocationPage = {
       ],
     },
     {
+      id: "que-se-atiende--seguros-clinica-ricardo-palma",
+      level: 3,
+      heading: "¿Qué seguros y convenios acepta la Clínica Ricardo Palma?",
+      paragraphs: [
+        "Los seguros y convenios los define la clínica y cambian con el tiempo. Este sitio no los enumera porque no puede garantizar que la lista esté al día, y una cobertura mal informada se descubre en la caja.",
+        "Antes de agendar conviene preguntarlo en la central de citas, junto con la cobertura concreta de tu seguro para una consulta de traumatología.",
+      ],
+    },
+    {
       id: "horarios",
       level: 2,
       heading: "Días y horas de consulta en San Isidro",

@@ -140,6 +140,38 @@ export default function ContactoPage() {
           </div>
         </div>
       </div>
+
+      <section className="mt-14 border-t border-border pt-10">
+        <p className="font-heading text-lg font-bold text-foreground">
+          Sigue leyendo
+        </p>
+        <ul className="mt-3">
+          <li>
+            <Link
+              href="/sedes"
+              className="block min-h-11 py-2.5 text-base font-semibold text-primary-dark hover:underline"
+            >
+              Sedes donde atiende el Dr. Juan Carlos Angulo en Lima
+            </Link>
+          </li>
+          <li>
+            <Link
+              href="/servicios"
+              className="block min-h-11 py-2.5 text-base font-semibold text-primary-dark hover:underline"
+            >
+              traumatólogo de columna
+            </Link>
+          </li>
+          <li>
+            <Link
+              href="/"
+              className="block min-h-11 py-2.5 text-base font-semibold text-primary-dark hover:underline"
+            >
+              traumatología especialista en columna
+            </Link>
+          </li>
+        </ul>
+      </section>
     </div>
     </>
   );
