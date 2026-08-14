@@ -13,6 +13,9 @@
  *   1. SEO-05  Toda ruta anidada emite `BreadcrumbList` y la portada no.
  *   2. SEO-06  El grafo raíz declara CMP, RNE y el horario de las cuatro sedes.
  *   3. AUD-01  Ninguna ruta emite nodos de reseña ni calificación agregada.
+ *   3 bis.     AUD-02 a AUD-06: logo con dimensiones, `sameAs` con los cuatro
+ *              perfiles, tipo único de sede, `hasMap` por CID del consultorio y
+ *              especialidades en forma canónica de URL.
  *   4. SEO-08  Cada ruta declara su propia imagen de Open Graph y esa imagen
  *              existe en el build.
  *   5. SEO-08  Ningún `title` pasa de `TITLE_MAX` ni ninguna `description` de
@@ -330,6 +333,118 @@ function checkNoReviewMarkup(routes) {
 }
 
 // --------------------------------------------------------------------------
+// 3 bis. AUD-02 a AUD-06, salud de los nodos del grafo
+//
+// Las cinco reglas que la auditoría encontró rotas. Se miden sobre el JSON-LD
+// del HTML prerenderizado, que es lo que lee el rastreador.
+// --------------------------------------------------------------------------
+
+/** Ficha de Google del consultorio, por CID. Identifica el negocio real. */
+const OFFICE_MAPS_URL = "https://maps.google.com/?cid=10881730410836747834";
+
+/** Los cuatro perfiles verificados que tiene que declarar `sameAs`. */
+const EXPECTED_SAME_AS = [
+  "instagram.com",
+  "doctoralia.pe",
+  "maps.google.com/?cid=",
+  "facebook.com",
+];
+
+/** Propiedades que declaran especialidad médica en cualquier nodo. */
+const SPECIALTY_PROPERTIES = ["medicalSpecialty", "specialty"];
+
+function checkGraphNodes(routes) {
+  const graph = siteGraph(read(htmlFor("/")));
+  if (!graph) {
+    fail("no se pudo leer el grafo JSON-LD de la portada");
+    return;
+  }
+
+  const nodes = graph["@graph"] ?? [];
+  const physician = nodes.find((node) => node["@type"] === "Physician");
+
+  if (!physician) {
+    fail("el grafo raíz no declara el nodo Physician");
+    return;
+  }
+
+  // --- AUD-02, logo como ImageObject con dimensiones ----------------------
+  const logo = physician.logo;
+  if (!logo || typeof logo !== "object") {
+    fail("el logo del Physician es una cadena plana: Google pide un ImageObject con dimensiones");
+  } else {
+    if (logo["@type"] !== "ImageObject") {
+      fail(`el logo del Physician declara @type ${logo["@type"]}, debe ser ImageObject`);
+    }
+    if (typeof logo.url !== "string" || !logo.url.startsWith("http")) {
+      fail("el logo del Physician no declara una URL absoluta");
+    }
+    for (const dimension of ["width", "height"]) {
+      if (typeof logo[dimension] !== "number" || logo[dimension] <= 0) {
+        fail(`el logo del Physician no declara ${dimension} como número`);
+      }
+    }
+  }
+
+  // --- AUD-03, sameAs con los cuatro perfiles -----------------------------
+  const sameAs = Array.isArray(physician.sameAs) ? physician.sameAs : [];
+  for (const profile of EXPECTED_SAME_AS) {
+    if (!sameAs.some((url) => String(url).includes(profile))) {
+      fail(`sameAs del Physician no declara el perfil de ${profile}`);
+    }
+  }
+
+  // --- AUD-04 y AUD-05, sedes ---------------------------------------------
+  const locationNodes = nodes.filter((node) => String(node["@id"] ?? "").includes("#sede-"));
+  const types = new Set(locationNodes.map((node) => node["@type"]));
+  if (types.size !== 1) {
+    fail(`las sedes emiten ${types.size} tipos distintos: ${[...types].join(", ")}`);
+  }
+
+  const office = locationNodes.find((node) =>
+    String(node["@id"] ?? "").endsWith("#sede-consultorio-privado")
+  );
+  if (!office) {
+    fail("el grafo raíz no declara la sede del consultorio privado");
+  } else if (office.hasMap !== OFFICE_MAPS_URL) {
+    fail(
+      `el hasMap del consultorio es ${office.hasMap}, debe ser la URL CID de su ficha de Google`
+    );
+  }
+
+  // --- AUD-06, especialidades en forma canónica ---------------------------
+  // Recorre todas las rutas: `specialty` también sale en /servicios y en las
+  // cinco guías de servicio, no solo en el grafo raíz.
+  let specialtyNodes = 0;
+
+  for (const route of routes) {
+    const file = htmlFor(route);
+    if (!existsSync(resolve(file))) continue;
+
+    for (const data of parsedJsonLd(route, read(file))) {
+      walkJson(data, (node) => {
+        for (const property of SPECIALTY_PROPERTIES) {
+          if (!(property in node)) continue;
+          const values = Array.isArray(node[property]) ? node[property] : [node[property]];
+          specialtyNodes += 1;
+          for (const value of values) {
+            if (!String(value).startsWith("https://schema.org/")) {
+              fail(
+                `${route} declara ${property} en forma plana: "${value}". Va la URL de schema.org`
+              );
+            }
+          }
+        }
+      });
+    }
+  }
+
+  notes.push(
+    `logo ${logo?.width}x${logo?.height}, ${sameAs.length} perfiles en sameAs, ${locationNodes.length} sedes de tipo ${[...types].join("/")}, ${specialtyNodes} nodos con especialidad canónica`
+  );
+}
+
+// --------------------------------------------------------------------------
 // 4. SEO-08, imagen de Open Graph propia por ruta
 // --------------------------------------------------------------------------
 
@@ -572,6 +687,7 @@ function main() {
   checkBreadcrumbs(routes);
   checkCredentialsAndHours();
   checkNoReviewMarkup(routes);
+  checkGraphNodes(routes);
   checkOgImages(routes);
   checkMetadataLength(routes);
   checkLlmsTxt();

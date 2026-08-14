@@ -38,6 +38,37 @@ function abs(path: string) {
   return path.startsWith("http") ? path : `${siteConfig.url}${path}`;
 }
 
+/**
+ * Especialidades del sitio en forma canónica de URL de schema.org (AUD-06).
+ *
+ * `medicalSpecialty` y `specialty` esperan un miembro de la enumeración
+ * `MedicalSpecialty`, no una cadena suelta: `"Musculoskeletal"` es texto libre
+ * para un validador y la URL completa es la referencia a la enumeración. Va una
+ * sola constante y no un literal por nodo, para que el próximo nodo que declare
+ * especialidad no vuelva a la forma plana copiando del vecino.
+ */
+const MEDICAL_SPECIALTIES = [
+  "https://schema.org/Musculoskeletal",
+  "https://schema.org/Surgical",
+];
+
+/**
+ * Logo del doctor como `ImageObject` con dimensiones reales (AUD-02).
+ *
+ * Google exige que el logo del publisher declare alto y ancho: con el logo como
+ * cadena plana, los cuatro posts del blog perdían elegibilidad de rich result,
+ * porque `BlogPosting.publisher` referencia este mismo `@id`.
+ *
+ * 900 x 594 son las dimensiones medidas de `public/logo-dr-angulo.avif`, no una
+ * estimación. Si se cambia el archivo, se vuelven a medir; no se copian.
+ */
+const LOGO = {
+  "@type": "ImageObject",
+  url: abs("/logo-dr-angulo.avif"),
+  width: 900,
+  height: 594,
+};
+
 function JsonLdScript({ data, id }: { data: unknown; id: string }) {
   return (
     <script
@@ -73,17 +104,23 @@ function openingHours(location: Location) {
 /**
  * Cada sede como lugar de atención propio.
  *
- * El mapeo de tipos sale de 09-CONTEXT.md (D-07): las tres clínicas son
- * `MedicalClinic` y el consultorio propio es `MedicalBusiness`. Antes emitía
- * `Hospital` para las clínicas, que schema.org reserva para instituciones con
- * internamiento, y `MedicalClinic` para el consultorio, que es un despacho de
- * un solo médico. No devolverlo al mapeo anterior.
+ * Las cuatro emiten `MedicalClinic` (AUD-05). El mapeo partido que había antes
+ * —`MedicalBusiness` para el consultorio propio y `MedicalClinic` para las tres
+ * clínicas, decidido en 09-CONTEXT.md (D-07)— describía el tamaño del local, no
+ * lo que ahí ocurre: en las cuatro sedes atiende un traumatólogo en consulta
+ * ambulatoria, que es exactamente lo que schema.org llama `MedicalClinic`.
+ * `MedicalBusiness` es el supertipo y decir menos del consultorio propio que de
+ * las clínicas donde solo pasa consulta era la comparación al revés.
+ *
+ * Un tipo único además hace comparables las cuatro sedes para el buscador, que
+ * es lo que este sitio quiere: la misma entidad atendiendo en cuatro lugares.
+ * `branchOf` sigue distinguiendo cuál es el consultorio del doctor.
  */
 function locationNode(location: Location) {
   const isOwnOffice = location.kind === "consultorio";
 
   return {
-    "@type": isOwnOffice ? "MedicalBusiness" : "MedicalClinic",
+    "@type": "MedicalClinic",
     "@id": ID.location(location.slug),
     name: location.name,
     address: postalAddress(location),
@@ -103,7 +140,7 @@ function locationNode(location: Location) {
     url: abs(`/sedes/${location.slug}`),
     ...(location.website ? { sameAs: [location.website] } : {}),
     openingHoursSpecification: openingHours(location),
-    medicalSpecialty: ["Musculoskeletal", "Surgical"],
+    medicalSpecialty: MEDICAL_SPECIALTIES,
     ...(isOwnOffice ? { branchOf: { "@id": ID.physician } } : {}),
   };
 }
@@ -142,8 +179,8 @@ function physicianNode() {
     url: siteConfig.url,
     telephone: `+${siteConfig.whatsapp.number}`,
     image: abs("/og-dr-angulo.jpg"),
-    logo: abs("/logo-dr-angulo.avif"),
-    medicalSpecialty: ["Musculoskeletal", "Surgical"],
+    logo: LOGO,
+    medicalSpecialty: MEDICAL_SPECIALTIES,
     jobTitle: siteConfig.title,
     address: postalAddress(primaryLocation),
     geo: {
@@ -195,7 +232,14 @@ function physicianNode() {
       "Lumbalgia",
       "Cervicalgia",
     ],
-    sameAs: [siteConfig.social.instagram, siteConfig.social.doctoralia],
+    // Los cuatro perfiles verificados del doctor. Se leen de `siteConfig.social`
+    // y no se escriben acá, para que el pie y el grafo no puedan divergir.
+    sameAs: [
+      siteConfig.social.instagram,
+      siteConfig.social.doctoralia,
+      siteConfig.social.googleBusiness,
+      siteConfig.social.facebook,
+    ],
   };
 }
 
@@ -289,7 +333,7 @@ export function ServicesJsonLd() {
     inLanguage: "es-PE",
     isPartOf: { "@id": ID.website },
     about: { "@id": ID.physician },
-    specialty: ["Musculoskeletal", "Surgical"],
+    specialty: MEDICAL_SPECIALTIES,
     mainContentOfPage: conditionNodes(),
     mentions: procedureApproaches.map((approach) => ({
       "@id": ID.procedure(approach.slug),
@@ -342,7 +386,7 @@ export function MedicalWebPageJsonLd({ page }: { page: MedicalWebPageJsonLdData 
     publisher: { "@id": ID.physician },
     datePublished: page.publishedAt,
     dateModified: page.updatedAt,
-    specialty: ["Musculoskeletal", "Surgical"],
+    specialty: MEDICAL_SPECIALTIES,
     mainEntityOfPage: url,
     about: {
       "@type": "MedicalCondition",

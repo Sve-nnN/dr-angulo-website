@@ -74,7 +74,10 @@ const MANIFEST = [
     h1: "Consultorio de Surco: la consulta sin intermediarios",
     title: "Cirugía de columna en Surco: consultorio privado",
     streetAddress: "Av. El Derby 254, piso 24, oficina 2403",
-    schemaType: "MedicalBusiness",
+    // AUD-05 unificó el tipo de las cuatro sedes en `MedicalClinic`. Antes acá
+    // decía `MedicalBusiness`, que era el mapeo partido de 09-CONTEXT.md (D-07).
+    // Lo que distingue al consultorio propio es `branchOf`, no el tipo.
+    schemaType: "MedicalClinic",
     latitude: -12.0977043,
     longitude: -76.9729404,
     channels: ["wa.me/51964305682"],

@@ -25,8 +25,12 @@ export const siteConfig = {
     postalCode: "15023",
     addressCountry: "PE",
     geo: { latitude: -12.0977043, longitude: -76.9729404 },
-    mapsUrl:
-      "https://www.google.com/maps/search/?api=1&query=Lima%20Central%20Tower%2C%20Av.%20El%20Derby%20254%2C%20Santiago%20de%20Surco%2C%20Lima%2C%20Per%C3%BA",
+    // URL CID de la ficha real del consultorio en Google, no una búsqueda por
+    // texto: identifica el negocio en vez de dejar que Google adivine cuál de
+    // los inquilinos de la torre es (AUD-04). Tiene que ser la misma que el
+    // `mapsUrl` de `consultorio-privado` en `src/content/locations.ts`, porque
+    // esa alimenta el `hasMap` del JSON-LD y esta el pie y `/contacto`.
+    mapsUrl: "https://maps.google.com/?cid=10881730410836747834",
   },
 
   credentials: {
@@ -40,9 +44,20 @@ export const siteConfig = {
     "Cirugía de columna",
   ],
 
+  /**
+   * Perfiles verificados del doctor. Los cuatro alimentan el `sameAs` del nodo
+   * `Physician`, que es como el buscador reconcilia esta entidad con la que ya
+   * conoce en otras plataformas (AUD-03).
+   *
+   * Solo entran perfiles comprobados. No existen LinkedIn ni YouTube oficiales:
+   * inventar una URL acá le diría al buscador que un tercero es el doctor.
+   */
   social: {
     instagram: "https://www.instagram.com/dr.juancarlosangulo/",
     doctoralia: "https://www.doctoralia.pe/perfil/juan-carlos-angulo-totesaut",
+    googleBusiness: "https://maps.google.com/?cid=10881730410836747834",
+    facebook:
+      "https://www.facebook.com/p/Dr-Juan-Carlos-Angulo-Totesaut-100046921995925/",
   },
 
   email: process.env.CONTACT_EMAIL_TO || "",
