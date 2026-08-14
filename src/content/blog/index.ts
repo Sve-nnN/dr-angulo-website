@@ -7,7 +7,7 @@
  * cirugías, tasas de éxito, plazos garantizados o precios.
  */
 
-import type { ServicePage } from "@/content/service-pages";
+import type { ServicePage, ServiceSectionItem } from "@/content/service-pages";
 import { post5SintomasDeColumnaQueNoDebesIgnorar } from "./5-sintomas-de-columna-que-no-debes-ignorar";
 import { postMiedoAOperarteDeLaColumna5CosasQueDebesSaber } from "./miedo-a-operarte-de-la-columna-5-cosas-que-debes-saber";
 import { postArtrosis } from "./artrosis";
@@ -27,6 +27,14 @@ export type BlogSection = {
   level: 2 | 3;
   heading: string;
   paragraphs: string[];
+  /**
+   * Misma lista de rótulo y cuerpo que las guías de servicio, para las
+   * secciones que enumeran puntos en vez de encadenar prosa. El tipo se
+   * reutiliza en lugar de declarar uno gemelo: `ContentBody` renderiza los dos
+   * modelos con el mismo componente y un tipo propio acá solo abriría la puerta
+   * a que los dos se separen sin que nadie se entere.
+   */
+  items?: ServiceSectionItem[];
 };
 
 /** Enlace interno de salida hacia el silo clínico. */
