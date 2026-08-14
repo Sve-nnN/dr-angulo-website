@@ -189,8 +189,6 @@
                   <th scope="col">N.º</th>
                   <th scope="col">Dirección</th>
                   <th scope="col">Última modificación</th>
-                  <th scope="col">Frecuencia</th>
-                  <th scope="col">Prioridad</th>
                 </tr>
               </thead>
               <tbody>
@@ -203,18 +201,6 @@
                     <td class="meta">
                       <xsl:choose>
                         <xsl:when test="s:lastmod"><xsl:value-of select="s:lastmod" /></xsl:when>
-                        <xsl:otherwise>sin dato</xsl:otherwise>
-                      </xsl:choose>
-                    </td>
-                    <td class="meta">
-                      <xsl:choose>
-                        <xsl:when test="s:changefreq"><xsl:value-of select="s:changefreq" /></xsl:when>
-                        <xsl:otherwise>sin dato</xsl:otherwise>
-                      </xsl:choose>
-                    </td>
-                    <td class="meta">
-                      <xsl:choose>
-                        <xsl:when test="s:priority"><xsl:value-of select="s:priority" /></xsl:when>
                         <xsl:otherwise>sin dato</xsl:otherwise>
                       </xsl:choose>
                     </td>
