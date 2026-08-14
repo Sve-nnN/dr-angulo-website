@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { BookingCta } from "@/components/ui/booking-cta";
 import { SedeCard } from "@/components/locations/sede-card";
 import { getLocationPage, locationPages } from "@/content/location-pages";
@@ -55,6 +56,22 @@ export default function SedesPage() {
           <div className="mt-6">
             <BookingCta>Ver agenda y horarios</BookingCta>
           </div>
+        </section>
+
+        <section className="mt-14 border-t border-border pt-10">
+          <p className="font-heading text-lg font-bold text-foreground">
+            Sigue leyendo
+          </p>
+          <ul className="mt-3">
+            <li>
+              <Link
+                href="/servicios"
+                className="block min-h-11 py-2.5 text-base font-semibold text-primary-dark hover:underline"
+              >
+                cirujano de columna lima
+              </Link>
+            </li>
+          </ul>
         </section>
       </div>
     </>

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { Plus } from "lucide-react";
 import { BookingCta } from "@/components/ui/booking-cta";
 import { WhatsAppCta } from "@/components/ui/whatsapp-cta";
@@ -103,6 +104,26 @@ export default function PreguntasFrecuentesPage() {
               ))}
             </div>
           </section>
+
+          {page.outboundLinks && page.outboundLinks.length > 0 && (
+            <section className="mt-14 border-t border-border pt-10">
+              <p className="font-heading text-lg font-bold text-foreground">
+                Sigue leyendo
+              </p>
+              <ul className="mt-3">
+                {page.outboundLinks.map((link) => (
+                  <li key={link.href}>
+                    <Link
+                      href={link.href}
+                      className="block min-h-11 py-2.5 text-base font-semibold text-primary-dark hover:underline"
+                    >
+                      {link.anchor}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </section>
+          )}
 
           <section className="mt-16">
             <h2 className="font-heading text-2xl font-bold text-primary sm:text-3xl">

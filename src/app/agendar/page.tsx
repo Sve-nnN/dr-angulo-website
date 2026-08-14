@@ -146,6 +146,30 @@ export default function AgendarPage() {
           <ArrowRight className="size-4" aria-hidden="true" />
         </Link>
       </div>
+
+      <section className="mt-14 border-t border-border pt-10">
+        <p className="font-heading text-lg font-bold text-foreground">
+          Sigue leyendo
+        </p>
+        <ul className="mt-3">
+          <li>
+            <Link
+              href="/"
+              className="block min-h-11 py-2.5 text-base font-semibold text-primary-dark hover:underline"
+            >
+              mejor clínica de traumatología en lima
+            </Link>
+          </li>
+          <li>
+            <Link
+              href="/servicios"
+              className="block min-h-11 py-2.5 text-base font-semibold text-primary-dark hover:underline"
+            >
+              cirujano de columna cerca de mí
+            </Link>
+          </li>
+        </ul>
+      </section>
     </div>
     </>
   );

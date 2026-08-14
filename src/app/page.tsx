@@ -39,7 +39,7 @@ export default async function Home() {
         <div className="relative mx-auto grid max-w-6xl gap-10 px-4 py-16 sm:px-6 sm:py-24 lg:grid-cols-2 lg:items-center lg:py-28">
           <div>
             <h1 className="animate-rise-in animate-step-1 font-heading text-3xl font-extrabold leading-tight text-white sm:text-4xl lg:text-5xl">
-              Recupera tu movilidad sin miedo a la columna
+              Traumatólogo y cirujano de columna en Lima
             </h1>
             <p className="animate-rise-in animate-step-2 mt-5 max-w-xl text-lg text-white/85">
               {siteConfig.name}, traumatólogo y cirujano de columna en Lima.

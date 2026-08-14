@@ -20,6 +20,15 @@ export const ortopediaInfantil: ServicePage = {
   format: "pagina-de-servicio",
   describesSurgery: false,
   relatedPosts: [],
+  outboundLinks: [
+    { href: "/", anchor: "mejor clínica de traumatología en lima" },
+    { href: "/servicios", anchor: "cirugía de columna cerca de mí" },
+    { href: "/sedes/clinica-ricardo-palma", anchor: "cirujano de columna clínica ricardo palma" },
+    { href: "/sedes/clinica-tezza", anchor: "ortopedia infantil clínica tezza" },
+    { href: "/sedes/consultorio-privado", anchor: "cirugía de columna surco" },
+    { href: "/sedes/sanna-la-molina", anchor: "cirujano de columna clínica sanna" },
+    { href: "/agendar", anchor: "Agendar cita" },
+  ],
   ctaBanner: {
     heading: "¿Tienes dudas sobre cómo camina o cómo se para tu hijo?",
     body: "Una evaluación define si lo que ves es parte del desarrollo normal o necesita seguimiento.",
