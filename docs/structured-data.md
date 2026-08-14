@@ -9,7 +9,7 @@ y no una copia distinta por página.
 
 | Página | Nodos propios |
 |---|---|
-| Layout (todas) | `WebSite`, `Physician`, 4 sedes (`MedicalClinic` para el consultorio, `Hospital` para las clínicas), 2 `MedicalProcedure` |
+| Layout (todas) | `WebSite`, `Physician`, 4 sedes (`MedicalClinic` las cuatro), 2 `MedicalProcedure` |
 | `/` | solo el grafo raíz |
 | `/servicios` | `MedicalWebPage` con las condiciones como `MedicalCondition` + `BreadcrumbList` |
 | `/sobre-el-doctor` | `ProfilePage` apuntando al doctor + `BreadcrumbList` |
@@ -24,6 +24,26 @@ El nodo `Physician` incluye colegiatura y RNE como `EducationalOccupationalCrede
 la formación como `alumniOf`, los horarios del consultorio como
 `openingHoursSpecification`, las clínicas como `hospitalAffiliation` y los dos
 abordajes quirúrgicos como `availableService`.
+
+## Reglas del grafo que la puerta verifica
+
+`npm run seo:check` lee el JSON-LD del HTML prerenderizado y falla si alguna de
+estas se rompe. Están acá porque cada una se rompió alguna vez en silencio:
+
+- **El logo es un `ImageObject` con `width` y `height`**, no una cadena. Google
+  pide dimensiones en el logo del publisher, y los cuatro posts del blog
+  referencian este nodo por `publisher`: con el logo plano perdían elegibilidad
+  de rich result. Hoy son 900 x 594, medidas del archivo.
+- **`sameAs` declara los cuatro perfiles verificados**: Instagram, Doctoralia,
+  la ficha de Google Business Profile y el Facebook oficial. No hay LinkedIn ni
+  YouTube y no se inventan.
+- **Las cuatro sedes emiten el mismo `@type`**, `MedicalClinic`. `branchOf` es
+  lo que distingue al consultorio propio, no el tipo.
+- **El `hasMap` del consultorio es su URL CID**, que identifica la ficha real.
+  Las tres clínicas usan búsqueda por texto a propósito: no hay Place ID
+  verificado de la consulta del doctor dentro de cada institución.
+- **Las especialidades van en forma canónica de URL** (`https://schema.org/…`),
+  no como cadena suelta.
 
 ## Reseñas de Google
 

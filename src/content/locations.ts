@@ -62,9 +62,29 @@ export type Location = {
   channels: BookingChannel[];
 };
 
+/**
+ * URL de búsqueda por texto en Google Maps.
+ *
+ * Es el recurso para las sedes que NO tienen ficha propia del doctor. El
+ * consultorio privado sí la tiene y usa su URL CID directa, que identifica el
+ * negocio exacto en vez de dejar que Google resuelva una consulta de texto.
+ * Las tres clínicas se quedan con la búsqueda a propósito: sus fichas de Google
+ * son de la institución, no del consultorio del doctor dentro de ella, y no hay
+ * un Place ID verificado que apunte a su atención ahí. Una URL CID inventada
+ * apuntaría a otro negocio, que es peor que una búsqueda que resuelve bien.
+ * La asimetría no es un olvido.
+ */
 function mapsUrl(query: string) {
   return `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(query)}`;
 }
+
+/**
+ * Ficha de Google del consultorio privado, por CID.
+ *
+ * Alimenta el `hasMap` de esa sede en el JSON-LD y sus enlaces de interfaz.
+ * `siteConfig.office.mapsUrl` declara la misma URL para el pie y `/contacto`.
+ */
+const PRIVATE_OFFICE_MAPS_URL = "https://maps.google.com/?cid=10881730410836747834";
 
 export const locations: Location[] = [
   {
@@ -79,7 +99,7 @@ export const locations: Location[] = [
     postalCode: "15023",
     addressCountry: "PE",
     geo: { latitude: -12.0977043, longitude: -76.9729404 },
-    mapsUrl: mapsUrl("Lima Central Tower, Av. El Derby 254, Santiago de Surco, Lima, Perú"),
+    mapsUrl: PRIVATE_OFFICE_MAPS_URL,
     telephone: "+51964305682",
     // Horario publicado en la ficha de Google del consultorio (verificado 2026-08-09).
     schedule: [{ days: "Viernes y sábados", hours: "9:00 a. m. a 5:00 p. m." }],
