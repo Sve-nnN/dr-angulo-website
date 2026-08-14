@@ -29,8 +29,11 @@ abordajes quirúrgicos como `availableService`.
 
 `src/lib/google-reviews.ts` consulta la **Places API (New)** y devuelve la
 calificación, el total de reseñas y hasta cinco reseñas con texto. Se muestran
-en el Home y en Testimonios, y alimentan el `aggregateRating` y los nodos
-`Review` del doctor.
+en el Home y en Testimonios.
+
+**No alimentan ningún dato estructurado.** El sitio no emite `Review` ni
+`AggregateRating` en ninguna de sus rutas, y `scripts/check-seo.mjs` falla si
+alguno vuelve a aparecer en el HTML prerenderizado.
 
 ### Configuración
 
@@ -38,7 +41,6 @@ en el Home y en Testimonios, y alimentan el `aggregateRating` y los nodos
 GOOGLE_PLACES_API_KEY=<clave de Google Cloud con Places API (New) habilitada>
 GOOGLE_PLACE_ID=ChIJQ4nDssLHBZEROmZ9nyesA5c   # opcional, ya viene por defecto
 GOOGLE_REVIEWS_MAX_CALLS_PER_DAY=24           # opcional, techo propio de llamadas
-REVIEWS_SCHEMA_ENABLED=false                  # opcional, apaga solo el marcado
 ```
 
 Para obtener la clave: Google Cloud Console → crear proyecto → habilitar
@@ -88,21 +90,25 @@ traen texto). No expone la clave.
   revalida cada 24 horas y no se guarda nada en disco.
 - Hay que mostrar la atribución al autor, que es lo que hace la tarjeta.
 
-### Advertencia sobre el `aggregateRating`
+### Por qué no hay `aggregateRating` (AUD-01)
 
-Google clasifica como **reseñas autopublicadas** las que un negocio marca en su
-propio sitio sobre sí mismo. Su política dice explícitamente que no genera rich
-snippet de estrellas con ellas para `LocalBusiness` ni `Organization`, y el
-`Physician` del sitio es ambas cosas.
+Entre agosto de 2026 y la auditoría de AUD-01, el nodo `Physician` declaraba la
+calificación de la ficha y hasta cinco reseñas como datos propios del sitio. Se
+retiró y no vuelve.
 
-O sea: el marcado está, los datos son reales y verificables contra la ficha, y
-sirve para que otros consumidores de datos estructurados (asistentes, LLMs,
-agregadores) tengan la calificación. Pero **no hay que esperar estrellas en los
-resultados de Google** por esta vía. Las estrellas que Google sí muestra son las
-de la propia ficha del negocio, que se ganan pidiendo reseñas a los pacientes.
+El motivo: las directrices de Google no permiten que un sitio marque como
+propias las reseñas que se publicaron en una plataforma de terceros, aunque los
+datos sean reales y verificables contra la ficha. Ese marcado no genera rich
+result, así que no daba ninguna ganancia, y sí exponía al dominio a una acción
+manual por datos estructurados que no cumplen las directrices.
 
-Si en algún momento conviene quitarlo: `REVIEWS_SCHEMA_ENABLED=false`. Las
-reseñas se siguen mostrando a los visitantes; solo desaparece el marcado.
+Lo que sí está permitido, y es lo que el sitio hace, es **mostrar** las reseñas
+con atribución al autor y a Google. La sección visible del Home y de
+`/testimonios` no cambió.
+
+Las estrellas que Google muestra en los resultados salen de la ficha del
+negocio, no de este marcado. El camino para conseguirlas es pedir reseñas a los
+pacientes, no volver a declararlas acá.
 
 ## Cómo verificar
 

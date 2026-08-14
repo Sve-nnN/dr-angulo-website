@@ -3,7 +3,6 @@ import { locations, primaryLocation, clinicLocations, type Location } from "@/co
 import type { LocationPage } from "@/content/location-pages";
 import { serviceCategories, procedureApproaches } from "@/content/services";
 import { education, credentialsInfo } from "@/content/cv";
-import { getGoogleReviews, type GoogleReviewsData } from "@/lib/google-reviews";
 
 /**
  * Todo el JSON-LD del sitio.
@@ -13,17 +12,19 @@ import { getGoogleReviews, type GoogleReviewsData } from "@/lib/google-reviews";
  * de repetir los datos. Así el doctor es una sola entidad para el buscador,
  * no una copia distinta por página.
  *
- * Sobre reseñas (SEO-07): `AggregateRating` sale de la ficha de Google en vivo
- * y de ningún otro lado, vía `ratingNodes` más abajo. El único testimonio de
- * `src/content/testimonials.ts` es una línea anónima de Doctoralia y no se
- * marca: una nota agregada sobre una sola reseña anónima sería un dato
- * inventado. Los testimonios en video de Instagram siguen enlazados y sin
- * marcar. Si Google no responde o falta la clave, no se emite nada.
+ * Sobre reseñas: el sitio NO emite `Review` ni `AggregateRating` en ningún
+ * nodo, y no vuelve a emitirlos. Entre agosto de 2026 y la auditoría de
+ * AUD-01, el nodo `Physician` declaraba como propias la calificación y las
+ * reseñas que los pacientes publicaron en la ficha de Google. Las directrices
+ * de Google prohíben marcar en el sitio propio reseñas publicadas en
+ * plataformas de terceros, aunque los datos sean reales y verificables: no
+ * generan rich result y exponen el dominio a una acción manual. La sección
+ * visible de reseñas se quedó exactamente como estaba, porque mostrarlas con
+ * atribución sí está permitido; lo que se retiró es el marcado.
  *
- * Un comentario anterior acá decía que el sitio no emitía `Review` ni
- * `AggregateRating`. Dejó de ser cierto en el commit `5387091`, que sumó el
- * cliente de Places API; se corrige ahora para que el archivo no describa algo
- * que no hace.
+ * Si alguien pide "devolver las estrellas", la respuesta es que las estrellas
+ * de Google salen de la ficha del negocio, no de este marcado. El camino es
+ * conseguir más reseñas en la ficha, no volver a declararlas acá.
  */
 
 const ID = {
@@ -131,52 +132,8 @@ function conditionNodes() {
   );
 }
 
-/**
- * Calificación y reseñas de Google dentro del nodo del doctor.
- *
- * ADVERTENCIA DE POLÍTICA: Google clasifica como "reseñas autopublicadas" las
- * que un negocio marca en su propio sitio sobre sí mismo, y no genera rich
- * snippet con ellas para LocalBusiness ni Organization. El marcado se emite
- * porque el cliente lo pidió y porque los datos son reales y verificables en la
- * ficha, pero no hay que esperar estrellas en los resultados de Google.
- * Para apagarlo: `REVIEWS_SCHEMA_ENABLED=false`.
- */
-function ratingNodes(data: GoogleReviewsData | null) {
-  if (!data || process.env.REVIEWS_SCHEMA_ENABLED === "false") return {};
-
-  const reviews = data.reviews.slice(0, 5).map((review) => ({
-    "@type": "Review",
-    author: { "@type": "Person", name: review.author },
-    reviewRating: {
-      "@type": "Rating",
-      ratingValue: review.rating,
-      bestRating: 5,
-      worstRating: 1,
-    },
-    reviewBody: review.text,
-    ...(review.publishedAt ? { datePublished: review.publishedAt } : {}),
-    publisher: { "@type": "Organization", name: "Google" },
-    ...(review.reviewUrl ? { url: review.reviewUrl } : {}),
-  }));
-
+function physicianNode() {
   return {
-    aggregateRating: {
-      "@type": "AggregateRating",
-      ratingValue: data.rating,
-      reviewCount: data.reviewCount,
-      bestRating: 5,
-      worstRating: 1,
-    },
-    // La ficha puede tener calificación y conteo pero ninguna reseña con texto,
-    // que es lo que devuelve hoy la API: producción emitía `"review": []`.
-    // Una propiedad vacía no aporta nada y se omite.
-    ...(reviews.length > 0 ? { review: reviews } : {}),
-  };
-}
-
-function physicianNode(reviews: GoogleReviewsData | null) {
-  return {
-    ...ratingNodes(reviews),
     "@type": "Physician",
     "@id": ID.physician,
     name: siteConfig.name,
@@ -246,9 +203,7 @@ function physicianNode(reviews: GoogleReviewsData | null) {
  * Grafo raíz: sitio, doctor, sedes y procedimientos. Se renderiza una sola vez
  * en el layout, así el resto de las páginas solo referencia sus `@id`.
  */
-export async function SiteJsonLd() {
-  const reviews = await getGoogleReviews();
-
+export function SiteJsonLd() {
   const data = {
     "@context": "https://schema.org",
     "@graph": [
@@ -260,7 +215,7 @@ export async function SiteJsonLd() {
         inLanguage: "es-PE",
         publisher: { "@id": ID.physician },
       },
-      physicianNode(reviews),
+      physicianNode(),
       ...locations.map(locationNode),
       ...procedureNodes(),
     ],

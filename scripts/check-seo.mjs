@@ -12,7 +12,7 @@
  *
  *   1. SEO-05  Toda ruta anidada emite `BreadcrumbList` y la portada no.
  *   2. SEO-06  El grafo raíz declara CMP, RNE y el horario de las cuatro sedes.
- *   3. SEO-07  Ninguna calificación escrita a mano en el código fuente.
+ *   3. AUD-01  Ninguna ruta emite nodos de reseña ni calificación agregada.
  *   4. SEO-08  Cada ruta declara su propia imagen de Open Graph y esa imagen
  *              existe en el build.
  *   5. SEO-08  Ningún `title` pasa de `TITLE_MAX` ni ninguna `description` de
@@ -214,35 +214,109 @@ function checkCredentialsAndHours() {
 }
 
 // --------------------------------------------------------------------------
-// 3. SEO-07, ninguna calificación escrita a mano
+// 3. AUD-01, ninguna reseña ni calificación en el marcado
 //
-// La regla del criterio: nada que no sea verificable aparece marcado. El
-// `AggregateRating` sale de la ficha de Google en vivo o no sale. Esta puerta
-// no exige que esté presente en el build (sin `GOOGLE_PLACES_API_KEY`, o con
-// la clave restringida por IP, la API responde 403 y el marcado no se emite,
-// que es justo el comportamiento correcto): exige que el código no pueda
-// producirlo desde una cifra escrita a mano.
+// El sitio dejó de declarar como propias las reseñas que los pacientes
+// publicaron en la ficha de Google: las directrices de Google prohíben marcar
+// en el sitio propio reseñas de plataformas de terceros. La sección visible se
+// quedó como estaba, con atribución, que sí está permitido.
+//
+// La comprobación corre sobre el HTML prerenderizado y no sobre `src/`, porque
+// lo que importa es lo que el rastreador lee. Un nodo `Review` que entre por
+// cualquier camino nuevo, aunque no sea el que se retiró, falla igual.
 // --------------------------------------------------------------------------
 
-function checkNoHandwrittenRatings() {
+/** Todos los bloques `application/ld+json` de un documento, ya desescapados. */
+function jsonLdBlocks(html) {
+  return [
+    ...html.matchAll(
+      /<script[^>]*type="application\/ld\+json"[^>]*>([\s\S]*?)<\/script>/g
+    ),
+  ].map((match) => match[1].replace(/\\u003c/g, "<"));
+}
+
+/** Recorre el JSON-LD ya parseado y llama a `visit` en cada objeto. */
+function walkJson(node, visit) {
+  if (Array.isArray(node)) {
+    for (const item of node) walkJson(item, visit);
+    return;
+  }
+  if (!node || typeof node !== "object") return;
+  visit(node);
+  for (const value of Object.values(node)) walkJson(value, visit);
+}
+
+/** Los nodos de todos los bloques JSON-LD de una ruta, ya parseados. */
+function parsedJsonLd(route, html) {
+  const parsed = [];
+  for (const block of jsonLdBlocks(html)) {
+    try {
+      parsed.push(JSON.parse(block));
+    } catch {
+      fail(`${route} tiene un bloque application/ld+json que no parsea`);
+    }
+  }
+  return parsed;
+}
+
+/** Tipos de schema.org que declaran una reseña o una calificación. */
+const RATING_TYPES = new Set([
+  "Review",
+  "UserReview",
+  "CriticReview",
+  "Rating",
+  "AggregateRating",
+]);
+
+/** Propiedades que declaran una reseña o una calificación desde el nodo padre. */
+const RATING_PROPERTIES = [
+  "review",
+  "reviews",
+  "aggregateRating",
+  "reviewRating",
+  "ratingValue",
+  "reviewCount",
+  "ratingCount",
+];
+
+function checkNoReviewMarkup(routes) {
+  let scanned = 0;
+
+  for (const route of routes) {
+    const file = htmlFor(route);
+    if (!existsSync(resolve(file))) continue;
+
+    const html = read(file);
+    scanned += 1;
+
+    for (const data of parsedJsonLd(route, html)) {
+      walkJson(data, (node) => {
+        const type = node["@type"];
+        const types = Array.isArray(type) ? type : [type];
+        for (const candidate of types) {
+          if (RATING_TYPES.has(candidate)) {
+            fail(`${route} emite un nodo JSON-LD de tipo ${candidate}`);
+          }
+        }
+        for (const property of RATING_PROPERTIES) {
+          if (property in node) {
+            fail(`${route} emite la propiedad JSON-LD "${property}"`);
+          }
+        }
+      });
+    }
+  }
+
+  // La fuente tampoco puede volver a construirlos: el marcado que se retiró
+  // salía de un cliente de la API de Google, y sin importador no hay camino.
   const source = read("src/components/structured-data.tsx");
-
-  for (const match of source.matchAll(/ratingValue:\s*([^,\n]+)/g)) {
-    const value = match[1].trim();
-    if (/^\d/.test(value)) {
-      fail(`structured-data.tsx escribe una calificación a mano: ratingValue ${value}`);
-    }
+  if (source.includes("@/lib/google-reviews")) {
+    fail("structured-data.tsx volvió a importar el cliente de reseñas de Google");
   }
-
-  for (const match of source.matchAll(/reviewCount:\s*([^,\n]+)/g)) {
-    const value = match[1].trim();
-    if (/^\d/.test(value)) {
-      fail(`structured-data.tsx escribe un conteo de reseñas a mano: reviewCount ${value}`);
+  for (const property of RATING_PROPERTIES) {
+    if (new RegExp(`\\b${property}\\s*:`).test(source)) {
+      fail(`structured-data.tsx declara la propiedad de marcado "${property}"`);
     }
-  }
-
-  if (!source.includes("GoogleReviewsData")) {
-    fail("structured-data.tsx ya no tipa las reseñas contra la ficha de Google");
   }
 
   const testimonials = read("src/content/testimonials.ts");
@@ -251,6 +325,8 @@ function checkNoHandwrittenRatings() {
       fail(`testimonials.ts declara el campo "${field}": los testimonios no se califican`);
     }
   }
+
+  notes.push(`${scanned} rutas revisadas sin marcado de reseña ni calificación`);
 }
 
 // --------------------------------------------------------------------------
@@ -495,7 +571,7 @@ function main() {
 
   checkBreadcrumbs(routes);
   checkCredentialsAndHours();
-  checkNoHandwrittenRatings();
+  checkNoReviewMarkup(routes);
   checkOgImages(routes);
   checkMetadataLength(routes);
   checkLlmsTxt();
