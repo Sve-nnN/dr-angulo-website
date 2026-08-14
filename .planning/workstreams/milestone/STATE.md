@@ -27,7 +27,7 @@ See: .planning/PROJECT.md (updated 2026-08-10)
 Phase: 10, schema y metadata. **CERRADA**, con verificación diferida a dos checks de humano.
 Plan: 10-01, 10-02 y 10-03 cerrados. Las 23 rutas del sitio sirven title y meta exactos del handoff de v1.2, dentro de 60 y 155, y `scripts/check-seo.mjs` lo mide de verdad y falla si algo se pasa. SEO-05 a SEO-11 completos en REQUIREMENTS.md, checkbox y tabla de trazabilidad al día.
 Status: Code review (2026-08-14) encontró 2 blockers reales — 13 de 23 rutas compartían por WhatsApp el título y la URL de la portada en vez de los propios (og:title/og:description/og:url heredados del layout), y las 23 rutas emitían un twitter:title/twitter:description genérico idéntico. Los dos se arreglaron (`bdd7519`) y se reverificaron contra el HTML reconstruido, no solo contra el commit. Un warning (sitemap de sedes sin `lastModified`) también se arregló (`68ed9b5`); el otro (SITEMAP_TOTAL duplicado en tres scripts) se dejó a propósito, porque arreglarlo violaría una decisión ya documentada de no acoplar los scripts de gate entre sí. Verificación formal: 5/5 must-haves, sin bloqueantes de código, status human_needed por dos checks que solo Juan puede hacer (vista previa real de WhatsApp, miga de pan en la SERP de Google) — Juan decidió diferirlos el 2026-08-14 en vez de bloquear el cierre de la fase.
-Last activity: 2026-08-14, code review + fix + verificación formal de la fase 10 completos
+Last activity: 2026-08-14 - Completed quick task 260814-ecx: correcciones de código de la auditoría SEO
 
 Progress: [████████░░] 4 de 5 fases de v1.1, con la 8 cerrada y esperando verificación
 
@@ -240,13 +240,24 @@ Ver tabla completa en PROJECT.md, sección Key Decisions.
 - **Datos que faltan del doctor:** días reales por sede para corregir el GBP; si sigue atendiendo en Clínica Montefiori; si se publica precio de consulta (dato sin confirmar de Doctoralia: ~S/130 presencial, ~S/100 online); fechas contradictorias de los dos cargos de Guarataro en el CV (2012-2013 contra 2003), hoy fuera del sitio.
 - **Feed de Instagram (FUT-07):** el carrusel muestra el fallback hasta configurar `INSTAGRAM_ACCESS_TOKEN`, `INSTAGRAM_TOKEN_FILE` (volumen persistente) y `CRON_SECRET` en Dokploy, más el cron semanal a `/api/instagram/refresh`. Pasos en `docs/instagram-reels.md`. El cron por HTTPS depende del dominio de la fase 7.
 - **Testimonios:** el doctor pasó `https://www.instagram.com/p/CoE2FSWOJgR/` con testimonios en video, hoy solo enlazado. Si consigue los videos o el texto se pueden citar directamente.
-- **Reseñas de Google:** falta `GOOGLE_PLACES_API_KEY` en Dokploy para que la sección se renderice (place ID ya cableado: `ChIJQ4nDssLHBZEROmZ9nyesA5c`). Pasos en `docs/structured-data.md`. Sin la clave el sitio queda como estaba, sin sección de reseñas.
+- **Reseñas de Google:** falta `GOOGLE_PLACES_API_KEY` en Dokploy para que la sección se renderice (place ID ya cableado: `ChIJQ4nDssLHBZEROmZ9nyesA5c`). Pasos en `docs/structured-data.md`. Sin la clave el sitio queda como estaba, sin sección de reseñas. Desde la quick 260814-ecx las reseñas se muestran sin marcado structured data, a propósito: marcarlas viola las directrices de Google porque se publicaron en Maps, no en el sitio.
+- **Pendientes de la auditoría SEO del 2026-08-14, todos fuera del repo:** (1) verificar la propiedad en Search Console, enviar el sitemap y solicitar indexación de las 8 páginas prioritarias, que es lo que destraba todo lo demás; (2) subir el volumen de reseñas del GBP con un proceso post consulta; (3) verificar las 5 cabeceras de seguridad contra producción después del deploy; (4) que el doctor lea el borrador de señales de alarma; (5) imágenes y diagramas clínicos propios, hoy inexistentes; (6) diferenciar las 4 páginas de sede y expandir `/sobre-el-doctor` con casuística y membresías. Detalle completo en el SUMMARY de la quick 260814-ecx.
+- **robots.txt gestionado por Cloudflare:** el 2026-08-14 el panel dejó de anteponer su bloque; producción sirve las 5 líneas que emite `src/app/robots.ts`, sin bloqueos de bots de IA. Conviene dejar "Manage your robots.txt" en "Disable robots.txt configuration" para que el repo sea la única fuente de verdad, y "Block AI training bots" en "Do not block". Contexto en `docs/cloudflare-robots.md`.
 
 ### Blockers/Concerns
 
 - La ficha de Google Business Profile está viva (5.0 con 6 reseñas, Av. El Derby 254) y su botón de sitio web y su enlace de reservas ya apuntan al dominio, que sirve el sitio real. El cuello de botella ahora es el volumen de reseñas: 6 es poco para competir en la SERP local de Lima.
 - El horario del GBP (viernes y sábado 9-17) es el del consultorio privado y ya está publicado tal cual en `locations.ts` y en el `openingHoursSpecification` del JSON-LD. Lo que sigue abierto es si el GBP debe reflejar además los días de clínica, que es la discusión de GBP-01.
 - El logo actual es `images/logo.jpeg` recortado por bounding box. Si aparece el SVG vectorial original conviene reemplazarlo. `public/dr-angulo-portrait.png` sigue en el repo sin uso y lo saca SEO-11.
+- **Indexación, medido el 2026-08-14:** `site:drangulocolumna.com` devuelve solo la home, de 22 URLs en el sitemap. Ahrefs marca DR 0, 0 keywords orgánicas y 0 tráfico en Perú. Las 22 URLs responden 200 con `index, follow` y canonical autorreferencial, así que no hay bloqueo técnico: falta rastreo. Es el cuello de botella que domina a todos los demás hallazgos SEO, y se destraba desde Search Console, no desde el código.
+- **Estrellas en la SERP:** al sacar `review[]` y `aggregateRating` del JSON-LD (quick 260814-ecx), el único camino que queda para mostrar calificación en resultados de Google es la ficha del negocio. El volumen de reseñas dejó de ser deseable y pasó a ser la única vía.
+- **Borrador clínico sin aprobar:** `src/content/drafts/senales-de-alarma.ts` tiene el bloque de señales de alarma (cauda equina) redactado con criterio clínico estándar, sin revisión del doctor, `approvedByPhysician: false` y sin importadores. `check-content.mjs` falla si algún archivo de `src/app/` o `src/components/` referencia `src/content/drafts` (verificado en negativo el 2026-08-14). No publicar sin que el doctor lo lea.
+
+### Quick Tasks Completed
+
+| # | Description | Date | Commit | Directory |
+|---|-------------|------|--------|-----------|
+| 260814-ecx | Correcciones de código de la auditoría SEO: schema de reseñas, Physician/sedes, cabeceras de seguridad, sitemap, colegiatura, borrador clínico | 2026-08-14 | 99bc2b3 | [260814-ecx-arreglar-hallazgos-accionables-de-audito](./quick/260814-ecx-arreglar-hallazgos-accionables-de-audito/) |
 
 ## Deferred Verification
 
