@@ -25,7 +25,14 @@ export const herniaDiscal: ServicePage = {
     heading: "¿Tu dolor baja por la pierna?",
     body: "Una evaluación con estudios propios define si tu caso necesita cirugía o se resuelve sin ella.",
   },
-  bannerAfterSectionId: "que-es",
+  // El bloque de señales de alarma sumó cuerpo al cierre y corrió el banner
+  // fuera de la ventana de POS-01: detrás de `que-es` cae en el 14 por ciento
+  // y detrás de `sintomas` en el 35, los dos bordes. Ninguna frontera de nivel
+  // 2 queda dentro, así que la posición pasa a un id de nivel 3, que es para lo
+  // que el campo admite nivel 3. Detrás de la lista de síntomas el lector acaba
+  // de reconocer el dolor que baja por la pierna, que es lo que pregunta el
+  // banner.
+  bannerAfterSectionId: "sintomas--cuales-son-los-sintomas-de-una-hernia-de-disco",
   outboundLinks: [
     { href: "/servicios/escoliosis-y-deformidades", anchor: "escoliosis dorsal" },
     { href: "/servicios/estenosis-espinal", anchor: "estenosis espinal cuidado personal" },
@@ -225,6 +232,40 @@ export const herniaDiscal: ServicePage = {
         "No gires el tronco con peso encima. Ese gesto, el de levantar y torcer al mismo tiempo, es el que más veces aparece en el relato de cómo empezó todo.",
         "No te quedes en cama más allá de los primeros días de crisis, y no dejes que te manipulen la columna con maniobras bruscas mientras el dolor está agudo.",
         "Y no te mandes a hacer estudios ni tratamientos por tu cuenta antes de que alguien te examine. Una resonancia pedida sin examen previo suele generar más ansiedad que respuestas.",
+      ],
+    },
+    {
+      id: "senales-de-alarma",
+      level: 2,
+      heading: "Señales que no esperan una cita",
+      paragraphs: [
+        "El dolor de espalda casi siempre da tiempo para organizarse: pedir la cita, hacerse los estudios, ver opciones. Hay un grupo pequeño de signos que rompe esa regla. No son dolor más fuerte, son síntomas distintos, y aparecen cuando las raíces nerviosas que salen de la parte baja de la columna quedan comprimidas. Ahí lo que está en juego no es cuánto duele sino cuánto se recupera después, y eso depende de qué tan rápido se libere la compresión.",
+      ],
+      items: [
+        {
+          title: "Perdiste el control para orinar o para retener las heces",
+          body: "Puede presentarse como no llegar al baño a tiempo, como no darte cuenta de que tenías la vejiga llena, o al revés, como no poder orinar aunque sientas la necesidad. Cualquiera de las tres formas cuenta. Es el signo más específico del cuadro y el que más se pasa por alto, porque cuesta contarlo.",
+        },
+        {
+          title: "Se te durmió la zona que toca la silla al sentarte",
+          body: "La cara interna de los muslos, la zona genital y la que rodea el ano. Se describe como acolchado, como estar sentado sobre una tela gruesa, o como no sentir el papel al limpiarte. No hace falta que la pierna entera esté dormida: alcanza con que esa zona lo esté.",
+        },
+        {
+          title: "La debilidad en la pierna o el pie va empeorando",
+          body: "No es la pierna que se cansa o que flaquea cuando el dolor aprieta. Es fuerza que se pierde y no vuelve: el pie que se arrastra al caminar, el tropiezo con el borde de la vereda, no poder levantarte en puntas de pie. Si lo que ayer costaba hoy cuesta más, el tiempo corre en contra.",
+        },
+        {
+          title: "El adormecimiento o la debilidad tomaron las dos piernas",
+          body: "El dolor de una hernia suele bajar por una sola pierna. Cuando el compromiso es de los dos lados, o cambia de lado, la compresión está más arriba de donde estaría una raíz sola, y eso cambia la urgencia.",
+        },
+      ],
+    },
+    {
+      id: "senales-de-alarma--que-hacer",
+      level: 3,
+      heading: "Qué hacer",
+      paragraphs: [
+        "Si tienes cualquiera de estos signos, anda a emergencias de un hospital o de una clínica. No esperes a una cita, no esperes a la mañana siguiente y no lo consultes por mensaje: un chat no atiende una urgencia y la respuesta puede tardar lo que no hay. En emergencias te van a examinar y, si hace falta, te van a pedir una resonancia el mismo día. Lleva contigo los estudios de columna que tengas a mano, pero no demores la salida por buscarlos.",
       ],
     },
     {
