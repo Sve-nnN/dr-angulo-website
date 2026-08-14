@@ -8,6 +8,12 @@ export const metadata: Metadata = {
   description:
     "Artículos sobre dolor de espalda, salud de la columna y qué esperar de una consulta, escritos por el Dr. Juan Carlos Angulo.",
   alternates: { canonical: "/blog" },
+  openGraph: {
+    title: "Blog del Dr. Juan Carlos Angulo",
+    description:
+      "Artículos sobre dolor de espalda, salud de la columna y qué esperar de una consulta, escritos por el Dr. Juan Carlos Angulo.",
+    url: "/blog",
+  },
 };
 
 const dateFormatter = new Intl.DateTimeFormat("es-PE", {

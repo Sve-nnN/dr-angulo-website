@@ -17,6 +17,12 @@ export const metadata: Metadata = {
   description:
     "Hernia discal, estenosis, escoliosis y ortopedia infantil. Qué atiende el Dr. Juan Carlos Angulo y en qué sede de Lima.",
   alternates: { canonical: "/servicios" },
+  openGraph: {
+    title: "Cirujano de columna en Lima: qué trata el doctor",
+    description:
+      "Hernia discal, estenosis, escoliosis y ortopedia infantil. Qué atiende el Dr. Juan Carlos Angulo y en qué sede de Lima.",
+    url: "/servicios",
+  },
 };
 
 export default function ServiciosPage() {

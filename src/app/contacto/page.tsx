@@ -11,6 +11,12 @@ export const metadata: Metadata = {
   description:
     "Cuéntale tu caso al doctor por el formulario o escribe por WhatsApp. Datos de contacto del consultorio en Lima.",
   alternates: { canonical: "/contacto" },
+  openGraph: {
+    title: "Contacto con el consultorio del Dr. Angulo",
+    description:
+      "Cuéntale tu caso al doctor por el formulario o escribe por WhatsApp. Datos de contacto del consultorio en Lima.",
+    url: "/contacto",
+  },
 };
 
 export default function ContactoPage() {

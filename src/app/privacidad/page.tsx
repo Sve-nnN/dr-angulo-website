@@ -6,6 +6,11 @@ export const metadata: Metadata = {
   description: "Política de privacidad y tratamiento de datos personales.",
   alternates: { canonical: "/privacidad" },
   robots: { index: false, follow: true },
+  openGraph: {
+    title: "Política de privacidad",
+    description: "Política de privacidad y tratamiento de datos personales.",
+    url: "/privacidad",
+  },
 };
 
 export default function PrivacidadPage() {

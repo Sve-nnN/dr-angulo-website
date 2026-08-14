@@ -50,14 +50,13 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: `${siteConfig.name} — ${siteConfig.title}`,
-    description: siteConfig.description,
-    // Sin `images` a propósito. Cada ruta genera su propia imagen con el
-    // convenio `opengraph-image`, que solo alimenta las etiquetas `og:`. Si acá
-    // se declarara una imagen fija, el `twitter:image` de las 21 rutas seguiría
-    // apuntando a la foto genérica y pisaría a la tarjeta propia de cada una.
-    // X usa `og:image` cuando falta `twitter:image`, así que la ruta correcta
-    // es no declararla.
+    // Sin `title`, `description` ni `images` a propósito. X solo cae a `og:*`
+    // cuando la etiqueta `twitter:*` está ausente, nunca cuando está presente
+    // pero genérica. Declarar acá un title/description fijo del layout se
+    // heredaría literal en las 23 rutas y pisaría el `og:title`/`og:description`
+    // propio de cada una (CR-02, 10-REVIEW.md). Mismo razonamiento que ya regía
+    // `images`: cada ruta expone su propio og:title/og:description/og:image y
+    // X los toma directo.
   },
   robots: { index: true, follow: true },
 };

@@ -38,6 +38,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: { absolute: entry.page.title },
     description: entry.page.description,
     alternates: { canonical: `/sedes/${entry.page.slug}` },
+    openGraph: {
+      title: entry.page.title,
+      description: entry.page.description,
+      url: `/sedes/${entry.page.slug}`,
+    },
   };
 }
 

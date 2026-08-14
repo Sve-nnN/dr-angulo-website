@@ -12,6 +12,12 @@ export const metadata: Metadata = {
   description:
     "Formación, forma de trabajo y sedes donde atiende el Dr. Juan Carlos Angulo Totesaut, médico de columna en Lima.",
   alternates: { canonical: "/sobre-el-doctor" },
+  openGraph: {
+    title: "Sobre el Dr. Juan Carlos Angulo Totesaut",
+    description:
+      "Formación, forma de trabajo y sedes donde atiende el Dr. Juan Carlos Angulo Totesaut, médico de columna en Lima.",
+    url: "/sobre-el-doctor",
+  },
 };
 
 export default function SobreElDoctorPage() {

@@ -12,6 +12,12 @@ export const metadata: Metadata = {
   description:
     "Cómo pedir cita en cada sede: WhatsApp para el consultorio de Surco y la central de citas de Ricardo Palma, Sanna y Tezza.",
   alternates: { canonical: "/agendar" },
+  openGraph: {
+    title: "Agendar una cita con el Dr. Angulo",
+    description:
+      "Cómo pedir cita en cada sede: WhatsApp para el consultorio de Surco y la central de citas de Ricardo Palma, Sanna y Tezza.",
+    url: "/agendar",
+  },
 };
 
 /**

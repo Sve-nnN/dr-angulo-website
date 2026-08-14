@@ -42,6 +42,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       type: "article",
       title: page.title,
       description: page.description,
+      url: `/servicios/${page.slug}`,
       publishedTime: page.publishedAt,
       modifiedTime: page.updatedAt,
     },
