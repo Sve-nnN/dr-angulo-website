@@ -1,4 +1,8 @@
 /**
+ * APROBADO POR EL DOCTOR EL 2026-08-14, sin cambios sobre el texto redactado.
+ * El bloque está pasando a las rutas de `targetRoutes` y este archivo se borra
+ * en cuanto las dos lo publiquen. Hasta la aprobación decía lo que sigue.
+ *
  * BORRADOR SIN APROBACIÓN MÉDICA. Este archivo no se conecta a ninguna ruta
  * hasta que el doctor apruebe el texto.
  *
@@ -57,7 +61,7 @@ export type ClinicalDraft = {
 };
 
 export const senalesDeAlarmaDraft: ClinicalDraft = {
-  approvedByPhysician: false,
+  approvedByPhysician: true,
   draftedAt: "2026-08-14",
   targetRoutes: ["/servicios/hernia-discal", "/blog/lumbalgia"],
 
