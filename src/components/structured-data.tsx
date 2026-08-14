@@ -197,17 +197,22 @@ function physicianNode() {
         "@type": "EducationalOrganization",
         name: item.place,
       })),
+    // `url` es la plataforma de verificación del Colegio Médico del Perú, la
+    // misma que enlazan las cuatro superficies que muestran los números: el
+    // marcado y lo que ve el paciente apuntan al mismo lugar comprobable.
     hasCredential: [
       {
         "@type": "EducationalOccupationalCredential",
         credentialCategory: "Colegiatura",
         name: `Colegio Médico del Perú, CMP ${credentialsInfo.cmp}`,
+        url: credentialsInfo.verificationUrl,
         recognizedBy: { "@type": "Organization", name: "Colegio Médico del Perú" },
       },
       {
         "@type": "EducationalOccupationalCredential",
         credentialCategory: "Registro de especialista",
         name: `Registro Nacional de Especialista, RNE ${credentialsInfo.rne}`,
+        url: credentialsInfo.verificationUrl,
         recognizedBy: { "@type": "Organization", name: "Colegio Médico del Perú" },
       },
     ],

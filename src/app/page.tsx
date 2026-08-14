@@ -52,6 +52,15 @@ export default async function Home() {
               {siteConfig.credentials.cmp} · RNE {siteConfig.credentials.rne} ·
               Atiende en {locations.length} sedes de Lima
             </p>
+            <a
+              href={credentialsInfo.verificationUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="animate-rise-in animate-step-3 inline-flex min-h-11 items-center text-sm text-white/75 underline underline-offset-2 transition-colors duration-150 hover:text-white"
+            >
+              Verifica la colegiatura en el registro del Colegio Médico del Perú
+              <span className="sr-only"> (se abre en una pestaña nueva)</span>
+            </a>
             <div className="animate-rise-in animate-step-4 mt-8 flex flex-col gap-3 sm:flex-row">
               <BookingCta>Agendar cita</BookingCta>
               <Link

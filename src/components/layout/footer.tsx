@@ -3,6 +3,7 @@ import Link from "next/link";
 import { MapPin, Phone, Stethoscope } from "lucide-react";
 import { InstagramIcon } from "@/components/icons/instagram-icon";
 import { WhatsAppCta } from "@/components/ui/whatsapp-cta";
+import { credentialsInfo } from "@/content/cv";
 import { siteConfig } from "@/lib/site-config";
 
 export function Footer() {
@@ -34,6 +35,15 @@ export function Footer() {
           <p className="mt-2 text-xs text-foreground/70">
             CMP {siteConfig.credentials.cmp} · RNE {siteConfig.credentials.rne}
           </p>
+          <a
+            href={credentialsInfo.verificationUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex min-h-11 items-center text-xs text-foreground/70 underline underline-offset-2 transition-colors duration-150 hover:text-primary"
+          >
+            Verifica la colegiatura en el registro del Colegio Médico del Perú
+            <span className="sr-only"> (se abre en una pestaña nueva)</span>
+          </a>
         </div>
 
         <div>
