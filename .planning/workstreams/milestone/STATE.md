@@ -20,14 +20,14 @@ progress:
 See: .planning/PROJECT.md (updated 2026-08-10)
 
 **Core value:** Que un paciente que busca traumatólogo/cirujano de columna en Lima encuentre el sitio y agende cita por WhatsApp en menos de 2 clics, con todo evento rastreado.
-**Current focus:** Fase 10, schema y metadata. Las fases 7, 8 y 9 están cerradas y desplegadas: el sitio vive en su dominio, tiene silo clínico con 4 páginas de servicio y 4 posts largos, y 4 páginas de sede. Sitemap en 21 URLs.
+**Current focus:** Fase 10, schema y metadata. **Cerrada con code review y verificación formal el 2026-08-14**, con dos checks de humano diferidos (ver Deferred Verification). Las fases 7, 8 y 9 están desplegadas: el sitio vive en su dominio, tiene silo clínico con 4 páginas de servicio y 4 posts largos, y 4 páginas de sede. Sitemap en 22-23 URLs.
 
 ## Current Position
 
-Phase: 10, schema y metadata. **CERRADA.** Los tres planes (10-01, 10-02, 10-03) completos
-Plan: 10-01, 10-02 y 10-03 cerrados. Las 23 rutas del sitio sirven title y meta exactos del handoff de v1.2, dentro de 60 y 155, y `scripts/check-seo.mjs` lo mide de verdad y falla si algo se pasa. SEO-05 a SEO-11 completos en REQUIREMENTS.md
-Status: Fase 8 y fase 10 cerradas — todo el trabajo que consumía el paquete on-page de v1.2 está publicado
-Last activity: 2026-08-13, plan 10-03 verificado (tsc, build, las tres puertas en verde sobre 23 rutas)
+Phase: 10, schema y metadata. **CERRADA**, con verificación diferida a dos checks de humano.
+Plan: 10-01, 10-02 y 10-03 cerrados. Las 23 rutas del sitio sirven title y meta exactos del handoff de v1.2, dentro de 60 y 155, y `scripts/check-seo.mjs` lo mide de verdad y falla si algo se pasa. SEO-05 a SEO-11 completos en REQUIREMENTS.md, checkbox y tabla de trazabilidad al día.
+Status: Code review (2026-08-14) encontró 2 blockers reales — 13 de 23 rutas compartían por WhatsApp el título y la URL de la portada en vez de los propios (og:title/og:description/og:url heredados del layout), y las 23 rutas emitían un twitter:title/twitter:description genérico idéntico. Los dos se arreglaron (`bdd7519`) y se reverificaron contra el HTML reconstruido, no solo contra el commit. Un warning (sitemap de sedes sin `lastModified`) también se arregló (`68ed9b5`); el otro (SITEMAP_TOTAL duplicado en tres scripts) se dejó a propósito, porque arreglarlo violaría una decisión ya documentada de no acoplar los scripts de gate entre sí. Verificación formal: 5/5 must-haves, sin bloqueantes de código, status human_needed por dos checks que solo Juan puede hacer (vista previa real de WhatsApp, miga de pan en la SERP de Google) — Juan decidió diferirlos el 2026-08-14 en vez de bloquear el cierre de la fase.
+Last activity: 2026-08-14, code review + fix + verificación formal de la fase 10 completos
 
 Progress: [████████░░] 4 de 5 fases de v1.1, con la 8 cerrada y esperando verificación
 
@@ -256,6 +256,7 @@ Ver tabla completa en PROJECT.md, sección Key Decisions.
 | 5 | verification_deferred_human, cuenta de Instagram sin vincular (código completo, SOCIAL-01 y SOCIAL-02 en Pending) | Seguir `05-VERIFICATION.md` o `docs/instagram-reels.md`, luego `/gsd-verify-work 5` |
 | 6 | verification_deferred_human, falta confirmar si el doctor sigue en Clínica Montefiori (código completo, LOC-01 a LOC-04 en Done) | Con la respuesta: sumar la sede a `src/content/locations.ts` o actualizar Doctoralia, luego `/gsd-verify-work 6` |
 | 7 | verification_deferred_human, solo DOM-04. Los otros cuatro requisitos están verificados en producción | Cuando el cliente tenga cuenta de Resend, casilla destino y API key: `/gsd-execute-plan 07-04`, después `/gsd-verify-work 7` |
+| 10 | verification_deferred_human, 5/5 must-haves verificados en código y producción, sin bloqueantes. Faltan 2 checks que solo puede hacer Juan: vista previa real de WhatsApp de 2-3 URLs, y confirmar en la SERP de Google que ya aparece la miga de pan en rutas anidadas indexadas | Cuando Juan haga los dos checks: `/gsd-verify-work 10 --ws milestone` |
 
 **07-02 descartado, no diferido.** La Redirect Rule de Cloudflare dejó de hacer falta cuando `src/proxy.ts` cerró DOM-02 desde el origen. Solo habría bajado `http://www` de 2 saltos a 1 evitando un golpe al origen, ganancia marginal. **Consecuencia importante: no sacar `www.drangulocolumna.com` de los dominios de la aplicación en Dokploy.** La redirección funciona porque Traefik enruta ese host hacia la app y ahí `proxy.ts` responde el 301. Quitarlo rompe la redirección.
 
