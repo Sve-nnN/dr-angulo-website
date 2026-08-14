@@ -38,6 +38,15 @@ export function AuthorByline({ publishedAt, updatedAt }: AuthorBylineProps) {
       <p className="mt-1 text-sm text-foreground/70">
         {`CMP ${credentialsInfo.cmp} · RNE ${credentialsInfo.rne}`}
       </p>
+      <a
+        href={credentialsInfo.verificationUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="inline-flex min-h-11 items-center text-sm text-foreground/70 underline underline-offset-2 transition-colors duration-150 hover:text-primary"
+      >
+        Verifica la colegiatura en el registro del Colegio Médico del Perú
+        <span className="sr-only"> (se abre en una pestaña nueva)</span>
+      </a>
       <p className="mt-2 text-sm text-foreground/70">
         {"Publicado el "}
         <time dateTime={publishedAt}>

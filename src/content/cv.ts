@@ -145,6 +145,18 @@ export const training: TrainingEntry[] = [
 export const credentialsInfo = {
   cmp: "83189",
   rne: "35310",
+  /**
+   * Plataforma oficial donde un paciente comprueba la colegiatura (AUD-09).
+   *
+   * Es un buscador general: se escribe el número o el nombre y devuelve la
+   * ficha. **No existe enlace directo a la ficha de un médico**, así que
+   * ninguna superficie del sitio puede prometer que el enlace abre la del
+   * doctor. El texto de cada enlace tiene que decir que lleva al registro.
+   *
+   * Va acá y no en `site-config.ts` porque todo dato de acreditación sale de
+   * este archivo y de ningún otro, que es lo que verifica `check-content.mjs`.
+   */
+  verificationUrl: "https://aplicaciones.cmp.org.pe/conoce_a_tu_medico/",
   /** Años de ejercicio profesional confirmados por el doctor (ago. 2026). */
   yearsOfExperience: 15,
   /** Entrenamientos hechos fuera del país, según el CV de Doctoralia. */

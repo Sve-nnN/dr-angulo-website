@@ -48,6 +48,15 @@ export default function SobreElDoctorPage() {
             {credentialsInfo.cmp} · RNE {credentialsInfo.rne} ·{" "}
             {siteConfig.office.name}, {siteConfig.office.addressLocality}
           </p>
+          <a
+            href={credentialsInfo.verificationUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex min-h-11 items-center text-sm text-foreground/70 underline underline-offset-2 transition-colors duration-150 hover:text-primary"
+          >
+            Verifica la colegiatura en el registro del Colegio Médico del Perú
+            <span className="sr-only"> (se abre en una pestaña nueva)</span>
+          </a>
 
           <div className="mt-8 max-w-2xl space-y-4 text-lg text-foreground/80">
             <p>
