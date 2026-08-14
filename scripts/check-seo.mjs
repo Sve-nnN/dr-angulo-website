@@ -620,6 +620,19 @@ function checkSitemap(sitemap) {
     fail(`el sitemap tiene ${total} URLs, deben ser ${SITEMAP_TOTAL}`);
   }
 
+  // AUD-10: las 22 URLs declaran fecha de modificación y ninguna declara los
+  // dos campos que Google ignora desde 2020.
+  const withLastmod = [...sitemap.matchAll(/<lastmod>/g)].length;
+  if (withLastmod !== total) {
+    const missing = total - withLastmod;
+    fail(`${missing} de las ${total} URLs del sitemap no declaran <lastmod>`);
+  }
+  for (const field of ["changefreq", "priority"]) {
+    if (sitemap.includes(`<${field}>`)) {
+      fail(`el sitemap declara <${field}>: Google lo ignora desde 2020 y salió en AUD-10`);
+    }
+  }
+
   const stylesheet = /<\?xml-stylesheet[^>]*href="([^"]+)"[^>]*\?>/.exec(sitemap);
   if (!stylesheet) {
     fail("el sitemap servido no incluye la instrucción xml-stylesheet");
@@ -649,6 +662,19 @@ function checkSitemap(sitemap) {
       fail(`${STYLESHEET} tiene una tabla sin encabezados de columna asociados`);
     }
     if (!/<caption>/.test(xsl)) fail(`${STYLESHEET} tiene una tabla sin caption`);
+    // La hoja es lo que un humano ve. Si conserva columnas de campos que el
+    // sitemap ya no emite, la tabla se lee con dos columnas vacías.
+    for (const field of ["changefreq", "priority"]) {
+      if (xsl.includes(`s:${field}`)) {
+        fail(`${STYLESHEET} sigue mostrando la columna de ${field}, que el sitemap ya no emite`);
+      }
+    }
+    // Cabeceras y celdas tienen que seguir contando lo mismo.
+    const columns = [...xsl.matchAll(/scope="col"/g)].length;
+    const cells = [...xsl.matchAll(/<td\b/g)].length;
+    if (columns !== cells) {
+      fail(`${STYLESHEET} declara ${columns} columnas y ${cells} celdas por fila`);
+    }
   }
 }
 
