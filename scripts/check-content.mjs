@@ -13,6 +13,9 @@
  * jerarquía de encabezados, tabla de contenidos y anclas, posición del banner
  * de conversión, firma y avisos, enlazado interno, salvaguardas de contenido
  * firmado y coherencia del sitemap y del hub.
+ *
+ * Además, y siempre: ningún borrador clínico de `src/content/drafts/` llega a
+ * producción mientras no tenga aprobación del doctor (AUD-11).
  */
 
 import { readFileSync, existsSync, readdirSync } from "node:fs";
@@ -547,6 +550,110 @@ function checkSources() {
 }
 
 // --------------------------------------------------------------------------
+// Borradores clínicos sin aprobación médica (AUD-11)
+//
+// `src/content/drafts/` guarda texto clínico redactado y todavía no aprobado
+// por el doctor. Mientras su campo de aprobación siga en `false`, no puede
+// llegar a producción por ninguno de los dos caminos posibles: que una ruta lo
+// importe, o que alguien copie el texto a un módulo de contenido.
+//
+// Las frases que se buscan salen del propio borrador en tiempo de ejecución y
+// no están escritas acá: una copia a mano se desincroniza el día que alguien
+// edite el texto, y la puerta pasaría a proteger un párrafo que ya no existe.
+// --------------------------------------------------------------------------
+
+const DRAFTS_DIR = "src/content/drafts";
+
+/** Superficies que renderizan: ninguna puede importar un borrador. */
+const RENDERING_DIRS = ["src/app", "src/components"];
+
+/** Todos los archivos de un directorio, recursivo, con la extensión pedida. */
+function filesUnder(dir, extensions) {
+  const root = resolve(dir);
+  if (!existsSync(root)) return [];
+
+  const found = [];
+  const pending = [dir];
+  while (pending.length > 0) {
+    const current = pending.pop();
+    for (const item of readdirSync(resolve(current), { withFileTypes: true })) {
+      const path = `${current}/${item.name}`;
+      if (item.isDirectory()) pending.push(path);
+      else if (extensions.some((ext) => item.name.endsWith(ext))) found.push(path);
+    }
+  }
+  return found;
+}
+
+/** Fuera comentarios: el docblock de un borrador cita su propio contenido. */
+function stripComments(source) {
+  return source
+    .replace(/\/\*[\s\S]*?\*\//g, " ")
+    .replace(/(^|[^:])\/\/.*$/gm, "$1");
+}
+
+/**
+ * Frases largas del borrador, recortadas a un fragmento buscable. Se toman de
+ * los literales de cadena del módulo, así cubren el encabezado, la entrada,
+ * cada signo y el cierre sin enumerarlos acá uno por uno.
+ */
+function draftPhrases(source) {
+  return [...stripComments(source).matchAll(/"((?:[^"\\\n]|\\.){40,})"/g)].map((match) =>
+    match[1].slice(0, 60)
+  );
+}
+
+function checkDrafts() {
+  const failures = [];
+  const drafts = filesUnder(DRAFTS_DIR, [".ts"]);
+  if (drafts.length === 0) return failures;
+
+  // --- nadie los importa ---------------------------------------------------
+  for (const dir of RENDERING_DIRS) {
+    for (const file of filesUnder(dir, [".ts", ".tsx"])) {
+      const source = readFileSync(resolve(file), "utf8");
+      if (/content\/drafts/.test(source)) {
+        failures.push(
+          `${file}: referencia a ${DRAFTS_DIR}. El texto clínico sin aprobación del doctor no puede llegar a una ruta`
+        );
+      }
+    }
+  }
+
+  // --- ni su texto aparece copiado en el HTML ------------------------------
+  const pages = filesUnder(APP_DIR, [".html"]);
+
+  for (const draft of drafts) {
+    const source = readFileSync(resolve(draft), "utf8");
+
+    if (/approvedByPhysician:\s*true/.test(source)) continue;
+    if (!/approvedByPhysician:\s*false/.test(source)) {
+      failures.push(`${draft}: no declara \`approvedByPhysician\`, la puerta no sabe si está aprobado`);
+      continue;
+    }
+
+    const phrases = draftPhrases(source);
+    if (phrases.length === 0) {
+      failures.push(`${draft}: no se pudo extraer ninguna frase distintiva para verificar`);
+      continue;
+    }
+
+    for (const page of pages) {
+      const html = readFileSync(resolve(page), "utf8");
+      for (const phrase of phrases) {
+        if (html.includes(phrase)) {
+          failures.push(
+            `${page}: publica texto de ${draft}, que no tiene aprobación médica: "${phrase}…"`
+          );
+        }
+      }
+    }
+  }
+
+  return failures;
+}
+
+// --------------------------------------------------------------------------
 // Comprobaciones globales: sitemap y hub
 // --------------------------------------------------------------------------
 
@@ -617,7 +724,7 @@ function main() {
       });
 
   const results = selected.map(checkRoute);
-  const sourceFailures = checkSources();
+  const sourceFailures = [...checkSources(), ...checkDrafts()];
   const globalFailures = checkGlobals(
     selected.map((e) => e.route),
     isFullRun
