@@ -9,6 +9,12 @@ export const metadata: Metadata = {
   description:
     "Las cuatro sedes donde atiende el Dr. Juan Carlos Angulo: consultorio de Surco, Ricardo Palma, Sanna La Molina y Padre Luis Tezza.",
   alternates: { canonical: "/sedes" },
+  openGraph: {
+    title: "Dónde atiende el Dr. Juan Carlos Angulo en Lima",
+    description:
+      "Las cuatro sedes donde atiende el Dr. Juan Carlos Angulo: consultorio de Surco, Ricardo Palma, Sanna La Molina y Padre Luis Tezza.",
+    url: "/sedes",
+  },
 };
 
 export default function SedesPage() {

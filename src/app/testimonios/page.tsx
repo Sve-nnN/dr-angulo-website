@@ -11,6 +11,12 @@ export const metadata: Metadata = {
   description:
     "Lo que cuentan, en sus propias palabras, los pacientes que se atendieron con el Dr. Juan Carlos Angulo en Lima.",
   alternates: { canonical: "/testimonios" },
+  openGraph: {
+    title: "Testimonios de pacientes del Dr. Angulo",
+    description:
+      "Lo que cuentan, en sus propias palabras, los pacientes que se atendieron con el Dr. Juan Carlos Angulo en Lima.",
+    url: "/testimonios",
+  },
 };
 
 /** ISR: la página se regenera cada hora para tomar los reels nuevos. */

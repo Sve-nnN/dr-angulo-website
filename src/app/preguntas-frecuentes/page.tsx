@@ -20,6 +20,12 @@ export const metadata: Metadata = {
   description:
     "Cuándo corresponde un reumatólogo y cuándo un traumatólogo, qué pasa en la primera cita y en qué casos se plantea operar.",
   alternates: { canonical: "/preguntas-frecuentes" },
+  openGraph: {
+    title: "Reumatólogo o traumatólogo: a cuál te toca ir",
+    description:
+      "Cuándo corresponde un reumatólogo y cuándo un traumatólogo, qué pasa en la primera cita y en qué casos se plantea operar.",
+    url: "/preguntas-frecuentes",
+  },
 };
 
 export default function PreguntasFrecuentesPage() {
