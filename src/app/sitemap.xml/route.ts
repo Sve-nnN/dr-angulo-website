@@ -63,6 +63,7 @@ function entries(): MetadataRoute.Sitemap {
   // entrada editorial no tiene página y no puede entrar acá.
   const locationRoutes: MetadataRoute.Sitemap = locationPages.map((page) => ({
     url: `${siteConfig.url}/sedes/${page.slug}`,
+    ...(page.updatedAt ? { lastModified: page.updatedAt } : {}),
     changeFrequency: "monthly",
     priority: 0.8,
   }));
