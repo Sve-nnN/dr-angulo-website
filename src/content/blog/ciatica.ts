@@ -1,24 +1,31 @@
 import type { BlogPost } from "./index";
 
-export const post5SintomasDeColumnaQueNoDebesIgnorar: BlogPost = {
-  slug: "5-sintomas-de-columna-que-no-debes-ignorar",
+export const postCiatica: BlogPost = {
+  slug: "ciatica",
+  topicEntities: [
+    {
+      kind: "condition",
+      name: "Ciática",
+      alternateNames: ["Ciatalgia", "Radiculopatía lumbar"],
+    },
+  ],
   title: "Ciática: por qué duele la pierna y qué hacer",
   h1: "Ciática: el dolor que baja por la pierna",
   description:
     "Qué es la ciática, cómo se distingue de una lumbalgia, qué la produce y cuándo el dolor de pierna necesita evaluación médica.",
   publishedAt: "2026-06-10",
-  updatedAt: "2026-08-13",
+  updatedAt: "2026-08-24",
   relatedService: "hernia-discal",
   outboundLinks: [
-    { href: "/servicios/hernia-discal", anchor: "hernia discal lumbar y cervical" },
-    { href: "/blog/artrosis", anchor: "artrosis lumbosacro" },
-    { href: "/blog/lumbalgia", anchor: "tipos de lumbalgia" },
+    { href: "/servicios/hernia-discal", anchor: "Guía sobre la hernia discal" },
+    { href: "/blog/artrosis", anchor: "Cómo se maneja la artrosis" },
+    { href: "/blog/lumbalgia", anchor: "Qué hay detrás del dolor lumbar" },
     {
-      href: "/blog/miedo-a-operarte-de-la-columna-5-cosas-que-debes-saber",
-      anchor: "videos de cirugía de columna",
+      href: "/blog/cirugia-de-columna",
+      anchor: "Qué conviene saber antes de operarse de la columna",
     },
     { href: "/blog", anchor: "Blog" },
-    { href: "/servicios", anchor: "cirugía de columna cerca de mí" },
+    { href: "/servicios", anchor: "Qué condiciones se tratan en cada especialidad" },
   ],
   bannerAfterSectionId: "sintomas--espina-ciatica",
   ctaBanner: {
@@ -50,7 +57,7 @@ export const post5SintomasDeColumnaQueNoDebesIgnorar: BlogPost = {
     {
       id: "sintomas",
       level: 2,
-      heading: "Qué síntomas produce",
+      heading: "Cómo se reconoce el dolor de la ciática",
       paragraphs: [
         "El síntoma principal es el dolor irradiado, y viene acompañado de otras señales que conviene mirar juntas, porque son las que cambian la conducta en la consulta.",
         "Hormigueo y adormecimiento en una zona bien delimitada, no en toda la pierna. Sensación de menos fuerza, que se nota en gestos concretos: el pie que se arrastra al caminar, la dificultad para pararse en puntas, la sandalia que se sale sin que te des cuenta. Rigidez y dificultad para agacharte o girar el torso. Y un dolor que se dispara al toser, al estornudar o al hacer fuerza, porque esos gestos aumentan la presión dentro del canal.",
@@ -123,7 +130,7 @@ export const post5SintomasDeColumnaQueNoDebesIgnorar: BlogPost = {
     {
       id: "causas",
       level: 2,
-      heading: "Por qué aparece",
+      heading: "Qué comprime el nervio ciático",
       paragraphs: [
         "La causa más frecuente es una hernia discal que comprime una raíz nerviosa a la salida de la columna. Le siguen el estrechamiento del canal por desgaste, el deslizamiento de una vértebra sobre otra y la irritación del nervio a la altura del glúteo.",
         "En gente joven predomina la hernia. Con los años pesa más el desgaste. La causa cambia el tratamiento, así que ponerle nombre importa, y ponerle nombre es trabajo de la consulta y no del buscador.",
@@ -150,7 +157,7 @@ export const post5SintomasDeColumnaQueNoDebesIgnorar: BlogPost = {
     {
       id: "diagnostico",
       level: 2,
-      heading: "Cómo se confirma el diagnóstico",
+      heading: "Cómo se confirma que el dolor viene de una raíz",
       paragraphs: [
         "Se define en la consulta. El relato del recorrido, el examen de fuerza, reflejos y sensibilidad, y algunas maniobras que ponen en tensión la raíz para reproducir el síntoma alcanzan para ubicar el nivel comprometido en la mayoría de los casos.",
         "La resonancia se pide cuando hay señales de alarma, cuando el dolor no mejora con el tratamiento o cuando se está evaluando una intervención. Confirma lo que la consulta ya sospecha, y no es por donde se empieza.",
@@ -160,10 +167,11 @@ export const post5SintomasDeColumnaQueNoDebesIgnorar: BlogPost = {
     {
       id: "sin-operar",
       level: 2,
-      heading: "Qué se puede hacer sin operar",
+      heading: "Qué alivia sin cirugía",
       paragraphs: [
         "La mayoría de las ciáticas mejora sin operar. El plan combina movimiento temprano dentro de lo tolerado, terapia física dirigida, control del dolor con lo que indique tu médico y corrección de la postura de trabajo y de la forma de levantar peso.",
         "El reposo absoluto prolongado juega en contra. Sostener actividad, aunque sea poca y adaptada, es parte del tratamiento y no una concesión que uno se permite cuando se siente mejor.",
+        "Cuando el dolor irradiado no cede con este manejo bien llevado y sostenido, la conversación pasa a la cirugía. Esa decisión no depende del tiempo que lleve doliendo sino de lo que muestren los estudios junto con lo que te está limitando, y el detalle de cuándo se plantea operar está desarrollado en la guía de hernia discal.",
       ],
     },
     {
@@ -185,19 +193,9 @@ export const post5SintomasDeColumnaQueNoDebesIgnorar: BlogPost = {
       ],
     },
     {
-      id: "cirugia",
-      level: 2,
-      heading: "Cuándo hace falta operar",
-      paragraphs: [
-        "Operar se plantea cuando el dolor irradiado sigue siendo incapacitante después de un manejo conservador bien hecho y sostenido, o cuando hay compromiso neurológico que avanza.",
-        "Hay tres situaciones que no admiten esperar turno y se evalúan el mismo día: la pérdida de fuerza que avanza rápido, el adormecimiento en la zona de la entrepierna y los genitales, y la dificultad para controlar la orina o la deposición.",
-        "Fuera de eso, la conversación sobre operar se abre y no se cierra. Que se plantee no significa que esté decidido.",
-      ],
-    },
-    {
       id: "preguntas-frecuentes",
       level: 2,
-      heading: "Preguntas frecuentes",
+      heading: "Dudas frecuentes sobre la ciática",
       paragraphs: [
         "Las tres que más se repiten van abajo. Hay una cuarta que se pregunta poco y conviene hacer: qué pasa si no hago nada. En una ciática sin señales de alarma la respuesta suele ser que mejora igual, más lento y con más probabilidad de recaída.",
       ],
@@ -232,9 +230,10 @@ export const post5SintomasDeColumnaQueNoDebesIgnorar: BlogPost = {
     {
       id: "cuando-consultar",
       level: 2,
-      heading: "Cuándo consultar",
+      heading: "Cuándo conviene una evaluación",
       paragraphs: [
         "Consulta si el dolor baja por la pierna y no cede en pocos días, si aparece hormigueo o falta de fuerza, o si el cuadro te obliga a modificar de forma sostenida lo que haces.",
+        "Hay tres situaciones que no admiten esperar turno y se evalúan el mismo día: la pérdida de fuerza que avanza rápido, el adormecimiento en la zona de la entrepierna y los genitales, y la dificultad para controlar la orina o la deposición.",
         "Mientras consigues la cita, anota cómo se comporta el dolor día a día. Ese registro simple vale mucho en la consulta, porque la historia es lo que más orienta antes de cualquier imagen.",
         "Y si detrás de la ciática hay un disco que comprime una raíz, lo que sigue está explicado en la guía de hernia discal lumbar y cervical, que entra en el diagnóstico y en el tratamiento con el detalle que acá no corresponde.",
       ],

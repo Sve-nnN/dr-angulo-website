@@ -37,8 +37,13 @@ const HUB_ANCHORS = ["columna", "traumatologia", "ortopedia-infantil", "procedim
  * 08-13, menos los dos posts que el plan 08-14 apagó con 301 hacia la guía que
  * los absorbió. 21 + 1 + 2 − 2 = 22. Las cuatro rutas de sede ya existían y ya
  * estaban en el sitemap: publicar su cuerpo no mueve este número.
+ *
+ * La fase 16 de v1.3 suma una URL: el post de reumatólogo o traumatólogo, que
+ * nace de separar /preguntas-frecuentes en sus dos intenciones de búsqueda. Los dos
+ * renombres de slug de esa misma fase no mueven el total, porque cambian una
+ * URL por otra. 22 + 1 = 23.
  */
-const SITEMAP_TOTAL = 22;
+const SITEMAP_TOTAL = 23;
 
 /** Banner del primer tercio: palabras previas sobre el total del cuerpo. */
 const BANNER_MIN_RATIO = 0.15;
@@ -124,12 +129,12 @@ const MANIFEST = [
   { route: "/servicios/ortopedia-infantil", type: "service" },
   { route: "/servicios/cirugia-minimamente-invasiva", type: "service" },
   {
-    route: "/blog/5-sintomas-de-columna-que-no-debes-ignorar",
+    route: "/blog/ciatica",
     type: "post",
     linksTo: "/servicios/hernia-discal",
   },
   {
-    route: "/blog/miedo-a-operarte-de-la-columna-5-cosas-que-debes-saber",
+    route: "/blog/cirugia-de-columna",
     type: "post",
     linksTo: "/servicios/hernia-discal",
   },
@@ -141,6 +146,10 @@ const MANIFEST = [
     type: "post",
     linksTo: "/servicios/hernia-discal",
   },
+  // Sin `linksTo`, mismo criterio que /blog/artrosis: la matriz de enlazado de
+  // v1.2 no le asigna a este texto una guía del silo, así que su salida es el
+  // hub /servicios.
+  { route: "/blog/reumatologo-o-traumatologo", type: "post" },
   // Las cuatro sedes, todas con el cuerpo del paquete publicado desde el plan
   // 08-18. El orden es el de `locationPages`.
   {
@@ -161,7 +170,6 @@ const MANIFEST = [
   {
     route: "/preguntas-frecuentes",
     type: "guia",
-    format: "guia-clinica",
   },
 ];
 

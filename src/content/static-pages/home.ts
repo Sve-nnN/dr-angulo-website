@@ -211,13 +211,13 @@ export const homePage: StaticPage = {
     },
   ],
   outboundLinks: [
-    { href: "/servicios", anchor: "mejor neurocirujano de columna lima" },
-    { href: "/sedes", anchor: "Sedes donde atiende el Dr. Juan Carlos Angulo en Lima" },
+    { href: "/servicios", anchor: "Qué condiciones se tratan en cada especialidad" },
+    { href: "/sedes", anchor: "Sedes donde atiende el Dr. Juan Angulo" },
     { href: "/blog", anchor: "Blog" },
-    { href: "/preguntas-frecuentes", anchor: "artrosis traumatologo o reumatologo" },
-    { href: "/sobre-el-doctor", anchor: "Dr. Juan Carlos Angulo" },
+    { href: "/preguntas-frecuentes", anchor: "Dudas frecuentes antes de la consulta" },
+    { href: "/sobre-el-doctor", anchor: "Trayectoria del Dr. Juan Carlos Angulo" },
     { href: "/testimonios", anchor: "Testimonios de pacientes" },
-    { href: "/contacto", anchor: "Contacto y Citas en Lima" },
+    { href: "/contacto", anchor: "Contacto y citas en Lima" },
     { href: "/agendar", anchor: "Agendar cita" },
   ],
 };

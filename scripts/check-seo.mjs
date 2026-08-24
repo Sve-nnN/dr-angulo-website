@@ -40,8 +40,12 @@ const STYLESHEET = "public/sitemap.xsl";
  *  invasiva del plan 08-16 y los dos posts nuevos, artrosis del plan 08-12 y
  *  lumbalgia del 08-13, menos los dos posts que el plan 08-14 apagó con 301
  *  hacia la guía que los absorbió. 21 + 1 + 2 − 2 = 22, y es el número con el
- *  que cierra la fase 8. */
-const SITEMAP_TOTAL = 22;
+ *  que cierra la fase 8.
+ *
+ *  La fase 16 de v1.3 suma /blog/reumatologo-o-traumatologo, salida de separar
+ *  /preguntas-frecuentes en dos páginas. Los dos renombres de slug de esa fase
+ *  cambian una URL por otra y no mueven el total. 22 + 1 = 23. */
+const SITEMAP_TOTAL = 23;
 
 /** Límites de SEO-08, en caracteres del texto ya desescapado. */
 const TITLE_MAX = 60;

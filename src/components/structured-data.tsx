@@ -3,6 +3,7 @@ import { locations, primaryLocation, clinicLocations, type Location } from "@/co
 import type { LocationPage } from "@/content/location-pages";
 import { serviceCategories, procedureApproaches } from "@/content/services";
 import { education, credentialsInfo } from "@/content/cv";
+import type { BlogTopicEntity } from "@/content/blog";
 
 /**
  * Todo el JSON-LD del sitio.
@@ -511,8 +512,8 @@ export type BlogPostJsonLdItem = {
   description: string;
   publishedAt: string;
   updatedAt: string;
-  /** Slug de la guía de servicio que este post alimenta, si tiene una. */
-  relatedService?: string;
+  /** Entidades sobre las que trata el post. Es de acá que sale `about`. */
+  topicEntities?: BlogTopicEntity[];
 };
 
 /** Listado del blog. */
@@ -540,6 +541,43 @@ export function BlogJsonLd({ posts }: { posts: BlogPostJsonLdItem[] }) {
 }
 
 /**
+ * Traduce una entidad de tema al nodo de schema que le corresponde.
+ *
+ * Dos de las tres variantes devuelven una referencia por `@id` y no un nodo
+ * nuevo: el procedimiento porque lo declara el grafo raíz, y la especialidad
+ * porque es un miembro de una enumeración cerrada de schema.org que ya tiene
+ * su propia URI. Un `{ "@type": "MedicalSpecialty", name: "…" }` con el nombre
+ * en español no afirma nada que un validador pueda resolver.
+ *
+ * El retorno está anotado y el `switch` cierra con una aserción `never`. Sin
+ * las dos cosas, agregar una variante a `BlogTopicEntity` compila, el retorno
+ * pasa a incluir `undefined` y el `about` de la página sale con un `null`
+ * dentro del arreglo: JSON-LD inválido en producción y ninguna puerta lo ve.
+ */
+function topicEntityNode(entity: BlogTopicEntity): Record<string, unknown> {
+  switch (entity.kind) {
+    case "condition":
+      return {
+        "@type": "MedicalCondition",
+        name: entity.name,
+        ...(entity.alternateNames?.length
+          ? { alternateName: entity.alternateNames }
+          : {}),
+      };
+    case "procedure-ref":
+      return { "@id": ID.procedure(entity.procedureSlug) };
+    case "specialty":
+      return { "@id": entity.specialty };
+    default: {
+      const exhaustive: never = entity;
+      throw new Error(
+        `BlogTopicEntity sin nodo de schema: ${JSON.stringify(exhaustive)}`
+      );
+    }
+  }
+}
+
+/**
  * Artículo individual, escrito y publicado por el doctor.
  *
  * `datePublished` y `dateModified` salen de los mismos dos campos que muestra
@@ -547,10 +585,11 @@ export function BlogJsonLd({ posts }: { posts: BlogPostJsonLdItem[] }) {
  * las guías de servicio, no se emite `reviewedBy` ni `lastReviewed`: el texto
  * se publica antes de que el doctor lo revise.
  *
- * `about` apunta al `@id` de la guía de servicio del tema, que es lo que le
- * dice al buscador que el post y la guía son el mismo silo. Se omite si el
- * post no declara guía: un `about` que apunta a una URL inexistente vale menos
- * que no emitirlo.
+ * `about` sale de las entidades de tema del post y de ningún otro campo. Antes
+ * salía del destino de navegación, que es otra cosa: mezclar las dos hizo que
+ * tres posts declararan tratar sobre una condición que no tratan. Un campo dice
+ * de qué trata el texto, el otro a dónde manda al lector. Sin entidades
+ * declaradas, `about` se omite.
  */
 export function BlogPostingJsonLd({ post }: { post: BlogPostJsonLdItem }) {
   const data = {
@@ -561,8 +600,13 @@ export function BlogPostingJsonLd({ post }: { post: BlogPostJsonLdItem }) {
     description: post.description,
     datePublished: post.publishedAt,
     dateModified: post.updatedAt,
-    ...(post.relatedService
-      ? { about: { "@id": `${abs(`/servicios/${post.relatedService}`)}#page` } }
+    ...(post.topicEntities?.length
+      ? {
+          about:
+            post.topicEntities.length === 1
+              ? topicEntityNode(post.topicEntities[0])
+              : post.topicEntities.map(topicEntityNode),
+        }
       : {}),
     url: abs(`/blog/${post.slug}`),
     inLanguage: "es-PE",

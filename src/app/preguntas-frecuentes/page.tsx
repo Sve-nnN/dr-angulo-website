@@ -17,14 +17,14 @@ import { faqItems } from "@/content/faq";
 import { preguntasFrecuentesPage as page } from "@/content/static-pages/preguntas-frecuentes";
 
 export const metadata: Metadata = {
-  title: { absolute: "Reumatólogo o traumatólogo: a cuál te toca ir" },
+  title: { absolute: "Preguntas frecuentes antes de la consulta" },
   description:
-    "Cuándo corresponde un reumatólogo y cuándo un traumatólogo, qué pasa en la primera cita y en qué casos se plantea operar.",
+    "Las dudas que más llegan antes de una cita de traumatología: a qué especialista te toca acudir, cómo es la consulta y cómo se agenda en cada sede.",
   alternates: { canonical: "/preguntas-frecuentes" },
   openGraph: {
-    title: "Reumatólogo o traumatólogo: a cuál te toca ir",
+    title: "Preguntas frecuentes antes de la consulta",
     description:
-      "Cuándo corresponde un reumatólogo y cuándo un traumatólogo, qué pasa en la primera cita y en qué casos se plantea operar.",
+      "Las dudas que más llegan antes de una cita de traumatología: a qué especialista te toca acudir, cómo es la consulta y cómo se agenda en cada sede.",
     url: "/preguntas-frecuentes",
   },
 };

@@ -90,7 +90,15 @@ export default async function ServiceGuidePage({ params }: Props) {
           { name: page.navLabel, path: `/servicios/${page.slug}` },
         ]}
       />
-      {faqItems.length > 0 && (
+      {/*
+        Dos preguntas es el mínimo para declarar el bloque. Un bloque de
+        preguntas con una sola pregunta describe la página peor que no
+        declararlo, y desde el 7 de mayo de 2026 Google no produce ningún
+        resultado enriquecido con este marcado, así que no hay nada que perder.
+        El umbral es estructural a propósito: sigue valiendo cuando una guía
+        gane o pierda preguntas.
+      */}
+      {faqItems.length > 1 && (
         <FaqJsonLd items={faqItems} path={`/servicios/${page.slug}`} />
       )}
 

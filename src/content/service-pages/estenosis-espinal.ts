@@ -14,7 +14,7 @@ export const estenosisEspinal: ServicePage = {
     "Estenosis de canal",
   ],
   publishedAt: "2026-08-10",
-  updatedAt: "2026-08-13",
+  updatedAt: "2026-08-24",
   format: "guia-clinica",
   describesSurgery: true,
   // Vacío desde el plan 08-14: el único post que apuntaba a esta condición se
@@ -26,14 +26,14 @@ export const estenosisEspinal: ServicePage = {
   },
   bannerAfterSectionId: "que-es",
   outboundLinks: [
-    { href: "/servicios/escoliosis-y-deformidades", anchor: "cirugía de escoliosis" },
-    { href: "/servicios/hernia-discal", anchor: "lumbalgia o hernia discal" },
-    { href: "/sedes/clinica-ricardo-palma", anchor: "mejor traumatólogo de la clínica ricardo palma" },
-    { href: "/sedes/clinica-tezza", anchor: "cirugía de columna clínica tezza" },
-    { href: "/sedes/consultorio-privado", anchor: "ortopedia infantil surco" },
-    { href: "/sedes/sanna-la-molina", anchor: "neurocirujano clínica sanna" },
+    { href: "/servicios/escoliosis-y-deformidades", anchor: "Guía sobre la escoliosis y otras deformidades" },
+    { href: "/servicios/hernia-discal", anchor: "Guía sobre la hernia discal" },
+    { href: "/sedes/clinica-ricardo-palma", anchor: "Clínica Ricardo Palma, en San Isidro" },
+    { href: "/sedes/clinica-tezza", anchor: "Clínica Padre Luis Tezza, en Surco" },
+    { href: "/sedes/consultorio-privado", anchor: "Consultorio privado, en Surco" },
+    { href: "/sedes/sanna-la-molina", anchor: "Clínica Sanna, en La Molina" },
     { href: "/agendar", anchor: "Agendar cita" },
-    { href: "/servicios", anchor: "cirujano de columna cerca de mí" },
+    { href: "/servicios", anchor: "Qué condiciones se tratan en cada especialidad" },
   ],
   sections: [
     {
@@ -69,7 +69,7 @@ export const estenosisEspinal: ServicePage = {
     {
       id: "sintomas",
       level: 2,
-      heading: "Qué síntomas produce",
+      heading: "Qué síntomas produce el canal estrecho",
       paragraphs: [
         "El síntoma que mejor define este cuadro no es el dolor de espalda. Es lo que pasa al caminar y lo que pasa al detenerse.",
         "Después de un tramo que cada persona conoce de memoria aparecen pesadez, calambre, ardor u hormigueo en una pierna o en las dos, y la marcha se vuelve insegura. Si te sientas o te inclinas hacia adelante, la molestia cede en pocos minutos y puedes retomar el camino. Ese ciclo, repetido siempre igual, es el dato que más orienta.",
@@ -91,7 +91,7 @@ export const estenosisEspinal: ServicePage = {
     {
       id: "causas",
       level: 2,
-      heading: "Por qué aparece",
+      heading: "Por qué se estrecha el canal",
       paragraphs: [
         "La forma más común es la degenerativa y aparece con el desgaste natural de la columna, por lo general a partir de los sesenta años. Se observa con más frecuencia en mujeres.",
         "Sobre ese terreno se suman los cambios que le restan espacio al canal: el disco que pierde altura y se abomba, la articulación posterior que se engrosa, el ligamento que tapiza el conducto y se vuelve más grueso, y a veces una vértebra que se desliza sobre la de abajo y corre el canal de lugar.",
@@ -102,7 +102,7 @@ export const estenosisEspinal: ServicePage = {
     {
       id: "diagnostico",
       level: 2,
-      heading: "Cómo se confirma el diagnóstico",
+      heading: "Cómo se mide el estrechamiento",
       paragraphs: [
         "El diagnóstico se arma primero con lo que cuentas, y este cuadro se perfila casi solo en el relato: a qué distancia aparece la molestia, qué la alivia, cuánto demoras en recuperarte al sentarte y desde cuándo se viene acortando ese trayecto.",
         "Después va el examen físico, que revisa fuerza por grupos musculares, reflejos, sensibilidad por territorios y también los pulsos de las piernas. Ese último punto importa porque hay un cuadro de origen circulatorio que se le parece mucho: ahí la pierna también molesta al caminar, pero cede con solo detenerse, sin necesidad de sentarse ni de inclinarse hacia adelante.",
@@ -113,7 +113,7 @@ export const estenosisEspinal: ServicePage = {
     {
       id: "sin-operar",
       level: 2,
-      heading: "Qué se puede hacer sin operar",
+      heading: "Qué opciones hay antes del quirófano",
       paragraphs: [
         "La estenosis es un problema de espacio, y el espacio no se recupera con medicación. Eso no convierte la cirugía en el primer paso: buena parte de los casos mejora lo suficiente con un manejo conservador bien llevado.",
         "El objetivo de esta etapa cabe en una frase: recuperar tolerancia a la marcha. La terapia física trabaja movilidad de la cadera, fuerza de la musculatura profunda del tronco y control de la postura lumbar, con ejercicios que suelen tolerarse mejor en ligera flexión.",
@@ -183,7 +183,7 @@ export const estenosisEspinal: ServicePage = {
     {
       id: "cirugia",
       level: 2,
-      heading: "Cuándo hace falta operar",
+      heading: "Cuándo la cirugía es la opción",
       paragraphs: [
         "La cirugía entra en la conversación en tres escenarios: cuando la distancia que puedes caminar quedó tan corta que te condiciona la vida diaria pese a un manejo conservador bien hecho y sostenido, cuando hay pérdida de fuerza que progresa, y cuando aparecen los signos de compresión seria del canal.",
         "El procedimiento apunta a devolverle espacio al nervio. Se retira el hueso engrosado y el ligamento que están cerrando el conducto, y se libera la raíz en los niveles que corresponda. Cuando además una vértebra se desliza sobre otra o el segmento queda inestable, la descompresión se acompaña de una artrodesis, que fija ese tramo para que no se desplace.",
@@ -194,7 +194,7 @@ export const estenosisEspinal: ServicePage = {
     {
       id: "preguntas-frecuentes",
       level: 2,
-      heading: "Preguntas frecuentes",
+      heading: "Dudas frecuentes sobre la estenosis",
       paragraphs: [
         "Las que más se repiten en consulta, con la respuesta corta. Ninguna reemplaza una evaluación: sirven para que llegues con las preguntas mejor hechas.",
       ],
@@ -211,7 +211,7 @@ export const estenosisEspinal: ServicePage = {
     {
       id: "cuando-consultar",
       level: 2,
-      heading: "Cuándo consultar",
+      heading: "Cuándo consultar por un canal estrecho",
       paragraphs: [
         "La señal no es el dolor lumbar que va y viene. Es la limitación al caminar que se repite siempre del mismo modo y que se acorta mes a mes. Si el trayecto que antes hacías sin pensarlo ahora te obliga a parar, ya hay material suficiente para estudiar el caso.",
         "Hay tres situaciones que no admiten esperar turno: pérdida de fuerza que avanza en una pierna, adormecimiento en la zona de la entrepierna y los genitales, y dificultad para controlar la orina o la deposición. Eso se evalúa el mismo día, no en la próxima cita disponible.",
