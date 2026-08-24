@@ -20,11 +20,12 @@ export const postReumatologoOTraumatologo: BlogPost = {
   title: "Reumatólogo o traumatólogo: a cuál te toca ir",
   h1: "Reumatólogo o traumatólogo: cómo saber cuál te corresponde",
   description:
-    "Cuándo corresponde un reumatólogo y cuándo un traumatólogo, qué pasa en la primera cita y en qué casos se plantea operar.",
+    "Cuándo corresponde un reumatólogo y cuándo un traumatólogo, qué mira cada uno en la primera cita y qué se maneja sin quirófano.",
   publishedAt: "2026-08-13",
   updatedAt: "2026-08-24",
   outboundLinks: [
     { href: "/blog/artrosis", anchor: "Cómo se maneja la artrosis" },
+    { href: "/servicios/hernia-discal", anchor: "Guía sobre la hernia discal" },
     { href: "/servicios", anchor: "Qué condiciones se tratan en cada especialidad" },
     { href: "/blog", anchor: "Blog" },
     { href: "/agendar", anchor: "Agendar cita" },
@@ -107,17 +108,7 @@ export const postReumatologoOTraumatologo: BlogPost = {
         "La mayoría de los problemas de columna se maneja sin quirófano. El esquema se repite: controlar el dolor con lo que te indique tu médico, mantener el movimiento que toleres, terapia física dirigida y corregir la mecánica que llevó al problema.",
         "Ese manejo necesita tiempo para mostrar si sirve. Semanas, no días. Abandonarlo en la primera semana y concluir que no funcionó es el error más común, y el que más gente lleva a pedir una cirugía que quizá no necesita.",
         "Cuando el dolor por compromiso de una raíz no cede, hay un escalón intermedio antes del quirófano: las infiltraciones guiadas por imagen. No arreglan la causa. Bajan el dolor lo suficiente para que la terapia pueda avanzar.",
-      ],
-    },
-    {
-      id: "cirugia",
-      level: 2,
-      heading: "Cuándo se plantea operar",
-      paragraphs: [
-        "Operar se plantea en tres situaciones, y ninguna de las tres es que la resonancia se vea fea. Cuando hay pérdida de fuerza que progresa. Cuando aparecen signos de compresión seria del canal. Y cuando el dolor incapacitante sigue igual pese a un manejo conservador bien hecho y sostenido.",
-        "La decisión se toma con dos cosas sobre la mesa: qué te está limitando hoy y qué muestran tus estudios. Si las dos no coinciden, la cirugía no es el camino todavía.",
-        "Sobre el miedo a operarse, que es la duda que más se repite y la más razonable: lo que corresponde es que en la consulta se explique el procedimiento concreto de tu caso, los riesgos reales y qué esperar de la recuperación. Una decisión informada se puede tomar con miedo. Sin información, no.",
-        "Y si te dijeron que hay que operar y no estás seguro, una segunda opinión con los estudios en la mano es una decisión razonable. Nadie debería tomárselo a mal.",
+        "Cuando ni eso alcanza, la conversación pasa a la cirugía. Esa decisión no depende del tiempo que lleve doliendo sino de lo que muestren los estudios junto con lo que te está limitando, y está desarrollada en la guía de hernia discal y no acá.",
       ],
     },
   ],
