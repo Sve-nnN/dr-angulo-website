@@ -1,27 +1,31 @@
 import type { BlogPost } from "./index";
 
-export const postMiedoAOperarteDeLaColumna5CosasQueDebesSaber: BlogPost = {
-  slug: "miedo-a-operarte-de-la-columna-5-cosas-que-debes-saber",
+export const postCirugiaDeColumna: BlogPost = {
+  slug: "cirugia-de-columna",
+  topicEntities: [
+    { kind: "procedure-ref", procedureSlug: "minimamente-invasiva" },
+    { kind: "procedure-ref", procedureSlug: "convencional" },
+  ],
   title: "Cirugía de columna: cuándo se plantea y cómo es",
   h1: "Operarse de la columna: lo que conviene saber antes",
   description:
     "Cuándo se plantea operar la columna, qué técnicas existen, cómo es la recuperación y qué conviene preguntar en la consulta.",
   publishedAt: "2026-06-24",
-  updatedAt: "2026-08-13",
+  updatedAt: "2026-08-24",
   relatedService: "hernia-discal",
   outboundLinks: [
     {
       href: "/servicios/cirugia-minimamente-invasiva",
-      anchor: "cirugía endoscópica de columna",
+      anchor: "Cómo es la cirugía mínimamente invasiva",
     },
-    { href: "/blog/artrosis", anchor: "pastillas para la artrosis" },
+    { href: "/blog/artrosis", anchor: "Cómo se maneja la artrosis" },
     {
-      href: "/blog/5-sintomas-de-columna-que-no-debes-ignorar",
-      anchor: "falsa ciática",
+      href: "/blog/ciatica",
+      anchor: "Cuándo el dolor de pierna viene de la columna",
     },
-    { href: "/blog/lumbalgia", anchor: "causas de lumbalgia" },
+    { href: "/blog/lumbalgia", anchor: "Qué hay detrás del dolor lumbar" },
     { href: "/blog", anchor: "Blog" },
-    { href: "/servicios", anchor: "cirujano de columna cerca de mí" },
+    { href: "/servicios", anchor: "Qué condiciones se tratan en cada especialidad" },
   ],
   bannerAfterSectionId: "que-es--caminar-despues-de-cirugia-de-columna",
   ctaBanner: {
@@ -134,7 +138,7 @@ export const postMiedoAOperarteDeLaColumna5CosasQueDebesSaber: BlogPost = {
     {
       id: "sin-operar",
       level: 2,
-      heading: "Qué se puede hacer sin operar",
+      heading: "Qué se intenta antes de operar",
       paragraphs: [
         "La mayoría de los casos se maneja primero con tratamiento conservador: terapia física, medicación y cambios de hábitos. Esa etapa no es un trámite previo para llegar al quirófano, es tratamiento, y en buena parte de los casos es el único que hace falta.",
         "El trabajo de terapia busca descargar el segmento afectado, recuperar movilidad y fortalecer la musculatura que sostiene la columna, y a eso se suma corregir la postura de trabajo y la forma de levantar peso, que es lo que evita la recaída.",
@@ -144,7 +148,7 @@ export const postMiedoAOperarteDeLaColumna5CosasQueDebesSaber: BlogPost = {
     {
       id: "cirugia",
       level: 2,
-      heading: "Cuándo hace falta operar",
+      heading: "Cuándo la cirugía es la indicación",
       paragraphs: [
         "Cuando hay una razón concreta, y esa razón se puede nombrar. Conviene que te la nombren: dolor irradiado incapacitante que no respondió al tratamiento, compromiso neurológico que avanza, o signos de compresión seria del canal.",
         "Fuera de esos escenarios, el paso siguiente casi siempre es seguir trabajando el manejo conservador y volver a evaluar más adelante. Que la conversación se abra no significa que la decisión esté tomada, y preguntar cuál de esas razones aplica a tu caso es esperable.",
@@ -180,7 +184,7 @@ export const postMiedoAOperarteDeLaColumna5CosasQueDebesSaber: BlogPost = {
     {
       id: "preguntas-frecuentes",
       level: 2,
-      heading: "Preguntas frecuentes",
+      heading: "Lo que más se pregunta antes de operar",
       paragraphs: [
         "Dos quedan fuera de las anteriores y conviene contestarlas. Si conviene pedir una segunda opinión: salvo en las situaciones que se evalúan el mismo día, nada se rompe por pedirla, y pedirla no ofende a nadie. Y qué llevar a la consulta: los estudios de imagen completos y no solo el informe, la lista de lo que tomas, el detalle de qué tratamientos hiciste y por cuánto tiempo, y las preguntas escritas, porque en el momento se olvidan.",
       ],
@@ -206,7 +210,7 @@ export const postMiedoAOperarteDeLaColumna5CosasQueDebesSaber: BlogPost = {
     {
       id: "cuando-consultar",
       level: 2,
-      heading: "Cuándo consultar",
+      heading: "Cuándo buscar una segunda opinión",
       paragraphs: [
         "Conviene consultar cuando el dolor irradiado no cede, cuando aparece falta de fuerza o adormecimiento, o cuando ya te dijeron que necesitas operarte y quieres entender por qué antes de decidir.",
         "Si lo que buscas es entender el procedimiento en sí, cómo se hace y qué implica la recuperación, eso está explicado en la guía de cirugía endoscópica de columna y de los abordajes mínimamente invasivos, que es donde entra el detalle técnico.",

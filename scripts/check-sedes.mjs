@@ -59,8 +59,13 @@ const SERVICE_SLUGS = [
  *  cuatro páginas de sede, más la página de cirugía mínimamente invasiva del
  *  plan 08-16 y los dos posts nuevos, artrosis del plan 08-12 y lumbalgia del
  *  08-13, menos los dos posts que el plan 08-14 apagó con 301 hacia la guía
- *  que los absorbió. 21 + 1 + 2 − 2 = 22. */
-const SITEMAP_TOTAL = 22;
+ *  que los absorbió. 21 + 1 + 2 − 2 = 22.
+ *
+ *  La fase 16 de v1.3 suma una URL: el post de reumatólogo o traumatólogo, que
+ *  nace de separar /preguntas-frecuentes en sus dos intenciones de búsqueda. Los
+ *  dos renombres de slug de esa fase cambian una URL por otra y no mueven el
+ *  total. 22 + 1 = 23. */
+const SITEMAP_TOTAL = 23;
 
 /**
  * Expectativas por sede, hardcodeadas a propósito. Una puerta que deriva sus

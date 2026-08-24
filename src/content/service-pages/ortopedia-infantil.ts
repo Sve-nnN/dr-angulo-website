@@ -16,17 +16,17 @@ export const ortopediaInfantil: ServicePage = {
     "Deformidades de postura",
   ],
   publishedAt: "2026-08-10",
-  updatedAt: "2026-08-13",
+  updatedAt: "2026-08-24",
   format: "pagina-de-servicio",
   describesSurgery: false,
   relatedPosts: [],
   outboundLinks: [
-    { href: "/", anchor: "mejor clínica de traumatología en lima" },
-    { href: "/servicios", anchor: "cirugía de columna cerca de mí" },
-    { href: "/sedes/clinica-ricardo-palma", anchor: "cirujano de columna clínica ricardo palma" },
-    { href: "/sedes/clinica-tezza", anchor: "ortopedia infantil clínica tezza" },
-    { href: "/sedes/consultorio-privado", anchor: "cirugía de columna surco" },
-    { href: "/sedes/sanna-la-molina", anchor: "cirujano de columna clínica sanna" },
+    { href: "/", anchor: "Qué atiende la consulta del Dr. Juan Angulo" },
+    { href: "/servicios", anchor: "Qué condiciones se tratan en cada especialidad" },
+    { href: "/sedes/clinica-ricardo-palma", anchor: "Clínica Ricardo Palma, en San Isidro" },
+    { href: "/sedes/clinica-tezza", anchor: "Clínica Padre Luis Tezza, en Surco" },
+    { href: "/sedes/consultorio-privado", anchor: "Consultorio privado, en Surco" },
+    { href: "/sedes/sanna-la-molina", anchor: "Clínica Sanna, en La Molina" },
     { href: "/agendar", anchor: "Agendar cita" },
   ],
   ctaBanner: {
@@ -38,7 +38,7 @@ export const ortopediaInfantil: ServicePage = {
     {
       id: "que-se-atiende",
       level: 2,
-      heading: "Qué se atiende",
+      heading: "Qué se atiende en ortopedia infantil",
       paragraphs: [
         "La ortopedia infantil se ocupa de los huesos, las articulaciones y la marcha del niño mientras todavía está creciendo. Ese detalle cambia todo: el hueso que crece se corrige solo en muchos casos, y en otros hay una ventana de tiempo que conviene no perder.",
         "Lo que más llega a la consulta es pie plano, marcha con las puntas hacia adentro o hacia afuera, piernas en X o arqueadas, displasia de cadera, desviaciones de la columna en la etapa de crecimiento, dolor de rodilla en el niño que hace deporte y fracturas.",
@@ -168,7 +168,7 @@ export const ortopediaInfantil: ServicePage = {
     {
       id: "como-es-la-consulta",
       level: 2,
-      heading: "Cómo es la consulta",
+      heading: "Cómo es la consulta con un niño",
       paragraphs: [
         "La cita empieza contigo, no con el niño. Qué notaste, desde cuándo, si alguien más en la familia tuvo lo mismo y cómo fue el embarazo y el parto cuando el motivo es de cadera o de columna.",
         "Después se lo evalúa a él, y conviene que venga con ropa cómoda y con las zapatillas que usa a diario. La suela gastada cuenta cómo pisa mejor que cualquier descripción.",
@@ -178,7 +178,7 @@ export const ortopediaInfantil: ServicePage = {
     {
       id: "condiciones",
       level: 2,
-      heading: "Qué condiciones se tratan",
+      heading: "Qué condiciones infantiles se tratan",
       paragraphs: [
         "Displasia del desarrollo de la cadera, pie plano flexible y rígido, pie equino varo, marcha con rotación interna, piernas en X y arqueadas, diferencia de longitud entre las piernas.",
         "De columna: escoliosis y cifosis en la etapa de crecimiento, que es cuando el control periódico define casi todo, y el dolor de espalda del adolescente, que no es normal y merece evaluación.",
@@ -198,7 +198,7 @@ export const ortopediaInfantil: ServicePage = {
     {
       id: "donde-se-atiende",
       level: 2,
-      heading: "Dónde se atiende",
+      heading: "En qué sedes se atiende a niños",
       paragraphs: [
         "En el consultorio de Surco, en la Clínica Ricardo Palma, en la Clínica Sanna La Molina y en la Clínica Padre Luis Tezza.",
         "Cada sede tiene su página con dirección, horario y cómo llegar. Con niños conviene mirar también el horario: una cita a la hora de la siesta rinde bastante menos.",
@@ -216,7 +216,7 @@ export const ortopediaInfantil: ServicePage = {
     {
       id: "como-agendar",
       level: 2,
-      heading: "Cómo agendar una cita",
+      heading: "Cómo pedir la cita del niño",
       paragraphs: [
         "Puedes reservar desde el formulario del sitio o escribir contando el caso, que con niños suele ser más cómodo porque hay antecedentes que explicar.",
         "Trae las radiografías previas, el carné de control del pediatra si lo tienes a mano y las zapatillas de uso diario. Con eso la primera cita suele alcanzar para cerrar el diagnóstico.",
