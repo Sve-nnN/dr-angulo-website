@@ -49,11 +49,11 @@ Reglas de uso:
 **Requirements**: SLUG-01, SLUG-02, SLUG-03, SLUG-04, LINK-01, LINK-02, LINK-03, SCH-01, SCH-02
 **Issues cerrados**: #2, #3, #4, #5, #6, #10, #11
 **Success Criteria** (qué debe ser TRUE):
-  1. `/blog/5-sintomas-de-columna-que-no-debes-ignorar` y `/blog/miedo-a-operarte-de-la-columna-5-cosas-que-debes-saber` ya no existen como destino: sus temas viven en URLs que los nombran, los slugs viejos responden un único 301 al nuevo sin cadena intermedia, y ni el sitemap ni un solo enlace interno apunta al slug viejo.
+  1. `/blog/5-sintomas-de-columna-que-no-debes-ignorar` y `/blog/miedo-a-operarte-de-la-columna-5-cosas-que-debes-saber` ya no existen como destino: sus temas viven en URLs que los nombran, los slugs viejos responden una única redirección permanente al nuevo sin cadena intermedia (308, que es lo que emite `permanent: true` en esta versión de Next y lo que ya devuelven las tres redirecciones de la fase 14; Google la consolida igual que un 301), y ni el sitemap ni un solo enlace interno apunta al slug viejo.
   2. `/preguntas-frecuentes` es una FAQ de punta a punta —URL, title y H1 sobre lo mismo— y el contenido de "reumatólogo o traumatólogo" se lee en su propia URL con su propio title y su propio H1.
   3. Ningún anchor interno del sitio es una keyword cruda, un superlativo ni una especialidad que el doctor no ejerce: no queda ni "mejor neurocirujano de columna lima", ni "cirugía de columna cerca de mí", ni "artrosis traumatologo o reumatologo".
   4. Un paciente que llega a lumbalgia o a ciática encuentra dolor, autocuidado y cuándo consultar, con un enlace hacia hernia discal; la decisión quirúrgica se desarrolla solo en `/servicios/hernia-discal`.
-  5. Ninguna secuencia de H2 se repite palabra por palabra en más de dos páginas, y cada post del blog declara `about` apuntando a su propia entidad `MedicalCondition`, no a la de hernia discal. No queda ningún `FAQPage` de una sola pregunta en el sitio.
+  5. Ninguna secuencia de H2 se repite palabra por palabra en más de dos páginas, y cada post del blog declara `about` apuntando a su propia entidad de tema y no a la de hernia discal, con el tipo que le corresponde: `MedicalCondition` para lumbalgia, ciática y artrosis, `MedicalProcedure` para el post de cirugía y `MedicalSpecialty` para el de reumatólogo o traumatólogo. No queda ningún `FAQPage` de una sola pregunta en el sitio.
 **Plans**: 6 plans
 
 Plans:

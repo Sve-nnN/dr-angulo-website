@@ -20,7 +20,7 @@
 ### Alineación de URL, title y contenido
 
 - [ ] **SLUG-01**: Un paciente que ve la URL de un post del blog en la SERP encuentra el tema que esa URL anuncia (#2)
-- [ ] **SLUG-02**: Los slugs viejos del blog redirigen con un solo 301 al slug nuevo, sin cadenas ni 404, y ningún enlace interno ni el sitemap apuntan a los viejos (#2)
+- [ ] **SLUG-02**: Los slugs viejos del blog redirigen con una sola redirección permanente al slug nuevo, sin cadenas ni 404 (308 vía `permanent: true`, consistente con las tres redirecciones ya existentes), y ningún enlace interno ni el sitemap apuntan a los viejos (#2)
 - [ ] **SLUG-03**: `/preguntas-frecuentes` presenta URL, title y H1 sobre el mismo tema (#3)
 - [ ] **SLUG-04**: El contenido de "reumatólogo o traumatólogo" vive en su propia URL, con su title y su H1 alineados (#3)
 
