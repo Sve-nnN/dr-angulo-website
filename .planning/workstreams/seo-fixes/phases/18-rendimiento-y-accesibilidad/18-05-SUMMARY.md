@@ -182,15 +182,45 @@ El menú era lo que había que mirar: sacar 158.571 B de contenido del navegador
 
 **Accesibilidad: 1,00 en el sitio entero**, no solo en las tres rutas del plan 18-01. El `target-size` que se había anotado como sospechoso de artefacto local desapareció, lo que cerró el punto 4 de `deferred-items.md` sin esperar al deploy.
 
-### Una observación abierta, que no bloquea
+### El 0,67 de `/privacidad` era ruido: no hay regresión
 
-En la misma corrida `/privacidad` midió 0,67 con 2.054 ms de TBT, cuando venía en 0,93 y 1,00. Todos los LCP del sitio subieron en esa corrida, lo que apunta a carga de máquina. **Se está midiendo la mediana antes de llamarlo regresión**, que es la disciplina que esta fase se exigió desde el principio.
+En una corrida `/privacidad` midió 0,67 con 2.054 ms de TBT, cuando venía en 0,93 y 1,00. Se midió la mediana antes de llamarlo regresión, que es la disciplina que esta fase se exigió desde el principio:
 
-Lo que se puede afirmar desde el código: después de este plan `/privacidad` es la ruta con **menos** chunks del sitio (11) y el total más bajo (649.778 B). No recibió ningún chunk nuevo ni creció en ninguno. Si el número se repite, el grafo de módulos de esta ruta no es donde buscar.
+| Corrida | Performance | TBT |
+|---|---|---|
+| 1 | 0,93 | 21 ms |
+| 2 | **0,67** | **2.054 ms** |
+| 3 | 0,90 | 225 ms |
+| **Mediana** | **0,90** | **225 ms** |
+
+**El 0,67 fue atípico y este plan no regresionó nada.** La lectura desde el código lo respaldaba desde el principio: después de este plan `/privacidad` es la ruta con **menos** chunks del sitio (11) y el total más bajo (649.778 B). No recibió ningún chunk nuevo ni creció en ninguno; solo perdió.
+
+**Una sola corrida lo habría reportado como regresión de este plan.** Es la tercera vez en la fase que la regla de la mediana evita una atribución falsa.
+
+## Qué quedó verificado y qué se difiere a producción
+
+El entorno de medición de esta fase tiene una varianza de hasta **97×** en el TBT de
+una misma ruta sin cambios de código: `/privacidad` dio 21 ms, 2.054 ms y 225 ms en
+tres corridas consecutivas. Los números crudos y el análisis están en
+`18-MEASUREMENT-RELIABILITY.md`.
+
+Eso obliga a separar lo probado de lo diferido, y este SUMMARY lo hace en vez de
+declarar todo cerrado:
+
+| | Qué | Por qué es firme o no |
+|---|---|---|
+| **Verificado** | **137.971 B menos de JavaScript por ruta en las 24** | **No es laboratorio: son bytes servidos.** Se cuentan con `wc -c` sobre `.next/static/chunks/` cruzados con los documentos que los referencian, no con un cronómetro. Es el número central de este plan y es firme |
+| **Verificado** | Las dos sondas de código muerto en cero | Aserciones deterministas sobre el build |
+| **Verificado** | **CLS = 0 en las 24 rutas** | Idéntico en las tres corridas. Era el criterio duro |
+| **Verificado** | Hidratación intacta | Recorrido manual con navegador real, consola limpia |
+| **Verificado** | Accesibilidad 1,00 en el sitio entero | Aserciones sobre el árbol de accesibilidad, no mediciones de tiempo |
+| **Diferido a producción** | "El ahorro de *Reduce unused JavaScript* es menor a 15 KB" | Es la cifra que Lighthouse estima en laboratorio. Con esta varianza no se puede verificar acá |
+
+**La distinción importa poco en este plan y conviene decir por qué:** su criterio central se mide en bytes servidos, no en tiempo. El plan ya declaraba desde el objetivo que **no promete mejora de puntaje de Lighthouse**, así que la varianza del entorno no toca lo que este plan afirma.
 
 ## Estado del requisito
 
-**CWV-04 cerrado.** 137.971 B menos de JavaScript por ruta en las 24, las dos sondas en cero, el CLS intacto y la hidratación verificada a mano.
+**CWV-04 cerrado.** 137.971 B menos de JavaScript por ruta en las 24, las dos sondas en cero, el CLS intacto, la hidratación verificada a mano y la sospecha de regresión descartada por mediana.
 
 ## Self-Check: PASSED
 

@@ -129,6 +129,19 @@ Las cinco en 0 en cada uno de los tres commits, no solo al final: `build`, `cont
 | T-18-03 | Los literales `Días y horario de atención` y `Dirección` siguen presentes, sin reescritura. |
 | T-18-SC | Ningún paquete instalado en este plan. |
 
+## Fiabilidad de la medición
+
+El entorno de medición de esta fase tiene una varianza de hasta 97× en el TBT de una misma ruta sin cambios de código (`18-MEASUREMENT-RELIABILITY.md`). **No afecta a este plan**, y vale la pena decir por qué: A11Y-01 no se mide en tiempo.
+
+| Qué | Por qué es firme |
+|---|---|
+| Accesibilidad 1,00 en `/`, `/agendar` y `/sedes`, y en el resto del sitio | Aserciones sobre el árbol de accesibilidad renderizado. Estable en las corridas 2 y 3 |
+| `color-contrast`, `definition-list`, `dlitem` y `heading-order` en verde en las 24 rutas | Auditorías booleanas, no mediciones de tiempo |
+| CLS en 0 en las 24 rutas | Idéntico en las tres corridas |
+| Los conteos del HTML prerenderizado | `grep` sobre `.next/server/app/**`, deterministas |
+
+**Ningún criterio de este plan quedó diferido a producción.**
+
 ## Estado del requisito
 
 **A11Y-01 cerrado.**

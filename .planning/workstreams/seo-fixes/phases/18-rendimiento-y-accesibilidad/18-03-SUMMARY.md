@@ -137,9 +137,37 @@ Este plan no modificó código, así que las mitigaciones de tampering sobre el 
 
 Las cinco en 0: `build`, `content:check`, `seo:check`, `sedes:check` y `tsc --noEmit`.
 
+
+## Qué quedó verificado y qué se difiere a producción
+
+El entorno de medición de esta fase tiene una varianza de hasta **97×** en el TBT de
+una misma ruta sin cambios de código: `/privacidad` dio 21 ms, 2.054 ms y 225 ms en
+tres corridas consecutivas. Los números crudos y el análisis están en
+`18-MEASUREMENT-RELIABILITY.md`.
+
+Eso obliga a separar lo probado de lo diferido, y este SUMMARY lo hace en vez de
+declarar todo cerrado:
+
+| | Qué | Por qué es firme o no |
+|---|---|---|
+| **Verificado** | Los tres desenlaces de atribución | Ninguno se apoya en un umbral: son lectura de código, comparación de volumen de DOM y un TBT de cero repetido |
+| **Verificado** | CLS de `/testimonios` en 0 | Idéntico en las tres corridas |
+| **Diferido a producción** | "Performance por encima de 0,90" y "TBT por debajo de 200 ms" | Umbrales de laboratorio, no verificables con esta varianza. Y dependen de la Cache Rule del plan 18-02, que no existe en un build local |
+| **No producido** | Línea base viva de tres corridas y cobertura de Coverage | Necesitan navegador, que la sesión de ejecución no tenía |
+
+**La tercera evidencia del NO REPRODUCE salió justamente de la varianza.**
+`/testimonios` dio **TBT de 0 ms en las tres corridas**, incluida aquella en la que
+`/privacidad` marcó 2.054 ms. Los 850 ms de la auditoría no aparecen ni una vez.
+
+Ese uso de un TBT es legítimo aunque los umbrales de TBT no lo sean, y la diferencia
+importa: la varianza empuja el TBT **hacia arriba desde el piso, nunca por debajo de
+cero**. Un TBT alto no prueba nada porque puede ser la máquina; un TBT de cero tres
+veces seguidas sí prueba que no hay trabajo bloqueante, porque ninguna carga de
+máquina esconde 850 ms de trabajo real hacia abajo.
+
 ## Estado del requisito
 
-**CWV-02 cerrado en su atribución.** Los tres fenómenos tienen desenlace escrito con evidencia.
+**CWV-02 cerrado en su atribución.** Los tres fenómenos tienen desenlace escrito con evidencia, y ahora por tres vías independientes.
 
 Lo que queda abierto no es diagnóstico sino instrumentación: la línea base viva y la cobertura de Coverage, que necesitan navegador. Y la mejora del LCP en segundos, que **depende de que Juan aplique la Cache Rule del plan 18-02** y no de nada que se pueda hacer en esta ruta.
 

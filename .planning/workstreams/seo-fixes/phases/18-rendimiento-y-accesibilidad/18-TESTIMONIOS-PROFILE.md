@@ -327,6 +327,23 @@ tienen 1,38 veces sus nodos y también 0 ms, con puntajes de 0,96.
 `/testimonios` es la segunda página más chica de la muestra. Solo `/privacidad` la
 supera en liviandad, y `/privacidad` puntúa 1,00.
 
+### Tercera evidencia, agregada el 2026-08-24: el TBT medido tres veces da cero
+
+`/testimonios` dio **TBT de 0 ms en las tres corridas** de Unlighthouse, incluida la
+corrida en la que `/privacidad` marcó 2.054 ms por carga de máquina. **Los 850 ms que
+la auditoría del 2026-08-23 reportó para esta ruta no aparecen ni una sola vez.**
+
+Es la evidencia más directa de las tres, porque mide exactamente la cifra que la
+auditoría reportó y la mide repetidamente.
+
+**Por qué este uso de un TBT es legítimo aunque los umbrales de TBT no lo sean.** El
+entorno de medición tiene una varianza de hasta 97× en la misma ruta
+(`18-MEASUREMENT-RELIABILITY.md`), así que un TBT alto no prueba nada: puede ser la
+máquina. Pero la varianza empuja el TBT **hacia arriba desde el piso, nunca por
+debajo de cero**. Un TBT de cero en tres corridas seguidas sí prueba que no hay
+trabajo bloqueante que medir, porque ninguna carga de máquina puede esconder 850 ms
+de trabajo real hacia abajo.
+
 ### Veredicto
 
 **Los 2,45 s de Style & Layout no son atribuibles a la estructura de esta ruta.** Si
@@ -338,10 +355,14 @@ CSS que esta página sirve hoy.
 Esta mitad se cierra entonces en **NO REPRODUCE**, igual que la del forced reflow,
 pero por una vía distinta y complementaria:
 
-| Mitad del fenómeno | Vía de cierre | Fuerza de la evidencia |
-|---|---|---|
-| 630 ms de forced reflow | Atribución de código: las cuatro lecturas de geometría del proyecto viven en `reels-carousel.tsx`, que no se monta en producción | **Prueba de imposibilidad.** No dice que hoy no aparece: dice por qué no puede aparecer. |
-| 2,45 s de Style & Layout | Comparación entre rutas: 2× el DOM y el mismo CSS dan 0 ms | **Evidencia fuerte por contradicción.** Una ruta más pesada con el mismo CSS no lo muestra. |
+| # | Vía de cierre | Tipo | Qué establece |
+|---|---|---|---|
+| 1 | Las cuatro lecturas de geometría del proyecto viven en `reels-carousel.tsx`, que no se monta en producción | **Prueba de imposibilidad** | Por qué el forced reflow *no puede* ocurrir |
+| 2 | La portada tiene 2,07× el DOM y la misma hoja de 47.276 B, y da 0 ms | **Contradicción** | Que el volumen de esta página no explica 2,45 s |
+| 3 | **TBT de 0 ms en tres corridas** | **Medición directa** | Que la métrica reportada, medida tres veces, da cero |
+
+Que tres vías de naturaleza distinta converjan en el mismo veredicto es lo que lo
+vuelve sólido. Ninguna sola habría bastado.
 
 ### El resto que esta vía no cubre, dicho de frente
 

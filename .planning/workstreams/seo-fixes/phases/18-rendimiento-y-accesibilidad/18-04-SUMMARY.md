@@ -126,6 +126,29 @@ Con la Cache Rule que 18-02 tenía redactada, la primera respuesta que el borde 
 
 Las cinco en 0 en cada commit: `build`, `content:check`, `seo:check`, `sedes:check` y `tsc --noEmit`.
 
+
+## Qué quedó verificado y qué se difiere a producción
+
+El entorno de medición de esta fase tiene una varianza de hasta **97×** en el TBT de
+una misma ruta sin cambios de código: `/privacidad` dio 21 ms, 2.054 ms y 225 ms en
+tres corridas consecutivas. Los números crudos y el análisis están en
+`18-MEASUREMENT-RELIABILITY.md`.
+
+Eso obliga a separar lo probado de lo diferido, y este SUMMARY lo hace en vez de
+declarar todo cerrado:
+
+| | Qué | Por qué es firme o no |
+|---|---|---|
+| **Verificado** | `lcp-discovery-insight` = 1, con `priorityHinted`, `requestDiscoverable` y `eagerlyLoaded` en `true` | Es un **checklist booleano sobre el marcado emitido**. La carga de máquina no lo mueve. Es el criterio real de este plan |
+| **Verificado** | CLS de `/sobre-el-doctor` y de la portada en 0 | Idéntico en las tres corridas |
+| **Verificado** | Formato, variante y peso servidos, y el enlace de precarga con su `fetchPriority` | Medición directa sobre bytes y sobre el HTML, no laboratorio |
+| **Verificado** | Cero props obsoletas de `Image` | Aserción determinista sobre el fuente |
+| **Diferido a producción** | El LCP en segundos | Medición de tiempo. `/sobre-el-doctor` dio 404, 257 y 0 ms de TBT en tres corridas sin cambios. Y el grueso del LCP de esta ruta es TTFB, que depende de la Cache Rule del plan 18-02 |
+
+**Que el criterio decisivo de este plan sea booleano y no un tiempo es lo que permite
+cerrarlo con confianza.** `lcp-discovery-insight` pregunta si el marcado emite lo que
+tiene que emitir, y esa respuesta no cambia según cuánta CPU haya libre.
+
 ## Estado del requisito
 
 **CWV-03 cerrado.**
