@@ -69,7 +69,7 @@ Fondo `--primary` = `#0E7C7E`:
 
 `text-white` sobre `--primary` llega a 5.00:1. Pasa AA con 0.50 de margen, y falla AAA (7:1). AAA no es criterio de esta fase: el requisito A11Y-01 pide 1,00 en Lighthouse, que audita AA.
 
-### Barrido de las 23 rutas
+### Barrido de las 24 rutas
 
 Barrido completo de `src/` por `text-white/NN`. **Cuatro ocurrencias, todas en la portada, todas sobre `bg-primary`, las cuatro fallan:**
 
@@ -111,7 +111,7 @@ Queda registrado como `⚠ unresolved` con la evidencia que lo cerraría: un mue
 
 ### Lo que hay que proteger
 
-**CLS = 0 en las 23 rutas.** Es el mejor número de Core Web Vitals que tiene el sitio y ninguna optimización de esta fase puede gastarlo. Un cambio que baje TBT de 850 ms a 150 ms pero suba CLS de 0 a 0,05 es un retroceso, no una mejora, y el verificador debe rechazarlo.
+**CLS = 0 en las 24 rutas.** Es el mejor número de Core Web Vitals que tiene el sitio y ninguna optimización de esta fase puede gastarlo. Un cambio que baje TBT de 850 ms a 150 ms pero suba CLS de 0 a 0,05 es un retroceso, no una mejora, y el verificador debe rechazarlo.
 
 ### Lectura del código, previa al perfilado
 
