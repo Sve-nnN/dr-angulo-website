@@ -1,8 +1,27 @@
 "use client";
 
 import { useSyncExternalStore } from "react";
+import dynamic from "next/dynamic";
 import Script from "next/script";
-import { GoogleAnalytics } from "@next/third-parties/google";
+
+/**
+ * `@next/third-parties` se carga bajo demanda, no en el grafo estático (CWV-04).
+ *
+ * El import estático metía la librería entera, Partytown incluido, en un chunk
+ * que descargaban 25 de los 26 documentos del build, aunque este componente
+ * devuelve `null` mientras el consentimiento no esté en `granted` y aunque
+ * `GA_ID` pueda no estar configurado. Con `dynamic()` el chunk se pide recién
+ * cuando el visitante acepta analítica. Medido el 2026-08-24: 6.913 bytes menos
+ * por ruta.
+ *
+ * El `dynamic()` va sin desactivar el render en servidor, que está prohibido en
+ * toda la fase 18. Acá no hace falta: `getConsentServerSnapshot()` devuelve
+ * `null`, así que este componente ya renderizaba `null` en el servidor y no hay
+ * marcado que preservar ni que reemplazar por un placeholder.
+ */
+const GoogleAnalytics = dynamic(() =>
+  import("@next/third-parties/google").then((m) => m.GoogleAnalytics)
+);
 import {
   getConsentServerSnapshot,
   getStoredConsent,

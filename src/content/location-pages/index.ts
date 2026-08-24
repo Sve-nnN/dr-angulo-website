@@ -27,6 +27,7 @@ import { clinicaRicardoPalma } from "./clinica-ricardo-palma";
 import { sannaLaMolina } from "./sanna-la-molina";
 import { clinicaTezza } from "./clinica-tezza";
 import type { LocationPage } from "./types";
+import { assertNavIndexMatches, locationNavItems } from "@/content/nav-index";
 
 export type { LocationPage };
 
@@ -36,6 +37,10 @@ export const locationPages: LocationPage[] = [
   sannaLaMolina,
   clinicaTezza,
 ];
+
+// Compuerta de sincronía con `src/content/nav-index.ts` (CWV-04). Mismo motivo
+// que en `service-pages/index.ts`: corre en el build, no en el navegador.
+assertNavIndexMatches("sede", locationNavItems, locationPages);
 
 /**
  * Une la entrada editorial con sus datos de NAP. Devuelve `undefined` si falta

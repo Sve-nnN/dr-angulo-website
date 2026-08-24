@@ -8,8 +8,7 @@ import { BookingCta } from "@/components/ui/booking-cta";
 import { ServicesMenu } from "@/components/layout/services-menu";
 import { cn } from "@/lib/utils";
 import { siteConfig } from "@/lib/site-config";
-import { servicePages } from "@/content/service-pages";
-import { locationPages } from "@/content/location-pages";
+import { serviceNavItems, locationNavItems } from "@/content/nav-index";
 
 /**
  * `label` es el texto del menú de escritorio, donde el espacio manda;
@@ -166,7 +165,7 @@ export function Header() {
             Servicios
           </Link>
           <ul className="ml-3 flex flex-col gap-0.5 border-l border-border pl-3">
-            {servicePages.map((page) => (
+            {serviceNavItems.map((page) => (
               <li key={page.slug}>
                 <Link
                   href={`/servicios/${page.slug}`}
@@ -192,7 +191,7 @@ export function Header() {
             </Link>
           ))}
           <ul className="ml-3 flex flex-col gap-0.5 border-l border-border pl-3">
-            {locationPages.map((page) => (
+            {locationNavItems.map((page) => (
               <li key={page.slug}>
                 <Link
                   href={`/sedes/${page.slug}`}
