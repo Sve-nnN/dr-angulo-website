@@ -51,16 +51,18 @@ Tres, y ninguno más:
 
 Tokens de `src/app/globals.css:3-28`. Ratios calculados con la fórmula de luminancia relativa de WCAG 2.1 sobre el color compuesto (`rgba(255,255,255,α)` sobre el fondo opaco).
 
+**Corrección del 2026-08-24:** la columna "Color compuesto" tenía el alfa invertido (daba el compuesto de `1-α` en vez de `α`). Los seis valores quedaron recalculados con `α*255 + (1-α)*fondo`: `text-white/85` sobre `#0E7C7E` es `#DBEBEC`, no `#B2D8D9`. **Los ratios de la tercera columna siempre estuvieron bien** y ningún veredicto de la tabla cambia: el error era solo de etiqueta.
+
 Fondo `--primary` = `#0E7C7E`:
 
 | Clase | Color compuesto | Ratio vs `--primary` | 4.5:1 (texto normal) | 3:1 (texto grande) |
 |-------|-----------------|----------------------|----------------------|---------------------|
-| `text-white/60` | `#6FB1B2` | 2.83:1 | ✗ | ✗ |
-| `text-white/70` | `#8AC1C2` | 3.29:1 | ✗ | ✓ |
-| `text-white/75` | `#97C9CA` | **3.53:1** | ✗ | ✓ |
-| `text-white/80` | `#A5D1D2` | 3.80:1 | ✗ | ✓ |
-| `text-white/85` | `#B2D8D9` | **4.07:1** | ✗ | ✓ |
-| `text-white/90` | `#C0E0E1` | 4.37:1 | ✗ | ✓ |
+| `text-white/60` | `#9FCBCB` | 2.83:1 | ✗ | ✗ |
+| `text-white/70` | `#B7D8D8` | 3.29:1 | ✗ | ✓ |
+| `text-white/75` | `#C3DEDF` | **3.53:1** | ✗ | ✓ |
+| `text-white/80` | `#CFE5E5` | 3.80:1 | ✗ | ✓ |
+| `text-white/85` | `#DBEBEC` | **4.07:1** | ✗ | ✓ |
+| `text-white/90` | `#E7F2F2` | 4.37:1 | ✗ | ✓ |
 | `text-white` | `#FFFFFF` | **5.00:1** | ✓ | ✓ |
 
 **Objetivo numérico: 4.5:1 para texto normal, 3:1 para texto grande.** Texto grande según WCAG = 24px o más en peso normal, o 18.66px o más en negrita. En este sitio `text-lg` es 18px en peso normal (`node_modules/tailwindcss/theme.css:353`), así que **no califica como texto grande y necesita 4.5:1**. Esa es la razón por la que el párrafo del hero falla: 18px no es "large text".
@@ -121,7 +123,7 @@ El perfilado con throttling 4x sigue siendo obligatorio (`18-CONTEXT.md`, "Perfi
 - `updateEdges()` (línea 20) lee `el.scrollWidth`, `el.clientWidth` y `el.scrollLeft` — tres propiedades que fuerzan layout síncrono.
 - Está enganchado a `onScroll` sin `requestAnimationFrame` (línea 72): un reflow forzado por evento de scroll.
 - Está enganchado a un `ResizeObserver` sobre el propio scroller (líneas 32-34). Ese observer llama a `setState`, el render puede cambiar la geometría y el observer vuelve a disparar: es un bucle observer → estado → layout → observer.
-- `scrollByCards()` (línea 41) lee `card.clientWidth` en cada clic.
+- `scrollByCards()` (línea 37) lee `card.clientWidth` en cada clic.
 
 **Sospechoso primario: `ReelsCarousel`.** El perfilado confirma o descarta; el contrato de abajo aplica igual sea quien sea.
 
