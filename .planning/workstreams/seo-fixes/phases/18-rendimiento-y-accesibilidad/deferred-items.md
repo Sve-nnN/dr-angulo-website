@@ -61,3 +61,34 @@ elemento LCP es la imagen, ese viaje entra directo en el camino crítico.
 invariante (`Accept` en la clave de caché) que se agregó a raíz de este mismo
 hallazgo. Queda anotado acá para que la medición de cierre del plan 18-04 lo tenga
 presente al separar efectos.
+
+---
+
+## 4. `target-size` en la navegación de escritorio, solo en el build local
+
+**Encontrado:** 2026-08-24, en la corrida de Unlighthouse del checkpoint del plan 18-01.
+**Estado:** artefacto de render local, a reverificar después del deploy. **No es regresión de la fase 18.**
+
+Tres rutas que ningún plan de esta fase tocó bajan de 1,00 en accesibilidad en el
+build local:
+
+| Ruta | Puntaje local |
+|---|---|
+| `/sobre-el-doctor` | 0,96 |
+| `/testimonios` | 0,96 |
+| `/sedes/clinica-ricardo-palma` | 0,97 |
+
+La auditoría que falla es **`target-size`** y el elemento es siempre el mismo:
+`header.sticky > div.mx-auto > nav.hidden > a.whitespace-nowrap`. Es la
+**navegación de escritorio, que en móvil está oculta por diseño** con `hidden`.
+
+**Por qué no se arregla acá:** contra producción esa auditoría pasa, con la misma
+emulación (412×823, DPR 1,75). Es el mismo build de la aplicación, así que la
+diferencia está en cómo se resuelve el `hidden` en el render local, no en el
+marcado. Y ninguno de los commits de la fase 18 toca `header.tsx` salvo la
+migración de `priority` a `preload` del logo, que no puede afectar el tamaño de un
+objetivo táctil.
+
+**Qué hacer:** reverificar después del deploy. Si en producción con el código nuevo
+`target-size` empieza a fallar de verdad, se abre como hallazgo de la fase 19,
+porque el arreglo tocaría el encabezado y eso no está sancionado en esta fase.

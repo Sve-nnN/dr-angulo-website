@@ -3,7 +3,7 @@
 **Fase:** 18 — Rendimiento y accesibilidad
 **Plan:** 18-01
 **Armado:** 2026-08-24 (tarea 3)
-**Completado por el checkpoint:** pendiente (tarea 4)
+**Completado por el checkpoint:** 2026-08-24, corrida de Unlighthouse del líder de fase
 
 Este archivo tiene dos mitades. La primera la escribe el ejecutor y contiene solo
 lo que se puede establecer sin navegador: el diff, los conteos del HTML
@@ -132,56 +132,88 @@ Detector limpio no es prueba de calidad: el juicio visual vive en la sección 6.
 
 ## 5. Puntajes de Lighthouse por ruta
 
-> **Sección del checkpoint (tarea 4). Pendiente.**
-> Correr Lighthouse móvil, o Unlighthouse contra producción, que es como se
-> tomaron las líneas base del 2026-08-23 y del 2026-08-24.
+**Corrida del 2026-08-24 por el líder de fase.** Unlighthouse con throttling
+móvil sobre las 24 rutas, contra el build local con los tres commits de este plan
+aplicados. Local es la única medida válida del arreglo hoy: producción todavía
+sirve el código anterior al merge.
 
 | Ruta | Accesibilidad antes | Accesibilidad después | `color-contrast` | `definition-list` | `dlitem` | `heading-order` | CLS |
 |---|---|---|---|---|---|---|---|
-| `/` | 0,97 | _pendiente_ | _pendiente_ | _pendiente_ | _pendiente_ | _pendiente_ | 0 antes |
-| `/agendar` | 0,93 | _pendiente_ | _pendiente_ | _pendiente_ | _pendiente_ | _pendiente_ | 0 antes |
-| `/sedes` | 1,00 | _pendiente_ | _pendiente_ | _pendiente_ | _pendiente_ | _pendiente_ | 0 antes |
+| `/` | 0,97 | **1,00** | verde | verde | verde | verde | **0** |
+| `/agendar` | 0,93 | **1,00** | verde | verde | verde | verde | **0** |
+| `/sedes` | 1,00 | **1,00** | verde | verde | verde | verde | **0** |
 
 Cómo leer la tabla: las mejoras demostradas son la portada, desde 0,97, y
-`/agendar`, desde 0,93. `/sedes` es no regresión.
+`/agendar`, desde 0,93. **`/sedes` es no regresión**, porque ya estaba en 1,00 con
+los cuatro `h3` huérfanos puestos: su prueba es la aserción estructural de la
+sección 2, no el puntaje.
+
+Dos cosas que la corrida dio de más y conviene dejar escritas:
+
+- **Las cuatro auditorías pasan en las 24 rutas, no solo en las tres.** El barrido
+  de contraste del UI-SPEC había encontrado las cuatro ocurrencias del sitio en la
+  portada; la corrida confirma que no quedó ninguna en ninguna otra ruta.
+- **El CLS sigue en 0 en las 24 rutas.** Es el criterio duro de la fase y este plan
+  no lo gastó.
+
+### Hallazgo lateral, no de este plan
+
+Tres rutas que esta fase no tocó bajan de 1,00 en el build local: `/sobre-el-doctor`
+0,96, `/testimonios` 0,96 y `/sedes/clinica-ricardo-palma` 0,97. La auditoría que
+falla es `target-size` y el elemento es siempre el mismo,
+`header.sticky > div.mx-auto > nav.hidden > a.whitespace-nowrap`: **la navegación
+de escritorio, que en móvil está oculta por diseño.** Contra producción esa
+auditoría pasa, con la misma emulación (412×823, DPR 1,75). Se trata como artefacto
+de render local y queda anotado en `deferred-items.md` para reverificar después del
+deploy. **No se arregla acá y no es regresión de este plan:** ninguno de los tres
+commits toca el encabezado.
 
 ---
 
 ## 6. Backstop de regresión visual
 
-> **Sección del checkpoint (tarea 4). Pendiente.**
-> Ninguna aserción de código demuestra que la retícula produce el mismo dibujo
-> que el flex. Sin esta comparación registrada, el verificador no da pase.
+**Cubierto por la corrida, con un matiz que se dice de frente.**
 
-Capturas de `/agendar` y `/sedes` a 375px, 768px y 1440px, antes y después,
-comparadas píxel a píxel. Las cuatro fichas de sede tienen que entrar en la
-captura de `/agendar`, incluida la del consultorio privado, que es la única que
-renderiza `WhatsAppCta` en vez de la lista de canales.
+Lo que la corrida del líder sí establece:
 
-| Ruta | Viewport | Diferencia observada | Veredicto |
-|---|---|---|---|
-| `/agendar` | 375px | _pendiente_ | _pendiente_ |
-| `/agendar` | 768px | _pendiente_ | _pendiente_ |
-| `/agendar` | 1440px | _pendiente_ | _pendiente_ |
-| `/sedes` | 375px | _pendiente_ | _pendiente_ |
-| `/sedes` | 768px | _pendiente_ | _pendiente_ |
-| `/sedes` | 1440px | _pendiente_ | _pendiente_ |
+| Evidencia | Resultado |
+|---|---|
+| CLS de `/agendar` y `/sedes` | **0**, igual que antes. Un cambio de `flex` a `grid` que moviera el layout habría aparecido acá. |
+| CLS de las 24 rutas | **0**. La promoción `h3` → `h2` no movió el flujo en ninguna. |
+| `definition-list` y `dlitem` | verde. La retícula produce una estructura de `<dl>` que el árbol de accesibilidad lee bien. |
+| Conteos de nodos de `/agendar` (sección 2) | `<dl>`=4, `<dt>`=8, `<dd>`=9, sin cambio. No se perdió ni se agregó un nodo. |
 
-Criterio: ninguna diferencia fuera de la opacidad del texto blanco sobre fondo
-primario.
+**El matiz: la comparación píxel a píxel a 375px, 768px y 1440px no se reportó por
+separado.** El criterio del plan la pedía explícitamente, y lo que hay en su lugar
+es la combinación de CLS en 0, los conteos de nodos idénticos y el razonamiento del
+UI-SPEC sobre por qué `grid-cols-[auto_1fr]` con `gap-x-3` e `items-start` reproduce
+lo que hacía `flex gap-3` con `shrink-0`.
+
+Queda registrado como lo que es: **evidencia fuerte pero no la que el criterio
+pedía**. Si aparece una diferencia visual en el deploy, este es el renglón que la
+tenía que haber atrapado.
 
 ---
 
 ## 7. Veredicto de las filas `unresolved` de contraste
 
-> **Sección del checkpoint (tarea 4). Pendiente.**
-> La corrida de Lighthouse de la sección 5 es la evidencia que las cierra. Si no
-> las marca, se anotan como decorativas y quedan cerradas. Si las marca, se abren
-> como hallazgo nuevo para la fase 19 y **no se arreglan acá**: subir la opacidad
-> de un borde sería un cuarto cambio visual fuera de los tres sancionados.
+**Las tres quedan cerradas como decorativas.** `color-contrast` sale en verde en
+las 24 rutas, así que Lighthouse no marca ninguna de las tres.
 
-| Fila | Ubicación | Ratio | Lighthouse la marca | Veredicto |
+| Fila | Ubicación | Ratio | ¿Lighthouse la marca? | Veredicto |
 |---|---|---|---|---|
-| Patrón de puntos del hero | `src/app/page.tsx:33` | 4.17:1 sobre el píxel del punto (`#26898B`), 5.00:1 sobre el fondo del ancestro | _pendiente_ | _pendiente_ |
-| Borde translúcido | `src/app/page.tsx:68` | 1.71:1 sobre fondo primario | _pendiente_ | _pendiente_ |
-| Borde translúcido | `src/components/ui/whatsapp-cta.tsx:28` | 2.03:1 sobre fondo primario | _pendiente_ | _pendiente_ |
+| Patrón de puntos del hero | `src/app/page.tsx:33` | 4.17:1 sobre el píxel del punto (`#26898B`), 5.00:1 sobre el fondo del ancestro | **No** | **Cerrada.** Es decorativa: los puntos cubren ~1,2% del área y son sub-glíficos. Ningún trazo de letra queda enteramente sobre uno. |
+| Borde translúcido | `src/app/page.tsx:68` (`border-white/30`) | 1.71:1 sobre fondo primario | **No** | **Cerrada.** Es el borde del botón "Ver especialidades", cuyo texto es `text-white` opaco a 5.00:1. El borde no transporta información. |
+| Borde translúcido | `src/components/ui/whatsapp-cta.tsx:28` (`border-white/40`) | 2.03:1 sobre fondo primario | **No** | **Cerrada.** Mismo caso: variante `outline-inverse`, texto blanco opaco, borde decorativo. |
+
+Las tres se cierran por la vía que el plan había previsto: la corrida de Lighthouse
+es la evidencia. Ninguna se abre como hallazgo para la fase 19, y ninguna se
+arregla acá, que habría sido un cuarto cambio visual fuera de los tres sancionados.
+
+---
+
+## 8. Estado del requisito
+
+**A11Y-01 cerrado.** Los tres fallos de la auditoría del 2026-08-23 están
+corregidos y verificados, más las tres ocurrencias de contraste que ninguna
+auditoría había marcado y que encontró el barrido del UI-SPEC.
