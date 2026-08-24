@@ -19,19 +19,19 @@ export const clinicaRicardoPalma: LocationPage = {
   conditionsLead:
     "En esta sede el doctor evalúa dolor cervical y lumbar, hernia discal, estenosis espinal, escoliosis y las consultas de traumatología general y ortopedia infantil. Si quieres entender tu condición antes de la cita, cada guía explica qué es, cómo se diagnostica y qué opciones de tratamiento existen.",
   publishedAt: "2026-08-10",
-  updatedAt: "2026-08-13",
+  updatedAt: "2026-08-24",
   ctaBanner: {
     heading: "¿Quieres que un cirujano de columna revise tu caso?",
     body: "La cita en la Clínica Ricardo Palma la maneja la central de citas de la clínica. En la página de agenda puedes ver los días de atención de todas las sedes antes de llamar.",
   },
   bannerAfterSectionId: "como-llegar",
   outboundLinks: [
-    { href: "/sedes", anchor: "Sedes donde atiende el Dr. Juan Carlos Angulo en Lima" },
-    { href: "/servicios", anchor: "mejor neurocirujano de columna lima" },
-    { href: "/servicios/ortopedia-infantil", anchor: "ortopedia infantil cerca de mí" },
+    { href: "/sedes", anchor: "Sedes donde atiende el Dr. Juan Angulo" },
+    { href: "/servicios", anchor: "Qué condiciones se tratan en cada especialidad" },
+    { href: "/servicios/ortopedia-infantil", anchor: "Ortopedia infantil: qué se evalúa en un niño" },
     { href: "/agendar", anchor: "Agendar cita" },
-    { href: "/contacto", anchor: "Contacto y Citas en Lima" },
-    { href: "/", anchor: "traumatólogo ortopedia infantil" },
+    { href: "/contacto", anchor: "Contacto y citas en Lima" },
+    { href: "/", anchor: "Qué atiende la consulta del Dr. Juan Angulo" },
   ],
   sections: [
     {

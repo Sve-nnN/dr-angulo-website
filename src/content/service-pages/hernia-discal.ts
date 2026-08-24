@@ -14,12 +14,12 @@ export const herniaDiscal: ServicePage = {
     "Protrusión discal",
   ],
   publishedAt: "2026-08-10",
-  updatedAt: "2026-08-13",
+  updatedAt: "2026-08-24",
   format: "guia-clinica",
   describesSurgery: true,
   relatedPosts: [
-    "5-sintomas-de-columna-que-no-debes-ignorar",
-    "miedo-a-operarte-de-la-columna-5-cosas-que-debes-saber",
+    "ciatica",
+    "cirugia-de-columna",
   ],
   ctaBanner: {
     heading: "¿Tu dolor baja por la pierna?",
@@ -34,14 +34,14 @@ export const herniaDiscal: ServicePage = {
   // banner.
   bannerAfterSectionId: "sintomas--cuales-son-los-sintomas-de-una-hernia-de-disco",
   outboundLinks: [
-    { href: "/servicios/escoliosis-y-deformidades", anchor: "escoliosis dorsal" },
-    { href: "/servicios/estenosis-espinal", anchor: "estenosis espinal cuidado personal" },
-    { href: "/sedes/clinica-ricardo-palma", anchor: "cirugía de columna san isidro" },
-    { href: "/sedes/clinica-tezza", anchor: "ortopedia clínica tezza" },
-    { href: "/sedes/consultorio-privado", anchor: "traumatología surco" },
-    { href: "/sedes/sanna-la-molina", anchor: "cirugía de columna la molina" },
+    { href: "/servicios/escoliosis-y-deformidades", anchor: "Guía sobre la escoliosis y otras deformidades" },
+    { href: "/servicios/estenosis-espinal", anchor: "Guía sobre la estenosis espinal" },
+    { href: "/sedes/clinica-ricardo-palma", anchor: "Clínica Ricardo Palma, en San Isidro" },
+    { href: "/sedes/clinica-tezza", anchor: "Clínica Padre Luis Tezza, en Surco" },
+    { href: "/sedes/consultorio-privado", anchor: "Consultorio privado, en Surco" },
+    { href: "/sedes/sanna-la-molina", anchor: "Clínica Sanna, en La Molina" },
     { href: "/agendar", anchor: "Agendar cita" },
-    { href: "/servicios", anchor: "traumatólogo de columna" },
+    { href: "/servicios", anchor: "Qué condiciones se tratan en cada especialidad" },
   ],
   sections: [
     {

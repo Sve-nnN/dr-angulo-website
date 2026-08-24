@@ -19,19 +19,19 @@ export const sannaLaMolina: LocationPage = {
   conditionsLead:
     "En esta sede el doctor evalúa dolor cervical y lumbar, hernia discal, estenosis espinal, escoliosis y las consultas de traumatología general y ortopedia infantil. Si quieres entender tu condición antes de la cita, cada guía explica qué es, cómo se diagnostica y qué opciones de tratamiento existen.",
   publishedAt: "2026-08-10",
-  updatedAt: "2026-08-13",
+  updatedAt: "2026-08-24",
   ctaBanner: {
     heading: "Una consulta de columna en La Molina",
     body: "La cita en Sanna La Molina la da la central de citas de la clínica. En la página de agenda ves los días de atención de todas las sedes antes de llamar.",
   },
   bannerAfterSectionId: "como-llegar",
   outboundLinks: [
-    { href: "/sedes", anchor: "Sedes donde atiende el Dr. Juan Carlos Angulo en Lima" },
-    { href: "/servicios", anchor: "cirugía de columna cerca de mí" },
-    { href: "/servicios/ortopedia-infantil", anchor: "medico ortopedia infantil" },
+    { href: "/sedes", anchor: "Sedes donde atiende el Dr. Juan Angulo" },
+    { href: "/servicios", anchor: "Qué condiciones se tratan en cada especialidad" },
+    { href: "/servicios/ortopedia-infantil", anchor: "Ortopedia infantil: qué se evalúa en un niño" },
     { href: "/agendar", anchor: "Agendar cita" },
-    { href: "/contacto", anchor: "Contacto y Citas en Lima" },
-    { href: "/", anchor: "traumatología lima" },
+    { href: "/contacto", anchor: "Contacto y citas en Lima" },
+    { href: "/", anchor: "Qué atiende la consulta del Dr. Juan Angulo" },
   ],
   sections: [
     {

@@ -8,10 +8,12 @@
  */
 
 import type { ServicePage, ServiceSectionItem } from "@/content/service-pages";
-import { post5SintomasDeColumnaQueNoDebesIgnorar } from "./5-sintomas-de-columna-que-no-debes-ignorar";
-import { postMiedoAOperarteDeLaColumna5CosasQueDebesSaber } from "./miedo-a-operarte-de-la-columna-5-cosas-que-debes-saber";
+import type { ProcedureApproachSlug } from "@/content/services";
+import { postCiatica } from "./ciatica";
+import { postCirugiaDeColumna } from "./cirugia-de-columna";
 import { postArtrosis } from "./artrosis";
 import { postLumbalgia } from "./lumbalgia";
+import { postReumatologoOTraumatologo } from "./reumatologo-o-traumatologo";
 
 /**
  * Sección de un post, plana y con el mismo modelo que las guías: el nivel 3 es
@@ -37,6 +39,41 @@ export type BlogSection = {
   items?: ServiceSectionItem[];
 };
 
+/**
+ * Miembro de la enumeración `MedicalSpecialty` de schema.org, en forma canónica
+ * de URL.
+ *
+ * `MedicalSpecialty` es una enumeración cerrada, no un tipo de nombre libre: un
+ * `{ "@type": "MedicalSpecialty", name: "Traumatología" }` no afirma nada que un
+ * validador pueda resolver. Por eso el tipo admite URLs y no cadenas sueltas, el
+ * mismo criterio que ya aplica `MEDICAL_SPECIALTIES` en
+ * `src/components/structured-data.tsx`.
+ *
+ * Van solo los miembros que el sitio usa hoy. Para agregar otro hay que
+ * comprobarlo antes contra la enumeración: `Orthopedic`, por ejemplo, **no**
+ * existe en schema.org, y el dominio de la traumatología lo cubre
+ * `Musculoskeletal`.
+ */
+export type MedicalSpecialtyUrl =
+  | "https://schema.org/Musculoskeletal"
+  | "https://schema.org/Rheumatologic";
+
+/**
+ * Entidad sobre la que trata un post. Es lo que alimenta el `about` del
+ * marcado, y por eso está separada de `relatedService`: una cosa es de qué
+ * trata el texto y otra a dónde manda al lector.
+ *
+ * `procedure-ref` no lleva `name` a propósito. El nombre del procedimiento vive
+ * en el nodo que declara el grafo raíz; repetirlo acá abriría la puerta a que
+ * los dos terminen diciendo cosas distintas. Su `procedureSlug` se deriva de
+ * `procedureApproaches`, así que un abordaje renombrado rompe la compilación en
+ * vez de publicar un `@id` colgado.
+ */
+export type BlogTopicEntity =
+  | { kind: "condition"; name: string; alternateNames?: string[] }
+  | { kind: "procedure-ref"; procedureSlug: ProcedureApproachSlug }
+  | { kind: "specialty"; specialty: MedicalSpecialtyUrl };
+
 /** Enlace interno de salida hacia el silo clínico. */
 export type BlogOutboundLink = {
   href: string;
@@ -57,11 +94,21 @@ export type BlogPost = {
   publishedAt: string;
   updatedAt: string;
   /**
-   * Guía del silo a la que empuja este post. Opcional: hay temas cuyo destino
-   * natural es el hub `/servicios` y no una guía concreta, y forzar el campo
-   * obligaría a inventarles una guía que la matriz de enlazado no les dio.
+   * Guía del silo a la que empuja este post. Gobierna solo la navegación: es el
+   * destino del enlace "Leer la guía completa", y no alimenta ninguna
+   * afirmación de tema del marcado. Para eso está `topicEntities`.
+   *
+   * Opcional: hay temas cuyo destino natural es el hub `/servicios` y no una
+   * guía concreta, y forzar el campo obligaría a inventarles una guía que la
+   * matriz de enlazado no les dio.
    */
   relatedService?: ServicePage["slug"];
+  /**
+   * De qué trata el post, en forma de `BlogTopicEntity`. Arreglo porque un
+   * texto puede tratar sobre más de una entidad, como el de cirugía con sus dos
+   * abordajes.
+   */
+  topicEntities?: BlogTopicEntity[];
   outboundLinks?: BlogOutboundLink[];
   ctaBanner: { heading: string; body: string };
   /**
@@ -76,8 +123,9 @@ export type BlogPost = {
 };
 
 export const blogPosts: BlogPost[] = [
-  post5SintomasDeColumnaQueNoDebesIgnorar,
-  postMiedoAOperarteDeLaColumna5CosasQueDebesSaber,
+  postCiatica,
+  postCirugiaDeColumna,
   postArtrosis,
   postLumbalgia,
+  postReumatologoOTraumatologo,
 ];
