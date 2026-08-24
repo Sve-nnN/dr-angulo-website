@@ -166,7 +166,6 @@ const MANIFEST = [
   {
     route: "/preguntas-frecuentes",
     type: "guia",
-    format: "guia-clinica",
   },
 ];
 
