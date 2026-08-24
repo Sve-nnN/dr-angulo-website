@@ -41,7 +41,7 @@
 - [ ] **CWV-02**: `/testimonios` puntúa por encima de 0,90 en performance, con TBT por debajo de 200 ms (#8)
 - [ ] **CWV-03**: La imagen LCP de `/sobre-el-doctor` se precarga con prioridad alta y en formato moderno (#9)
 - [ ] **CWV-04**: El bundle compartido no arrastra JavaScript sin usar por encima de 15 KB ni polyfills legacy (#13)
-- [ ] **CWV-05**: La imagen OpenGraph pesa menos de 200 KB sin degradar la vista previa en WhatsApp (#14)
+- [~] **CWV-05**: La imagen OpenGraph pesa menos de 200 KB sin degradar la vista previa en WhatsApp (#14) — **a cargo de Juan** (decisión del 2026-08-24), fuera del alcance de la fase 18. No existe un archivo que comprimir: la genera Next en build desde `src/lib/og-card.tsx`, que alimenta 15 archivos `src/app/**/opengraph-image.tsx`
 
 ### Accesibilidad
 
@@ -103,7 +103,7 @@ Completada al crear el roadmap del 2026-08-23. 22 de 22 requisitos mapeados, cad
 | CWV-02 | #8 | Fase 18 | Pending |
 | CWV-03 | #9 | Fase 18 | Pending |
 | CWV-04 | #13 | Fase 18 | Pending |
-| CWV-05 | #14 | Fase 18 | Pending |
+| CWV-05 | #14 | — | Fuera de alcance, a cargo de Juan |
 | A11Y-01 | #12 | Fase 18 | Pending |
 | TRUST-01 | #15 | Fase 19 | Pending |
 | TRUST-02 | #18 | Fase 19 | Pending |

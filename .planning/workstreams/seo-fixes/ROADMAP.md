@@ -85,7 +85,7 @@ Reglas de uso:
 ### Phase 18: Rendimiento y accesibilidad
 **Goal**: El sitio responde rápido en móvil y no deja fuera a nadie por contraste ni por estructura de la página.
 **Depends on**: Nothing (independiente del trabajo de contenido; se puede correr en cualquier punto del milestone)
-**Requirements**: CWV-01, CWV-02, CWV-03, CWV-04, CWV-05, A11Y-01
+**Requirements**: CWV-01, CWV-02, CWV-03, CWV-04, A11Y-01 (CWV-05 salió del alcance el 2026-08-24: queda a cargo de Juan)
 **Issues cerrados**: #7, #8, #9, #12, #13, #14
 **Success Criteria** (qué debe ser TRUE):
   1. El HTML de las páginas estáticas responde con `cf-cache-status: HIT` desde el borde de Cloudflare y el TTFB de la portada queda por debajo de 300 ms, contra los 630 ms medidos el 2026-08-23.
