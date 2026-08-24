@@ -22,7 +22,7 @@ export const hubServicios: StaticPage = {
     {
       id: "que-se-atiende",
       level: 2,
-      heading: "Qué se atiende",
+      heading: "Qué cubre esta consulta",
       paragraphs: [
         "Esta es la parte de la consulta dedicada a la columna, del cuello al sacro: cervical, dorsal y lumbar.",
         "Las enfermedades que más llegan son la hernia discal, la estenosis o canal estrecho, la escoliosis y las deformidades del adulto, y el dolor lumbar que ya lleva meses sin ceder. Cada una tiene su guía completa en este mismo sitio, con síntomas, diagnóstico y alternativas.",
@@ -122,7 +122,7 @@ export const hubServicios: StaticPage = {
     {
       id: "como-es-la-consulta",
       level: 2,
-      heading: "Cómo es la consulta",
+      heading: "Cómo se desarrolla la primera cita",
       paragraphs: [
         "Empieza por tu relato, que en columna orienta muchísimo: desde cuándo, hasta dónde baja el dolor, qué gesto lo dispara y hacia dónde viene yendo en las últimas semanas.",
         "Sigue el examen físico y recién después la imagen. La resonancia se interpreta contra lo que muestran tus síntomas, nunca sola, porque buena parte de las resonancias de gente sin dolor también muestra discos alterados.",
@@ -132,7 +132,7 @@ export const hubServicios: StaticPage = {
     {
       id: "condiciones",
       level: 2,
-      heading: "Qué condiciones se tratan",
+      heading: "Qué condiciones entran en cada especialidad",
       paragraphs: [
         "Hernia discal, estenosis espinal o canal estrecho, escoliosis y deformidades de la columna del adulto, lumbalgia y cervicalgia persistentes, y las secuelas de fracturas vertebrales.",
         "Cada una de esas condiciones tiene su guía propia en el sitio, escrita para que llegues a la cita sabiendo de qué se está hablando. Este hub las nombra y reparte; el detalle vive en cada guía.",
@@ -142,7 +142,7 @@ export const hubServicios: StaticPage = {
     {
       id: "donde-se-atiende",
       level: 2,
-      heading: "Dónde se atiende",
+      heading: "En qué sedes atiende el doctor",
       paragraphs: [
         "La consulta de columna funciona en el consultorio de Surco, en la Clínica Ricardo Palma, en la Clínica Sanna La Molina y en la Clínica Padre Luis Tezza.",
         "Cada sede tiene su página con dirección, horario y cómo llegar. La actividad quirúrgica se coordina en clínica, y qué sede te conviene depende sobre todo de tu seguro.",
@@ -151,7 +151,7 @@ export const hubServicios: StaticPage = {
     {
       id: "como-agendar",
       level: 2,
-      heading: "Cómo agendar una cita",
+      heading: "Cómo reservar una cita",
       paragraphs: [
         "La cita se pide desde el formulario del sitio o escribiendo tu caso, si prefieres contar el cuadro antes de reservar. Las clínicas gestionan sus propias agendas y el consultorio de Surco se coordina directo.",
         "Si el motivo es una segunda opinión quirúrgica, avísalo al agendar: esa cita necesita más tiempo y conviene reservarla sabiéndolo.",
