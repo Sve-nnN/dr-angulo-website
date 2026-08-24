@@ -101,6 +101,41 @@ Estado tras el recorte: **1140 palabras** (piso 900), cuatro puertas en 0, **0 v
 
 `src/content/blog/artrosis.ts` también tiene una sección `id: "cirugia"`. Queda en pie a propósito: D-12 nombra los dos posts que canibalizan con la guía de columna, y la artrosis es otra condición cuyo tratamiento quirúrgico no compite con `/servicios/hernia-discal`. Si se quisiera unificar el criterio, es decisión de fase, no de este cierre.
 
+## Hallazgos del code review atendidos (commit `6faa8b7`)
+
+Cinco de los siete warnings. WR-05, WR-06 e IN-04 quedan diferidos por decisión del lead.
+
+| ID | Qué se hizo |
+|---|---|
+| WR-01 | `topicEntityNode` con anotación de retorno y aserción `never` en el `default`. Un `kind` nuevo ahora rompe la compilación en vez de meter un `null` dentro del arreglo de `about`. |
+| WR-02 | `ProcedureApproachSlug` se deriva de `procedureApproaches` con `as const satisfies readonly ProcedureApproach[]`. Comprobado: renombrar un abordaje produce `error TS2322` en `cirugia-de-columna.ts`. |
+| WR-03 | `relatedService` retirado de `BlogPostJsonLdItem`. No tenía lector desde `53f4100` y su comentario seguía describiendo el defecto que causó SCH-01. `BlogPost.relatedService` sigue en pie: es navegación y su comentario ya lo dice. |
+| WR-04 | Ver abajo. |
+| WR-07 | Entradilla de dos párrafos para el post de reumatólogo, el único del blog con `intro: []`. Sin afirmaciones clínicas nuevas. |
+
+### WR-04, con una corrección sobre lo indicado
+
+El diagnóstico del review es correcto: `MedicalSpecialty` es una **enumeración cerrada**, así que `{ "@type": "MedicalSpecialty", name: "Traumatología" }` no afirma nada resoluble.
+
+**El par indicado no servía.** `https://schema.org/Orthopedic` **no existe**: no es miembro de la enumeración. Lo verifiqué descargando `schemaorg-current-https.jsonld` y listando los 42 miembros reales de `MedicalSpecialty`. `Rheumatologic` y `Musculoskeletal` sí están; `Orthopedic` no.
+
+Publicado, con el mismo criterio que ya usa `MEDICAL_SPECIALTIES` para la traumatología del sitio:
+
+```json
+"about": [
+  { "@id": "https://schema.org/Musculoskeletal" },
+  { "@id": "https://schema.org/Rheumatologic" }
+]
+```
+
+Se emite como referencia por `@id` y no como nodo con `name`, porque un miembro de enumeración ya tiene su propia URI. El tipo `MedicalSpecialtyUrl` en `src/content/blog/index.ts` admite solo URLs de enumeración, con un comentario que deja escrito que `Orthopedic` no existe, para que nadie lo reintroduzca copiando del review.
+
+Sobre si `about` con dos especialidades describe bien el post: sí. El artículo trata literalmente sobre cómo se reparten los casos entre esas dos especialidades, así que declararlas como tema es preciso. No forcé nada.
+
+### Verificación
+
+Los cinco `about` del blog parseados como JSON desde el HTML construido, **cero `null`** en los arreglos. Post en **1218 palabras**. Cuatro puertas en 0 y `tsc --noEmit` en 0 antes del commit. H2: 0 violaciones sobre 17 archivos.
+
 ## Known Stubs
 
 Ninguno.
