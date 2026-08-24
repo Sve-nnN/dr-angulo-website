@@ -1,4 +1,17 @@
 import type { NextConfig } from "next";
+import bundleAnalyzer from "@next/bundle-analyzer";
+
+/**
+ * Analizador de bundle, apagado por defecto (CWV-04).
+ *
+ * Se activa solo con `ANALYZE=true npm run build`, así que un build normal no
+ * cambia de comportamiento: sin la variable, `withBundleAnalyzer` devuelve la
+ * configuración tal cual. Es dependencia de desarrollo y no entra al árbol que
+ * se despliega.
+ */
+const withBundleAnalyzer = bundleAnalyzer({
+  enabled: process.env.ANALYZE === "true",
+});
 
 const nextConfig: NextConfig = {
   images: {
@@ -96,4 +109,4 @@ const nextConfig: NextConfig = {
   },
 };
 
-export default nextConfig;
+export default withBundleAnalyzer(nextConfig);
