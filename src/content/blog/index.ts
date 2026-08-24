@@ -12,6 +12,7 @@ import { postCiatica } from "./ciatica";
 import { postCirugiaDeColumna } from "./cirugia-de-columna";
 import { postArtrosis } from "./artrosis";
 import { postLumbalgia } from "./lumbalgia";
+import { postReumatologoOTraumatologo } from "./reumatologo-o-traumatologo";
 
 /**
  * Sección de un post, plana y con el mismo modelo que las guías: el nivel 3 es
@@ -80,4 +81,5 @@ export const blogPosts: BlogPost[] = [
   postCirugiaDeColumna,
   postArtrosis,
   postLumbalgia,
+  postReumatologoOTraumatologo,
 ];

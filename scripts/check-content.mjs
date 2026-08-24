@@ -37,8 +37,13 @@ const HUB_ANCHORS = ["columna", "traumatologia", "ortopedia-infantil", "procedim
  * 08-13, menos los dos posts que el plan 08-14 apagó con 301 hacia la guía que
  * los absorbió. 21 + 1 + 2 − 2 = 22. Las cuatro rutas de sede ya existían y ya
  * estaban en el sitemap: publicar su cuerpo no mueve este número.
+ *
+ * La fase 16 de v1.3 suma una URL: /blog/reumatologo-o-traumatologo, que nace
+ * de separar /preguntas-frecuentes en sus dos intenciones de búsqueda. Los dos
+ * renombres de slug de esa misma fase no mueven el total, porque cambian una
+ * URL por otra. 22 + 1 = 23.
  */
-const SITEMAP_TOTAL = 22;
+const SITEMAP_TOTAL = 23;
 
 /** Banner del primer tercio: palabras previas sobre el total del cuerpo. */
 const BANNER_MIN_RATIO = 0.15;
