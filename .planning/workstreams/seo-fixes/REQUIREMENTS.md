@@ -83,35 +83,36 @@ Diferidos, no entran a v1.3.
 
 ## Traceability
 
-Se completa al crear el roadmap.
+Completada al crear el roadmap del 2026-08-23. 22 de 22 requisitos mapeados, cada uno a exactamente una fase.
 
 | Requisito | Issue | Fase | Estado |
 |---|---|---|---|
-| IDX-01 | #1 | TBD | Pending |
-| IDX-02 | #1 | TBD | Pending |
-| IDX-03 | #1 | TBD | Pending |
-| SLUG-01 | #2 | TBD | Pending |
-| SLUG-02 | #2 | TBD | Pending |
-| SLUG-03 | #3 | TBD | Pending |
-| SLUG-04 | #3 | TBD | Pending |
-| LINK-01 | #4 | TBD | Pending |
-| LINK-02 | #5 | TBD | Pending |
-| LINK-03 | #6 | TBD | Pending |
-| SCH-01 | #10 | TBD | Pending |
-| SCH-02 | #11 | TBD | Pending |
-| CWV-01 | #7 | TBD | Pending |
-| CWV-02 | #8 | TBD | Pending |
-| CWV-03 | #9 | TBD | Pending |
-| CWV-04 | #13 | TBD | Pending |
-| CWV-05 | #14 | TBD | Pending |
-| A11Y-01 | #12 | TBD | Pending |
-| TRUST-01 | #15 | TBD | Pending |
-| TRUST-02 | #18 | TBD | Pending |
-| MEAS-01 | #16 | TBD | Pending |
-| MEAS-02 | #17 | TBD | Pending |
+| IDX-01 | #1 | Fase 17 | Pending |
+| IDX-02 | #1 | Fase 17 | Pending |
+| IDX-03 | #1 | Fase 17 | Pending |
+| SLUG-01 | #2 | Fase 16 | Pending |
+| SLUG-02 | #2 | Fase 16 | Pending |
+| SLUG-03 | #3 | Fase 16 | Pending |
+| SLUG-04 | #3 | Fase 16 | Pending |
+| LINK-01 | #4 | Fase 16 | Pending |
+| LINK-02 | #5 | Fase 16 | Pending |
+| LINK-03 | #6 | Fase 16 | Pending |
+| SCH-01 | #10 | Fase 16 | Pending |
+| SCH-02 | #11 | Fase 16 | Pending |
+| CWV-01 | #7 | Fase 18 | Pending |
+| CWV-02 | #8 | Fase 18 | Pending |
+| CWV-03 | #9 | Fase 18 | Pending |
+| CWV-04 | #13 | Fase 18 | Pending |
+| CWV-05 | #14 | Fase 18 | Pending |
+| A11Y-01 | #12 | Fase 18 | Pending |
+| TRUST-01 | #15 | Fase 19 | Pending |
+| TRUST-02 | #18 | Fase 19 | Pending |
+| MEAS-01 | #16 | Fase 19 | Pending |
+| MEAS-02 | #17 | Fase 19 | Pending |
 
 ## Restricciones del workstream
 
 - `seo-fixes` **sí** escribe en `src/`. Es lo que lo diferencia de `seo-keywords`.
 - `seo-fixes` **no** toca `.planning/workstreams/milestone/` ni `.planning/workstreams/seo-keywords/`.
+- **Todo trabajo de diseño pasa por la skill `impeccable`, con el verbo que corresponda.** Cuenta como diseño cualquier cambio de estilos, layout, tipografía, color, espaciado, motion, estructura de página, assets visuales o copy de interfaz. El ruteo de verbos por requisito está en la sección "Restricción de diseño" de `ROADMAP.md`. v1.3 es refinamiento: no hay rediseño visual.
 - La fase 11 pendiente de v1.1 (GBP local SEO) no toca `src/`, así que las dos ramas pueden correr en paralelo. El único punto de contacto es MEAS-01 contra GBP-05.
