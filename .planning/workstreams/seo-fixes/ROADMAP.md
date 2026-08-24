@@ -36,9 +36,9 @@ Reglas de uso:
 
 ## Phases
 
-- [ ] **Phase 16: Alineación de contenido, enlazado y schema** - URL, title, H1, anchors, intención de búsqueda y `about` del schema en su forma definitiva; es el desbloqueante de todo lo demás
+- [x] **Phase 16: Alineación de contenido, enlazado y schema** - URL, title, H1, anchors, intención de búsqueda y `about` del schema en su forma definitiva; es el desbloqueante de todo lo demás
 - [ ] **Phase 17: Indexación y enlaces de entrada** - Rastreo solicitado sobre URLs ya estables, más enlaces externos y entradas de GBP hacia páginas internas
-- [ ] **Phase 18: Rendimiento y accesibilidad** - Caché de borde, `/testimonios`, imagen LCP, bundle, OG y los tres fallos de accesibilidad
+- [ ] **Phase 18: Rendimiento y accesibilidad** - Caché de borde, `/testimonios`, imagen LCP, bundle y los tres fallos de accesibilidad (la OG quedó diferida a cargo de Juan)
 - [ ] **Phase 19: Confianza, medición y seguridad** - Contenido propio en los hubs, fuentes médicas citadas, informe de GSC sin partir y CSP
 
 ## Phase Details
@@ -154,7 +154,7 @@ Plans:
 
 | Phase | Milestone | Plans Complete | Status | Completed |
 |-------|-----------|----------------|--------|-----------|
-| 16. Alineación de contenido, enlazado y schema | v1.3 | 6/6 | In Progress|  |
+| 16. Alineación de contenido, enlazado y schema | v1.3 | 6/6 | Complete | 2026-08-24, PR #19 |
 | 17. Indexación y enlaces de entrada | v1.3 | 0/TBD | Not started | - |
 | 18. Rendimiento y accesibilidad | v1.3 | 0/TBD | Not started | - |
 | 19. Confianza, medición y seguridad | v1.3 | 0/TBD | Not started | - |
