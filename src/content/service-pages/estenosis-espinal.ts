@@ -26,14 +26,14 @@ export const estenosisEspinal: ServicePage = {
   },
   bannerAfterSectionId: "que-es",
   outboundLinks: [
-    { href: "/servicios/escoliosis-y-deformidades", anchor: "cirugía de escoliosis" },
-    { href: "/servicios/hernia-discal", anchor: "lumbalgia o hernia discal" },
-    { href: "/sedes/clinica-ricardo-palma", anchor: "mejor traumatólogo de la clínica ricardo palma" },
-    { href: "/sedes/clinica-tezza", anchor: "cirugía de columna clínica tezza" },
-    { href: "/sedes/consultorio-privado", anchor: "ortopedia infantil surco" },
-    { href: "/sedes/sanna-la-molina", anchor: "neurocirujano clínica sanna" },
+    { href: "/servicios/escoliosis-y-deformidades", anchor: "Guía sobre la escoliosis y otras deformidades" },
+    { href: "/servicios/hernia-discal", anchor: "Guía sobre la hernia discal" },
+    { href: "/sedes/clinica-ricardo-palma", anchor: "Clínica Ricardo Palma, en San Isidro" },
+    { href: "/sedes/clinica-tezza", anchor: "Clínica Padre Luis Tezza, en Surco" },
+    { href: "/sedes/consultorio-privado", anchor: "Consultorio privado, en Surco" },
+    { href: "/sedes/sanna-la-molina", anchor: "Clínica Sanna, en La Molina" },
     { href: "/agendar", anchor: "Agendar cita" },
-    { href: "/servicios", anchor: "cirujano de columna cerca de mí" },
+    { href: "/servicios", anchor: "Qué condiciones se tratan en cada especialidad" },
   ],
   sections: [
     {

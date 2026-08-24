@@ -26,14 +26,14 @@ export const escoliosisYDeformidades: ServicePage = {
   // cae en el 38 por ciento del cuerpo, fuera de la ventana de POS-01.
   bannerAfterSectionId: "que-es--escoliosis-dorsal",
   outboundLinks: [
-    { href: "/servicios/estenosis-espinal", anchor: "estenosis espinal: tratamientos" },
-    { href: "/servicios/hernia-discal", anchor: "hernia discal tomografía" },
-    { href: "/sedes/clinica-ricardo-palma", anchor: "clínica ricardo palma traumatología" },
-    { href: "/sedes/clinica-tezza", anchor: "neurocirujano clínica tezza" },
-    { href: "/sedes/consultorio-privado", anchor: "neurocirujano surco" },
-    { href: "/sedes/sanna-la-molina", anchor: "cirugía de columna clínica sanna" },
+    { href: "/servicios/estenosis-espinal", anchor: "Guía sobre la estenosis espinal" },
+    { href: "/servicios/hernia-discal", anchor: "Guía sobre la hernia discal" },
+    { href: "/sedes/clinica-ricardo-palma", anchor: "Clínica Ricardo Palma, en San Isidro" },
+    { href: "/sedes/clinica-tezza", anchor: "Clínica Padre Luis Tezza, en Surco" },
+    { href: "/sedes/consultorio-privado", anchor: "Consultorio privado, en Surco" },
+    { href: "/sedes/sanna-la-molina", anchor: "Clínica Sanna, en La Molina" },
     { href: "/agendar", anchor: "Agendar cita" },
-    { href: "/servicios", anchor: "mejor neurocirujano de columna lima" },
+    { href: "/servicios", anchor: "Qué condiciones se tratan en cada especialidad" },
   ],
   sections: [
     {

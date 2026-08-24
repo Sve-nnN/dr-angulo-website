@@ -21,12 +21,12 @@ export const ortopediaInfantil: ServicePage = {
   describesSurgery: false,
   relatedPosts: [],
   outboundLinks: [
-    { href: "/", anchor: "mejor clínica de traumatología en lima" },
-    { href: "/servicios", anchor: "cirugía de columna cerca de mí" },
-    { href: "/sedes/clinica-ricardo-palma", anchor: "cirujano de columna clínica ricardo palma" },
-    { href: "/sedes/clinica-tezza", anchor: "ortopedia infantil clínica tezza" },
-    { href: "/sedes/consultorio-privado", anchor: "cirugía de columna surco" },
-    { href: "/sedes/sanna-la-molina", anchor: "cirujano de columna clínica sanna" },
+    { href: "/", anchor: "Qué atiende la consulta del Dr. Juan Angulo" },
+    { href: "/servicios", anchor: "Qué condiciones se tratan en cada especialidad" },
+    { href: "/sedes/clinica-ricardo-palma", anchor: "Clínica Ricardo Palma, en San Isidro" },
+    { href: "/sedes/clinica-tezza", anchor: "Clínica Padre Luis Tezza, en Surco" },
+    { href: "/sedes/consultorio-privado", anchor: "Consultorio privado, en Surco" },
+    { href: "/sedes/sanna-la-molina", anchor: "Clínica Sanna, en La Molina" },
     { href: "/agendar", anchor: "Agendar cita" },
   ],
   ctaBanner: {
