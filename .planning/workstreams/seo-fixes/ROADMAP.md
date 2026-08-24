@@ -110,7 +110,7 @@ Plans:
   1. El HTML de las páginas estáticas responde con `cf-cache-status: HIT` desde el borde de Cloudflare y el TTFB de la portada queda por debajo de 300 ms, contra los 630 ms medidos el 2026-08-23.
   2. `/testimonios` puntúa por encima de 0,90 en performance con un TBT por debajo de 200 ms, contra el 0,60 y los 850 ms de hoy.
   3. La imagen del doctor en `/sobre-el-doctor` se sirve en formato moderno, se precarga con prioridad alta y deja de ser un LCP diferido.
-  4. El bundle compartido arrastra menos de 15 KB de JavaScript sin usar, no sirve polyfills legacy a navegadores que no los necesitan, y la imagen de `/opengraph-image` pesa menos de 200 KB sin que la vista previa al compartir por WhatsApp se vea distinta.
+  4. El bundle compartido arrastra menos de 15 KB de JavaScript sin usar y no sirve polyfills legacy a navegadores que no los necesitan. (El peso de `/opengraph-image` salió de este criterio el 2026-08-24: CWV-05 quedó diferido a cargo de Juan.)
   5. La portada, `/agendar` y `/sedes` puntúan 1,00 en accesibilidad: el párrafo `text-white/8x` sobre fondo primario de la portada cumple contraste, las cuatro listas `<dl>` de `/agendar` ya no tienen `<div>` entre `<dt>` y `<dd>`, y `/sedes` no tiene ningún `<h3>` sin `<h2>` previo.
 
 **Plans**: TBD
