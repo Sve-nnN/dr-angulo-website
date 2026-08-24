@@ -18,7 +18,7 @@ llena quien corra Lighthouse.
 |---|---|---|---|
 | 1 | `src/app/page.tsx` | Las cuatro ocurrencias de blanco translúcido sobre `bg-primary` (líneas 44, 50, 59 y 330) pasan a `text-white`. Se elimina el `hover:text-white` muerto del enlace del CMP y su `transition-colors duration-150` huérfana. | `d3fae3f` |
 | 2 | `src/components/locations/location-card.tsx` | Los dos envoltorios de par pasan de `flex gap-3` a `grid grid-cols-[auto_1fr] items-start gap-x-3`; el `<svg>` se muda dentro del `<dt>`, la etiqueta `sr-only` pasa a un `<span>` interno, y cada `<dd>` recibe `col-start-2`. | `188d9aa` |
-| 3 | `src/components/locations/sede-card.tsx` | El encabezado de la tarjeta pasa de `<h3>` a `<h2>`. La lista de clases y el `<Link>` con `after:absolute after:inset-0` quedan intactos. | (esta tarea) |
+| 3 | `src/components/locations/sede-card.tsx` | El encabezado de la tarjeta pasa de `<h3>` a `<h2>`. La lista de clases y el `<Link>` con `after:absolute after:inset-0` quedan intactos. | `847d1d5` |
 
 Ratio de contraste que produce el cambio 1: `#FFFFFF` sobre `#0E7C7E` = **5.00:1**,
 por encima del umbral AA de 4.5:1 para texto normal. Los valores previos eran
