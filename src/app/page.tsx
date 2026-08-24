@@ -78,7 +78,7 @@ export default async function Home() {
             alt={`${siteConfig.name} explica a una paciente un modelo de columna lumbar en su consultorio`}
             width={1129}
             height={1400}
-            priority
+            preload
             sizes="(min-width: 1024px) 560px, 100vw"
             className="animate-settle-in animate-step-2 mx-auto aspect-[4/3] w-full max-w-md rounded-2xl object-cover object-[60%_30%] shadow-lg sm:aspect-[16/10] lg:max-w-none"
           />

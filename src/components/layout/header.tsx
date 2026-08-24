@@ -86,7 +86,7 @@ export function Header() {
             width={44}
             height={44}
             className="shrink-0 rounded-full"
-            priority
+            preload
           />
           <span className="flex flex-col leading-tight">
             <span className="whitespace-nowrap font-heading text-base font-bold text-primary sm:text-lg">

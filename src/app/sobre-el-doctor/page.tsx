@@ -32,7 +32,7 @@ export default function SobreElDoctorPage() {
           alt={`${siteConfig.name} en su consultorio, sosteniendo un modelo de disco intervertebral con implante`}
           width={933}
           height={1400}
-          priority
+          preload
           sizes="(min-width: 640px) 260px, 220px"
           className="mx-auto w-[220px] rounded-2xl object-cover shadow-md sm:mx-0 sm:w-[260px] sm:shrink-0"
         />
