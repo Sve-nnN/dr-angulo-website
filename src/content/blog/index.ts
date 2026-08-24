@@ -38,6 +38,23 @@ export type BlogSection = {
   items?: ServiceSectionItem[];
 };
 
+/**
+ * Entidad sobre la que trata un post. Es lo que alimenta el `about` del
+ * marcado, y por eso está separada de `relatedService`: una cosa es de qué
+ * trata el texto y otra a dónde manda al lector.
+ *
+ * `procedure-ref` no lleva `name` a propósito. El nombre del procedimiento vive
+ * en el nodo que declara el grafo raíz; repetirlo acá abriría la puerta a que
+ * los dos terminen diciendo cosas distintas.
+ */
+export type BlogTopicEntity =
+  | { kind: "condition"; name: string; alternateNames?: string[] }
+  | {
+      kind: "procedure-ref";
+      procedureSlug: "minimamente-invasiva" | "convencional";
+    }
+  | { kind: "specialty"; name: string };
+
 /** Enlace interno de salida hacia el silo clínico. */
 export type BlogOutboundLink = {
   href: string;
@@ -58,11 +75,21 @@ export type BlogPost = {
   publishedAt: string;
   updatedAt: string;
   /**
-   * Guía del silo a la que empuja este post. Opcional: hay temas cuyo destino
-   * natural es el hub `/servicios` y no una guía concreta, y forzar el campo
-   * obligaría a inventarles una guía que la matriz de enlazado no les dio.
+   * Guía del silo a la que empuja este post. Gobierna solo la navegación: es el
+   * destino del enlace "Leer la guía completa", y no alimenta ninguna
+   * afirmación de tema del marcado. Para eso está `topicEntities`.
+   *
+   * Opcional: hay temas cuyo destino natural es el hub `/servicios` y no una
+   * guía concreta, y forzar el campo obligaría a inventarles una guía que la
+   * matriz de enlazado no les dio.
    */
   relatedService?: ServicePage["slug"];
+  /**
+   * De qué trata el post, en forma de `BlogTopicEntity`. Arreglo porque un
+   * texto puede tratar sobre más de una entidad, como el de cirugía con sus dos
+   * abordajes.
+   */
+  topicEntities?: BlogTopicEntity[];
   outboundLinks?: BlogOutboundLink[];
   ctaBanner: { heading: string; body: string };
   /**

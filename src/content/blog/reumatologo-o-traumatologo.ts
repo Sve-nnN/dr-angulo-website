@@ -13,6 +13,10 @@ import type { BlogPost } from "./index";
 
 export const postReumatologoOTraumatologo: BlogPost = {
   slug: "reumatologo-o-traumatologo",
+  topicEntities: [
+    { kind: "specialty", name: "Traumatología" },
+    { kind: "specialty", name: "Reumatología" },
+  ],
   title: "Reumatólogo o traumatólogo: a cuál te toca ir",
   h1: "Reumatólogo o traumatólogo: cómo saber cuál te corresponde",
   description:

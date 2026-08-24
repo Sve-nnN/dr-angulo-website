@@ -2,12 +2,15 @@ import type { BlogPost } from "./index";
 
 export const postArtrosis: BlogPost = {
   slug: "artrosis",
+  topicEntities: [
+    { kind: "condition", name: "Artrosis", alternateNames: ["Osteoartritis"] },
+  ],
   title: "Artrosis: qué es, cómo se trata y cuándo consultar",
   h1: "Artrosis: el desgaste de la articulación",
   description:
     "Qué es la artrosis, en qué articulaciones aparece, qué frena su avance y cuándo conviene consultar con un traumatólogo en Lima.",
   publishedAt: "2026-08-13",
-  updatedAt: "2026-08-13",
+  updatedAt: "2026-08-24",
   outboundLinks: [
     { href: "/blog/ciatica", anchor: "ciática o lumbalgia" },
     { href: "/blog/lumbalgia", anchor: "lumbalgia se opera" },

@@ -2,6 +2,10 @@ import type { BlogPost } from "./index";
 
 export const postCirugiaDeColumna: BlogPost = {
   slug: "cirugia-de-columna",
+  topicEntities: [
+    { kind: "procedure-ref", procedureSlug: "minimamente-invasiva" },
+    { kind: "procedure-ref", procedureSlug: "convencional" },
+  ],
   title: "Cirugía de columna: cuándo se plantea y cómo es",
   h1: "Operarse de la columna: lo que conviene saber antes",
   description:

@@ -2,6 +2,13 @@ import type { BlogPost } from "./index";
 
 export const postCiatica: BlogPost = {
   slug: "ciatica",
+  topicEntities: [
+    {
+      kind: "condition",
+      name: "Ciática",
+      alternateNames: ["Ciatalgia", "Radiculopatía lumbar"],
+    },
+  ],
   title: "Ciática: por qué duele la pierna y qué hacer",
   h1: "Ciática: el dolor que baja por la pierna",
   description:

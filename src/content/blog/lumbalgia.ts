@@ -2,12 +2,19 @@ import type { BlogPost } from "./index";
 
 export const postLumbalgia: BlogPost = {
   slug: "lumbalgia",
+  topicEntities: [
+    {
+      kind: "condition",
+      name: "Lumbalgia",
+      alternateNames: ["Dolor lumbar", "Dolor de espalda baja"],
+    },
+  ],
   title: "Lumbalgia: por qué duele la zona lumbar",
   h1: "Lumbalgia: el dolor de la parte baja de la espalda",
   description:
     "Qué causa la lumbalgia, qué tipos hay, qué ejercicios ayudan y cuándo el dolor de la zona baja de la espalda necesita evaluación.",
   publishedAt: "2026-08-13",
-  updatedAt: "2026-08-13",
+  updatedAt: "2026-08-24",
   relatedService: "hernia-discal",
   outboundLinks: [
     {
