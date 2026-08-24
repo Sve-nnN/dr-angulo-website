@@ -95,7 +95,7 @@ export const postArtrosis: BlogPost = {
     {
       id: "sintomas",
       level: 2,
-      heading: "Qué síntomas produce",
+      heading: "Qué molestias produce la artrosis",
       paragraphs: [
         "El dolor de la artrosis es mecánico: aparece cuando la articulación trabaja y afloja cuando descansa. Al principio se nota solo con esfuerzos grandes y con los años empieza a asomar en gestos comunes.",
         "La rigidez es el otro síntoma que orienta. Dura poco, unos minutos, y se va con el movimiento. Si la mañana rígida se estira durante una hora, ese cuadro se estudia por otro lado.",
@@ -105,7 +105,7 @@ export const postArtrosis: BlogPost = {
     {
       id: "causas",
       level: 2,
-      heading: "Por qué aparece",
+      heading: "Por qué se desgasta el cartílago",
       paragraphs: [
         "El cartílago se desgasta por el uso acumulado, y el uso no lo explica todo. Pesan la carga que recibió esa articulación durante años, el peso corporal, las lesiones previas, el trabajo repetitivo y la herencia familiar, que en manos y rodillas se nota bastante.",
         "La edad es un factor y no una condena. Hay gente mayor con radiografías feas y sin dolor, y gente más joven con un desgaste localizado que duele mucho. Lo que se trata es a la persona y no a la imagen.",
@@ -141,7 +141,7 @@ export const postArtrosis: BlogPost = {
     {
       id: "diagnostico",
       level: 2,
-      heading: "Cómo se confirma el diagnóstico",
+      heading: "Cómo se confirma una artrosis",
       paragraphs: [
         "El diagnóstico es clínico. Se arma con lo que la persona cuenta y con el examen: dónde duele, con qué gestos, cuánto dura la rigidez y cuánto recorrido perdió la articulación.",
         "La radiografía confirma y gradúa. Muestra el espacio entre los huesos, la dureza del hueso de abajo y los picos óseos del borde. La resonancia se pide cuando hay que mirar partes blandas o cuando el cuadro no cierra con lo que se ve.",
@@ -151,7 +151,7 @@ export const postArtrosis: BlogPost = {
     {
       id: "sin-operar",
       level: 2,
-      heading: "Qué se puede hacer sin operar",
+      heading: "Qué frena el desgaste sin cirugía",
       paragraphs: [
         "La mayor parte del tratamiento de la artrosis pasa por acá. Terapia física dirigida a la articulación afectada, trabajo de fuerza, control del peso y ajuste de las actividades que disparan el dolor.",
         "El médico puede indicar medicación para los períodos de más dolor, y también infiltraciones en casos seleccionados. Ni el fármaco ni la infiltración se eligen por internet: dependen de qué articulación es, de qué otras enfermedades tiene la persona y de qué se probó antes.",
@@ -178,7 +178,7 @@ export const postArtrosis: BlogPost = {
     {
       id: "cirugia",
       level: 2,
-      heading: "Cuándo hace falta operar",
+      heading: "Cuándo se llega al quirófano",
       paragraphs: [
         "Operar se plantea cuando el dolor dejó de responder a un tratamiento conservador bien hecho y sostenido, y cuando la limitación cambió la vida diaria: dormir mal, dejar de caminar distancias que antes hacías, depender de otros para tareas simples.",
         "En rodilla y cadera la opción más conocida es el reemplazo de la articulación. En la columna, el desgaste se opera cuando estrecha el espacio de los nervios y produce dolor irradiado o falta de fuerza que no cede, y lo que se hace es liberar ese espacio.",
@@ -188,7 +188,7 @@ export const postArtrosis: BlogPost = {
     {
       id: "preguntas-frecuentes",
       level: 2,
-      heading: "Preguntas frecuentes",
+      heading: "Dudas frecuentes sobre la artrosis",
       paragraphs: [
         "Tres dudas se repiten en las consultas por artrosis. Si el clima influye: no cambia el desgaste, aunque mucha gente nota los días húmedos y esa percepción es real. Si conviene dejar de moverse cuando duele: quedarse quieto alivia el rato y empeora el cuadro a mediano plazo. Y si tomar calcio sirve de algo: el calcio cuida el hueso, que es otra cosa, y no repara el cartílago.",
       ],
@@ -205,7 +205,7 @@ export const postArtrosis: BlogPost = {
     {
       id: "cuando-consultar",
       level: 2,
-      heading: "Cuándo consultar",
+      heading: "Cuándo conviene consultar",
       paragraphs: [
         "Vale la pena consultar cuando el dolor articular pasa de molestia ocasional a condicionar lo que haces: si dejaste de caminar distancias que antes hacías, si te cuesta subir escaleras o si la rigidez de la mañana se volvió parte de la rutina.",
         "Hay señales que no conviene esperar: dolor que baja por una pierna o por un brazo, adormecimiento en una zona bien delimitada, pérdida de fuerza, o una articulación caliente e hinchada de golpe con fiebre. Ninguna de esas cosas es artrosis simple.",

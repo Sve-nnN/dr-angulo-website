@@ -80,7 +80,7 @@ export const postLumbalgia: BlogPost = {
     {
       id: "sintomas",
       level: 2,
-      heading: "Qué síntomas produce",
+      heading: "Cómo se siente el dolor lumbar",
       paragraphs: [
         "El dolor se siente como una banda en la parte baja de la espalda, a veces cargado hacia un lado. Puede ser sordo y constante, o aparecer en punzadas al cambiar de posición.",
         "Se acompaña de rigidez, de contractura de los músculos de la zona y de dificultad para agacharse o girar. Muchas personas describen que el peor momento es levantarse de la cama o de una silla después de estar quietas un rato largo.",
@@ -99,7 +99,7 @@ export const postLumbalgia: BlogPost = {
     {
       id: "causas",
       level: 2,
-      heading: "Por qué aparece",
+      heading: "De dónde sale el dolor lumbar",
       paragraphs: [
         "En la mayor parte de los casos el origen es mecánico: músculos sobrecargados, articulaciones pequeñas de la columna irritadas, discos que perdieron altura con los años. Es frecuente que convivan varias cosas y que no se pueda señalar una sola culpable.",
         "Un grupo más chico corresponde al compromiso de una raíz nerviosa, y ahí el dolor deja de quedarse en la espalda y baja por la pierna. Y un grupo bastante más pequeño responde a causas que necesitan estudio sin demora: fracturas, infecciones, tumores o enfermedades inflamatorias.",
@@ -117,7 +117,7 @@ export const postLumbalgia: BlogPost = {
     {
       id: "diagnostico",
       level: 2,
-      heading: "Cómo se confirma el diagnóstico",
+      heading: "Qué estudios hacen falta y cuándo",
       paragraphs: [
         "La consulta empieza por la historia y el examen físico, que en la zona lumbar resuelven la mayoría de los casos sin ninguna imagen. Se revisan fuerza, reflejos, sensibilidad y algunas maniobras que ponen en tensión la raíz nerviosa.",
         "Las imágenes se piden cuando hay señales de alarma, cuando el dolor no mejora después de varias semanas de tratamiento bien llevado o cuando aparecen síntomas neurológicos. La radiografía muestra huesos y alineación; la resonancia muestra discos, nervios y partes blandas.",
@@ -127,7 +127,7 @@ export const postLumbalgia: BlogPost = {
     {
       id: "sin-operar",
       level: 2,
-      heading: "Qué se puede hacer sin operar",
+      heading: "Qué se hace sin operar",
       paragraphs: [
         "El tratamiento de la lumbalgia es conservador en la enorme mayoría de los casos. Movimiento temprano, terapia física dirigida, trabajo de fuerza del tronco y corrección de la ergonomía del puesto de trabajo.",
         "La medicación acompaña el período de más dolor y se usa por el tiempo que indique quien te atiende. En casos seleccionados se plantean infiltraciones, que son un recurso para bajar el dolor y permitir la rehabilitación, no un tratamiento en sí mismo.",
@@ -154,7 +154,7 @@ export const postLumbalgia: BlogPost = {
     {
       id: "cirugia",
       level: 2,
-      heading: "Cuándo hace falta operar",
+      heading: "En qué casos se plantea operar",
       paragraphs: [
         "La lumbalgia común, sin compromiso del nervio, casi nunca se opera. Operar entra en la conversación cuando hay una causa estructural identificada que explica el dolor y que no respondió al tratamiento conservador sostenido.",
         "Las razones que sí apuran son otras: la pérdida de fuerza que avanza, los signos de compresión seria del canal y el dolor irradiado incapacitante que no cedió después de un manejo conservador bien hecho.",
@@ -172,7 +172,7 @@ export const postLumbalgia: BlogPost = {
     {
       id: "preguntas-frecuentes",
       level: 2,
-      heading: "Preguntas frecuentes",
+      heading: "Dudas que llegan sobre el dolor lumbar",
       paragraphs: [
         "Dos preguntas se repiten en cada consulta. La primera es si el colchón tiene la culpa: influye en el descanso, rara vez es la causa del problema, y no hay un modelo que le sirva a todo el mundo. La segunda es si conviene usar faja: sirve puntualmente para una tarea de carga, y usada todo el día debilita justo la musculatura que uno quiere fortalecer.",
       ],
@@ -232,7 +232,7 @@ export const postLumbalgia: BlogPost = {
     {
       id: "cuando-consultar",
       level: 2,
-      heading: "Cuándo consultar",
+      heading: "Cuándo pedir una cita",
       paragraphs: [
         "Conviene consultar si el dolor no mejora después de dos o tres semanas, si vuelve una y otra vez, o si te obliga a modificar de forma sostenida lo que haces.",
         "Hay síntomas que se evalúan sin postergar: la pérdida de fuerza en una pierna, el adormecimiento en la zona de la entrepierna y los genitales, la dificultad para controlar la orina o la deposición, el dolor después de una caída importante, el dolor con fiebre y el que despierta de noche sin mejorar al cambiar de posición.",

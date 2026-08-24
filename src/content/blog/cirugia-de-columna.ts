@@ -138,7 +138,7 @@ export const postCirugiaDeColumna: BlogPost = {
     {
       id: "sin-operar",
       level: 2,
-      heading: "Qué se puede hacer sin operar",
+      heading: "Qué se intenta antes de operar",
       paragraphs: [
         "La mayoría de los casos se maneja primero con tratamiento conservador: terapia física, medicación y cambios de hábitos. Esa etapa no es un trámite previo para llegar al quirófano, es tratamiento, y en buena parte de los casos es el único que hace falta.",
         "El trabajo de terapia busca descargar el segmento afectado, recuperar movilidad y fortalecer la musculatura que sostiene la columna, y a eso se suma corregir la postura de trabajo y la forma de levantar peso, que es lo que evita la recaída.",
@@ -148,7 +148,7 @@ export const postCirugiaDeColumna: BlogPost = {
     {
       id: "cirugia",
       level: 2,
-      heading: "Cuándo hace falta operar",
+      heading: "Cuándo la cirugía es la indicación",
       paragraphs: [
         "Cuando hay una razón concreta, y esa razón se puede nombrar. Conviene que te la nombren: dolor irradiado incapacitante que no respondió al tratamiento, compromiso neurológico que avanza, o signos de compresión seria del canal.",
         "Fuera de esos escenarios, el paso siguiente casi siempre es seguir trabajando el manejo conservador y volver a evaluar más adelante. Que la conversación se abra no significa que la decisión esté tomada, y preguntar cuál de esas razones aplica a tu caso es esperable.",
@@ -184,7 +184,7 @@ export const postCirugiaDeColumna: BlogPost = {
     {
       id: "preguntas-frecuentes",
       level: 2,
-      heading: "Preguntas frecuentes",
+      heading: "Lo que más se pregunta antes de operar",
       paragraphs: [
         "Dos quedan fuera de las anteriores y conviene contestarlas. Si conviene pedir una segunda opinión: salvo en las situaciones que se evalúan el mismo día, nada se rompe por pedirla, y pedirla no ofende a nadie. Y qué llevar a la consulta: los estudios de imagen completos y no solo el informe, la lista de lo que tomas, el detalle de qué tratamientos hiciste y por cuánto tiempo, y las preguntas escritas, porque en el momento se olvidan.",
       ],
@@ -210,7 +210,7 @@ export const postCirugiaDeColumna: BlogPost = {
     {
       id: "cuando-consultar",
       level: 2,
-      heading: "Cuándo consultar",
+      heading: "Cuándo buscar una segunda opinión",
       paragraphs: [
         "Conviene consultar cuando el dolor irradiado no cede, cuando aparece falta de fuerza o adormecimiento, o cuando ya te dijeron que necesitas operarte y quieres entender por qué antes de decidir.",
         "Si lo que buscas es entender el procedimiento en sí, cómo se hace y qué implica la recuperación, eso está explicado en la guía de cirugía endoscópica de columna y de los abordajes mínimamente invasivos, que es donde entra el detalle técnico.",

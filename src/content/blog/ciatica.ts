@@ -57,7 +57,7 @@ export const postCiatica: BlogPost = {
     {
       id: "sintomas",
       level: 2,
-      heading: "Qué síntomas produce",
+      heading: "Cómo se reconoce el dolor de la ciática",
       paragraphs: [
         "El síntoma principal es el dolor irradiado, y viene acompañado de otras señales que conviene mirar juntas, porque son las que cambian la conducta en la consulta.",
         "Hormigueo y adormecimiento en una zona bien delimitada, no en toda la pierna. Sensación de menos fuerza, que se nota en gestos concretos: el pie que se arrastra al caminar, la dificultad para pararse en puntas, la sandalia que se sale sin que te des cuenta. Rigidez y dificultad para agacharte o girar el torso. Y un dolor que se dispara al toser, al estornudar o al hacer fuerza, porque esos gestos aumentan la presión dentro del canal.",
@@ -130,7 +130,7 @@ export const postCiatica: BlogPost = {
     {
       id: "causas",
       level: 2,
-      heading: "Por qué aparece",
+      heading: "Qué comprime el nervio ciático",
       paragraphs: [
         "La causa más frecuente es una hernia discal que comprime una raíz nerviosa a la salida de la columna. Le siguen el estrechamiento del canal por desgaste, el deslizamiento de una vértebra sobre otra y la irritación del nervio a la altura del glúteo.",
         "En gente joven predomina la hernia. Con los años pesa más el desgaste. La causa cambia el tratamiento, así que ponerle nombre importa, y ponerle nombre es trabajo de la consulta y no del buscador.",
@@ -157,7 +157,7 @@ export const postCiatica: BlogPost = {
     {
       id: "diagnostico",
       level: 2,
-      heading: "Cómo se confirma el diagnóstico",
+      heading: "Cómo se confirma que el dolor viene de una raíz",
       paragraphs: [
         "Se define en la consulta. El relato del recorrido, el examen de fuerza, reflejos y sensibilidad, y algunas maniobras que ponen en tensión la raíz para reproducir el síntoma alcanzan para ubicar el nivel comprometido en la mayoría de los casos.",
         "La resonancia se pide cuando hay señales de alarma, cuando el dolor no mejora con el tratamiento o cuando se está evaluando una intervención. Confirma lo que la consulta ya sospecha, y no es por donde se empieza.",
@@ -167,7 +167,7 @@ export const postCiatica: BlogPost = {
     {
       id: "sin-operar",
       level: 2,
-      heading: "Qué se puede hacer sin operar",
+      heading: "Qué alivia sin cirugía",
       paragraphs: [
         "La mayoría de las ciáticas mejora sin operar. El plan combina movimiento temprano dentro de lo tolerado, terapia física dirigida, control del dolor con lo que indique tu médico y corrección de la postura de trabajo y de la forma de levantar peso.",
         "El reposo absoluto prolongado juega en contra. Sostener actividad, aunque sea poca y adaptada, es parte del tratamiento y no una concesión que uno se permite cuando se siente mejor.",
@@ -194,7 +194,7 @@ export const postCiatica: BlogPost = {
     {
       id: "cirugia",
       level: 2,
-      heading: "Cuándo hace falta operar",
+      heading: "Cuándo entra la cirugía en la conversación",
       paragraphs: [
         "Operar se plantea cuando el dolor irradiado sigue siendo incapacitante después de un manejo conservador bien hecho y sostenido, o cuando hay compromiso neurológico que avanza.",
         "Hay tres situaciones que no admiten esperar turno y se evalúan el mismo día: la pérdida de fuerza que avanza rápido, el adormecimiento en la zona de la entrepierna y los genitales, y la dificultad para controlar la orina o la deposición.",
@@ -204,7 +204,7 @@ export const postCiatica: BlogPost = {
     {
       id: "preguntas-frecuentes",
       level: 2,
-      heading: "Preguntas frecuentes",
+      heading: "Dudas frecuentes sobre la ciática",
       paragraphs: [
         "Las tres que más se repiten van abajo. Hay una cuarta que se pregunta poco y conviene hacer: qué pasa si no hago nada. En una ciática sin señales de alarma la respuesta suele ser que mejora igual, más lento y con más probabilidad de recaída.",
       ],
@@ -239,7 +239,7 @@ export const postCiatica: BlogPost = {
     {
       id: "cuando-consultar",
       level: 2,
-      heading: "Cuándo consultar",
+      heading: "Cuándo conviene una evaluación",
       paragraphs: [
         "Consulta si el dolor baja por la pierna y no cede en pocos días, si aparece hormigueo o falta de fuerza, o si el cuadro te obliga a modificar de forma sostenida lo que haces.",
         "Mientras consigues la cita, anota cómo se comporta el dolor día a día. Ese registro simple vale mucho en la consulta, porque la historia es lo que más orienta antes de cualquier imagen.",

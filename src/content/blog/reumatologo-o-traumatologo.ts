@@ -71,7 +71,7 @@ export const postReumatologoOTraumatologo: BlogPost = {
     {
       id: "sintomas",
       level: 2,
-      heading: "Qué síntomas produce",
+      heading: "Con qué molestias se llega a la consulta",
       paragraphs: [
         "Las consultas de columna llegan casi siempre por una de estas cuatro puertas: dolor de espalda que no cede, dolor que baja por una pierna o por un brazo, pérdida de fuerza o adormecimiento, y una deformidad que se nota de afuera.",
         "Lo que más orienta no es la intensidad sino el recorrido. Un dolor que se queda en la espalda y mejora en días suele ser muscular. Uno que viaja siempre por el mismo camino hacia la pierna apunta a una raíz nerviosa. Uno que aparece al caminar y se va al sentarte apunta a un canal estrecho.",
@@ -81,7 +81,7 @@ export const postReumatologoOTraumatologo: BlogPost = {
     {
       id: "causas",
       level: 2,
-      heading: "Por qué aparece",
+      heading: "Por qué aparecen estos problemas",
       paragraphs: [
         "Una parte de lo que llega a consulta es desgaste, o sea el paso de los años sobre discos y articulaciones. Otra parte es carga mal repartida, que es postura sostenida, peso levantado a lo bruto y musculatura que dejó de sostener. Y otra parte es genética y forma de la columna, que no se elige.",
         "Vale la pena separar lo que se puede cambiar de lo que no. Sobre la genética no hay nada que hacer. Sobre cómo cargas la espalda todos los días y cuánta musculatura tienes alrededor, bastante.",
@@ -91,7 +91,7 @@ export const postReumatologoOTraumatologo: BlogPost = {
     {
       id: "diagnostico",
       level: 2,
-      heading: "Cómo se confirma el diagnóstico",
+      heading: "Qué mira cada especialista en la primera cita",
       paragraphs: [
         "La primera cita es sobre todo conversación y examen. Se revisa desde cuándo te pasa, hasta dónde llega, qué lo empeora, qué lo alivia y cómo viene evolucionando, y después vienen fuerza, reflejos, sensibilidad y algunas maniobras.",
         "Los estudios se piden para responder preguntas concretas, no por rutina. Una radiografía muestra hueso y alineación. Una resonancia muestra disco, raíz y contenido del canal. Pedir la imagen antes de examinar suele generar más ansiedad que respuestas, porque un informe siempre encuentra algo.",
@@ -102,7 +102,7 @@ export const postReumatologoOTraumatologo: BlogPost = {
     {
       id: "sin-operar",
       level: 2,
-      heading: "Qué se puede hacer sin operar",
+      heading: "Qué se maneja sin quirófano",
       paragraphs: [
         "La mayoría de los problemas de columna se maneja sin quirófano. El esquema se repite: controlar el dolor con lo que te indique tu médico, mantener el movimiento que toleres, terapia física dirigida y corregir la mecánica que llevó al problema.",
         "Ese manejo necesita tiempo para mostrar si sirve. Semanas, no días. Abandonarlo en la primera semana y concluir que no funcionó es el error más común, y el que más gente lleva a pedir una cirugía que quizá no necesita.",
@@ -112,7 +112,7 @@ export const postReumatologoOTraumatologo: BlogPost = {
     {
       id: "cirugia",
       level: 2,
-      heading: "Cuándo hace falta operar",
+      heading: "Cuándo se plantea operar",
       paragraphs: [
         "Operar se plantea en tres situaciones, y ninguna de las tres es que la resonancia se vea fea. Cuando hay pérdida de fuerza que progresa. Cuando aparecen signos de compresión seria del canal. Y cuando el dolor incapacitante sigue igual pese a un manejo conservador bien hecho y sostenido.",
         "La decisión se toma con dos cosas sobre la mesa: qué te está limitando hoy y qué muestran tus estudios. Si las dos no coinciden, la cirugía no es el camino todavía.",
