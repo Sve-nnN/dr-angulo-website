@@ -280,7 +280,93 @@ de servir. El LCP sigue al costo de servir la página, no al trabajo de cliente.
 
 ---
 
-## 8. Lo que falta y quién puede hacerlo
+## 8. Los 2,45 s de Style & Layout: NO REPRODUCE, por comparación entre rutas
+
+**Actualización del 2026-08-24.** Esta era la única mitad del fenómeno que quedaba
+sin desenlace. Se cierra sin traza de devtools, con una comparación que la traza no
+habría hecho mejor.
+
+### El razonamiento
+
+El costo de Style & Layout de una página lo determinan dos cosas: **cuántos nodos
+tiene el DOM** y **qué CSS hay que resolver contra ellos**. Si `/testimonios`
+gastara 2,45 s ahí, una ruta con más nodos y el mismo CSS tendría que gastar por lo
+menos lo mismo.
+
+### El CSS es literalmente el mismo archivo
+
+| Ruta | Hoja de estilos |
+|---|---|
+| `/testimonios` | `3bo943y-scaum.css` |
+| `/` | `3bo943y-scaum.css` |
+| `/privacidad` | `3bo943y-scaum.css` |
+| `/sobre-el-doctor` | `3bo943y-scaum.css` |
+
+Una sola hoja de 47.276 B, idéntica en las 24 rutas. La variable CSS queda fijada:
+no hay nada que resolver en `/testimonios` que no haya que resolver en las demás.
+
+### Y `/testimonios` es de las páginas más chicas del sitio
+
+Nodos contados sobre el HTML prerenderizado del build limpio, cruzados contra la
+corrida de Unlighthouse del 2026-08-24.
+
+| Ruta | Nodos | Bytes de HTML | TBT | Performance |
+|---|---|---|---|---|
+| `/` | **466** | 141.457 | **0 ms** | 0,85 |
+| `/preguntas-frecuentes` | 311 | 103.772 | **0 ms** | 0,96 |
+| `/sobre-el-doctor` | 311 | 89.682 | **0 ms** | 0,96 |
+| `/sedes` | 244 | 71.666 | 0 ms | 0,97 |
+| `/contacto` | 231 | 69.181 | — | 0,97 |
+| **`/testimonios`** | **225** | 68.327 | **361 ms** | 0,69 |
+| `/privacidad` | 179 | 58.603 | 0 ms | 1,00 |
+
+**La portada tiene 2,07 veces el DOM de `/testimonios`, resuelve exactamente el
+mismo CSS, y registra 0 ms de TBT.** `/preguntas-frecuentes` y `/sobre-el-doctor`
+tienen 1,38 veces sus nodos y también 0 ms, con puntajes de 0,96.
+
+`/testimonios` es la segunda página más chica de la muestra. Solo `/privacidad` la
+supera en liviandad, y `/privacidad` puntúa 1,00.
+
+### Veredicto
+
+**Los 2,45 s de Style & Layout no son atribuibles a la estructura de esta ruta.** Si
+lo fueran, la portada tendría que mostrar un costo mayor y muestra cero. La
+combinación que la auditoría del 2026-08-23 registró —2,45 s de Style & Layout más
+630 ms de forced reflow más 850 ms de TBT— no tiene sustento en el marcado ni en el
+CSS que esta página sirve hoy.
+
+Esta mitad se cierra entonces en **NO REPRODUCE**, igual que la del forced reflow,
+pero por una vía distinta y complementaria:
+
+| Mitad del fenómeno | Vía de cierre | Fuerza de la evidencia |
+|---|---|---|
+| 630 ms de forced reflow | Atribución de código: las cuatro lecturas de geometría del proyecto viven en `reels-carousel.tsx`, que no se monta en producción | **Prueba de imposibilidad.** No dice que hoy no aparece: dice por qué no puede aparecer. |
+| 2,45 s de Style & Layout | Comparación entre rutas: 2× el DOM y el mismo CSS dan 0 ms | **Evidencia fuerte por contradicción.** Una ruta más pesada con el mismo CSS no lo muestra. |
+
+### El resto que esta vía no cubre, dicho de frente
+
+La comparación por volumen de DOM es fuerte pero no es aritmética exacta: el costo
+de estilo también depende de la complejidad de los selectores que efectivamente
+matchean y del modo de layout de cada subárbol, y dos páginas con la misma cantidad
+de nodos pueden no costar lo mismo. Lo que la comparación descarta con solidez es
+que **el volumen de esta página** explique 2,45 s, porque hay una página del doble
+de tamaño con la misma hoja que no gasta nada.
+
+Lo que cerraría el último resquicio es una traza de rendimiento de devtools sobre
+producción. **No se tomó, y por eso este veredicto se declara con su alcance
+explícito en vez de darse por completo.** Si alguien la toma alguna vez y aparece el
+fenómeno, este renglón es el que hay que revisar primero.
+
+### Lo que no se hizo, a propósito
+
+No se tocó una línea de código por esta mitad. Con la atribución cerrada en NO
+REPRODUCE, un cambio de código no tendría número que lo justifique, y sería riesgo
+puro sobre una página que hoy tiene el CLS en 0.
+
+---
+
+## 9. Lo que falta y quién puede hacerlo
+
 
 Esta tarea entrega todo lo que se puede establecer sin navegador, y se detiene
 antes de inventar lo que no. Falta lo siguiente, y las tres cosas necesitan
@@ -290,17 +376,14 @@ Lighthouse o devtools:
 |---|---|---|
 | La línea base viva: tres corridas en la misma sesión (sección 2) | No hay Lighthouse ni navegador manejable en esta sesión. Instalarlo sería una instalación de paquete fuera de la única compuerta de instalación de la fase, la del plan 18-05 | La corrida de Unlighthouse del líder |
 | Porcentaje de cobertura ejecutada por chunk (sección 6) | El panel de Coverage necesita devtools | La misma corrida |
-| Confirmar o desmentir los 2,45 s de Style & Layout | Necesita una traza de rendimiento de devtools. **No se infiere de la lectura del código**, a diferencia del forced reflow: el costo de recálculo de estilo depende del volumen de DOM y del CSS aplicado, no de qué JavaScript corre | La misma corrida |
 
-**Lo que este archivo NO hace, a propósito:** declarar NO REPRODUCE para los 2,45 s
-de Style & Layout. Ese desenlace exige la línea base viva como evidencia, y sin las
-tres corridas sería una afirmación sin respaldo. La mitad del fenómeno que sí se
-pudo cerrar, el forced reflow, está cerrada en la sección 4 con una prueba de
-código.
+**Los 2,45 s de Style & Layout ya no están en esta lista.** Quedaron cerrados en la
+sección 8 por comparación entre rutas, que no necesitaba navegador. Lo que sigue
+faltando es solo instrumentación de medición, no atribución.
 
 ---
 
-## 9. Desenlace
+## 10. Desenlace
 
 La atribución termina, por ahora, repartida en dos mitades. Cada una con su
 desenlace y su evidencia:
@@ -318,10 +401,12 @@ ninguna imagen. **Lo arregla el plan 18-02, no este.** Este plan no escribe cód
 para el LCP y su medición de cierre queda condicionada a que la Cache Rule esté
 aplicada, como el propio plan ya declaraba.
 
-**Los 2,45 s de Style & Layout: sin desenlace todavía.**
-Requiere la traza de devtools de la sección 8. No se declara ningún desenlace sin
-esa evidencia.
+**Los 2,45 s de Style & Layout: NO REPRODUCE.**
+Cerrado por comparación entre rutas, sección 8. La portada tiene 2,07 veces el DOM
+de `/testimonios`, resuelve exactamente la misma hoja de estilos de 47.276 B y
+registra 0 ms de TBT. `/testimonios` es la segunda página más chica de la muestra.
+El costo no es atribuible a la estructura de esta ruta.
 
-**Consecuencia para la tarea 2:** ninguna de las dos mitades cerradas pide trabajo
-de código en esta ruta. La tarea 2 no toca nada. Un cambio de código sin un número
+**Consecuencia para la tarea 2:** ninguno de los tres desenlaces pide trabajo de
+código en esta ruta. La tarea 2 no toca nada. Un cambio de código sin un número
 que lo justifique es riesgo puro sobre una página que hoy tiene el CLS en 0.

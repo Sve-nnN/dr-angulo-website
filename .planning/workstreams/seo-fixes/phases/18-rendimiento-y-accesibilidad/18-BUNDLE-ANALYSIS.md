@@ -368,10 +368,36 @@ El chunk de 158.571 B con la prosa clínica **desapareció**.
 
 ---
 
-## 9. Cobertura ejecutada según Coverage
+## 9. Checkpoint: hidratación verificada
 
-> **Pendiente.** El panel de Coverage de devtools necesita navegador. Lo cubre la
-> corrida de Lighthouse del checkpoint de la tarea 3.
+**Corrido por el líder de fase el 2026-08-24**, con navegador real sobre el build
+limpio de la rama. Era el riesgo principal de este plan: reorganizar el grafo de
+módulos del encabezado, que se monta en las 24 rutas, es la clase de cambio que
+rompe la hidratación sin que ninguna de las cinco compuertas lo note.
+
+**Consola: cero errores, cero advertencias, cero avisos de hidratación.** Ni en
+carga, ni tras interactuar, ni tras navegar.
+
+| Elemento del recorrido | Resultado |
+|---|---|
+| Menú de especialidades | Abre y trae **las cinco guías con su `navLabel` y su `cardSummary` completos** |
+| Botón atrás y navegación de cliente | Funciona, ida y vuelta |
+| Botón flotante de WhatsApp | Presente e interactivo |
+| Aviso de cookies | Presente, con Aceptar y Rechazar operativos |
+
+El menú era lo que había que mirar: sacar 158.571 B de contenido del navegador podía
+dejarlo vacío o a medias. **Trae las cinco especialidades con sus resúmenes, servidas
+desde `nav-index.ts`.** El índice escrito a mano está completo y correcto, y la
+compuerta `assertNavIndexMatches()` es lo que garantiza que siga estándolo.
+
+### Cobertura ejecutada según Coverage
+
+> **Pendiente.** El panel de Coverage necesita la misma sesión de navegador.
+
+### CLS de las rutas probadas
+
+> **Pendiente.** Corriendo en Unlighthouse. Es el criterio duro: un ahorro de 138 KB
+> que suba el CLS de 0 a 0,05 es un retroceso y se rechaza.
 
 ---
 
