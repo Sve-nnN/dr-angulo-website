@@ -231,65 +231,131 @@ a atribuirle a `preload` una mejora que era de caché.
 
 ## 10. Camino elegido en la tarea 2
 
-**Camino A: `preload`.**
+**Camino B: `loading="eager"` más `fetchPriority="high"`.** Aplicado el 2026-08-24
+después de la corrida del checkpoint.
 
-Las tres declaraciones de `Image` del proyecto migraron de la prop `priority`,
-obsoleta desde Next 16, a `preload`
-(`node_modules/next/dist/docs/01-app/03-api-reference/02-components/image.md`,
-sección `#### priority`).
+### Por qué no quedó el camino A
 
-Por qué A y no B, dicho antes de que alguien lea la doc y dude. La línea 289 de esa
-misma doc dice: «In most cases, you should use `loading="eager"` or
-`fetchPriority="high"` instead of `preload`». Suena a que este plan eligió mal, y
-no es así: esa frase cierra la lista de tres casos en los que `preload` **no**
-corresponde, y son estos tres:
+La tarea 2 arrancó por el camino A (`preload`), con la justificación de la doc que
+sigue más abajo. La corrida de Unlighthouse del líder de fase sobre el build local
+lo desmintió con el número que el propio plan había puesto como árbitro:
 
-| Caso de "when not to use it" | ¿Aplica acá? |
+| Señal de `lcp-discovery-insight` | Con camino A |
 |---|---|
-| Varias candidatas a LCP según el viewport | **No.** Hay una sola imagen sobre el pliegue. La de fluoroscopia está muy por debajo y no lleva precarga. |
-| Se usa la propiedad `loading` | **No.** Ninguna de las tres declaraciones la usa. |
-| Se usa la propiedad `fetchPriority` | **No.** El documento no emite un solo `fetchpriority`, medido en la sección 3. |
+| `requestDiscoverable` | `true` |
+| **`priorityHinted`** | **`false`** |
+| Veredicto de la auditoría | **0** |
 
-Ninguno de los tres aplica. La lista de "when to use it" de la misma sección, en
-cambio, describe este caso exacto: la imagen es el elemento LCP, está arriba del
-pliegue, y se quiere empezar a cargarla desde el `<head>`.
+El mensaje de Lighthouse fue explícito: *"fetchpriority=high should be applied to
+the image preload request"*. El `preload` hacía la petición descubrible en el
+documento pero no le ponía prioridad, que es exactamente la condición que el plan
+define para pasar al camino B.
 
-**Valor de prioridad de red que lo confirmaría:** _pendiente, sección 4_. El camino
-queda abierto: si la prioridad no sale en High, se pasa al camino B quitando
-`preload` y poniendo `loading="eager"` más `fetchPriority="high"` en la declaración
-de `/sobre-el-doctor`. Los dos caminos son alternativos y no se acumulan.
+El LCP igual había mejorado con el camino A: **2,73 s → 2,2 s**, con puntaje 0,95.
+
+### Qué cambió en el código
+
+En `src/app/sobre-el-doctor/page.tsx`, la declaración del `Image` de la imagen del
+doctor pasa de `preload` a `loading="eager"` más `fetchPriority="high"`. Ninguna
+otra prop se tocó: `src`, `alt`, `width={933}`, `height={1400}`, `sizes` y
+`className` quedan carácter por carácter iguales.
+
+Las otras dos declaraciones, la del hero de la portada y la del logo del
+encabezado, **conservan `preload`**: el camino B es una decisión sobre la imagen
+del LCP de esta ruta, no sobre las tres.
+
+### El resultado, que salió mejor que lo que el plan preveía
+
+El plan predecía que sin `preload` Next dejaría de emitir el enlace de precarga y
+que las apariciones de `imageSrcSet` en `/sobre-el-doctor` bajarían de 2 a 1.
+**No es lo que hace esta versión de Next.** Medido sobre el build limpio:
+
+```
+<link rel="preload" as="image"
+      imageSrcSet="/_next/image?url=%2Fdr-angulo-implante-disco.avif&w=32&q=75 32w, ..."
+      imageSizes="(min-width: 640px) 260px, 220px"
+      fetchPriority="high"/>
+```
+
+Y en el cuerpo:
+
+```
+<img ... fetchPriority="high" loading="eager" width="933" height="1400" ...>
+```
+
+Next 16 **sigue emitiendo el enlace de precarga y además le pone
+`fetchPriority="high"`**, y replica el atributo en el `<img>`. Así que el camino B
+no cambia una cosa por la otra: conserva lo que el camino A daba
+(`requestDiscoverable: true`, el enlace en el `<head>`) y agrega lo único que
+faltaba (`priorityHinted: true`).
+
+`imageSrcSet` en `/sobre-el-doctor` sigue en **2**, no en 1. Ver la desviación
+registrada abajo.
+
+### Sobre la doc, para que nadie lea esto como una degradación
+
+`image.md:289` dice: *"In most cases, you should use `loading="eager"` or
+`fetchPriority="high"` instead of `preload`"*. **El camino B es lo que la doc
+recomienda de entrada, no un plan C.** La justificación del camino A se apoyaba en
+que ninguno de los tres casos de "when not to use it" aplicaba, y eso sigue siendo
+cierto; lo que decidió no fue la doc sino la medición, que es lo que el plan había
+establecido desde el principio.
+
+### Desviación: la aserción de `imageSrcSet` del camino B no se cumple
+
+- **Criterio del plan:** en el camino B, `imageSrcSet` en `/sobre-el-doctor` baja a
+  1, "la del logo", porque "sin `preload`, Next no emite el enlace de precarga de la
+  imagen del doctor".
+- **Medido:** **2**. El enlace de precarga de la imagen del doctor se sigue
+  emitiendo, ahora con `fetchPriority="high"`.
+- **Por qué:** la premisa del criterio es incorrecta para esta versión de Next.
+  `loading="eager"` con `fetchPriority="high"` hace que Next emita el preload igual.
+  Es el comportamiento deseable y es mejor que el que el plan había previsto.
+- **Qué NO se hizo:** ajustar el criterio para que coincida con la realidad. Queda
+  registrado como desviación, y el bloque condicional del `<verify>` de la tarea 2
+  falla en su rama `else` por este renglón, con todo lo demás en verde
+  (`preload`=0, `fetchPriority="high"`=1, `loading="eager"`=1).
 
 ---
 
 ## 11. Tabla de cierre, después del cambio
 
-> **Pendiente del checkpoint (tarea 3).** Mismo protocolo y mismas rutas que las
-> secciones 1 a 7, para que la comparación sea renglón por renglón. Dos
-> precondiciones: el cambio desplegado en producción, y la Cache Rule del plan
-> 18-02 aplicada.
+> **Pendiente de la segunda corrida del líder de fase**, ahora sobre el camino B.
+> Precondición que sigue abierta: la Cache Rule del plan 18-02 aplicada en
+> Cloudflare, para poder separar el efecto de esta tarea del efecto del borde.
 
-| Medición | Antes | Después |
-|---|---|---|
-| LCP mediano (tres corridas) | _pendiente_ | _pendiente_ |
-| Elemento LCP | _pendiente_ | _pendiente_ |
-| Enlace de precarga en el `<head>` | **presente** | _pendiente_ |
-| Prioridad de red | _pendiente_ | _pendiente_ |
-| Variante descargada a 375px DPR2 | **640w** | _pendiente_ |
-| Peso de esa variante | **32.980 B** (WebP) | _pendiente_ |
-| `Content-Type` | **`image/webp`** | _pendiente_ |
-| TTFB del HTML | **794 ms** | _pendiente_ |
-| `cf-cache-status` de `/_next/image` | **DYNAMIC** | _pendiente_ |
-| CLS de `/sobre-el-doctor` | 0 (línea base 2026-08-24) | _pendiente_ |
-| CLS de la portada | 0 (línea base 2026-08-24) | _pendiente_ |
+| Medición | Antes (producción) | Camino A (local) | Camino B (local) |
+|---|---|---|---|
+| LCP mediano | 2,73 s | **2,2 s** | _pendiente_ |
+| Puntaje de performance | 0,96 | **0,95** | _pendiente_ |
+| Elemento LCP | _pendiente_ | _pendiente_ | _pendiente_ |
+| `requestDiscoverable` | — | `true` | **`true`** (medido en el HTML) |
+| `priorityHinted` | — | **`false`** | **`true`** (medido en el HTML) |
+| `lcp-discovery-insight` | — | **0** | _pendiente_ |
+| Enlace de precarga en el `<head>` | presente | presente | **presente, con `fetchPriority="high"`** |
+| `imageSrcSet` en `/sobre-el-doctor` | 2 | 2 | **2** |
+| Variante descargada a 375px DPR2 | 640w | 640w | **640w** |
+| Peso de esa variante | 32.980 B (WebP) | igual | **igual** |
+| `Content-Type` | `image/webp` | igual | **igual** |
+| TTFB del HTML | 794 ms | — | _pendiente_ |
+| `cf-cache-status` de `/_next/image` | DYNAMIC | — | _pendiente_ |
+| CLS de `/sobre-el-doctor` | 0 | **0** | _pendiente_ |
+| CLS de la portada | 0 | **0** | _pendiente_ |
 
 ### Separación de efectos, para el veredicto
 
 | Efecto | De quién es |
 |---|---|
-| Prioridad de red de la petición de la imagen | Tarea 2 de este plan |
+| `priorityHinted` de `false` a `true` | **Camino B, tarea 2 de este plan** |
+| Enlace de precarga descubrible en el `<head>` | Tarea 2, ya lo daba el camino A |
 | Formato y variante servida | Ya estaban bien antes. Ni mejora ni empeora. |
 | ~470 ms de TTFB del HTML | **Plan 18-02** |
 | Viaje al origen de la imagen optimizada | **Plan 18-02**, vía la sexta invariante |
+
+**Aviso para leer el número de cierre:** los 2,73 s de partida son de producción y
+los 2,2 s del camino A son del build local. **No son comparables de forma directa**:
+producción paga el viaje a Hetzner que el local no paga. La comparación válida es
+camino A local contra camino B local, con el mismo protocolo, que es la que falta.
 
 ### Comparación de capturas
 
