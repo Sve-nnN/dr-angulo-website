@@ -74,6 +74,33 @@ Los dos posts enlazan a la guía por dos caminos, los dos intactos: la entrada d
 - **Commit:** `ebaaa49`
 - **Nota:** ninguna de las tres corridas de `sedes:check` de las olas 1 a 5 se hizo, porque ningún plan anterior lo incluía en su `<verify>`. Vale la pena que un plan futuro añada esa puerta a los `<verify>` que tocan el sitemap.
 
+## Cierre posterior a la verificación de fase (commit `503b6a7`)
+
+El verificador cerró la fase con `human_needed`: `/blog/reumatologo-o-traumatologo`, la URL que la ola 2 creó, conservaba una sección `cirugia` de nivel 2 con el mismo material que esta ola retiró de ciática y lumbalgia. No es un defecto de origen: los párrafos venían verbatim de `/preguntas-frecuentes` y el encabezado lo varió la ola 4. La brecha es de secuencia — la ola 2 publicó, la ola 6 recortó otros dos archivos y ninguna reconcilió las dos.
+
+Juan decidió recortarla con el mismo trato. Aplicado:
+
+- sección `cirugia` retirada entera (era la última del arreglo; ningún `id` de los que quedan cambió)
+- párrafo puente al final de `sin-operar`, con el criterio de `873dab2` y `450682a`
+- `description` reescrita: anunciaba "en qué casos se plantea operar", una sección que ya no existe
+- `bannerAfterSectionId` no requería cambio: apunta a `que-es--diferencia-entre-artrosis-traumatologo-y-reumatologo`. Ninguna ancla del repo apuntaba a `#cirugia` de esta URL.
+
+**No hubo contenido de seguridad que preservar**, a diferencia del post de ciática: la sección retirada no traía lista de señales de alarma ni criterio de urgencia ("mismo día", esfínteres, entrepierna). Se comprobó por `grep` antes de borrar.
+
+Estado tras el recorte: **1140 palabras** (piso 900), cuatro puertas en 0, **0 violaciones de H2 sobre 17 archivos**, sitemap en 23, `FAQPage` en 2 HTML.
+
+### Desviación registrada
+
+**[Rule 2 - Enlace que el puente necesitaba] `outboundLink` nuevo hacia `/servicios/hernia-discal`**
+
+- **Issue:** este post no tiene `relatedService` ni tenía enlace a la guía de hernia discal, a diferencia de ciática y lumbalgia, que la alcanzaban por dos caminos. Un párrafo puente que remite a una guía inalcanzable desde la página es un puente roto.
+- **Fix:** entrada nueva en `outboundLinks` con el rótulo canónico que fijó la ola 5, "Guía sobre la hernia discal". No se inventó copy ni se reescribió ningún anchor existente.
+- **Consecuencia medida:** el total de anchors del sitio pasa de **110 a 111**. Los criterios de 16-05 que citan 110 quedan desactualizados por esta adición deliberada; el invariante que sí importa, `grep -rhoE 'anchor: "[a-záéíóúñ][^"]*"' src/content/ | wc -l` → **0**, se mantiene.
+
+### Observación, no acción
+
+`src/content/blog/artrosis.ts` también tiene una sección `id: "cirugia"`. Queda en pie a propósito: D-12 nombra los dos posts que canibalizan con la guía de columna, y la artrosis es otra condición cuyo tratamiento quirúrgico no compite con `/servicios/hernia-discal`. Si se quisiera unificar el criterio, es decisión de fase, no de este cierre.
+
 ## Known Stubs
 
 Ninguno.
