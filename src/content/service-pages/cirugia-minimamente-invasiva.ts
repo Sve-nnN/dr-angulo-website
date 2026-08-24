@@ -30,7 +30,7 @@ export const cirugiaMinimamenteInvasiva: ServicePage = {
   updatedAt: "2026-08-13",
   format: "pagina-de-servicio",
   describesSurgery: true,
-  relatedPosts: ["miedo-a-operarte-de-la-columna-5-cosas-que-debes-saber"],
+  relatedPosts: ["cirugia-de-columna"],
   ctaBanner: {
     heading: "¿Te propusieron operarte y quieres saber si hay una vía menos invasiva?",
     body: "Esa pregunta se responde mirando tus imágenes, no en abstracto. Trae la resonancia y el informe.",

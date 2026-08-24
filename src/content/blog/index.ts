@@ -9,7 +9,7 @@
 
 import type { ServicePage, ServiceSectionItem } from "@/content/service-pages";
 import { postCiatica } from "./ciatica";
-import { postMiedoAOperarteDeLaColumna5CosasQueDebesSaber } from "./miedo-a-operarte-de-la-columna-5-cosas-que-debes-saber";
+import { postCirugiaDeColumna } from "./cirugia-de-columna";
 import { postArtrosis } from "./artrosis";
 import { postLumbalgia } from "./lumbalgia";
 
@@ -77,7 +77,7 @@ export type BlogPost = {
 
 export const blogPosts: BlogPost[] = [
   postCiatica,
-  postMiedoAOperarteDeLaColumna5CosasQueDebesSaber,
+  postCirugiaDeColumna,
   postArtrosis,
   postLumbalgia,
 ];

@@ -12,7 +12,7 @@ export const postArtrosis: BlogPost = {
     { href: "/blog/ciatica", anchor: "ciática o lumbalgia" },
     { href: "/blog/lumbalgia", anchor: "lumbalgia se opera" },
     {
-      href: "/blog/miedo-a-operarte-de-la-columna-5-cosas-que-debes-saber",
+      href: "/blog/cirugia-de-columna",
       anchor: "cirugía de columna cervical",
     },
     { href: "/blog", anchor: "Blog" },

@@ -20,7 +20,7 @@ export const postLumbalgia: BlogPost = {
       anchor: "donde duele la ciática",
     },
     {
-      href: "/blog/miedo-a-operarte-de-la-columna-5-cosas-que-debes-saber",
+      href: "/blog/cirugia-de-columna",
       anchor: "cirugía de columna escoliosis",
     },
     { href: "/blog", anchor: "Blog" },

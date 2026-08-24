@@ -19,7 +19,7 @@ export const herniaDiscal: ServicePage = {
   describesSurgery: true,
   relatedPosts: [
     "ciatica",
-    "miedo-a-operarte-de-la-columna-5-cosas-que-debes-saber",
+    "cirugia-de-columna",
   ],
   ctaBanner: {
     heading: "¿Tu dolor baja por la pierna?",

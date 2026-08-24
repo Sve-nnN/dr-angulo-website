@@ -14,7 +14,7 @@ export const postCiatica: BlogPost = {
     { href: "/blog/artrosis", anchor: "artrosis lumbosacro" },
     { href: "/blog/lumbalgia", anchor: "tipos de lumbalgia" },
     {
-      href: "/blog/miedo-a-operarte-de-la-columna-5-cosas-que-debes-saber",
+      href: "/blog/cirugia-de-columna",
       anchor: "videos de cirugía de columna",
     },
     { href: "/blog", anchor: "Blog" },
