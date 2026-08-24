@@ -41,13 +41,13 @@ export default async function Home() {
             <h1 className="animate-rise-in animate-step-1 font-heading text-3xl font-extrabold leading-tight text-white sm:text-4xl lg:text-5xl">
               Traumatólogo y cirujano de columna en Lima
             </h1>
-            <p className="animate-rise-in animate-step-2 mt-5 max-w-xl text-lg text-white/85">
+            <p className="animate-rise-in animate-step-2 mt-5 max-w-xl text-lg text-white">
               {siteConfig.name}, traumatólogo y cirujano de columna en Lima.
               Escoliosis, hernia discal y desgaste de columna, con opciones que
               van desde el tratamiento conservador hasta la cirugía mínimamente
               invasiva. Si hace falta operar, te acompaño explicando cada paso.
             </p>
-            <p className="animate-rise-in animate-step-3 mt-5 text-sm text-white/75">
+            <p className="animate-rise-in animate-step-3 mt-5 text-sm text-white">
               {credentialsInfo.yearsOfExperience} años de ejercicio · CMP{" "}
               {siteConfig.credentials.cmp} · RNE {siteConfig.credentials.rne} ·
               Atiende en {locations.length} sedes de Lima
@@ -56,7 +56,7 @@ export default async function Home() {
               href={credentialsInfo.verificationUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="animate-rise-in animate-step-3 inline-flex min-h-11 items-center text-sm text-white/75 underline underline-offset-2 transition-colors duration-150 hover:text-white"
+              className="animate-rise-in animate-step-3 inline-flex min-h-11 items-center text-sm text-white underline underline-offset-2"
             >
               Verifica la colegiatura en el registro del Colegio Médico del Perú
               <span className="sr-only"> (se abre en una pestaña nueva)</span>
@@ -327,7 +327,7 @@ export default async function Home() {
           <h2 className="font-heading text-2xl font-bold text-white sm:text-3xl">
             Cuéntame qué te duele
           </h2>
-          <p className="mt-3 text-lg text-white/85">
+          <p className="mt-3 text-lg text-white">
             Elige la sede que te quede mejor y agenda por el canal de esa sede.
           </p>
           <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
