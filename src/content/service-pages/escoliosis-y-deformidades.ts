@@ -14,7 +14,7 @@ export const escoliosisYDeformidades: ServicePage = {
     "Cifosis",
   ],
   publishedAt: "2026-08-10",
-  updatedAt: "2026-08-13",
+  updatedAt: "2026-08-24",
   format: "guia-clinica",
   describesSurgery: true,
   relatedPosts: [],
@@ -97,7 +97,7 @@ export const escoliosisYDeformidades: ServicePage = {
     {
       id: "sintomas",
       level: 2,
-      heading: "Qué síntomas produce",
+      heading: "Cómo se nota una desviación de la columna",
       paragraphs: [
         "En el adolescente la escoliosis casi nunca duele. Por eso lo que sigue se observa más de lo que se siente: un hombro más alto que el otro, una escápula que sobresale, la cintura despareja, un lado del tronco más prominente.",
         "Hay una prueba casera que orienta bastante. Pídele que se incline hacia adelante con las rodillas rectas y los brazos colgando, y mira la espalda desde atrás a la altura de los ojos. Si un lado queda más alto que el otro, corresponde una evaluación aunque no haya ninguna molestia.",
@@ -108,7 +108,7 @@ export const escoliosisYDeformidades: ServicePage = {
     {
       id: "causas",
       level: 2,
-      heading: "Por qué aparece",
+      heading: "Por qué se desvía la columna",
       paragraphs: [
         "La forma más frecuente es la escoliosis idiopática del adolescente, que aparece durante el estirón del crecimiento y no tiene una causa única identificable. Idiopática quiere decir exactamente eso: no sabemos por qué.",
         "Las otras formas sí tienen una explicación. Las congénitas, cuando una vértebra se formó de manera incompleta. Las asociadas a una enfermedad neuromuscular, donde la musculatura no sostiene la columna como debería. Y las del adulto, que pueden ser una curva de la adolescencia que siguió su curso o una deformidad nueva por desgaste.",
@@ -127,7 +127,7 @@ export const escoliosisYDeformidades: ServicePage = {
     {
       id: "diagnostico",
       level: 2,
-      heading: "Cómo se confirma el diagnóstico",
+      heading: "Cómo se mide la curva",
       paragraphs: [
         "La evaluación empieza en la consulta, con la persona de pie y el tronco visto de frente, de perfil y de espaldas. Se revisa la altura de los hombros y de las caderas, la simetría de la cintura, la alineación de la cabeza sobre la pelvis y el desnivel del tronco al inclinarse hacia adelante. En niños y adolescentes se suma la valoración del desarrollo, porque el crecimiento que queda pesa tanto como la curva actual.",
         "La radiografía de columna completa de pie es el estudio de base y muestra la curva tal como se comporta con el peso del cuerpo encima. Sobre esa imagen se mide el ángulo, se identifican las vértebras que limitan la curva y se estima la madurez ósea, que es lo que permite anticipar cuánto puede progresar.",
@@ -138,7 +138,7 @@ export const escoliosisYDeformidades: ServicePage = {
     {
       id: "sin-operar",
       level: 2,
-      heading: "Qué se puede hacer sin operar",
+      heading: "Qué se hace mientras no se opera",
       paragraphs: [
         "El tratamiento no se decide por la foto de la radiografía sino por tres cosas juntas: cuánto mide la curva, cuánto crecimiento le queda a la persona y qué le está produciendo hoy.",
         "En curvas pequeñas y estables la conducta es observar con controles programados. El corsé se plantea en curvas moderadas cuando todavía queda crecimiento por delante. Su objetivo no es enderezar la columna sino frenar la progresión mientras el esqueleto termina de madurar, y el resultado depende en buena medida de que se cumplan las horas de uso indicadas. Se retira cuando la maduración ósea está completa.",
@@ -158,7 +158,7 @@ export const escoliosisYDeformidades: ServicePage = {
     {
       id: "cirugia",
       level: 2,
-      heading: "Cuándo hace falta operar",
+      heading: "Cuándo se opera una escoliosis",
       paragraphs: [
         "La cirugía entra en la conversación cuando la curva es grande, cuando sigue progresando pese a un tratamiento conservador bien cumplido, o cuando la deformidad ya produce consecuencias concretas: dolor que no cede, compromiso de los nervios, o una inclinación que impide mantener el tronco equilibrado sobre la pelvis.",
         "El objetivo no es dejar la columna recta en la radiografía. Es corregir hasta donde es seguro hacerlo, liberar los nervios si están comprimidos y devolver el equilibrio para que sostenerse de pie deje de costar tanto esfuerzo.",
@@ -178,7 +178,7 @@ export const escoliosisYDeformidades: ServicePage = {
     {
       id: "preguntas-frecuentes",
       level: 2,
-      heading: "Preguntas frecuentes",
+      heading: "Dudas frecuentes sobre la escoliosis",
       paragraphs: [
         "Las que más se repiten en consulta, con la respuesta corta. Ninguna reemplaza una evaluación: sirven para que llegues con las preguntas mejor hechas.",
       ],
@@ -214,7 +214,7 @@ export const escoliosisYDeformidades: ServicePage = {
     {
       id: "cuando-consultar",
       level: 2,
-      heading: "Cuándo consultar",
+      heading: "Cuándo llevar el caso a consulta",
       paragraphs: [
         "Durante el crecimiento vale la pena evaluar cualquier asimetría del tronco que llame la atención, sobre todo si coincide con el estirón. Que haya antecedentes en la familia es otra razón para revisar sin esperar a que se note algo evidente.",
         "En quien ya tiene el diagnóstico, la señal para adelantar el control es que la asimetría se vea distinta a la del chequeo anterior o que la ropa deje de caer como caía. La progresión se documenta comparando estudios, no de memoria.",
