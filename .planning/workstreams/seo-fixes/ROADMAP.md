@@ -93,14 +93,23 @@ Reglas de uso:
   3. La imagen del doctor en `/sobre-el-doctor` se sirve en formato moderno, se precarga con prioridad alta y deja de ser un LCP diferido.
   4. El bundle compartido arrastra menos de 15 KB de JavaScript sin usar, no sirve polyfills legacy a navegadores que no los necesitan, y la imagen de `/opengraph-image` pesa menos de 200 KB sin que la vista previa al compartir por WhatsApp se vea distinta.
   5. La portada, `/agendar` y `/sedes` puntúan 1,00 en accesibilidad: el párrafo `text-white/8x` sobre fondo primario de la portada cumple contraste, las cuatro listas `<dl>` de `/agendar` ya no tienen `<div>` entre `<dt>` y `<dd>`, y `/sedes` no tiene ningún `<h3>` sin `<h2>` previo.
-**Plans**: TBD
+**Plans**: 5 plans
+
+Plans:
+- [ ] 18-01-PLAN.md — A11Y-01: contraste sobre fondo primario, estructura de los `<dl>` de `/agendar` y orden de encabezados de `/sedes` (ola 1)
+- [ ] 18-02-PLAN.md — CWV-01: diagnóstico de caché de borde, Cache Rule redactada para Juan y medición de TTFB contra producción (ola 1)
+- [ ] 18-03-PLAN.md — CWV-02: perfilar `/testimonios` con throttling 4x, atribuir el costo real y arreglarlo sin gastar el CLS = 0 (ola 1)
+- [ ] 18-04-PLAN.md — CWV-03: migrar de la prop `priority` obsoleta a `preload` y cerrar la brecha de prioridad del LCP de `/sobre-el-doctor` (ola 2)
+- [ ] 18-05-PLAN.md — CWV-04: sacar el código del carrusel del chunk que descargan todas las rutas y declarar `browserslist` (ola 2)
+
 **UI hint**: yes
 
 **Notas de ejecución**
 - Fase de diseño por definición: A11Y-01 entra por `impeccable audit` y el arreglo de contraste por `impeccable polish`; CWV-02 a CWV-05 entran por `impeccable optimize`. Ver la sección "Restricción de diseño" del Overview.
 - A11Y-01 vive en esta fase porque se verifica con la misma corrida de Unlighthouse que los CWV y sobre páginas que se tocan igual.
 - CWV-01 es configuración de caché, no de plataforma. No se cambia de hosting ni de framework.
-- La sospecha de CWV-02 es el embebido de reseñas de Google o el carrusel de videos forzando layout en bucle (2,45 s de Style & Layout, 630 ms de forced reflow sin atribuir). Confirmar antes de tocar.
+- La sospecha original de CWV-02 apuntaba al carrusel de videos. **Queda descartada por evidencia** (2026-08-24): el carrusel no renderiza en producción, está en el estado de fallback a la espera de que se vincule la cuenta de Instagram, así que no estaba en el marcado que la auditoría midió. El plan 18-03 perfila con throttling 4x contra producción para atribuir los 2,45 s de Style & Layout, los 630 ms de forced reflow y los 850 ms de TBT antes de tocar nada. Ver el Addendum de `18-CONTEXT.md`.
+- Los verbos de `impeccable` de esta fase se cargan desde `~/.claude/skills/impeccable/`, que es global. La ruta local que la sección "Restricción de diseño" cita no existe en este proyecto.
 - Los únicos cambios de estilo permitidos en este milestone son los tres de accesibilidad. No hay rediseño.
 
 ### Phase 19: Confianza, medición y seguridad
@@ -142,7 +151,8 @@ Reglas de uso:
 |---|---|---|---|
 | 16 | SLUG-01, SLUG-02, SLUG-03, SLUG-04, LINK-01, LINK-02, LINK-03, SCH-01, SCH-02 | 9 | #2, #3, #4, #5, #6, #10, #11 |
 | 17 | IDX-01, IDX-02, IDX-03 | 3 | #1 |
-| 18 | CWV-01, CWV-02, CWV-03, CWV-04, CWV-05, A11Y-01 | 6 | #7, #8, #9, #12, #13, #14 |
+| 18 | CWV-01, CWV-02, CWV-03, CWV-04, A11Y-01 | 5 | #7, #8, #9, #12, #13 |
+| 18 (fuera de alcance) | CWV-05 | 1 | #14 — a cargo de Juan desde el 2026-08-24 |
 | 19 | TRUST-01, TRUST-02, MEAS-01, MEAS-02 | 4 | #15, #16, #17, #18 |
 
 ---
