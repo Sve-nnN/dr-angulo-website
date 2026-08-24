@@ -96,3 +96,25 @@ v1.3 es refinamiento, no rediseño: se preserva identidad visual y comportamient
 - Diferenciar el cromo de aside y pie que se repite en las cuatro fichas de sede: el verificador de la fase 16 lo anotó como informativo. Si la fase 19 lo toma, bien; no es de rendimiento.
 
 </deferred>
+
+---
+
+## Addendum 2026-08-24: el carrusel de reels queda descartado como culpable
+
+El `18-UI-SPEC.md` marcó como `unresolved` si el carrusel de Instagram realmente renderiza en producción. **Verificado contra producción y resuelto: no renderiza.**
+
+Evidencia, sobre el HTML servido por `https://drangulocolumna.com/testimonios`:
+
+| Señal | Valor |
+|---|---|
+| `cdninstagram` (el CDN que sirve las portadas de los reels) | **0 apariciones** |
+| `<img>` en toda la página | **2** |
+| H2 presentes | "Reseñas en Google", "Otras reseñas", "Videos del consultorio", "Consultorio privado", "Contacto rápido" |
+
+El H2 "Videos del consultorio" existe, pero debajo no hay portadas de reels: el carrusel está en el estado de fallback que `PRODUCT.md` documenta, a la espera de que se vincule la cuenta.
+
+**Consecuencia para CWV-02:** la auditoría del 2026-08-23 midió producción, así que el carrusel **no estaba en el marcado** cuando se registraron los 2,45 s de Style & Layout, los 630 ms de forced reflow y los 850 ms de TBT. No puede ser el culpable. La sospecha de la auditoría, que este contexto había repetido, queda descartada por evidencia.
+
+El perfilado arranca entonces por el otro candidato, el bloque de reseñas de Google, que sí renderiza (`GOOGLE_PLACES_API_KEY` está configurada y la página trae 12 apariciones de "Reseñas"). Y si tampoco es él, hay que buscar en el layout compartido, no en los componentes de esta ruta.
+
+**Nota de método:** esto es exactamente por qué la decisión de "perfilar antes de tocar" era la correcta. Optimizar el carrusel habría consumido la fase entera sin mover el número.

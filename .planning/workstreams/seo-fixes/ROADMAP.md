@@ -29,7 +29,7 @@ Ruteo de verbos para lo que hay en v1.3:
 | Texto y estructura nuevos en los hubs `/blog` y `/sedes` | `layout` si cambia la estructura, `clarify` si es solo copy | Fase 19, TRUST-01 |
 
 Reglas de uso:
-- Correr `node .claude/skills/impeccable/scripts/context.mjs --target <archivo o ruta>` una vez por sesión antes de tocar interfaz. La skill carga `PRODUCT.md`, el design system de `design-system/dr-angulo/` y el brief de superficie.
+- Correr `node ~/.claude/skills/impeccable/scripts/context.mjs --target <archivo o ruta>` una vez por sesión antes de tocar interfaz. La skill carga `PRODUCT.md`, el design system de `design-system/dr-angulo/` y el brief de superficie.
 - El hook detector de impeccable ya está aceptado en este proyecto (`.impeccable/config.local.json`), así que corre solo después de editar archivos de UI. Sus hallazgos se atienden, no se ignoran.
 - Este milestone es refinamiento, no rediseño: se preserva la identidad visual, el comportamiento y todo lo que esté fuera del alcance del requisito. **No hay rediseño visual en v1.3.**
 - Si un verbo y otro compiten para el mismo trabajo, se pregunta una vez antes de elegir.
