@@ -166,7 +166,7 @@ Ver la invariante 5.
 
 ---
 
-## 4. Las cinco invariantes, como advertencias
+## 4. Las seis invariantes, como advertencias
 
 Léelas antes de guardar la regla. Cada una describe algo que se rompe en silencio,
 sin que ninguna de las cinco compuertas del proyecto lo note.
@@ -205,6 +205,46 @@ por `www`: esa petición devuelve 200 con contenido en vez de 301, la
 canonicalización de host muere sin hacer ruido y el sitio vuelve a tener dos hosts
 indexables sirviendo lo mismo. En el panel: **Cache Key -> Host -> Use original
 host header**. No se activa "Resolved host".
+
+**6. `/_next/image` necesita la cabecera `Accept` en la clave de caché, o queda
+fuera.**
+Esta invariante se agregó el 2026-08-24, después de que el perfilado del plan
+18-04 midiera lo que el optimizador de imágenes de Next devuelve de verdad. Es
+una corrección sobre la primera redacción de este archivo, no un detalle: la
+regla de la sección 5.2, tal como estaba escrita, cachea también `/_next/image`,
+y ahí produce un defecto real.
+
+La evidencia, medida sobre
+`/_next/image?url=%2Fdr-angulo-implante-disco.avif&w=640&q=75`:
+
+| Cabecera `Accept` de la petición | Lo que devuelve | Peso |
+|---|---|---|
+| La de un navegador (`image/avif,image/webp,...`) | `image/webp` | 32.980 B |
+| Ninguna, o `*/*` (curl, rastreadores, algunos bots) | `image/jpeg` | 48.250 B |
+
+La respuesta trae `vary: Accept`, que es exactamente la señal de que varía. Y
+Cloudflare ignora `Vary` sobre cabeceras arbitrarias, que es la misma razón por
+la que el HTML se puede cachear con la invariante 2.
+
+Acá esa misma propiedad se vuelve en contra. Si el borde cachea la primera
+respuesta que le toque y la sirve a todos: cuando la primera sea la de un
+rastreador sin `Accept`, **todos los pacientes reciben el JPEG de 48.250 bytes en
+lugar del WebP de 32.980**, y se pierde el 32% del peso de cada imagen del sitio
+sin que nada lo reporte. En el otro sentido es peor: un AVIF cacheado servido a
+un navegador que no lo soporta es una imagen rota.
+
+Dos formas de resolverlo, en orden de preferencia:
+
+- **Preferida: agregar `Accept` a la clave de caché.** En la regla 5.2, dentro de
+  **Cache Key**, sección **Headers**, agregar `Accept` a **Include headers**. Con
+  eso cada formato tiene su propia entrada y las imágenes se cachean en el borde
+  sin riesgo. Este control no está en todos los planes de Cloudflare.
+- **Si ese control no aparece en el panel: excluir `/_next/image` del cacheado**,
+  agregándolo a la expresión de la regla 5.1. Las imágenes siguen yendo al origen
+  como hoy, que es el comportamiento actual y no una regresión, y el HTML igual
+  se cachea, que es de donde salen los 453 ms. Es la opción segura.
+
+Lo que no se hace es cachear `/_next/image` sin una de las dos cosas.
 
 ---
 
@@ -256,13 +296,23 @@ Esta va **segunda**, después de la anterior.
 3. En **Then**, bajo **Cache eligibility**, marcar **Eligible for cache**.
 4. Abrir **Edge TTL** y elegir **Use cache-control header if present, bypass cache if not**.
 5. Abrir **Browser TTL** y elegir **Respect origin TTL**.
-6. Abrir **Cache Key** y configurar tres cosas:
+6. Abrir **Cache Key** y configurar cuatro cosas:
    - **Query String:** **All query string parameters** (invariante 2, el `_rsc`)
    - **Host:** **Use original host header** (invariante 5)
+   - **Headers -> Include headers:** agregar `Accept` (invariante 6, el formato de
+     imagen). Si el panel no ofrece este control en el plan contratado, **no
+     guardes así**: volvé al punto 5.1 y agregá `/_next/image` a la expresión de
+     bypass, como dice la invariante 6.
    - **Cache Deception Armor:** activado
 7. Guardar con **Deploy**.
 8. Confirmar que en la lista de Cache Rules la regla del punto 5.1 aparece
    **arriba** de esta. Si no, arrastrarla y volver a guardar.
+
+Si tomaste el camino de excluir `/_next/image`, la expresión del punto 5.1 queda:
+
+```
+(starts_with(http.request.uri.path, "/api/")) or (starts_with(http.request.uri.path, "/_next/image")) or (len(http.request.headers["rsc"]) > 0)
+```
 
 Las cuatro partes que el plan exige nombrar:
 
@@ -270,7 +320,7 @@ Las cuatro partes que el plan exige nombrar:
 |---|---|---|
 | **Expresión de filtro** | `http.host eq "drangulocolumna.com"` | Solo el apex. Una petición por `www` no entra a esta regla, así que la Redirect Rule y el 301 de respaldo siguen siendo lo primero que la ve. Todo lo que no se puede cachear ya quedó atrapado por la regla 1. |
 | **Acción** | Eligible for cache | Declara el HTML como cacheable. Es lo único que falta hoy: Cloudflare no lo hace por defecto porque `text/html` no está en su lista de extensiones cacheables. |
-| **Ajuste de clave de caché** | Query String: todos los parámetros. Host: cabecera original. Cache Deception Armor: activo. | Los dos primeros son las invariantes 2 y 5. El armor evita que una URL disfrazada de asset estático (`/pagina.jpg`) haga que el borde guarde HTML bajo una clave que no le corresponde. |
+| **Ajuste de clave de caché** | Query String: todos los parámetros. Host: cabecera original. Headers: incluir `Accept`. Cache Deception Armor: activo. | Los tres primeros son las invariantes 2, 5 y 6. El armor evita que una URL disfrazada de asset estático (`/pagina.jpg`) haga que el borde guarde HTML bajo una clave que no le corresponde. |
 | **TTL de borde** | Use cache-control header if present, bypass cache if not | Respeta lo que Next ya declara: 3.600 s en la portada y en `/testimonios` por su `revalidate = 3600`, y un año en las rutas estáticas. No inventa un TTL propio. Y si alguna respuesta llegara sin `Cache-Control`, no la cachea, que es el lado seguro del error. |
 
 ---
@@ -287,6 +337,7 @@ cuatro detectan de inmediato una regla mal configurada.
 | `curl -sI https://www.drangulocolumna.com/ \| grep -i location` | `https://drangulocolumna.com/` con código 301 |
 | `curl -s -D - -o /dev/null -H 'rsc: 1' https://drangulocolumna.com/sedes \| grep -i content-type` | `text/x-component`, nunca `text/html` |
 | `curl -sI https://drangulocolumna.com/api/reviews/status \| grep cf-cache-status` | `DYNAMIC` o `BYPASS`, nunca `HIT` |
+| `curl -s -o /dev/null -w '%{content_type}\n' -H 'Accept: image/avif,image/webp,image/*,*/*;q=0.8' 'https://drangulocolumna.com/_next/image?url=%2Fdr-angulo-implante-disco.avif&w=640&q=75'` | `image/webp`. Si devuelve `image/jpeg`, el borde cacheó la variante de un cliente sin `Accept` y la invariante 6 quedó violada |
 
 ---
 
