@@ -131,6 +131,7 @@ export const postLumbalgia: BlogPost = {
       paragraphs: [
         "El tratamiento de la lumbalgia es conservador en la enorme mayoría de los casos. Movimiento temprano, terapia física dirigida, trabajo de fuerza del tronco y corrección de la ergonomía del puesto de trabajo.",
         "La medicación acompaña el período de más dolor y se usa por el tiempo que indique quien te atiende. En casos seleccionados se plantean infiltraciones, que son un recurso para bajar el dolor y permitir la rehabilitación, no un tratamiento en sí mismo.",
+        "La lumbalgia común, sin compromiso del nervio, casi nunca llega al quirófano; cuando sí aparece una causa estructural que explique el dolor, la decisión de operar se desarrolla en la guía de hernia discal y no acá.",
       ],
     },
     {
@@ -149,24 +150,6 @@ export const postLumbalgia: BlogPost = {
       paragraphs: [
         "Los que mejor resultado dan son los que fortalecen el tronco completo y los glúteos, sumados a caminar todos los días. La natación y la bicicleta fija sirven para sostener la actividad cuando el dolor limita el impacto.",
         "Conviene que la rutina te la arme un fisioterapeuta según lo que tengas, y no copiarla de un video. Un ejercicio que le sirve a alguien con dolor mecánico puede empeorar a alguien con dolor irradiado por una raíz comprimida.",
-      ],
-    },
-    {
-      id: "cirugia",
-      level: 2,
-      heading: "En qué casos se plantea operar",
-      paragraphs: [
-        "La lumbalgia común, sin compromiso del nervio, casi nunca se opera. Operar entra en la conversación cuando hay una causa estructural identificada que explica el dolor y que no respondió al tratamiento conservador sostenido.",
-        "Las razones que sí apuran son otras: la pérdida de fuerza que avanza, los signos de compresión seria del canal y el dolor irradiado incapacitante que no cedió después de un manejo conservador bien hecho.",
-      ],
-    },
-    {
-      id: "cirugia--lumbalgia-se-opera",
-      level: 3,
-      heading: "Cuándo se opera una lumbalgia",
-      paragraphs: [
-        "La respuesta corta es que la lumbalgia por sí sola no se opera. Se opera la causa, cuando esa causa está identificada, explica lo que sientes y ya se agotó lo demás.",
-        "Si alguien te propone operarte por un dolor lumbar sin irradiación, sin hallazgos que lo expliquen y sin haber pasado por un tratamiento conservador bien hecho, es razonable pedir una segunda opinión antes de decidir.",
       ],
     },
     {
