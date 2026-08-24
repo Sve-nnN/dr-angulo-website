@@ -75,6 +75,23 @@ const nextConfig: NextConfig = {
         destination: "/servicios/estenosis-espinal",
         permanent: true,
       },
+      // Renombre de la fase 16 de v1.3: los dos posts trataban de ciática y de
+      // cirugía de columna, pero la URL anunciaba otra cosa. Ninguna de las dos
+      // estaba indexada cuando se renombraron, así que el cambio no arrastra
+      // posicionamiento. Se marca la redirección como permanente (308 en esta
+      // versión de Next, que Google consolida igual que un 301) y no con un
+      // `statusCode` explícito de 301, para no partir el formato de las tres
+      // redirecciones de arriba.
+      {
+        source: "/blog/5-sintomas-de-columna-que-no-debes-ignorar",
+        destination: "/blog/ciatica",
+        permanent: true,
+      },
+      {
+        source: "/blog/miedo-a-operarte-de-la-columna-5-cosas-que-debes-saber",
+        destination: "/blog/cirugia-de-columna",
+        permanent: true,
+      },
     ];
   },
 };

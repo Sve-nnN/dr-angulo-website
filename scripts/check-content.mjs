@@ -124,12 +124,12 @@ const MANIFEST = [
   { route: "/servicios/ortopedia-infantil", type: "service" },
   { route: "/servicios/cirugia-minimamente-invasiva", type: "service" },
   {
-    route: "/blog/5-sintomas-de-columna-que-no-debes-ignorar",
+    route: "/blog/ciatica",
     type: "post",
     linksTo: "/servicios/hernia-discal",
   },
   {
-    route: "/blog/miedo-a-operarte-de-la-columna-5-cosas-que-debes-saber",
+    route: "/blog/cirugia-de-columna",
     type: "post",
     linksTo: "/servicios/hernia-discal",
   },
