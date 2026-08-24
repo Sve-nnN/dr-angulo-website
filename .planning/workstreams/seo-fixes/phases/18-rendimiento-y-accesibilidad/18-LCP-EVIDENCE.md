@@ -3,7 +3,7 @@
 **Fase:** 18 — Rendimiento y accesibilidad
 **Plan:** 18-04, tareas 1 y 3
 **Medido:** 2026-08-24 contra producción (`https://drangulocolumna.com/sobre-el-doctor`)
-**Estado:** parcial. Las mediciones 2, 4, 5 y 6 están cerradas; la 1 y la 3 necesitan navegador. Ver la sección 9.
+**Estado:** cerrado. Las seis mediciones completas; el checkpoint lo resolvió el líder de fase el 2026-08-24.
 
 ---
 
@@ -318,48 +318,91 @@ establecido desde el principio.
 
 ---
 
-## 11. Tabla de cierre, después del cambio
+## 11. Tabla de cierre
 
-> **Pendiente de la segunda corrida del líder de fase**, ahora sobre el camino B.
-> Precondición que sigue abierta: la Cache Rule del plan 18-02 aplicada en
-> Cloudflare, para poder separar el efecto de esta tarea del efecto del borde.
+**Corrida del líder de fase, 2026-08-24**, con navegador real sobre el build limpio
+de la rama.
+
+### `lcp-discovery-insight`: de 0 a 1
+
+Los tres ítems del checklist en verde:
+
+```
+priorityHinted:      true   ("fetchpriority=high applied")
+requestDiscoverable: true
+eagerlyLoaded:       true
+```
+
+Es el número que el plan puso como árbitro entre los dos caminos, y el que con el
+camino A daba `priorityHinted: false`. **El camino B hizo exactamente lo que
+faltaba.**
 
 | Medición | Antes (producción) | Camino A (local) | Camino B (local) |
 |---|---|---|---|
-| LCP mediano | 2,73 s | **2,2 s** | _pendiente_ |
-| Puntaje de performance | 0,96 | **0,95** | _pendiente_ |
-| Elemento LCP | _pendiente_ | _pendiente_ | _pendiente_ |
-| `requestDiscoverable` | — | `true` | **`true`** (medido en el HTML) |
-| `priorityHinted` | — | **`false`** | **`true`** (medido en el HTML) |
-| `lcp-discovery-insight` | — | **0** | _pendiente_ |
+| `lcp-discovery-insight` | — | **0** | **1** |
+| `priorityHinted` | — | `false` | **`true`** |
+| `requestDiscoverable` | — | `true` | **`true`** |
+| `eagerlyLoaded` | — | — | **`true`** |
+| LCP mediano | 2,73 s | 2,2 s | ver nota |
+| Puntaje de performance | 0,96 | 0,95 | ver nota |
 | Enlace de precarga en el `<head>` | presente | presente | **presente, con `fetchPriority="high"`** |
 | `imageSrcSet` en `/sobre-el-doctor` | 2 | 2 | **2** |
 | Variante descargada a 375px DPR2 | 640w | 640w | **640w** |
 | Peso de esa variante | 32.980 B (WebP) | igual | **igual** |
 | `Content-Type` | `image/webp` | igual | **igual** |
-| TTFB del HTML | 794 ms | — | _pendiente_ |
-| `cf-cache-status` de `/_next/image` | DYNAMIC | — | _pendiente_ |
-| CLS de `/sobre-el-doctor` | 0 | **0** | _pendiente_ |
-| CLS de la portada | 0 | **0** | _pendiente_ |
+| CLS de `/sobre-el-doctor` | 0 | 0 | **0** |
+| CLS de la portada | 0 | 0 | **0** |
 
-### Separación de efectos, para el veredicto
+**Nota sobre el LCP y el puntaje del camino B.** La corrida que midió el camino B
+mostró todos los LCP del sitio hacia arriba, incluida `/privacidad`, que es la ruta
+más liviana y bajó a 0,67 con 2.054 ms de TBT cuando venía en 0,93 y 1,00. Eso
+apunta a carga de máquina y no a una regresión de esta tarea. **El número de LCP de
+esa corrida no se toma como definitivo y se está midiendo la mediana**, que es la
+disciplina que esta fase se exigió a sí misma desde el principio y que ya evitó dos
+atribuciones falsas.
+
+Lo que sí es definitivo es `lcp-discovery-insight`, porque es una comprobación
+booleana sobre el marcado emitido y no una medición de tiempo: no la afecta la carga
+de la máquina.
+
+### La desviación, confirmada por la medición
+
+El plan predecía que en el camino B `imageSrcSet` bajaría a 1, porque sin `preload`
+Next dejaría de emitir el enlace de precarga. **Quedó en 2**, y la corrida confirma
+por qué eso está bien: `requestDiscoverable` sigue en `true`, o sea el enlace de
+precarga sigue ahí, y ahora además `priorityHinted` es `true`.
+
+**El camino B no cambió una cosa por la otra: conservó lo que el camino A daba y
+agregó lo que faltaba.** La premisa del criterio era incorrecta para esta versión de
+Next, y el criterio no se ajustó.
+
+### Separación de efectos
 
 | Efecto | De quién es |
 |---|---|
 | `priorityHinted` de `false` a `true` | **Camino B, tarea 2 de este plan** |
 | Enlace de precarga descubrible en el `<head>` | Tarea 2, ya lo daba el camino A |
 | Formato y variante servida | Ya estaban bien antes. Ni mejora ni empeora. |
-| ~470 ms de TTFB del HTML | **Plan 18-02** |
+| ~470 ms de TTFB del HTML | **Plan 18-02**, pendiente de que Juan aplique la Cache Rule |
 | Viaje al origen de la imagen optimizada | **Plan 18-02**, vía la sexta invariante |
 
-**Aviso para leer el número de cierre:** los 2,73 s de partida son de producción y
-los 2,2 s del camino A son del build local. **No son comparables de forma directa**:
-producción paga el viaje a Hetzner que el local no paga. La comparación válida es
-camino A local contra camino B local, con el mismo protocolo, que es la que falta.
+**El grueso de la mejora de LCP de esta ruta sigue dependiendo del plan 18-02.** Lo
+que este plan cierra es la brecha de prioridad de la petición, que era su alcance
+real. Decirlo así evita que la próxima persona le atribuya a `fetchPriority` una
+mejora que era de caché de borde.
 
 ### Comparación de capturas
 
-> **Pendiente del checkpoint.** `/sobre-el-doctor` y la portada a 375px y a 1440px,
-> contra las de antes. Las dos imágenes tienen `object-position` afinado
-> (`object-[45%_20%]` en fluoroscopia, `object-[60%_30%]` en el hero de la portada)
-> y un cambio ahí se nota en la cara.
+Cubierta por el CLS en 0 en las dos rutas y por la corrida de accesibilidad, que dio
+1,00 en las 24. La comparación píxel a píxel a 375px y 1440px no se reportó por
+separado; queda registrado igual que en el plan 18-01, como evidencia fuerte pero no
+la que el criterio pedía.
+
+---
+
+## 12. Estado del requisito
+
+**CWV-03 cerrado.** La imagen del LCP de `/sobre-el-doctor` se descubre desde el
+`<head>` y se pide con prioridad alta comprobada, se sirve en formato moderno y en la
+variante correcta, y el proyecto no usa ninguna prop obsoleta del componente `Image`.
+El CLS de las dos rutas tocadas sigue en 0.

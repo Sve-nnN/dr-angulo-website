@@ -67,7 +67,14 @@ presente al separar efectos.
 ## 4. `target-size` en la navegación de escritorio, solo en el build local
 
 **Encontrado:** 2026-08-24, en la corrida de Unlighthouse del checkpoint del plan 18-01.
-**Estado:** artefacto de render local, a reverificar después del deploy. **No es regresión de la fase 18.**
+**Estado: CERRADO el 2026-08-24.** Era artefacto de render local, como se sospechaba.
+
+**La evidencia que lo cierra:** en la corrida de Unlighthouse sobre el build actual
+de la rama, **la accesibilidad mínima del sitio entero es 1,00** y la auditoría
+`target-size` ya no aparece en ninguna ruta. No hizo falta esperar al deploy.
+
+Se conserva el registro de abajo porque documenta un modo de falla real del entorno
+de medición local, que va a volver a aparecer.
 
 Tres rutas que ningún plan de esta fase tocó bajan de 1,00 en accesibilidad en el
 build local:
@@ -89,6 +96,6 @@ marcado. Y ninguno de los commits de la fase 18 toca `header.tsx` salvo la
 migración de `priority` a `preload` del logo, que no puede afectar el tamaño de un
 objetivo táctil.
 
-**Qué hacer:** reverificar después del deploy. Si en producción con el código nuevo
-`target-size` empieza a fallar de verdad, se abre como hallazgo de la fase 19,
-porque el arreglo tocaría el encabezado y eso no está sancionado en esta fase.
+**Qué se hizo:** nada, que era lo correcto. La medición siguiente sobre un build
+distinto lo hizo desaparecer. **Arreglar un artefacto de medición habría sido tocar
+el encabezado sin motivo**, en una fase que no sanciona ese cambio.

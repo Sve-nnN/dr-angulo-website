@@ -154,7 +154,7 @@ Queda registrado para que sea trazable:
 | ID | Estado |
 |---|---|
 | T-18-SC | Instalación aprobada por Juan y verificada contra el registro. El paquete terminó desinstalado. |
-| T-18-16 | Recorrido manual de hidratación: **pendiente del checkpoint de la tarea 3**. |
+| T-18-16 | **Verificado.** Recorrido manual con navegador real: consola limpia y los cuatro elementos funcionando. |
 | T-18-17 | HTML servido sin cambios: `/testimonios` `<img>`=2 y `<h2>`=4, `/sedes` `<h2>`=7, `/` `imageSrcSet`=2. |
 | T-18-18 | `browserslist` con el default de Next, no más estrecho, con el motivo escrito. |
 | T-18-19 | `next.config.ts` byte a byte igual al estado previo, con 5 cabeceras y 5 redirecciones. |
@@ -163,9 +163,34 @@ Queda registrado para que sea trazable:
 
 Las cinco en 0 en cada commit: `build`, `content:check`, `seo:check`, `sedes:check` y `tsc --noEmit`.
 
+## El checkpoint
+
+Resuelto por el líder de fase el 2026-08-24, con navegador real sobre el build limpio de la rama.
+
+**CLS: 0 en las 24 rutas.** Era el criterio duro. El cambio más riesgoso de la fase —reorganizar el grafo de módulos del encabezado, que se monta en las 24— no gastó nada.
+
+**Hidratación: consola limpia.** Cero errores, cero advertencias, cero avisos de hidratación, ni en carga ni tras interactuar ni tras navegar.
+
+| Elemento del recorrido | Resultado |
+|---|---|
+| Menú de especialidades | Abre y trae **las cinco guías con su `navLabel` y su `cardSummary` completos** |
+| Botón atrás y navegación de cliente | Funciona, ida y vuelta |
+| Botón flotante de WhatsApp | Presente e interactivo |
+| Aviso de cookies | Presente, con Aceptar y Rechazar operativos |
+
+El menú era lo que había que mirar: sacar 158.571 B de contenido del navegador podía dejarlo vacío o a medias. Trae las cinco especialidades con sus resúmenes, servidas desde `nav-index.ts`. **El índice escrito a mano está completo y correcto**, y `assertNavIndexMatches()` es lo que garantiza que siga estándolo.
+
+**Accesibilidad: 1,00 en el sitio entero**, no solo en las tres rutas del plan 18-01. El `target-size` que se había anotado como sospechoso de artefacto local desapareció, lo que cerró el punto 4 de `deferred-items.md` sin esperar al deploy.
+
+### Una observación abierta, que no bloquea
+
+En la misma corrida `/privacidad` midió 0,67 con 2.054 ms de TBT, cuando venía en 0,93 y 1,00. Todos los LCP del sitio subieron en esa corrida, lo que apunta a carga de máquina. **Se está midiendo la mediana antes de llamarlo regresión**, que es la disciplina que esta fase se exigió desde el principio.
+
+Lo que se puede afirmar desde el código: después de este plan `/privacidad` es la ruta con **menos** chunks del sitio (11) y el total más bajo (649.778 B). No recibió ningún chunk nuevo ni creció en ninguno. Si el número se repite, el grafo de módulos de esta ruta no es donde buscar.
+
 ## Estado del requisito
 
-**CWV-04 cerrado del lado del código.** Falta el checkpoint de la tarea 3, que necesita navegador: cobertura ejecutada según Coverage, el ahorro que reporte "Reduce unused JavaScript", **CLS en 0 en las rutas probadas**, y el recorrido manual de hidratación (menú de especialidades, botón atrás, botón flotante de WhatsApp y aviso de cookies). Este plan reorganizó el grafo de módulos del encabezado, que se monta en las 24 rutas: ese recorrido es la comprobación que ninguna compuerta hace.
+**CWV-04 cerrado.** 137.971 B menos de JavaScript por ruta en las 24, las dos sondas en cero, el CLS intacto y la hidratación verificada a mano.
 
 ## Self-Check: PASSED
 

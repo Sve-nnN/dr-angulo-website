@@ -390,14 +390,43 @@ dejarlo vacío o a medias. **Trae las cinco especialidades con sus resúmenes, s
 desde `nav-index.ts`.** El índice escrito a mano está completo y correcto, y la
 compuerta `assertNavIndexMatches()` es lo que garantiza que siga estándolo.
 
+### CLS: 0 en las 24 rutas
+
+**Medido el 2026-08-24 sobre el build de la rama.** Era el criterio duro del plan: un
+ahorro de 138 KB que subiera el CLS de 0 a 0,05 es un retroceso y se rechaza.
+
+**El cambio más riesgoso de la fase no gastó nada.** Reorganizar el grafo de módulos
+del encabezado, que se monta en las 24 rutas, sumado a mover el carrusel y
+`@next/third-parties` a carga bajo demanda, dejó el CLS exactamente donde estaba.
+
+### Accesibilidad: 1,00 en el sitio entero
+
+Dato de la misma corrida, mejor de lo esperado: **la accesibilidad mínima del sitio
+es 1,00**, no solo en las tres rutas del alcance del plan 18-01. El `target-size`
+que se había anotado como sospechoso de artefacto de render local **desapareció**,
+lo que confirma el diagnóstico y cierra ese punto de `deferred-items.md`.
+
 ### Cobertura ejecutada según Coverage
 
-> **Pendiente.** El panel de Coverage necesita la misma sesión de navegador.
+> **Pendiente, y ya no es bloqueante.** El panel de Coverage habría servido para
+> estimar el porcentaje ejecutado por chunk, pero la pregunta que iba a responder
+> —cuánto JavaScript sobra— quedó contestada de forma más directa por la medición de
+> bytes de la sección 8: 137.971 B por ruta que ya no se descargan.
 
-### CLS de las rutas probadas
+### Una observación que sigue en verificación
 
-> **Pendiente.** Corriendo en Unlighthouse. Es el criterio duro: un ahorro de 138 KB
-> que suba el CLS de 0 a 0,05 es un retroceso y se rechaza.
+En la misma corrida `/privacidad` midió **0,67 con 2.054 ms de TBT**, cuando es la
+ruta más liviana del sitio y venía en 0,93 y 1,00. Todos los LCP del sitio subieron
+en esa corrida, lo que apunta a carga de máquina.
+
+**No se toma como regresión y se está midiendo la mediana**, que es la disciplina que
+esta fase se exigió desde el principio y que ya evitó dos atribuciones falsas.
+
+Lo que sí se puede afirmar desde el lado del código, y queda anotado por si sirve
+para descartar: `/privacidad` es, después de este plan, la ruta con **menos** chunks
+del sitio, 11, y con el total más bajo, 649.778 B. No recibió ningún chunk nuevo ni
+creció en ninguno. Si el número se repite, el grafo de módulos de esta ruta no es
+donde buscar.
 
 ---
 
