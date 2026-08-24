@@ -54,7 +54,15 @@ Reglas de uso:
   3. Ningún anchor interno del sitio es una keyword cruda, un superlativo ni una especialidad que el doctor no ejerce: no queda ni "mejor neurocirujano de columna lima", ni "cirugía de columna cerca de mí", ni "artrosis traumatologo o reumatologo".
   4. Un paciente que llega a lumbalgia o a ciática encuentra dolor, autocuidado y cuándo consultar, con un enlace hacia hernia discal; la decisión quirúrgica se desarrolla solo en `/servicios/hernia-discal`.
   5. Ninguna secuencia de H2 se repite palabra por palabra en más de dos páginas, y cada post del blog declara `about` apuntando a su propia entidad `MedicalCondition`, no a la de hernia discal. No queda ningún `FAQPage` de una sola pregunta en el sitio.
-**Plans**: TBD
+**Plans**: 6 plans
+
+Plans:
+- [ ] 16-01-PLAN.md — Renombre de los dos slugs del blog y sus 301 (ola 1)
+- [ ] 16-02-PLAN.md — Separación de `/preguntas-frecuentes` y post nuevo de reumatólogo o traumatólogo (ola 2)
+- [ ] 16-03-PLAN.md — Entidad de tema del post en el schema y `FAQPage` de una sola pregunta retirado (ola 3)
+- [ ] 16-04-PLAN.md — Variación de los H2 de plantilla en nueve módulos (ola 4)
+- [ ] 16-05-PLAN.md — Reescritura de los 110 anchors por `impeccable clarify` (ola 5, con checkpoint)
+- [ ] 16-06-PLAN.md — Deslinde de intención entre ciática, lumbalgia y hernia discal (ola 6)
 
 **Notas de ejecución**
 - Los renombres de slug (SLUG-01/02) van primero dentro de la fase: SCH-01 referencia los `@id` que esos slugs generan, y LINK-02 reescribe las mismas páginas.
@@ -129,7 +137,7 @@ Reglas de uso:
 
 | Phase | Milestone | Plans Complete | Status | Completed |
 |-------|-----------|----------------|--------|-----------|
-| 16. Alineación de contenido, enlazado y schema | v1.3 | 0/TBD | Not started | - |
+| 16. Alineación de contenido, enlazado y schema | v1.3 | 0/6 | Planned | - |
 | 17. Indexación y enlaces de entrada | v1.3 | 0/TBD | Not started | - |
 | 18. Rendimiento y accesibilidad | v1.3 | 0/TBD | Not started | - |
 | 19. Confianza, medición y seguridad | v1.3 | 0/TBD | Not started | - |
