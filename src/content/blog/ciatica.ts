@@ -171,6 +171,7 @@ export const postCiatica: BlogPost = {
       paragraphs: [
         "La mayoría de las ciáticas mejora sin operar. El plan combina movimiento temprano dentro de lo tolerado, terapia física dirigida, control del dolor con lo que indique tu médico y corrección de la postura de trabajo y de la forma de levantar peso.",
         "El reposo absoluto prolongado juega en contra. Sostener actividad, aunque sea poca y adaptada, es parte del tratamiento y no una concesión que uno se permite cuando se siente mejor.",
+        "Cuando el dolor irradiado no cede con este manejo bien llevado y sostenido, la conversación pasa a la cirugía. Esa decisión no depende del tiempo que lleve doliendo sino de lo que muestren los estudios junto con lo que te está limitando, y el detalle de cuándo se plantea operar está desarrollado en la guía de hernia discal.",
       ],
     },
     {
@@ -189,16 +190,6 @@ export const postCiatica: BlogPost = {
       paragraphs: [
         "No hay una lista, y la búsqueda es tan común que vale contestarla igual. Quien te evalúa elige el fármaco según el tipo de dolor y según tu historia, y lo ajusta en los controles.",
         "Comprar por recomendación de un conocido tiene dos riesgos concretos: tomar algo que no corresponde a un dolor de origen nervioso, y enmascarar una señal que había que mirar.",
-      ],
-    },
-    {
-      id: "cirugia",
-      level: 2,
-      heading: "Cuándo entra la cirugía en la conversación",
-      paragraphs: [
-        "Operar se plantea cuando el dolor irradiado sigue siendo incapacitante después de un manejo conservador bien hecho y sostenido, o cuando hay compromiso neurológico que avanza.",
-        "Hay tres situaciones que no admiten esperar turno y se evalúan el mismo día: la pérdida de fuerza que avanza rápido, el adormecimiento en la zona de la entrepierna y los genitales, y la dificultad para controlar la orina o la deposición.",
-        "Fuera de eso, la conversación sobre operar se abre y no se cierra. Que se plantee no significa que esté decidido.",
       ],
     },
     {
@@ -242,6 +233,7 @@ export const postCiatica: BlogPost = {
       heading: "Cuándo conviene una evaluación",
       paragraphs: [
         "Consulta si el dolor baja por la pierna y no cede en pocos días, si aparece hormigueo o falta de fuerza, o si el cuadro te obliga a modificar de forma sostenida lo que haces.",
+        "Hay tres situaciones que no admiten esperar turno y se evalúan el mismo día: la pérdida de fuerza que avanza rápido, el adormecimiento en la zona de la entrepierna y los genitales, y la dificultad para controlar la orina o la deposición.",
         "Mientras consigues la cita, anota cómo se comporta el dolor día a día. Ese registro simple vale mucho en la consulta, porque la historia es lo que más orienta antes de cualquier imagen.",
         "Y si detrás de la ciática hay un disco que comprime una raíz, lo que sigue está explicado en la guía de hernia discal lumbar y cervical, que entra en el diagnóstico y en el tratamiento con el detalle que acá no corresponde.",
       ],
