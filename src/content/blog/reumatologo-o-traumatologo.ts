@@ -14,8 +14,8 @@ import type { BlogPost } from "./index";
 export const postReumatologoOTraumatologo: BlogPost = {
   slug: "reumatologo-o-traumatologo",
   topicEntities: [
-    { kind: "specialty", name: "Traumatología" },
-    { kind: "specialty", name: "Reumatología" },
+    { kind: "specialty", specialty: "https://schema.org/Musculoskeletal" },
+    { kind: "specialty", specialty: "https://schema.org/Rheumatologic" },
   ],
   title: "Reumatólogo o traumatólogo: a cuál te toca ir",
   h1: "Reumatólogo o traumatólogo: cómo saber cuál te corresponde",
@@ -36,7 +36,10 @@ export const postReumatologoOTraumatologo: BlogPost = {
     heading: "¿Todavía no sabes a quién te toca consultar?",
     body: "Cuenta tu caso y en la primera cita se te dice si corresponde a esta consulta o a otra especialidad.",
   },
-  intro: [],
+  intro: [
+    "Reumatólogo y traumatólogo suenan parecido y se confunden seguido, sobre todo cuando el motivo de consulta es un dolor de articulaciones o de espalda que no cede. Los dos se ocupan del aparato locomotor, así que la duda es razonable.",
+    "La diferencia está en qué tipo de problema atiende cada uno y con qué herramientas. Abajo va cómo se reparten los casos, qué se revisa en la primera cita y qué conviene llevar para que la consulta rinda.",
+  ],
   sections: [
     {
       id: "que-es",

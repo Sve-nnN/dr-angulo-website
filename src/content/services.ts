@@ -66,7 +66,7 @@ export type ProcedureApproach = {
  * Abordajes quirúrgicos que ofrece el doctor, confirmados por él mismo
  * (ago. 2026): de la cirugía convencional a la mínimamente invasiva.
  */
-export const procedureApproaches: ProcedureApproach[] = [
+export const procedureApproaches = [
   {
     slug: "minimamente-invasiva",
     name: "Cirugía mínimamente invasiva",
@@ -103,4 +103,15 @@ export const procedureApproaches: ProcedureApproach[] = [
       height: 853,
     },
   },
-];
+] as const satisfies readonly ProcedureApproach[];
+
+/**
+ * Slug de un abordaje, derivado del arreglo de arriba y no repetido a mano.
+ *
+ * `ID.procedure()` construye con esto los `@id` que el grafo raíz declara, y el
+ * blog referencia esos nodos por el mismo tipo. Escrito como unión literal
+ * aparte, renombrar un abordaje seguiría compilando y dejaría un `@id` colgado
+ * en el marcado, sin que ninguna puerta lo notara.
+ */
+export type ProcedureApproachSlug =
+  (typeof procedureApproaches)[number]["slug"];
