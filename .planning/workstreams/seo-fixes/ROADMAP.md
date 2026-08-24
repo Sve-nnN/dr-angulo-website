@@ -61,7 +61,7 @@ Plans:
 - [ ] 16-02-PLAN.md — Separación de `/preguntas-frecuentes` y post nuevo de reumatólogo o traumatólogo (ola 2)
 - [ ] 16-03-PLAN.md — Entidad de tema del post en el schema y `FAQPage` de una sola pregunta retirado (ola 3)
 - [ ] 16-04-PLAN.md — Variación de los H2 de plantilla en nueve módulos (ola 4)
-- [ ] 16-05-PLAN.md — Reescritura de los 110 anchors por `impeccable clarify` (ola 5, con checkpoint)
+- [ ] 16-05-PLAN.md — Reescritura de los 110 anchors por `impeccable clarify` (ola 5)
 - [ ] 16-06-PLAN.md — Deslinde de intención entre ciática, lumbalgia y hernia discal (ola 6)
 
 **Notas de ejecución**
