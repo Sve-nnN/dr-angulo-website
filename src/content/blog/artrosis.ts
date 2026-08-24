@@ -12,14 +12,14 @@ export const postArtrosis: BlogPost = {
   publishedAt: "2026-08-13",
   updatedAt: "2026-08-24",
   outboundLinks: [
-    { href: "/blog/ciatica", anchor: "ciática o lumbalgia" },
-    { href: "/blog/lumbalgia", anchor: "lumbalgia se opera" },
+    { href: "/blog/ciatica", anchor: "Cuándo el dolor de pierna viene de la columna" },
+    { href: "/blog/lumbalgia", anchor: "Qué hay detrás del dolor lumbar" },
     {
       href: "/blog/cirugia-de-columna",
-      anchor: "cirugía de columna cervical",
+      anchor: "Qué conviene saber antes de operarse de la columna",
     },
     { href: "/blog", anchor: "Blog" },
-    { href: "/servicios", anchor: "cirujano de columna lima" },
+    { href: "/servicios", anchor: "Qué condiciones se tratan en cada especialidad" },
   ],
   bannerAfterSectionId: "que-es--artrosis-de-rodilla",
   ctaBanner: {

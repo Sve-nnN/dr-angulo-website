@@ -19,19 +19,19 @@ export const postLumbalgia: BlogPost = {
   outboundLinks: [
     {
       href: "/servicios/hernia-discal",
-      anchor: "hernia discal lumbosacra tratamiento",
+      anchor: "Guía sobre la hernia discal",
     },
-    { href: "/blog/artrosis", anchor: "como frenar la artrosis" },
+    { href: "/blog/artrosis", anchor: "Cómo se maneja la artrosis" },
     {
       href: "/blog/ciatica",
-      anchor: "donde duele la ciática",
+      anchor: "Cuándo el dolor de pierna viene de la columna",
     },
     {
       href: "/blog/cirugia-de-columna",
-      anchor: "cirugía de columna escoliosis",
+      anchor: "Qué conviene saber antes de operarse de la columna",
     },
     { href: "/blog", anchor: "Blog" },
-    { href: "/servicios", anchor: "mejor neurocirujano de columna lima" },
+    { href: "/servicios", anchor: "Qué condiciones se tratan en cada especialidad" },
   ],
   bannerAfterSectionId: "sintomas",
   ctaBanner: {

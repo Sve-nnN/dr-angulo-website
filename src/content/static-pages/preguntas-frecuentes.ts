@@ -29,8 +29,8 @@ export const preguntasFrecuentesPage: StaticPage = {
   bannerAfterSectionId:
     "preguntas-frecuentes--cuando-ir-al-traumatologo-o-al-reumatologo",
   outboundLinks: [
-    { href: "/blog/artrosis", anchor: "osteoporosis o artrosis" },
-    { href: "/servicios", anchor: "cirugía de columna cerca de mí" },
+    { href: "/blog/artrosis", anchor: "Cómo se maneja la artrosis" },
+    { href: "/servicios", anchor: "Qué condiciones se tratan en cada especialidad" },
     { href: "/blog", anchor: "Blog" },
     { href: "/agendar", anchor: "Agendar cita" },
   ],

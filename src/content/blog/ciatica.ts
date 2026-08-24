@@ -17,15 +17,15 @@ export const postCiatica: BlogPost = {
   updatedAt: "2026-08-24",
   relatedService: "hernia-discal",
   outboundLinks: [
-    { href: "/servicios/hernia-discal", anchor: "hernia discal lumbar y cervical" },
-    { href: "/blog/artrosis", anchor: "artrosis lumbosacro" },
-    { href: "/blog/lumbalgia", anchor: "tipos de lumbalgia" },
+    { href: "/servicios/hernia-discal", anchor: "Guía sobre la hernia discal" },
+    { href: "/blog/artrosis", anchor: "Cómo se maneja la artrosis" },
+    { href: "/blog/lumbalgia", anchor: "Qué hay detrás del dolor lumbar" },
     {
       href: "/blog/cirugia-de-columna",
-      anchor: "videos de cirugía de columna",
+      anchor: "Qué conviene saber antes de operarse de la columna",
     },
     { href: "/blog", anchor: "Blog" },
-    { href: "/servicios", anchor: "cirugía de columna cerca de mí" },
+    { href: "/servicios", anchor: "Qué condiciones se tratan en cada especialidad" },
   ],
   bannerAfterSectionId: "sintomas--espina-ciatica",
   ctaBanner: {

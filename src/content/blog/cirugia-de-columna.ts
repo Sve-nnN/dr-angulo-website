@@ -16,16 +16,16 @@ export const postCirugiaDeColumna: BlogPost = {
   outboundLinks: [
     {
       href: "/servicios/cirugia-minimamente-invasiva",
-      anchor: "cirugía endoscópica de columna",
+      anchor: "Cómo es la cirugía mínimamente invasiva",
     },
-    { href: "/blog/artrosis", anchor: "pastillas para la artrosis" },
+    { href: "/blog/artrosis", anchor: "Cómo se maneja la artrosis" },
     {
       href: "/blog/ciatica",
-      anchor: "falsa ciática",
+      anchor: "Cuándo el dolor de pierna viene de la columna",
     },
-    { href: "/blog/lumbalgia", anchor: "causas de lumbalgia" },
+    { href: "/blog/lumbalgia", anchor: "Qué hay detrás del dolor lumbar" },
     { href: "/blog", anchor: "Blog" },
-    { href: "/servicios", anchor: "cirujano de columna cerca de mí" },
+    { href: "/servicios", anchor: "Qué condiciones se tratan en cada especialidad" },
   ],
   bannerAfterSectionId: "que-es--caminar-despues-de-cirugia-de-columna",
   ctaBanner: {
