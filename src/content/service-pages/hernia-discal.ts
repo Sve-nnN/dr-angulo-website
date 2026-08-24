@@ -18,7 +18,7 @@ export const herniaDiscal: ServicePage = {
   format: "guia-clinica",
   describesSurgery: true,
   relatedPosts: [
-    "5-sintomas-de-columna-que-no-debes-ignorar",
+    "ciatica",
     "miedo-a-operarte-de-la-columna-5-cosas-que-debes-saber",
   ],
   ctaBanner: {

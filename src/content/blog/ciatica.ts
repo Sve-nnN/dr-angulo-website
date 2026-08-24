@@ -1,13 +1,13 @@
 import type { BlogPost } from "./index";
 
-export const post5SintomasDeColumnaQueNoDebesIgnorar: BlogPost = {
-  slug: "5-sintomas-de-columna-que-no-debes-ignorar",
+export const postCiatica: BlogPost = {
+  slug: "ciatica",
   title: "Ciática: por qué duele la pierna y qué hacer",
   h1: "Ciática: el dolor que baja por la pierna",
   description:
     "Qué es la ciática, cómo se distingue de una lumbalgia, qué la produce y cuándo el dolor de pierna necesita evaluación médica.",
   publishedAt: "2026-06-10",
-  updatedAt: "2026-08-13",
+  updatedAt: "2026-08-24",
   relatedService: "hernia-discal",
   outboundLinks: [
     { href: "/servicios/hernia-discal", anchor: "hernia discal lumbar y cervical" },

@@ -8,7 +8,7 @@
  */
 
 import type { ServicePage, ServiceSectionItem } from "@/content/service-pages";
-import { post5SintomasDeColumnaQueNoDebesIgnorar } from "./5-sintomas-de-columna-que-no-debes-ignorar";
+import { postCiatica } from "./ciatica";
 import { postMiedoAOperarteDeLaColumna5CosasQueDebesSaber } from "./miedo-a-operarte-de-la-columna-5-cosas-que-debes-saber";
 import { postArtrosis } from "./artrosis";
 import { postLumbalgia } from "./lumbalgia";
@@ -76,7 +76,7 @@ export type BlogPost = {
 };
 
 export const blogPosts: BlogPost[] = [
-  post5SintomasDeColumnaQueNoDebesIgnorar,
+  postCiatica,
   postMiedoAOperarteDeLaColumna5CosasQueDebesSaber,
   postArtrosis,
   postLumbalgia,

@@ -16,7 +16,7 @@ export const postMiedoAOperarteDeLaColumna5CosasQueDebesSaber: BlogPost = {
     },
     { href: "/blog/artrosis", anchor: "pastillas para la artrosis" },
     {
-      href: "/blog/5-sintomas-de-columna-que-no-debes-ignorar",
+      href: "/blog/ciatica",
       anchor: "falsa ciática",
     },
     { href: "/blog/lumbalgia", anchor: "causas de lumbalgia" },

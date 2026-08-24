@@ -9,7 +9,7 @@ export const postArtrosis: BlogPost = {
   publishedAt: "2026-08-13",
   updatedAt: "2026-08-13",
   outboundLinks: [
-    { href: "/blog/5-sintomas-de-columna-que-no-debes-ignorar", anchor: "ciática o lumbalgia" },
+    { href: "/blog/ciatica", anchor: "ciática o lumbalgia" },
     { href: "/blog/lumbalgia", anchor: "lumbalgia se opera" },
     {
       href: "/blog/miedo-a-operarte-de-la-columna-5-cosas-que-debes-saber",

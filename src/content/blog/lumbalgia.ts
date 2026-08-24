@@ -16,7 +16,7 @@ export const postLumbalgia: BlogPost = {
     },
     { href: "/blog/artrosis", anchor: "como frenar la artrosis" },
     {
-      href: "/blog/5-sintomas-de-columna-que-no-debes-ignorar",
+      href: "/blog/ciatica",
       anchor: "donde duele la ciática",
     },
     {
