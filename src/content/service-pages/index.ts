@@ -18,6 +18,7 @@ import { estenosisEspinal } from "./estenosis-espinal";
 import { escoliosisYDeformidades } from "./escoliosis-y-deformidades";
 import { ortopediaInfantil } from "./ortopedia-infantil";
 import { cirugiaMinimamenteInvasiva } from "./cirugia-minimamente-invasiva";
+import { assertNavIndexMatches, serviceNavItems } from "@/content/nav-index";
 
 /**
  * Esqueleto que sigue la página. `guia-clinica` recorre la condición desde qué
@@ -148,6 +149,11 @@ export const servicePages: ServicePage[] = [
   ortopediaInfantil,
   cirugiaMinimamenteInvasiva,
 ];
+
+// Compuerta de sincronía con `src/content/nav-index.ts` (CWV-04). Este barril
+// solo se importa desde el servidor, así que la comprobación corre en el build
+// y nunca en el navegador. Ver el comentario de cabecera de `nav-index.ts`.
+assertNavIndexMatches("servicio", serviceNavItems, servicePages);
 
 export function getServicePage(slug: string | undefined): ServicePage | undefined {
   if (!slug) return undefined;

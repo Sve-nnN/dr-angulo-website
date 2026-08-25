@@ -45,52 +45,52 @@ export function LocationCard({
 
       <div>
         <dl className="space-y-4">
-          <div className="flex gap-3">
-            <Clock className="mt-0.5 size-5 shrink-0 text-primary" aria-hidden="true" />
-            <div>
-              <dt className="sr-only">Días y horario de atención</dt>
-              {location.schedule.map((block) => (
-                <dd key={block.days} className="text-foreground/80">
-                  <span className="font-semibold text-foreground">{block.days}:</span>{" "}
-                  {block.hours}
-                </dd>
-              ))}
-            </div>
+          <div className="grid grid-cols-[auto_1fr] items-start gap-x-3">
+            <dt>
+              <Clock className="mt-0.5 size-5 shrink-0 text-primary" aria-hidden="true" />
+              <span className="sr-only">Días y horario de atención</span>
+            </dt>
+            {location.schedule.map((block) => (
+              <dd key={block.days} className="col-start-2 text-foreground/80">
+                <span className="font-semibold text-foreground">{block.days}:</span>{" "}
+                {block.hours}
+              </dd>
+            ))}
           </div>
 
-          <div className="flex gap-3">
-            <MapPin className="mt-0.5 size-5 shrink-0 text-primary" aria-hidden="true" />
-            <div>
-              <dt className="sr-only">Dirección</dt>
-              <dd className="text-foreground/80">
-                {location.streetAddress}, {location.addressLocality}
-                {location.building ? (
-                  <>
-                    <br />
-                    {location.building}
-                  </>
-                ) : null}
-                {location.reference ? (
-                  <>
-                    <br />
-                    <span className="text-sm text-foreground/70">
-                      Referencia: {location.reference}
-                    </span>
-                  </>
-                ) : null}
-                <br />
-                <a
-                  href={location.mapsUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="mt-1 inline-flex items-center gap-1 text-sm font-semibold text-primary transition-colors duration-150 hover:text-primary-dark hover:underline"
-                >
-                  Cómo llegar
-                  <ArrowUpRight className="size-3.5" aria-hidden="true" />
-                  <span className="sr-only">(abre Google Maps en una pestaña nueva)</span>
-                </a>
-              </dd>
-            </div>
+          <div className="grid grid-cols-[auto_1fr] items-start gap-x-3">
+            <dt>
+              <MapPin className="mt-0.5 size-5 shrink-0 text-primary" aria-hidden="true" />
+              <span className="sr-only">Dirección</span>
+            </dt>
+            <dd className="col-start-2 text-foreground/80">
+              {location.streetAddress}, {location.addressLocality}
+              {location.building ? (
+                <>
+                  <br />
+                  {location.building}
+                </>
+              ) : null}
+              {location.reference ? (
+                <>
+                  <br />
+                  <span className="text-sm text-foreground/70">
+                    Referencia: {location.reference}
+                  </span>
+                </>
+              ) : null}
+              <br />
+              <a
+                href={location.mapsUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-1 inline-flex items-center gap-1 text-sm font-semibold text-primary transition-colors duration-150 hover:text-primary-dark hover:underline"
+              >
+                Cómo llegar
+                <ArrowUpRight className="size-3.5" aria-hidden="true" />
+                <span className="sr-only">(abre Google Maps en una pestaña nueva)</span>
+              </a>
+            </dd>
           </div>
         </dl>
 
