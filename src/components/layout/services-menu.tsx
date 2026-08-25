@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { ChevronDown } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { servicePages } from "@/content/service-pages";
+import { serviceNavItems } from "@/content/nav-index";
 
 /**
  * Megamenú de "Servicios" en el navbar de escritorio.
@@ -85,7 +85,7 @@ export function ServicesMenu() {
           className="absolute left-1/2 top-full z-50 mt-3 w-[26rem] -translate-x-1/2 rounded-2xl border border-border bg-background p-3 shadow-lg"
         >
           <ul className="grid grid-cols-2 gap-1">
-            {servicePages.map((page) => (
+            {serviceNavItems.map((page) => (
               <li key={page.slug}>
                 <Link
                   href={`/servicios/${page.slug}`}

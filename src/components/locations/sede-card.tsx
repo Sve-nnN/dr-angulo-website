@@ -27,14 +27,14 @@ type SedeCardProps = {
 export function SedeCard({ page, location }: SedeCardProps) {
   return (
     <article className="relative rounded-2xl border border-border bg-white p-6 shadow-sm transition-shadow duration-200 hover:shadow-md focus-within:outline focus-within:outline-[3px] focus-within:outline-offset-2 focus-within:outline-ring">
-      <h3 className="font-heading text-lg font-bold text-primary">
+      <h2 className="font-heading text-lg font-bold text-primary">
         <Link
           href={`/sedes/${page.slug}`}
           className="after:absolute after:inset-0 focus-visible:outline-none"
         >
           {page.navLabel}
         </Link>
-      </h3>
+      </h2>
       <p className="mt-1 text-sm font-semibold text-accent-strong">
         {location.addressLocality}
       </p>
