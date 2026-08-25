@@ -222,5 +222,36 @@ export const escoliosisYDeformidades: ServicePage = {
         "La consulta se atiende en el consultorio de Surco, en la Clínica Ricardo Palma, en la Clínica Sanna La Molina y en la Clínica Padre Luis Tezza. Si ya tienes radiografías previas, llévalas todas, incluso las viejas: la comparación en el tiempo es la mitad de la información.",
       ],
     },
+    {
+      id: "fuentes",
+      level: 2,
+      heading: "De dónde sale esto",
+      paragraphs: [
+        "De acá sale lo que se explica arriba. Cada fuente respalda una afirmación puntual de esta página.",
+      ],
+      citations: [
+        {
+          source:
+            "StatPearls, capítulo Adolescent Idiopathic Scoliosis (NCBI Bookshelf)",
+          supports:
+            "Respalda que la conducta se decide por la magnitud de la curva junto con el crecimiento que le queda a la persona, y no por la radiografía aislada.",
+          href: "https://www.ncbi.nlm.nih.gov/books/NBK499908/",
+        },
+        {
+          source:
+            "Scoliosis Research Society, información para familias sobre escoliosis",
+          supports:
+            "Respalda que el objetivo del corsé es frenar la progresión mientras el esqueleto madura, no enderezar la columna, y que el resultado depende de cumplir las horas de uso indicadas.",
+          href: "https://www.srs.org/patients-and-families/conditions-and-treatments/parents/scoliosis",
+        },
+        {
+          source:
+            "MedlinePlus en español, tema Escoliosis (Biblioteca Nacional de Medicina de EE. UU.)",
+          supports:
+            "Respalda la descripción de cómo se nota una desviación de la columna y por qué el seguimiento en la etapa de crecimiento se hace con controles programados.",
+          href: "https://medlineplus.gov/spanish/scoliosis.html",
+        },
+      ],
+    },
   ],
 };

@@ -278,5 +278,36 @@ export const herniaDiscal: ServicePage = {
         "La consulta se atiende en el consultorio de Surco, en la Clínica Ricardo Palma, en la Clínica Sanna La Molina y en la Clínica Padre Luis Tezza. Si ya tienes estudios hechos, llévalos: cambia bastante lo que se puede resolver en la primera cita.",
       ],
     },
+    {
+      id: "fuentes",
+      level: 2,
+      heading: "De dónde sale esto",
+      paragraphs: [
+        "Lo que se explica arriba se apoya en estas fuentes. Cada una respalda una afirmación puntual de esta página.",
+      ],
+      citations: [
+        {
+          source:
+            "StatPearls, capítulo Disk Herniation (NCBI Bookshelf)",
+          supports:
+            "Respalda que la mayoría de las hernias discales se resuelve sin quirófano y que parte del material herniado se reabsorbe con el tiempo, que es lo que justifica sostener el manejo conservador antes de plantear una operación.",
+          href: "https://www.ncbi.nlm.nih.gov/books/NBK441822/",
+        },
+        {
+          source:
+            "NICE, guía NG59 sobre dolor lumbar y ciática en mayores de 16 años",
+          supports:
+            "Respalda dos cosas que se dicen arriba: que conviene mantenerse en movimiento en vez de guardar reposo prolongado, y que una imagen con una hernia visible no basta por sí sola para indicar una operación.",
+          href: "https://www.nice.org.uk/guidance/ng59",
+        },
+        {
+          source:
+            "MedlinePlus en español, tema Hernia de disco (Biblioteca Nacional de Medicina de EE. UU.)",
+          supports:
+            "Respalda la descripción de qué es una hernia discal y por qué el dolor puede bajar por la pierna cuando el material desplazado comprime una raíz nerviosa.",
+          href: "https://medlineplus.gov/spanish/herniateddisk.html",
+        },
+      ],
+    },
   ],
 };
