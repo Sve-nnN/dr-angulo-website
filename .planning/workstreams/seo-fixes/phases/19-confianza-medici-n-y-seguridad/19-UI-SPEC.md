@@ -67,7 +67,7 @@ El sitio ya tiene su escala; esta fase no la amplía. Estos son los únicos role
 | Role | Size | Weight | Line Height | Dónde |
 |------|------|--------|-------------|-------|
 | Encabezado de sección (guías, hubs) | 24px → 30px en `sm` | 700 (`font-bold`, Poppins) | 1.25 | El `<h2>` de "De dónde sale esto" en guías y hubs. Lo emite `ContentBody` con `headingSize="lg"` — no se declara a mano |
-| Encabezado de sección (posts) | 20px → 24px en `sm` | 700 (Poppins) | 1.25 | El mismo `<h2>` en los 4 posts. `headingSize="md"` — ya lo pone la plantilla |
+| Encabezado de sección (posts) | 20px → 24px en `sm` | 700 (Poppins) | 1.25 | El mismo `<h2>` en los 5 posts. `headingSize="md"` — ya lo pone la plantilla |
 | Cuerpo de sección | 18px (`text-lg`) | 400 (Inter) | 1.556 | El párrafo introductorio de la sección de citas y toda la prosa nueva de los hubs |
 | Cuerpo subordinado | 16px (`text-base`) | 400 (Inter) | 1.5 | La línea "qué respalda" de cada cita |
 | Rótulo enlazado | 16px (`text-base`) | 700 (Poppins, `font-heading`) | 1.5 | El nombre de la fuente, que es el enlace |
@@ -131,24 +131,36 @@ Se renderiza desde `SectionBody` en `content-body.tsx`, del mismo modo en que `i
 ### Ancla, y qué pasa con el esqueleto
 
 - **`id: "fuentes"`. Permanente, se escribe a mano, nunca cambia.** El encabezado visible es "De dónde sale esto"; el `id` es corto y neutro a propósito, porque la convención del repo es que una reescritura de copy no puede romper un ancla que alguien ya mandó por WhatsApp (`service-pages/index.ts`, comentario de `ServiceSection`).
-- **Corrección al brief: agregar esta sección a las 5 guías y los 4 posts NO cambia ningún esqueleto de `SKELETONS`.** Evidencia: en `check-content.mjs` el esqueleto solo se compara cuando la entrada del `MANIFEST` declara `format`, y las entradas de `/servicios/*` y `/blog/*` **no lo declaran**. Prueba independiente: `hernia-discal.ts` ya publica `senales-de-alarma`, un `<h2>` que no está en `SKELETONS["guia-clinica"]`, y las cinco compuertas están en verde.
-- **Lo que sí es una trampa: `/preguntas-frecuentes` declara `format: "guia-clinica"`** (`check-content.mjs`, entrada final del `MANIFEST`). Por lo tanto:
-  - `/preguntas-frecuentes` **queda fuera de alcance** de TRUST-02 en esta fase. No se le agrega la sección de citas.
-  - **No se agrega `"fuentes"` a `SKELETONS["guia-clinica"]`.** Hacerlo obligaría a `/preguntas-frecuentes` a publicarla y dejaría la puerta en rojo.
-  - Si una fase futura decide citar en `/preguntas-frecuentes`, la constante `SKELETONS` y la página se editan **en la misma tarea**, nunca en una posterior (lección 1 de `19-CONTEXT.md`, `## Specific Ideas`).
+- **Corrección al brief: agregar esta sección a las 5 guías y los 5 posts NO cambia ningún esqueleto de `SKELETONS`.** Evidencia, verificada sobre el árbol con la fase 16 ya mergeada (`2acef70`): en `check-content.mjs` el esqueleto solo se compara cuando la entrada del `MANIFEST` declara `format`, y de las 15 entradas del manifiesto **solo las cuatro fichas de sede lo declaran** (`format: "ficha-de-sede"`). Ninguna ruta de `/servicios/*` ni de `/blog/*` está sujeta al esqueleto.
+- Prueba independiente del mismo hecho: `hernia-discal.ts` y `lumbalgia.ts` ya publican `senales-de-alarma`, un `<h2>` que no está en `SKELETONS["guia-clinica"]`, y las cinco compuertas están en verde.
+- **`SKELETONS["guia-clinica"]` quedó sin ninguna ruta que lo consuma.** La fase 16 quitó `format: "guia-clinica"` de la entrada de `/preguntas-frecuentes`, que era la única que lo declaraba. Consecuencias para esta fase:
+  - **No se toca `SKELETONS`.** No hay nada que actualizar y agregarle `"fuentes"` no tendría efecto sobre ninguna ruta.
+  - `/preguntas-frecuentes` sigue **fuera de alcance** de TRUST-02, pero por alcance de la fase (5 guías + 5 posts), no por la compuerta.
+  - Si una fase futura vuelve a atar una ruta a `guia-clinica`, la constante y la página se editan **en la misma tarea**, nunca en una posterior (lección 1 de `19-CONTEXT.md`, `## Specific Ideas`).
 
 ### Posición en la página
 
 Orden de lectura al cierre de las 10 páginas, y es obligatorio:
 
 ```
-… última sección clínica (en las guías, `cuando-consultar`)
+… última sección clínica (la que sea; ver nota abajo)
 → De dónde sale esto            ← última entrada de `sections`, último <h2> anclado
 → "Agenda una evaluación de tu caso"  (<h2> sin ancla, ya existe)
 → Lecturas relacionadas / Sigue leyendo  (ya existen)
 → AuthorByline                  (data-author-byline)
 → MedicalDisclaimer             (data-medical-disclaimer)
 ```
+
+**La regla es posicional, no por nombre de sección.** "De dónde sale esto" va como último elemento del arreglo `sections`, sea cual sea la sección que hoy cierra la página. Las diez páginas no cierran igual y no hace falta que lo hagan:
+
+| Página | Última sección hoy (verificado sobre el árbol) |
+|---|---|
+| `hernia-discal`, `estenosis-espinal`, `escoliosis-y-deformidades` | `cuando-consultar` |
+| `ortopedia-infantil`, `cirugia-minimamente-invasiva` | `como-agendar` |
+| `ciatica`, `cirugia-de-columna`, `artrosis`, `lumbalgia` | `cuando-consultar` |
+| `reumatologo-o-traumatologo` | `sin-operar` — el post más corto y el de estructura más distinta, creado por la fase 16. Es el único que no cierra en `cuando-consultar` ni en `como-agendar` |
+
+Ninguna de esas variantes cambia el contrato: `fuentes` se agrega al final del arreglo y `ContentBody` la renderiza con el mismo ritmo `mt-12` que a cualquier otra sección.
 
 Por qué exactamente ahí, con evidencia:
 
@@ -203,7 +215,11 @@ Se reusa **tal cual**, sin inventar variante:
 
 El motivo es una compuerta que el brief no menciona y que esta fase puede romper en las 10 páginas a la vez:
 
-> `check-content.mjs:388-400` mide el banner de conversión como `palabras antes del banner / palabras totales` y exige que caiga entre **15% y 35%**. La sección de citas suma palabras **al final**, así que solo entra en el denominador: **el porcentaje del banner baja en todas las páginas tocadas.** Las guías ya están cerca del borde inferior — el comentario de `hernia-discal.ts` sobre `bannerAfterSectionId` documenta que detrás de `que-es` el banner cae en el 14%, fuera de rango. Una guía que hoy esté en 16% con 1.200 palabras de cuerpo cae a ~14,2% al sumar 150.
+> `check-content.mjs:388-400` mide el banner de conversión como `palabras antes del banner / palabras totales` y exige que caiga entre **15% y 35%**. La sección de citas suma palabras **al final**, así que solo entra en el denominador: **el porcentaje del banner baja en todas las páginas tocadas.**
+
+El efecto es exacto y se puede anticipar: al sumar `W` palabras al final, el porcentaje se multiplica por `total / (total + W)`. Con W = 150 y cuerpos de entre 1.100 y 3.000 palabras, eso es una caída relativa de entre 5% y 12%, **más grande en las páginas más cortas**. Un banner que hoy esté en 16% queda en ~14,2% y falla. Que el margen es estrecho en la práctica lo documenta el propio repo: el comentario de `hernia-discal.ts` sobre `bannerAfterSectionId` cuenta que detrás de `que-es` el banner caía en el 14% y detrás de `sintomas` en el 35%, los dos bordes, y por eso la posición pasó a ser un dato de la página.
+
+**No se estima: se mide.** Cualquier cálculo aproximado sobre los módulos de contenido cuenta palabras distintas de las que cuenta la puerta, que mide sobre el HTML servido y descuenta firma, aviso y tabla de contenidos. La única cifra válida es la que imprime `content:check` después del cambio.
 
 **Regla de ejecución, no negociable:** en la misma tarea que agrega la sección de citas a una página se corre `content:check` para esa página, y si el banner sale del rango se ajusta `bannerAfterSectionId` **en esa misma tarea**. Nunca en una posterior (lección 1 de `19-CONTEXT.md`).
 
@@ -338,7 +354,7 @@ Todo copy de esta fase pasa por el humanizador antes de entregarse: sin guiones 
 
 ## UI Considerations
 
-Applicable state considerations resolved: **7 covered, 2 backstop, 2 unresolved**
+Applicable state considerations resolved: **9 covered, 2 backstop, 1 unresolved**
 
 | Category | Element(s) | Status | Resolution / Reason |
 |----------|------------|--------|---------------------|
@@ -351,8 +367,9 @@ Applicable state considerations resolved: **7 covered, 2 backstop, 2 unresolved*
 | a11y — nombre accesible del enlace externo | citation-list | ✅ covered | Patrón existente reusado literal (`author-byline.tsx:48` y 17 apariciones más): `target="_blank"` + `rel="noopener noreferrer"` + `ArrowUpRight aria-hidden` + `sr-only " (se abre en una pestaña nueva)"`. El texto del enlace es el nombre de la fuente, así que ningún par de enlaces de la página comparte nombre accesible con distinto destino |
 | long-text | citation-list a 375px | 🧪 backstop | El campo `source` no tiene tope de longitud en el tipo. Con un nombre de organización muy largo, el `inline-flex min-h-11 items-center` puede dejar el ícono desalineado respecto de la última línea. Prueba visual de estado de UI a 375px con el `source` más largo de los que se publiquen; si desalinea, se cambia a `items-baseline` sin tocar el resto |
 | partial | banner de conversión en las 10 rutas tras sumar citas | 🧪 backstop | Sumar palabras al final baja el porcentaje del banner (`check-content.mjs:388-400`, rango 15-35%). Evidencia exigida: salida de `content:check` por ruta **después** de agregar las citas, en el mismo commit. Si alguna ruta sale del rango, `bannerAfterSectionId` se corrige en esa misma tarea. Sin esa salida en el commit, se trata como `insufficient_spec` |
-| jerarquía de encabezados | `/sedes` | ⚠ unresolved | Los `<h3>` de `SedeCard` preceden a todo `<h2>` en `/sedes` hoy. Es el fallo que arregla la fase 18, que está en curso en paralelo. La prosa de la 19 va después de la rejilla y **no** lo arregla, a propósito. Qué lo resuelve: leer `src/app/sedes/page.tsx` y `src/components/locations/sede-card.tsx` en el momento de ejecutar. Si la 18 ya aterrizó, se respeta su forma y no se toca. Si no aterrizó, la 19 **igual no lo arregla** y deja la nota, para no producir dos encabezados donde va uno |
-| cobertura de TRUST-02 | conteo de páginas | ⚠ unresolved | El brief pide "5 guías + 5 posts". Hoy hay **4 posts** en `src/content/blog/` y el `MANIFEST` lista 4. Además, 2 de esos 4 slugs los renombra la fase 16, que está en curso. Y `audit/findings/2026-08-23-auditoria-seo.md`, citado en el brief, **no existe en el repo**, así que no se pudo confirmar el conteo contra la fuente. Qué lo resuelve: el listado de `src/content/blog/` después de que la fase 16 cierre, o que aparezca el archivo de auditoría. El contrato visual de este documento vale igual para 4 o para 5 |
+| jerarquía de encabezados | `/sedes` | ⚠ unresolved | En **esta rama** los `<h3>` de `SedeCard` preceden a todo `<h2>` en `/sedes`. El arreglo ya existe —la fase 18 pasó `sede-card.tsx` de `<h3>` a `<h2>` y `/sedes` puntúa 1,00— pero vive en el **PR #20, todavía sin mergear**, así que acá no está. La prosa de la 19 va después de la rejilla y **no** lo arregla, a propósito: si la 19 lo tocara y el PR #20 mergeara después, quedarían dos encabezados donde va uno. Qué lo resuelve: que el PR #20 mergee. Al ejecutar, leer `src/components/locations/sede-card.tsx`; si ya trae `<h2>`, se respeta y no se toca nada. Si todavía no, la 19 igual no lo arregla |
+| cobertura de TRUST-02 | conteo de páginas | ✅ covered | Verificado sobre el árbol con la fase 16 mergeada (`2acef70`): **5 guías + 5 posts = 10 páginas**, como decía el brief. Los cinco posts, con slug definitivo: `ciatica`, `cirugia-de-columna`, `artrosis`, `lumbalgia`, `reumatologo-o-traumatologo`. Los cinco figuran en el `MANIFEST` de `check-content.mjs` y los renombres de la fase 16 ya están aplicados |
+| structural-variance | los 5 posts | ✅ covered | Los cinco módulos tienen esqueletos distintos: de 6 secciones de nivel 2 (`reumatologo-o-traumatologo`, que cierra en `sin-operar`) a 9 (`lumbalgia`, que cierra en `cuando-consultar` con `senales-de-alarma` de por medio). El contrato no depende de eso: `fuentes` es el último elemento del arreglo `sections`, regla posicional, y ninguna ruta de `/blog/*` declara `format`, así que ninguna está atada a un esqueleto. Ver la tabla de "última sección hoy" arriba |
 
 ---
 
@@ -374,7 +391,7 @@ Dependencias nuevas de esta fase: **cero**. `lucide-react` y `ArrowUpRight` ya e
 | `src/components/content/citation-list.tsx` | Nuevo |
 | `src/components/content/content-body.tsx` | Una línea en `SectionBody` que invoca `CitationList` |
 | `src/content/service-pages/{5 guías}.ts` | Sección `fuentes` al final de `sections`; posible ajuste de `bannerAfterSectionId` |
-| `src/content/blog/{posts}.ts` | Idem |
+| `src/content/blog/{ciatica,cirugia-de-columna,artrosis,lumbalgia,reumatologo-o-traumatologo}.ts` | Idem |
 | `src/content/static-pages/hub-blog.ts` | Nuevo |
 | `src/content/static-pages/hub-sedes.ts` | Nuevo |
 | `src/app/blog/page.tsx` | Solo imports + el envoltorio de prosa |
