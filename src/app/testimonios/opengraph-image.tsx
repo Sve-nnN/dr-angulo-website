@@ -7,5 +7,5 @@ export const alt = ogAlt(title);
 export { size, contentType };
 
 export default function Image() {
-  return renderOgCard({ eyebrow: "Testimonios", title });
+  return renderOgCard({ key: "testimonios", eyebrow: "Testimonios", title });
 }

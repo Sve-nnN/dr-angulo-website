@@ -15,5 +15,5 @@ export default async function Image({ params }: { params: Promise<{ slug: string
   const { slug } = await params;
   const post = blogPosts.find((entry) => entry.slug === slug);
 
-  return renderOgCard({ eyebrow: EYEBROW, title: post?.title ?? EYEBROW });
+  return renderOgCard({ key: `blog-${slug}`, eyebrow: EYEBROW, title: post?.title ?? EYEBROW });
 }

@@ -15,5 +15,5 @@ export default async function Image({ params }: { params: Promise<{ slug: string
   const { slug } = await params;
   const entry = getLocationPage(slug);
 
-  return renderOgCard({ eyebrow: EYEBROW, title: entry?.page.title ?? EYEBROW });
+  return renderOgCard({ key: `sedes-${slug}`, eyebrow: EYEBROW, title: entry?.page.title ?? EYEBROW });
 }

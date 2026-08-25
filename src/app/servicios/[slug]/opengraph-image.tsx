@@ -28,5 +28,5 @@ export default async function Image({ params }: { params: Promise<{ slug: string
   const { slug } = await params;
   const page = getServicePage(slug);
 
-  return renderOgCard({ eyebrow: EYEBROW, title: page?.title ?? EYEBROW });
+  return renderOgCard({ key: `servicios-${slug}`, eyebrow: EYEBROW, title: page?.title ?? EYEBROW });
 }
