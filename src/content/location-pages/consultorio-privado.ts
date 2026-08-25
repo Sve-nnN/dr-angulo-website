@@ -22,19 +22,19 @@ export const consultorioPrivado: LocationPage = {
   conditionsLead:
     "En esta sede el doctor evalúa dolor cervical y lumbar, hernia discal, estenosis espinal, escoliosis y las consultas de traumatología general y ortopedia infantil. Si quieres entender tu condición antes de la cita, cada guía explica qué es, cómo se diagnostica y qué opciones de tratamiento existen.",
   publishedAt: "2026-08-10",
-  updatedAt: "2026-08-13",
+  updatedAt: "2026-08-24",
   ctaBanner: {
     heading: "¿Quieres que el doctor revise tu caso en su consultorio?",
     body: "Esta es la única sede cuya agenda maneja él, así que la cita se coordina directo con su consultorio. En la página de agenda están los días de atención de todas las sedes.",
   },
   bannerAfterSectionId: "que-se-atiende--quienes-son-los-mejores-neurocirujanos-en-lima",
   outboundLinks: [
-    { href: "/sedes", anchor: "Sedes donde atiende el Dr. Juan Carlos Angulo en Lima" },
-    { href: "/servicios", anchor: "traumatólogo de columna" },
-    { href: "/servicios/ortopedia-infantil", anchor: "pediatria ortopedia infantil" },
+    { href: "/sedes", anchor: "Sedes donde atiende el Dr. Juan Angulo" },
+    { href: "/servicios", anchor: "Qué condiciones se tratan en cada especialidad" },
+    { href: "/servicios/ortopedia-infantil", anchor: "Ortopedia infantil: qué se evalúa en un niño" },
     { href: "/agendar", anchor: "Agendar cita" },
-    { href: "/contacto", anchor: "Contacto y Citas en Lima" },
-    { href: "/", anchor: "traumatólogo cerca de mí" },
+    { href: "/contacto", anchor: "Contacto y citas en Lima" },
+    { href: "/", anchor: "Qué atiende la consulta del Dr. Juan Angulo" },
   ],
   sections: [
     {

@@ -19,21 +19,21 @@
 
 ### Alineación de URL, title y contenido
 
-- [ ] **SLUG-01**: Un paciente que ve la URL de un post del blog en la SERP encuentra el tema que esa URL anuncia (#2)
-- [ ] **SLUG-02**: Los slugs viejos del blog redirigen con un solo 301 al slug nuevo, sin cadenas ni 404, y ningún enlace interno ni el sitemap apuntan a los viejos (#2)
-- [ ] **SLUG-03**: `/preguntas-frecuentes` presenta URL, title y H1 sobre el mismo tema (#3)
-- [ ] **SLUG-04**: El contenido de "reumatólogo o traumatólogo" vive en su propia URL, con su title y su H1 alineados (#3)
+- [x] **SLUG-01**: Un paciente que ve la URL de un post del blog en la SERP encuentra el tema que esa URL anuncia (#2)
+- [x] **SLUG-02**: Los slugs viejos del blog redirigen con una sola redirección permanente al slug nuevo, sin cadenas ni 404 (308 vía `permanent: true`, consistente con las tres redirecciones ya existentes), y ningún enlace interno ni el sitemap apuntan a los viejos (#2)
+- [x] **SLUG-03**: `/preguntas-frecuentes` presenta URL, title y H1 sobre el mismo tema (#3)
+- [x] **SLUG-04**: El contenido de "reumatólogo o traumatólogo" vive en su propia URL, con su title y su H1 alineados (#3)
 
 ### Enlazado interno y canibalización
 
-- [ ] **LINK-01**: Ningún anchor interno usa una keyword cruda, un superlativo sin respaldo ni una especialidad que el doctor no ejerce (#4)
-- [ ] **LINK-02**: Ciática, lumbalgia y hernia discal cubren intenciones de búsqueda distintas, se enlazan entre sí y solo la comercial desarrolla la decisión quirúrgica (#5)
-- [ ] **LINK-03**: Ninguna secuencia de H2 se repite palabra por palabra en más de dos páginas del sitio (#6)
+- [x] **LINK-01**: Ningún anchor interno usa una keyword cruda, un superlativo sin respaldo ni una especialidad que el doctor no ejerce (#4)
+- [x] **LINK-02**: Ciática, lumbalgia y hernia discal cubren intenciones de búsqueda distintas, se enlazan entre sí y solo la comercial desarrolla la decisión quirúrgica (#5)
+- [x] **LINK-03**: Ninguna secuencia de H2 se repite palabra por palabra en más de dos páginas del sitio (#6)
 
 ### Datos estructurados
 
-- [ ] **SCH-01**: Cada post del blog declara `about` apuntando a su propia entidad, no a la de hernia discal (#10)
-- [ ] **SCH-02**: No queda ningún bloque `FAQPage` de una sola pregunta en el sitio (#11)
+- [x] **SCH-01**: Cada post del blog declara `about` apuntando a su propia entidad, no a la de hernia discal (#10)
+- [x] **SCH-02**: No queda ningún bloque `FAQPage` de una sola pregunta en el sitio (#11)
 
 ### Core Web Vitals y entrega
 

@@ -49,7 +49,7 @@ const STYLESHEET = "/sitemap.xsl";
  * rutas. Un cambio de estilo o de plantilla no cuenta. Si una de ellas gana
  * módulo de contenido con `updatedAt`, sale de este grupo y usa el suyo.
  */
-const SHARED_LAST_MODIFIED = "2026-08-14";
+const SHARED_LAST_MODIFIED = "2026-08-24";
 
 function entries(): MetadataRoute.Sitemap {
   // Los tres módulos de contenido que existen hoy para rutas fijas. Solo
