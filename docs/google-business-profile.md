@@ -112,14 +112,29 @@ El mismo de WhatsApp y el mismo del sitio. Un solo número en todas partes.
 
 ### Sitio web
 ```
-https://[dominio]/?utm_source=google&utm_medium=organic&utm_campaign=gbp
+https://[dominio]/
 ```
+Sin parámetros de campaña. Ver "Por qué el enlace va sin utm", más abajo.
 
 ### Enlace de citas
 ```
-https://[dominio]/agendar?utm_source=google&utm_medium=organic&utm_campaign=gbp_cita
+https://[dominio]/agendar
 ```
-Apunta a la página selector de sede (ver sección 6), no directo a WhatsApp. Así el paciente que quiere atenderse en Ricardo Palma un lunes no termina escribiéndole al doctor para algo que la asistente no puede resolver.
+También sin parámetros, por el mismo motivo. Apunta a la página selector de sede (ver sección 6), no directo a WhatsApp. Así el paciente que quiere atenderse en Ricardo Palma un lunes no termina escribiéndole al doctor para algo que la asistente no puede resolver.
+
+### Por qué el enlace va sin utm
+
+Hasta agosto de 2026 estos dos enlaces llevaban `?utm_source=google&utm_medium=organic&utm_campaign=gbp`. Se sacaron a propósito, y conviene tener a mano las tres razones para que nadie los vuelva a poner.
+
+**Partían el informe de Search Console en dos.** Google trata una URL con parámetros como una página distinta. En el período del 23 de julio al 19 de agosto de 2026, 778 de las 892 impresiones del sitio estaban en las filas con `utm`: 673 en la portada, 75 en `/servicios` y 30 en `/agendar`. Con el informe partido así no se puede leer el desempeño de la portada de un vistazo, que es lo primero que uno quiere mirar.
+
+**Nunca hubo riesgo de contenido duplicado.** El canonical de las URLs con parámetros ya apuntaba a la versión limpia. Lo que se arregla acá es el reporte, no la indexación. Vale decirlo porque es la confusión esperable: "sacar los utm" suena a arreglo de SEO técnico y no lo es.
+
+**El canal se sigue midiendo, por otra fuente.** Google Business tiene su propio informe de rendimiento, que ya cuenta los clics al sitio desde la ficha. La decisión cambia de dónde sale el número, no lo elimina. Perder la atribución en GA4 es el costo aceptado, y se acepta con los ojos abiertos: el informe del perfil cubre lo mismo para este canal.
+
+La línea base medida, lo que se espera después del cambio y cómo comprobarlo están en `audit/baselines/2026-08-25-baseline-utm-gbp.md`.
+
+**Quién aplica el cambio.** Lo hace Juan, en el panel de Google Business. El workstream `seo-fixes` decide y mide; la configuración de la ficha en sí —horarios, categorías, reseñas— es GBP-05 de la fase 11 del workstream `milestone`.
 
 ### Descripción (límite 750 caracteres)
 ```
@@ -185,7 +200,7 @@ El desafío particular de este caso: la mayoría de los pacientes se atienden en
 ### Publicaciones
 Una por semana. Los temas ya están validados en su Instagram: 5 señales de alerta en el dolor de espalda, dolor de espalda contra hernia discal, miedo a operarse, qué es la cirugía mínimamente invasiva, mitos sobre crujirse la espalda, escoliosis en adolescentes, dolor que baja por la pierna.
 
-De 150 a 300 palabras, foto propia, y botón "Más información" hacia el artículo del blog con `?utm_source=google&utm_medium=organic&utm_campaign=gbp_post`.
+De 150 a 300 palabras, foto propia, y botón "Más información" hacia el artículo del blog, con el enlace limpio. Sin `utm`, por el mismo motivo que el enlace del sitio: esos parámetros parten las filas de esos posts en Search Console igual que partían la de la portada.
 
 Ningún competidor de Lima usa publicaciones. Es terreno libre.
 

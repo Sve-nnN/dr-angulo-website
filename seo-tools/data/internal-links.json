@@ -122,11 +122,11 @@
           "motivo": "El indice del blog enlaza a /blog/artrosis, que es uno de los articulos que lista. Es la unica senal que el hub tiene para darle a su propio contenido."
         },
         {
-          "link": "/blog/5-sintomas-de-columna-que-no-debes-ignorar",
+          "link": "/blog/ciatica",
           "anchor": "espina ciática",
           "titleWithLink": "5 síntomas de columna que no debes ignorar",
           "regla": "hub-a-hijas",
-          "motivo": "El indice del blog enlaza a /blog/5-sintomas-de-columna-que-no-debes-ignorar, que es uno de los articulos que lista. Es la unica senal que el hub tiene para darle a su propio contenido."
+          "motivo": "El indice del blog enlaza a /blog/ciatica, que es uno de los articulos que lista. Es la unica senal que el hub tiene para darle a su propio contenido."
         },
         {
           "link": "/blog/lumbalgia",
@@ -136,11 +136,11 @@
           "motivo": "El indice del blog enlaza a /blog/lumbalgia, que es uno de los articulos que lista. Es la unica senal que el hub tiene para darle a su propio contenido."
         },
         {
-          "link": "/blog/miedo-a-operarte-de-la-columna-5-cosas-que-debes-saber",
+          "link": "/blog/cirugia-de-columna",
           "anchor": "como dormir después de una cirugía de columna",
           "titleWithLink": "¿Tienes miedo a operarte de la columna? 5 cosas que debes saber",
           "regla": "hub-a-hijas",
-          "motivo": "El indice del blog enlaza a /blog/miedo-a-operarte-de-la-columna-5-cosas-que-debes-saber, que es uno de los articulos que lista. Es la unica senal que el hub tiene para darle a su propio contenido."
+          "motivo": "El indice del blog enlaza a /blog/cirugia-de-columna, que es uno de los articulos que lista. Es la unica senal que el hub tiene para darle a su propio contenido."
         },
         {
           "link": "/servicios",
@@ -152,7 +152,7 @@
       ]
     },
     {
-      "url": "/blog/5-sintomas-de-columna-que-no-debes-ignorar",
+      "url": "/blog/ciatica",
       "title": "5 síntomas de columna que no debes ignorar",
       "code": "200",
       "action": "Reescribir",
@@ -180,7 +180,7 @@
           "motivo": "El cluster \"ciática\" y el cluster \"lumbalgia\" son de la misma familia \"especialidad-y-procedimientos\": el paciente que llega por uno de los dos temas esta a un paso del otro."
         },
         {
-          "link": "/blog/miedo-a-operarte-de-la-columna-5-cosas-que-debes-saber",
+          "link": "/blog/cirugia-de-columna",
           "anchor": "videos de cirugía de columna",
           "titleWithLink": "¿Tienes miedo a operarte de la columna? 5 cosas que debes saber",
           "regla": "vecindad-tematica",
@@ -210,7 +210,7 @@
       "cluster": "artrosis",
       "enlaces": [
         {
-          "link": "/blog/5-sintomas-de-columna-que-no-debes-ignorar",
+          "link": "/blog/ciatica",
           "anchor": "ciática o lumbalgia",
           "titleWithLink": "5 síntomas de columna que no debes ignorar",
           "regla": "vecindad-tematica",
@@ -224,7 +224,7 @@
           "motivo": "El cluster \"artrosis\" y el cluster \"lumbalgia\" son de la misma familia \"especialidad-y-procedimientos\": el paciente que llega por uno de los dos temas esta a un paso del otro."
         },
         {
-          "link": "/blog/miedo-a-operarte-de-la-columna-5-cosas-que-debes-saber",
+          "link": "/blog/cirugia-de-columna",
           "anchor": "cirugía de columna cervical",
           "titleWithLink": "¿Tienes miedo a operarte de la columna? 5 cosas que debes saber",
           "regla": "vecindad-tematica",
@@ -268,14 +268,14 @@
           "motivo": "El cluster \"lumbalgia\" y el cluster \"artrosis\" son de la misma familia \"especialidad-y-procedimientos\": el paciente que llega por uno de los dos temas esta a un paso del otro."
         },
         {
-          "link": "/blog/5-sintomas-de-columna-que-no-debes-ignorar",
+          "link": "/blog/ciatica",
           "anchor": "donde duele la ciática",
           "titleWithLink": "5 síntomas de columna que no debes ignorar",
           "regla": "vecindad-tematica",
           "motivo": "El cluster \"lumbalgia\" y el cluster \"ciática\" son de la misma familia \"especialidad-y-procedimientos\": el paciente que llega por uno de los dos temas esta a un paso del otro."
         },
         {
-          "link": "/blog/miedo-a-operarte-de-la-columna-5-cosas-que-debes-saber",
+          "link": "/blog/cirugia-de-columna",
           "anchor": "cirugía de columna escoliosis",
           "titleWithLink": "¿Tienes miedo a operarte de la columna? 5 cosas que debes saber",
           "regla": "vecindad-tematica",
@@ -298,7 +298,7 @@
       ]
     },
     {
-      "url": "/blog/miedo-a-operarte-de-la-columna-5-cosas-que-debes-saber",
+      "url": "/blog/cirugia-de-columna",
       "title": "¿Tienes miedo a operarte de la columna? 5 cosas que debes saber",
       "code": "200",
       "action": "Reescribir",
@@ -319,7 +319,7 @@
           "motivo": "El cluster \"cirugía de columna\" y el cluster \"artrosis\" son de la misma familia \"especialidad-y-procedimientos\": el paciente que llega por uno de los dos temas esta a un paso del otro."
         },
         {
-          "link": "/blog/5-sintomas-de-columna-que-no-debes-ignorar",
+          "link": "/blog/ciatica",
           "anchor": "falsa ciática",
           "titleWithLink": "5 síntomas de columna que no debes ignorar",
           "regla": "vecindad-tematica",
@@ -1149,16 +1149,7 @@
       ]
     }
   ],
-  "fueraDeLaMatriz": [
-    {
-      "url": "/blog/estenosis-espinal-que-es",
-      "motivo": "Redirige 301 hacia /servicios/estenosis-espinal en la fase 15. No entra a la matriz por las dos puntas: enlazar HACIA ella mandaria a cada visitante por un salto de mas, y enlazar DESDE ella seria escribir enlaces en una pagina que se apaga. Lo que hereda su senal es el destino del 301, que si esta en la matriz."
-    },
-    {
-      "url": "/blog/hernia-discal-o-dolor-de-espalda-como-diferenciarlos",
-      "motivo": "Redirige 301 hacia /servicios/hernia-discal en la fase 15. No entra a la matriz por las dos puntas: enlazar HACIA ella mandaria a cada visitante por un salto de mas, y enlazar DESDE ella seria escribir enlaces en una pagina que se apaga. Lo que hereda su senal es el destino del 301, que si esta en la matriz."
-    }
-  ],
+  "fueraDeLaMatriz": [],
   "descartadosPorSolape": [],
   "resumen": {
     "filas": 22,
@@ -1169,10 +1160,10 @@
       "/": 9,
       "/agendar": 16,
       "/blog": 7,
-      "/blog/5-sintomas-de-columna-que-no-debes-ignorar": 4,
+      "/blog/ciatica": 4,
       "/blog/artrosis": 5,
       "/blog/lumbalgia": 4,
-      "/blog/miedo-a-operarte-de-la-columna-5-cosas-que-debes-saber": 4,
+      "/blog/cirugia-de-columna": 4,
       "/contacto": 6,
       "/preguntas-frecuentes": 1,
       "/sedes": 10,

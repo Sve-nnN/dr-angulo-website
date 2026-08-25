@@ -35,10 +35,10 @@
       "motivoSinPrimaria": "Es el indice del silo informativo y no tiene contenido propio: darle una keyword lo pondria a competir contra los mismos articulos que lista, que es la forma mas facil de canibalizar un blog. La unica cabeza generica que le calzaria, `traumatologia`, comparte 3 URLs del top 10 con `traumatologia lima` de la home y esta en el umbral de fusion. Nodo de navegacion, con la misma logica con la que Juan resolvio `/sedes`."
     },
     {
-      "url": "/blog/5-sintomas-de-columna-que-no-debes-ignorar",
+      "url": "/blog/ciatica",
       "keyword": "ciática",
       "topic": "ciatica",
-      "canonical": "https://drangulocolumna.com/blog/5-sintomas-de-columna-que-no-debes-ignorar",
+      "canonical": "https://drangulocolumna.com/blog/ciatica",
       "aprobado": "No",
       "implementado": "No",
       "esPaginaSeo": true,
@@ -55,26 +55,6 @@
       "motivoSinPrimaria": null
     },
     {
-      "url": "/blog/estenosis-espinal-que-es",
-      "keyword": null,
-      "topic": "estenosis-espinal",
-      "canonical": "https://drangulocolumna.com/blog/estenosis-espinal-que-es",
-      "aprobado": "No",
-      "implementado": "No",
-      "esPaginaSeo": false,
-      "motivoSinPrimaria": "Se funde con la guia de estenosis espinal y redirige, asi que no pelea ninguna consulta. El post no compite con la guia: la anticipa, y lo dice el propio texto publicado dos veces (`src/content/blog.ts:291` y `:309` remiten a la guia completa)."
-    },
-    {
-      "url": "/blog/hernia-discal-o-dolor-de-espalda-como-diferenciarlos",
-      "keyword": null,
-      "topic": "hernia-discal",
-      "canonical": "https://drangulocolumna.com/blog/hernia-discal-o-dolor-de-espalda-como-diferenciarlos",
-      "aprobado": "No",
-      "implementado": "No",
-      "esPaginaSeo": false,
-      "motivoSinPrimaria": "Se funde con la guia de hernia discal y redirige. Su angulo —el diferencial entre contractura y hernia— ya vive dentro de la guia, que lleva `ciatica o hernia discal` y `lumbalgia o hernia discal` de secundarias desde el plan 14-02. Ademas no hay cabeza medida que el post pudiera tomar: `dolor de espalda` esta en el universo de la fase 13 pero no entre las 91 cabezas con SERP medida, asi que una primaria suya no tendria tipo exigido y seria inferencia disfrazada de medicion."
-    },
-    {
       "url": "/blog/lumbalgia",
       "keyword": "lumbalgia",
       "topic": "lumbalgia",
@@ -85,10 +65,10 @@
       "motivoSinPrimaria": null
     },
     {
-      "url": "/blog/miedo-a-operarte-de-la-columna-5-cosas-que-debes-saber",
+      "url": "/blog/cirugia-de-columna",
       "keyword": "cirugía de columna",
       "topic": "cirugia-de-columna",
-      "canonical": "https://drangulocolumna.com/blog/miedo-a-operarte-de-la-columna-5-cosas-que-debes-saber",
+      "canonical": "https://drangulocolumna.com/blog/cirugia-de-columna",
       "aprobado": "No",
       "implementado": "No",
       "esPaginaSeo": true,
@@ -246,9 +226,9 @@
     }
   ],
   "resumen": {
-    "urls": 24,
+    "urls": 22,
     "conKeyword": 16,
-    "sinKeyword": 8,
-    "canonicalesUnicos": 24
+    "sinKeyword": 6,
+    "canonicalesUnicos": 22
   }
 }

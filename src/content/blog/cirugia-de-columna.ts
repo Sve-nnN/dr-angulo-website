@@ -216,5 +216,29 @@ export const postCirugiaDeColumna: BlogPost = {
         "Si lo que buscas es entender el procedimiento en sí, cómo se hace y qué implica la recuperación, eso está explicado en la guía de cirugía endoscópica de columna y de los abordajes mínimamente invasivos, que es donde entra el detalle técnico.",
       ],
     },
+    {
+      id: "fuentes",
+      level: 2,
+      heading: "De dónde sale esto",
+      paragraphs: [
+        "De acá sale lo que se explica arriba. Cada fuente respalda una afirmación puntual de este artículo.",
+      ],
+      citations: [
+        {
+          source:
+            "StatPearls, capítulo Disk Herniation (NCBI Bookshelf)",
+          supports:
+            "Respalda que la mayoría de los casos se maneja primero sin quirófano y que la cirugía se plantea ante compromiso neurológico que avanza o dolor irradiado que no cedió al tratamiento.",
+          href: "https://www.ncbi.nlm.nih.gov/books/NBK441822/",
+        },
+        {
+          source:
+            "NICE, guía NG59 sobre dolor lumbar y ciática en mayores de 16 años",
+          supports:
+            "Respalda que la derivación quirúrgica se considera después de un manejo conservador sostenido, y no por lo que muestre una imagen en alguien que va mejorando.",
+          href: "https://www.nice.org.uk/guidance/ng59",
+        },
+      ],
+    },
   ],
 };

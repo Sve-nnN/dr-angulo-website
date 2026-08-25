@@ -7,7 +7,11 @@
  * cirugías, tasas de éxito, plazos garantizados o precios.
  */
 
-import type { ServicePage, ServiceSectionItem } from "@/content/service-pages";
+import type {
+  ServicePage,
+  ServiceSectionItem,
+  ServiceCitation,
+} from "@/content/service-pages";
 import type { ProcedureApproachSlug } from "@/content/services";
 import { postCiatica } from "./ciatica";
 import { postCirugiaDeColumna } from "./cirugia-de-columna";
@@ -37,6 +41,13 @@ export type BlogSection = {
    * a que los dos se separen sin que nadie se entere.
    */
   items?: ServiceSectionItem[];
+  /**
+   * Fuentes externas de la sección "De dónde sale esto" (TRUST-02). Se reutiliza
+   * `ServiceCitation` por el mismo motivo que `ServiceSectionItem`: `ContentBody`
+   * renderiza los dos modelos con el mismo componente, y un tipo gemelo acá solo
+   * abriría la puerta a que los dos se separen sin que nadie se entere.
+   */
+  citations?: ServiceCitation[];
 };
 
 /**

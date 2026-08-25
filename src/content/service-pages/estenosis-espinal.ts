@@ -219,5 +219,29 @@ export const estenosisEspinal: ServicePage = {
         "La consulta se atiende en el consultorio de Surco, en la Clínica Ricardo Palma, en la Clínica Sanna La Molina y en la Clínica Padre Luis Tezza. Si ya tienes estudios, llévalos, y anota antes cuántas cuadras caminas hoy y cuántas caminabas hace un año. Esas dos cifras valen más que cualquier resumen hecho de memoria en el consultorio.",
       ],
     },
+    {
+      id: "fuentes",
+      level: 2,
+      heading: "De dónde sale esto",
+      paragraphs: [
+        "Estas son las fuentes detrás de lo que se explica acá. Cada una respalda una afirmación puntual de esta página.",
+      ],
+      citations: [
+        {
+          source:
+            "StatPearls, capítulo Lumbar Spinal Stenosis (NCBI Bookshelf)",
+          supports:
+            "Respalda que buena parte de los casos mejora con manejo conservador y que la cirugía descompresiva se acompaña de artrodesis cuando el segmento queda inestable o una vértebra se desliza sobre otra.",
+          href: "https://www.ncbi.nlm.nih.gov/books/NBK531493/",
+        },
+        {
+          source:
+            "North American Spine Society, Know Your Back: Lumbar Spinal Stenosis",
+          supports:
+            "Respalda que el síntoma que define el cuadro es la pérdida de tolerancia a la marcha y que las molestias suelen ceder al inclinarse hacia adelante, que es lo que orienta la terapia en ligera flexión.",
+          href: "https://www.spine.org/KnowYourBack/Conditions/Degenerative-Conditions/Lumbar-Spinal-Stenosis",
+        },
+      ],
+    },
   ],
 };

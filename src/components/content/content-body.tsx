@@ -1,6 +1,7 @@
 import { Fragment, type ReactNode } from "react";
 import { ConsultAlert } from "@/components/ui/consult-alert";
 import { ServiceItemGrid } from "@/components/ui/service-item-grid";
+import { CitationList } from "@/components/content/citation-list";
 import type { ServiceSection } from "@/content/service-pages";
 
 /**
@@ -92,6 +93,7 @@ function SectionBody({
           variant={stepVariant ? "steps" : "grid"}
         />
       )}
+      {section.citations && <CitationList citations={section.citations} />}
     </>
   );
 }

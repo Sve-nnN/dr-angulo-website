@@ -4,6 +4,11 @@ import { BookingCta } from "@/components/ui/booking-cta";
 import { SedeCard } from "@/components/locations/sede-card";
 import { getLocationPage, locationPages } from "@/content/location-pages";
 import { BreadcrumbJsonLd } from "@/components/structured-data";
+import {
+  ContentBody,
+  ContentBodyBoundary,
+} from "@/components/content/content-body";
+import { hubSedes } from "@/content/static-pages/hub-sedes";
 
 export const metadata: Metadata = {
   title: { absolute: "Dónde atiende el Dr. Juan Carlos Angulo en Lima" },
@@ -42,6 +47,13 @@ export default function SedesPage() {
             <SedeCard key={page.slug} page={page} location={location} />
           ))}
         </div>
+
+        {/* Cuerpo propio del hub (TRUST-01). Va después de la rejilla, que es
+            la razón de ser de esta página, y antes del cierre de conversión.
+            El límite de la puerta abarca solo esta prosa. */}
+        <ContentBodyBoundary as="section" className="mt-16">
+          <ContentBody sections={hubSedes.sections} flushFirstSection />
+        </ContentBodyBoundary>
 
         {/* El hub es el mapa de sedes; la agenda vive en /agendar. Acá no se
             repiten los canales: eso lo resuelve la página de cada sede. */}

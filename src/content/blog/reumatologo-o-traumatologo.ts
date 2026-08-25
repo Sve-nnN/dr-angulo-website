@@ -114,5 +114,29 @@ export const postReumatologoOTraumatologo: BlogPost = {
         "Cuando ni eso alcanza, la conversación pasa a la cirugía. Esa decisión no depende del tiempo que lleve doliendo sino de lo que muestren los estudios junto con lo que te está limitando, y está desarrollada en la guía de hernia discal y no acá.",
       ],
     },
+    {
+      id: "fuentes",
+      level: 2,
+      heading: "De dónde sale esto",
+      paragraphs: [
+        "Estas son las fuentes de lo que se explica arriba. Cada una respalda una afirmación puntual de este artículo.",
+      ],
+      citations: [
+        {
+          source:
+            "NIAMS, Institutos Nacionales de la Salud de EE. UU., tema Artritis reumatoide (en español)",
+          supports:
+            "Respalda que la artritis reumatoide es una enfermedad inflamatoria de manejo clínico y seguimiento en el tiempo, que es la clase de cuadro que corresponde derivar al reumatólogo.",
+          href: "https://www.niams.nih.gov/es/informacion-de-salud/artritis-reumatoide",
+        },
+        {
+          source:
+            "NIAMS, Institutos Nacionales de la Salud de EE. UU., tema Osteoartritis (en español)",
+          supports:
+            "Respalda que la artrosis es un desgaste mecánico del cartílago, que es lo que la separa de las artritis inflamatorias y explica por qué los dos especialistas se cruzan en ella.",
+          href: "https://www.niams.nih.gov/es/informacion-de-salud/osteoartritis",
+        },
+      ],
+    },
   ],
 };

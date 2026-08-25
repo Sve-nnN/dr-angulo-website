@@ -230,5 +230,36 @@ export const postLumbalgia: BlogPost = {
         "Cuando el dolor baja por la pierna, cuando hay adormecimiento o falta de fuerza, o cuando el cuadro no cede con el tratamiento habitual, corresponde una evaluación con un especialista en columna. Si detrás del dolor hay un disco desplazado que comprime una raíz, lo que sigue está explicado en la guía de hernia discal, que entra en el diagnóstico y en el tratamiento con el detalle que acá no corresponde.",
       ],
     },
+    {
+      id: "fuentes",
+      level: 2,
+      heading: "De dónde sale esto",
+      paragraphs: [
+        "De acá sale lo que se explica arriba. Cada fuente respalda una afirmación puntual de este artículo.",
+      ],
+      citations: [
+        {
+          source:
+            "Organización Mundial de la Salud, nota descriptiva sobre dolor lumbar",
+          supports:
+            "Respalda que el dolor lumbar es una de las causas más extendidas de limitación en el mundo y que la mayoría de los cuadros no tiene detrás una causa estructural grave.",
+          href: "https://www.who.int/news-room/fact-sheets/detail/low-back-pain",
+        },
+        {
+          source:
+            "NICE, guía NG59 sobre dolor lumbar y ciática en mayores de 16 años",
+          supports:
+            "Respalda el movimiento temprano y la terapia física dirigida como tratamiento de base, y que los estudios de imagen no se piden de rutina en la lumbalgia común.",
+          href: "https://www.nice.org.uk/guidance/ng59",
+        },
+        {
+          source:
+            "MedlinePlus en español, tema Dolor de espalda (Biblioteca Nacional de Medicina de EE. UU.)",
+          supports:
+            "Respalda la descripción de cómo se manifiesta el dolor lumbar y de las señales que sí ameritan una evaluación sin esperar.",
+          href: "https://medlineplus.gov/spanish/backpain.html",
+        },
+      ],
+    },
   ],
 };

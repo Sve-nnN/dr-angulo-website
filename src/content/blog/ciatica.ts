@@ -238,5 +238,36 @@ export const postCiatica: BlogPost = {
         "Y si detrás de la ciática hay un disco que comprime una raíz, lo que sigue está explicado en la guía de hernia discal lumbar y cervical, que entra en el diagnóstico y en el tratamiento con el detalle que acá no corresponde.",
       ],
     },
+    {
+      id: "fuentes",
+      level: 2,
+      heading: "De dónde sale esto",
+      paragraphs: [
+        "Estas son las fuentes de lo que se explica arriba. Cada una respalda una afirmación puntual de este artículo.",
+      ],
+      citations: [
+        {
+          source:
+            "StatPearls, capítulo Sciatica (NCBI Bookshelf)",
+          supports:
+            "Respalda que la ciática es un síntoma de compresión o irritación de una raíz lumbar y no un diagnóstico en sí mismo, que es la distinción sobre la que se apoya todo el artículo.",
+          href: "https://www.ncbi.nlm.nih.gov/books/NBK507908/",
+        },
+        {
+          source:
+            "NICE, guía NG59 sobre dolor lumbar y ciática en mayores de 16 años",
+          supports:
+            "Respalda que el manejo inicial pasa por mantener la actividad y la terapia dirigida, y que la imagen no se pide de rutina en las primeras semanas.",
+          href: "https://www.nice.org.uk/guidance/ng59",
+        },
+        {
+          source:
+            "MedlinePlus en español, tema Ciática (Biblioteca Nacional de Medicina de EE. UU.)",
+          supports:
+            "Respalda la descripción del recorrido del dolor por la parte de atrás de la pierna y de las molestias que lo acompañan.",
+          href: "https://medlineplus.gov/spanish/sciatica.html",
+        },
+      ],
+    },
   ],
 };

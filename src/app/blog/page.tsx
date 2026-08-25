@@ -2,6 +2,11 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import { blogPosts } from "@/content/blog";
 import { BlogJsonLd, BreadcrumbJsonLd } from "@/components/structured-data";
+import {
+  ContentBody,
+  ContentBodyBoundary,
+} from "@/components/content/content-body";
+import { hubBlog } from "@/content/static-pages/hub-blog";
 
 export const metadata: Metadata = {
   title: { absolute: "Blog del Dr. Juan Carlos Angulo" },
@@ -56,6 +61,13 @@ export default function BlogPage() {
           </article>
         ))}
       </div>
+
+      {/* Cuerpo propio del hub (TRUST-01). Va después del listado, que es la
+          razón de ser de esta página, y antes de "Sigue leyendo", que es el
+          cierre. El límite de la puerta abarca solo esta prosa. */}
+      <ContentBodyBoundary as="section" className="mt-16">
+        <ContentBody sections={hubBlog.sections} flushFirstSection />
+      </ContentBodyBoundary>
 
       <section className="mt-14 border-t border-border pt-10">
         <p className="font-heading text-lg font-bold text-foreground">

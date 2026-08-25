@@ -6,12 +6,12 @@
     "src/ del sitio publicado, solo lectura, para los H1 de las 6 que no compiten"
   ],
   "resumen": {
-    "filas": 24,
+    "filas": 22,
     "conPrimaria": 16,
     "reescribir": 13,
     "dejar": 6,
     "crear": 3,
-    "redirigir": 2
+    "redirigir": 0
   },
   "filas": [
     {
@@ -60,7 +60,7 @@
       "keywordAlFrente": null
     },
     {
-      "url": "/blog/5-sintomas-de-columna-que-no-debes-ignorar",
+      "url": "/blog/ciatica",
       "accion": "reescribir",
       "keywordPrimaria": "ciática",
       "redirigeA": null,
@@ -90,36 +90,6 @@
       "keywordAlFrente": 0
     },
     {
-      "url": "/blog/estenosis-espinal-que-es",
-      "accion": "redirigir",
-      "keywordPrimaria": null,
-      "redirigeA": "/servicios/estenosis-espinal",
-      "formato": null,
-      "title": null,
-      "titleLargo": null,
-      "metaDescription": null,
-      "metaLargo": null,
-      "h1": null,
-      "h1Origen": null,
-      "origenDelH1": "La URL se apaga con un 301 hacia /servicios/estenosis-espinal y no recibe title, meta ni H1 propios (D-07). El paquete que hay que implementar es el del destino.",
-      "keywordAlFrente": null
-    },
-    {
-      "url": "/blog/hernia-discal-o-dolor-de-espalda-como-diferenciarlos",
-      "accion": "redirigir",
-      "keywordPrimaria": null,
-      "redirigeA": "/servicios/hernia-discal",
-      "formato": null,
-      "title": null,
-      "titleLargo": null,
-      "metaDescription": null,
-      "metaLargo": null,
-      "h1": null,
-      "h1Origen": null,
-      "origenDelH1": "La URL se apaga con un 301 hacia /servicios/hernia-discal y no recibe title, meta ni H1 propios (D-07). El paquete que hay que implementar es el del destino.",
-      "keywordAlFrente": null
-    },
-    {
       "url": "/blog/lumbalgia",
       "accion": "crear",
       "keywordPrimaria": "lumbalgia",
@@ -135,7 +105,7 @@
       "keywordAlFrente": 0
     },
     {
-      "url": "/blog/miedo-a-operarte-de-la-columna-5-cosas-que-debes-saber",
+      "url": "/blog/cirugia-de-columna",
       "accion": "reescribir",
       "keywordPrimaria": "cirugía de columna",
       "redirigeA": null,

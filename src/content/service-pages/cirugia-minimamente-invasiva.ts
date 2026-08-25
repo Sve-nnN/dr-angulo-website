@@ -213,6 +213,30 @@ export const cirugiaMinimamenteInvasiva: ServicePage = {
         "El presupuesto se entrega por escrito cuando la indicación está definida, y se revisa con tu aseguradora antes de reservar fecha. Cualquier número que te den por teléfono sin haber visto tus imágenes es una estimación en el aire.",
       ],
     },
+    {
+      id: "fuentes",
+      level: 2,
+      heading: "De dónde sale esto",
+      paragraphs: [
+        "Estas son las fuentes de lo que se explica arriba. Cada una respalda una afirmación puntual de esta página.",
+      ],
+      citations: [
+        {
+          source:
+            "StatPearls, capítulo Microdiscectomy (NCBI Bookshelf)",
+          supports:
+            "Respalda que el abordaje por incisión pequeña busca menos daño de la musculatura paravertebral, y que la técnica se elige por el caso y no por la etiqueta del procedimiento.",
+          href: "https://www.ncbi.nlm.nih.gov/books/NBK555984/",
+        },
+        {
+          source:
+            "North American Spine Society, Know Your Back: Herniated Lumbar Disc",
+          supports:
+            "Respalda que la vía de abordaje se decide sobre el diagnóstico y los estudios de cada persona, y que no toda hernia es candidata al mismo procedimiento.",
+          href: "https://www.spine.org/KnowYourBack/Conditions/Degenerative-Conditions/Herniated-Lumbar-Disc",
+        },
+      ],
+    },
   ],
   outboundLinks: [
     { href: "/servicios/escoliosis-y-deformidades", anchor: "Guía sobre la escoliosis y otras deformidades" },

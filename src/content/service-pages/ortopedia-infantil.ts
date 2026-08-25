@@ -222,5 +222,29 @@ export const ortopediaInfantil: ServicePage = {
         "Trae las radiografías previas, el carné de control del pediatra si lo tienes a mano y las zapatillas de uso diario. Con eso la primera cita suele alcanzar para cerrar el diagnóstico.",
       ],
     },
+    {
+      id: "fuentes",
+      level: 2,
+      heading: "De dónde sale esto",
+      paragraphs: [
+        "Las fuentes detrás de lo que se explica acá. Cada una respalda una afirmación puntual de esta página.",
+      ],
+      citations: [
+        {
+          source:
+            "Academia Americana de Pediatría, sección de problemas ortopédicos en HealthyChildren (en español)",
+          supports:
+            "Respalda el listado de motivos por los que un niño llega a una evaluación ortopédica y el papel del pediatra como quien sigue el crecimiento y deriva.",
+          href: "https://www.healthychildren.org/spanish/health-issues/conditions/orthopedic/paginas/default.aspx",
+        },
+        {
+          source:
+            "StatPearls, capítulo Adolescent Idiopathic Scoliosis (NCBI Bookshelf)",
+          supports:
+            "Respalda que en la escoliosis de la etapa de crecimiento el control periódico es lo que define la conducta, uno de los cuadros de columna que se siguen en esta consulta.",
+          href: "https://www.ncbi.nlm.nih.gov/books/NBK499908/",
+        },
+      ],
+    },
   ],
 };
