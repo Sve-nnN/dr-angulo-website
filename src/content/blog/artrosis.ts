@@ -212,5 +212,36 @@ export const postArtrosis: BlogPost = {
         "Si el desgaste está en la columna y ya aparece dolor irradiado, el caso deja de manejarse como un problema articular aislado. Ahí corresponde una evaluación con un cirujano de columna en Lima, que es donde se define si hay compromiso del nervio y qué hacer con eso.",
       ],
     },
+    {
+      id: "fuentes",
+      level: 2,
+      heading: "De dónde sale esto",
+      paragraphs: [
+        "Estas son las fuentes de lo que se explica arriba. Cada una respalda una afirmación puntual de este artículo.",
+      ],
+      citations: [
+        {
+          source:
+            "Organización Mundial de la Salud, nota descriptiva sobre osteoartritis",
+          supports:
+            "Respalda que la artrosis es un desgaste articular frecuente y progresivo, y que su manejo se apoya en el ejercicio, el control del peso y el ajuste de la actividad.",
+          href: "https://www.who.int/news-room/fact-sheets/detail/osteoarthritis",
+        },
+        {
+          source:
+            "NICE, guía NG226 sobre el manejo de la osteoartritis",
+          supports:
+            "Respalda que la terapia física y el trabajo de fuerza son el núcleo del tratamiento, y que la medicación acompaña los períodos de más dolor en vez de reemplazarlos.",
+          href: "https://www.nice.org.uk/guidance/ng226",
+        },
+        {
+          source:
+            "MedlinePlus en español, tema Osteoartritis (Biblioteca Nacional de Medicina de EE. UU.)",
+          supports:
+            "Respalda la descripción del desgaste del cartílago y de las molestias con las que se presenta en rodilla, manos y columna.",
+          href: "https://medlineplus.gov/spanish/osteoarthritis.html",
+        },
+      ],
+    },
   ],
 };
