@@ -137,7 +137,17 @@ Plans:
   3. El rendimiento de la portada se lee en una sola fila del informe de Search Console: las variantes con `utm_source=google&utm_medium=organic&utm_campaign=gbp` dejan de aparecer como páginas separadas.
   4. El sitio sirve una Content-Security-Policy, las 22 URLs siguen respondiendo igual que antes y devtools no registra ningún issue de CSP en `/agendar`, `/servicios/escoliosis-y-deformidades` ni `/servicios/estenosis-espinal`.
 
-**Plans**: TBD
+**Plans**: 4 plans
+
+Plans:
+- [ ] 19-01-PLAN.md — TRUST-01: módulos de contenido propios para `/blog` y `/sedes`, montados con el envoltorio que `/servicios` ya usa
+- [ ] 19-02-PLAN.md — TRUST-02: contrato de datos de citas, componente `CitationList` y la sección "De dónde sale esto" en las 5 guías y los 5 posts
+- [ ] 19-03-PLAN.md — MEAS-01: decisión escrita sobre los `utm` del perfil de Google Business, línea base de impresiones partidas y limpieza de los slugs viejos en `seo-tools/data/`
+- [ ] 19-04-PLAN.md — MEAS-02: `Content-Security-Policy-Report-Only` con endpoint de reportes y el procedimiento escrito para pasar a enforce
+
+Los cuatro planes son de la wave 1: no comparten ningún archivo y no dependen entre sí.
+
+Aclaración de alcance sobre el criterio 4: la fase entrega la política en **modo report-only**, no en enforce. El enforce queda como tarea de seguimiento con fecha 2026-09-15, porque la calibración necesita días de tráfico real. Es lo que el comentario de `headers()` en `next.config.ts` describía desde antes de esta fase. El sitemap tiene hoy 23 URLs, no 22: la fase 16 sumó el post de reumatólogo o traumatólogo.
 
 **Notas de ejecución**
 
@@ -157,7 +167,7 @@ Plans:
 | 16. Alineación de contenido, enlazado y schema | v1.3 | 6/6 | In Progress|  |
 | 17. Indexación y enlaces de entrada | v1.3 | 0/TBD | Not started | - |
 | 18. Rendimiento y accesibilidad | v1.3 | 0/TBD | Not started | - |
-| 19. Confianza, medición y seguridad | v1.3 | 0/TBD | Not started | - |
+| 19. Confianza, medición y seguridad | v1.3 | 0/4 | Planned | - |
 
 ## Cobertura de requisitos
 
