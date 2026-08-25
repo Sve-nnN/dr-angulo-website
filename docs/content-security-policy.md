@@ -206,3 +206,160 @@ autenticarse. Eso obliga a tres cuidados, que están en el código:
   logs sin desplegar.
 
 `GET` devuelve 405: la ruta no es navegable y conviene que lo diga.
+
+---
+
+## Cómo comprobar que la cabecera llegó, después del deploy
+
+Que la cabecera salga del origen no garantiza que llegue al navegador.
+Cloudflare está delante y puede filtrar o reescribir cabeceras de respuesta. Esto
+se comprueba, no se supone.
+
+```
+curl -sI https://drangulocolumna.com/ | grep -i content-security
+curl -sI https://drangulocolumna.com/agendar | grep -i content-security
+curl -sI https://drangulocolumna.com/servicios/escoliosis-y-deformidades | grep -i content-security
+curl -sI https://drangulocolumna.com/servicios/estenosis-espinal | grep -i content-security
+```
+
+Las cuatro tienen que devolver una línea `content-security-policy-report-only`.
+Se corre contra la portada y contra las tres rutas que la auditoría del
+2026-08-23 señaló, que son las mismas donde Lighthouse reportaba la ausencia de
+política.
+
+Y hay una segunda comprobación que es fácil saltarse y no conviene: **el valor
+que llega tiene que ser idéntico al que declara `next.config.ts`**, no una
+versión recortada. Un proxy que trunca la cabecera deja una política más
+permisiva de lo escrito, y desde afuera se ve igual de correcta.
+
+```
+# Compara lo servido contra lo declarado, sin leer las dos a ojo
+diff <(curl -sI https://drangulocolumna.com/ | tr -d '\r' \
+        | grep -i '^content-security-policy-report-only:' \
+        | sed 's/^[^:]*: //') \
+     <(node -e "process.stdout.write(require('fs').readFileSync('next.config.ts','utf8').match(/const CSP_REPORT_ONLY = \[([\s\S]*?)\]\.join/)[1].split('\n').map(l=>l.trim().replace(/^\"|\",?$/g,'')).filter(Boolean).join('; ')+'\n')")
+```
+
+Sin salida, coinciden. Si no llega o llega distinta, el lugar donde mirar es
+**Cloudflare → el zone del sitio → Rules → Transform Rules → Modify Response
+Header**, y también Managed Transforms, que actúa sin aparecer en la lista de
+reglas. Eso lo revisa Juan en el panel.
+
+También conviene mirar los logs del origen unos minutos después del deploy,
+filtrando por el prefijo:
+
+```
+# En los logs de la aplicación
+grep csp-report
+```
+
+Ver reportes entrando es la prueba de que el circuito está entero: política
+servida, endpoint alcanzable, nombre del grupo coincidiendo. **No ver ninguno en
+las primeras horas no significa que todo esté bien**: puede significar que la
+cabecera nunca llegó. Por eso el `curl` va primero.
+
+---
+
+## Procedimiento para pasar a enforce
+
+Recordar de qué se trata el cambio: hoy el navegador evalúa y avisa; después del
+cambio, bloquea. Un bloqueo mal calibrado rompe producción en silencio, porque el
+visitante no ve un error, ve una página a la que le falta algo.
+
+### Paso 1. Observar, mínimo 14 días corridos
+
+La ventana empieza el día en que el `curl` de arriba confirmó que la cabecera
+llega desde producción, no el día del deploy. Catorce días corridos cubren dos
+fines de semana completos, que es cuando el tráfico del sitio cambia de forma.
+Este paso no se puede acortar: necesita tráfico real, y no hay manera de
+fabricarlo.
+
+Durante la ventana, revisar los reportes cada pocos días, no solo al final. Un
+error de configuración detectado el día 2 cuesta un deploy; detectado el día 14,
+cuesta la ventana entera.
+
+### Paso 2. Clasificar cada violación reportada
+
+Cada reporte cae en uno de tres cajones, y lo que se hace con él depende del
+cajón. Clasificar mal acá es el modo de fallar de todo el procedimiento.
+
+**a) Origen legítimo que falta en la política.** Un dominio que el sitio carga de
+verdad y que el inventario no previó: un subdominio regional de recolección de
+GA4 que no coincide con el comodín, un CDN que Instagram empieza a usar, un
+script que se agregó al sitio después de escribir esta política. Se reconoce
+porque el `document` del reporte es una ruta del sitio y el `blocked` es un
+dominio que se puede rastrear hasta algo que el sitio hace a propósito.
+→ **Se agrega el origen a la directiva que corresponde, en `next.config.ts`, y se
+reinicia la ventana de observación.** Reiniciarla no es una formalidad: la
+política cambió, y lo que se estaba midiendo ya no es lo que se va a desplegar.
+
+**b) Extensión del navegador del visitante.** Los reportes de extensiones son los
+más numerosos y los más inofensivos. Se reconocen por el esquema del recurso
+bloqueado: `chrome-extension://`, `moz-extension://`, `safari-web-extension://`,
+o por inyecciones de antivirus y de traductores que aparecen en un puñado de
+visitantes y en ninguna otra parte.
+→ **Se ignoran.** No se agregan a la política. Una política que acomoda las
+extensiones de los visitantes deja de proteger cualquier cosa, y además nunca
+termina: siempre hay una extensión más.
+
+**c) Inyección real.** Un origen que nadie puede explicar, cargando en rutas del
+sitio, con un patrón que no coincide con ninguna extensión conocida. Es el caso
+que justifica todo este trabajo y el que hay que poder reconocer.
+→ **No se sigue con el procedimiento.** Se investiga de dónde salió antes de
+tocar la política. Poner el origen en la lista para que el reporte deje de
+aparecer sería exactamente lo contrario de lo que hay que hacer.
+
+### Paso 3. Criterio de salida
+
+El enforce se hace cuando se cumple esto, y no antes:
+
+> Cero violaciones del cajón (a) durante una ventana completa de 14 días corridos
+> con tráfico real, contados desde el último cambio a la política. Los reportes
+> del cajón (b) pueden seguir llegando y no bloquean el cambio. Un solo reporte
+> del cajón (c) sin explicar detiene el procedimiento.
+
+Es una condición comprobable, no una impresión. "Ya no vemos casi nada" no
+cumple. Si la ventana tuvo poco tráfico —vacaciones, una caída, un mes flojo—, la
+ventana no está completa y se corre la fecha. Es preferible una revisión postergada
+a un enforce hecho sobre datos que no alcanzan.
+
+### Paso 4. El cambio en sí
+
+1. En `next.config.ts`, cambiar la clave `Content-Security-Policy-Report-Only`
+   por `Content-Security-Policy`. El valor no cambia.
+2. **Conservar `report-uri` y `report-to`.** Una política en enforce sin reportes
+   deja ciego justo después del momento en que empezar a ver importa más: a
+   partir de ahí, cada violación es algo que se rompió para un visitante real.
+3. Actualizar el comentario de `headers()` y este documento en el mismo commit.
+   Un comentario que describe un plan ya ejecutado es peor que ningún comentario.
+4. Desplegar y repetir el `curl` de la sección anterior contra las cuatro URLs,
+   confirmando que ahora llega `content-security-policy` sin el sufijo.
+5. Recorrer a mano `/contacto` con el mapa cargando, `/agendar` con el formulario,
+   y una página con reels, aceptando el banner de cookies para que GA4 y el pixel
+   se monten de verdad. Con la consola abierta. Estas son las tres superficies
+   donde la política toca algo que puede romperse.
+
+Si algo se rompe, el revert es volver la clave a `Content-Security-Policy-Report-Only`.
+Vale la pena tenerlo presente antes de empezar: es un cambio de una palabra en las
+dos direcciones.
+
+---
+
+## Fecha y alcance
+
+**Revisión de enforce: 2026-09-15.** Tres semanas después de esta fase, que da
+margen de sobra para los 14 días de la ventana más los días que tarde el deploy en
+salir y en confirmarse.
+
+De qué depende que esa fecha se mueva: de si la ventana se llenó. Si en el
+2026-09-15 no hubo tráfico suficiente, o la política cambió a mitad de camino por
+un reporte del cajón (a), o la cabecera tardó en llegar a producción, **se corre
+la revisión**. No se hace un enforce a medias sobre una ventana incompleta. La
+fecha existe para que alguien vuelva a mirar, no para forzar el cambio ese día.
+
+**El enforce no es alcance de la fase 19.** Es una tarea de seguimiento con esta
+fecha y con el criterio de salida escrito arriba.
+
+**Issue #17.** Se cierra con la report-only desplegada y este procedimiento
+documentado, que es lo que el issue pedía. El enforce queda como tarea aparte, no
+como parte pendiente de #17.
