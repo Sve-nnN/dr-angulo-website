@@ -54,8 +54,8 @@
 
 ### Medición y seguridad
 
-- [ ] **MEAS-01**: El rendimiento de la portada se lee en una sola fila del informe de Search Console, sin partirse entre la versión limpia y la que lleva UTM (#16)
-- [ ] **MEAS-02**: El sitio sirve una Content-Security-Policy sin romper ninguna ruta ni dejar issues de CSP en devtools (#17)
+- [x] **MEAS-01**: El rendimiento de la portada se lee en una sola fila del informe de Search Console, sin partirse entre la versión limpia y la que lleva UTM (#16)
+- [x] **MEAS-02**: El sitio sirve una Content-Security-Policy sin romper ninguna ruta ni dejar issues de CSP en devtools (#17)
 
 ## Future Requirements
 
