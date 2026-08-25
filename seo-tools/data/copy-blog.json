@@ -18,7 +18,7 @@
       "guiaParaElDoctor": "La revisión de esta URL entra completa en una sola pasada. Lo que más necesita ojo clínico está en cinco bloques: la sección de qué es la artrosis, por la definición de enfermedad degenerativa y la descripción del cartílago; la diferencia entre osteoporosis y artrosis, que es la confusión más repetida en consulta y la que peor sale si queda mal escrita; la comparación entre artrosis y artritis, por el criterio de la rigidez matinal; el bloque de pastillas, donde a propósito no se nombra ningún principio activo ni ninguna dosis; y el de cuándo consultar, por las señales de alarma. Lo demás se lee rápido. No hay ninguna cifra sobre el doctor, ninguna tasa de resultado ni ninguna credencial en el texto, y esa ausencia es deliberada.",
       "enlacesPropuestos": [
         {
-          "destino": "/blog/5-sintomas-de-columna-que-no-debes-ignorar",
+          "destino": "/blog/ciatica",
           "anchor": "ciática o lumbalgia",
           "regla": "vecindad-tematica"
         },
@@ -28,7 +28,7 @@
           "regla": "vecindad-tematica"
         },
         {
-          "destino": "/blog/miedo-a-operarte-de-la-columna-5-cosas-que-debes-saber",
+          "destino": "/blog/cirugia-de-columna",
           "anchor": "cirugía de columna cervical",
           "regla": "vecindad-tematica"
         },
@@ -440,12 +440,12 @@
           "regla": "vecindad-tematica"
         },
         {
-          "destino": "/blog/5-sintomas-de-columna-que-no-debes-ignorar",
+          "destino": "/blog/ciatica",
           "anchor": "donde duele la ciática",
           "regla": "vecindad-tematica"
         },
         {
-          "destino": "/blog/miedo-a-operarte-de-la-columna-5-cosas-que-debes-saber",
+          "destino": "/blog/cirugia-de-columna",
           "anchor": "cirugía de columna escoliosis",
           "regla": "vecindad-tematica"
         },
@@ -674,7 +674,7 @@
           "afirmaciones": [
             {
               "texto": "Una parte considerable de las resonancias de personas sin dolor muestra discos alterados, así que la imagen sola no define la conducta.",
-              "fuente": "Ya publicado en src/content/blog.ts, post 5-sintomas-de-columna-que-no-debes-ignorar, sección que-hacer-con-estas-senales, con fecha de actualización 2026-08-10."
+              "fuente": "Ya publicado en src/content/blog.ts, post ciatica, sección que-hacer-con-estas-senales, con fecha de actualización 2026-08-10."
             },
             {
               "texto": "La consulta empieza por la historia y el examen físico, que en la zona lumbar resuelven la mayoría de los casos sin ninguna imagen.",
@@ -804,7 +804,7 @@
           "afirmaciones": [
             {
               "texto": "Un episodio de dolor lumbar común suele mejorar de manera clara en el transcurso de dos o tres semanas.",
-              "fuente": "Ya publicado en src/content/blog.ts, post 5-sintomas-de-columna-que-no-debes-ignorar, sección dolor-persistente, con fecha de actualización 2026-08-10."
+              "fuente": "Ya publicado en src/content/blog.ts, post ciatica, sección dolor-persistente, con fecha de actualización 2026-08-10."
             }
           ],
           "keywordsCubiertas": ["lumbalgia"],
@@ -841,7 +841,7 @@
       ]
     },
     {
-      "url": "/blog/5-sintomas-de-columna-que-no-debes-ignorar",
+      "url": "/blog/ciatica",
       "title": "Ciática: por qué duele la pierna y qué hacer",
       "metaDescription": "Qué es la ciática, cómo se distingue de una lumbalgia, qué la produce y cuándo el dolor de pierna necesita evaluación médica.",
       "h1": "Ciática: el dolor que baja por la pierna",
@@ -897,7 +897,7 @@
           "regla": "vecindad-tematica"
         },
         {
-          "destino": "/blog/miedo-a-operarte-de-la-columna-5-cosas-que-debes-saber",
+          "destino": "/blog/cirugia-de-columna",
           "anchor": "videos de cirugía de columna",
           "regla": "vecindad-tematica"
         },
@@ -915,7 +915,7 @@
       "mapeoDePost": [
         {
           "campo": "slug",
-          "deDonde": "`5-sintomas-de-columna-que-no-debes-ignorar`, la ruta publicada sin el prefijo /blog/. No cambia: la URL se conserva."
+          "deDonde": "`ciatica`, la ruta publicada sin el prefijo /blog/. No cambia: la URL se conserva."
         },
         {
           "campo": "title",
@@ -1033,7 +1033,7 @@
           "afirmaciones": [
             {
               "texto": "El dolor que se dispara al toser, estornudar o hacer fuerza responde al aumento de presión dentro del canal.",
-              "fuente": "Ya publicado en src/content/blog.ts, post 5-sintomas-de-columna-que-no-debes-ignorar, sección dolor-irradiado, con fecha de actualización 2026-08-10."
+              "fuente": "Ya publicado en src/content/blog.ts, post ciatica, sección dolor-irradiado, con fecha de actualización 2026-08-10."
             }
           ],
           "keywordsCubiertas": ["ciática"],
@@ -1193,7 +1193,7 @@
           "afirmaciones": [
             {
               "texto": "Una parte considerable de las resonancias de personas sin dolor muestra discos alterados, así que la imagen sola no define la conducta.",
-              "fuente": "Ya publicado en src/content/blog.ts, post 5-sintomas-de-columna-que-no-debes-ignorar, sección que-hacer-con-estas-senales, con fecha de actualización 2026-08-10."
+              "fuente": "Ya publicado en src/content/blog.ts, post ciatica, sección que-hacer-con-estas-senales, con fecha de actualización 2026-08-10."
             },
             {
               "texto": "El relato del recorrido, el examen de fuerza, reflejos y sensibilidad, y algunas maniobras que ponen en tensión la raíz para reproducir el síntoma alcanzan para ubicar el nivel comprometido en la mayoría de los casos.",
@@ -1264,7 +1264,7 @@
           "afirmaciones": [
             {
               "texto": "La pérdida de fuerza que avanza, el adormecimiento en la zona de la entrepierna y los cambios en el control de esfínteres pueden indicar una compresión seria dentro del canal y se evalúan el mismo día.",
-              "fuente": "Ya publicado en src/content/blog.ts, post 5-sintomas-de-columna-que-no-debes-ignorar, sección perdida-de-fuerza, con fecha de actualización 2026-08-10."
+              "fuente": "Ya publicado en src/content/blog.ts, post ciatica, sección perdida-de-fuerza, con fecha de actualización 2026-08-10."
             }
           ],
           "keywordsCubiertas": [],
@@ -1348,7 +1348,7 @@
       ]
     },
     {
-      "url": "/blog/miedo-a-operarte-de-la-columna-5-cosas-que-debes-saber",
+      "url": "/blog/cirugia-de-columna",
       "title": "Cirugía de columna: cuándo se plantea y cómo es",
       "metaDescription": "Cuándo se plantea operar la columna, qué técnicas existen, cómo es la recuperación y qué conviene preguntar en la consulta.",
       "h1": "Operarse de la columna: lo que conviene saber antes",
@@ -1399,7 +1399,7 @@
           "regla": "vecindad-tematica"
         },
         {
-          "destino": "/blog/5-sintomas-de-columna-que-no-debes-ignorar",
+          "destino": "/blog/ciatica",
           "anchor": "falsa ciática",
           "regla": "vecindad-tematica"
         },
@@ -1422,7 +1422,7 @@
       "mapeoDePost": [
         {
           "campo": "slug",
-          "deDonde": "`miedo-a-operarte-de-la-columna-5-cosas-que-debes-saber`, la ruta publicada sin el prefijo /blog/. No cambia: la URL se conserva."
+          "deDonde": "`cirugia-de-columna`, la ruta publicada sin el prefijo /blog/. No cambia: la URL se conserva."
         },
         {
           "campo": "title",
@@ -1562,7 +1562,7 @@
           "afirmaciones": [
             {
               "texto": "El criterio actual después de una descompresión es la movilización temprana con progresión gradual de la actividad.",
-              "fuente": "Ya publicado en src/content/blog.ts, post miedo-a-operarte-de-la-columna-5-cosas-que-debes-saber, sección la-recuperacion-es-individual, con fecha de actualización 2026-08-10."
+              "fuente": "Ya publicado en src/content/blog.ts, post cirugia-de-columna, sección la-recuperacion-es-individual, con fecha de actualización 2026-08-10."
             }
           ],
           "keywordsCubiertas": [],
@@ -1623,7 +1623,7 @@
           "afirmaciones": [
             {
               "texto": "Las razones que abren la conversación quirúrgica son el dolor que no responde a otros tratamientos y el compromiso neurológico progresivo.",
-              "fuente": "Ya publicado en src/content/blog.ts, post miedo-a-operarte-de-la-columna-5-cosas-que-debes-saber, sección la-cirugia-necesita-una-razon-concreta, con fecha de actualización 2026-08-10."
+              "fuente": "Ya publicado en src/content/blog.ts, post cirugia-de-columna, sección la-cirugia-necesita-una-razon-concreta, con fecha de actualización 2026-08-10."
             }
           ],
           "keywordsCubiertas": [],
@@ -1656,7 +1656,7 @@
           "afirmaciones": [
             {
               "texto": "Una imagen con una hernia visible no constituye por sí sola una indicación quirúrgica: la decisión se toma sobre la persona y no sobre el estudio.",
-              "fuente": "Ya publicado en src/content/blog.ts, post miedo-a-operarte-de-la-columna-5-cosas-que-debes-saber, sección no-toda-hernia-termina-en-cirugia, con fecha de actualización 2026-08-10."
+              "fuente": "Ya publicado en src/content/blog.ts, post cirugia-de-columna, sección no-toda-hernia-termina-en-cirugia, con fecha de actualización 2026-08-10."
             }
           ],
           "keywordsCubiertas": [],
@@ -1764,7 +1764,7 @@
           "afirmaciones": [
             {
               "texto": "El plazo de recuperación depende de la técnica, de la necesidad de estabilizar el segmento, del estado previo y del trabajo al que la persona vuelve, y se define en los controles.",
-              "fuente": "Ya publicado en src/content/blog.ts, post miedo-a-operarte-de-la-columna-5-cosas-que-debes-saber, sección la-recuperacion-es-individual, con fecha de actualización 2026-08-10."
+              "fuente": "Ya publicado en src/content/blog.ts, post cirugia-de-columna, sección la-recuperacion-es-individual, con fecha de actualización 2026-08-10."
             }
           ],
           "keywordsCubiertas": [],

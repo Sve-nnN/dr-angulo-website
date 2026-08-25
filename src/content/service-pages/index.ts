@@ -55,12 +55,41 @@ export type ServiceSectionItem = {
  * `paragraphs` son cadenas planas sin marcado: así ninguna cifra puede quedar
  * resaltada tipográficamente dentro del cuerpo.
  */
+/**
+ * Fuente externa que respalda una afirmación concreta de la página (TRUST-02).
+ *
+ * Es contenido YMYL firmado por un médico real, así que las tres reglas de este
+ * tipo no son estilo: una cita rota es peor que ninguna cita, y una cita que
+ * respalda algo que el texto no dice es una afirmación puesta de contrabando.
+ */
+export type ServiceCitation = {
+  /**
+   * Nombre publicable, organización más documento. Es el texto del enlace, así
+   * que se lee solo: nunca "hacer clic acá" ni el dominio pelado.
+   */
+  source: string;
+  /**
+   * Una frase que nombra la afirmación de ESTA página que la fuente respalda.
+   * Ninguna cita es decorativa. Si la fuente dice más que el texto, se cita
+   * igual y el texto no se amplía para alcanzarla.
+   */
+  supports: string;
+  /**
+   * URL absoluta https, verificada como resoluble antes de publicarse. En los
+   * dominios que responden 200 a cualquier ruta hace falta además comprobar
+   * que el documento sea el que `source` nombra.
+   */
+  href: string;
+};
+
 export type ServiceSection = {
   id: string;
   level: 2 | 3;
   heading: string;
   paragraphs: string[];
   items?: ServiceSectionItem[];
+  /** Fuentes externas de la sección "De dónde sale esto". */
+  citations?: ServiceCitation[];
 };
 
 /** Enlace interno de salida hacia otra página del silo. */

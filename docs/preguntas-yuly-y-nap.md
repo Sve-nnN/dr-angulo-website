@@ -177,10 +177,13 @@ Cuando estos enlaces estén publicados, se puede medir cuánta gente llega desde
 https://drangulocolumna.com/?utm_source=instagram&utm_medium=social&utm_campaign=bio
 ```
 
-**Desde la ficha de Google:**
+**Desde la ficha de Google:** el enlace va limpio, sin marca.
 ```
-https://drangulocolumna.com/?utm_source=google&utm_medium=organic&utm_campaign=gbp
+https://drangulocolumna.com/
 ```
+Este es el único de los tres que cambió. La ficha de Google alimenta el informe de Search Console, y ahí una URL con marca cuenta como una página aparte: el reporte de la portada quedaba partido en dos. El canal se sigue midiendo por el informe propio de Google Business. El motivo completo está en `docs/google-business-profile.md`, sección "Por qué el enlace va sin utm".
+
+Los enlaces de Instagram y de Doctoralia **se quedan como están, con su marca**. Esos dos perfiles no alimentan Search Console, así que sus marcas no parten ningún reporte: solo distinguen de dónde vino la visita, que es para lo que sirven. No hay que quitárselas "por consistencia" con el de Google.
 
 **Desde Doctoralia:**
 ```
