@@ -2,9 +2,11 @@
    `next/image` no existe dentro de `ImageResponse`: el árbol lo renderiza
    Satori, que solo entiende un subconjunto de HTML y CSS y espera un `img`
    plano con `src`, `width` y `height`. La regla apunta al LCP de una página,
-   y esto no es una página: es un PNG que se genera en el build. */
+   y esto no es una página: es la tarjeta que se dibuja una sola vez, cuando
+   corre `npm run og:build`. */
 import { ImageResponse } from "next/og";
 import { readFile } from "node:fs/promises";
+import { readFileSync } from "node:fs";
 import { join } from "node:path";
 import type { Metadata } from "next";
 import { siteConfig } from "@/lib/site-config";
@@ -20,9 +22,11 @@ import { credentialsInfo } from "@/content/cv";
  * `opengraph-image.tsx`, que llama a `renderOgCard` con el título de su propia
  * metadata.
  *
- * Por qué dinámicas y no 21 JPG a mano: el título sale de la misma fuente que
- * usa `generateMetadata`, así que cuando Juan reescriba los titles las imágenes
- * se regeneran solas en el build siguiente, sin tocar nada acá.
+ * Por qué generadas y no 24 JPG dibujados a mano: el título sale de la misma
+ * fuente que usa `generateMetadata`, así que reescribir un title y correr
+ * `npm run og:build` rehace la tarjeta sola, sin tocar una sola línea acá. Si
+ * alguien se olvida de correrlo, el build falla en vez de servir el título
+ * viejo; el porqué está en `servePregenerated`.
  *
  * `ImageResponse` (Satori) solo admite flexbox y un subconjunto de CSS. Todo
  * `div` con más de un hijo lleva `display: flex` explícito; sin eso Satori
@@ -30,13 +34,32 @@ import { credentialsInfo } from "@/content/cv";
  */
 
 export const size = { width: 1200, height: 630 };
-export const contentType = "image/png";
-
-const PUBLIC_DIR = join(process.cwd(), "public");
 
 /**
- * Los assets se leen una vez por proceso: el build genera 21 imágenes y no
- * tiene sentido volver a leer los mismos cuatro archivos en cada una.
+ * Lo que sirve la ruta es el JPEG pregenerado de `public/og/`, no el PNG de
+ * Satori. El PNG de la portada pesaba 551 KB (issue #14) y WhatsApp, que es el
+ * canal principal del consultorio, tarda en armar la vista previa con imágenes
+ * así. El mismo lienzo en JPEG queda muy por debajo de 200 KB.
+ *
+ * El PNG sigue existiendo: es lo que emite `npm run og:build`, que levanta el
+ * servidor con `OG_GENERATE=1`, pide las 24 tarjetas, las convierte y las
+ * escribe en `public/og/`. En un build normal esa rama no corre.
+ */
+export const contentType = "image/jpeg";
+
+const PUBLIC_DIR = join(process.cwd(), "public");
+const OG_DIR = join(PUBLIC_DIR, "og");
+
+/** Solo `scripts/build-og.mjs` prende esta variable. */
+const GENERATING = process.env.OG_GENERATE === "1";
+
+/** Un año: Next le cuelga a la URL un hash que cambia con la tarjeta. */
+const CACHE_CONTROL = "public, max-age=31536000, immutable";
+
+/**
+ * Los assets se leen una vez por proceso: una corrida de `og:build` dibuja 24
+ * tarjetas y no tiene sentido volver a leer los mismos cuatro archivos en cada
+ * una.
  */
 const assets = {
   photo: null as Promise<string> | null,
@@ -101,12 +124,60 @@ function titleFontSize(title: string) {
 }
 
 export type OgCardInput = {
+  /**
+   * Nombre del archivo de `public/og/`, sin extensión. Es la llave que une la
+   * ruta con su JPEG pregenerado y con la entrada del manifiesto.
+   */
+  key: string;
   /** Rótulo corto de sección. No es un title: no lo toca la pasada de Juan. */
   eyebrow: string;
   title: string;
 };
 
-export async function renderOgCard({ eyebrow, title }: OgCardInput) {
+type ManifestEntry = { title: string; eyebrow: string; bytes: number };
+
+let manifest: Record<string, ManifestEntry> | null = null;
+
+function readManifest(): Record<string, ManifestEntry> {
+  manifest ??= JSON.parse(readFileSync(join(OG_DIR, "manifest.json"), "utf8"));
+  return manifest!;
+}
+
+/**
+ * Sirve la tarjeta ya convertida, o falla el build si está desincronizada.
+ *
+ * Fallar es a propósito. La alternativa —caer al PNG en caliente— serviría una
+ * tarjeta con el título viejo sin avisar, que es justo el modo de fallo que
+ * tenía la generación por archivo estático y que la generación dinámica había
+ * resuelto. Con el manifiesto, cambiar un title y olvidarse de regenerar rompe
+ * `npm run build` con el comando exacto que hay que correr.
+ */
+async function servePregenerated({ key, eyebrow, title }: OgCardInput) {
+  const entry = readManifest()[key];
+
+  if (!entry) {
+    throw new Error(
+      `No hay tarjeta de Open Graph para "${key}" en public/og/manifest.json. Corre \`npm run og:build\`.`
+    );
+  }
+
+  if (entry.title !== title || entry.eyebrow !== eyebrow) {
+    throw new Error(
+      `La tarjeta de Open Graph "${key}" quedó vieja: dice "${entry.eyebrow} / ${entry.title}" y la ruta declara "${eyebrow} / ${title}". Corre \`npm run og:build\`.`
+    );
+  }
+
+  const bytes = await readFile(join(OG_DIR, `${key}.jpg`));
+
+  return new Response(new Uint8Array(bytes), {
+    headers: { "Content-Type": contentType, "Cache-Control": CACHE_CONTROL },
+  });
+}
+
+export async function renderOgCard(input: OgCardInput) {
+  if (!GENERATING) return servePregenerated(input);
+
+  const { key, eyebrow, title } = input;
   const [photo, logo, poppins, inter] = await loadAssets();
 
   return new ImageResponse(
@@ -247,6 +318,14 @@ export async function renderOgCard({ eyebrow, title }: OgCardInput) {
         { name: "Poppins", data: poppins, style: "normal", weight: 700 },
         { name: "Inter", data: inter, style: "normal", weight: 400 },
       ],
+      /* `build-og.mjs` no conoce las rutas ni los títulos: los lee de acá, así
+         que la lista de tarjetas nunca se copia a un segundo lado. Van
+         codificados porque un header HTTP no admite tildes. */
+      headers: {
+        "x-og-key": key,
+        "x-og-eyebrow": encodeURIComponent(eyebrow),
+        "x-og-title": encodeURIComponent(title),
+      },
     }
   );
 }
