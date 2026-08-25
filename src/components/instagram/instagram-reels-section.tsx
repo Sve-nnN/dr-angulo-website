@@ -2,7 +2,7 @@ import { ArrowRight } from "lucide-react";
 import { InstagramIcon } from "@/components/icons/instagram-icon";
 import { getInstagramReels } from "@/lib/instagram";
 import { siteConfig } from "@/lib/site-config";
-import { ReelsCarousel } from "./reels-carousel";
+import { ReelsCarouselLazy } from "./reels-carousel-lazy";
 
 type Props = {
   /** Máximo de reels a mostrar. */
@@ -53,7 +53,7 @@ export async function InstagramReelsSection({
 
       <div className="mt-8">
         {reels.length > 0 ? (
-          <ReelsCarousel reels={reels} labelledBy={headingId} />
+          <ReelsCarouselLazy reels={reels} labelledBy={headingId} />
         ) : (
           <p className="border-y border-border py-8 text-lg text-foreground/80">
             Los videos están publicados en{" "}
