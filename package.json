@@ -15,7 +15,8 @@
     "lint": "eslint",
     "content:check": "node scripts/check-content.mjs",
     "sedes:check": "node scripts/check-sedes.mjs",
-    "seo:check": "node scripts/check-seo.mjs"
+    "seo:check": "node scripts/check-seo.mjs",
+    "og:build": "node scripts/build-og.mjs"
   },
   "dependencies": {
     "@next/third-parties": "^16.2.12",
@@ -35,6 +36,7 @@
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "16.2.12",
+    "sharp": "^0.35.3",
     "tailwindcss": "^4",
     "typescript": "^5"
   }

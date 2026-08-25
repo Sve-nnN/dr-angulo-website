@@ -7,5 +7,5 @@ export const alt = ogAlt(title);
 export { size, contentType };
 
 export default function Image() {
-  return renderOgCard({ eyebrow: "Sedes en Lima", title });
+  return renderOgCard({ key: "sedes", eyebrow: "Sedes en Lima", title });
 }

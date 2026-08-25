@@ -7,5 +7,5 @@ export const alt = ogAlt(title);
 export { size, contentType };
 
 export default function Image() {
-  return renderOgCard({ eyebrow: "Aviso legal", title });
+  return renderOgCard({ key: "privacidad", eyebrow: "Aviso legal", title });
 }

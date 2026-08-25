@@ -8,5 +8,5 @@ export const alt = ogAlt(title);
 export { size, contentType };
 
 export default function Image() {
-  return renderOgCard({ eyebrow: "Columna y traumatología", title });
+  return renderOgCard({ key: "home", eyebrow: "Columna y traumatología", title });
 }

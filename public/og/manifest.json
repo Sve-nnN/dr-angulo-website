@@ -1,0 +1,146 @@
+{
+  "home": {
+    "route": "/",
+    "eyebrow": "Columna y traumatología",
+    "title": "Traumatología en Lima: Dr. Juan Carlos Angulo",
+    "bytes": 57522
+  },
+  "agendar": {
+    "route": "/agendar",
+    "eyebrow": "Agendar cita",
+    "title": "Agendar una cita con el Dr. Angulo",
+    "bytes": 53801
+  },
+  "blog": {
+    "route": "/blog",
+    "eyebrow": "Blog",
+    "title": "Blog del Dr. Juan Carlos Angulo",
+    "bytes": 51282
+  },
+  "blog-artrosis": {
+    "route": "/blog/artrosis",
+    "eyebrow": "Artículo",
+    "title": "Artrosis: qué es, cómo se trata y cuándo consultar",
+    "bytes": 56172
+  },
+  "blog-ciatica": {
+    "route": "/blog/ciatica",
+    "eyebrow": "Artículo",
+    "title": "Ciática: por qué duele la pierna y qué hacer",
+    "bytes": 54246
+  },
+  "blog-cirugia-de-columna": {
+    "route": "/blog/cirugia-de-columna",
+    "eyebrow": "Artículo",
+    "title": "Cirugía de columna: cuándo se plantea y cómo es",
+    "bytes": 56515
+  },
+  "blog-lumbalgia": {
+    "route": "/blog/lumbalgia",
+    "eyebrow": "Artículo",
+    "title": "Lumbalgia: por qué duele la zona lumbar",
+    "bytes": 52761
+  },
+  "blog-reumatologo-o-traumatologo": {
+    "route": "/blog/reumatologo-o-traumatologo",
+    "eyebrow": "Artículo",
+    "title": "Reumatólogo o traumatólogo: a cuál te toca ir",
+    "bytes": 55314
+  },
+  "contacto": {
+    "route": "/contacto",
+    "eyebrow": "Contacto",
+    "title": "Contacto con el consultorio del Dr. Angulo",
+    "bytes": 53744
+  },
+  "preguntas-frecuentes": {
+    "route": "/preguntas-frecuentes",
+    "eyebrow": "Preguntas frecuentes",
+    "title": "Preguntas frecuentes antes de la consulta",
+    "bytes": 55515
+  },
+  "privacidad": {
+    "route": "/privacidad",
+    "eyebrow": "Aviso legal",
+    "title": "Política de privacidad",
+    "bytes": 49226
+  },
+  "sedes": {
+    "route": "/sedes",
+    "eyebrow": "Sedes en Lima",
+    "title": "Dónde atiende el Dr. Juan Carlos Angulo en Lima",
+    "bytes": 56036
+  },
+  "sedes-clinica-ricardo-palma": {
+    "route": "/sedes/clinica-ricardo-palma",
+    "eyebrow": "Sede",
+    "title": "Cirujano de columna en Clínica Ricardo Palma",
+    "bytes": 54310
+  },
+  "sedes-clinica-tezza": {
+    "route": "/sedes/clinica-tezza",
+    "eyebrow": "Sede",
+    "title": "Ortopedia infantil en la Clínica Tezza, Lima",
+    "bytes": 52551
+  },
+  "sedes-consultorio-privado": {
+    "route": "/sedes/consultorio-privado",
+    "eyebrow": "Sede",
+    "title": "Cirugía de columna en Surco: consultorio privado",
+    "bytes": 55646
+  },
+  "sedes-sanna-la-molina": {
+    "route": "/sedes/sanna-la-molina",
+    "eyebrow": "Sede",
+    "title": "Cirujano de columna en Clínica Sanna La Molina",
+    "bytes": 54754
+  },
+  "servicios": {
+    "route": "/servicios",
+    "eyebrow": "Especialidades",
+    "title": "Cirujano de columna en Lima: qué trata el doctor",
+    "bytes": 56526
+  },
+  "servicios-cirugia-minimamente-invasiva": {
+    "route": "/servicios/cirugia-minimamente-invasiva",
+    "eyebrow": "Guía clínica",
+    "title": "Cirugía mínimamente invasiva de columna en Lima",
+    "bytes": 57122
+  },
+  "servicios-escoliosis-y-deformidades": {
+    "route": "/servicios/escoliosis-y-deformidades",
+    "eyebrow": "Guía clínica",
+    "title": "Escoliosis: cómo se evalúa y cómo se trata",
+    "bytes": 54631
+  },
+  "servicios-estenosis-espinal": {
+    "route": "/servicios/estenosis-espinal",
+    "eyebrow": "Guía clínica",
+    "title": "Estenosis espinal: síntomas y tratamiento",
+    "bytes": 54783
+  },
+  "servicios-hernia-discal": {
+    "route": "/servicios/hernia-discal",
+    "eyebrow": "Guía clínica",
+    "title": "Hernia discal: síntomas, diagnóstico y tratamiento",
+    "bytes": 57605
+  },
+  "servicios-ortopedia-infantil": {
+    "route": "/servicios/ortopedia-infantil",
+    "eyebrow": "Guía clínica",
+    "title": "Ortopedia infantil en Lima: cuándo consultar",
+    "bytes": 55028
+  },
+  "sobre-el-doctor": {
+    "route": "/sobre-el-doctor",
+    "eyebrow": "El doctor",
+    "title": "Sobre el Dr. Juan Carlos Angulo Totesaut",
+    "bytes": 53093
+  },
+  "testimonios": {
+    "route": "/testimonios",
+    "eyebrow": "Testimonios",
+    "title": "Testimonios de pacientes del Dr. Angulo",
+    "bytes": 53821
+  }
+}

@@ -29,7 +29,7 @@
  * constantes `TITLE_MAX` y `DESCRIPTION_MAX`, acá abajo.
  */
 
-import { readFileSync, existsSync, readdirSync } from "node:fs";
+import { readFileSync, existsSync, readdirSync, statSync } from "node:fs";
 import { resolve } from "node:path";
 
 const APP_DIR = ".next/server/app";
@@ -458,8 +458,12 @@ function ogImageArtifact(url) {
   return `${APP_DIR}${path}.body`;
 }
 
+/** Lo que pide el issue #14 para la vista previa de WhatsApp. */
+const OG_MAX_BYTES = 200 * 1024;
+
 function checkOgImages(routes) {
   const seen = new Map();
+  let heaviest = 0;
 
   for (const route of routes) {
     const file = htmlFor(route);
@@ -490,6 +494,22 @@ function checkOgImages(routes) {
     const artifact = ogImageArtifact(image);
     if (!existsSync(resolve(artifact))) {
       fail(`la imagen de ${route} no está prerenderizada: falta ${artifact}`);
+    } else {
+      /* Peso servido, no peso del JPEG en `public/og/`: lo que mide acá es lo
+         que baja el rastreador de WhatsApp. Si alguien vuelve a servir el PNG
+         de Satori, este número lo delata. */
+      const { size: bytes } = statSync(resolve(artifact));
+      heaviest = Math.max(heaviest, bytes);
+
+      if (bytes > OG_MAX_BYTES) {
+        fail(
+          `la imagen de ${route} pesa ${(bytes / 1024).toFixed(0)} KB y el techo del issue #14 son ${OG_MAX_BYTES / 1024} KB. Corre \`npm run og:build\`.`
+        );
+      }
+    }
+
+    if (!/<meta property="og:image:type" content="image\/jpeg"/.test(html)) {
+      fail(`${route} no declara su og:image como image/jpeg`);
     }
 
     if (!/<meta property="og:image:alt" content="[^"]+"/.test(html)) {
@@ -497,7 +517,9 @@ function checkOgImages(routes) {
     }
   }
 
-  notes.push(`${seen.size} rutas con imagen de Open Graph propia`);
+  notes.push(
+    `${seen.size} rutas con imagen de Open Graph propia, la más pesada de ${(heaviest / 1024).toFixed(0)} KB`
+  );
 }
 
 // --------------------------------------------------------------------------

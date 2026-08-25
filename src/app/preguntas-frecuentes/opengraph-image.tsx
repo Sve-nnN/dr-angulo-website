@@ -7,5 +7,5 @@ export const alt = ogAlt(title);
 export { size, contentType };
 
 export default function Image() {
-  return renderOgCard({ eyebrow: "Preguntas frecuentes", title });
+  return renderOgCard({ key: "preguntas-frecuentes", eyebrow: "Preguntas frecuentes", title });
 }
