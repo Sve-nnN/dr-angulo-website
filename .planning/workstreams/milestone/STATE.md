@@ -2,15 +2,15 @@
 gsd_state_version: 1.0
 milestone: v1.1
 milestone_name: Lanzamiento público y competitividad SEO
-status: planning
-last_updated: "2026-08-13T00:00:00.000Z"
-last_activity: 2026-08-13
+status: executing
+last_updated: "2026-08-26T00:00:00.000Z"
+last_activity: 2026-08-26
 progress:
   total_phases: 5
-  completed_phases: 0
-  total_plans: 0
-  completed_plans: 0
-  percent: 0
+  completed_phases: 3
+  total_plans: 29
+  completed_plans: 26
+  percent: 60
 ---
 
 # Project State
@@ -29,7 +29,30 @@ Plan: 10-01, 10-02 y 10-03 cerrados. Las 23 rutas del sitio sirven title y meta 
 Status: Code review (2026-08-14) encontró 2 blockers reales — 13 de 23 rutas compartían por WhatsApp el título y la URL de la portada en vez de los propios (og:title/og:description/og:url heredados del layout), y las 23 rutas emitían un twitter:title/twitter:description genérico idéntico. Los dos se arreglaron (`bdd7519`) y se reverificaron contra el HTML reconstruido, no solo contra el commit. Un warning (sitemap de sedes sin `lastModified`) también se arregló (`68ed9b5`); el otro (SITEMAP_TOTAL duplicado en tres scripts) se dejó a propósito, porque arreglarlo violaría una decisión ya documentada de no acoplar los scripts de gate entre sí. Verificación formal: 5/5 must-haves, sin bloqueantes de código, status human_needed por dos checks que solo Juan puede hacer (vista previa real de WhatsApp, miga de pan en la SERP de Google) — Juan decidió diferirlos el 2026-08-14 en vez de bloquear el cierre de la fase.
 Last activity: 2026-08-14 - Completed quick task 260814-ecx: correcciones de código de la auditoría SEO
 
-Progress: [████████░░] 4 de 5 fases de v1.1, con la 8 cerrada y esperando verificación
+Progress: [████████░░] 4 de 5 fases de v1.1
+
+**Sincronizado el 2026-08-26.** Las fases 8, 9 y 10 están cerradas y la 7 está
+desplegada con cuatro de sus cinco requisitos verificados contra producción ese
+mismo día: el dominio sirve por HTTPS, `www` redirige 301 al apex en las dos
+rutas probadas, los canonicals apuntan al apex y el sitemap está enviado con 23
+URLs. Lo que queda abierto de v1.1 son dos cosas y ninguna es de código:
+
+- **DOM-04**, el correo real del formulario. Necesita la cuenta de Resend, el
+  dominio verificado y las tres variables cargadas en Dokploy.
+- **La fase 11 entera**, local SEO del perfil de Google Business. No produce
+  código: produce un checklist y una campaña de reseñas. Su punto de contacto
+  con el otro workstream, los UTM del enlace del perfil, ya quedó decidido en
+  MEAS-01: van sin parámetros.
+
+**SEDE-02 se quedó abierto por indexación, no por código.** La página de Ricardo
+Palma existe, es correcta y está enlazada; Google todavía no la rastreó. Se
+cierra cuando avance el issue #1 del workstream `seo-fixes`.
+
+**Aviso sobre producción, medido el 2026-08-26.** El sitio publicado sirve el
+contenido hasta la fase 16 de v1.3, pero no el de la 19: faltan las citas
+médicas y las cabeceras de CSP en modo report-only, con el PR #21 mergeado desde
+el 2026-08-25. Cualquier verificación contra producción arrastra ese desfase
+hasta que se resuelva.
 
 ### Fase 8 reabierta: el paquete on-page de v1.2
 

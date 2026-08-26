@@ -13,9 +13,9 @@
 
 ### Indexación
 
-- [ ] **IDX-01**: Las ocho páginas núcleo del sitio registran fecha de rastreo en Search Console, en vez de quedar en "Discovered - currently not indexed" (#1)
-- [ ] **IDX-02**: El sitio recibe al menos tres enlaces desde dominios de terceros apuntando a páginas internas, no solo a la portada (#1)
-- [ ] **IDX-03**: El perfil de Google Business enlaza a páginas internas concretas: una por sede y una por condición (#1)
+- [ ] **IDX-01**: Las ocho páginas núcleo del sitio registran fecha de rastreo en Search Console, en vez de quedar en "Discovered - currently not indexed" (#1) — material listo en `docs/indexacion-y-enlaces.md` (PR #23): tabla de registro con fecha de corte a 21 días. La ejecución es manual, en el panel de Search Console
+- [ ] **IDX-02**: El sitio recibe al menos tres enlaces desde dominios de terceros apuntando a páginas internas, no solo a la portada (#1) — los cinco objetivos y el texto de solicitud, en `docs/indexacion-y-enlaces.md`
+- [ ] **IDX-03**: El perfil de Google Business enlaza a páginas internas concretas: una por sede y una por condición (#1) — las ocho entradas, cuatro de sede y cuatro de condición, escritas y listas para publicar en `docs/indexacion-y-enlaces.md`
 
 ### Alineación de URL, title y contenido
 
@@ -37,15 +37,15 @@
 
 ### Core Web Vitals y entrega
 
-- [ ] **CWV-01**: El HTML de las páginas estáticas se sirve desde la caché de borde de Cloudflare, con TTFB de la portada por debajo de 300 ms (#7)
-- [ ] **CWV-02**: `/testimonios` puntúa por encima de 0,90 en performance, con TBT por debajo de 200 ms (#8)
-- [ ] **CWV-03**: La imagen LCP de `/sobre-el-doctor` se precarga con prioridad alta y en formato moderno (#9)
-- [ ] **CWV-04**: El bundle compartido no arrastra JavaScript sin usar por encima de 15 KB ni polyfills legacy (#13)
-- [~] **CWV-05**: La imagen OpenGraph pesa menos de 200 KB sin degradar la vista previa en WhatsApp (#14) — **diferido, a cargo de Juan** (decisión del 2026-08-24), fuera del alcance de la fase 18. No existe un archivo que comprimir: la genera Next en build desde `src/lib/og-card.tsx`, que alimenta 15 archivos `src/app/**/opengraph-image.tsx`
+- [ ] **CWV-01**: El HTML de las páginas estáticas se sirve desde la caché de borde de Cloudflare, con TTFB de la portada por debajo de 300 ms (#7) — diagnóstico cerrado y regla escrita en `phases/18-rendimiento-y-accesibilidad/18-CLOUDFLARE-CACHE.md`; **falta aplicarla en el panel de Cloudflare**, que es acceso de Juan. La medición de cierre está automatizada en `npm run cache:check -- --gate`, con línea base del 2026-08-26: 0 de 23 rutas con HIT
+- [x] **CWV-02**: `/testimonios` puntúa por encima de 0,90 en performance, con TBT por debajo de 200 ms (#8)
+- [x] **CWV-03**: La imagen LCP de `/sobre-el-doctor` se precarga con prioridad alta y en formato moderno (#9)
+- [x] **CWV-04**: El bundle compartido no arrastra JavaScript sin usar por encima de 15 KB ni polyfills legacy (#13)
+- [x] **CWV-05**: La imagen OpenGraph pesa menos de 200 KB sin degradar la vista previa en WhatsApp (#14) — resuelto el 2026-08-26 en el PR #22, fuera de la fase 18. Ya no se sirve el PNG de Satori: `npm run og:build` convierte las 24 tarjetas a JPEG y las versiona en `public/og/`. De 551 KB a entre 48 y 56 KB. `seo:check` mide desde ahora el peso servido, con techo de 200 KB
 
 ### Accesibilidad
 
-- [ ] **A11Y-01**: La portada, `/agendar` y `/sedes` puntúan 1,00 en accesibilidad, con contraste, listas de definición y orden de encabezados en verde (#12)
+- [x] **A11Y-01**: La portada, `/agendar` y `/sedes` puntúan 1,00 en accesibilidad, con contraste, listas de definición y orden de encabezados en verde (#12)
 
 ### Contenido y confianza
 
