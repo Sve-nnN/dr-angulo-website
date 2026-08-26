@@ -16,7 +16,8 @@
     "content:check": "node scripts/check-content.mjs",
     "sedes:check": "node scripts/check-sedes.mjs",
     "seo:check": "node scripts/check-seo.mjs",
-    "og:build": "node scripts/build-og.mjs"
+    "og:build": "node scripts/build-og.mjs",
+    "cache:check": "node scripts/check-edge-cache.mjs"
   },
   "dependencies": {
     "@next/third-parties": "^16.2.12",
