@@ -46,26 +46,26 @@
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| HOMESVC-01 | TBD | Pending |
-| HOMESVC-02 | TBD | Pending |
-| HOMESVC-03 | TBD | Pending |
-| HOMESVC-04 | TBD | Pending |
-| SEDBLOG-01 | TBD | Pending |
-| SEDBLOG-02 | TBD | Pending |
-| SEDBLOG-03 | TBD | Pending |
-| SEDBLOG-04 | TBD | Pending |
-| CONV-01 | TBD | Pending |
-| CONV-02 | TBD | Pending |
-| INST-01 | TBD | Pending |
-| INST-02 | TBD | Pending |
-| INST-03 | TBD | Pending |
-| INST-04 | TBD | Pending |
+| HOMESVC-01 | Phase 1 | Pending |
+| HOMESVC-02 | Phase 1 | Pending |
+| HOMESVC-03 | Phase 1 | Pending |
+| HOMESVC-04 | Phase 1 | Pending |
+| SEDBLOG-01 | Phase 4 | Pending |
+| SEDBLOG-02 | Phase 4 | Pending |
+| SEDBLOG-03 | Phase 4 | Pending |
+| SEDBLOG-04 | Phase 4 | Pending |
+| CONV-01 | Phase 2 | Pending |
+| CONV-02 | Phase 2 | Pending |
+| INST-01 | Phase 3 | Pending |
+| INST-02 | Phase 3 | Pending |
+| INST-03 | Phase 3 | Pending |
+| INST-04 | Phase 3 | Pending |
 
 **Coverage:**
 - v1 requirements: 14 total
-- Mapped to phases: 0
-- Unmapped: 14 ⚠️ (se completa al crear el roadmap)
+- Mapped to phases: 14
+- Unmapped: 0 ✓
 
 ---
 *Requirements defined: 2026-09-17*
-*Last updated: 2026-09-17 after initial definition*
+*Last updated: 2026-09-17 after roadmap creation (4 phases, 14/14 requirements mapped)*
