@@ -30,7 +30,9 @@ El orden de las cuatro fases sigue la lógica del "audit-first" de la skill: la 
   2. En `/servicios`, las especialidades se escanean de corrido, sin muro de texto ni necesidad de leer todo para entender qué se ofrece.
   3. Dos páginas de servicio distintas (`/servicios/[slug]`) comparten la misma jerarquía de secciones y los mismos componentes, de modo que pasar de una a otra se siente como el mismo sitio.
   4. En la home y en cualquier página de servicio, el CTA de agendar es el elemento visualmente más prioritario de la página, sin depender de leer el texto para ubicarlo.
-**Plans**: TBD
+**Plans**: 1 plan
+Plans:
+- [ ] 01-01-PLAN.md: jerarquía de CTA, badge de credencial y tarjetas de categoría en home, orden canónico y refuerzo del CTA en el detalle de servicio
 **UI hint**: yes
 
 ### Phase 2: Conversión
@@ -74,7 +76,7 @@ Fase 1 primero (define el lenguaje visual compartido). Las fases 2, 3 y 4 depend
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Home y Servicios | 0/TBD | Not started | - |
+| 1. Home y Servicios | 0/1 | Not started | - |
 | 2. Conversión | 0/TBD | Not started | - |
 | 3. Institucional | 0/TBD | Not started | - |
 | 4. Sedes y Blog | 0/TBD | Not started | - |
