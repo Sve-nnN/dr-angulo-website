@@ -9,10 +9,10 @@
 
 ### Home y Servicios (HOMESVC)
 
-- [ ] **HOMESVC-01**: La home (`/`) presenta jerarquía visual clara entre credencial, propuesta de valor y llamado a agendar
-- [ ] **HOMESVC-02**: El hub de servicios (`/servicios`) permite escanear las especialidades sin fricción visual
-- [ ] **HOMESVC-03**: Cada página de servicio (`/servicios/[slug]`) tiene composición consistente entre sí y con el resto del sitio
-- [ ] **HOMESVC-04**: El CTA de agendar es visualmente prioritario en home y en cada servicio
+- [x] **HOMESVC-01**: La home (`/`) presenta jerarquía visual clara entre credencial, propuesta de valor y llamado a agendar
+- [x] **HOMESVC-02**: El hub de servicios (`/servicios`) permite escanear las especialidades sin fricción visual
+- [x] **HOMESVC-03**: Cada página de servicio (`/servicios/[slug]`) tiene composición consistente entre sí y con el resto del sitio
+- [x] **HOMESVC-04**: El CTA de agendar es visualmente prioritario en home y en cada servicio
 
 ### Sedes y Blog (SEDBLOG)
 
@@ -46,10 +46,10 @@
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| HOMESVC-01 | Phase 1 | Pending |
-| HOMESVC-02 | Phase 1 | Pending |
-| HOMESVC-03 | Phase 1 | Pending |
-| HOMESVC-04 | Phase 1 | Pending |
+| HOMESVC-01 | Phase 1 | Complete |
+| HOMESVC-02 | Phase 1 | Complete |
+| HOMESVC-03 | Phase 1 | Complete |
+| HOMESVC-04 | Phase 1 | Complete |
 | SEDBLOG-01 | Phase 4 | Pending |
 | SEDBLOG-02 | Phase 4 | Pending |
 | SEDBLOG-03 | Phase 4 | Pending |
@@ -62,6 +62,7 @@
 | INST-04 | Phase 3 | Pending |
 
 **Coverage:**
+
 - v1 requirements: 14 total
 - Mapped to phases: 14
 - Unmapped: 0 ✓

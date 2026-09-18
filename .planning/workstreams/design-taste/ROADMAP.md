@@ -22,50 +22,64 @@ El orden de las cuatro fases sigue la lógica del "audit-first" de la skill: la 
 ## Phase Details
 
 ### Phase 1: Home y Servicios
+
 **Goal**: Quien llega a la home o a cualquier página de servicio entiende en el primer vistazo quién es el doctor, qué ofrece y qué hacer a continuación, con una composición que se repite de forma reconocible entre servicios.
 **Depends on**: Nothing (first phase)
 **Requirements**: HOMESVC-01, HOMESVC-02, HOMESVC-03, HOMESVC-04
 **Success Criteria** (what must be TRUE):
+
   1. En la home, la credencial del doctor, la propuesta de valor y el llamado a agendar se distinguen entre sí en el primer scroll, sin competir por la misma atención.
   2. En `/servicios`, las especialidades se escanean de corrido, sin muro de texto ni necesidad de leer todo para entender qué se ofrece.
   3. Dos páginas de servicio distintas (`/servicios/[slug]`) comparten la misma jerarquía de secciones y los mismos componentes, de modo que pasar de una a otra se siente como el mismo sitio.
   4. En la home y en cualquier página de servicio, el CTA de agendar es el elemento visualmente más prioritario de la página, sin depender de leer el texto para ubicarlo.
+
 **Plans**: 1 plan
 Plans:
-- [ ] 01-01-PLAN.md: jerarquía de CTA, badge de credencial y tarjetas de categoría en home, orden canónico y refuerzo del CTA en el detalle de servicio
+
+- [x] 01-01-PLAN.md: jerarquía de CTA, badge de credencial y tarjetas de categoría en home, orden canónico y refuerzo del CTA en el detalle de servicio
+
 **UI hint**: yes
 
 ### Phase 2: Conversión
+
 **Goal**: Quien ya decidió agendar completa la acción sin fricción visual, y quien todavía duda encuentra los canales de contacto con jerarquía clara.
 **Depends on**: Phase 1 (reutiliza el lenguaje visual y el tratamiento de CTA definidos ahí)
 **Requirements**: CONV-01, CONV-02
 **Success Criteria** (what must be TRUE):
+
   1. En `/agendar`, ningún elemento compite visualmente con la acción de agendar (WhatsApp o formulario); llegar a la página y completarla no exige pasos ni lecturas de más.
   2. En `/contacto`, los tres canales (WhatsApp, teléfono, formulario) se identifican en un vistazo, con jerarquía clara sobre cuál es el preferente.
+
 **Plans**: TBD
 **UI hint**: yes
 
 ### Phase 3: Institucional
+
 **Goal**: Quien evalúa si confiar en el doctor encuentra evidencia de autoridad, prueba social y respuestas a sus dudas con una jerarquía visual que refuerza la credibilidad, y la página legal se mantiene legible sin necesitar el mismo tratamiento que el resto del sitio.
 **Depends on**: Phase 1
 **Requirements**: INST-01, INST-02, INST-03, INST-04
 **Success Criteria** (what must be TRUE):
+
   1. En `/sobre-el-doctor`, la foto, las credenciales (CMP/RNE, formación) y la trayectoria aparecen en un orden visual que transmite autoridad sin necesidad de leer todo el texto.
   2. En `/testimonios`, las reseñas se presentan con un tratamiento visual (no un bloque de texto plano) que refuerza la credibilidad de lo dicho por los pacientes.
   3. En `/preguntas-frecuentes`, las preguntas se escanean de corrido y cada una se expande sin que el visitante pierda su lugar en la página.
   4. En `/privacidad`, el texto legal se lee con contraste y espaciado correctos, sin necesitar el mismo nivel de rediseño que el resto del sitio.
+
 **Plans**: TBD
 **UI hint**: yes
 
 ### Phase 4: Sedes y Blog
+
 **Goal**: Quien busca la sede más cercana encuentra ubicación y acceso con jerarquía clara, y quien lee un artículo del blog lo hace con comodidad visual, con consistencia entre cada hub y su detalle.
 **Depends on**: Phase 1
 **Requirements**: SEDBLOG-01, SEDBLOG-02, SEDBLOG-03, SEDBLOG-04
 **Success Criteria** (what must be TRUE):
+
   1. En `/sedes`, la ubicación y la facilidad de acceso de cada sede (dirección, mapa, horario) se distinguen con jerarquía clara, sin bloques largos de texto.
   2. Al entrar a una `/sedes/[slug]` desde el hub, la composición visual es reconociblemente la misma que la del hub `/sedes`.
   3. En `/blog`, los artículos se escanean con jerarquía editorial (imagen, título, resumen) que distingue a uno de otro sin ambigüedad.
   4. En un `/blog/[slug]`, el contenido clínico largo se lee con comodidad (ancho de línea, tipografía, espaciado) sin fatiga visual.
+
 **Plans**: TBD
 **UI hint**: yes
 
