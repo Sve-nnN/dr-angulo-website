@@ -25,9 +25,9 @@ La auditoría del 2026-08-10 encontró un sitio terminado que nadie puede visita
 
 **v1.1 Lanzamiento público y competitividad SEO (en curso)**
 
-- [ ] **Phase 7: Dominio público, producción y Search Console** - drangulocolumna.com sirviendo el sitio con HTTPS, www redirigido, canonicals reales, Resend verificado y sitemap enviado a Google
+- [~] **Phase 7: Dominio público, producción y Search Console** - drangulocolumna.com sirviendo el sitio con HTTPS, www redirigido, canonicals reales, Resend verificado y sitemap enviado a Google
 - [x] **Phase 8: Silo clínico: páginas por servicio y blog profundo** - Una URL por condición con 900+ palabras revisadas por el doctor, hub de servicios y los cuatro posts expandidos con enlace a su servicio
-- [ ] **Phase 9: Páginas por sede y cobertura local** - Las cuatro sedes con URL propia, schema de ubicación y enlace en ambos sentidos con /agendar
+- [x] **Phase 9: Páginas por sede y cobertura local** - Las cuatro sedes con URL propia, schema de ubicación y enlace en ambos sentidos con /agendar
 - [x] **Phase 10: Schema, metadata y limpieza técnica** - Breadcrumbs, credenciales, horarios, reseñas, titles y OG por página, llms.txt y limpieza de assets
 - [ ] **Phase 11: Local SEO: GBP, reseñas y citaciones** - Ficha corregida, categorías, campaña de reseñas hacia 15-20, NAP consistente y UTM del GBP resolviendo a URLs vivas
 
@@ -246,10 +246,10 @@ Las fases se ejecutan en orden numérico: 7 → 8 → 9 → 10 → 11. La fase 1
 | 4. Contenido SEO, legal y publicación | v1.0 | 2/2 | Complete (dominio lo cierra la fase 7) | 2026-07-31 |
 | 5. Material real y feed de Instagram | v1.0 | 4/4 | Complete (vinculación de Instagram pendiente) | 2026-08-09 |
 | 6. Sedes, horarios y flujo de agenda | v1.0 | 1/1 | Complete (falta confirmar Montefiori) | 2026-08-09 |
-| 7. Dominio público, producción y Search Console | v1.1 | 0/5 | Planned | - |
+| 7. Dominio público, producción y Search Console | v1.1 | 2/5 | Desplegada. DOM-01, 02, 03 y 05 cerrados y verificados contra producción el 2026-08-26. Falta DOM-04, el correo de Resend | - |
 | 8. Silo clínico: servicios y blog profundo | v1.1 | 18/18 | Complete (falta la ronda de verificación de fase) | 2026-08-13 |
-| 9. Páginas por sede y cobertura local | v1.1 | 0/TBD | Not started | - |
-| 10. Schema, metadata y limpieza técnica | v1.1 | 2/3 | In progress (10-01 y 10-02 cerrados, falta 10-03) | - |
+| 9. Páginas por sede y cobertura local | v1.1 | 3/3 | Complete. SEDE-02 queda pendiente por indexación, no por código | 2026-08-13 |
+| 10. Schema, metadata y limpieza técnica | v1.1 | 3/3 | Complete, con code review y verificación formal el 2026-08-14. Dos checks de humano diferidos por decisión de Juan | 2026-08-14 |
 | 11. Local SEO: GBP, reseñas y citaciones | v1.1 | 0/TBD | Not started | - |
 
 ---

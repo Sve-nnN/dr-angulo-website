@@ -165,11 +165,11 @@ Mapeo v1.1 completado al crear el ROADMAP (2026-08-10). Fases 7 a 11.
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| DOM-01 | Phase 7 | Pending |
-| DOM-02 | Phase 7 | Pending |
-| DOM-03 | Phase 7 | Pending |
-| DOM-04 | Phase 7 | Pending |
-| DOM-05 | Phase 7 | Pending |
+| DOM-01 | Phase 7 | Complete (07-01) |
+| DOM-02 | Phase 7 | Complete (07-02, Redirect Rule de Cloudflare, verificada el 2026-08-26) |
+| DOM-03 | Phase 7 | Complete (07-03) |
+| DOM-04 | Phase 7 | Pending, a cargo de Juan (Resend: cuenta, dominio verificado y variables en Dokploy) |
+| DOM-05 | Phase 7 | Complete (07-05, sitemap enviado con 23 URLs) |
 | SVC-01 | Phase 8 | Done (08-10) |
 | SVC-02 | Phase 8 | Done (08-11) |
 | SVC-03 | Phase 8 | Done (08-15) |
@@ -177,9 +177,9 @@ Mapeo v1.1 completado al crear el ROADMAP (2026-08-10). Fases 7 a 11.
 | SVC-05 | Phase 8 | Done (08-16, 08-17, 08-18, 08-19) |
 | BLOG-02 | Phase 8 | Done (08-06, 08-07, 08-12, 08-13) |
 | BLOG-03 | Phase 8 | Done (08-14) |
-| SEDE-01 | Phase 9 | Pending |
-| SEDE-02 | Phase 9 | Pending |
-| SEDE-03 | Phase 9 | Pending |
+| SEDE-01 | Phase 9 | Complete (09-01) |
+| SEDE-02 | Phase 9 | Pending por indexación, no por código: la página existe y es correcta, pero Google no la rastreó. Depende del issue #1 del workstream seo-fixes |
+| SEDE-03 | Phase 9 | Complete (09-02, 09-03) |
 | SEO-05 | Phase 10 | Complete |
 | SEO-06 | Phase 10 | Complete |
 | SEO-07 | Phase 10 | Complete |
