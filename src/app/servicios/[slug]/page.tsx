@@ -164,6 +164,17 @@ export default async function ServiceGuidePage({ params }: Props) {
               bannerAfterIndex={1}
             />
 
+            <div className="mt-14">
+              <AuthorByline
+                publishedAt={page.publishedAt}
+                updatedAt={page.updatedAt}
+              />
+            </div>
+
+            <div className="mt-8">
+              <MedicalDisclaimer />
+            </div>
+
             <section className="mt-16 border-t border-border pt-12">
               <h2 className="font-heading text-2xl font-bold text-primary sm:text-3xl">
                 Agenda una evaluación de tu caso
@@ -221,17 +232,6 @@ export default async function ServiceGuidePage({ params }: Props) {
                 </ul>
               </section>
             )}
-
-            <div className="mt-14">
-              <AuthorByline
-                publishedAt={page.publishedAt}
-                updatedAt={page.updatedAt}
-              />
-            </div>
-
-            <div className="mt-8">
-              <MedicalDisclaimer />
-            </div>
           </div>
 
           {/* Aside de escritorio: índice y tarjeta de agenda pegados en el

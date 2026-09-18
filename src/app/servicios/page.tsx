@@ -83,9 +83,13 @@ export default function ServiciosPage() {
         )}
       </ContentBodyBoundary>
 
-      <div className="mt-14 divide-y divide-border border-y border-border">
+      <div className="mt-14 grid gap-6">
         {serviceCategories.map((cat) => (
-          <section key={cat.slug} id={cat.slug} className="scroll-mt-28 py-10">
+          <section
+            key={cat.slug}
+            id={cat.slug}
+            className="scroll-mt-28 rounded-2xl border border-border bg-white p-6 shadow-sm"
+          >
             <h2 className="font-heading text-xl font-bold text-primary sm:text-2xl">
               {cat.name}
             </h2>
