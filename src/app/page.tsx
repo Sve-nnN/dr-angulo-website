@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import type { Metadata } from "next";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, BadgeCheck } from "lucide-react";
 import { InstagramReelsSection } from "@/components/instagram/instagram-reels-section";
 import { BookingCta } from "@/components/ui/booking-cta";
 import { WhatsAppCta } from "@/components/ui/whatsapp-cta";
@@ -47,7 +47,8 @@ export default async function Home() {
               van desde el tratamiento conservador hasta la cirugía mínimamente
               invasiva. Si hace falta operar, te acompaño explicando cada paso.
             </p>
-            <p className="animate-rise-in animate-step-3 mt-5 text-sm text-white">
+            <p className="animate-rise-in animate-step-3 mt-5 inline-flex items-center gap-2 text-sm font-semibold text-white">
+              <BadgeCheck className="size-4" aria-hidden="true" />
               {credentialsInfo.yearsOfExperience} años de ejercicio · CMP{" "}
               {siteConfig.credentials.cmp} · RNE {siteConfig.credentials.rne} ·
               Atiende en {locations.length} sedes de Lima
@@ -94,31 +95,29 @@ export default async function Home() {
           planificada con estudios propios.
         </p>
 
-        <dl className="mt-12 divide-y divide-border border-y border-border">
+        <div className="mt-12 grid gap-6 sm:grid-cols-3">
           {serviceCategories.map((cat) => (
             <div
               key={cat.slug}
-              className="grid gap-3 py-8 sm:grid-cols-[minmax(0,14rem)_1fr] sm:gap-10"
+              className="rounded-2xl border border-border bg-white p-6 shadow-sm"
             >
-              <dt className="font-heading text-lg font-bold text-primary">
+              <p className="font-heading text-lg font-bold text-primary">
                 {cat.name}
-              </dt>
-              <dd>
-                <p className="text-foreground/80">{cat.description}</p>
-                <p className="mt-3 text-sm text-foreground/70">
-                  {cat.conditions.slice(0, 5).join(" · ")}
-                </p>
-                <Link
-                  href={`/servicios#${cat.slug}`}
-                  className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-primary transition-colors duration-150 hover:text-primary-dark hover:underline"
-                >
-                  Qué incluye
-                  <ArrowRight className="size-3.5" aria-hidden="true" />
-                </Link>
-              </dd>
+              </p>
+              <p className="mt-3 text-foreground/80">{cat.description}</p>
+              <p className="mt-3 text-sm text-foreground/70">
+                {cat.conditions.slice(0, 5).join(" · ")}
+              </p>
+              <Link
+                href={`/servicios#${cat.slug}`}
+                className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-primary transition-colors duration-150 hover:text-primary-dark hover:underline"
+              >
+                Qué incluye
+                <ArrowRight className="size-3.5" aria-hidden="true" />
+              </Link>
             </div>
           ))}
-        </dl>
+        </div>
       </section>
 
       <section className="mx-auto max-w-6xl px-4 pb-16 sm:px-6 sm:pb-24">
