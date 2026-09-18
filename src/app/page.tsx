@@ -62,10 +62,10 @@ export default async function Home() {
               <span className="sr-only"> (se abre en una pestaña nueva)</span>
             </a>
             <div className="animate-rise-in animate-step-4 mt-8 flex flex-col gap-3 sm:flex-row">
-              <BookingCta>Agendar cita</BookingCta>
+              <BookingCta className="px-8 py-4 text-lg">Agendar cita</BookingCta>
               <Link
                 href="/servicios"
-                className="inline-flex items-center justify-center gap-2 rounded-lg border-2 border-white/30 px-6 py-3 text-base font-semibold text-white transition-colors duration-150 hover:bg-white/10"
+                className="inline-flex items-center gap-2 text-base font-semibold text-white transition-colors duration-150 hover:underline"
               >
                 Ver especialidades
                 <ArrowRight className="size-4" aria-hidden="true" />
@@ -331,7 +331,7 @@ export default async function Home() {
             Elige la sede que te quede mejor y agenda por el canal de esa sede.
           </p>
           <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
-            <BookingCta>Ver sedes y agendar</BookingCta>
+            <BookingCta>Agendar cita</BookingCta>
             <WhatsAppCta location="hero" variant="outline-inverse">
               Consultorio privado por WhatsApp
             </WhatsAppCta>

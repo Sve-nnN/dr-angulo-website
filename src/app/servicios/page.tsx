@@ -165,7 +165,7 @@ export default function ServiciosPage() {
           Cuéntame tu caso por WhatsApp y te indico los siguientes pasos.
         </p>
         <div className="mt-6">
-          <WhatsAppCta location="services" variant="accent">
+          <WhatsAppCta location="services" variant="outline">
             Escribir por WhatsApp
           </WhatsAppCta>
         </div>
