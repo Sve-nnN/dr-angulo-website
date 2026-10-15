@@ -1,0 +1,159 @@
+@startuml domain-model
+title Content and schema domain model (types present in src/)
+
+skinparam classAttributeIconSize 0
+hide empty members
+
+package "content: locations" {
+  class Location {
+    slug: string
+    name: string
+    kind: "consultorio" | "clinica"
+    streetAddress: string
+    geo: latitude, longitude
+    mapsUrl: string
+    telephone: string
+    website?: string
+    schedule: days, hours []
+    bookingSummary: string
+  }
+  class OpeningHours {
+    days: SchemaDay[]
+    opens?: string
+    closes?: string
+  }
+  class BookingChannel {
+    label: string
+    href?: string
+    detail?: string
+  }
+}
+
+package "content: location-pages" {
+  class LocationPage {
+    slug: string
+    navLabel: string
+    title: string
+    description: string
+    h1: string
+    sections: ContentSection[]
+    outboundLinks?: []
+    ctaBanner?
+    publishedAt?: string
+    updatedAt?: string
+  }
+}
+
+package "content: services and service-pages" {
+  class ServicePage {
+    slug: string
+    navLabel: string
+    h1: string
+    title: string
+    description: string
+    conditionName: string
+    format: ServiceFormat
+    publishedAt: string
+    updatedAt: string
+    relatedPosts: string[]
+    describesSurgery: boolean
+    sections: ServiceSection[]
+  }
+  class ServiceSection {
+    id: string
+    level: 2 | 3
+    heading: string
+    paragraphs: string[]
+    items?: ServiceSectionItem[]
+    citations?: ServiceCitation[]
+  }
+  class ServiceCitation {
+    source: string
+    supports: string
+    href: string
+  }
+  class ServiceCategory {
+    slug: string
+    name: string
+    conditions: string[]
+  }
+  class ProcedureApproach {
+    slug: string
+    name: string
+    description: string
+    examples: string[]
+  }
+}
+
+package "content: blog" {
+  class BlogPost {
+    slug: string
+    title: string
+    h1: string
+    description: string
+    publishedAt: string
+    updatedAt: string
+    relatedService?: string
+    intro: string[]
+    sections: BlogSection[]
+  }
+  class BlogSection {
+    id: string
+    level: 2 | 3
+    heading: string
+    paragraphs: string[]
+  }
+  class BlogTopicEntity <<union>> {
+    kind: "condition" | "procedure-ref" | "specialty"
+  }
+}
+
+package "content: static-pages" {
+  class StaticPage {
+    slug: string
+    format: ServiceFormat
+    sections: ContentSection[]
+    h1?: string
+    updatedAt?: string
+  }
+}
+
+package "components: structured-data" {
+  class SiteJsonLd <<component>> {
+    WebSite
+    Physician
+    MedicalClinic x4
+    MedicalProcedure x2
+  }
+  class PageJsonLd <<components>> {
+    BreadcrumbJsonLd
+    FaqJsonLd
+    MedicalWebPageJsonLd
+    SedeJsonLd
+    BlogPostingJsonLd
+    ProfilePageJsonLd
+    ContactPageJsonLd
+  }
+}
+
+Location "1" *-- "1..*" OpeningHours
+Location "1" *-- "1..*" BookingChannel
+LocationPage "1" --> "1" Location : same slug, NAP read from
+LocationPage "1" *-- "0..*" ServiceSection : sections (ContentSection alias)
+StaticPage "1" *-- "0..*" ServiceSection : sections
+ServicePage "1" *-- "1..*" ServiceSection
+ServiceSection "1" o-- "0..*" ServiceCitation
+BlogPost "1" *-- "1..*" BlogSection
+BlogPost "0..*" --> "0..1" ServicePage : relatedService
+ServicePage "1" --> "0..*" BlogPost : relatedPosts (slugs)
+BlogPost "1" o-- "0..*" BlogTopicEntity : topicEntities
+BlogTopicEntity ..> ProcedureApproach : procedure-ref by slug
+
+SiteJsonLd ..> Location : MedicalClinic nodes
+SiteJsonLd ..> ProcedureApproach : MedicalProcedure nodes
+SiteJsonLd ..> ServiceCategory : MedicalCondition nodes
+PageJsonLd ..> ServicePage
+PageJsonLd ..> LocationPage
+PageJsonLd ..> BlogPost
+
+@enduml

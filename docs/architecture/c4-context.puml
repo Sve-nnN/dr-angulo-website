@@ -1,0 +1,32 @@
+@startuml c4-context
+!include <C4/C4_Context>
+
+title System Context: dr-angulo-website
+
+LAYOUT_WITH_LEGEND()
+
+Person(patient, "Patient", "Searches for a spine surgeon in Lima, reads guides, books by WhatsApp or the contact form")
+Person(maintainer, "Maintainer", "Edits content as code, regenerates Open Graph cards, runs the quality gates")
+
+System(site, "dr-angulo-website", "Clinical marketing site in Next.js. Silo of condition guides and location pages, JSON-LD graph, blog")
+
+System_Ext(search, "Search engines and AI crawlers", "Read HTML, sitemap.xml, robots.txt, llms.txt and JSON-LD")
+System_Ext(whatsapp, "WhatsApp", "Primary booking channel, opened through wa.me links")
+System_Ext(resend, "Resend", "Sends the contact form notification email")
+System_Ext(places, "Google Places API (New)", "Rating and up to five reviews, cached 24 h")
+System_Ext(instagram, "Instagram Graph API", "Reels feed, long-lived token refreshed by a cron call")
+System_Ext(analytics, "GA4 and Meta Pixel", "Loaded only after the visitor grants consent")
+System_Ext(cloudflare, "Cloudflare", "DNS, proxy and managed robots.txt block in front of the origin")
+
+Rel(patient, site, "Reads pages, submits the contact form", "HTTPS")
+Rel(patient, whatsapp, "Starts a chat with a prefilled message")
+Rel(maintainer, site, "Edits src/content, runs npm scripts, deploys")
+Rel(search, site, "Crawls and indexes", "HTTPS")
+Rel(site, resend, "Sends notification email", "HTTPS")
+Rel(site, places, "Fetches reviews on the server", "HTTPS")
+Rel(site, instagram, "Fetches reels and refreshes the token", "HTTPS")
+Rel(site, analytics, "Mounts scripts after consent", "HTTPS")
+Rel(cloudflare, site, "Proxies requests to the origin", "HTTPS")
+Rel(patient, cloudflare, "Requests the site", "HTTPS")
+
+@enduml

@@ -1,0 +1,37 @@
+@startuml sequence-page-render
+title Page render: /servicios/[slug] from route to HTML and JSON-LD
+
+actor Visitor
+participant "Cloudflare" as CF
+participant "proxy.ts" as Proxy
+participant "Prerendered HTML\n(.next/server/app)" as Html
+participant "servicios/[slug]/page.tsx" as Page
+participant "content/service-pages" as Content
+participant "structured-data.tsx" as Ld
+participant "layout.tsx" as Layout
+
+== Build time: npm run build ==
+Page -> Content : generateStaticParams()\nservicePages.map(slug)
+Content --> Page : slugs
+loop for each slug
+  Page -> Content : getServicePage(slug)
+  Content --> Page : ServicePage
+  Page -> Page : generateMetadata()\ntitle, description, canonical, openGraph
+  Page -> Layout : render inside root layout
+  Layout -> Ld : SiteJsonLd (WebSite, Physician, 4 sedes, 2 procedures)
+  Page -> Ld : MedicalWebPageJsonLd, BreadcrumbJsonLd,\nFaqJsonLd when 2+ FAQ sections
+  Page -> Page : groupSections() feeds index and body
+  Page --> Html : static HTML with JSON-LD script tags
+end
+
+== Request time ==
+Visitor -> CF : GET /servicios/hernia-discal
+CF -> Proxy : forward to origin
+alt host starts with www.
+  Proxy --> Visitor : 301 to apex host, same path and query
+else apex host
+  Proxy -> Html : continue
+  Html --> Visitor : prerendered HTML
+end
+
+@enduml

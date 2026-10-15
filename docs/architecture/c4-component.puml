@@ -1,0 +1,42 @@
+@startuml c4-component
+!include <C4/C4_Component>
+
+title Component diagram: Next.js application modules
+
+LAYOUT_WITH_LEGEND()
+
+Container_Boundary(app, "Next.js application (src/)") {
+  Component(proxy, "proxy.ts", "Next.js proxy", "301 redirect from www to the apex host. Excludes only _next/static and _next/image")
+  Component(layout, "app/layout.tsx", "Root layout", "Fonts, metadataBase, canonical, header, footer, consent banner, site JSON-LD")
+  Component(routes, "app/ route segments", "Server Components", "Home, servicios, servicios/[slug], sedes, sedes/[slug], blog, blog/[slug], agendar, contacto, FAQ, testimonios, privacidad")
+  Component(ogroutes, "opengraph-image.tsx per segment", "Route files", "One per segment, each passes a key, eyebrow and title to renderOgCard")
+  Component(seoroutes, "sitemap.xml, robots, llms.txt", "Route handlers", "Built from the same content modules as the pages")
+  Component(api, "app/api and app/actions", "Route handlers, server action", "CSP report sink, Instagram refresh, reviews status, contact form")
+  Component(jsonld, "components/structured-data.tsx", "React components", "SiteJsonLd graph plus per-page nodes referencing stable @id values")
+  Component(contentbody, "components/content", "React components", "ContentBody renders sections for guides, location pages and posts")
+  Component(consent, "components/analytics", "Client components", "Consent store, GA4 and Meta Pixel mounted only after consent")
+  Component(content, "src/content", "Typed data modules", "services, service-pages, location-pages, locations, blog, static-pages, cv, faq, nav-index")
+  Component(ogcard, "lib/og-card.tsx", "Satori and ImageResponse", "Draws cards when OG_GENERATE=1, otherwise serves the pregenerated JPEG or fails the build")
+  Component(lib, "lib/", "Server modules", "site-config, google-reviews, instagram, llms-txt, resend, tracking")
+}
+
+ComponentDb(ogfiles, "public/og", "JPEG and manifest.json")
+System_Ext(ext, "Resend, Google Places, Instagram Graph")
+
+Rel(proxy, routes, "Runs before")
+Rel(layout, jsonld, "Mounts SiteJsonLd")
+Rel(routes, content, "Reads pages, posts, locations")
+Rel(routes, jsonld, "Adds page nodes and breadcrumbs")
+Rel(routes, contentbody, "Renders body sections")
+Rel(routes, lib, "Reviews and reels data")
+Rel(jsonld, content, "Builds nodes from")
+Rel(jsonld, lib, "Reads siteConfig")
+Rel(seoroutes, content, "Derives URLs and lastmod")
+Rel(ogroutes, content, "Reads the same title as generateMetadata")
+Rel(ogroutes, ogcard, "Calls renderOgCard")
+Rel(ogcard, ogfiles, "Reads manifest and JPEG")
+Rel(api, lib, "Uses")
+Rel(lib, ext, "HTTPS")
+Rel(layout, consent, "Mounts")
+
+@enduml

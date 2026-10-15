@@ -1,0 +1,37 @@
+@startuml c4-container
+!include <C4/C4_Container>
+
+title Container diagram: dr-angulo-website
+
+LAYOUT_WITH_LEGEND()
+
+Person(patient, "Patient")
+Person(maintainer, "Maintainer")
+
+System_Ext(cloudflare, "Cloudflare", "DNS and proxy")
+System_Ext(search, "Search engines and AI crawlers")
+System_Ext(external, "Third-party APIs", "Resend, Google Places, Instagram Graph, GA4, Meta Pixel")
+
+System_Boundary(site, "dr-angulo-website") {
+  Container(app, "Next.js application", "Next.js 16, React 19, TypeScript, Tailwind CSS 4", "App Router pages prerendered at build, route handlers, one server action, proxy for www to apex")
+  ContainerDb(content, "Content modules", "TypeScript files in src/content", "Services, locations, blog posts, FAQ, CV. Typed data compiled into the app, no CMS")
+  ContainerDb(og, "Pregenerated OG cards", "JPEG files and manifest.json in public/og", "One 1200x630 card per route, versioned in the repo")
+  ContainerDb(tokenfile, "Instagram token file", "File on a persistent volume", "Long-lived token written by the refresh endpoint")
+  Container(gates, "Quality gates", "Node scripts in scripts/", "check-content, check-sedes, check-seo, build-og. Read the build output and fail the pipeline")
+  Container(seotools, "seo-tools", "Node and TypeScript CLI, separate package", "Keyword research data tooling. Not part of the deployed app")
+}
+
+Rel(patient, cloudflare, "Requests pages", "HTTPS")
+Rel(cloudflare, app, "Forwards to origin", "HTTPS")
+Rel(search, cloudflare, "Crawls", "HTTPS")
+Rel(app, content, "Imports at build and render time")
+Rel(app, og, "Serves card JPEGs for opengraph-image routes")
+Rel(app, tokenfile, "Reads and writes token", "File system")
+Rel(app, external, "Server-side calls and consented browser scripts", "HTTPS")
+Rel(maintainer, content, "Edits")
+Rel(maintainer, gates, "Runs after npm run build")
+Rel(gates, app, "Reads .next/server/app output and src/content")
+Rel(gates, og, "build-og writes cards and manifest")
+Rel(maintainer, seotools, "Runs locally")
+
+@enduml

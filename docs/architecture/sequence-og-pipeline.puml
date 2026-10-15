@@ -1,0 +1,40 @@
+@startuml sequence-og-pipeline
+title Open Graph card pipeline: og:build and build-time check
+
+actor Maintainer
+participant "scripts/build-og.mjs" as Script
+participant "next dev\nOG_GENERATE=1" as Dev
+participant "opengraph-image.tsx" as Route
+participant "lib/og-card.tsx" as Card
+participant "sharp" as Sharp
+database "public/og" as Out
+
+== npm run og:build ==
+Maintainer -> Script : npm run og:build
+Script -> Dev : spawn on port 4021
+Script -> Dev : GET /sitemap.xml and extra noindex routes
+loop for each route
+  Script -> Dev : GET opengraph-image
+  Dev -> Route : default export Image()
+  Route -> Card : renderOgCard(key, eyebrow, title)
+  Card --> Dev : ImageResponse (Satori PNG) with x-og-* headers
+  Dev --> Script : PNG
+  Script -> Sharp : JPEG, mozjpeg, quality 82
+  Sharp --> Script : JPEG bytes
+  Script -> Script : check 200 KB ceiling
+  Script -> Out : write key.jpg
+end
+Script -> Out : write manifest.json, delete cards of removed routes
+
+== npm run build ==
+Maintainer -> Route : next build prerenders each card route
+Route -> Card : renderOgCard(key, eyebrow, title)
+Card -> Out : read manifest.json entry
+alt entry missing or title differs
+  Card --> Maintainer : throw, build fails with the og:build command
+else entry matches
+  Card -> Out : read key.jpg
+  Card --> Route : Response image/jpeg, immutable cache header
+end
+
+@enduml
