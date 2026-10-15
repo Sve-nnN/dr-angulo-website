@@ -42,3 +42,8 @@ yarn-error.log*
 next-env.d.ts
 
 .secrets/
+
+# internal working material, kept local and never published
+.planning/
+audit/
+docs/preguntas-yuly-y-nap.md
