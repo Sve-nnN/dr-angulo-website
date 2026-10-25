@@ -83,9 +83,13 @@ export default function ServiciosPage() {
         )}
       </ContentBodyBoundary>
 
-      <div className="mt-14 divide-y divide-border border-y border-border">
+      <div className="mt-14 grid gap-6">
         {serviceCategories.map((cat) => (
-          <section key={cat.slug} id={cat.slug} className="scroll-mt-28 py-10">
+          <section
+            key={cat.slug}
+            id={cat.slug}
+            className="scroll-mt-28 rounded-2xl border border-border bg-white p-6 shadow-sm"
+          >
             <h2 className="font-heading text-xl font-bold text-primary sm:text-2xl">
               {cat.name}
             </h2>
@@ -165,7 +169,7 @@ export default function ServiciosPage() {
           Cuéntame tu caso por WhatsApp y te indico los siguientes pasos.
         </p>
         <div className="mt-6">
-          <WhatsAppCta location="services" variant="accent">
+          <WhatsAppCta location="services" variant="outline">
             Escribir por WhatsApp
           </WhatsAppCta>
         </div>

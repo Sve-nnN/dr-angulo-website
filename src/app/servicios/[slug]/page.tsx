@@ -144,7 +144,7 @@ export default async function ServiceGuidePage({ params }: Props) {
               </ul>
             )}
             <div className="mt-6 flex flex-wrap items-center gap-4">
-              <BookingCta>Agendar consulta</BookingCta>
+              <BookingCta className="px-8 py-4 text-lg">Agendar cita</BookingCta>
               <WhatsAppCta variant="outline" location="service_page">
                 Escribir por WhatsApp
               </WhatsAppCta>
@@ -164,6 +164,17 @@ export default async function ServiceGuidePage({ params }: Props) {
               bannerAfterIndex={1}
             />
 
+            <div className="mt-14">
+              <AuthorByline
+                publishedAt={page.publishedAt}
+                updatedAt={page.updatedAt}
+              />
+            </div>
+
+            <div className="mt-8">
+              <MedicalDisclaimer />
+            </div>
+
             <section className="mt-16 border-t border-border pt-12">
               <h2 className="font-heading text-2xl font-bold text-primary sm:text-3xl">
                 Agenda una evaluación de tu caso
@@ -175,8 +186,8 @@ export default async function ServiceGuidePage({ params }: Props) {
                 reservar.
               </p>
               <div className="mt-6 flex flex-wrap items-center gap-4">
-                <BookingCta>Agendar consulta</BookingCta>
-                <WhatsAppCta variant="accent" location="service_page">
+                <BookingCta>Agendar cita</BookingCta>
+                <WhatsAppCta variant="outline" location="service_page">
                   Escribir por WhatsApp
                 </WhatsAppCta>
               </div>
@@ -221,17 +232,6 @@ export default async function ServiceGuidePage({ params }: Props) {
                 </ul>
               </section>
             )}
-
-            <div className="mt-14">
-              <AuthorByline
-                publishedAt={page.publishedAt}
-                updatedAt={page.updatedAt}
-              />
-            </div>
-
-            <div className="mt-8">
-              <MedicalDisclaimer />
-            </div>
           </div>
 
           {/* Aside de escritorio: índice y tarjeta de agenda pegados en el
@@ -254,7 +254,7 @@ export default async function ServiceGuidePage({ params }: Props) {
                   Elige la sede que te quede mejor y reserva tu evaluación.
                 </p>
                 <div className="mt-4">
-                  <BookingCta className="w-full">Agendar consulta</BookingCta>
+                  <BookingCta className="w-full">Agendar cita</BookingCta>
                 </div>
               </div>
             </div>
