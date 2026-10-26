@@ -27,6 +27,8 @@ const CSP_REPORT_ONLY = [
 ].join("; ");
 
 const nextConfig: NextConfig = {
+  // Sin `x-powered-by: Next.js`: no aporta nada al visitante y anuncia el stack.
+  poweredByHeader: false,
   images: {
     // Portadas de los reels: Instagram las sirve desde su CDN con URLs firmadas
     // que caducan, por eso el feed se revalida cada hora.
@@ -108,6 +110,9 @@ const nextConfig: NextConfig = {
   },
   async redirects() {
     return [
+      // Algunos clientes piden `/favicon.ico` por defecto aunque el HTML declare
+      // `/icon.png`; sin esto cada pedido deja un 404 en los registros.
+      { source: "/favicon.ico", destination: "/icon.png", permanent: false },
       // Renombre decidido en la fase 14 de v1.2: la guía pasó de /servicios/escoliosis
       // a /servicios/escoliosis-y-deformidades y la URL vieja ya estaba indexada.
       {

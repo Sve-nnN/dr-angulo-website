@@ -17,9 +17,10 @@ import { faqItems } from "@/content/faq";
 import { reviewLinks } from "@/content/testimonials";
 import { siteConfig } from "@/lib/site-config";
 import { GoogleReviewsSection } from "@/components/reviews/google-reviews";
+import { WebPageJsonLd } from "@/components/structured-data";
 
 export const metadata: Metadata = {
-  title: { absolute: "Traumatología en Lima: Dr. Juan Carlos Angulo" },
+  title: { absolute: "Traumatólogo y cirujano de columna en Lima | Dr. Angulo" },
   description:
     "Traumatólogo y cirujano de columna en Lima. Atiende en su consultorio de Surco, Ricardo Palma, Sanna La Molina y Clínica Tezza.",
   alternates: { canonical: "/" },
@@ -31,6 +32,7 @@ export const revalidate = 3600;
 export default async function Home() {
   return (
     <>
+      <WebPageJsonLd path="/" name="Traumatólogo y cirujano de columna en Lima" />
       <section className="relative overflow-hidden bg-primary">
         <div
           aria-hidden="true"

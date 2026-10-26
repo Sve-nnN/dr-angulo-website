@@ -4,18 +4,18 @@ import { ArrowRight } from "lucide-react";
 import { InstagramReelsSection } from "@/components/instagram/instagram-reels-section";
 import { BookingCta } from "@/components/ui/booking-cta";
 import { testimonials, reviewLinks } from "@/content/testimonials";
-import { BreadcrumbJsonLd } from "@/components/structured-data";
+import { BreadcrumbJsonLd, WebPageJsonLd } from "@/components/structured-data";
 import { GoogleReviewsSection } from "@/components/reviews/google-reviews";
 
 export const metadata: Metadata = {
-  title: { absolute: "Testimonios de pacientes del Dr. Angulo" },
+  title: { absolute: "Testimonios de pacientes del Dr. Angulo en Lima" },
   description:
-    "Lo que cuentan, en sus propias palabras, los pacientes que se atendieron con el Dr. Juan Carlos Angulo en Lima.",
+    "Lo que cuentan, en sus propias palabras, los pacientes que se atendieron con el Dr. Juan Carlos Angulo, traumatólogo y cirujano de columna en Lima.",
   alternates: { canonical: "/testimonios" },
   openGraph: {
-    title: "Testimonios de pacientes del Dr. Angulo",
+    title: "Testimonios de pacientes del Dr. Angulo en Lima",
     description:
-      "Lo que cuentan, en sus propias palabras, los pacientes que se atendieron con el Dr. Juan Carlos Angulo en Lima.",
+      "Lo que cuentan, en sus propias palabras, los pacientes que se atendieron con el Dr. Juan Carlos Angulo, traumatólogo y cirujano de columna en Lima.",
     url: "/testimonios",
   },
 };
@@ -27,6 +27,10 @@ export default async function TestimoniosPage() {
   return (
     <>
       <BreadcrumbJsonLd items={[{ name: "Testimonios", path: "/testimonios" }]} />
+      <WebPageJsonLd
+        path="/testimonios"
+        name="Testimonios de pacientes del Dr. Angulo en Lima"
+      />
     <div className="mx-auto max-w-3xl px-4 py-14 sm:px-6 sm:py-20">
       <h1 className="font-heading text-3xl font-extrabold text-primary sm:text-4xl">
         Lo que dicen sus pacientes
