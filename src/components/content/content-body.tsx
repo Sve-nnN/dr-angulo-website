@@ -1,4 +1,5 @@
 import { Fragment, type ReactNode } from "react";
+import { Plus } from "lucide-react";
 import { ConsultAlert } from "@/components/ui/consult-alert";
 import { ServiceItemGrid } from "@/components/ui/service-item-grid";
 import { CitationList } from "@/components/content/citation-list";
@@ -151,6 +152,15 @@ type ContentBodyProps = {
   bannerAfterIndex?: number;
 };
 
+/**
+ * Desde cuántas subsecciones de nivel 3 un grupo pasa a acordeón. Con dos o
+ * menos la prosa se lee de corrido; con tres o más es un muro de texto y el
+ * paciente necesita ver las preguntas antes que las respuestas. El contenido
+ * sigue en el HTML (`<details>`), así que el buscador y los lectores de
+ * pantalla lo reciben completo.
+ */
+const ACCORDION_MIN = 3;
+
 export function ContentBody({
   sections,
   headingSize = "lg",
@@ -195,24 +205,55 @@ export function ContentBody({
               section={section}
               consultAlertSectionId={consultAlertSectionId}
             />
-            {children.map((child) => (
-              <Fragment key={child.id}>
-                <div className="mt-8">
-                  <h3
-                    id={child.id}
-                    tabIndex={-1}
-                    className="scroll-mt-28 font-heading text-lg font-bold text-primary"
-                  >
-                    {child.heading}
-                  </h3>
-                  <SectionBody
-                    section={child}
-                    consultAlertSectionId={consultAlertSectionId}
-                  />
-                </div>
-                {banner && child.id === bannerChildId && banner}
-              </Fragment>
-            ))}
+            {children.length >= ACCORDION_MIN ? (
+              <div className="mt-8 divide-y divide-border border-y border-border">
+                {children.map((child) => (
+                  <Fragment key={child.id}>
+                    <details className="group">
+                      <summary className="flex min-h-14 cursor-pointer list-none items-center justify-between gap-4 py-4 [&::-webkit-details-marker]:hidden">
+                        <h3
+                          id={child.id}
+                          tabIndex={-1}
+                          className="scroll-mt-28 font-heading text-lg font-semibold text-primary"
+                        >
+                          {child.heading}
+                        </h3>
+                        <Plus
+                          aria-hidden="true"
+                          className="size-5 shrink-0 text-accent-strong transition-transform duration-200 ease-out group-open:rotate-45 motion-reduce:transition-none"
+                        />
+                      </summary>
+                      <div className="pb-6 [&>p:first-child]:mt-0">
+                        <SectionBody
+                          section={child}
+                          consultAlertSectionId={consultAlertSectionId}
+                        />
+                      </div>
+                    </details>
+                    {banner && child.id === bannerChildId && banner}
+                  </Fragment>
+                ))}
+              </div>
+            ) : (
+              children.map((child) => (
+                <Fragment key={child.id}>
+                  <div className="mt-8">
+                    <h3
+                      id={child.id}
+                      tabIndex={-1}
+                      className="scroll-mt-28 font-heading text-lg font-bold text-primary"
+                    >
+                      {child.heading}
+                    </h3>
+                    <SectionBody
+                      section={child}
+                      consultAlertSectionId={consultAlertSectionId}
+                    />
+                  </div>
+                  {banner && child.id === bannerChildId && banner}
+                </Fragment>
+              ))
+            )}
           </section>
           {banner && index === bannerIndex && banner}
         </Fragment>
