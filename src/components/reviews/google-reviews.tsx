@@ -1,5 +1,10 @@
 import { ArrowRight, Star } from "lucide-react";
-import { getGoogleReviews, type GoogleReview, type GoogleReviewsData } from "@/lib/google-reviews";
+import {
+  getGoogleReviews,
+  googleWriteReviewUrl,
+  type GoogleReview,
+  type GoogleReviewsData,
+} from "@/lib/google-reviews";
 
 const ratingFormatter = new Intl.NumberFormat("es-PE", {
   minimumFractionDigits: 1,
@@ -50,12 +55,12 @@ type Props = {
 };
 
 /**
- * Reseñas reales de la ficha de Google del consultorio. No renderiza nada si la
- * API key no está configurada o si la ficha todavía no tiene reseñas.
+ * Reseñas reales de la ficha de Google del consultorio. Si la API no responde,
+ * no inventa nada: muestra solo la invitación a dejar una reseña.
  */
 export async function GoogleReviewsSection(props: Props) {
   const data = await getGoogleReviews();
-  if (!data) return null;
+  if (!data) return <WriteReviewInvite className={props.className} />;
 
   return <GoogleReviewsView data={data} {...props} />;
 }
@@ -98,13 +103,55 @@ export function GoogleReviewsView({
         </div>
       ) : null}
 
+      <div className="mt-6 flex flex-wrap items-center gap-x-8 gap-y-2">
+        <a
+          href={data.profileUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex min-h-11 items-center gap-2 font-semibold text-primary transition-colors duration-150 hover:text-primary-dark hover:underline"
+        >
+          Ver todas las reseñas en Google
+          <ArrowRight className="size-4" aria-hidden="true" />
+          <span className="sr-only">(se abre en una pestaña nueva)</span>
+        </a>
+        <a
+          href={googleWriteReviewUrl()}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex min-h-11 items-center gap-2 font-semibold text-primary transition-colors duration-150 hover:text-primary-dark hover:underline"
+        >
+          Cuéntanos tu experiencia en Google
+          <ArrowRight className="size-4" aria-hidden="true" />
+          <span className="sr-only">(se abre en una pestaña nueva)</span>
+        </a>
+      </div>
+    </section>
+  );
+}
+
+/**
+ * Invitación mínima para cuando Google no devuelve datos. Sin cifras ni reseñas:
+ * solo el camino para que un paciente deje la suya.
+ */
+function WriteReviewInvite({ className = "" }: { className?: string }) {
+  return (
+    <section className={className} aria-labelledby="google-reviews-invite-heading">
+      <h2
+        id="google-reviews-invite-heading"
+        className="font-heading text-2xl font-bold text-primary sm:text-3xl"
+      >
+        ¿Te atendiste con el doctor?
+      </h2>
+      <p className="mt-4 max-w-2xl text-lg text-foreground/70">
+        Tu reseña en Google ayuda a otros pacientes a decidir con más confianza.
+      </p>
       <a
-        href={data.profileUrl}
+        href={googleWriteReviewUrl()}
         target="_blank"
         rel="noopener noreferrer"
-        className="mt-6 inline-flex items-center gap-2 font-semibold text-primary transition-colors duration-150 hover:text-primary-dark hover:underline"
+        className="mt-4 inline-flex min-h-11 items-center gap-2 font-semibold text-primary transition-colors duration-150 hover:text-primary-dark hover:underline"
       >
-        Ver todas las reseñas en Google
+        Cuéntanos tu experiencia en Google
         <ArrowRight className="size-4" aria-hidden="true" />
         <span className="sr-only">(se abre en una pestaña nueva)</span>
       </a>

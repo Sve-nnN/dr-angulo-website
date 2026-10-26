@@ -105,6 +105,11 @@ export function googleProfileUrl(placeId = GOOGLE_PLACE_ID) {
   return `https://search.google.com/local/reviews?placeid=${placeId}`;
 }
 
+/** Formulario de Google para escribir una reseña en la ficha del consultorio. */
+export function googleWriteReviewUrl(placeId = GOOGLE_PLACE_ID) {
+  return `https://search.google.com/local/writereview?placeid=${placeId}`;
+}
+
 /**
  * Devuelve la calificación y las reseñas publicadas, o null si no hay API key,
  * si la ficha no tiene reseñas o si Google responde con error.
