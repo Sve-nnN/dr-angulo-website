@@ -9,9 +9,13 @@
  * Google, y no se pueden almacenar más de 30 días. Por eso el feed se revalida
  * cada 24 horas y nada se guarda en disco.
  *
- * Sin `GOOGLE_PLACES_API_KEY` configurada, todo devuelve null y la sección de
- * reseñas simplemente no se renderiza.
+ * Orden de fuentes: primero la copia que envía el trabajo diario con la API de
+ * Business Profile (todas las reseñas, ver `google-reviews-snapshot.ts`); si no
+ * hay copia vigente, Places. Sin ninguna de las dos devuelve null y la sección
+ * muestra solo la invitación a dejar una reseña.
  */
+
+import { readReviewsSnapshot } from "@/lib/google-reviews-snapshot";
 
 const PLACES_API = "https://places.googleapis.com/v1/places";
 const REVALIDATE_SECONDS = 60 * 60 * 24;
@@ -105,11 +109,53 @@ export function googleProfileUrl(placeId = GOOGLE_PLACE_ID) {
   return `https://search.google.com/local/reviews?placeid=${placeId}`;
 }
 
+/** Formulario de Google para escribir una reseña en la ficha del consultorio. */
+export function googleWriteReviewUrl(placeId = GOOGLE_PLACE_ID) {
+  return `https://search.google.com/local/writereview?placeid=${placeId}`;
+}
+
+const relativeFormatter = new Intl.RelativeTimeFormat("es-PE", { numeric: "auto" });
+
+/** "hace 3 semanas" a partir de la fecha de publicación de la reseña. */
+function relativeTimeLabel(iso: string | undefined) {
+  if (!iso) return "";
+  const days = Math.round((Date.parse(iso) - Date.now()) / 86_400_000);
+  if (!Number.isFinite(days)) return "";
+
+  if (Math.abs(days) < 7) return relativeFormatter.format(days, "day");
+  if (Math.abs(days) < 30) return relativeFormatter.format(Math.round(days / 7), "week");
+  if (Math.abs(days) < 365) return relativeFormatter.format(Math.round(days / 30), "month");
+  return relativeFormatter.format(Math.round(days / 365), "year");
+}
+
+/** Reseñas enviadas por el trabajo diario, o null si no hay copia vigente. */
+async function getReviewsFromSnapshot(): Promise<GoogleReviewsData | null> {
+  const snapshot = await readReviewsSnapshot();
+  if (!snapshot) return null;
+
+  return {
+    rating: snapshot.rating,
+    reviewCount: snapshot.reviewCount,
+    reviews: snapshot.reviews.map((review) => ({
+      id: review.id,
+      author: review.author,
+      rating: review.rating,
+      text: review.text,
+      relativeTime: relativeTimeLabel(review.publishedAt),
+      publishedAt: review.publishedAt,
+    })),
+    profileUrl: googleProfileUrl(),
+  };
+}
+
 /**
  * Devuelve la calificación y las reseñas publicadas, o null si no hay API key,
  * si la ficha no tiene reseñas o si Google responde con error.
  */
 export async function getGoogleReviews(): Promise<GoogleReviewsData | null> {
+  const fromSnapshot = await getReviewsFromSnapshot();
+  if (fromSnapshot) return fromSnapshot;
+
   const apiKey = process.env.GOOGLE_PLACES_API_KEY;
   if (!apiKey) return null;
 
