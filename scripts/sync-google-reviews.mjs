@@ -113,14 +113,23 @@ async function discover(accessToken) {
 }
 
 /**
- * Google traduce algunas reseñas y devuelve "(Translated by Google) ...
- * (Original) ...". Se conserva el texto original que escribió el paciente.
+ * Google traduce las reseñas que no están en el idioma de la ficha y las
+ * devuelve en una de dos formas:
+ *   "<texto original>\n\n(Translated by Google)\n<traducción>"
+ *   "(Translated by Google) <traducción>\n\n(Original)\n<texto original>"
+ * Se conserva siempre lo que escribió el paciente, sin la traducción.
  */
 function originalText(comment) {
   const text = String(comment ?? "").trim();
-  const marker = text.indexOf("(Original)");
-  if (marker !== -1) return text.slice(marker + "(Original)".length).trim();
-  return text.replace(/^\(Translated by Google\)\s*/, "").trim();
+
+  const original = text.indexOf("(Original)");
+  if (original !== -1) return text.slice(original + "(Original)".length).trim();
+
+  const translated = text.indexOf("(Translated by Google)");
+  if (translated > 0) return text.slice(0, translated).trim();
+  if (translated === 0) return text.slice("(Translated by Google)".length).trim();
+
+  return text;
 }
 
 async function fetchReviews(accessToken) {

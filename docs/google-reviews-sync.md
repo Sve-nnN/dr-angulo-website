@@ -32,7 +32,7 @@ servidor propio ──(token de Google)──▶ API Business Profile
 
 Hace falta un **volumen persistente montado en `/data`**, el mismo que usa el token de Instagram. Sin volumen el sitio funciona, pero cada deploy borra la copia hasta el siguiente envío.
 
-**En el servidor propio (archivo de entorno, nunca en el repo):**
+**En el servidor propio (archivo `sync.conf` con permisos 600, nunca en el repo):**
 
 | Variable | Para qué |
 |---|---|
@@ -50,16 +50,25 @@ Hace falta un **volumen persistente montado en `/data`**, el mismo que usa el to
    - `node scripts/sync-google-reviews.mjs --discover` lista las cuentas y ubicaciones con sus IDs. Se copian `GBP_ACCOUNT_ID` y `GBP_LOCATION_ID` de la ficha del doctor.
    - `node scripts/sync-google-reviews.mjs --dry-run` arma el envío y muestra el resumen sin enviar nada.
    - `node scripts/sync-google-reviews.mjs` sincroniza.
-4. Programar el trabajo, una vez al día:
+4. Crear `run.sh` junto al script (carga `sync.conf` y ejecuta el script) y programarlo una vez al día:
 
 ```
-15 7 * * * cd /ruta/al/repo && set -a && . ./.env.reviews && set +a && node scripts/sync-google-reviews.mjs >> sync-reviews.log 2>&1
+#!/usr/bin/env bash
+cd "$(dirname "$0")" || exit 1
+set -a; . ./sync.conf; set +a
+echo "[$(date -u +%FT%TZ)] inicio"
+node sync-google-reviews.mjs
+echo "[$(date -u +%FT%TZ)] fin (código $?)"
+```
+
+```
+20 7 * * * flock -n /tmp/reviews-sync.lock /ruta/reviews-sync/run.sh >> /ruta/reviews-sync/sync.log 2>&1
 ```
 
 ## Cómo se comporta
 
 - El script nunca imprime tokens ni el cuerpo de las respuestas de Google.
-- Se guardan solo las reseñas con texto, con el autor, las estrellas, el texto original (no la traducción de Google) y la fecha. Las reseñas sin texto cuentan en el total pero no se listan.
+- Se guardan solo las reseñas con texto, con el autor, las estrellas, el texto original (Google agrega "(Translated by Google)" con la traducción, y el script la descarta en sus dos formatos) y la fecha. Las reseñas sin texto cuentan en el total pero no se listan.
 - Una reseña de un usuario anónimo aparece como "Paciente de Google".
 - El endpoint rechaza cuerpos de más de 600 KB, JSON inválido y cualquier formato que no cumpla el esquema.
 - Cada envío exitoso marca la portada y `/testimonios` para regenerarse en la próxima visita.
@@ -71,7 +80,7 @@ Hace falta un **volumen persistente montado en `/data`**, el mismo que usa el to
 curl -H "Authorization: Bearer $CRON_SECRET" https://drangulocolumna.com/api/reviews/status
 ```
 
-Ese diagnóstico informa si la clave de Places está configurada y qué devuelve Google. Para el flujo de Business Profile basta con abrir `/testimonios` y comprobar que aparezcan las reseñas.
+Ese diagnóstico informa si la clave de Places está configurada y qué devuelve Google. Para el flujo de Business Profile basta con abrir `/testimonios` y comprobar que aparezcan las reseñas. Si el script falla con `Token has been expired or revoked`, el token de renovación caducó: con la pantalla de consentimiento de OAuth en "Pruebas" dura 7 días, así que hay que publicarla y generar un token nuevo con el OAuth Playground.
 
 ## Términos de Google
 
