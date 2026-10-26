@@ -9,12 +9,12 @@ import { BreadcrumbJsonLd, ContactPageJsonLd } from "@/components/structured-dat
 export const metadata: Metadata = {
   title: { absolute: "Contacto con el consultorio del Dr. Angulo" },
   description:
-    "Cuéntale tu caso al doctor por el formulario o escribe por WhatsApp. Datos de contacto del consultorio en Lima.",
+    "Cuéntale tu caso al doctor por el formulario o escribe por WhatsApp. Dirección, teléfono y sedes del consultorio del Dr. Angulo en Lima.",
   alternates: { canonical: "/contacto" },
   openGraph: {
     title: "Contacto con el consultorio del Dr. Angulo",
     description:
-      "Cuéntale tu caso al doctor por el formulario o escribe por WhatsApp. Datos de contacto del consultorio en Lima.",
+      "Cuéntale tu caso al doctor por el formulario o escribe por WhatsApp. Dirección, teléfono y sedes del consultorio del Dr. Angulo en Lima.",
     url: "/contacto",
   },
 };

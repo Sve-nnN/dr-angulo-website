@@ -10,12 +10,12 @@ import { BreadcrumbJsonLd, ProfilePageJsonLd } from "@/components/structured-dat
 export const metadata: Metadata = {
   title: { absolute: "Sobre el Dr. Juan Carlos Angulo Totesaut" },
   description:
-    "Formación, forma de trabajo y sedes donde atiende el Dr. Juan Carlos Angulo Totesaut, médico de columna en Lima.",
+    "Formación, forma de trabajo y sedes donde atiende el Dr. Juan Carlos Angulo Totesaut, traumatólogo y cirujano de columna en Lima. CMP 83189.",
   alternates: { canonical: "/sobre-el-doctor" },
   openGraph: {
     title: "Sobre el Dr. Juan Carlos Angulo Totesaut",
     description:
-      "Formación, forma de trabajo y sedes donde atiende el Dr. Juan Carlos Angulo Totesaut, médico de columna en Lima.",
+      "Formación, forma de trabajo y sedes donde atiende el Dr. Juan Carlos Angulo Totesaut, traumatólogo y cirujano de columna en Lima. CMP 83189.",
     url: "/sobre-el-doctor",
   },
 };

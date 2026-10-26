@@ -9,12 +9,12 @@ import {
 import { hubBlog } from "@/content/static-pages/hub-blog";
 
 export const metadata: Metadata = {
-  title: { absolute: "Blog del Dr. Juan Carlos Angulo" },
+  title: { absolute: "Blog del Dr. Juan Carlos Angulo: columna y traumatología" },
   description:
     "Artículos sobre dolor de espalda, salud de la columna y qué esperar de una consulta, escritos por el Dr. Juan Carlos Angulo.",
   alternates: { canonical: "/blog" },
   openGraph: {
-    title: "Blog del Dr. Juan Carlos Angulo",
+    title: "Blog del Dr. Juan Carlos Angulo: columna y traumatología",
     description:
       "Artículos sobre dolor de espalda, salud de la columna y qué esperar de una consulta, escritos por el Dr. Juan Carlos Angulo.",
     url: "/blog",

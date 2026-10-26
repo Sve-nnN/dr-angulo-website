@@ -30,11 +30,13 @@ export function WhatsAppFloatButton() {
       aria-label="Escribir por WhatsApp (se abre en una pestaña nueva)"
       className={cn(
         // Entra sin transform: el fill de la animación pisaría el hover:scale.
-        "animate-fade-in animate-delay-late fixed right-5 z-50 flex size-14 cursor-pointer items-center justify-center rounded-full bg-whatsapp text-white shadow-lg transition-[transform,bottom] duration-200 ease-out hover:scale-105 motion-reduce:hover:scale-100",
-        bannerVisible ? "bottom-44 sm:bottom-28" : "bottom-5"
+        // En móvil la burbuja mide 48px (por encima del mínimo táctil de 44) para
+        // tapar menos texto; desde `sm` vuelve a los 56px de siempre.
+        "animate-fade-in animate-delay-late fixed right-4 z-50 flex size-12 cursor-pointer items-center justify-center rounded-full bg-whatsapp text-white shadow-lg transition-[transform,bottom] duration-200 ease-out hover:scale-105 motion-reduce:hover:scale-100 sm:right-5 sm:size-14",
+        bannerVisible ? "bottom-40 sm:bottom-28" : "bottom-4 sm:bottom-5"
       )}
     >
-      <MessageCircle className="size-7" aria-hidden="true" />
+      <MessageCircle className="size-6 sm:size-7" aria-hidden="true" />
     </a>
   );
 }

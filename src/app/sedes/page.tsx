@@ -3,7 +3,7 @@ import Link from "next/link";
 import { BookingCta } from "@/components/ui/booking-cta";
 import { SedeCard } from "@/components/locations/sede-card";
 import { getLocationPage, locationPages } from "@/content/location-pages";
-import { BreadcrumbJsonLd } from "@/components/structured-data";
+import { BreadcrumbJsonLd, WebPageJsonLd } from "@/components/structured-data";
 import {
   ContentBody,
   ContentBodyBoundary,
@@ -32,6 +32,11 @@ export default function SedesPage() {
   return (
     <>
       <BreadcrumbJsonLd items={[{ name: "Sedes", path: "/sedes" }]} />
+      <WebPageJsonLd
+        path="/sedes"
+        name="Sedes donde atiende el Dr. Angulo en Lima"
+        type="CollectionPage"
+      />
       <div className="mx-auto max-w-4xl px-4 py-14 sm:px-6 sm:py-20">
         <h1 className="font-heading text-3xl font-extrabold text-primary sm:text-4xl">
           Sedes donde atiende el Dr. Angulo en Lima

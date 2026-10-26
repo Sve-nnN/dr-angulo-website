@@ -2,20 +2,20 @@
   "home": {
     "route": "/",
     "eyebrow": "Columna y traumatología",
-    "title": "Traumatología en Lima: Dr. Juan Carlos Angulo",
-    "bytes": 57522
+    "title": "Traumatólogo y cirujano de columna en Lima | Dr. Angulo",
+    "bytes": 58597
   },
   "agendar": {
     "route": "/agendar",
     "eyebrow": "Agendar cita",
-    "title": "Agendar una cita con el Dr. Angulo",
-    "bytes": 53801
+    "title": "Agendar una cita con el Dr. Angulo en Lima",
+    "bytes": 53860
   },
   "blog": {
     "route": "/blog",
     "eyebrow": "Blog",
-    "title": "Blog del Dr. Juan Carlos Angulo",
-    "bytes": 51282
+    "title": "Blog del Dr. Juan Carlos Angulo: columna y traumatología",
+    "bytes": 56144
   },
   "blog-artrosis": {
     "route": "/blog/artrosis",
@@ -140,7 +140,7 @@
   "testimonios": {
     "route": "/testimonios",
     "eyebrow": "Testimonios",
-    "title": "Testimonios de pacientes del Dr. Angulo",
-    "bytes": 53821
+    "title": "Testimonios de pacientes del Dr. Angulo en Lima",
+    "bytes": 56302
   }
 }

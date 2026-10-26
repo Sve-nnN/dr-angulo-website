@@ -12,7 +12,11 @@ import {
   ContentBodyBoundary,
   groupSections,
 } from "@/components/content/content-body";
-import { BreadcrumbJsonLd, FaqJsonLd } from "@/components/structured-data";
+import {
+  BreadcrumbJsonLd,
+  FaqJsonLd,
+  WebPageJsonLd,
+} from "@/components/structured-data";
 import { faqItems } from "@/content/faq";
 import { preguntasFrecuentesPage as page } from "@/content/static-pages/preguntas-frecuentes";
 
@@ -50,6 +54,10 @@ export default function PreguntasFrecuentesPage() {
     <>
       <BreadcrumbJsonLd
         items={[{ name: "Preguntas frecuentes", path: "/preguntas-frecuentes" }]}
+      />
+      <WebPageJsonLd
+        path="/preguntas-frecuentes"
+        name="Preguntas frecuentes sobre la consulta del Dr. Angulo"
       />
       <FaqJsonLd
         items={[...packageFaqItems, ...faqItems]}

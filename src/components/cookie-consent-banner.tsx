@@ -22,10 +22,10 @@ export function CookieConsentBanner() {
     <div
       role="region"
       aria-label="Aviso de cookies"
-      className="animate-slide-up-in fixed inset-x-0 bottom-0 z-50 border-t border-border bg-background px-4 py-4 shadow-xl sm:px-6"
+      className="animate-slide-up-in fixed inset-x-0 bottom-0 z-50 border-t border-border bg-background px-4 pb-[max(0.75rem,env(safe-area-inset-bottom))] pt-3 shadow-xl sm:px-6 sm:py-4"
     >
-      <div className="mx-auto flex max-w-6xl flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-        <p className="text-sm text-foreground/80">
+      <div className="mx-auto flex max-w-6xl flex-col gap-2 sm:flex-row sm:items-center sm:justify-between sm:gap-3">
+        <p className="text-sm leading-snug text-foreground/80">
           Usamos cookies para medir visitas y mejorar la web (Google Analytics y Meta).
           Puedes leer más en nuestra{" "}
           <Link href="/privacidad" className="underline hover:text-primary">

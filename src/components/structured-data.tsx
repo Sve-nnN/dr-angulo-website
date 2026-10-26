@@ -51,6 +51,8 @@ function abs(path: string) {
 const MEDICAL_SPECIALTIES = [
   "https://schema.org/Musculoskeletal",
   "https://schema.org/Surgical",
+  // La consulta incluye ortopedia infantil, que `knowsAbout` ya declara.
+  "https://schema.org/Pediatric",
 ];
 
 /**
@@ -487,6 +489,38 @@ export function SedeJsonLd({
   };
 
   return <JsonLdScript id="sede-jsonld" data={data} />;
+}
+
+/**
+ * Nodo de página para las rutas que solo llevaban `BreadcrumbList`: la portada,
+ * `/sedes`, `/testimonios` y `/preguntas-frecuentes`. Sin él, el buscador tiene
+ * la miga de pan pero ningún `WebPage` al que atar la entidad del doctor.
+ *
+ * `/sedes` es un listado, así que usa `CollectionPage`; el resto, `WebPage`.
+ * No lleva `Review` ni `AggregateRating`: las reseñas de esta web son de
+ * terceros y marcarlas en el propio sitio no es elegible.
+ */
+export function WebPageJsonLd({
+  path,
+  name,
+  type = "WebPage",
+}: {
+  path: string;
+  name: string;
+  type?: "WebPage" | "CollectionPage";
+}) {
+  const data = {
+    "@context": "https://schema.org",
+    "@type": type,
+    "@id": abs(`${path === "/" ? "" : path}#page`),
+    url: abs(path),
+    name,
+    inLanguage: "es-PE",
+    isPartOf: { "@id": ID.website },
+    about: { "@id": ID.physician },
+  };
+
+  return <JsonLdScript id="pagina-jsonld" data={data} />;
 }
 
 /** Página de contacto. */
