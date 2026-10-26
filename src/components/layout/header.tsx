@@ -76,7 +76,7 @@ export function Header() {
       <div className="mx-auto flex h-18 max-w-6xl items-center justify-between px-4 py-3 sm:px-6">
         <Link
           href="/"
-          className="flex shrink-0 items-center gap-3"
+          className="flex min-w-0 shrink items-center gap-2 sm:gap-3"
           onClick={() => setOpen(false)}
         >
           <Image
@@ -84,11 +84,11 @@ export function Header() {
             alt=""
             width={44}
             height={44}
-            className="shrink-0 rounded-full"
+            className="size-10 shrink-0 rounded-full sm:size-11"
             preload
           />
           <span className="flex flex-col leading-tight">
-            <span className="whitespace-nowrap font-heading text-base font-bold text-primary sm:text-lg">
+            <span className="whitespace-nowrap font-heading text-[0.9375rem] font-bold text-primary min-[400px]:text-base sm:text-lg">
               {siteConfig.shortName}
             </span>
             <span className="whitespace-nowrap text-xs text-foreground/70 sm:text-sm">
@@ -128,17 +128,28 @@ export function Header() {
           </BookingCta>
         </div>
 
-        <button
-          ref={toggleRef}
-          type="button"
-          onClick={() => setOpen((v) => !v)}
-          aria-label={open ? "Cerrar menú" : "Abrir menú"}
-          aria-expanded={open}
-          aria-controls={MOBILE_NAV_ID}
-          className="flex size-11 shrink-0 cursor-pointer items-center justify-center rounded-lg text-primary transition-colors duration-150 hover:bg-muted xl:hidden"
-        >
-          {open ? <X className="size-6" /> : <Menu className="size-6" />}
-        </button>
+        {/* En móvil el CTA vive en la barra: antes solo existía en el menú
+            desplegado y en el hero, y el aviso de cookies tapaba el del hero. */}
+        <div className="flex shrink-0 items-center gap-1 xl:hidden">
+          <BookingCta
+            size="sm"
+            className="whitespace-nowrap px-2.5 sm:px-3"
+            onClick={() => setOpen(false)}
+          >
+            Agendar<span className="sr-only"> cita</span>
+          </BookingCta>
+          <button
+            ref={toggleRef}
+            type="button"
+            onClick={() => setOpen((v) => !v)}
+            aria-label={open ? "Cerrar menú" : "Abrir menú"}
+            aria-expanded={open}
+            aria-controls={MOBILE_NAV_ID}
+            className="flex size-11 shrink-0 cursor-pointer items-center justify-center rounded-lg text-primary transition-colors duration-150 hover:bg-muted"
+          >
+            {open ? <X className="size-6" /> : <Menu className="size-6" />}
+          </button>
+        </div>
       </div>
 
       {open && (
